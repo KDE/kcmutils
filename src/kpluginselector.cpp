@@ -75,24 +75,24 @@ void KPluginSelector::Private::updateDependencies(PluginEntry *pluginEntry, bool
 
         for (int i = 0; i < pluginModel->rowCount(); i++) {
             const QModelIndex index = pluginModel->index(i, 0);
-            PluginEntry *pe = static_cast<PluginEntry*>(index.internalPointer());
+            PluginEntry *pe = static_cast<PluginEntry *>(index.internalPointer());
 
             if ((pe->pluginInfo.pluginName() != pluginEntry->pluginInfo.pluginName()) &&
-                dependencyList.contains(pe->pluginInfo.pluginName()) && !pe->checked) {
+                    dependencyList.contains(pe->pluginInfo.pluginName()) && !pe->checked) {
                 dependenciesWidget->addDependency(pe->pluginInfo.name(), pluginEntry->pluginInfo.name(), added);
-                const_cast<QAbstractItemModel*>(index.model())->setData(index, added, Qt::CheckStateRole);
+                const_cast<QAbstractItemModel *>(index.model())->setData(index, added, Qt::CheckStateRole);
                 updateDependencies(pe, added);
             }
         }
     } else {
         for (int i = 0; i < pluginModel->rowCount(); i++) {
             const QModelIndex index = pluginModel->index(i, 0);
-            PluginEntry *pe = static_cast<PluginEntry*>(index.internalPointer());
+            PluginEntry *pe = static_cast<PluginEntry *>(index.internalPointer());
 
             if ((pe->pluginInfo.pluginName() != pluginEntry->pluginInfo.pluginName()) &&
-                pe->pluginInfo.dependencies().contains(pluginEntry->pluginInfo.pluginName()) && pe->checked) {
+                    pe->pluginInfo.dependencies().contains(pluginEntry->pluginInfo.pluginName()) && pe->checked) {
                 dependenciesWidget->addDependency(pe->pluginInfo.name(), pluginEntry->pluginInfo.name(), added);
-                const_cast<QAbstractItemModel*>(index.model())->setData(index, added, Qt::CheckStateRole);
+                const_cast<QAbstractItemModel *>(index.model())->setData(index, added, Qt::CheckStateRole);
                 updateDependencies(pe, added);
             }
         }
@@ -151,41 +151,43 @@ KPluginSelector::Private::DependenciesWidget::~DependenciesWidget()
 
 void KPluginSelector::Private::DependenciesWidget::addDependency(const QString &dependency, const QString &pluginCausant, bool added)
 {
-    if (!isVisible())
+    if (!isVisible()) {
         setVisible(true);
+    }
 
     struct FurtherInfo furtherInfo;
     furtherInfo.added = added;
     furtherInfo.pluginCausant = pluginCausant;
 
-    if (dependencyMap.contains(dependency)) // The dependency moved from added to removed or vice-versa
-    {
-        if (added && removedByDependencies)
+    if (dependencyMap.contains(dependency)) { // The dependency moved from added to removed or vice-versa
+        if (added && removedByDependencies) {
             removedByDependencies--;
-        else if (addedByDependencies)
+        } else if (addedByDependencies) {
             addedByDependencies--;
+        }
 
         dependencyMap[dependency] = furtherInfo;
-    }
-    else
+    } else {
         dependencyMap.insert(dependency, furtherInfo);
+    }
 
-    if (added)
+    if (added) {
         addedByDependencies++;
-    else
+    } else {
         removedByDependencies++;
+    }
 
     updateDetails();
 }
 
 void KPluginSelector::Private::DependenciesWidget::userOverrideDependency(const QString &dependency)
 {
-    if (dependencyMap.contains(dependency))
-    {
-        if (addedByDependencies && dependencyMap[dependency].added)
+    if (dependencyMap.contains(dependency)) {
+        if (addedByDependencies && dependencyMap[dependency].added) {
             addedByDependencies--;
-        else if (removedByDependencies)
+        } else if (removedByDependencies) {
             removedByDependencies--;
+        }
 
         dependencyMap.remove(dependency);
     }
@@ -204,12 +206,12 @@ void KPluginSelector::Private::DependenciesWidget::clearDependencies()
 void KPluginSelector::Private::DependenciesWidget::showDependencyDetails()
 {
     QString message = i18n("Automatic changes have been performed in order to satisfy plugin dependencies:\n");
-    foreach(const QString &dependency, dependencyMap.keys())
-    {
-        if (dependencyMap[dependency].added)
+    foreach (const QString &dependency, dependencyMap.keys()) {
+        if (dependencyMap[dependency].added) {
             message += i18n("\n    %1 plugin has been automatically checked because of the dependency of %2 plugin", dependency, dependencyMap[dependency].pluginCausant);
-        else
+        } else {
             message += i18n("\n    %1 plugin has been automatically unchecked because of its dependency on %2 plugin", dependency, dependencyMap[dependency].pluginCausant);
+        }
     }
     KMessageBox::information(this, message, i18n("Dependency Check"));
 
@@ -220,32 +222,32 @@ void KPluginSelector::Private::DependenciesWidget::showDependencyDetails()
 
 void KPluginSelector::Private::DependenciesWidget::updateDetails()
 {
-    if (!dependencyMap.count())
-    {
+    if (!dependencyMap.count()) {
         setVisible(false);
         return;
     }
 
     QString message;
 
-    if (addedByDependencies)
+    if (addedByDependencies) {
         message += i18np("%1 plugin automatically added due to plugin dependencies", "%1 plugins automatically added due to plugin dependencies", addedByDependencies);
+    }
 
-    if (removedByDependencies && !message.isEmpty())
+    if (removedByDependencies && !message.isEmpty()) {
         message += i18n(", ");
+    }
 
-    if (removedByDependencies)
+    if (removedByDependencies) {
         message += i18np("%1 plugin automatically removed due to plugin dependencies", "%1 plugins automatically removed due to plugin dependencies", removedByDependencies);
+    }
 
-    if (message.isEmpty())
+    if (message.isEmpty()) {
         details->setVisible(false);
-    else
-    {
+    } else {
         details->setVisible(true);
         details->setText(message);
     }
 }
-
 
 KPluginSelector::KPluginSelector(QWidget *parent)
     : QWidget(parent)
@@ -301,7 +303,7 @@ void KPluginSelector::addPlugins(const QString &componentName,
 {
     QStringList desktopFileNames;
     const QStringList dirs = QStandardPaths::locateAll(QStandardPaths::GenericDataLocation, componentName + QStringLiteral("/kpartplugins"), QStandardPaths::LocateDirectory);
-    Q_FOREACH(const QString& dir, dirs) {
+    Q_FOREACH (const QString &dir, dirs) {
         QDirIterator it(dir, QStringList() << QStringLiteral("*.desktop"), QDir::NoFilter, QDirIterator::Subdirectories);
         while (it.hasNext()) {
             desktopFileNames.append(it.next());
@@ -310,12 +312,14 @@ void KPluginSelector::addPlugins(const QString &componentName,
 
     QList<KPluginInfo> pluginInfoList = KPluginInfo::fromFiles(desktopFileNames);
 
-    if (pluginInfoList.isEmpty())
+    if (pluginInfoList.isEmpty()) {
         return;
+    }
 
     Q_ASSERT(config);
-    if (!config)
+    if (!config) {
         config = KSharedConfig::openConfig(componentName);
+    }
 
     KConfigGroup cfgGroup(config, "KParts Plugins");
     // qDebug() << "cfgGroup = " << &cfgGroup;
@@ -330,8 +334,9 @@ void KPluginSelector::addPlugins(const QList<KPluginInfo> &pluginInfoList,
                                  const QString &categoryKey,
                                  const KSharedConfig::Ptr &config)
 {
-    if (pluginInfoList.isEmpty())
+    if (pluginInfoList.isEmpty()) {
         return;
+    }
 
     KConfigGroup cfgGroup(config ? config : KSharedConfig::openConfig(), "Plugins");
     // qDebug() << "cfgGroup = " << &cfgGroup;
@@ -344,7 +349,7 @@ void KPluginSelector::load()
 {
     for (int i = 0; i < d->pluginModel->rowCount(); i++) {
         const QModelIndex index = d->pluginModel->index(i, 0);
-        PluginEntry *pluginEntry = static_cast<PluginEntry*>(index.internalPointer());
+        PluginEntry *pluginEntry = static_cast<PluginEntry *>(index.internalPointer());
         pluginEntry->pluginInfo.load(pluginEntry->cfgGroup);
         d->pluginModel->setData(index, pluginEntry->pluginInfo.isPluginEnabled(), Qt::CheckStateRole);
     }
@@ -356,7 +361,7 @@ void KPluginSelector::save()
 {
     for (int i = 0; i < d->pluginModel->rowCount(); i++) {
         const QModelIndex index = d->pluginModel->index(i, 0);
-        PluginEntry *pluginEntry = static_cast<PluginEntry*>(index.internalPointer());
+        PluginEntry *pluginEntry = static_cast<PluginEntry *>(index.internalPointer());
         pluginEntry->pluginInfo.setPluginEnabled(pluginEntry->checked);
         pluginEntry->pluginInfo.save(pluginEntry->cfgGroup);
         pluginEntry->cfgGroup.sync();
@@ -369,7 +374,7 @@ void KPluginSelector::defaults()
 {
     for (int i = 0; i < d->pluginModel->rowCount(); i++) {
         const QModelIndex index = d->pluginModel->index(i, 0);
-        PluginEntry *pluginEntry = static_cast<PluginEntry*>(index.internalPointer());
+        PluginEntry *pluginEntry = static_cast<PluginEntry *>(index.internalPointer());
         d->pluginModel->setData(index, pluginEntry->pluginInfo.isPluginEnabledByDefault(), Qt::CheckStateRole);
     }
 
@@ -380,7 +385,7 @@ bool KPluginSelector::isDefault() const
 {
     for (int i = 0; i < d->pluginModel->rowCount(); i++) {
         const QModelIndex index = d->pluginModel->index(i, 0);
-        PluginEntry *pluginEntry = static_cast<PluginEntry*>(index.internalPointer());
+        PluginEntry *pluginEntry = static_cast<PluginEntry *>(index.internalPointer());
         if (d->pluginModel->data(index, Qt::CheckStateRole).toBool() != pluginEntry->pluginInfo.isPluginEnabledByDefault()) {
             return false;
         }
@@ -393,7 +398,7 @@ void KPluginSelector::updatePluginsState()
 {
     for (int i = 0; i < d->pluginModel->rowCount(); i++) {
         const QModelIndex index = d->pluginModel->index(i, 0);
-        PluginEntry *pluginEntry = static_cast<PluginEntry*>(index.internalPointer());
+        PluginEntry *pluginEntry = static_cast<PluginEntry *>(index.internalPointer());
         if (pluginEntry->manuallyAdded) {
             pluginEntry->pluginInfo.setPluginEnabled(pluginEntry->checked);
         }
@@ -433,9 +438,9 @@ void KPluginSelector::Private::PluginModel::addPlugins(const QList<KPluginInfo> 
         pluginEntry.isCheckable = !pluginInfo.isValid() || !pluginEntry.cfgGroup.isEntryImmutable(pluginInfo.pluginName() + QLatin1String("Enabled"));
 
         if (!pluginEntryList.contains(pluginEntry) && !listToAdd.contains(pluginEntry) &&
-             (!pluginInfo.property(QStringLiteral("X-KDE-PluginInfo-Category")).isValid() ||
-              !pluginInfo.property(QStringLiteral("X-KDE-PluginInfo-Category")).toString().compare(categoryKey, Qt::CaseInsensitive)) &&
-            (!pluginInfo.service() || !pluginInfo.service()->noDisplay())) {
+                (!pluginInfo.property(QStringLiteral("X-KDE-PluginInfo-Category")).isValid() ||
+                 !pluginInfo.property(QStringLiteral("X-KDE-PluginInfo-Category")).toString().compare(categoryKey, Qt::CaseInsensitive)) &&
+                (!pluginInfo.service() || !pluginInfo.service()->noDisplay())) {
             listToAdd << pluginEntry;
 
             if (!pluginSelector_d->showIcons && !pluginInfo.icon().isEmpty()) {
@@ -453,15 +458,15 @@ void KPluginSelector::Private::PluginModel::addPlugins(const QList<KPluginInfo> 
 
 QList<KService::Ptr> KPluginSelector::Private::PluginModel::pluginServices(const QModelIndex &index) const
 {
-    return static_cast<PluginEntry*>(index.internalPointer())->pluginInfo.kcmServices();
+    return static_cast<PluginEntry *>(index.internalPointer())->pluginInfo.kcmServices();
 }
 
 QModelIndex KPluginSelector::Private::PluginModel::index(int row, int column, const QModelIndex &parent) const
 {
     Q_UNUSED(parent)
 
-    return createIndex(row, column, (row < pluginEntryList.count()) ? (void*) &pluginEntryList.at(row)
-                                                                    : 0);
+    return createIndex(row, column, (row < pluginEntryList.count()) ? (void *) &pluginEntryList.at(row)
+                       : 0);
 }
 
 QVariant KPluginSelector::Private::PluginModel::data(const QModelIndex &index, int role) const
@@ -470,42 +475,42 @@ QVariant KPluginSelector::Private::PluginModel::data(const QModelIndex &index, i
         return QVariant();
     }
 
-    PluginEntry *pluginEntry = static_cast<PluginEntry*>(index.internalPointer());
+    PluginEntry *pluginEntry = static_cast<PluginEntry *>(index.internalPointer());
 
     switch (role) {
-        case Qt::DisplayRole:
-            return pluginEntry->pluginInfo.name();
-        case PluginEntryRole:
-            return QVariant::fromValue(pluginEntry);
-        case ServicesCountRole:
-            return pluginEntry->pluginInfo.kcmServices().count();
-        case NameRole:
-            return pluginEntry->pluginInfo.name();
-        case CommentRole:
-            return pluginEntry->pluginInfo.comment();
-        case AuthorRole:
-            return pluginEntry->pluginInfo.author();
-        case EmailRole:
-            return pluginEntry->pluginInfo.email();
-        case WebsiteRole:
-            return pluginEntry->pluginInfo.website();
-        case VersionRole:
-            return pluginEntry->pluginInfo.version();
-        case LicenseRole:
-            return pluginEntry->pluginInfo.license();
-        case DependenciesRole:
-            return pluginEntry->pluginInfo.dependencies();
-        case IsCheckableRole:
-            return pluginEntry->isCheckable;
-        case Qt::DecorationRole:
-            return pluginEntry->pluginInfo.icon();
-        case Qt::CheckStateRole:
-            return pluginEntry->checked;
-        case KCategorizedSortFilterProxyModel::CategoryDisplayRole: // fall through
-        case KCategorizedSortFilterProxyModel::CategorySortRole:
-            return pluginEntry->category;
-        default:
-            return QVariant();
+    case Qt::DisplayRole:
+        return pluginEntry->pluginInfo.name();
+    case PluginEntryRole:
+        return QVariant::fromValue(pluginEntry);
+    case ServicesCountRole:
+        return pluginEntry->pluginInfo.kcmServices().count();
+    case NameRole:
+        return pluginEntry->pluginInfo.name();
+    case CommentRole:
+        return pluginEntry->pluginInfo.comment();
+    case AuthorRole:
+        return pluginEntry->pluginInfo.author();
+    case EmailRole:
+        return pluginEntry->pluginInfo.email();
+    case WebsiteRole:
+        return pluginEntry->pluginInfo.website();
+    case VersionRole:
+        return pluginEntry->pluginInfo.version();
+    case LicenseRole:
+        return pluginEntry->pluginInfo.license();
+    case DependenciesRole:
+        return pluginEntry->pluginInfo.dependencies();
+    case IsCheckableRole:
+        return pluginEntry->isCheckable;
+    case Qt::DecorationRole:
+        return pluginEntry->pluginInfo.icon();
+    case Qt::CheckStateRole:
+        return pluginEntry->checked;
+    case KCategorizedSortFilterProxyModel::CategoryDisplayRole: // fall through
+    case KCategorizedSortFilterProxyModel::CategorySortRole:
+        return pluginEntry->category;
+    default:
+        return QVariant();
     }
 }
 
@@ -518,7 +523,7 @@ bool KPluginSelector::Private::PluginModel::setData(const QModelIndex &index, co
     bool ret = false;
 
     if (role == Qt::CheckStateRole) {
-        static_cast<PluginEntry*>(index.internalPointer())->checked = value.toBool();
+        static_cast<PluginEntry *>(index.internalPointer())->checked = value.toBool();
         ret = true;
     }
 
@@ -555,7 +560,7 @@ bool KPluginSelector::Private::ProxyModel::filterAcceptsRow(int sourceRow, const
 
     if (!pluginSelector_d->lineEdit->text().isEmpty()) {
         const QModelIndex index = sourceModel()->index(sourceRow, 0);
-        const KPluginInfo pluginInfo = static_cast<PluginEntry*>(index.internalPointer())->pluginInfo;
+        const KPluginInfo pluginInfo = static_cast<PluginEntry *>(index.internalPointer())->pluginInfo;
         return pluginInfo.name().contains(pluginSelector_d->lineEdit->text(), Qt::CaseInsensitive) ||
                pluginInfo.comment().contains(pluginSelector_d->lineEdit->text(), Qt::CaseInsensitive);
     }
@@ -565,7 +570,7 @@ bool KPluginSelector::Private::ProxyModel::filterAcceptsRow(int sourceRow, const
 
 bool KPluginSelector::Private::ProxyModel::subSortLessThan(const QModelIndex &left, const QModelIndex &right) const
 {
-    return static_cast<PluginEntry*>(left.internalPointer())->pluginInfo.name().compare(static_cast<PluginEntry*>(right.internalPointer())->pluginInfo.name(), Qt::CaseInsensitive) < 0;
+    return static_cast<PluginEntry *>(left.internalPointer())->pluginInfo.name().compare(static_cast<PluginEntry *>(right.internalPointer())->pluginInfo.name(), Qt::CaseInsensitive) < 0;
 }
 
 KPluginSelector::Private::PluginDelegate::PluginDelegate(KPluginSelector::Private *pluginSelector_d, QObject *parent)
@@ -599,7 +604,7 @@ void KPluginSelector::Private::PluginDelegate::paint(QPainter *painter, const QS
     int iconSize = option.rect.height() - MARGIN * 2;
     if (pluginSelector_d->showIcons) {
         QPixmap pixmap = KIconLoader::global()->loadIcon(index.model()->data(index, Qt::DecorationRole).toString(),
-                                                         KIconLoader::Desktop, iconSize, disabled ? KIconLoader::DisabledState : KIconLoader::DefaultState);
+                         KIconLoader::Desktop, iconSize, disabled ? KIconLoader::DisabledState : KIconLoader::DefaultState);
 
         painter->drawPixmap(QRect(pluginSelector_d->dependantLayoutValue(MARGIN + option.rect.left() + xOffset, iconSize, option.rect.width()), MARGIN + option.rect.top(), iconSize, iconSize), pixmap, QRect(0, 0, iconSize, iconSize));
     } else {
@@ -661,14 +666,14 @@ QSize KPluginSelector::Private::PluginDelegate::sizeHint(const QStyleOptionViewI
 
     return QSize(qMax(fmTitle.width(index.model()->data(index, Qt::DisplayRole).toString()),
                       option.fontMetrics.width(index.model()->data(index, CommentRole).toString())) +
-                      (pluginSelector_d->showIcons ? KIconLoader::SizeMedium : 0) + MARGIN * i + pushButton->sizeHint().width() * j,
+                 (pluginSelector_d->showIcons ? KIconLoader::SizeMedium : 0) + MARGIN * i + pushButton->sizeHint().width() * j,
                  qMax(KIconLoader::SizeMedium + MARGIN * 2, fmTitle.height() + option.fontMetrics.height() + MARGIN * 2));
 }
 
-QList<QWidget*> KPluginSelector::Private::PluginDelegate::createItemWidgets(const QModelIndex &index) const
+QList<QWidget *> KPluginSelector::Private::PluginDelegate::createItemWidgets(const QModelIndex &index) const
 {
     Q_UNUSED(index);
-    QList<QWidget*> widgetList;
+    QList<QWidget *> widgetList;
 
     QCheckBox *enabledCheckBox = new QCheckBox;
     connect(enabledCheckBox, SIGNAL(clicked(bool)), this, SLOT(slotStateChanged(bool)));
@@ -683,36 +688,36 @@ QList<QWidget*> KPluginSelector::Private::PluginDelegate::createItemWidgets(cons
     connect(configurePushButton, SIGNAL(clicked(bool)), this, SLOT(slotConfigureClicked()));
 
     setBlockedEventTypes(enabledCheckBox, QList<QEvent::Type>() << QEvent::MouseButtonPress
-                            << QEvent::MouseButtonRelease << QEvent::MouseButtonDblClick
-                            << QEvent::KeyPress << QEvent::KeyRelease);
+                         << QEvent::MouseButtonRelease << QEvent::MouseButtonDblClick
+                         << QEvent::KeyPress << QEvent::KeyRelease);
 
     setBlockedEventTypes(aboutPushButton, QList<QEvent::Type>() << QEvent::MouseButtonPress
-                            << QEvent::MouseButtonRelease << QEvent::MouseButtonDblClick
-                            << QEvent::KeyPress << QEvent::KeyRelease);
+                         << QEvent::MouseButtonRelease << QEvent::MouseButtonDblClick
+                         << QEvent::KeyPress << QEvent::KeyRelease);
 
     setBlockedEventTypes(configurePushButton, QList<QEvent::Type>() << QEvent::MouseButtonPress
-                            << QEvent::MouseButtonRelease << QEvent::MouseButtonDblClick
-                            << QEvent::KeyPress << QEvent::KeyRelease);
+                         << QEvent::MouseButtonRelease << QEvent::MouseButtonDblClick
+                         << QEvent::KeyPress << QEvent::KeyRelease);
 
     widgetList << enabledCheckBox << configurePushButton << aboutPushButton;
 
     return widgetList;
 }
 
-void KPluginSelector::Private::PluginDelegate::updateItemWidgets(const QList<QWidget*> widgets,
-                                                                 const QStyleOptionViewItem &option,
-                                                                 const QPersistentModelIndex &index) const
+void KPluginSelector::Private::PluginDelegate::updateItemWidgets(const QList<QWidget *> widgets,
+        const QStyleOptionViewItem &option,
+        const QPersistentModelIndex &index) const
 {
-    QCheckBox *checkBox = static_cast<QCheckBox*>(widgets[0]);
+    QCheckBox *checkBox = static_cast<QCheckBox *>(widgets[0]);
     checkBox->resize(checkBox->sizeHint());
     checkBox->move(pluginSelector_d->dependantLayoutValue(MARGIN, checkBox->sizeHint().width(), option.rect.width()), option.rect.height() / 2 - checkBox->sizeHint().height() / 2);
 
-    QPushButton *aboutPushButton = static_cast<QPushButton*>(widgets[2]);
+    QPushButton *aboutPushButton = static_cast<QPushButton *>(widgets[2]);
     QSize aboutPushButtonSizeHint = aboutPushButton->sizeHint();
     aboutPushButton->resize(aboutPushButtonSizeHint);
     aboutPushButton->move(pluginSelector_d->dependantLayoutValue(option.rect.width() - MARGIN - aboutPushButtonSizeHint.width(), aboutPushButtonSizeHint.width(), option.rect.width()), option.rect.height() / 2 - aboutPushButtonSizeHint.height() / 2);
 
-    QPushButton *configurePushButton = static_cast<QPushButton*>(widgets[1]);
+    QPushButton *configurePushButton = static_cast<QPushButton *>(widgets[1]);
     QSize configurePushButtonSizeHint = configurePushButton->sizeHint();
     configurePushButton->resize(configurePushButtonSizeHint);
     configurePushButton->move(pluginSelector_d->dependantLayoutValue(option.rect.width() - MARGIN * 2 - configurePushButtonSizeHint.width() - aboutPushButtonSizeHint.width(), configurePushButtonSizeHint.width(), option.rect.width()), option.rect.height() / 2 - configurePushButtonSizeHint.height() / 2);
@@ -731,17 +736,18 @@ void KPluginSelector::Private::PluginDelegate::updateItemWidgets(const QList<QWi
 
 void KPluginSelector::Private::PluginDelegate::slotStateChanged(bool state)
 {
-    if (!focusedIndex().isValid())
+    if (!focusedIndex().isValid()) {
         return;
+    }
 
     const QModelIndex index = focusedIndex();
 
     pluginSelector_d->dependenciesWidget->clearDependencies();
 
-    PluginEntry *pluginEntry = index.model()->data(index, PluginEntryRole).value<PluginEntry*>();
+    PluginEntry *pluginEntry = index.model()->data(index, PluginEntryRole).value<PluginEntry *>();
     pluginSelector_d->updateDependencies(pluginEntry, state);
 
-    const_cast<QAbstractItemModel*>(index.model())->setData(index, state, Qt::CheckStateRole);
+    const_cast<QAbstractItemModel *>(index.model())->setData(index, state, Qt::CheckStateRole);
 }
 
 void KPluginSelector::Private::PluginDelegate::emitChanged()
@@ -758,7 +764,7 @@ void KPluginSelector::Private::PluginDelegate::slotAboutClicked()
     // If there is no valid information, go and fetch it from the service itself (the .desktop
     // file).
 
-    PluginEntry *entry = index.model()->data(index, PluginEntryRole).value<PluginEntry*>();
+    PluginEntry *entry = index.model()->data(index, PluginEntryRole).value<PluginEntry *>();
     KService::Ptr entryService = entry->pluginInfo.service();
     if (entryService) {
         KPluginLoader loader(*entryService);
@@ -787,7 +793,7 @@ void KPluginSelector::Private::PluginDelegate::slotAboutClicked()
     const QStringList authors = author.split(QLatin1Char(','));
     const QStringList emails = email.split(QLatin1Char(','));
     if (authors.count() == emails.count()) {
-	int i = 0;
+        int i = 0;
         foreach (const QString &author, authors) {
             if (!author.isEmpty()) {
                 aboutData.addAuthor(author, QString(), emails[i]);
@@ -805,7 +811,7 @@ void KPluginSelector::Private::PluginDelegate::slotConfigureClicked()
     const QModelIndex index = focusedIndex();
     const QAbstractItemModel *model = index.model();
 
-    PluginEntry *pluginEntry = model->data(index, PluginEntryRole).value<PluginEntry*>();
+    PluginEntry *pluginEntry = model->data(index, PluginEntryRole).value<PluginEntry *>();
     KPluginInfo pluginInfo = pluginEntry->pluginInfo;
 
     QDialog configDialog(itemView());
@@ -814,13 +820,13 @@ void KPluginSelector::Private::PluginDelegate::slotConfigureClicked()
     QTabWidget *newTabWidget = 0;
     // Widget to use for the setting dialog's main widget,
     // either a QTabWidget or a KCModuleProxy
-    QWidget * mainWidget = 0;
+    QWidget *mainWidget = 0;
     // Widget to use as the KCModuleProxy's parent.
     // The first proxy is owned by the dialog itself
     QWidget *moduleProxyParentWidget = &configDialog;
 
     foreach (const KService::Ptr &servicePtr, pluginInfo.kcmServices()) {
-        if(!servicePtr->noDisplay()) {
+        if (!servicePtr->noDisplay()) {
             KCModuleInfo moduleInfo(servicePtr);
             KCModuleProxy *currentModuleProxy = new KCModuleProxy(moduleInfo, moduleProxyParentWidget);
             if (currentModuleProxy->realModule()) {
@@ -831,8 +837,8 @@ void KPluginSelector::Private::PluginDelegate::slotConfigureClicked()
                     // proxies are in the tab widget
                     newTabWidget = new QTabWidget(&configDialog);
                     moduleProxyParentWidget = newTabWidget;
-                    mainWidget->setParent( newTabWidget );
-                    KCModuleProxy *moduleProxy = qobject_cast<KCModuleProxy*>(mainWidget);
+                    mainWidget->setParent(newTabWidget);
+                    KCModuleProxy *moduleProxy = qobject_cast<KCModuleProxy *>(mainWidget);
                     if (moduleProxy) {
                         newTabWidget->addTab(mainWidget, moduleProxy->moduleInfo().moduleName());
                         mainWidget = newTabWidget;

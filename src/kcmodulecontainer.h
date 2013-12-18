@@ -48,99 +48,99 @@ class KCModuleProxy;
  */
 class KCMUTILS_EXPORT KCModuleContainer : public KCModule
 {
-	Q_OBJECT
-	public:
-		/**
-		 * Creates a KCModuleContainer with tabs, each one containing one of the
-		 * specified modules in @p mods.
-		 *
-                 * @param parent the parent QWidget.
-		 * @param mods The list of KCModules to be loaded. The name of each
-		 * KCModule is its service name, that is the name of the desktop file without
-		 * the ".desktop" part
-		 *
-		 */
-		KCModuleContainer( QWidget* parent, const QStringList& mods );
+    Q_OBJECT
+public:
+    /**
+     * Creates a KCModuleContainer with tabs, each one containing one of the
+     * specified modules in @p mods.
+     *
+             * @param parent the parent QWidget.
+     * @param mods The list of KCModules to be loaded. The name of each
+     * KCModule is its service name, that is the name of the desktop file without
+     * the ".desktop" part
+     *
+     */
+    KCModuleContainer(QWidget *parent, const QStringList &mods);
 
-		/**
-		 * This is a convenience function, instead of building a QStringList you
-		 * can specify the modules in a comma separated QString. For example;
-		 * \code
-		 * KCModuleContainer* cont = KCModuleContainer( this, "kcm_misc", QString("kcm_energy, kcm_keyboard ,kcm_useraccount, kcm_mouse") );
-		 * \endcode
-		 * The other constructor takes its modules in a QStringlist which also can be constructed from a
-		 * string and thus you will have to be explicit on the data type.
-		 *
-		 * What you probably want is the KCMODULECONTAINER macro which builds an KCModule
-		 * for you, taking the modules you want as argument.
-		 *
-		 * @param parent The parent widget
-		 * @param mods The modules to load
-		 * @return The KCModule containing the requested modules.
-		 */
-		explicit KCModuleContainer( QWidget *parent, const QString& mods = QString() );
+    /**
+     * This is a convenience function, instead of building a QStringList you
+     * can specify the modules in a comma separated QString. For example;
+     * \code
+     * KCModuleContainer* cont = KCModuleContainer( this, "kcm_misc", QString("kcm_energy, kcm_keyboard ,kcm_useraccount, kcm_mouse") );
+     * \endcode
+     * The other constructor takes its modules in a QStringlist which also can be constructed from a
+     * string and thus you will have to be explicit on the data type.
+     *
+     * What you probably want is the KCMODULECONTAINER macro which builds an KCModule
+     * for you, taking the modules you want as argument.
+     *
+     * @param parent The parent widget
+     * @param mods The modules to load
+     * @return The KCModule containing the requested modules.
+     */
+    explicit KCModuleContainer(QWidget *parent, const QString &mods = QString());
 
-		/**
-		 * Adds the specified module to the tab widget. Setting the tab icon, text,
-		 * tool tip, connecting the signals is what it does.
-		 *
-		 * @param module the name of the module to add. The name is the desktop file's name
-		 * without the ".desktop" part.
-		 */
-		void addModule( const QString& module );
+    /**
+     * Adds the specified module to the tab widget. Setting the tab icon, text,
+     * tool tip, connecting the signals is what it does.
+     *
+     * @param module the name of the module to add. The name is the desktop file's name
+     * without the ".desktop" part.
+     */
+    void addModule(const QString &module);
 
-		/**
-		 * Default destructor.
-		 */
-		virtual ~KCModuleContainer();
+    /**
+     * Default destructor.
+     */
+    virtual ~KCModuleContainer();
 
-		/**
-		 * Reimplemented for internal purposes.
-		 * @internal
-		 */
-		void save();
+    /**
+     * Reimplemented for internal purposes.
+     * @internal
+     */
+    void save();
 
-		/**
-		 * Reimplemented for internal purposes.
-		 * @internal
-		 */
-		void load();
+    /**
+     * Reimplemented for internal purposes.
+     * @internal
+     */
+    void load();
 
-		/**
-		 * Reimplemented for internal purposes.
-		 * @internal
-		 */
-		void defaults();
+    /**
+     * Reimplemented for internal purposes.
+     * @internal
+     */
+    void defaults();
 
-	protected:
-		typedef QList<KCModuleProxy*> ModuleList;
+protected:
+    typedef QList<KCModuleProxy *> ModuleList;
 
-		/**
-		 * A list containing KCModuleProxy objects which
-		 * have changed and must be saved.
-		 */
-		ModuleList changedModules;
+    /**
+     * A list containing KCModuleProxy objects which
+     * have changed and must be saved.
+     */
+    ModuleList changedModules;
 
-		/**
-		 * A list of all modules which are encapsulated.
-		 */
-		ModuleList allModules; // KDE 4 put in the Private class and abstract with getter
+    /**
+     * A list of all modules which are encapsulated.
+     */
+    ModuleList allModules; // KDE 4 put in the Private class and abstract with getter
 
-	private Q_SLOTS:
+private Q_SLOTS:
 
-		/**
-		 * Enables/disables the Admin Mode button, as appropriate.
-		 */
-		void tabSwitched(int);
+    /**
+     * Enables/disables the Admin Mode button, as appropriate.
+     */
+    void tabSwitched(int);
 
-		void moduleChanged(KCModuleProxy *proxy);
+    void moduleChanged(KCModuleProxy *proxy);
 
-	private:
+private:
 
-		void init();
+    void init();
 
-		class KCModuleContainerPrivate;
-		KCModuleContainerPrivate* const d;
+    class KCModuleContainerPrivate;
+    KCModuleContainerPrivate *const d;
 
 };
 
@@ -160,18 +160,17 @@ class KCMUTILS_EXPORT KCModuleContainer : public KCModule
  * @param factoryName what factory name the module should have
  */
 #define KCMODULECONTAINER(modules, factoryName) \
-class KCModuleContainer##factoryName : public KCModuleContainer \
-{ \
+    class KCModuleContainer##factoryName : public KCModuleContainer \
+    { \
     public: \
         KCModuleContainer##factoryName(QWidget *parent, const QVariantList &) \
             : KCModuleContainer(parent, QLatin1String(modules)) \
         { \
         } \
-}; \
-K_PLUGIN_FACTORY(KCModuleContainer##factoryName##Factory, \
-         registerPlugin<KCModuleContainer#factoryName>(); \
-                )
+    }; \
+    K_PLUGIN_FACTORY(KCModuleContainer##factoryName##Factory, \
+                     registerPlugin<KCModuleContainer#factoryName>(); \
+                    )
 
 #endif // KCMODULECONTAINER_H
-
 

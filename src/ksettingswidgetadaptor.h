@@ -28,13 +28,13 @@ class QString;
  */
 class KSettingsWidgetAdaptor: public QObject
 {
-	Q_OBJECT
-	Q_CLASSINFO("D-Bus Interface", "org.kde.internal.KSettingsWidget")
-	public:
-		KSettingsWidgetAdaptor(QObject *parent);
+    Q_OBJECT
+    Q_CLASSINFO("D-Bus Interface", "org.kde.internal.KSettingsWidget")
+public:
+    KSettingsWidgetAdaptor(QObject *parent);
 
-	public Q_SLOTS:
-		QString applicationName();
+public Q_SLOTS:
+    QString applicationName();
 };
 
 #endif // KSETTINGSWIDGETADAPTOR_H

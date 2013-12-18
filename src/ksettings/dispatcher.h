@@ -41,45 +41,45 @@ namespace KSettings
  */
 namespace Dispatcher
 {
-    /**
-     * Register a slot to be called when the configuration for the componentData
-     * has changed. @p componentName is the string that is passed to KPluginFactory (if it is used).
-     * You can query it with MyPluginFactory::componentName(), or from a KAboutData.
-     * componentName is also the same name that is put into the
-     * .desktop file of the KCMs for the X-KDE-ParentComponents.
-     *
-     * @param componentName     The name of the component
-     * @param recv         The object that should receive the signal
-     * @param slot         The slot to be called: "slotName"
-     */
-    KCMUTILS_EXPORT void registerComponent(const QString &componentName, QObject *recv, const char *slot);
+/**
+ * Register a slot to be called when the configuration for the componentData
+ * has changed. @p componentName is the string that is passed to KPluginFactory (if it is used).
+ * You can query it with MyPluginFactory::componentName(), or from a KAboutData.
+ * componentName is also the same name that is put into the
+ * .desktop file of the KCMs for the X-KDE-ParentComponents.
+ *
+ * @param componentName     The name of the component
+ * @param recv         The object that should receive the signal
+ * @param slot         The slot to be called: "slotName"
+ */
+KCMUTILS_EXPORT void registerComponent(const QString &componentName, QObject *recv, const char *slot);
 
-    /**
-     * @return the KConfig object that belongs to the componentName
-     */
-    KCMUTILS_EXPORT KSharedConfig::Ptr configForComponentName(const QString &componentName);
+/**
+ * @return the KConfig object that belongs to the componentName
+ */
+KCMUTILS_EXPORT KSharedConfig::Ptr configForComponentName(const QString &componentName);
 
-    /**
-     * @return a list of all the componentData names that are currently
-     * registered
-     */
-    KCMUTILS_EXPORT QList<QString> componentNames();
+/**
+ * @return a list of all the componentData names that are currently
+ * registered
+ */
+KCMUTILS_EXPORT QList<QString> componentNames();
 
-    /**
-     * Call this function when the configuration belonging to the associated
-     * componentData name has changed. The registered slot will be called.
-     *
-     * @param componentName The value of X-KDE-ParentComponents.
-     */
-    KCMUTILS_EXPORT void reparseConfiguration(const QString &componentName);
+/**
+ * Call this function when the configuration belonging to the associated
+ * componentData name has changed. The registered slot will be called.
+ *
+ * @param componentName The value of X-KDE-ParentComponents.
+ */
+KCMUTILS_EXPORT void reparseConfiguration(const QString &componentName);
 
-    /**
-     * When this function is called the KConfig objects of all the registered
-     * instances are sync()ed. This is useful when some other KConfig
-     * objects will read/write from/to the same config file, so that you
-     * can first write out the current state of the KConfig objects.
-     */
-    KCMUTILS_EXPORT void syncConfiguration();
+/**
+ * When this function is called the KConfig objects of all the registered
+ * instances are sync()ed. This is useful when some other KConfig
+ * objects will read/write from/to the same config file, so that you
+ * can first write out the current state of the KConfig objects.
+ */
+KCMUTILS_EXPORT void syncConfiguration();
 } // namespace Dispatcher
 
 }

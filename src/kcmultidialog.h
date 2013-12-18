@@ -36,22 +36,21 @@ class KCMultiDialogPrivate;
  */
 class KCMUTILS_EXPORT KCMultiDialog : public KPageDialog
 {
-  Q_OBJECT
+    Q_OBJECT
     Q_DECLARE_PRIVATE(KCMultiDialog)
 
-  public:
+public:
     /**
      * Constructs a new KCMultiDialog
      *
      * @param parent The parent widget
      **/
-    KCMultiDialog( QWidget *parent = 0 );
-
+    KCMultiDialog(QWidget *parent = 0);
 
     /**
      * Destructor
      **/
-   virtual ~KCMultiDialog();
+    virtual ~KCMultiDialog();
 
     /**
      * Add a module.
@@ -66,8 +65,8 @@ class KCMUTILS_EXPORT KCMultiDialog : public KPageDialog
      *
      * @returns The @see KPageWidgetItem associated with the new dialog page.
      **/
-    KPageWidgetItem* addModule( const QString& module, const QStringList&
-                                args = QStringList() );
+    KPageWidgetItem *addModule(const QString &module, const QStringList &
+                               args = QStringList());
 
     /**
      * Add a module.
@@ -84,15 +83,15 @@ class KCMUTILS_EXPORT KCMultiDialog : public KPageDialog
      *
      * @param args The arguments that should be given to the KCModule when it is created
      **/
-    KPageWidgetItem* addModule( const KCModuleInfo& moduleinfo, KPageWidgetItem *parent = 0,
-                                const QStringList& args = QStringList() );
+    KPageWidgetItem *addModule(const KCModuleInfo &moduleinfo, KPageWidgetItem *parent = 0,
+                               const QStringList &args = QStringList());
 
     /**
      * Removes all modules from the dialog.
      */
     void clear();
 
-  Q_SIGNALS:
+Q_SIGNALS:
     /**
      * Emitted after all KCModules have been told to save their configuration.
      *
@@ -116,18 +115,18 @@ class KCMUTILS_EXPORT KCMultiDialog : public KPageDialog
      * @param componentName The name of the instance that needs to reload its
      *                     configuration.
      */
-    void configCommitted( const QByteArray & componentName );
+    void configCommitted(const QByteArray &componentName);
 
-  protected:
+protected:
     /**
      * This constructor can be used by subclasses to provide a custom KPageWidget.
      */
     KCMultiDialog(KPageWidget *pageWidget, QWidget *parent, Qt::WindowFlags flags = 0);
     KCMultiDialog(KCMultiDialogPrivate &dd, KPageWidget *pageWidget, QWidget *parent, Qt::WindowFlags flags = 0);
 
-    KCMultiDialogPrivate * const d_ptr;
+    KCMultiDialogPrivate *const d_ptr;
 
-  protected Q_SLOTS:
+protected Q_SLOTS:
     /**
      * This slot is called when the user presses the "Default" Button.
      * You can reimplement it if needed.
@@ -172,11 +171,11 @@ class KCMUTILS_EXPORT KCMultiDialog : public KPageDialog
      **/
     void slotHelpClicked();
 
-    private:
-        Q_PRIVATE_SLOT(d_func(), void _k_slotCurrentPageChanged(KPageWidgetItem *, KPageWidgetItem *))
-        Q_PRIVATE_SLOT(d_func(), void _k_clientChanged())
-        Q_PRIVATE_SLOT(d_func(), void _k_dialogClosed())
-        Q_PRIVATE_SLOT(d_func(), void _k_updateHeader(bool use, const QString &message))
+private:
+    Q_PRIVATE_SLOT(d_func(), void _k_slotCurrentPageChanged(KPageWidgetItem *, KPageWidgetItem *))
+    Q_PRIVATE_SLOT(d_func(), void _k_clientChanged())
+    Q_PRIVATE_SLOT(d_func(), void _k_dialogClosed())
+    Q_PRIVATE_SLOT(d_func(), void _k_updateHeader(bool use, const QString &message))
 };
 
 #endif

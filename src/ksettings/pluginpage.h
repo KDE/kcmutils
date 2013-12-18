@@ -27,7 +27,7 @@ class KPluginSelector;
 
 namespace KSettings
 {
-    class PluginPagePrivate;
+class PluginPagePrivate;
 
 /**
  * @short Convenience KCModule for creating a plugins config page.
@@ -72,42 +72,42 @@ class KCMUTILS_EXPORT PluginPage : public KCModule
 {
     Q_OBJECT
     Q_DECLARE_PRIVATE(PluginPage)
-    public:
-        /**
-         * Standard KCModule constructor.
-         * Automatically creates the KPluginSelector widget.
-         */
-        explicit PluginPage( const KAboutData *aboutData,
-                             QWidget *parent = 0,
-                             const QVariantList &args = QVariantList() );
+public:
+    /**
+     * Standard KCModule constructor.
+     * Automatically creates the KPluginSelector widget.
+     */
+    explicit PluginPage(const KAboutData *aboutData,
+                        QWidget *parent = 0,
+                        const QVariantList &args = QVariantList());
 
-        ~PluginPage();
+    ~PluginPage();
 
-        /**
-         * @return a reference to the KPluginSelector.
-         */
-        KPluginSelector * pluginSelector();
+    /**
+     * @return a reference to the KPluginSelector.
+     */
+    KPluginSelector *pluginSelector();
 
-        /**
-         * Load the state of the plugins (selected or not) from the KPluginInfo
-         * objects. For KParts plugins everything should work automatically. For
-         * your own type of plugins you might need to reimplement the
-         * KPluginInfo::pluginLoaded() method. If that doesn't fit your needs
-         * you can also reimplement this method.
-         */
-        virtual void load();
+    /**
+     * Load the state of the plugins (selected or not) from the KPluginInfo
+     * objects. For KParts plugins everything should work automatically. For
+     * your own type of plugins you might need to reimplement the
+     * KPluginInfo::pluginLoaded() method. If that doesn't fit your needs
+     * you can also reimplement this method.
+     */
+    virtual void load();
 
-        /**
-         * Save the state of the plugins to KConfig objects
-         */
-        virtual void save();
-        virtual void defaults();
+    /**
+     * Save the state of the plugins to KConfig objects
+     */
+    virtual void save();
+    virtual void defaults();
 
-    protected:
-        PluginPagePrivate *const d_ptr;
+protected:
+    PluginPagePrivate *const d_ptr;
 
-    private:
-        Q_PRIVATE_SLOT(d_func(), void _k_reparseConfiguration(const QByteArray &a))
+private:
+    Q_PRIVATE_SLOT(d_func(), void _k_reparseConfiguration(const QByteArray &a))
 };
 
 }

@@ -25,7 +25,6 @@
 #include <QtCore/QMap>
 #include <QtCore/QObject>
 
-
 namespace KSettings
 {
 namespace Dispatcher
@@ -34,7 +33,7 @@ namespace Dispatcher
 class ComponentInfo
 {
 public:
-    typedef QPair<QObject*, const char*> Slot;
+    typedef QPair<QObject *, const char *> Slot;
     QList<Slot> slotList;
     int count;
 
@@ -44,12 +43,12 @@ public:
 class DispatcherPrivate : public QObject
 {
     Q_OBJECT
-    public:
-        QMap<QString, ComponentInfo> m_componentInfo;
-        QMap<QObject *, QString> m_componentName;
+public:
+    QMap<QString, ComponentInfo> m_componentInfo;
+    QMap<QObject *, QString> m_componentName;
 
-    public Q_SLOTS:
-        void unregisterComponent(QObject *);
+public Q_SLOTS:
+    void unregisterComponent(QObject *);
 };
 
 } // namespace Dispatcher

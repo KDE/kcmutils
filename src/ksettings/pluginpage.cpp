@@ -30,23 +30,23 @@ namespace KSettings
 
 class PluginPagePrivate
 {
-    public:
-        PluginPagePrivate()
-            : selwid( 0 )
-        {
-        }
+public:
+    PluginPagePrivate()
+        : selwid(0)
+    {
+    }
 
-        KPluginSelector * selwid;
-        void _k_reparseConfiguration(const QByteArray &a);
+    KPluginSelector *selwid;
+    void _k_reparseConfiguration(const QByteArray &a);
 };
 
 PluginPage::PluginPage(const KAboutData *aboutData, QWidget *parent, const QVariantList &args)
     : KCModule(aboutData, parent, args),
-    d_ptr(new PluginPagePrivate)
+      d_ptr(new PluginPagePrivate)
 {
     Q_D(PluginPage);
-    d->selwid = new KPluginSelector( this );
-    connect( d->selwid, SIGNAL(changed(bool)), this, SIGNAL(changed(bool)) );
+    d->selwid = new KPluginSelector(this);
+    connect(d->selwid, SIGNAL(changed(bool)), this, SIGNAL(changed(bool)));
     connect(d->selwid, SIGNAL(configCommitted(QByteArray)), this,
             SLOT(_k_reparseConfiguration(QByteArray)));
 }
@@ -61,7 +61,7 @@ PluginPage::~PluginPage()
     delete d_ptr;
 }
 
-KPluginSelector * PluginPage::pluginSelector()
+KPluginSelector *PluginPage::pluginSelector()
 {
     return d_ptr->selwid;
 }

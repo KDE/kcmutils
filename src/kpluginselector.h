@@ -30,7 +30,6 @@
 
 class KPluginInfo;
 
-
 /**
   * @short A widget to select what plugins to load and configure the plugins.
   *
@@ -215,7 +214,7 @@ Q_SIGNALS:
 
 private:
     class Private;
-    Private * const d;
+    Private *const d;
 };
 
 #endif

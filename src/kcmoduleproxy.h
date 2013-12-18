@@ -65,177 +65,177 @@ class KCModuleProxyPrivate;
  */
 class KCMUTILS_EXPORT KCModuleProxy : public QWidget
 {
-Q_DECLARE_PRIVATE(KCModuleProxy)
-Q_OBJECT
+    Q_DECLARE_PRIVATE(KCModuleProxy)
+    Q_OBJECT
 public:
-	/**
-	 * Constructs a KCModuleProxy from a KCModuleInfo class.
-	 *
-	 * @param info The KCModuleInfo to construct the module from.
-	 * @param parent the parent QWidget.
-	 * @param args This is used in the implementation and is internal.
-	 * Use the default.
-	 */
-	explicit KCModuleProxy( const KCModuleInfo& info, QWidget* parent = 0,
-			const QStringList& args = QStringList() );
+    /**
+     * Constructs a KCModuleProxy from a KCModuleInfo class.
+     *
+     * @param info The KCModuleInfo to construct the module from.
+     * @param parent the parent QWidget.
+     * @param args This is used in the implementation and is internal.
+     * Use the default.
+     */
+    explicit KCModuleProxy(const KCModuleInfo &info, QWidget *parent = 0,
+                           const QStringList &args = QStringList());
 
-	/**
-	 * Constructs a KCModuleProxy from a module's service name, which is
-	 * equivalent to the desktop file for the kcm without the ".desktop" part.
-	 * Otherwise equal to the one above.
-	 *
-	 * @param serviceName The module's service name to construct from.
-	 * @param parent the parent QWidget.
-	 * @param args This is used in the implementation and is internal.
-	 * Use the default.
-	 */
-	explicit KCModuleProxy( const QString& serviceName, QWidget* parent = 0,
-			const QStringList& args = QStringList() );
+    /**
+     * Constructs a KCModuleProxy from a module's service name, which is
+     * equivalent to the desktop file for the kcm without the ".desktop" part.
+     * Otherwise equal to the one above.
+     *
+     * @param serviceName The module's service name to construct from.
+     * @param parent the parent QWidget.
+     * @param args This is used in the implementation and is internal.
+     * Use the default.
+     */
+    explicit KCModuleProxy(const QString &serviceName, QWidget *parent = 0,
+                           const QStringList &args = QStringList());
 
-	/**
-	 * Constructs a KCModuleProxy from KService. Otherwise equal to the one above.
-	 *
-	 * @param service The KService to construct from.
-	 * @param parent the parent QWidget.
-	 * @param args This is used in the implementation and is internal.
-	 * Use the default.
-	 */
-	explicit KCModuleProxy( const KService::Ptr& service, QWidget* parent = 0,
-			const QStringList& args = QStringList() );
+    /**
+     * Constructs a KCModuleProxy from KService. Otherwise equal to the one above.
+     *
+     * @param service The KService to construct from.
+     * @param parent the parent QWidget.
+     * @param args This is used in the implementation and is internal.
+     * Use the default.
+     */
+    explicit KCModuleProxy(const KService::Ptr &service, QWidget *parent = 0,
+                           const QStringList &args = QStringList());
 
-	/**
-	 * Default destructor
-	 */
-	~KCModuleProxy();
+    /**
+     * Default destructor
+     */
+    ~KCModuleProxy();
 
-	/**
-	 * Calling it will cause the contained module to
-	 * run its load() routine.
-	 */
-	void load();
+    /**
+     * Calling it will cause the contained module to
+     * run its load() routine.
+     */
+    void load();
 
-	/**
-	 * Calling it will cause the contained module to
-	 * run its save() routine.
-	 *
-	 * If the module was not modified, it will not be asked
-	 * to save.
-	 */
-	void save();
+    /**
+     * Calling it will cause the contained module to
+     * run its save() routine.
+     *
+     * If the module was not modified, it will not be asked
+     * to save.
+     */
+    void save();
 
-	/**
-	 * @return the module's quickHelp();
-	 */
-	QString quickHelp() const;
+    /**
+     * @return the module's quickHelp();
+     */
+    QString quickHelp() const;
 
-	/**
-	 * @return the module's aboutData()
-	 */
-	const KAboutData * aboutData() const;
+    /**
+     * @return the module's aboutData()
+     */
+    const KAboutData *aboutData() const;
 
-	/**
-	 * @return what buttons the module
-	 * needs
-	 */
-	KCModule::Buttons buttons() const;
+    /**
+     * @return what buttons the module
+     * needs
+     */
+    KCModule::Buttons buttons() const;
 
-	/**
-	 * @return The module's custom root
-	 * message, if it has one
-	 * @deprecated
-	 */
-	QString rootOnlyMessage() const;
-	//KDE4 remove. There's a limit for convenience functions,
-	// this one's available via realModule()->
+    /**
+     * @return The module's custom root
+     * message, if it has one
+     * @deprecated
+     */
+    QString rootOnlyMessage() const;
+    //KDE4 remove. There's a limit for convenience functions,
+    // this one's available via realModule()->
 
-	/**
-	 * @return If the module is a root module.
-	 * @deprecated
-	 */
-	bool useRootOnlyMessage() const;
-	//KDE4 remove. There's a limit for convenience functions,
-	// this one's available via realModule()->
+    /**
+     * @return If the module is a root module.
+     * @deprecated
+     */
+    bool useRootOnlyMessage() const;
+    //KDE4 remove. There's a limit for convenience functions,
+    // this one's available via realModule()->
 
-	/**
-	 * @return true if the module is modified
-	 * and needs to be saved.
-	 */
-	bool changed() const;
+    /**
+     * @return true if the module is modified
+     * and needs to be saved.
+     */
+    bool changed() const;
 
-	/**
-	 * Access to the actual module.
-	 * It may return NULL if anything goes wrong.
-	 *
-	 * @return the encapsulated module.
-	 */
-	KCModule* realModule() const;
+    /**
+     * Access to the actual module.
+     * It may return NULL if anything goes wrong.
+     *
+     * @return the encapsulated module.
+     */
+    KCModule *realModule() const;
 
-	/**
-	 * @return a KCModuleInfo for the encapsulated
-	 * module
-	 */
-	KCModuleInfo moduleInfo() const;
+    /**
+     * @return a KCModuleInfo for the encapsulated
+     * module
+     */
+    KCModuleInfo moduleInfo() const;
 
-	/**
-	 * Returns the DBUS Service name
-	 */
-	QString dbusService() const;
+    /**
+     * Returns the DBUS Service name
+     */
+    QString dbusService() const;
     /**
      * Returns the DBUS Path
      */
-	QString dbusPath() const;
-	/**
-	 * Returns the recommended minimum size for the widget
-	 */
-	QSize minimumSizeHint() const;
+    QString dbusPath() const;
+    /**
+     * Returns the recommended minimum size for the widget
+     */
+    QSize minimumSizeHint() const;
 
 public Q_SLOTS:
 
-	/**
-	 * Calling it will cause the contained module to
-	 * load its default values.
-	 */
-	void defaults();
+    /**
+     * Calling it will cause the contained module to
+     * load its default values.
+     */
+    void defaults();
 
-	/**
-	 * Calling this, results in deleting the contained
-	 * module, and unregistering from DCOP. A similar result is achieved
-	 * by deleting the KCModuleProxy itself.
-	 */
-	void deleteClient();
+    /**
+     * Calling this, results in deleting the contained
+     * module, and unregistering from DCOP. A similar result is achieved
+     * by deleting the KCModuleProxy itself.
+     */
+    void deleteClient();
 
 Q_SIGNALS:
 
-	/*
-	 * This signal is emitted when the contained module is changed.
-	 */
-	void changed( bool state );
+    /*
+     * This signal is emitted when the contained module is changed.
+     */
+    void changed(bool state);
 
-	/**
-	 * This is emitted in the same situations as in the one above. Practical
-	 * when several KCModuleProxys are loaded.
-	 */
-	void changed( KCModuleProxy* mod );
+    /**
+     * This is emitted in the same situations as in the one above. Practical
+     * when several KCModuleProxys are loaded.
+     */
+    void changed(KCModuleProxy *mod);
 
-	/**
-	 * When a module running with root privileges and exits, returns to normal mode, the
-	 * childClosed() signal is emitted.
-	 */
-	void childClosed();
+    /**
+     * When a module running with root privileges and exits, returns to normal mode, the
+     * childClosed() signal is emitted.
+     */
+    void childClosed();
 
-	/*
-	 * This signal is relayed from the encapsulated module, and
-	 * is equivalent to the module's own quickHelpChanged() signal.
-	 */
-	void quickHelpChanged();
+    /*
+     * This signal is relayed from the encapsulated module, and
+     * is equivalent to the module's own quickHelpChanged() signal.
+     */
+    void quickHelpChanged();
 
 protected:
 
-	/**
-	 * Reimplemented for internal purposes. Makes sure the encapsulated
-	 * module is loaded before the show event is taken care of.
-	 */
-	void showEvent( QShowEvent * );
+    /**
+     * Reimplemented for internal purposes. Makes sure the encapsulated
+     * module is loaded before the show event is taken care of.
+     */
+    void showEvent(QShowEvent *);
 
 protected:
     KCModuleProxyPrivate *const d_ptr;
@@ -247,4 +247,3 @@ private:
 };
 
 #endif // KUTILS_KCMODULEPROXY_H
-// vim: ts=4

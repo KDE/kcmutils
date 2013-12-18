@@ -32,9 +32,9 @@
 
 class KCModuleInfo::Private
 {
-  public:
+public:
     Private();
-    Private( KService::Ptr );
+    Private(KService::Ptr);
 
     QStringList keywords;
     QString     name, icon, lib, handle, fileName, doc, comment;
@@ -54,146 +54,149 @@ KCModuleInfo::Private::Private()
 {
 }
 
-KCModuleInfo::Private::Private( KService::Ptr s )
-  : allLoaded( false )
-  , service( s )
+KCModuleInfo::Private::Private(KService::Ptr s)
+    : allLoaded(false)
+    , service(s)
 {
-  if ( !service )
-  {
-    // qDebug() << "Could not find the service.";
-    return;
-  }
+    if (!service) {
+        // qDebug() << "Could not find the service.";
+        return;
+    }
 
-  // set the modules simple attributes
-  name = service->name();
-  comment = service->comment();
-  icon = service->icon();
-  fileName = service->entryPath();
-  lib = service->library();
-  keywords = service->keywords();
+    // set the modules simple attributes
+    name = service->name();
+    comment = service->comment();
+    icon = service->icon();
+    fileName = service->entryPath();
+    lib = service->library();
+    keywords = service->keywords();
 }
 
 KCModuleInfo::KCModuleInfo()
 {
-  d = new Private;
+    d = new Private;
 }
 
-KCModuleInfo::KCModuleInfo(const QString& desktopFile)
+KCModuleInfo::KCModuleInfo(const QString &desktopFile)
 {
-  d = new Private( KService::serviceByStorageId(desktopFile) );
+    d = new Private(KService::serviceByStorageId(desktopFile));
 }
 
-KCModuleInfo::KCModuleInfo( KService::Ptr moduleInfo )
+KCModuleInfo::KCModuleInfo(KService::Ptr moduleInfo)
 {
-  d = new Private( moduleInfo );
+    d = new Private(moduleInfo);
 }
 
-KCModuleInfo::KCModuleInfo( const KCModuleInfo &rhs )
+KCModuleInfo::KCModuleInfo(const KCModuleInfo &rhs)
 {
     d = new Private;
-    ( *this ) = rhs;
+    (*this) = rhs;
 }
 
-KCModuleInfo &KCModuleInfo::operator=( const KCModuleInfo &rhs )
+KCModuleInfo &KCModuleInfo::operator=(const KCModuleInfo &rhs)
 {
     *d = *(rhs.d);
     return *this;
 }
 
-bool KCModuleInfo::operator==( const KCModuleInfo & rhs ) const
+bool KCModuleInfo::operator==(const KCModuleInfo &rhs) const
 {
-  return ( ( d->name == rhs.d->name ) && ( d->lib == rhs.d->lib ) && ( d->fileName == rhs.d->fileName ) );
+    return ((d->name == rhs.d->name) && (d->lib == rhs.d->lib) && (d->fileName == rhs.d->fileName));
 }
 
-bool KCModuleInfo::operator!=( const KCModuleInfo & rhs ) const
+bool KCModuleInfo::operator!=(const KCModuleInfo &rhs) const
 {
-  return ! operator==( rhs );
+    return ! operator==(rhs);
 }
 
 KCModuleInfo::~KCModuleInfo()
 {
-  delete d;
+    delete d;
 }
 
 void KCModuleInfo::Private::loadAll()
 {
-  allLoaded = true;
+    allLoaded = true;
 
-  if( !service ) /* We have a bogus service. All get functions will return empty/zero values */
-    return;
+    if (!service) { /* We have a bogus service. All get functions will return empty/zero values */
+        return;
+    }
 
-  // get the documentation path
-  doc = service->property( QStringLiteral("X-DocPath"), QVariant::String ).toString();
-  if (doc.isEmpty())
-    doc = service->property( QStringLiteral("DocPath"), QVariant::String ).toString();
+    // get the documentation path
+    doc = service->property(QStringLiteral("X-DocPath"), QVariant::String).toString();
+    if (doc.isEmpty()) {
+        doc = service->property(QStringLiteral("DocPath"), QVariant::String).toString();
+    }
 
-  // read weight
-  QVariant tmp = service->property( QStringLiteral("X-KDE-Weight"), QVariant::Int );
-  weight = tmp.isValid() ? tmp.toInt() : 100;
+    // read weight
+    QVariant tmp = service->property(QStringLiteral("X-KDE-Weight"), QVariant::Int);
+    weight = tmp.isValid() ? tmp.toInt() : 100;
 
-  // factory handle
-  tmp = service->property(QStringLiteral("X-KDE-FactoryName"), QVariant::String);
-  handle = tmp.isValid() ? tmp.toString() : lib;
+    // factory handle
+    tmp = service->property(QStringLiteral("X-KDE-FactoryName"), QVariant::String);
+    handle = tmp.isValid() ? tmp.toString() : lib;
 
 }
 
 QString KCModuleInfo::fileName() const
 {
-  return d->fileName;
+    return d->fileName;
 }
 
 QStringList KCModuleInfo::keywords() const
 {
-  return d->keywords;
+    return d->keywords;
 }
 
 QString KCModuleInfo::moduleName() const
 {
-  return d->name;
+    return d->name;
 }
 
 KService::Ptr KCModuleInfo::service() const
 {
-  return d->service;
+    return d->service;
 }
 
 QString KCModuleInfo::comment() const
 {
-  return d->comment;
+    return d->comment;
 }
 
 QString KCModuleInfo::icon() const
 {
-  return d->icon;
+    return d->icon;
 }
 
 QString KCModuleInfo::library() const
 {
-  return d->lib;
+    return d->lib;
 }
 
 QString KCModuleInfo::docPath() const
 {
-  if (!d->allLoaded)
-    d->loadAll();
+    if (!d->allLoaded) {
+        d->loadAll();
+    }
 
-  return d->doc;
+    return d->doc;
 }
 
 QString KCModuleInfo::handle() const
 {
-  if (!d->allLoaded)
-    d->loadAll();
+    if (!d->allLoaded) {
+        d->loadAll();
+    }
 
-  return d->handle;
+    return d->handle;
 }
 
 int KCModuleInfo::weight() const
 {
-  if (!d->allLoaded)
-    d->loadAll();
+    if (!d->allLoaded) {
+        d->loadAll();
+    }
 
-  return d->weight;
+    return d->weight;
 }
 
-// vim: ts=2 sw=2 et

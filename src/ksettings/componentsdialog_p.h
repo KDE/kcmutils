@@ -42,41 +42,41 @@ namespace KSettings
 class KCMUTILS_EXPORT ComponentsDialog : public QDialog
 {
     Q_OBJECT
-    public:
-        /**
-          Create Dialog.
+public:
+    /**
+      Create Dialog.
 
-          @param parent parent widget
-          @param name   name
-        */
-        explicit ComponentsDialog( QWidget * parent = 0, const char * name = 0 );
-        ~ComponentsDialog();
+      @param parent parent widget
+      @param name   name
+    */
+    explicit ComponentsDialog(QWidget *parent = 0, const char *name = 0);
+    ~ComponentsDialog();
 
-        /**
-          Add a plugin that the dialog offers for selection.
-        */
-        void addPluginInfo( KPluginInfo * );
-        /**
-          Set list of plugins the dialog offers for selection. (Overwrites a previous list)
-        */
-        void setPluginInfos( const QMap<QString, KPluginInfo*> & plugininfos );
-        /**
-          Set list of plugins the dialog offers for selection. (Overwrites a previous list)
-        */
-        void setPluginInfos( const QList<KPluginInfo *> &plugins );
+    /**
+      Add a plugin that the dialog offers for selection.
+    */
+    void addPluginInfo(KPluginInfo *);
+    /**
+      Set list of plugins the dialog offers for selection. (Overwrites a previous list)
+    */
+    void setPluginInfos(const QMap<QString, KPluginInfo *> &plugininfos);
+    /**
+      Set list of plugins the dialog offers for selection. (Overwrites a previous list)
+    */
+    void setPluginInfos(const QList<KPluginInfo *> &plugins);
 
-        /**
-         * reimplemented
-         */
-        void show();
+    /**
+     * reimplemented
+     */
+    void show();
 
-    private Q_SLOTS:
-        void executed( QTreeWidgetItem *, int );
-        void savePluginInfos();
+private Q_SLOTS:
+    void executed(QTreeWidgetItem *, int);
+    void savePluginInfos();
 
-    private:
-        class ComponentsDialogPrivate;
-        ComponentsDialogPrivate* const d;
+private:
+    class ComponentsDialogPrivate;
+    ComponentsDialogPrivate *const d;
 };
 
 }

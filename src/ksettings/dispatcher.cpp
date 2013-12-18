@@ -59,7 +59,7 @@ QList<QString> componentNames()
     return names;
 }
 
-void reparseConfiguration(const QString & componentName)
+void reparseConfiguration(const QString &componentName)
 {
     // qDebug() << componentName;
     // check if the componentName is valid:
@@ -70,7 +70,7 @@ void reparseConfiguration(const QString & componentName)
     KSharedConfig::Ptr config = configForComponentName(componentName);
     config->reparseConfiguration();
 
-    foreach(const ComponentInfo::Slot& slot, d()->m_componentInfo[componentName].slotList ) {
+    foreach (const ComponentInfo::Slot &slot, d()->m_componentInfo[componentName].slotList) {
         QMetaObject::invokeMethod(slot.first, slot.second);
     }
 }
@@ -86,8 +86,8 @@ void syncConfiguration()
 void DispatcherPrivate::unregisterComponent(QObject *obj)
 {
     if (!m_componentName.contains(obj)) {
-      qWarning() << Q_FUNC_INFO << "Tried to unregister an object which is not already registered.";
-      return;
+        qWarning() << Q_FUNC_INFO << "Tried to unregister an object which is not already registered.";
+        return;
     }
 
     QString name = m_componentName[obj];

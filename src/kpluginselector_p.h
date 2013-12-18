@@ -47,8 +47,7 @@ class KPluginSelector::Private
     Q_OBJECT
 
 public:
-    enum ExtraRoles
-    {
+    enum ExtraRoles {
         PluginEntryRole   = 0x09386561,
         ServicesCountRole = 0x1422E2AA,
         NameRole          = 0x0CBBBB00,
@@ -101,8 +100,7 @@ public:
     }
 };
 
-Q_DECLARE_METATYPE(PluginEntry*)
-
+Q_DECLARE_METATYPE(PluginEntry *)
 
 /**
  * This widget will inform the user about changes that happened automatically
@@ -126,8 +124,7 @@ private Q_SLOTS:
     void showDependencyDetails();
 
 private:
-    struct FurtherInfo
-    {
+    struct FurtherInfo {
         bool added;
         QString pluginCausant;
     };
@@ -139,7 +136,6 @@ private:
     int addedByDependencies;
     int removedByDependencies;
 };
-
 
 class KPluginSelector::Private::PluginModel
     : public QAbstractListModel
@@ -178,7 +174,6 @@ private:
     KPluginSelector::Private *pluginSelector_d;
 };
 
-
 class KPluginSelector::Private::PluginDelegate
     : public KWidgetItemDelegate
 {
@@ -196,8 +191,8 @@ Q_SIGNALS:
     void configCommitted(const QByteArray &componentName);
 
 protected:
-    virtual QList<QWidget*> createItemWidgets(const QModelIndex &index) const;
-    virtual void updateItemWidgets(const QList<QWidget*> widgets,
+    virtual QList<QWidget *> createItemWidgets(const QModelIndex &index) const;
+    virtual void updateItemWidgets(const QList<QWidget *> widgets,
                                    const QStyleOptionViewItem &option,
                                    const QPersistentModelIndex &index) const;
 
@@ -213,7 +208,7 @@ private:
 
     QCheckBox *checkBox;
     QPushButton *pushButton;
-    QList<KCModuleProxy*> moduleProxyList;
+    QList<KCModuleProxy *> moduleProxyList;
 
     KPluginSelector::Private *pluginSelector_d;
 };

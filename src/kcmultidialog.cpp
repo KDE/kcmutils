@@ -47,38 +47,38 @@
 bool KCMultiDialogPrivate::resolveChanges(KCModuleProxy *currentProxy)
 {
     Q_Q(KCMultiDialog);
-    if( !currentProxy || !currentProxy->changed() ) {
+    if (!currentProxy || !currentProxy->changed()) {
         return true;
     }
 
     // Let the user decide
     const int queryUser = KMessageBox::warningYesNoCancel(
-        q,
-        i18n("The settings of the current module have changed.\n"
-             "Do you want to apply the changes or discard them?"),
-        i18n("Apply Settings"),
-        KStandardGuiItem::apply(),
-        KStandardGuiItem::discard(),
-        KStandardGuiItem::cancel());
+                              q,
+                              i18n("The settings of the current module have changed.\n"
+                                   "Do you want to apply the changes or discard them?"),
+                              i18n("Apply Settings"),
+                              KStandardGuiItem::apply(),
+                              KStandardGuiItem::discard(),
+                              KStandardGuiItem::cancel());
 
     switch (queryUser) {
-        case KMessageBox::Yes:
-            return moduleSave(currentProxy);
+    case KMessageBox::Yes:
+        return moduleSave(currentProxy);
 
-        case KMessageBox::No:
-            currentProxy->load();
-            return true;
+    case KMessageBox::No:
+        currentProxy->load();
+        return true;
 
-        case KMessageBox::Cancel:
-            return false;
+    case KMessageBox::Cancel:
+        return false;
 
-        default:
-            Q_ASSERT(false);
-            return false;
+    default:
+        Q_ASSERT(false);
+        return false;
     }
 }
 
-void KCMultiDialogPrivate::_k_slotCurrentPageChanged( KPageWidgetItem *current, KPageWidgetItem *previous )
+void KCMultiDialogPrivate::_k_slotCurrentPageChanged(KPageWidgetItem *current, KPageWidgetItem *previous)
 {
     Q_Q(KCMultiDialog);
     // qDebug();
@@ -87,14 +87,14 @@ void KCMultiDialogPrivate::_k_slotCurrentPageChanged( KPageWidgetItem *current, 
     q->setCurrentPage(previous);
 
     KCModuleProxy *previousModule = 0;
-    for ( int i = 0; i < modules.count(); ++i ) {
-        if ( modules[ i ].item == previous ) {
+    for (int i = 0; i < modules.count(); ++i) {
+        if (modules[ i ].item == previous) {
             previousModule = modules[ i ].kcm;
             break;
         }
     }
 
-    if( resolveChanges(previousModule) ) {
+    if (resolveChanges(previousModule)) {
         q->setCurrentPage(current);
     }
     q->blockSignals(false);
@@ -109,8 +109,8 @@ void KCMultiDialogPrivate::_k_clientChanged()
     // qDebug();
     // Get the current module
     KCModuleProxy *activeModule = 0;
-    for ( int i = 0; i < modules.count(); ++i ) {
-        if ( modules[ i ].item == q->currentPage() ) {
+    for (int i = 0; i < modules.count(); ++i) {
+        if (modules[ i ].item == q->currentPage()) {
             activeModule = modules[ i ].kcm;
             break;
         }
@@ -123,14 +123,14 @@ void KCMultiDialogPrivate::_k_clientChanged()
         QPushButton *applyButton = q->buttonBox()->button(QDialogButtonBox::Apply);
         if (applyButton) {
             q->disconnect(applyButton, SIGNAL(clicked()), q, SLOT(slotApplyClicked()));
-            delete applyButton->findChild<KAuth::ObjectDecorator*>();
+            delete applyButton->findChild<KAuth::ObjectDecorator *>();
             applyButton->setEnabled(change);
         }
 
         QPushButton *okButton = q->buttonBox()->button(QDialogButtonBox::Ok);
         if (okButton) {
             q->disconnect(okButton, SIGNAL(clicked()), q, SLOT(slotOkClicked()));
-            delete okButton->findChild<KAuth::ObjectDecorator*>();
+            delete okButton->findChild<KAuth::ObjectDecorator *>();
         }
 
         if (activeModule->realModule()->needsAuthorization()) {
@@ -150,12 +150,12 @@ void KCMultiDialogPrivate::_k_clientChanged()
         } else {
             if (applyButton) {
                 q->connect(applyButton, SIGNAL(clicked()), SLOT(slotApplyClicked()));
-                delete applyButton->findChild<KAuth::ObjectDecorator*>();
+                delete applyButton->findChild<KAuth::ObjectDecorator *>();
             }
 
             if (okButton) {
                 q->connect(okButton, SIGNAL(clicked()), SLOT(slotOkClicked()));
-                delete okButton->findChild<KAuth::ObjectDecorator*>();
+                delete okButton->findChild<KAuth::ObjectDecorator *>();
             }
         }
     }
@@ -187,29 +187,30 @@ void KCMultiDialogPrivate::_k_updateHeader(bool use, const QString &message)
 {
     Q_Q(KCMultiDialog);
     KPageWidgetItem *item = q->currentPage();
-    KCModuleProxy *kcm = qobject_cast<KCModuleProxy*>(item->widget());
+    KCModuleProxy *kcm = qobject_cast<KCModuleProxy *>(item->widget());
 
     if (use) {
-        item->setHeader( QStringLiteral("<b>")+kcm->moduleInfo().comment() + QStringLiteral("</b><br><i>") +
-                         message + QStringLiteral("</i>") );
-        item->setIcon( KDE::icon( kcm->moduleInfo().icon(), QStringList() << QStringLiteral("dialog-warning") ) );
+        item->setHeader(QStringLiteral("<b>") + kcm->moduleInfo().comment() + QStringLiteral("</b><br><i>") +
+                        message + QStringLiteral("</i>"));
+        item->setIcon(KDE::icon(kcm->moduleInfo().icon(), QStringList() << QStringLiteral("dialog-warning")));
     } else {
-        item->setHeader( kcm->moduleInfo().comment() );
-        item->setIcon( QIcon::fromTheme( kcm->moduleInfo().icon() ) );
+        item->setHeader(kcm->moduleInfo().comment());
+        item->setIcon(QIcon::fromTheme(kcm->moduleInfo().icon()));
     }
 }
 
 void KCMultiDialogPrivate::_k_dialogClosed()
 {
-  // qDebug() ;
+    // qDebug() ;
 
-  /**
-   * If we don't delete them, the DBUS registration stays, and trying to load the KCMs
-   * in other situations will lead to "module already loaded in Foo," while to the user
-   * doesn't appear so(the dialog is hidden)
-   */
-  for ( int i = 0; i < modules.count(); ++i )
-    modules[ i ].kcm->deleteClient();
+    /**
+     * If we don't delete them, the DBUS registration stays, and trying to load the KCMs
+     * in other situations will lead to "module already loaded in Foo," while to the user
+     * doesn't appear so(the dialog is hidden)
+     */
+    for (int i = 0; i < modules.count(); ++i) {
+        modules[ i ].kcm->deleteClient();
+    }
 }
 
 void KCMultiDialogPrivate::init()
@@ -221,11 +222,11 @@ void KCMultiDialogPrivate::init()
 
     QDialogButtonBox *buttonBox = new QDialogButtonBox(q);
     buttonBox->setStandardButtons(QDialogButtonBox::Help
-                                | QDialogButtonBox::RestoreDefaults
-                                | QDialogButtonBox::Cancel
-                                | QDialogButtonBox::Apply
-                                | QDialogButtonBox::Ok
-                                | QDialogButtonBox::Reset);
+                                  | QDialogButtonBox::RestoreDefaults
+                                  | QDialogButtonBox::Cancel
+                                  | QDialogButtonBox::Apply
+                                  | QDialogButtonBox::Ok
+                                  | QDialogButtonBox::Reset);
     buttonBox->button(QDialogButtonBox::Reset)->setEnabled(false);
     buttonBox->button(QDialogButtonBox::Apply)->setEnabled(false);
 
@@ -239,13 +240,13 @@ void KCMultiDialogPrivate::init()
 
     q->connect(q, SIGNAL(finished(int)), SLOT(_k_dialogClosed()));
     q->connect(q, SIGNAL(currentPageChanged(KPageWidgetItem*,KPageWidgetItem*)),
-            SLOT(_k_slotCurrentPageChanged(KPageWidgetItem*,KPageWidgetItem*)));
+               SLOT(_k_slotCurrentPageChanged(KPageWidgetItem*,KPageWidgetItem*)));
 
     q->resize(QSize(800, 550));
     q->adjustSize();
 }
 
-KCMultiDialog::KCMultiDialog( QWidget *parent )
+KCMultiDialog::KCMultiDialog(QWidget *parent)
     : KPageDialog(parent)
     , d_ptr(new KCMultiDialogPrivate(this))
 {
@@ -274,38 +275,40 @@ KCMultiDialog::~KCMultiDialog()
 void KCMultiDialog::slotDefaultClicked()
 {
     Q_D(KCMultiDialog);
-  const KPageWidgetItem *item = currentPage();
-  if ( !item )
-    return;
-
-  for ( int i = 0; i < d->modules.count(); ++i ) {
-    if ( d->modules[ i ].item == item ) {
-      d->modules[ i ].kcm->defaults();
-            d->_k_clientChanged();
-      return;
+    const KPageWidgetItem *item = currentPage();
+    if (!item) {
+        return;
     }
-  }
+
+    for (int i = 0; i < d->modules.count(); ++i) {
+        if (d->modules[ i ].item == item) {
+            d->modules[ i ].kcm->defaults();
+            d->_k_clientChanged();
+            return;
+        }
+    }
 }
 
 void KCMultiDialog::slotUser1Clicked()
 {
-  const KPageWidgetItem *item = currentPage();
-  if ( !item )
-    return;
+    const KPageWidgetItem *item = currentPage();
+    if (!item) {
+        return;
+    }
 
     Q_D(KCMultiDialog);
-  for ( int i = 0; i < d->modules.count(); ++i ) {
-    if ( d->modules[ i ].item == item ) {
-      d->modules[ i ].kcm->load();
+    for (int i = 0; i < d->modules.count(); ++i) {
+        if (d->modules[ i ].item == item) {
+            d->modules[ i ].kcm->load();
             d->_k_clientChanged();
-      return;
+            return;
+        }
     }
-  }
 }
 
 bool KCMultiDialogPrivate::moduleSave(KCModuleProxy *module)
 {
-    if( !module ) {
+    if (!module) {
         return false;
     }
 
@@ -352,62 +355,64 @@ void KCMultiDialog::slotApplyClicked()
     d_func()->apply();
 }
 
-
 void KCMultiDialog::slotOkClicked()
 {
     QPushButton *okButton = buttonBox()->button(QDialogButtonBox::Apply);
     okButton->setFocus();
 
     d_func()->apply();
-  accept();
+    accept();
 }
 
 void KCMultiDialog::slotHelpClicked()
 {
-  const KPageWidgetItem *item = currentPage();
-  if ( !item )
-    return;
+    const KPageWidgetItem *item = currentPage();
+    if (!item) {
+        return;
+    }
 
     Q_D(KCMultiDialog);
-  QString docPath;
-  for ( int i = 0; i < d->modules.count(); ++i ) {
-    if ( d->modules[ i ].item == item ) {
-      docPath = d->modules[ i ].kcm->moduleInfo().docPath();
-      break;
+    QString docPath;
+    for (int i = 0; i < d->modules.count(); ++i) {
+        if (d->modules[ i ].item == item) {
+            docPath = d->modules[ i ].kcm->moduleInfo().docPath();
+            break;
+        }
     }
-  }
 
-  QUrl docUrl = QUrl(QStringLiteral("help:/")).resolved(QUrl::fromUserInput(docPath)); // same code as in KHelpClient::invokeHelp
-  if ( docUrl.scheme() == QLatin1String("help") || docUrl.scheme() == QLatin1String("man") || docUrl.scheme() == QLatin1String("info") ) {
-    QProcess::startDetached(QStringLiteral("khelpcenter"), QStringList() << docUrl.toString());
-  } else {
-      QDesktopServices::openUrl(docUrl);
-  }
+    QUrl docUrl = QUrl(QStringLiteral("help:/")).resolved(QUrl::fromUserInput(docPath)); // same code as in KHelpClient::invokeHelp
+    if (docUrl.scheme() == QLatin1String("help") || docUrl.scheme() == QLatin1String("man") || docUrl.scheme() == QLatin1String("info")) {
+        QProcess::startDetached(QStringLiteral("khelpcenter"), QStringList() << docUrl.toString());
+    } else {
+        QDesktopServices::openUrl(docUrl);
+    }
 }
 
-
-KPageWidgetItem* KCMultiDialog::addModule( const QString& path, const QStringList& args )
+KPageWidgetItem *KCMultiDialog::addModule(const QString &path, const QStringList &args)
 {
-  QString complete = path;
+    QString complete = path;
 
-  if ( !path.endsWith( QLatin1String(".desktop") ) )
-    complete += QStringLiteral(".desktop");
+    if (!path.endsWith(QLatin1String(".desktop"))) {
+        complete += QStringLiteral(".desktop");
+    }
 
-  KService::Ptr service = KService::serviceByStorageId( complete );
+    KService::Ptr service = KService::serviceByStorageId(complete);
 
-  return addModule( KCModuleInfo( service ), 0, args );
+    return addModule(KCModuleInfo(service), 0, args);
 }
 
-KPageWidgetItem* KCMultiDialog::addModule( const KCModuleInfo& moduleInfo,
-                                           KPageWidgetItem *parentItem, const QStringList& args )
+KPageWidgetItem *KCMultiDialog::addModule(const KCModuleInfo &moduleInfo,
+        KPageWidgetItem *parentItem, const QStringList &args)
 {
-  if ( !moduleInfo.service() )
-    return 0;
+    if (!moduleInfo.service()) {
+        return 0;
+    }
 
-  //KAuthorized::authorizeControlModule( moduleInfo.service()->menuId() ) is
-  //checked in noDisplay already
-  if ( moduleInfo.service()->noDisplay() )
-    return 0;
+    //KAuthorized::authorizeControlModule( moduleInfo.service()->menuId() ) is
+    //checked in noDisplay already
+    if (moduleInfo.service()->noDisplay()) {
+        return 0;
+    }
 
     KCModuleProxy *kcm = new KCModuleProxy(moduleInfo, 0, args);
 
@@ -415,11 +420,11 @@ KPageWidgetItem* KCMultiDialog::addModule( const KCModuleInfo& moduleInfo,
     KPageWidgetItem *item = new KPageWidgetItem(kcm, moduleInfo.moduleName());
 
     if (kcm->useRootOnlyMessage()) {
-        item->setHeader( QStringLiteral("<b>")+moduleInfo.comment() + QStringLiteral("</b><br><i>") + kcm->rootOnlyMessage() + QStringLiteral("</i>") );
-        item->setIcon( KDE::icon( moduleInfo.icon(), QStringList() << QStringLiteral("dialog-warning") ) );
+        item->setHeader(QStringLiteral("<b>") + moduleInfo.comment() + QStringLiteral("</b><br><i>") + kcm->rootOnlyMessage() + QStringLiteral("</i>"));
+        item->setIcon(KDE::icon(moduleInfo.icon(), QStringList() << QStringLiteral("dialog-warning")));
     } else {
-        item->setHeader( moduleInfo.comment() );
-        item->setIcon( QIcon::fromTheme( moduleInfo.icon() ) );
+        item->setHeader(moduleInfo.comment());
+        item->setIcon(QIcon::fromTheme(moduleInfo.icon()));
     }
     item->setProperty("_k_weight", moduleInfo.weight());
 
@@ -453,8 +458,9 @@ KPageWidgetItem* KCMultiDialog::addModule( const KCModuleInfo& moduleInfo,
                 // the item we found is heavier than the new module
                 // qDebug() << "adding KCM " << item->name() << " before " << siblingItem->name();
                 insertPage(siblingItem, item);
-                if ( siblingItem == currentPage() )
+                if (siblingItem == currentPage()) {
                     updateCurrentPage = true;
+                }
 
                 break;
             }
@@ -470,31 +476,30 @@ KPageWidgetItem* KCMultiDialog::addModule( const KCModuleInfo& moduleInfo,
     connect(kcm->realModule(), SIGNAL(rootOnlyMessageChanged(bool,QString)), this, SLOT(_k_updateHeader(bool,QString)));
 
     Q_D(KCMultiDialog);
-  KCMultiDialogPrivate::CreatedModule cm;
-  cm.kcm = kcm;
-  cm.item = item;
-  cm.componentNames = moduleInfo.service()->property( QStringLiteral("X-KDE-ParentComponents") ).toStringList();
-  d->modules.append( cm );
+    KCMultiDialogPrivate::CreatedModule cm;
+    cm.kcm = kcm;
+    cm.item = item;
+    cm.componentNames = moduleInfo.service()->property(QStringLiteral("X-KDE-ParentComponents")).toStringList();
+    d->modules.append(cm);
 
-  if ( d->modules.count() == 1 || updateCurrentPage )
-  {
-    setCurrentPage( item );
-    d->_k_clientChanged();
-  }
-  return item;
+    if (d->modules.count() == 1 || updateCurrentPage) {
+        setCurrentPage(item);
+        d->_k_clientChanged();
+    }
+    return item;
 }
 
 void KCMultiDialog::clear()
 {
     Q_D(KCMultiDialog);
-  // qDebug() ;
+    // qDebug() ;
 
-  for ( int i = 0; i < d->modules.count(); ++i ) {
-    removePage( d->modules[ i ].item );
-    delete d->modules[ i ].kcm;
-  }
+    for (int i = 0; i < d->modules.count(); ++i) {
+        removePage(d->modules[ i ].item);
+        delete d->modules[ i ].kcm;
+    }
 
-  d->modules.clear();
+    d->modules.clear();
 
     d->_k_clientChanged();
 }

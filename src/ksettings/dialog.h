@@ -32,7 +32,7 @@ class KCModuleInfo;
 
 namespace KSettings
 {
-    class DialogPrivate;
+class DialogPrivate;
 
 /**
  * @short Generic configuration dialog that works over component boundaries
@@ -75,108 +75,108 @@ class KCMUTILS_EXPORT Dialog : public KCMultiDialog
     friend class PageNode;
     Q_DECLARE_PRIVATE(Dialog)
     Q_OBJECT
-    public:
-        /**
-         * Construct a new Preferences Dialog for the application. It uses all
-         * KCMs with X-KDE-ParentApp set to QCoreApplication::instance()->applicationName().
-         *
-         * @param content      Select whether you want a static or configurable
-         *                     config dialog.
-         * @param parent       The parent is only used as the parent for the
-         *                     dialog - centering the dialog over the parent
-         *                     widget.
-         */
-        explicit Dialog(QWidget * parent = 0);
+public:
+    /**
+     * Construct a new Preferences Dialog for the application. It uses all
+     * KCMs with X-KDE-ParentApp set to QCoreApplication::instance()->applicationName().
+     *
+     * @param content      Select whether you want a static or configurable
+     *                     config dialog.
+     * @param parent       The parent is only used as the parent for the
+     *                     dialog - centering the dialog over the parent
+     *                     widget.
+     */
+    explicit Dialog(QWidget *parent = 0);
 
-        /**
-         * Construct a new Preferences Dialog with the pages for the selected
-         * instance names. For example if you want to have the configuration
-         * pages for the kviewviewer KPart you would pass a
-         * QStringList consisting of only the name of the part "kviewviewer".
-         *
-         * @param components   A list of the names of the components that your
-         *                     config dialog should merge the config pages in.
-         * @param parent       The parent is only used as the parent for the
-         *                     dialog - centering the dialog over the parent
-         *                     widget.
-         */
-         explicit Dialog(const QStringList & components, QWidget * parent = 0);
+    /**
+     * Construct a new Preferences Dialog with the pages for the selected
+     * instance names. For example if you want to have the configuration
+     * pages for the kviewviewer KPart you would pass a
+     * QStringList consisting of only the name of the part "kviewviewer".
+     *
+     * @param components   A list of the names of the components that your
+     *                     config dialog should merge the config pages in.
+     * @param parent       The parent is only used as the parent for the
+     *                     dialog - centering the dialog over the parent
+     *                     widget.
+     */
+    explicit Dialog(const QStringList &components, QWidget *parent = 0);
 
-        ~Dialog();
+    ~Dialog();
 
-        /**
-         * If you use a Configurable dialog you need to pass KPluginInfo
-         * objects that the dialog should configure.
-         */
-        void addPluginInfos(const QList<KPluginInfo> &plugininfos);
+    /**
+     * If you use a Configurable dialog you need to pass KPluginInfo
+     * objects that the dialog should configure.
+     */
+    void addPluginInfos(const QList<KPluginInfo> &plugininfos);
 
-        /**
-         * Sets the argument list that is given to all the KControlModule's when
-         * they are created.
-         * Use this if you have KControlModule's that need special arguments to
-         * work
-         *
-         * Note that this function only works before showing the
-         * KSettings::Dialog for the first time.
-         * @param arguments The list of arguments passed to each KCM
-         */
-        void setKCMArguments(const QStringList& arguments);
+    /**
+     * Sets the argument list that is given to all the KControlModule's when
+     * they are created.
+     * Use this if you have KControlModule's that need special arguments to
+     * work
+     *
+     * Note that this function only works before showing the
+     * KSettings::Dialog for the first time.
+     * @param arguments The list of arguments passed to each KCM
+     */
+    void setKCMArguments(const QStringList &arguments);
 
-        /**
-         * Set the blacklisted component list. Any KCM that lists one
-         * of the components in the given blacklist is not loaded even if it
-         * would fit otherwise. This is a way to explicitly prevent loading of
-         * certain KControlModules.
-         *
-         * Note that this function only works before showing the
-         * KSettings::Dialog for the first time.
-         * @param blacklist the list of components that prevent a KCM from being
-         * loaded
-         */
-        void setComponentBlacklist(const QStringList& blacklist);
+    /**
+     * Set the blacklisted component list. Any KCM that lists one
+     * of the components in the given blacklist is not loaded even if it
+     * would fit otherwise. This is a way to explicitly prevent loading of
+     * certain KControlModules.
+     *
+     * Note that this function only works before showing the
+     * KSettings::Dialog for the first time.
+     * @param blacklist the list of components that prevent a KCM from being
+     * loaded
+     */
+    void setComponentBlacklist(const QStringList &blacklist);
 
-        /**
-         * Tells the dialog whether the entries in the listview are all static
-         * or whether it should add checkboxes to select which parts
-         * of the optional functionality should be active or not.
-         *
-         * Note that this function only works before showing the dialog for the first time.
-         *
-         * Defaults to \p false.
-         *
-         * @param allowSelection \p true The user can select what functionality he wants.
-         * @param allowSelection \p false While running no entries are added or deleted
-         */
-        void setAllowComponentSelection(bool allowSelection);
+    /**
+     * Tells the dialog whether the entries in the listview are all static
+     * or whether it should add checkboxes to select which parts
+     * of the optional functionality should be active or not.
+     *
+     * Note that this function only works before showing the dialog for the first time.
+     *
+     * Defaults to \p false.
+     *
+     * @param allowSelection \p true The user can select what functionality he wants.
+     * @param allowSelection \p false While running no entries are added or deleted
+     */
+    void setAllowComponentSelection(bool allowSelection);
 
-        bool allowComponentSelection() const;
+    bool allowComponentSelection() const;
 
-        /**
-         * Returns a list of all KPluginInfo objects the dialog uses.
-         */
-        QList<KPluginInfo> pluginInfos() const;
+    /**
+     * Returns a list of all KPluginInfo objects the dialog uses.
+     */
+    QList<KPluginInfo> pluginInfos() const;
 
-    protected:
-        /**
-         * Reimplemented to lazy create the dialog on first show.
-         */
-        void showEvent(QShowEvent *);
+protected:
+    /**
+     * Reimplemented to lazy create the dialog on first show.
+     */
+    void showEvent(QShowEvent *);
 
-    Q_SIGNALS:
-        /**
-         * If you use the dialog in Configurable mode and want to be notified
-         * when the user changes the plugin selections use this signal. It's
-         * emitted if the selection has changed and the user pressed Apply or
-         * Ok. In the slot you would then load and unload the plugins as
-         * requested.
-         */
-        void pluginSelectionChanged();
+Q_SIGNALS:
+    /**
+     * If you use the dialog in Configurable mode and want to be notified
+     * when the user changes the plugin selections use this signal. It's
+     * emitted if the selection has changed and the user pressed Apply or
+     * Ok. In the slot you would then load and unload the plugins as
+     * requested.
+     */
+    void pluginSelectionChanged();
 
-    private:
-        //Q_PRIVATE_SLOT(d_func(), void _k_configureTree())
-        Q_PRIVATE_SLOT(d_func(), void _k_updateEnabledState(bool))
-        Q_PRIVATE_SLOT(d_func(), void _k_syncConfiguration())
-        Q_PRIVATE_SLOT(d_func(), void _k_reparseConfiguration(const QByteArray &))
+private:
+    //Q_PRIVATE_SLOT(d_func(), void _k_configureTree())
+    Q_PRIVATE_SLOT(d_func(), void _k_updateEnabledState(bool))
+    Q_PRIVATE_SLOT(d_func(), void _k_syncConfiguration())
+    Q_PRIVATE_SLOT(d_func(), void _k_reparseConfiguration(const QByteArray &))
 };
 
 }
