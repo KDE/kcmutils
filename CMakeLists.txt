@@ -15,6 +15,7 @@ find_package(Qt5 ${QT_REQUIRED_VERSION} NO_MODULE REQUIRED Widgets DBus)
 
 include(FeatureSummary)
 include(ECMSetupVersion)
+include(ECMGenerateHeaders)
 include(CMakePackageConfigHelpers)
 
 set(KF5_VERSION "5.0.0")

@@ -16,6 +16,8 @@ set(kcmutils_LIB_SRCS
 add_library(KF5KCMUtils ${kcmutils_LIB_SRCS})
 generate_export_header(KF5KCMUtils BASE_NAME KCMUtils)
 
+target_include_directories(KF5KCMUtils INTERFACE "$<INSTALL_INTERFACE:${INCLUDE_INSTALL_DIR}/kcmutils>" "$<INSTALL_INTERFACE:${INCLUDE_INSTALL_DIR}/KCMUtils>")
+
 target_link_libraries(KF5KCMUtils
   PUBLIC
     Qt5::Widgets
@@ -34,26 +36,42 @@ set_target_properties(KF5KCMUtils PROPERTIES
                       SOVERSION ${KCMUTILS_SOVERSION}
                       EXPORT_NAME KCMUtils)
 
-install( FILES
- ${CMAKE_CURRENT_BINARY_DIR}/kcmutils_export.h
- kcmoduleinfo.h
- kcmoduleloader.h
- kcmultidialog.h
- kcmoduleproxy.h
- kpluginselector.h
- kcmodulecontainer.h
- DESTINATION ${INCLUDE_INSTALL_DIR} COMPONENT Devel)
+ecm_generate_headers(
+  KCModuleInfo
+  KCModuleLoader
+  KCMultiDialog
+  KCModuleProxy
+  KPluginSelector
+  KCModuleContainer
 
+  MODULE_NAME KCMUtils
+  REQUIRED_HEADERS KCMUtils_HEADERS
+)
+install(DIRECTORY ${CMAKE_CURRENT_BINARY_DIR}/KCMUtils DESTINATION ${INCLUDE_INSTALL_DIR} COMPONENT Devel)
 install(FILES
-        ksettings/dispatcher.h
-        ksettings/dialog.h
-        ksettings/pluginpage.h
-        DESTINATION ${INCLUDE_INSTALL_DIR}/ksettings
-        COMPONENT Devel)
+  ${CMAKE_CURRENT_BINARY_DIR}/kcmutils_export.h
+  ${KCMUtils_HEADERS}
+  DESTINATION ${INCLUDE_INSTALL_DIR}/kcmutils COMPONENT Devel
+)
+
+ecm_generate_headers(
+  Dispatcher
+  Dialog
+  PluginPage
+
+  RELATIVE ksettings
+  MODULE_NAME KSettings
+  REQUIRED_HEADERS KSettings_HEADERS
+)
+install(DIRECTORY ${CMAKE_CURRENT_BINARY_DIR}/KSettings DESTINATION ${INCLUDE_INSTALL_DIR}/KCMUtils COMPONENT Devel)
+install(FILES
+  ${KSettings_HEADERS}
+  DESTINATION ${INCLUDE_INSTALL_DIR}/kcmutils/ksettings COMPONENT Devel
+)
 
 install(TARGETS KF5KCMUtils EXPORT KF5KCMUtilsTargets ${INSTALL_TARGETS_DEFAULT_ARGS})
 
-install( FILES
+install(FILES
  kcmodule.desktop
  kcmoduleinit.desktop
 DESTINATION  ${SERVICETYPES_INSTALL_DIR} )
