@@ -14,6 +14,7 @@ set(REQUIRED_QT_VERSION "5.2.0")
 find_package(Qt5 ${QT_REQUIRED_VERSION} NO_MODULE REQUIRED Widgets DBus)
 
 include(FeatureSummary)
+include(GenerateExportHeader)
 include(ECMSetupVersion)
 include(ECMGenerateHeaders)
 include(CMakePackageConfigHelpers)
