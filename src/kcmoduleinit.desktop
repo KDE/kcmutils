@@ -2,6 +2,10 @@
 Type=ServiceType
 X-KDE-ServiceType=KCModuleInit
 Name=KDE Configuration Initialization
+Name[nl]=KDE-configuratie initialiseren
+Name[pt_BR]=Inicialização da configuração do KDE
+Name[sk]=Inicializácia konfigurácie KDE
+Name[uk]=Ініціалізація налаштувань KDE
 Name[x-test]=xxKDE Configuration Initializationxx
 
 # the symbol (with or without the kcminit_ prefix) used by kcminit

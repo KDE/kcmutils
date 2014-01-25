@@ -2,6 +2,10 @@
 Type=ServiceType
 X-KDE-ServiceType=KCModule
 Name=KDE Configuration Module
+Name[nl]=KDE-configuratiemodule
+Name[pt_BR]=Módulo de configuração do KDE
+Name[sk]=Ovládací modul KDE
+Name[uk]=Модуль налаштування KDE
 Name[x-test]=xxKDE Configuration Modulexx
 
 # the name of the method (with or without the init_ prefix) returning the factory object
