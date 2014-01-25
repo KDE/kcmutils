@@ -75,3 +75,7 @@ install(FILES
  kcmodule.desktop
  kcmoduleinit.desktop
 DESTINATION  ${SERVICETYPES_INSTALL_DIR} )
+
+include(ECMGeneratePriFile)
+ecm_generate_pri_file(BASE_NAME KCMUtils LIB_NAME KF5KCMUtils DEPS "widgets KConfigWidgets KService" FILENAME_VAR PRI_FILENAME)
+install(FILES ${PRI_FILENAME} DESTINATION ${ECM_MKSPECS_INSTALL_DIR})
