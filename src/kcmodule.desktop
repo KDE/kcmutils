@@ -2,6 +2,7 @@
 Type=ServiceType
 X-KDE-ServiceType=KCModule
 Name=KDE Configuration Module
+Name[x-test]=xxKDE Configuration Modulexx
 
 # the name of the method (with or without the init_ prefix) returning the factory object
 [PropertyDef::X-KDE-FactoryName]
