@@ -36,7 +36,8 @@ set_target_properties(KF5KCMUtils PROPERTIES
                       SOVERSION ${KCMUTILS_SOVERSION}
                       EXPORT_NAME KCMUtils)
 
-ecm_generate_headers(
+ecm_generate_headers(KCMUtils_HEADERS
+  HEADER_NAMES
   KCModuleInfo
   KCModuleLoader
   KCMultiDialog
@@ -44,26 +45,23 @@ ecm_generate_headers(
   KPluginSelector
   KCModuleContainer
 
-  MODULE_NAME KCMUtils
   REQUIRED_HEADERS KCMUtils_HEADERS
 )
-install(DIRECTORY ${CMAKE_CURRENT_BINARY_DIR}/KCMUtils DESTINATION ${INCLUDE_INSTALL_DIR} COMPONENT Devel)
 install(FILES
   ${CMAKE_CURRENT_BINARY_DIR}/kcmutils_export.h
   ${KCMUtils_HEADERS}
   DESTINATION ${INCLUDE_INSTALL_DIR}/KCMUtils COMPONENT Devel
 )
 
-ecm_generate_headers(
+ecm_generate_headers(KCMUtils_HEADERS
+  HEADER_NAMES
   Dispatcher
   Dialog
   PluginPage
 
   RELATIVE ksettings
-  MODULE_NAME KSettings
   REQUIRED_HEADERS KSettings_HEADERS
 )
-install(DIRECTORY ${CMAKE_CURRENT_BINARY_DIR}/KSettings DESTINATION ${INCLUDE_INSTALL_DIR}/KCMUtils COMPONENT Devel)
 install(FILES
   ${KSettings_HEADERS}
   DESTINATION ${INCLUDE_INSTALL_DIR}/KCMUtils/ksettings COMPONENT Devel
