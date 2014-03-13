@@ -11,7 +11,7 @@ include(KDEFrameworkCompilerSettings)
 include(KDECMakeSettings)
 
 set(REQUIRED_QT_VERSION "5.2.0")
-find_package(Qt5 ${QT_REQUIRED_VERSION} NO_MODULE REQUIRED Widgets DBus)
+find_package(Qt5 ${REQUIRED_QT_VERSION} NO_MODULE REQUIRED Widgets DBus)
 
 include(FeatureSummary)
 include(GenerateExportHeader)
