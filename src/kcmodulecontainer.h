@@ -95,22 +95,19 @@ public:
     virtual ~KCModuleContainer();
 
     /**
-     * Reimplemented for internal purposes.
-     * @internal
+     * @reimp
      */
-    void save();
+    void save() Q_DECL_OVERRIDE;
 
     /**
-     * Reimplemented for internal purposes.
-     * @internal
+     * @reimp
      */
-    void load();
+    void load() Q_DECL_OVERRIDE;
 
     /**
-     * Reimplemented for internal purposes.
-     * @internal
+     * @reimp
      */
-    void defaults();
+    void defaults() Q_DECL_OVERRIDE;
 
 private Q_SLOTS:
 
