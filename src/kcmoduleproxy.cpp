@@ -296,16 +296,6 @@ KCModule::Buttons KCModuleProxy::buttons() const
     return KCModule::Buttons(KCModule::Help | KCModule::Default | KCModule::Apply);
 }
 
-QString KCModuleProxy::rootOnlyMessage() const
-{
-    return realModule() ? realModule()->rootOnlyMessage() : QString();
-}
-
-bool KCModuleProxy::useRootOnlyMessage() const
-{
-    return realModule() ? realModule()->useRootOnlyMessage() : true;
-}
-
 bool KCModuleProxy::changed() const
 {
     Q_D(const KCModuleProxy);

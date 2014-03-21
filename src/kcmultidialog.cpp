@@ -419,8 +419,12 @@ KPageWidgetItem *KCMultiDialog::addModule(const KCModuleInfo &moduleInfo,
     // qDebug() << moduleInfo.moduleName();
     KPageWidgetItem *item = new KPageWidgetItem(kcm, moduleInfo.moduleName());
 
-    if (kcm->useRootOnlyMessage()) {
-        item->setHeader(QStringLiteral("<b>") + moduleInfo.comment() + QStringLiteral("</b><br><i>") + kcm->rootOnlyMessage() + QStringLiteral("</i>"));
+    if (kcm->realModule() && kcm->realModule()->useRootOnlyMessage()) {
+        item->setHeader(QStringLiteral("<b>") +
+                moduleInfo.comment() +
+                QStringLiteral("</b><br><i>") +
+                kcm->realModule()->rootOnlyMessage() +
+                QStringLiteral("</i>"));
         item->setIcon(KDE::icon(moduleInfo.icon(), QStringList() << QStringLiteral("dialog-warning")));
     } else {
         item->setHeader(moduleInfo.comment());

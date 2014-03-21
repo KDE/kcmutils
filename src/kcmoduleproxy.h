@@ -140,23 +140,6 @@ public:
     KCModule::Buttons buttons() const;
 
     /**
-     * @return The module's custom root
-     * message, if it has one
-     * @deprecated
-     */
-    QString rootOnlyMessage() const;
-    //KDE4 remove. There's a limit for convenience functions,
-    // this one's available via realModule()->
-
-    /**
-     * @return If the module is a root module.
-     * @deprecated
-     */
-    bool useRootOnlyMessage() const;
-    //KDE4 remove. There's a limit for convenience functions,
-    // this one's available via realModule()->
-
-    /**
      * @return true if the module is modified
      * and needs to be saved.
      */
