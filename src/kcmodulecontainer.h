@@ -112,20 +112,6 @@ public:
      */
     void defaults();
 
-protected:
-    typedef QList<KCModuleProxy *> ModuleList;
-
-    /**
-     * A list containing KCModuleProxy objects which
-     * have changed and must be saved.
-     */
-    ModuleList changedModules;
-
-    /**
-     * A list of all modules which are encapsulated.
-     */
-    ModuleList allModules; // KDE 4 put in the Private class and abstract with getter
-
 private Q_SLOTS:
 
     /**

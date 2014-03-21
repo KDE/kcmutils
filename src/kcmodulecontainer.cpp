@@ -30,6 +30,8 @@
 #include <QDebug>
 #include <kservice.h>
 
+typedef QList<KCModuleProxy *> ModuleList;
+
 /***********************************************************************/
 class KCModuleContainer::KCModuleContainerPrivate
 {
@@ -44,6 +46,17 @@ public:
     QTabWidget *tabWidget;
     KCModule::Buttons buttons;
     QVBoxLayout *topLayout;
+
+    /**
+     * A list containing KCModuleProxy objects which
+     * have changed and must be saved.
+     */
+    ModuleList changedModules;
+
+    /**
+     * A list of all modules which are encapsulated.
+     */
+    ModuleList allModules;
 
 };
 /***********************************************************************/
@@ -100,7 +113,7 @@ void KCModuleContainer::addModule(const QString &module)
     }
 
     KCModuleProxy *proxy = new KCModuleProxy(service, d->tabWidget);
-    allModules.append(proxy);
+    d->allModules.append(proxy);
 
     proxy->setObjectName(module);
 
@@ -125,7 +138,7 @@ void KCModuleContainer::tabSwitched(int index)
 
 void KCModuleContainer::save()
 {
-    ModuleList list = changedModules;
+    ModuleList list = d->changedModules;
     ModuleList::iterator it;
     for (it = list.begin(); it != list.end(); ++it) {
         (*it)->save();
@@ -137,7 +150,7 @@ void KCModuleContainer::save()
 
 void KCModuleContainer::load()
 {
-    ModuleList list = allModules;
+    ModuleList list = d->allModules;
     ModuleList::iterator it;
     for (it = list.begin(); it != list.end(); ++it) {
         (*it)->load();
@@ -148,7 +161,7 @@ void KCModuleContainer::load()
 
 void KCModuleContainer::defaults()
 {
-    ModuleList list = allModules;
+    ModuleList list = d->allModules;
     ModuleList::iterator it;
     for (it = list.begin(); it != list.end(); ++it) {
         (*it)->defaults();
@@ -159,8 +172,8 @@ void KCModuleContainer::defaults()
 
 void KCModuleContainer::moduleChanged(KCModuleProxy *proxy)
 {
-    changedModules.append(proxy);
-    if (changedModules.isEmpty()) {
+    d->changedModules.append(proxy);
+    if (d->changedModules.isEmpty()) {
         return;
     }
 
