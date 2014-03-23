@@ -26,8 +26,8 @@
 #include <QtCore/QFile>
 #include <QLabel>
 #include <QLayout>
+#include <QLibrary>
 
-#include <klibrary.h>
 #include <kpluginloader.h>
 #include <QDebug>
 #include <klocalizedstring.h>
@@ -93,12 +93,12 @@ KCModule *KCModuleLoader::loadModule(const KCModuleInfo &mod, ErrorReporting rep
 //#ifndef NDEBUG
         {
             // get the create_ function
-            KLibrary lib(mod.library());
+            QLibrary lib(KPluginLoader::findPlugin(mod.library()));
             if (lib.load()) {
                 KCModule *(*create)(QWidget *, const char *);
                 QByteArray factorymethod("create_");
                 factorymethod += mod.handle().toLatin1();
-                create = reinterpret_cast<KCModule *(*)(QWidget *, const char *)>(lib.resolveFunction(factorymethod.constData()));
+                create = reinterpret_cast<KCModule *(*)(QWidget *, const char *)>(lib.resolve(factorymethod.constData()));
                 if (create) {
                     return create(parent, mod.handle().toLatin1().constData());
                     qFatal("This module still uses a custom factory method (%s). This is not supported anymore. Please fix the module.", factorymethod.constData());
