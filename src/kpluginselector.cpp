@@ -760,26 +760,6 @@ void KPluginSelector::Private::PluginDelegate::slotAboutClicked()
     const QModelIndex index = focusedIndex();
     const QAbstractItemModel *model = index.model();
 
-    // Try to retrieve the plugin information from the component name of the plugin.
-    // If there is no valid information, go and fetch it from the service itself (the .desktop
-    // file).
-
-    PluginEntry *entry = index.model()->data(index, PluginEntryRole).value<PluginEntry *>();
-    KService::Ptr entryService = entry->pluginInfo.service();
-    if (entryService) {
-        KPluginLoader loader(*entryService);
-        KPluginFactory *factory = loader.factory();
-        if (factory) {
-            const KAboutData *aboutData = KAboutData::pluginData(factory->componentName());
-            if (aboutData) {
-                KAboutApplicationDialog aboutPlugin(*aboutData, itemView());
-                aboutPlugin.setWindowTitle(i18nc("Used only for plugins", "About %1", aboutData->displayName()));
-                aboutPlugin.exec();
-                return;
-            }
-        }
-    }
-
     const QString name = model->data(index, NameRole).toString();
     const QString comment = model->data(index, CommentRole).toString();
     const QString author = model->data(index, AuthorRole).toString();
