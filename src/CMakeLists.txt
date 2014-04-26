@@ -16,7 +16,7 @@ set(kcmutils_LIB_SRCS
 add_library(KF5KCMUtils ${kcmutils_LIB_SRCS})
 generate_export_header(KF5KCMUtils BASE_NAME KCMUtils)
 
-target_include_directories(KF5KCMUtils INTERFACE "$<INSTALL_INTERFACE:${INCLUDE_INSTALL_DIR}/KCMUtils>")
+target_include_directories(KF5KCMUtils INTERFACE "$<INSTALL_INTERFACE:${KF5_INCLUDE_INSTALL_DIR}/KCMUtils>")
 
 target_link_libraries(KF5KCMUtils
   PUBLIC
@@ -50,7 +50,7 @@ ecm_generate_headers(KCMUtils_HEADERS
 install(FILES
   ${CMAKE_CURRENT_BINARY_DIR}/kcmutils_export.h
   ${KCMUtils_HEADERS}
-  DESTINATION ${INCLUDE_INSTALL_DIR}/KCMUtils COMPONENT Devel
+  DESTINATION ${KF5_INCLUDE_INSTALL_DIR}/KCMUtils COMPONENT Devel
 )
 
 ecm_generate_headers(KCMUtils_HEADERS
@@ -64,10 +64,10 @@ ecm_generate_headers(KCMUtils_HEADERS
 )
 install(FILES
   ${KSettings_HEADERS}
-  DESTINATION ${INCLUDE_INSTALL_DIR}/KCMUtils/ksettings COMPONENT Devel
+  DESTINATION ${KF5_INCLUDE_INSTALL_DIR}/KCMUtils/ksettings COMPONENT Devel
 )
 
-install(TARGETS KF5KCMUtils EXPORT KF5KCMUtilsTargets ${INSTALL_TARGETS_DEFAULT_ARGS})
+install(TARGETS KF5KCMUtils EXPORT KF5KCMUtilsTargets ${KF5_INSTALL_TARGETS_DEFAULT_ARGS})
 
 install(FILES
  kcmodule.desktop
