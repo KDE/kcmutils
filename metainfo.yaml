@@ -1,1 +1,8 @@
+maintainer:
+description: Extra API to write KConfigModules
 tier: 3
+type: integration
+platforms:
+portingAid: false
+deprecated: false
+release: true
