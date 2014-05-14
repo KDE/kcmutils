@@ -768,7 +768,7 @@ void KPluginSelector::Private::PluginDelegate::slotAboutClicked()
     const QString version = model->data(index, VersionRole).toString();
     const QString license = model->data(index, LicenseRole).toString();
 
-    KAboutData aboutData(name, name, name, version, comment, KAboutLicense::byKeyword(license).key(), QString(), QString(), website);
+    KAboutData aboutData(name, name, version, comment, KAboutLicense::byKeyword(license).key(), QString(), QString(), website);
     aboutData.setProgramIconName(index.model()->data(index, Qt::DecorationRole).toString());
     const QStringList authors = author.split(QLatin1Char(','));
     const QStringList emails = email.split(QLatin1Char(','));
