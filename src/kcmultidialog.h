@@ -126,6 +126,8 @@ protected:
 
     KCMultiDialogPrivate *const d_ptr;
 
+    void closeEvent(QCloseEvent *event) Q_DECL_OVERRIDE;
+
 protected Q_SLOTS:
     /**
      * This slot is called when the user presses the "Default" Button.
@@ -174,7 +176,6 @@ protected Q_SLOTS:
 private:
     Q_PRIVATE_SLOT(d_func(), void _k_slotCurrentPageChanged(KPageWidgetItem *, KPageWidgetItem *))
     Q_PRIVATE_SLOT(d_func(), void _k_clientChanged())
-    Q_PRIVATE_SLOT(d_func(), void _k_dialogClosed())
     Q_PRIVATE_SLOT(d_func(), void _k_updateHeader(bool use, const QString &message))
 };
 

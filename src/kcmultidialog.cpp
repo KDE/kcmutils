@@ -199,20 +199,6 @@ void KCMultiDialogPrivate::_k_updateHeader(bool use, const QString &message)
     }
 }
 
-void KCMultiDialogPrivate::_k_dialogClosed()
-{
-    // qDebug() ;
-
-    /**
-     * If we don't delete them, the DBUS registration stays, and trying to load the KCMs
-     * in other situations will lead to "module already loaded in Foo," while to the user
-     * doesn't appear so(the dialog is hidden)
-     */
-    for (int i = 0; i < modules.count(); ++i) {
-        modules[ i ].kcm->deleteClient();
-    }
-}
-
 void KCMultiDialogPrivate::init()
 {
     Q_Q(KCMultiDialog);
@@ -238,7 +224,6 @@ void KCMultiDialogPrivate::init()
 
     q->setButtonBox(buttonBox);
 
-    q->connect(q, SIGNAL(finished(int)), SLOT(_k_dialogClosed()));
     q->connect(q, SIGNAL(currentPageChanged(KPageWidgetItem*,KPageWidgetItem*)),
                SLOT(_k_slotCurrentPageChanged(KPageWidgetItem*,KPageWidgetItem*)));
 
@@ -385,6 +370,21 @@ void KCMultiDialog::slotHelpClicked()
         QProcess::startDetached(QStringLiteral("khelpcenter"), QStringList() << docUrl.toString());
     } else {
         QDesktopServices::openUrl(docUrl);
+    }
+}
+
+void KCMultiDialog::closeEvent(QCloseEvent *event)
+{
+    Q_D(KCMultiDialog);
+    KPageDialog::closeEvent(event);
+
+    /**
+     * If we don't delete them, the DBUS registration stays, and trying to load the KCMs
+     * in other situations will lead to "module already loaded in Foo," while to the user
+     * doesn't appear so(the dialog is hidden)
+     */
+    Q_FOREACH(auto &proxy, d->modules) {
+        proxy.kcm->deleteClient();
     }
 }
 
