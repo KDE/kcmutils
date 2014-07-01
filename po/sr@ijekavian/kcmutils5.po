@@ -1,0 +1,453 @@
+# Translation of kdelibs4.po into Serbian.
+# Marko Rosic <roske@kde.org.yu>, 2003.
+# Toplica Tanaskovic <toptan@kde.org.yu>, 2003, 2004, 2005.
+# Chusslove Illich <caslav.ilic@gmx.net>, 2003, 2004, 2005, 2006, 2007, 2008, 2009, 2010, 2011, 2012, 2013, 2014.
+# Dalibor Djuric <daliborddjuric@gmail.com>, 2009, 2010, 2011.
+msgid ""
+msgstr ""
+"Project-Id-Version: kdelibs4\n"
+"Report-Msgid-Bugs-To: http://bugs.kde.org\n"
+"POT-Creation-Date: 2014-04-27 20:56+0000\n"
+"PO-Revision-Date: 2014-02-02 18:31+0100\n"
+"Last-Translator: Chusslove Illich <caslav.ilic@gmx.net>\n"
+"Language-Team: Serbian <kde-i18n-sr@kde.org>\n"
+"Language: sr@ijekavian\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=4; plural=n==1 ? 3 : n%10==1 && n%100!=11 ? 0 : n"
+"%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
+"X-Accelerator-Marker: &\n"
+"X-Text-Markup: kde4\n"
+"X-Environment: kde\n"
+
+msgctxt "NAME OF TRANSLATORS"
+msgid "Your names"
+msgstr "Топлица Танасковић,Часлав Илић"
+
+msgctxt "EMAIL OF TRANSLATORS"
+msgid "Your emails"
+msgstr "toptan@kde.org.yu,caslav.ilic@gmx.net"
+
+#: kcmoduleloader.cpp:76
+#, kde-format
+msgid "The module %1 could not be found."
+msgstr "Не могу да нађем модул <resource>%1</resource>."
+
+#: kcmoduleloader.cpp:77
+#, kde-format
+msgid ""
+"<qt><p>The diagnosis is:<br />The desktop file %1 could not be found.</p></"
+"qt>"
+msgstr ""
+"<qt><p>Дијагноза:<br />Не могу да нађем .десктоп фајл <filename>%1</"
+"filename>.</p></qt>"
+
+#: kcmoduleloader.cpp:79
+#, kde-format
+msgid "The module %1 is disabled."
+msgstr "Модул %1 је искључен."
+
+#: kcmoduleloader.cpp:80
+msgid ""
+"<qt><p>Either the hardware/software the module configures is not available "
+"or the module has been disabled by the administrator.</p></qt>"
+msgstr ""
+"<qt><p>Или хардвер/софтвер који модул подешава није доступан, или је "
+"администратор искључио модул.</p></qt>"
+
+#: kcmoduleloader.cpp:124
+#, kde-format
+msgid "The module %1 is not a valid configuration module."
+msgstr "Модул %1 није исправан модул за подешавање."
+
+#: kcmoduleloader.cpp:125
+#, kde-format
+msgid ""
+"<qt>The diagnosis is:<br />The desktop file %1 does not specify a library.</"
+"qt>"
+msgstr ""
+"<qt>Дијагноза:<br />.Десктоп фајл <filename>%1</filename> не наводи "
+"библиотеку.</qt>"
+
+#: kcmoduleloader.cpp:140
+msgid ""
+"<qt><p>Possible reasons:<ul><li>An error occurred during your last KDE "
+"upgrade leaving an orphaned control module</li><li>You have old third party "
+"modules lying around.</li></ul></p><p>Check these points carefully and try "
+"to remove the module mentioned in the error message. If this fails, consider "
+"contacting your distributor or packager.</p></qt>"
+msgstr ""
+"<qt><p>Могући разлози:</p><ul><li>Грешка приликом посљедње надоградње КДЕ‑а "
+"која је оставила непотребан контролни модул.</li><li>Уплићу се неки стари "
+"контролни модули са стране.</li></ul><p>Провјерите ове тачке пажљиво и "
+"покушајте да уклоните модул поменут у тексту грешке. Ако ово не успије, "
+"могли бисте да се обратите свом дистрибутеру или пакетару.</p></qt>"
+
+#: kcmoduleproxy.cpp:161
+#, kde-format
+msgctxt "Argument is application name"
+msgid "This configuration section is already opened in %1"
+msgstr ""
+"Овај одјељак за подешавање већ је отворен у <application>%1</application>"
+"|/|"
+"Овај одјељак за подешавање већ је отворен у <application>$[дат %1]</"
+"application>"
+
+#: kcmultidialog.cpp:57
+msgid ""
+"The settings of the current module have changed.\n"
+"Do you want to apply the changes or discard them?"
+msgstr ""
+"Поставке текућег модула су измијењене.\n"
+"Желите ли да примијените измјене или да их одбаците?"
+
+#: kcmultidialog.cpp:59
+msgid "Apply Settings"
+msgstr "Примени поставке"
+
+#: kcmultidialog.cpp:220
+msgid "Configure"
+msgstr "Подеси"
+
+#. i18n: ectx: label, entry, group (DesktopIcons)
+#: kdeglobals.kcfg:9
+msgid "Distance between desktop icons"
+msgstr "Растојање између икона на површи"
+
+#. i18n: ectx: whatsthis, entry, group (DesktopIcons)
+#: kdeglobals.kcfg:10
+msgid "The distance between icons specified in pixels."
+msgstr "Растојање између икона задаје се у пикселима."
+
+#. i18n: ectx: label, entry, group (General)
+#: kdeglobals.kcfg:23
+msgid "Widget style to use"
+msgstr "Жељени стил виџета"
+
+#. i18n: ectx: whatsthis, entry, group (General)
+#: kdeglobals.kcfg:24
+msgid ""
+"The name of the widget style, for example \"keramik\" or \"plastik\". "
+"Without quotes."
+msgstr ""
+"Име стила виџета, на примјер <icode>keramik</icode> или <icode>plastik</"
+"icode> (без наводника)."
+
+#. i18n: ectx: label, entry, group (General)
+#: kdeglobals.kcfg:30
+msgid "Use the PC speaker"
+msgstr "Користи системски звучник"
+
+#. i18n: ectx: whatsthis, entry, group (General)
+#: kdeglobals.kcfg:31
+msgid ""
+"Whether the ordinary PC speaker should be used instead of KDE's own "
+"notifications system."
+msgstr ""
+"Да ли користити обични системски звучник умјесто КДЕ‑овог система за "
+"обавјештења."
+
+#. i18n: ectx: label, entry, group (General)
+#: kdeglobals.kcfg:35
+msgid "What terminal application to use"
+msgstr "Који терминалски програм користити"
+
+#. i18n: ectx: whatsthis, entry, group (General)
+#: kdeglobals.kcfg:37
+msgid ""
+"Whenever a terminal application is launched this terminal emulator program "
+"will be used.\n"
+msgstr ""
+"Кад год се покрене терминалски програм, употријебиће се овај емулатор "
+"терминала.\n"
+
+#. i18n: ectx: label, entry, group (General)
+#: kdeglobals.kcfg:41
+msgid "Fixed width font"
+msgstr "Фонт фиксне ширине"
+
+#. i18n: ectx: whatsthis, entry, group (General)
+#: kdeglobals.kcfg:43
+msgid ""
+"This font is used when a fixed font is needed. A fixed font has a constant "
+"width.\n"
+msgstr ""
+"Овај фонт се користи када је потребно да су сви знакови једнаке ширине.\n"
+
+#. i18n: ectx: label, entry, group (General)
+#: kdeglobals.kcfg:46
+msgid "System wide font"
+msgstr "Фонт широм система"
+
+#. i18n: ectx: label, entry, group (General)
+#: kdeglobals.kcfg:49
+msgid "Font for menus"
+msgstr "Фонт за меније"
+
+#. i18n: ectx: whatsthis, entry, group (General)
+#: kdeglobals.kcfg:50
+msgid "What font to use for menus in applications."
+msgstr "Који се фонт користи за меније у програмима."
+
+#. i18n: ectx: label, entry, group (General)
+#: kdeglobals.kcfg:53
+msgid "Color for links"
+msgstr "Боја за везе"
+
+#. i18n: ectx: whatsthis, entry, group (General)
+#: kdeglobals.kcfg:54
+msgid "What color links should be that have not yet been clicked on"
+msgstr "Које ће боје бити везе на које још увијек није кликнуто."
+
+#. i18n: ectx: label, entry, group (General)
+#: kdeglobals.kcfg:57
+msgid "Color for visited links"
+msgstr "Боја за посећене везе"
+
+#. i18n: ectx: label, entry, group (General)
+#: kdeglobals.kcfg:60
+msgid "Font for the taskbar"
+msgstr "Фонт траке задатака"
+
+#. i18n: ectx: whatsthis, entry, group (General)
+#: kdeglobals.kcfg:61
+msgid ""
+"What font to use for the panel at the bottom of the screen, where the "
+"currently running applications are."
+msgstr ""
+"Који фонт користити на панелу при дну екрана, гдје су смјештени програми "
+"који се тренутно извршавају."
+
+#. i18n: ectx: label, entry, group (General)
+#: kdeglobals.kcfg:64
+msgid "Fonts for toolbars"
+msgstr "Фонтови за траке алатки"
+
+#. i18n: ectx: label, entry (Desktop Screenshot), group (Global Shortcuts)
+#: kdeglobals.kcfg:73
+msgid "Shortcut for taking screenshot"
+msgstr "Пречица за снимак екрана"
+
+#. i18n: ectx: label, entry (Enable/Disable Clipboard Actions), group (Global Shortcuts)
+#: kdeglobals.kcfg:78
+msgid "Shortcut for toggling Clipboard Actions on and off"
+msgstr "Пречица за паљење и гашење радњи клипборда"
+
+#. i18n: ectx: label, entry (Halt without Confirmation), group (Global Shortcuts)
+#: kdeglobals.kcfg:83
+msgid "Shortcut for shutting down the computer without confirmation"
+msgstr "Пречица за гашење рачунара без потврде"
+
+#. i18n: ectx: label, entry (Sort directories first), group (KFileDialog Settings)
+#: kdeglobals.kcfg:380
+msgid "Show directories first"
+msgstr "Прикажи фасцикле прве"
+
+#. i18n: ectx: whatsthis, entry (Sort directories first), group (KFileDialog Settings)
+#: kdeglobals.kcfg:381
+msgid "Whether directories should be placed at the top when displaying files"
+msgstr "Треба ли смјестити фасцикле при врху у приказу фајлова"
+
+#. i18n: ectx: label, entry (Recent URLs), group (KFileDialog Settings)
+#: kdeglobals.kcfg:389
+msgid "The URLs recently visited"
+msgstr "Недавно посјећени УРЛ‑ови"
+
+#. i18n: ectx: whatsthis, entry (Recent URLs), group (KFileDialog Settings)
+#: kdeglobals.kcfg:390
+msgid "Used for auto-completion in file dialogs, for example"
+msgstr "Користи се, на примјер, за самодопуну у дијалогу фајлова."
+
+#. i18n: ectx: label, entry (Show Preview), group (KFileDialog Settings)
+#: kdeglobals.kcfg:394
+msgid "Show file preview in file dialog"
+msgstr "Прикажи преглед фајла у дијалогу фајлова"
+
+#. i18n: ectx: label, entry (Show hidden files), group (KFileDialog Settings)
+#: kdeglobals.kcfg:399
+msgid "Show hidden files"
+msgstr "Прикажи скривене фајлове"
+
+#. i18n: ectx: whatsthis, entry (Show hidden files), group (KFileDialog Settings)
+#: kdeglobals.kcfg:400
+msgid ""
+"Whether files starting with a dot (convention for hidden files) should be "
+"shown"
+msgstr ""
+"Треба ли приказивати фајлове који почињу тачком (који се по договору "
+"сматрају скривеним)"
+
+#. i18n: ectx: label, entry (Show Speedbar), group (KFileDialog Settings)
+#: kdeglobals.kcfg:405
+msgid "Show speedbar"
+msgstr "Прикажи брзотраку"
+
+#. i18n: ectx: whatsthis, entry (Show Speedbar), group (KFileDialog Settings)
+#: kdeglobals.kcfg:406
+msgid ""
+"Whether the shortcut icons to the left in the file dialog should be shown"
+msgstr "Треба ли приказивати иконе пречица на лијевој страни дијалога фајлова"
+
+#. i18n: ectx: label, entry, group (Locale)
+#: kdeglobals.kcfg:425
+msgid "What country"
+msgstr "Која држава"
+
+#. i18n: ectx: whatsthis, entry, group (Locale)
+#: kdeglobals.kcfg:426
+msgid ""
+"Used to determine how to display numbers, currency and time/date, for example"
+msgstr "Користи се за приказ бројева, валуте, и времена и датума"
+
+#. i18n: ectx: label, entry, group (Locale)
+#: kdeglobals.kcfg:430
+msgid "What language to use to display text"
+msgstr "На ком језику се приказује текст"
+
+#. i18n: ectx: label, entry, group (Locale)
+#: kdeglobals.kcfg:433
+msgid "Character used for indicating positive numbers"
+msgstr "Знак којим се обиљежавају позитивни бројеви"
+
+#. i18n: ectx: whatsthis, entry, group (Locale)
+#: kdeglobals.kcfg:434
+msgid "Most countries have no character for this"
+msgstr "Већина држава не користи никакав знак за ово"
+
+#. i18n: ectx: label, entry, group (Paths)
+#: kdeglobals.kcfg:439
+msgid "Path to the autostart directory"
+msgstr "Путања фасцикли за самопокретање"
+
+#. i18n: ectx: whatsthis, entry, group (Paths)
+#: kdeglobals.kcfg:440
+msgid "Path to the directory containing executables to be run on session login"
+msgstr ""
+"Путања до фасцикле са извршним фајловима које треба покренути при пријави "
+"сесије"
+
+#. i18n: ectx: label, entry, group (Socks)
+#: kdeglobals.kcfg:487
+msgid "Enable SOCKS support"
+msgstr "Укључи подршку за СОКС"
+
+#. i18n: ectx: whatsthis, entry, group (Socks)
+#: kdeglobals.kcfg:488
+msgid "Whether SOCKS version 4 and 5 should be enabled in KDE's sub systems"
+msgstr "Да ли укључити подршку за СОКС верзије 4 и 5 у КДЕ подсистемима"
+
+#. i18n: ectx: label, entry, group (Socks)
+#: kdeglobals.kcfg:492
+msgid "Path to custom SOCKS library"
+msgstr "Путања до посебне библиотеке СОКС‑а"
+
+#. i18n: ectx: label, entry, group (Toolbar style)
+#: kdeglobals.kcfg:498
+msgid "Highlight toolbar buttons on mouse over"
+msgstr "Истакни дугмад алатки при преласку мишем"
+
+#. i18n: ectx: label, entry, group (Toolbar style)
+#: kdeglobals.kcfg:502
+msgid "Show text on toolbar icons "
+msgstr "Прикажи текст испод икона алатки"
+
+#. i18n: ectx: whatsthis, entry, group (Toolbar style)
+#: kdeglobals.kcfg:503
+msgid "Whether text should be shown in addition to icons on toolbar icons"
+msgstr "Треба ли приказати и текст као додатак иконама на тракама алатки"
+
+#. i18n: ectx: label, entry (EchoMode), group (Passwords)
+#: kdeglobals.kcfg:524
+msgid "Password echo type"
+msgstr "Тип одјека лозинке"
+
+#. i18n: ectx: label, entry (Dialog Size), group (KKeyDialog Settings)
+#: kdeglobals.kcfg:534
+msgid "The size of the dialog"
+msgstr "Величина дијалога"
+
+#: kpluginselector.cpp:139
+msgid ""
+"Automatic changes have been performed due to plugin dependencies. Click here "
+"for further information"
+msgstr ""
+"Извршене су аутоматске измјене усљед зависности прикључака. Кликните овдје "
+"за још информација."
+
+#: kpluginselector.cpp:208
+msgid ""
+"Automatic changes have been performed in order to satisfy plugin "
+"dependencies:\n"
+msgstr ""
+"Извршене су аутоматске измјене да би се задовољиле зависности прикључака:\n"
+
+#: kpluginselector.cpp:211
+#, kde-format
+msgid ""
+"\n"
+"    %1 plugin has been automatically checked because of the dependency of %2 "
+"plugin"
+msgstr ""
+"\n"
+"    Прикључак <resource>%1</resource> је аутоматски укључен због зависности "
+"прикључка <resource>%2</resource> од њега"
+
+#: kpluginselector.cpp:213
+#, kde-format
+msgid ""
+"\n"
+"    %1 plugin has been automatically unchecked because of its dependency on "
+"%2 plugin"
+msgstr ""
+"\n"
+"    Прикључак <resource>%1</resource> је аутоматски искључен због своје "
+"зависности од прикључка <resource>%2</resource>"
+
+#: kpluginselector.cpp:216
+msgid "Dependency Check"
+msgstr "Провјера зависности"
+
+#: kpluginselector.cpp:233
+#, kde-format
+msgid "%1 plugin automatically added due to plugin dependencies"
+msgid_plural "%1 plugins automatically added due to plugin dependencies"
+msgstr[0] "%1 прикључак аутоматски додат усљед зависности прикључака"
+msgstr[1] "%1 прикључка аутоматски додата усљед зависности прикључака"
+msgstr[2] "%1 прикључака аутоматски додато усљед зависности прикључака"
+msgstr[3] "Један прикључак аутоматски додат усљед зависности прикључака"
+
+#: kpluginselector.cpp:237
+msgid ", "
+msgstr ", "
+
+#: kpluginselector.cpp:241
+#, kde-format
+msgid "%1 plugin automatically removed due to plugin dependencies"
+msgid_plural "%1 plugins automatically removed due to plugin dependencies"
+msgstr[0] "%1 прикључак аутоматски уклоњен усљед зависности прикључака"
+msgstr[1] "%1 прикључка аутоматски уклоњена усљед зависности прикључака"
+msgstr[2] "%1 прикључака аутоматски уклоњено усљед зависности прикључака"
+msgstr[3] "Један прикључак аутоматски уклоњен усљед зависности прикључака"
+
+#: kpluginselector.cpp:262
+msgid "Search Plugins"
+msgstr "Нађи прикључак"
+
+#: kpluginselector.cpp:785
+#, kde-format
+msgctxt "Used only for plugins"
+msgid "About %1"
+msgstr ""
+"О %1"
+"|/|"
+"О $[дат %1]"
+
+# >> @title:window
+#: ksettings/componentsdialog.cpp:55
+msgid "Select Components"
+msgstr "Избор компоненте"
+
+#: ksettings/dialog.cpp:230
+msgid "Enable component"
+msgstr "Уградива компонента"
