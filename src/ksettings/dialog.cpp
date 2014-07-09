@@ -430,8 +430,8 @@ void DialogPrivate::createDialogFromServices()
     // I have no idea how to check that in KPluginSelector::load()...
     //q->showButton(KDialog::User1, true);
 
-    QObject::connect(q, SIGNAL(okClicked()), q, SLOT(_k_syncConfiguration()));
-    QObject::connect(q, SIGNAL(applyClicked()), q, SLOT(_k_syncConfiguration()));
+    QObject::connect(q->button(QDialogButtonBox::Ok), SIGNAL(clicked()), q, SLOT(_k_syncConfiguration()));
+    QObject::connect(q->button(QDialogButtonBox::Apply), SIGNAL(clicked()), q, SLOT(_k_syncConfiguration()));
     QObject::connect(q, SIGNAL(configCommitted(QByteArray)), q,
                      SLOT(_k_reparseConfiguration(QByteArray)));
 }
