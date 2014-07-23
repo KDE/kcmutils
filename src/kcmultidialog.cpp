@@ -342,7 +342,7 @@ void KCMultiDialog::slotApplyClicked()
 
 void KCMultiDialog::slotOkClicked()
 {
-    QPushButton *okButton = buttonBox()->button(QDialogButtonBox::Apply);
+    QPushButton *okButton = buttonBox()->button(QDialogButtonBox::Ok);
     okButton->setFocus();
 
     d_func()->apply();
