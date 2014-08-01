@@ -157,7 +157,8 @@ QSet<KCModuleInfo> DialogPrivate::instanceServices()
             KSycocaEntry::Ptr p = (*it);
             if (p->isType(KST_KService)) {
                 //qDebug() << "found service";
-                ret << KCModuleInfo(KService::Ptr(p));
+                const KService::Ptr service(static_cast<KService*>(p.data()));
+                ret << KCModuleInfo(service);
             } else
                 qWarning() << "KServiceGroup::childGroup returned"
                            " something else than a KService" << endl;
