@@ -6,3 +6,7 @@ platforms:
 portingAid: false
 deprecated: false
 release: true
+libraries:
+ - qmake: KCMUtils
+   cmake: "KF5::KCMUtils"
+cmakename: KF5KCMUtils
