@@ -1,5 +1,5 @@
 maintainer:
-description: Extra API to write KConfigModules
+description: Utilities for working with KCModules
 tier: 3
 type: integration
 platforms:
