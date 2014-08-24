@@ -96,13 +96,8 @@ public:
       *                      @p categoryKey is not set the Category key is
       *                      ignored and all plugins are shown. Not match case
       * @param config        The KConfig object that holds the state of the
-      *                      plugins being enabled or not. By default it should
-      *                      be componentData.config(). It is recommended to
-      *                      always pass a KConfig object if you use
-      *                      KSettings::PluginPage since you never know from where the
-      *                      page will be called (think global config app).
-      *                      For example KViewCanvas passes KConfig(
-      *                      "kviewcanvas" )
+      *                      plugins being enabled or not. By default it will be
+      *                      set to KSharedConfig::openConfig(componentName).
       */
     void addPlugins(const QString &componentName,
                     const QString &categoryName = QString(),
