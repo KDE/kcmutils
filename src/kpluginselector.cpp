@@ -318,7 +318,7 @@ void KPluginSelector::addPlugins(const QString &componentName,
 
     Q_ASSERT(config);
     if (!config) {
-        config = KSharedConfig::openConfig(componentName);
+        config = KSharedConfig::openConfig(componentName + "rc");
     }
 
     KConfigGroup cfgGroup(config, "KParts Plugins");

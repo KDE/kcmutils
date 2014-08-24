@@ -97,7 +97,7 @@ public:
       *                      ignored and all plugins are shown. Not match case
       * @param config        The KConfig object that holds the state of the
       *                      plugins being enabled or not. By default it will be
-      *                      set to KSharedConfig::openConfig(componentName).
+      *                      set to KSharedConfig::openConfig(componentName + "rc").
       */
     void addPlugins(const QString &componentName,
                     const QString &categoryName = QString(),
