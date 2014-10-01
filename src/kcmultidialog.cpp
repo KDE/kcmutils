@@ -226,9 +226,6 @@ void KCMultiDialogPrivate::init()
 
     q->connect(q, SIGNAL(currentPageChanged(KPageWidgetItem*,KPageWidgetItem*)),
                SLOT(_k_slotCurrentPageChanged(KPageWidgetItem*,KPageWidgetItem*)));
-
-    q->resize(QSize(800, 550));
-    q->adjustSize();
 }
 
 KCMultiDialog::KCMultiDialog(QWidget *parent)
@@ -255,6 +252,13 @@ KCMultiDialog::KCMultiDialog(KCMultiDialogPrivate &dd, KPageWidget *pageWidget, 
 KCMultiDialog::~KCMultiDialog()
 {
     delete d_ptr;
+}
+
+void KCMultiDialog::showEvent(QShowEvent *ev)
+{
+    resize(QSize(800, 550));
+    adjustSize();
+    KPageDialog::showEvent(ev);
 }
 
 void KCMultiDialog::slotDefaultClicked()

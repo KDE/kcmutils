@@ -127,6 +127,7 @@ protected:
     KCMultiDialogPrivate *const d_ptr;
 
     void closeEvent(QCloseEvent *event) Q_DECL_OVERRIDE;
+    void showEvent(QShowEvent *event) Q_DECL_OVERRIDE;
 
 protected Q_SLOTS:
     /**
