@@ -96,7 +96,10 @@ public:
 
     bool operator==(const PluginEntry &pe) const
     {
-        return pluginInfo.entryPath() == pe.pluginInfo.entryPath();
+        // just comparing the entry path is not enough, since it is now also possible
+        // to load the plugin information directly from a library (without .desktop files)
+        return pluginInfo.entryPath() == pe.pluginInfo.entryPath()
+            && pluginInfo.libraryPath() == pe.pluginInfo.libraryPath();
     }
 };
 
