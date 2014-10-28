@@ -369,7 +369,7 @@ void KCMultiDialog::slotHelpClicked()
         }
     }
 
-    QUrl docUrl = QUrl(QStringLiteral("help:/")).resolved(QUrl::fromUserInput(docPath)); // same code as in KHelpClient::invokeHelp
+    QUrl docUrl = QUrl(QStringLiteral("help:/")).resolved(QUrl(docPath)); // same code as in KHelpClient::invokeHelp
     if (docUrl.scheme() == QLatin1String("help") || docUrl.scheme() == QLatin1String("man") || docUrl.scheme() == QLatin1String("info")) {
         QProcess::startDetached(QStringLiteral("khelpcenter"), QStringList() << docUrl.toString());
     } else {
