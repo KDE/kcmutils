@@ -213,6 +213,12 @@ void KCMultiDialogPrivate::init()
                                   | QDialogButtonBox::Apply
                                   | QDialogButtonBox::Ok
                                   | QDialogButtonBox::Reset);
+    KGuiItem::assign(buttonBox->button(QDialogButtonBox::Ok), KStandardGuiItem::ok());
+    KGuiItem::assign(buttonBox->button(QDialogButtonBox::Cancel), KStandardGuiItem::cancel());
+    KGuiItem::assign(buttonBox->button(QDialogButtonBox::RestoreDefaults), KStandardGuiItem::defaults());
+    KGuiItem::assign(buttonBox->button(QDialogButtonBox::Apply), KStandardGuiItem::apply());
+    KGuiItem::assign(buttonBox->button(QDialogButtonBox::Reset), KStandardGuiItem::reset());
+    KGuiItem::assign(buttonBox->button(QDialogButtonBox::Help), KStandardGuiItem::help());
     buttonBox->button(QDialogButtonBox::Reset)->setEnabled(false);
     buttonBox->button(QDialogButtonBox::Apply)->setEnabled(false);
 

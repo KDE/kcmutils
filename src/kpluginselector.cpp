@@ -48,6 +48,7 @@
 #include <kcategorizedsortfilterproxymodel.h>
 #include <kaboutdata.h>
 #include <kaboutapplicationdialog.h>
+#include <KStandardGuiItem>
 
 #define MARGIN 5
 
@@ -849,7 +850,10 @@ void KPluginSelector::Private::PluginDelegate::slotConfigureClicked()
         layout->insertSpacing(-1, marginHint);
 
         QDialogButtonBox *buttonBox = new QDialogButtonBox(&configDialog);
-        buttonBox->setStandardButtons(QDialogButtonBox::Ok | QDialogButtonBox::Cancel | QDialogButtonBox::Cancel);
+        buttonBox->setStandardButtons(QDialogButtonBox::Ok | QDialogButtonBox::Cancel | QDialogButtonBox::RestoreDefaults);
+        KGuiItem::assign(buttonBox->button(QDialogButtonBox::Ok), KStandardGuiItem::ok());
+        KGuiItem::assign(buttonBox->button(QDialogButtonBox::Cancel), KStandardGuiItem::cancel());
+        KGuiItem::assign(buttonBox->button(QDialogButtonBox::RestoreDefaults), KStandardGuiItem::defaults());
         connect(buttonBox, SIGNAL(accepted()), &configDialog, SLOT(accept()));
         connect(buttonBox, SIGNAL(rejected()), &configDialog, SLOT(reject()));
         connect(buttonBox->button(QDialogButtonBox::RestoreDefaults), SIGNAL(clicked()), this, SLOT(slotDefaultClicked()));
