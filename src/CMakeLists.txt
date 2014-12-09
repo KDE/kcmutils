@@ -53,7 +53,7 @@ install(FILES
   DESTINATION ${KF5_INCLUDE_INSTALL_DIR}/KCMUtils COMPONENT Devel
 )
 
-ecm_generate_headers(KCMUtils_HEADERS
+ecm_generate_headers(KSettings_HEADERS
   HEADER_NAMES
   Dispatcher
   Dialog
@@ -64,7 +64,7 @@ ecm_generate_headers(KCMUtils_HEADERS
 )
 install(FILES
   ${KSettings_HEADERS}
-  DESTINATION ${KF5_INCLUDE_INSTALL_DIR}/KCMUtils/ksettings COMPONENT Devel
+  DESTINATION ${KF5_INCLUDE_INSTALL_DIR}/KCMUtils/KSettings COMPONENT Devel
 )
 
 install(TARGETS KF5KCMUtils EXPORT KF5KCMUtilsTargets ${KF5_INSTALL_TARGETS_DEFAULT_ARGS})
