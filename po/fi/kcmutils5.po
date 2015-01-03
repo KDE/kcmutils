@@ -1,0 +1,454 @@
+# Finnish messages for kdelibs4.
+# Copyright © 2002, 2003, 2004, 2005, 2006, 2007, 2008, 2009, 2010, 2011, 2012 This_file_is_part_of_KDE
+# This file is distributed under the same license as the kdelibs package.
+# Kim Enkovaara <kim.enkovaara@iki.fi>, 2002,2003, 2005, 2006, 2007.
+# Tapio Kautto <eleknader@phnet.fi>, 2003, 2004.
+# Mikko Ikola <kola@netikka.fi>, 2003.
+# Teemu Rytilahti <teemu.rytilahti@d5k.net>, 2003, 2008.
+# Mikko Ikola <ikola@iki.fi>, 2003.
+# Teemu Rytilahti <teemu.rytilahti@kde-fi.org>, 2003, 2004, 2008.
+# Niklas Laxström <niklas.laxstrom+kdetrans@gmail.com>, 2006, 2007.
+# Joonas Niilola <juippis@roskakori.org>, 2006.
+# Mikko Piippo <piippo@cc.helsinki.fi>, 2007.
+# Teemu Rytilahti <tpr@d5k.net>, 2008.
+# Tommi Nieminen <translator@legisign.org>, 2009, 2010, 2011.
+# Tommi Nieminen <tommi.nieminen@legisign.org>, 2009.
+# Jorma Karvonen <karvonen.jorma@gmail.com>, 2010.
+# Lasse Liehu <lasse.liehu@gmail.com>, 2006, 2010, 2011, 2012, 2013, 2014, 2015.
+#
+# KDE Finnish translation sprint participants:
+# Author: Artnay
+# Author: Jl
+# Author: Lliehu
+# Author: Niklas Laxström
+# Author: Suhviksi
+msgid ""
+msgstr ""
+"Project-Id-Version: kdelibs4\n"
+"Report-Msgid-Bugs-To: http://bugs.kde.org\n"
+"POT-Creation-Date: 2014-11-28 08:10+0000\n"
+"PO-Revision-Date: 2014-10-19 17:16+0300\n"
+"Last-Translator: Lasse Liehu <lasse.liehu@gmail.com>\n"
+"Language-Team: Finnish <lokalisointi@lists.coss.fi>\n"
+"Language: fi\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: Lokalize 1.5\n"
+"X-POT-Import-Date: 2013-01-13 20:43:21+0000\n"
+
+msgctxt "NAME OF TRANSLATORS"
+msgid "Your names"
+msgstr ""
+"Kim Enkovaara, Tapio Kautto, Mikko Ikola, Teemu Rytilahti, Lasse Liehu, "
+"Niklas Laxström, Joonas Niilola, Mikko Piippo, Tommi Nieminen, Jorma Karvonen"
+
+msgctxt "EMAIL OF TRANSLATORS"
+msgid "Your emails"
+msgstr ""
+"kim.enkovaara@iki.fi, eleknader@phnet.fi, ikola@iki.fi, tpr@d5k.net, lasse."
+"liehu@gmail.com, niklas.laxstrom+kdetrans@gmail.com, juippis@roskakori.org, "
+"piippo@cc.helsinki.fi, translator@legisign.org, karvonen.jorma@gmail.com"
+
+#: kcmoduleloader.cpp:76
+#, kde-format
+msgid "The module %1 could not be found."
+msgstr "Moduulia %1 ei löytynyt."
+
+#: kcmoduleloader.cpp:77
+#, kde-format
+msgid ""
+"<qt><p>The diagnosis is:<br />The desktop file %1 could not be found.</p></"
+"qt>"
+msgstr "<qt><p>Diagnoosi on:<br />Työpöytätiedostoa %1 ei löytynyt.</p></qt>"
+
+#: kcmoduleloader.cpp:79
+#, kde-format
+msgid "The module %1 is disabled."
+msgstr "Moduuli %1 on pois käytöstä."
+
+#: kcmoduleloader.cpp:80
+msgid ""
+"<qt><p>Either the hardware/software the module configures is not available "
+"or the module has been disabled by the administrator.</p></qt>"
+msgstr ""
+"<qt><p>Moduulin määrittämää laitteistoa tai ohjelmistoa ei ole tai "
+"ylläpitäjä on poistanut moduulin käytöstä.</p></qt>"
+
+#: kcmoduleloader.cpp:124
+#, kde-format
+msgid "The module %1 is not a valid configuration module."
+msgstr "%1 ei ole oikeanlainen asetusmoduuli."
+
+#: kcmoduleloader.cpp:125
+#, kde-format
+msgid ""
+"<qt>The diagnosis is:<br />The desktop file %1 does not specify a library.</"
+"qt>"
+msgstr "<qt>Diagnoosi on:<br />Työpöytätiedosto %1 ei määritä kirjastoa. </qt>"
+
+#: kcmoduleloader.cpp:140
+msgid ""
+"<qt><p>Possible reasons:<ul><li>An error occurred during your last KDE "
+"upgrade leaving an orphaned control module</li><li>You have old third party "
+"modules lying around.</li></ul></p><p>Check these points carefully and try "
+"to remove the module mentioned in the error message. If this fails, consider "
+"contacting your distributor or packager.</p></qt>"
+msgstr ""
+"<qt><p>Mahdolliset syyt:<ul><li>Edellisessä KDE-päivityksessä tapahtui "
+"virhe, joka jätti yksinäisen ohjausmoduulin.</li><li>Koneessa on vanha "
+"kolmannen osapuolen moduuli.</li></ul></p><p>Tarkista nämä vaihtoehdot "
+"tarkasti ja yritä poistaa virheilmoituksessa mainittu moduuli. Jos et "
+"onnistu, ota yhteyttä levityspaketoijaan tai paketin luojaan. </p></qt>"
+
+#: kcmoduleproxy.cpp:162
+#, kde-format
+msgctxt "Argument is application name"
+msgid "This configuration section is already opened in %1"
+msgstr "Tämä asetusosio on jo avattu sovelluksessa %1"
+
+#: kcmultidialog.cpp:57
+msgid ""
+"The settings of the current module have changed.\n"
+"Do you want to apply the changes or discard them?"
+msgstr ""
+"Aktiivisessa osiossa on tallentamattomia muutoksia.\n"
+"Haluatko ottaa muutokset käyttöön vai hylätäänkö ne?"
+
+#: kcmultidialog.cpp:59
+msgid "Apply Settings"
+msgstr "Käytä asetuksia"
+
+#: kcmultidialog.cpp:206
+msgid "Configure"
+msgstr "Asetukset"
+
+#. i18n: ectx: label, entry, group (DesktopIcons)
+#: kdeglobals.kcfg:9
+msgid "Distance between desktop icons"
+msgstr "Työpöytäkuvakkeiden etäisyys toisistaan"
+
+#. i18n: ectx: whatsthis, entry, group (DesktopIcons)
+#: kdeglobals.kcfg:10
+msgid "The distance between icons specified in pixels."
+msgstr "Kuvakkeiden etäisyys toisistaan kuvapisteinä."
+
+#. i18n: ectx: label, entry, group (General)
+#: kdeglobals.kcfg:23
+msgid "Widget style to use"
+msgstr "Käyttöliittymäelementtien tyyli"
+
+#. i18n: ectx: whatsthis, entry, group (General)
+#: kdeglobals.kcfg:24
+msgid ""
+"The name of the widget style, for example \"keramik\" or \"plastik\". "
+"Without quotes."
+msgstr "Käyttöliittymäelementtien tyylin nimi (esim. keramik tai plastik)."
+
+#. i18n: ectx: label, entry, group (General)
+#: kdeglobals.kcfg:30
+msgid "Use the PC speaker"
+msgstr "Käytä PC:n kaiutinta"
+
+#. i18n: ectx: whatsthis, entry, group (General)
+#: kdeglobals.kcfg:31
+msgid ""
+"Whether the ordinary PC speaker should be used instead of KDE's own "
+"notifications system."
+msgstr "Käytetäänkö PC:n kaiutinta KDE:n oman ilmoitusjärjestelmän sijaan."
+
+#. i18n: ectx: label, entry, group (General)
+#: kdeglobals.kcfg:35
+msgid "What terminal application to use"
+msgstr "Käytettävä pääte"
+
+#. i18n: ectx: whatsthis, entry, group (General)
+#: kdeglobals.kcfg:37
+msgid ""
+"Whenever a terminal application is launched this terminal emulator program "
+"will be used.\n"
+msgstr "Pääte-emulaattori, joka käynnistetään ajettaessa päätesovelluksia.\n"
+
+#. i18n: ectx: label, entry, group (General)
+#: kdeglobals.kcfg:41
+msgid "Fixed width font"
+msgstr "Tasalevyinen fontti"
+
+#. i18n: ectx: whatsthis, entry, group (General)
+#: kdeglobals.kcfg:43
+msgid ""
+"This font is used when a fixed font is needed. A fixed font has a constant "
+"width.\n"
+msgstr "Tätä fonttia käytetään aina kun tarvitaan tasaleveyksistä fonttia.\n"
+
+#. i18n: ectx: label, entry, group (General)
+#: kdeglobals.kcfg:46
+msgid "System wide font"
+msgstr "Järjestelmäfontti"
+
+#. i18n: ectx: label, entry, group (General)
+#: kdeglobals.kcfg:49
+msgid "Font for menus"
+msgstr "Valikkofontti"
+
+#. i18n: ectx: whatsthis, entry, group (General)
+#: kdeglobals.kcfg:50
+msgid "What font to use for menus in applications."
+msgstr "Sovellusten valikoissa käytettävä fontti."
+
+#. i18n: ectx: label, entry, group (General)
+#: kdeglobals.kcfg:53
+msgid "Color for links"
+msgstr "Linkkien väri"
+
+#. i18n: ectx: whatsthis, entry, group (General)
+#: kdeglobals.kcfg:54
+msgid "What color links should be that have not yet been clicked on"
+msgstr "Väri linkeille, joita ei ole vielä napsautettu"
+
+#. i18n: ectx: label, entry, group (General)
+#: kdeglobals.kcfg:57
+msgid "Color for visited links"
+msgstr "Väri linkeille, joita on seurattu"
+
+#. i18n: ectx: label, entry, group (General)
+#: kdeglobals.kcfg:60
+msgid "Font for the taskbar"
+msgstr "Tehtäväpalkin fontti"
+
+#. i18n: ectx: whatsthis, entry, group (General)
+#: kdeglobals.kcfg:61
+msgid ""
+"What font to use for the panel at the bottom of the screen, where the "
+"currently running applications are."
+msgstr ""
+"Fontti, jota käytetään näytön alalaidan paneelissa, jossa luetellaan "
+"kulloinkin käynnissä olevat sovellukset."
+
+#. i18n: ectx: label, entry, group (General)
+#: kdeglobals.kcfg:64
+msgid "Fonts for toolbars"
+msgstr "Työkalurivien fontti"
+
+#. i18n: ectx: label, entry (Desktop Screenshot), group (Global Shortcuts)
+#: kdeglobals.kcfg:73
+msgid "Shortcut for taking screenshot"
+msgstr "Pikanäppäin kuvankaappauksen ottamiseen"
+
+#. i18n: ectx: label, entry (Enable/Disable Clipboard Actions), group (Global Shortcuts)
+#: kdeglobals.kcfg:78
+msgid "Shortcut for toggling Clipboard Actions on and off"
+msgstr "Pikanäppäin leikepöydän toimintojen päälle tai pois kytkemiseen"
+
+#. i18n: ectx: label, entry (Halt without Confirmation), group (Global Shortcuts)
+#: kdeglobals.kcfg:83
+msgid "Shortcut for shutting down the computer without confirmation"
+msgstr "Pikanäppäin tietokoneen sulkemiseksi ilman vahvistusta"
+
+#. i18n: ectx: label, entry (Sort directories first), group (KFileDialog Settings)
+#: kdeglobals.kcfg:380
+msgid "Show directories first"
+msgstr "Näytä kansiot ensin"
+
+#. i18n: ectx: whatsthis, entry (Sort directories first), group (KFileDialog Settings)
+#: kdeglobals.kcfg:381
+msgid "Whether directories should be placed at the top when displaying files"
+msgstr "Sijoitetaanko kansiot ennen tiedostoja tiedostonvalintaikkunoissa"
+
+#. i18n: ectx: label, entry (Recent URLs), group (KFileDialog Settings)
+#: kdeglobals.kcfg:389
+msgid "The URLs recently visited"
+msgstr "Äskettäin vieraillut verkko-osoitteet"
+
+#. i18n: ectx: whatsthis, entry (Recent URLs), group (KFileDialog Settings)
+#: kdeglobals.kcfg:390
+msgid "Used for auto-completion in file dialogs, for example"
+msgstr ""
+"Käytetään esimerkiksi automaattiseen täydennykseen tiedostovalintaikkunoissa."
+
+#. i18n: ectx: label, entry (Show Preview), group (KFileDialog Settings)
+#: kdeglobals.kcfg:394
+msgid "Show file preview in file dialog"
+msgstr "Näytä tiedostojen esikatselu tiedostoikkunoissa"
+
+#. i18n: ectx: label, entry (Show hidden files), group (KFileDialog Settings)
+#: kdeglobals.kcfg:399
+msgid "Show hidden files"
+msgstr "Näytä piilotiedostot"
+
+#. i18n: ectx: whatsthis, entry (Show hidden files), group (KFileDialog Settings)
+#: kdeglobals.kcfg:400
+msgid ""
+"Whether files starting with a dot (convention for hidden files) should be "
+"shown"
+msgstr "Näytetäänkö piilotiedostot, joiden nimi alkaa pisteellä"
+
+#. i18n: ectx: label, entry (Show Speedbar), group (KFileDialog Settings)
+#: kdeglobals.kcfg:405
+msgid "Show speedbar"
+msgstr "Näytä nopeuspalkki"
+
+#. i18n: ectx: whatsthis, entry (Show Speedbar), group (KFileDialog Settings)
+#: kdeglobals.kcfg:406
+msgid ""
+"Whether the shortcut icons to the left in the file dialog should be shown"
+msgstr "Näytetäänkö pikakuvakkeet tiedostoikkunan vasemmassa laidassa"
+
+#. i18n: ectx: label, entry, group (Locale)
+#: kdeglobals.kcfg:425
+msgid "What country"
+msgstr "Mikä maa"
+
+#. i18n: ectx: whatsthis, entry, group (Locale)
+#: kdeglobals.kcfg:426
+msgid ""
+"Used to determine how to display numbers, currency and time/date, for example"
+msgstr ""
+"Käytetään määrittämään, kuinka esimerkiksi numerot, valuutta, päivämäärä ja "
+"kellonaika esitetään."
+
+#. i18n: ectx: label, entry, group (Locale)
+#: kdeglobals.kcfg:430
+msgid "What language to use to display text"
+msgstr "Kieli, jolla tekstit näytetään"
+
+#. i18n: ectx: label, entry, group (Locale)
+#: kdeglobals.kcfg:433
+msgid "Character used for indicating positive numbers"
+msgstr "Merkki, jota käytetään positiivisen luvun ilmaisemiseksi"
+
+#. i18n: ectx: whatsthis, entry, group (Locale)
+#: kdeglobals.kcfg:434
+msgid "Most countries have no character for this"
+msgstr "Useimmissa maissa ei käytössä"
+
+#. i18n: ectx: label, entry, group (Paths)
+#: kdeglobals.kcfg:439
+msgid "Path to the autostart directory"
+msgstr "Automaattikäynnistyskansion polku"
+
+#. i18n: ectx: whatsthis, entry, group (Paths)
+#: kdeglobals.kcfg:440
+msgid "Path to the directory containing executables to be run on session login"
+msgstr ""
+"Polku hakemistoon, jossa sijaitsevat sisäänkirjautumisen yhteydessä "
+"suoritettavat tiedostot."
+
+#. i18n: ectx: label, entry, group (Socks)
+#: kdeglobals.kcfg:487
+msgid "Enable SOCKS support"
+msgstr "Ota Socks-tuki käyttöön"
+
+#. i18n: ectx: whatsthis, entry, group (Socks)
+#: kdeglobals.kcfg:488
+msgid "Whether SOCKS version 4 and 5 should be enabled in KDE's sub systems"
+msgstr "Sallitaanko Socks-versiot 4 ja 5 KDE:n alijärjestelmissä"
+
+#. i18n: ectx: label, entry, group (Socks)
+#: kdeglobals.kcfg:492
+msgid "Path to custom SOCKS library"
+msgstr "Mukautetun Socks-kirjaston sijainti"
+
+#. i18n: ectx: label, entry, group (Toolbar style)
+#: kdeglobals.kcfg:498
+msgid "Highlight toolbar buttons on mouse over"
+msgstr "Korosta työkalurivin painikkeet hiirellä osoitettaessa"
+
+#. i18n: ectx: label, entry, group (Toolbar style)
+#: kdeglobals.kcfg:502
+msgid "Show text on toolbar icons "
+msgstr "Näytä teksti työkalurivin kuvakkeiden lisäksi"
+
+#. i18n: ectx: whatsthis, entry, group (Toolbar style)
+#: kdeglobals.kcfg:503
+msgid "Whether text should be shown in addition to icons on toolbar icons"
+msgstr "Näytetäänkö kuvakkeiden lisäksi työkalurivillä toiminnon nimi"
+
+#. i18n: ectx: label, entry (EchoMode), group (Passwords)
+#: kdeglobals.kcfg:524
+msgid "Password echo type"
+msgstr "Salasanan kaiuttamistapa"
+
+#. i18n: ectx: label, entry (Dialog Size), group (KKeyDialog Settings)
+#: kdeglobals.kcfg:534
+msgid "The size of the dialog"
+msgstr "Ikkunan koko"
+
+#: kpluginselector.cpp:140
+msgid ""
+"Automatic changes have been performed due to plugin dependencies. Click here "
+"for further information"
+msgstr ""
+"Tehtiin automaattisia päivityksiä johtuen liitännäisen vaatimuksista. "
+"Napsauta tästä saadaksesi lisätietoa"
+
+#: kpluginselector.cpp:209
+msgid ""
+"Automatic changes have been performed in order to satisfy plugin "
+"dependencies:\n"
+msgstr ""
+"Tehtiin automaattisia muutoksia liitännäisen riippuvuuksien täyttämiseksi:\n"
+
+#: kpluginselector.cpp:212
+#, kde-format
+msgid ""
+"\n"
+"    %1 plugin has been automatically checked because of the dependency of %2 "
+"plugin"
+msgstr ""
+"\n"
+"    Liitännäinen %1 on otettu automaattisesti käyttöön, sillä liitännäinen "
+"%2 on siitä riippuvainen"
+
+#: kpluginselector.cpp:214
+#, kde-format
+msgid ""
+"\n"
+"    %1 plugin has been automatically unchecked because of its dependency on "
+"%2 plugin"
+msgstr ""
+"\n"
+"    Liitännäinen %1 on automaattisesti otettu pois käytöstä, koska se on "
+"riippuvainen liitännäisestä %2."
+
+#: kpluginselector.cpp:217
+msgid "Dependency Check"
+msgstr "Riippuvuustarkistus"
+
+#: kpluginselector.cpp:234
+#, kde-format
+msgid "%1 plugin automatically added due to plugin dependencies"
+msgid_plural "%1 plugins automatically added due to plugin dependencies"
+msgstr[0] "Lisättiin %1 liitännäinen riippuvuuksien takia"
+msgstr[1] "Lisättiin %1 liitännäistä riippuvuuksien takia"
+
+#: kpluginselector.cpp:238
+msgid ", "
+msgstr ", "
+
+#: kpluginselector.cpp:242
+#, kde-format
+msgid "%1 plugin automatically removed due to plugin dependencies"
+msgid_plural "%1 plugins automatically removed due to plugin dependencies"
+msgstr[0] "Poistettiin %1 liitännäinen riippuvuuksien takia"
+msgstr[1] " Poistettiin %1 liitännäistä riippuvuuksien takia"
+
+#: kpluginselector.cpp:263
+msgid "Search Plugins"
+msgstr "Hae liitännäisistä"
+
+#: kpluginselector.cpp:785
+#, kde-format
+msgctxt "Used only for plugins"
+msgid "About %1"
+msgstr ""
+"Tietoa liitännäisestä %1|/|Tietoa liitännäisestä $[yleisnimi_pienellä %1]"
+
+#: ksettings/componentsdialog.cpp:55
+msgid "Select Components"
+msgstr "Valitse komponentit"
+
+#: ksettings/dialog.cpp:231
+msgid "Enable component"
+msgstr "Ota komponentti käyttöön"

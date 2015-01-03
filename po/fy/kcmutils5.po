@@ -1,0 +1,464 @@
+# translation of kdelibs4.po to Nederlands
+# translation of kdelibs4.po to
+# KTranslator Generated File
+# Fryske oersetting fan kdelibs.
+# Copyright (C) 2000,2001,2002,2003 KDE e.v..
+# let op! het bestand bevat ter hoogte van string 2470
+# een gesplitste zinnen die mbv. %1 of %2 weer worden samengevoegd!!
+# Bauke Nicolai <mildaam@hotmail.com>, 2002.
+# KDE-oersetgroep Frysk <frysk@kde.nl>, 2000, 2001, 2002,2003.
+# Rinse de Vries <rinsedevries@kde.nl>, 2004, 2005, 2006, 2007.
+# Berend ytsma <berendy@bigfoot.com>, 2004.
+# Rinse de Vries <RinseDeVries@home.nl>, 2006, 2008.
+# Berend Ytsma <berendy@gmail.com>, 2008.
+msgid ""
+msgstr ""
+"Project-Id-Version: kdelibs4\n"
+"Report-Msgid-Bugs-To: http://bugs.kde.org\n"
+"POT-Creation-Date: 2014-11-28 08:10+0000\n"
+"PO-Revision-Date: 2010-07-22 09:48+0100\n"
+"Last-Translator: Berend Ytsma <berendy@gmail.com>\n"
+"Language-Team: nl <kde-i18n-doc@lists.kde.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: KAider 0.1\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+
+msgctxt "NAME OF TRANSLATORS"
+msgid "Your names"
+msgstr "Berend Ytsma"
+
+msgctxt "EMAIL OF TRANSLATORS"
+msgid "Your emails"
+msgstr "Berendy@gmail.com"
+
+#: kcmoduleloader.cpp:76
+#, kde-format
+msgid "The module %1 could not be found."
+msgstr "De module %1 wie net te finen."
+
+#: kcmoduleloader.cpp:77
+#, kde-format
+msgid ""
+"<qt><p>The diagnosis is:<br />The desktop file %1 could not be found.</p></"
+"qt>"
+msgstr ""
+"<qt><p>De diagnoaze is:<br />de búroblêdtriem %1 koe net fûn wurde.</p></qt>"
+
+#: kcmoduleloader.cpp:79
+#, kde-format
+msgid "The module %1 is disabled."
+msgstr "De module %1 is útskeakele."
+
+#: kcmoduleloader.cpp:80
+msgid ""
+"<qt><p>Either the hardware/software the module configures is not available "
+"or the module has been disabled by the administrator.</p></qt>"
+msgstr ""
+"<qt><p>De hardware/software dy dizze module ynsteld is net beskikber of de "
+"module is troch de systeembehearder útskeakele.</p></qt>"
+
+#: kcmoduleloader.cpp:124
+#, kde-format
+msgid "The module %1 is not a valid configuration module."
+msgstr "De module %1 is gjin jildige ynstellingsmodule."
+
+#: kcmoduleloader.cpp:125
+#, kde-format
+msgid ""
+"<qt>The diagnosis is:<br />The desktop file %1 does not specify a library.</"
+"qt>"
+msgstr ""
+"<qt>De diagnoaze is:<br />De búroblêdtriem %1 spesifisearret gjin bibleteek."
+"</qt>"
+
+#: kcmoduleloader.cpp:140
+msgid ""
+"<qt><p>Possible reasons:<ul><li>An error occurred during your last KDE "
+"upgrade leaving an orphaned control module</li><li>You have old third party "
+"modules lying around.</li></ul></p><p>Check these points carefully and try "
+"to remove the module mentioned in the error message. If this fails, consider "
+"contacting your distributor or packager.</p></qt>"
+msgstr ""
+"<qt><p>Mooglike oarsaken:<ul><li>Der is in flater bard by de leaste kear dat "
+"KDE bywurke is, der is nammentlik in âlde ynstellingsmodule oerbleaun.</"
+"li><li>Der stiene no âlde modules yn jo ynstellingssintrum.</li></ul></"
+"p><p>Kontrolearje dizze punten goed en probearje de module dy`t in flater "
+"joech der út te heljen. As dit net slagget, dan kinne jo kontakt opnimme mei "
+"jo distributeur of pakketbehearder.</p></qt>"
+
+#: kcmoduleproxy.cpp:162
+#, kde-format
+msgctxt "Argument is application name"
+msgid "This configuration section is already opened in %1"
+msgstr "Dizze konfiguraasjeseksje is al iepene yn %1"
+
+#: kcmultidialog.cpp:57
+#, fuzzy
+#| msgid ""
+#| "The document \"%1\" has been modified.\n"
+#| "Do you want to save your changes or discard them?"
+msgid ""
+"The settings of the current module have changed.\n"
+"Do you want to apply the changes or discard them?"
+msgstr ""
+"It dokumint \"%1\" is feroare.\n"
+"Wolle jo de wizigingen bewarje of negearje?"
+
+#: kcmultidialog.cpp:59
+#, fuzzy
+#| msgid "Settings"
+msgid "Apply Settings"
+msgstr "Ynstellings"
+
+#: kcmultidialog.cpp:206
+msgid "Configure"
+msgstr "Konfigurearje"
+
+#. i18n: ectx: label, entry, group (DesktopIcons)
+#: kdeglobals.kcfg:9
+msgid "Distance between desktop icons"
+msgstr "Ofstân tusken buroblêdbyldkaikes"
+
+#. i18n: ectx: whatsthis, entry, group (DesktopIcons)
+#: kdeglobals.kcfg:10
+msgid "The distance between icons specified in pixels."
+msgstr "De ôfstân tusken byldkaikes oantsjutte yn byldpunten"
+
+#. i18n: ectx: label, entry, group (General)
+#: kdeglobals.kcfg:23
+msgid "Widget style to use"
+msgstr "Te brûken Widgetstyl"
+
+#. i18n: ectx: whatsthis, entry, group (General)
+#: kdeglobals.kcfg:24
+msgid ""
+"The name of the widget style, for example \"keramik\" or \"plastik\". "
+"Without quotes."
+msgstr ""
+"De namme fan de widget-styl, as faorbyld \"keramyk\" or \"plastyk\". Sûnder "
+"skrapkes"
+
+#. i18n: ectx: label, entry, group (General)
+#: kdeglobals.kcfg:30
+msgid "Use the PC speaker"
+msgstr "Brûk de Pc lûdsprekker"
+
+#. i18n: ectx: whatsthis, entry, group (General)
+#: kdeglobals.kcfg:31
+msgid ""
+"Whether the ordinary PC speaker should be used instead of KDE's own "
+"notifications system."
+msgstr ""
+"Of de gewoane PC lûdsprekker te brûken ynstee fan KDEś eigen notifikaasje "
+"systeem."
+
+#. i18n: ectx: label, entry, group (General)
+#: kdeglobals.kcfg:35
+msgid "What terminal application to use"
+msgstr "Te brûken terminalapplikaasje"
+
+#. i18n: ectx: whatsthis, entry, group (General)
+#: kdeglobals.kcfg:37
+msgid ""
+"Whenever a terminal application is launched this terminal emulator program "
+"will be used.\n"
+msgstr ""
+"As in terminal applikaasje útfierd wurdt dan wurdt dizze terminal emulator "
+"brûkt.\n"
+
+#. i18n: ectx: label, entry, group (General)
+#: kdeglobals.kcfg:41
+msgid "Fixed width font"
+msgstr "Fêste letterbreedte"
+
+#. i18n: ectx: whatsthis, entry, group (General)
+#: kdeglobals.kcfg:43
+msgid ""
+"This font is used when a fixed font is needed. A fixed font has a constant "
+"width.\n"
+msgstr ""
+"Dizze lettertype wurdt brûkt as in fêste lettertype nedich is. In fêste "
+"lettertype hat in konstante breedte.\n"
+
+#. i18n: ectx: label, entry, group (General)
+#: kdeglobals.kcfg:46
+msgid "System wide font"
+msgstr "Systeemwide lettertype"
+
+#. i18n: ectx: label, entry, group (General)
+#: kdeglobals.kcfg:49
+msgid "Font for menus"
+msgstr "Lettertypen foar de menu's"
+
+#. i18n: ectx: whatsthis, entry, group (General)
+#: kdeglobals.kcfg:50
+msgid "What font to use for menus in applications."
+msgstr "Hokker lettertype foar programmamenu's brûkt sil wurde. "
+
+#. i18n: ectx: label, entry, group (General)
+#: kdeglobals.kcfg:53
+msgid "Color for links"
+msgstr "Kleur foar keppelings"
+
+#. i18n: ectx: whatsthis, entry, group (General)
+#: kdeglobals.kcfg:54
+msgid "What color links should be that have not yet been clicked on"
+msgstr "Hokker kleur de keppelings krije moate as der noch net op klikt is"
+
+#. i18n: ectx: label, entry, group (General)
+#: kdeglobals.kcfg:57
+msgid "Color for visited links"
+msgstr "Kleur foar besochte keppelings"
+
+#. i18n: ectx: label, entry, group (General)
+#: kdeglobals.kcfg:60
+msgid "Font for the taskbar"
+msgstr "Lettertype foar de taalkbalke"
+
+#. i18n: ectx: whatsthis, entry, group (General)
+#: kdeglobals.kcfg:61
+msgid ""
+"What font to use for the panel at the bottom of the screen, where the "
+"currently running applications are."
+msgstr ""
+"Hokker lettertype foar it paniel ûnderoan it skerm te brûken, wêr de "
+"rinnende programmaś har befine."
+
+#. i18n: ectx: label, entry, group (General)
+#: kdeglobals.kcfg:64
+msgid "Fonts for toolbars"
+msgstr "Lettertypen foar arkbalken"
+
+#. i18n: ectx: label, entry (Desktop Screenshot), group (Global Shortcuts)
+#: kdeglobals.kcfg:73
+msgid "Shortcut for taking screenshot"
+msgstr "Fluchtoets foar it meitsjen fan in skermprint"
+
+#. i18n: ectx: label, entry (Enable/Disable Clipboard Actions), group (Global Shortcuts)
+#: kdeglobals.kcfg:78
+msgid "Shortcut for toggling Clipboard Actions on and off"
+msgstr "Fluchtoets foar it oan en út wiskseljen fan klamboerdaksjes"
+
+#. i18n: ectx: label, entry (Halt without Confirmation), group (Global Shortcuts)
+#: kdeglobals.kcfg:83
+msgid "Shortcut for shutting down the computer without confirmation"
+msgstr "Fluchtoets foar it ôfsluten fan de kompjûter sûnder in befêstiging"
+
+#. i18n: ectx: label, entry (Sort directories first), group (KFileDialog Settings)
+#: kdeglobals.kcfg:380
+msgid "Show directories first"
+msgstr "Lit triemtafels earst sjen"
+
+#. i18n: ectx: whatsthis, entry (Sort directories first), group (KFileDialog Settings)
+#: kdeglobals.kcfg:381
+msgid "Whether directories should be placed at the top when displaying files"
+msgstr ""
+"As triemtafels boppe-oan pleats wurde moatte as der triemmen werjûn wurde"
+
+#. i18n: ectx: label, entry (Recent URLs), group (KFileDialog Settings)
+#: kdeglobals.kcfg:389
+msgid "The URLs recently visited"
+msgstr "De koartlyn besochte URL-adressen"
+
+#. i18n: ectx: whatsthis, entry (Recent URLs), group (KFileDialog Settings)
+#: kdeglobals.kcfg:390
+msgid "Used for auto-completion in file dialogs, for example"
+msgstr ""
+"Wurdt brûkt foar it automatysk kompleet meitsjen yn triemdialogen, as "
+"foarbyld"
+
+#. i18n: ectx: label, entry (Show Preview), group (KFileDialog Settings)
+#: kdeglobals.kcfg:394
+msgid "Show file preview in file dialog"
+msgstr "Triem foarbyld yn triemdialooch sjen litte"
+
+#. i18n: ectx: label, entry (Show hidden files), group (KFileDialog Settings)
+#: kdeglobals.kcfg:399
+msgid "Show hidden files"
+msgstr "Ferburgen triemmen sjen litte"
+
+#. i18n: ectx: whatsthis, entry (Show hidden files), group (KFileDialog Settings)
+#: kdeglobals.kcfg:400
+msgid ""
+"Whether files starting with a dot (convention for hidden files) should be "
+"shown"
+msgstr ""
+"Oft triemmen mei in punt (convention foar ferstoppe triemmen) te sjen binne"
+
+#. i18n: ectx: label, entry (Show Speedbar), group (KFileDialog Settings)
+#: kdeglobals.kcfg:405
+msgid "Show speedbar"
+msgstr "Fluggensbalke sjen litte"
+
+#. i18n: ectx: whatsthis, entry (Show Speedbar), group (KFileDialog Settings)
+#: kdeglobals.kcfg:406
+msgid ""
+"Whether the shortcut icons to the left in the file dialog should be shown"
+msgstr ""
+"Oft de fluchtoetsbyldkaikes oan de lofterkant yn de triemdialooch te sjen "
+"wêze soenen"
+
+#. i18n: ectx: label, entry, group (Locale)
+#: kdeglobals.kcfg:425
+msgid "What country"
+msgstr "Wat lân"
+
+#. i18n: ectx: whatsthis, entry, group (Locale)
+#: kdeglobals.kcfg:426
+msgid ""
+"Used to determine how to display numbers, currency and time/date, for example"
+msgstr ""
+"Wurdt brûkt om it werjaan fan nûmers, faluta en tiid/datum te beskieden, as "
+"foarbyld"
+
+#. i18n: ectx: label, entry, group (Locale)
+#: kdeglobals.kcfg:430
+msgid "What language to use to display text"
+msgstr "Yn hokker taal de tekst te lêzen moat wêze"
+
+#. i18n: ectx: label, entry, group (Locale)
+#: kdeglobals.kcfg:433
+msgid "Character used for indicating positive numbers"
+msgstr "Teken brûkt om positive nûmers oan te tsjutten"
+
+#. i18n: ectx: whatsthis, entry, group (Locale)
+#: kdeglobals.kcfg:434
+msgid "Most countries have no character for this"
+msgstr "De measte lânnen hawwe gjin teken foar dit"
+
+#. i18n: ectx: label, entry, group (Paths)
+#: kdeglobals.kcfg:439
+msgid "Path to the autostart directory"
+msgstr "Paad nei de autostart triemtafel"
+
+#. i18n: ectx: whatsthis, entry, group (Paths)
+#: kdeglobals.kcfg:440
+msgid "Path to the directory containing executables to be run on session login"
+msgstr ""
+"Paad nei de triemtafel dy't útfierbere triemmen befettet, hokker úteinsetten "
+"sille wurde by it úteinsetten fan KDE"
+
+#. i18n: ectx: label, entry, group (Socks)
+#: kdeglobals.kcfg:487
+msgid "Enable SOCKS support"
+msgstr "SOCKS stipe aktivearje"
+
+#. i18n: ectx: whatsthis, entry, group (Socks)
+#: kdeglobals.kcfg:488
+msgid "Whether SOCKS version 4 and 5 should be enabled in KDE's sub systems"
+msgstr "Oft SOCKS ferzje 4 en 5 ynskeakele wurde moatte yn KDE's subsysteem"
+
+#. i18n: ectx: label, entry, group (Socks)
+#: kdeglobals.kcfg:492
+msgid "Path to custom SOCKS library"
+msgstr "Paad fan it oanpaste SOCKS biblioteek"
+
+#. i18n: ectx: label, entry, group (Toolbar style)
+#: kdeglobals.kcfg:498
+msgid "Highlight toolbar buttons on mouse over"
+msgstr "De knoppen fan de arkbalke opljochtsje as de mûs der oer giet"
+
+#. i18n: ectx: label, entry, group (Toolbar style)
+#: kdeglobals.kcfg:502
+msgid "Show text on toolbar icons "
+msgstr "Tekst op arkbalkebyldkaikes sjen litte"
+
+#. i18n: ectx: whatsthis, entry, group (Toolbar style)
+#: kdeglobals.kcfg:503
+msgid "Whether text should be shown in addition to icons on toolbar icons"
+msgstr "Oft der by de byldkaikes yn de arkbalken tekst werjûn wurdt"
+
+#. i18n: ectx: label, entry (EchoMode), group (Passwords)
+#: kdeglobals.kcfg:524
+msgid "Password echo type"
+msgstr "Type wachtwurdynfoer"
+
+#. i18n: ectx: label, entry (Dialog Size), group (KKeyDialog Settings)
+#: kdeglobals.kcfg:534
+msgid "The size of the dialog"
+msgstr "De grutte fan it dialooch"
+
+#: kpluginselector.cpp:140
+msgid ""
+"Automatic changes have been performed due to plugin dependencies. Click here "
+"for further information"
+msgstr ""
+"Der binne automatyske feroarings tapast om oan de pluginôfhinklikens te "
+"foldwaan. klik hjir foar mear ynformaasje"
+
+#: kpluginselector.cpp:209
+msgid ""
+"Automatic changes have been performed in order to satisfy plugin "
+"dependencies:\n"
+msgstr ""
+"Der binne automatyske feroarings tapast om de pluginôfhinklikens tefreden te "
+"stellen:\n"
+
+#: kpluginselector.cpp:212
+#, kde-format
+msgid ""
+"\n"
+"    %1 plugin has been automatically checked because of the dependency of %2 "
+"plugin"
+msgstr ""
+"\n"
+"    plugin %1 is automatysk ynskeakele fanwege de ôfhinklikheid fan plugin %2"
+
+#: kpluginselector.cpp:214
+#, kde-format
+msgid ""
+"\n"
+"    %1 plugin has been automatically unchecked because of its dependency on "
+"%2 plugin"
+msgstr ""
+"\n"
+"    plugin %1 is automatysk útskeakele fanwege de ôfhinklikheid fan plugin %2"
+
+#: kpluginselector.cpp:217
+msgid "Dependency Check"
+msgstr "Ofhinklikskontrôle"
+
+#: kpluginselector.cpp:234
+#, kde-format
+msgid "%1 plugin automatically added due to plugin dependencies"
+msgid_plural "%1 plugins automatically added due to plugin dependencies"
+msgstr[0] ""
+"%1 plugin is automatysk taheakke om oan de pluginôfhinklikens te foldwaan"
+msgstr[1] ""
+"%1 plugins binne automatysk taheakke om oan de pluginôfhinklikens te foldwaan"
+
+#: kpluginselector.cpp:238
+msgid ", "
+msgstr ", "
+
+#: kpluginselector.cpp:242
+#, kde-format
+msgid "%1 plugin automatically removed due to plugin dependencies"
+msgid_plural "%1 plugins automatically removed due to plugin dependencies"
+msgstr[0] ""
+"%1 plugin is automatysk fuortsmiten om oan de pluginôfhinklikens te foldwaan"
+msgstr[1] ""
+"%1 plugins binne automatysk fuortsmiten om oan de pluginôfhinklikens te "
+"foldwaan"
+
+#: kpluginselector.cpp:263
+msgid "Search Plugins"
+msgstr "Om plugins sykje"
+
+#: kpluginselector.cpp:785
+#, fuzzy, kde-format
+#| msgid "About %1"
+msgctxt "Used only for plugins"
+msgid "About %1"
+msgstr "Ynfo oer %1"
+
+#: ksettings/componentsdialog.cpp:55
+msgid "Select Components"
+msgstr "Komponinten selektearje"
+
+#: ksettings/dialog.cpp:231
+msgid "Enable component"
+msgstr "Komponint ynskeakelje"
