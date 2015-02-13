@@ -170,7 +170,7 @@ public:
     /**
      * Returns the recommended minimum size for the widget
      */
-    QSize minimumSizeHint() const;
+    QSize minimumSizeHint() const Q_DECL_OVERRIDE;
 
 public Q_SLOTS:
 
@@ -218,7 +218,7 @@ protected:
      * Reimplemented for internal purposes. Makes sure the encapsulated
      * module is loaded before the show event is taken care of.
      */
-    void showEvent(QShowEvent *);
+    void showEvent(QShowEvent *) Q_DECL_OVERRIDE;
 
 protected:
     KCModuleProxyPrivate *const d_ptr;
