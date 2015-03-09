@@ -61,6 +61,16 @@ KCModuleQml::~KCModuleQml()
     delete d;
 }
 
+void KCModuleQml::load()
+{
+    d->configModule->load();
+}
+
+void KCModuleQml::save()
+{
+    d->configModule->save();
+}
+
 void KCModuleQml::showEvent(QShowEvent *event)
 {
     if (d->quickWindow) {
@@ -72,11 +82,6 @@ void KCModuleQml::showEvent(QShowEvent *event)
 
     d->quickWindow = new QQuickWindow();
     QWidget *widget = QWidget::createWindowContainer(d->quickWindow, this);
-
-    //d->quickWindow->setResizeMode(QQuickWindow::SizeRootObjectToView);
-
-    //d->quickWindow->setSource(QUrl::fromLocalFile(package.filePath("mainscript")));
-    //setMinimumHeight(d->quickWindow->initialSize().height());
 
     d->configModule->mainUi()->setParentItem(d->quickWindow->contentItem());
     //set anchors

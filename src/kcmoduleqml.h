@@ -83,6 +83,9 @@ public:
     KCModuleQml(KDeclarative::ConfigModule *configModule, QWidget* parent, const QVariantList& args);
     ~KCModuleQml();
 
+    void load();
+    void save();
+
 protected:
     virtual void showEvent(QShowEvent *event);
 
