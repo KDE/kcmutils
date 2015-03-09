@@ -11,7 +11,7 @@ include(KDEFrameworkCompilerSettings)
 include(KDECMakeSettings)
 
 set(REQUIRED_QT_VERSION "5.2.0")
-find_package(Qt5 ${REQUIRED_QT_VERSION} NO_MODULE REQUIRED Widgets DBus)
+find_package(Qt5 ${REQUIRED_QT_VERSION} NO_MODULE REQUIRED Widgets DBus Qml Quick)
 
 include(FeatureSummary)
 include(GenerateExportHeader)
@@ -34,6 +34,7 @@ if ("${CMAKE_BINARY_DIR}" STREQUAL "${CMAKE_CURRENT_BINARY_DIR}")
     find_package(KF5IconThemes ${KF5_DEP_VERSION} REQUIRED)
     find_package(KF5Service ${KF5_DEP_VERSION} REQUIRED)
     find_package(KF5XmlGui ${KF5_DEP_VERSION} REQUIRED)
+    find_package(KF5Declarative ${KF5_DEP_VERSION} REQUIRED)
 endif()
 
 add_definitions(-DTRANSLATION_DOMAIN=\"kcmutils5\")

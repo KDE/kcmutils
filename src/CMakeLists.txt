@@ -2,6 +2,7 @@
 set(kcmutils_LIB_SRCS
     kcmoduleinfo.cpp
     kcmoduleloader.cpp
+    kcmoduleqml.cpp
     kcmultidialog.cpp
     kcmoduleproxy.cpp
     kpluginselector.cpp
@@ -25,11 +26,14 @@ target_link_libraries(KF5KCMUtils
     KF5::Service        # KService
   PRIVATE
     Qt5::DBus       # dbus usage in kcmoduleproxy.cpp
+    Qt5::Qml
+    Qt5::Quick
     KF5::CoreAddons
     KF5::I18n
     KF5::IconThemes     # KIconLoader
     KF5::ItemViews       # KWidgetItemDelegate
     KF5::XmlGui          # KAboutApplicationDialog
+    KF5::QuickAddons
 )
 set_target_properties(KF5KCMUtils PROPERTIES
                       VERSION ${KCMUTILS_VERSION_STRING}

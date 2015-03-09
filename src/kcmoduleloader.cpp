@@ -34,6 +34,9 @@
 #include <kmessagebox.h>
 #include <kaboutdata.h>
 
+#include <KCModuleQml>
+#include <QuickAddons/ConfigModule>
+
 using namespace KCModuleLoader;
 
 /***************************************************************/
@@ -89,6 +92,12 @@ KCModule *KCModuleLoader::loadModule(const KCModuleInfo &mod, ErrorReporting rep
         KCModule *module = mod.service()->createInstance<KCModule>(parent, args2, &error);
         if (module) {
             return module;
+        } else {
+            KDeclarative::ConfigModule *cm = mod.service()->createInstance<KDeclarative::ConfigModule>(parent, args2, &error);
+            if (cm) {
+                module = new KCModuleQml(cm, parent, args2);
+                return module;
+            }
         }
 //#ifndef NDEBUG
         {
