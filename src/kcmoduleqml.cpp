@@ -60,7 +60,7 @@ KCModuleQml::KCModuleQml(KDeclarative::ConfigModule *configModule, QWidget* pare
     //HACK:Here is important those two enums keep having the exact same values
     //but the kdeclarative one can't use the KCModule's enum
     setButtons((KCModule::Buttons)(int)d->configModule->buttons());
-    connect(configModule, &KDeclarative::ConfigModule::buttonsChanged, [=]{
+    connect(configModule, &KDeclarative::ConfigModule::buttonsChanged, [=] {
         setButtons((KCModule::Buttons)(int)d->configModule->buttons());
     });
 
@@ -72,21 +72,26 @@ KCModuleQml::KCModuleQml(KDeclarative::ConfigModule *configModule, QWidget* pare
     });
 
     setNeedsAuthorization(d->configModule->needsAuthorization());
-    connect(configModule, &KDeclarative::ConfigModule::needsAuthorizationChanged, [=]{
+    connect(configModule, &KDeclarative::ConfigModule::needsAuthorizationChanged, [=] {
         setNeedsAuthorization(d->configModule->needsAuthorization());
     });
 
     setRootOnlyMessage(d->configModule->rootOnlyMessage());
     setUseRootOnlyMessage(d->configModule->useRootOnlyMessage());
-    connect(configModule, &KDeclarative::ConfigModule::rootOnlyMessageChanged, [=]{
+    connect(configModule, &KDeclarative::ConfigModule::rootOnlyMessageChanged, [=] {
         setRootOnlyMessage(d->configModule->rootOnlyMessage());
     });
-    connect(configModule, &KDeclarative::ConfigModule::useRootOnlyMessageChanged, [=]{
+    connect(configModule, &KDeclarative::ConfigModule::useRootOnlyMessageChanged, [=] {
         setUseRootOnlyMessage(d->configModule->useRootOnlyMessage());
     });
 
+    setAuthAction(d->configModule->authAction());
+    connect(configModule, &KDeclarative::ConfigModule::authActionChanged, [=] {
+        setAuthAction(d->configModule->authAction());
+    });
+
     setExportText(d->configModule->exportText());
-    connect(configModule, &KDeclarative::ConfigModule::exportTextChanged, [=]{
+    connect(configModule, &KDeclarative::ConfigModule::exportTextChanged, [=] {
         setExportText(d->configModule->exportText());
     });
 }
