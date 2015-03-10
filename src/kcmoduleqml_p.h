@@ -46,6 +46,7 @@ public Q_SLOTS:
 
 protected:
     virtual void showEvent(QShowEvent *event);
+    QSize sizeHint() const;
 
 private:
     KCModuleQmlPrivate *const d;

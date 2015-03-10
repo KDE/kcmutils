@@ -103,7 +103,7 @@ KCModuleQml::~KCModuleQml()
 
 void KCModuleQml::showEvent(QShowEvent *event)
 {
-    if (d->quickWindow) {
+    if (d->quickWindow || !d->configModule->mainUi()) {
         KCModule::showEvent(event);
         return;
     }
@@ -121,6 +121,15 @@ void KCModuleQml::showEvent(QShowEvent *event)
 
     layout->addWidget(widget);
     KCModule::showEvent(event);
+}
+
+QSize KCModuleQml::sizeHint() const
+{
+    if (!d->configModule->mainUi()) {
+        return QSize();
+    }
+
+    return QSize(d->configModule->mainUi()->implicitWidth(), d->configModule->mainUi()->implicitHeight());
 }
 
 QString KCModuleQml::quickHelp() const
