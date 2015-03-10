@@ -83,8 +83,13 @@ public:
     KCModuleQml(KDeclarative::ConfigModule *configModule, QWidget* parent, const QVariantList& args);
     ~KCModuleQml();
 
+    virtual QString quickHelp() const;
+    virtual const KAboutData *aboutData() const;
+
+public Q_SLOTS:
     void load();
     void save();
+    void defaults();
 
 protected:
     virtual void showEvent(QShowEvent *event);

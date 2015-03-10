@@ -54,21 +54,46 @@ KCModuleQml::KCModuleQml(KDeclarative::ConfigModule *configModule, QWidget* pare
     : KCModule(parent, args),
       d(new KCModuleQmlPrivate(configModule))
 {
+
+    connect(configModule, &KDeclarative::ConfigModule::quickHelpChanged,
+            this, &KCModuleQml::quickHelpChanged);
+    //HACK:Here is important those two enums keep having the exact same values
+    //but the kdeclarative one can't use the KCModule's enum
+    setButtons((KCModule::Buttons)(int)d->configModule->buttons());
+    connect(configModule, &KDeclarative::ConfigModule::buttonsChanged, [=]{
+        setButtons((KCModule::Buttons)(int)d->configModule->buttons());
+    });
+
+    if (d->configModule->needsSave()) {
+        emit changed(true);
+    }
+    connect(configModule, &KDeclarative::ConfigModule::needsSaveChanged, [=] {
+        emit changed(d->configModule->needsSave());
+    });
+
+    setNeedsAuthorization(d->configModule->needsAuthorization());
+    connect(configModule, &KDeclarative::ConfigModule::needsAuthorizationChanged, [=]{
+        setNeedsAuthorization(d->configModule->needsAuthorization());
+    });
+
+    setRootOnlyMessage(d->configModule->rootOnlyMessage());
+    setUseRootOnlyMessage(d->configModule->useRootOnlyMessage());
+    connect(configModule, &KDeclarative::ConfigModule::rootOnlyMessageChanged, [=]{
+        setRootOnlyMessage(d->configModule->rootOnlyMessage());
+    });
+    connect(configModule, &KDeclarative::ConfigModule::useRootOnlyMessageChanged, [=]{
+        setUseRootOnlyMessage(d->configModule->useRootOnlyMessage());
+    });
+
+    setExportText(d->configModule->exportText());
+    connect(configModule, &KDeclarative::ConfigModule::exportTextChanged, [=]{
+        setExportText(d->configModule->exportText());
+    });
 }
 
 KCModuleQml::~KCModuleQml()
 {
     delete d;
-}
-
-void KCModuleQml::load()
-{
-    d->configModule->load();
-}
-
-void KCModuleQml::save()
-{
-    d->configModule->save();
 }
 
 void KCModuleQml::showEvent(QShowEvent *event)
@@ -91,6 +116,31 @@ void KCModuleQml::showEvent(QShowEvent *event)
 
     layout->addWidget(widget);
     KCModule::showEvent(event);
+}
+
+QString KCModuleQml::quickHelp() const
+{
+    return d->configModule->quickHelp();
+}
+
+const KAboutData *KCModuleQml::aboutData() const
+{
+    return d->configModule->aboutData();
+}
+
+void KCModuleQml::load()
+{
+    d->configModule->load();
+}
+
+void KCModuleQml::save()
+{
+    d->configModule->save();
+}
+
+void KCModuleQml::defaults()
+{
+    d->configModule->defaults();
 }
 
 #include "moc_kcmoduleqml.cpp"
