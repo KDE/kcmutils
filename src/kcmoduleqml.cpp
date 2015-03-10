@@ -16,7 +16,7 @@
    Boston, MA 02110-1301, USA.
 */
 
-#include "kcmoduleqml.h"
+#include "kcmoduleqml_p.h"
 
 #include <QDebug>
 
@@ -143,4 +143,4 @@ void KCModuleQml::defaults()
     d->configModule->defaults();
 }
 
-#include "moc_kcmoduleqml.cpp"
+#include "moc_kcmoduleqml_p.cpp"
