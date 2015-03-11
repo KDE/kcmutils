@@ -111,6 +111,7 @@ void KCModuleQml::showEvent(QShowEvent *event)
     QVBoxLayout* layout = new QVBoxLayout(this);
 
     d->quickWindow = new QQuickWindow();
+    //The created widget takes ownership of the QWindow
     QWidget *widget = QWidget::createWindowContainer(d->quickWindow, this);
 
     d->configModule->mainUi()->setParentItem(d->quickWindow->contentItem());

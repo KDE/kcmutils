@@ -36,8 +36,8 @@ public:
     KCModuleQml(KDeclarative::ConfigModule *configModule, QWidget* parent, const QVariantList& args);
     ~KCModuleQml();
 
-    virtual QString quickHelp() const;
-    virtual const KAboutData *aboutData() const;
+    virtual QString quickHelp() const Q_DECL_OVERRIDE;
+    virtual const KAboutData *aboutData() const Q_DECL_OVERRIDE;
 
 public Q_SLOTS:
     void load();
@@ -45,8 +45,8 @@ public Q_SLOTS:
     void defaults();
 
 protected:
-    virtual void showEvent(QShowEvent *event);
-    QSize sizeHint() const;
+    virtual void showEvent(QShowEvent *event) Q_DECL_OVERRIDE;
+    QSize sizeHint() const Q_DECL_OVERRIDE;
 
 private:
     KCModuleQmlPrivate *const d;
