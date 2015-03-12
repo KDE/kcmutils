@@ -89,11 +89,6 @@ KCModuleQml::KCModuleQml(KDeclarative::ConfigModule *configModule, QWidget* pare
     connect(configModule, &KDeclarative::ConfigModule::authActionChanged, [=] {
         setAuthAction(d->configModule->authAction());
     });
-
-    setExportText(d->configModule->exportText());
-    connect(configModule, &KDeclarative::ConfigModule::exportTextChanged, [=] {
-        setExportText(d->configModule->exportText());
-    });
 }
 
 KCModuleQml::~KCModuleQml()
