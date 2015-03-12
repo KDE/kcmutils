@@ -85,9 +85,9 @@ KCModuleQml::KCModuleQml(KDeclarative::ConfigModule *configModule, QWidget* pare
         setUseRootOnlyMessage(d->configModule->useRootOnlyMessage());
     });
 
-    setAuthAction(d->configModule->authAction());
-    connect(configModule, &KDeclarative::ConfigModule::authActionChanged, [=] {
-        setAuthAction(d->configModule->authAction());
+    setAuthAction(KAuth::Action(d->configModule->authActionName()));
+    connect(configModule, &KDeclarative::ConfigModule::authActionNameChanged, [=] {
+        setAuthAction(d->configModule->authActionName());
     });
 }
 

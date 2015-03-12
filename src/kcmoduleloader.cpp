@@ -22,6 +22,7 @@
 */
 
 #include "kcmoduleloader.h"
+#include "kcmoduleqml_p.h"
 
 #include <QtCore/QFile>
 #include <QLabel>
@@ -34,7 +35,6 @@
 #include <kmessagebox.h>
 #include <kaboutdata.h>
 
-#include <KCModuleQml>
 #include <QuickAddons/ConfigModule>
 
 using namespace KCModuleLoader;
