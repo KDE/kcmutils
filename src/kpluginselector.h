@@ -57,6 +57,7 @@ class KCMUTILS_EXPORT KPluginSelector
     : public QWidget
 {
     Q_OBJECT
+    Q_PROPERTY(QStringList configurationArguments READ configurationArguments WRITE setConfigurationArguments)
 
 public:
     enum PluginLoadMethod {
@@ -193,6 +194,20 @@ public:
       * anywhere
       */
     void updatePluginsState();
+
+    /**
+     * Sets the @p arguments with which the configuration modules will be initialized
+     *
+     * @since 5.9
+     */
+    void setConfigurationArguments(const QStringList &arguments);
+
+    /**
+     * Returns the configuration arguments that will be used
+     *
+     * @since 5.9
+     */
+    QStringList configurationArguments() const;
 
 Q_SIGNALS:
     /**

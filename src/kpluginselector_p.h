@@ -81,6 +81,7 @@ public:
     PluginDelegate *pluginDelegate;
     DependenciesWidget *dependenciesWidget;
     bool showIcons;
+    QStringList kcmArguments;
 };
 
 class PluginEntry

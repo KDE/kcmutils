@@ -406,6 +406,16 @@ void KPluginSelector::updatePluginsState()
     }
 }
 
+void KPluginSelector::setConfigurationArguments(const QStringList& arguments)
+{
+    d->kcmArguments = arguments;
+}
+
+QStringList KPluginSelector::configurationArguments() const
+{
+    return d->kcmArguments;
+}
+
 KPluginSelector::Private::PluginModel::PluginModel(KPluginSelector::Private *pluginSelector_d, QObject *parent)
     : QAbstractListModel(parent)
     , pluginSelector_d(pluginSelector_d)
@@ -808,7 +818,7 @@ void KPluginSelector::Private::PluginDelegate::slotConfigureClicked()
     foreach (const KService::Ptr &servicePtr, pluginInfo.kcmServices()) {
         if (!servicePtr->noDisplay()) {
             KCModuleInfo moduleInfo(servicePtr);
-            KCModuleProxy *currentModuleProxy = new KCModuleProxy(moduleInfo, moduleProxyParentWidget);
+            KCModuleProxy *currentModuleProxy = new KCModuleProxy(moduleInfo, moduleProxyParentWidget, pluginSelector_d->kcmArguments);
             if (currentModuleProxy->realModule()) {
                 moduleProxyList << currentModuleProxy;
                 if (mainWidget && !newTabWidget) {
