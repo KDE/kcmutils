@@ -22,6 +22,7 @@
 */
 
 #include "kcmoduleloader.h"
+#include "kcmoduleqml_p.h"
 
 #include <QtCore/QFile>
 #include <QLabel>
@@ -33,6 +34,8 @@
 #include <klocalizedstring.h>
 #include <kmessagebox.h>
 #include <kaboutdata.h>
+
+#include <KQuickAddons/ConfigModule>
 
 using namespace KCModuleLoader;
 
@@ -89,6 +92,12 @@ KCModule *KCModuleLoader::loadModule(const KCModuleInfo &mod, ErrorReporting rep
         KCModule *module = mod.service()->createInstance<KCModule>(parent, args2, &error);
         if (module) {
             return module;
+        } else {
+            KQuickAddons::ConfigModule *cm = mod.service()->createInstance<KQuickAddons::ConfigModule>(parent, args2, &error);
+            if (cm) {
+                module = new KCModuleQml(cm, parent, args2);
+                return module;
+            }
         }
 //#ifndef NDEBUG
         {
