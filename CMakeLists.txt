@@ -35,6 +35,7 @@ if ("${CMAKE_BINARY_DIR}" STREQUAL "${CMAKE_CURRENT_BINARY_DIR}")
     find_package(KF5Service ${KF5_DEP_VERSION} REQUIRED)
     find_package(KF5XmlGui ${KF5_DEP_VERSION} REQUIRED)
     find_package(KF5Declarative ${KF5_DEP_VERSION} REQUIRED)
+    find_package(KF5Package ${KF5_DEP_VERSION} REQUIRED)
 endif()
 
 add_definitions(-DTRANSLATION_DOMAIN=\"kcmutils5\")

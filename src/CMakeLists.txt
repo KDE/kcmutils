@@ -34,6 +34,7 @@ target_link_libraries(KF5KCMUtils
     KF5::ItemViews       # KWidgetItemDelegate
     KF5::XmlGui          # KAboutApplicationDialog
     KF5::QuickAddons
+    KF5::Package
 )
 set_target_properties(KF5KCMUtils PROPERTIES
                       VERSION ${KCMUTILS_VERSION_STRING}
