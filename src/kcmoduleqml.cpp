@@ -28,7 +28,6 @@
 #include <QQuickItem>
 
 #include <kdeclarative/kdeclarative.h>
-#include <kdeclarative/qmlobject.h>
 #include <kquickaddons/configmodule.h>
 #include <KAboutData>
 #include <KLocalizedString>
@@ -40,13 +39,11 @@ class KCModuleQmlPrivate
 public:
     KCModuleQmlPrivate(KQuickAddons::ConfigModule *cm)
         : quickWindow(Q_NULLPTR),
-          qmlObject(Q_NULLPTR),
           configModule(cm)
     {
     }
 
     QQuickWindow *quickWindow;
-    KDeclarative::QmlObject *qmlObject;
     KQuickAddons::ConfigModule *configModule;
 };
 
