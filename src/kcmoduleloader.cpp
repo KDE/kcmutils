@@ -93,8 +93,15 @@ KCModule *KCModuleLoader::loadModule(const KCModuleInfo &mod, ErrorReporting rep
         if (module) {
             return module;
         } else {
-            KQuickAddons::ConfigModule *cm = mod.service()->createInstance<KQuickAddons::ConfigModule>(parent, args2, &error);
-            if (cm) {
+            KPluginLoader loader(KPluginLoader::findPlugin(QLatin1String("kcms/") + mod.service()->library()));
+            KPluginFactory* factory = loader.factory();
+            if (!factory) {
+                qWarning() << "Error loading plugin:" << loader.errorString();
+            } else {
+                KQuickAddons::ConfigModule *cm = factory->create<KQuickAddons::ConfigModule >();
+                if (!cm) {
+                    qWarning() << "Error creating object from plugin" << loader.fileName();
+                }
                 module = new KCModuleQml(cm, parent, args2);
                 return module;
             }
