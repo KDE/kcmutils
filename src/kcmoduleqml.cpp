@@ -145,6 +145,7 @@ void KCModuleQml::load()
 void KCModuleQml::save()
 {
     d->configModule->save();
+    d->configModule->setNeedsSave(false);
 }
 
 void KCModuleQml::defaults()
