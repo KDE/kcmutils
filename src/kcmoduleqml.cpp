@@ -26,6 +26,7 @@
 #include <QQmlContext>
 #include <QQuickWindow>
 #include <QQuickItem>
+#include <QGuiApplication>
 
 #include <kdeclarative/kdeclarative.h>
 #include <kquickaddons/configmodule.h>
@@ -105,6 +106,10 @@ void KCModuleQml::showEvent(QShowEvent *event)
     QVBoxLayout* layout = new QVBoxLayout(this);
 
     d->quickWindow = new QQuickWindow();
+    d->quickWindow->setColor(QGuiApplication::palette().window().color());
+    connect(qApp, &QGuiApplication::paletteChanged, [=]() {
+        d->quickWindow->setColor(QGuiApplication::palette().window().color());
+    });
     //The created widget takes ownership of the QWindow
     QWidget *widget = QWidget::createWindowContainer(d->quickWindow, this);
 
