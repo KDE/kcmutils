@@ -107,9 +107,11 @@ void KCModuleQml::showEvent(QShowEvent *event)
 
     d->quickWindow = new QQuickWindow();
     d->quickWindow->setColor(QGuiApplication::palette().window().color());
+#if QT_VERSION >= QT_VERSION_CHECK(5, 4, 0)
     connect(qApp, &QGuiApplication::paletteChanged, [=]() {
         d->quickWindow->setColor(QGuiApplication::palette().window().color());
     });
+#endif
     //The created widget takes ownership of the QWindow
     QWidget *widget = QWidget::createWindowContainer(d->quickWindow, this);
 
