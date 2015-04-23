@@ -89,6 +89,7 @@ KCModuleQml::KCModuleQml(KQuickAddons::ConfigModule *configModule, QWidget* pare
     connect(configModule, &KQuickAddons::ConfigModule::authActionNameChanged, [=] {
         setAuthAction(d->configModule->authActionName());
     });
+    setFocusPolicy(Qt::StrongFocus);
 }
 
 KCModuleQml::~KCModuleQml()
@@ -123,6 +124,12 @@ void KCModuleQml::showEvent(QShowEvent *event)
 
     layout->addWidget(widget);
     KCModule::showEvent(event);
+}
+
+void KCModuleQml::focusInEvent(QFocusEvent *event)
+{
+    Q_UNUSED(event)
+    d->quickWindow->requestActivate();
 }
 
 QSize KCModuleQml::sizeHint() const

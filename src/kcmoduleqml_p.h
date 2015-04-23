@@ -46,6 +46,7 @@ public Q_SLOTS:
 
 protected:
     virtual void showEvent(QShowEvent *event) Q_DECL_OVERRIDE;
+    virtual void focusInEvent(QFocusEvent *event) Q_DECL_OVERRIDE;
     QSize sizeHint() const Q_DECL_OVERRIDE;
 
 private:
