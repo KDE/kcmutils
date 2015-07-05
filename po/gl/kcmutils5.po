@@ -1,0 +1,458 @@
+# translation of kdelibs4.po to galician
+# Copyright (C) YEAR This_file_is_part_of_KDE
+# This file is distributed under the same license as the PACKAGE package.
+#
+# mvillarino <mvillarino@users.sourceforge.net>, 2007, 2008, 2009.
+# Marce Villarino <mvillarino@kde-espana.es>, 2008, 2009.
+# marce villarino <mvillarino@users.sourceforge.net>, 2009.
+# marce villarino <mvillarino@gmail.com>, 2009.
+# Marce Villarino <mvillarino@kde-espana.es>, 2009, 2010, 2011, 2012.
+# Xosé <xosecalvo@gmail.com>, 2010.
+# Marce Villarino <mvillarino@kde-espana.es>, 2011, 2012, 2013, 2014.
+msgid ""
+msgstr ""
+"Project-Id-Version: kdelibs4\n"
+"Report-Msgid-Bugs-To: http://bugs.kde.org\n"
+"POT-Creation-Date: 2015-03-25 07:50+0000\n"
+"PO-Revision-Date: 2014-01-06 15:27+0100\n"
+"Last-Translator: Marce Villarino <mvillarino@kde-espana.org>\n"
+"Language-Team: Galician <proxecto@trasno.net>\n"
+"Language: gl\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Lokalize 1.5\n"
+"X-Environment: kde, development\n"
+"X-Accelerator-Marker: &\n"
+"X-Text-Markup: kde4\n"
+
+msgctxt "NAME OF TRANSLATORS"
+msgid "Your names"
+msgstr "Xabier García Feal, marce villarino, Xosé Calvo"
+
+msgctxt "EMAIL OF TRANSLATORS"
+msgid "Your emails"
+msgstr "xosecalvo@gmail.com, mvillarino@gmail.com, proxecto@trasno.net"
+
+#: kcmoduleloader.cpp:79
+#, kde-format
+msgid "The module %1 could not be found."
+msgstr "Non foi posíbel atopar o módulo %1."
+
+#: kcmoduleloader.cpp:80
+#, kde-format
+msgid ""
+"<qt><p>The diagnosis is:<br />The desktop file %1 could not be found.</p></"
+"qt>"
+msgstr ""
+"<qt><p>O diagnóstico é:<br/>Non foi posíbel atopar o ficheiro desktop %1.</"
+"p></qt>"
+
+#: kcmoduleloader.cpp:82
+#, kde-format
+msgid "The module %1 is disabled."
+msgstr "O módulo %1 está desactivado."
+
+#: kcmoduleloader.cpp:83
+msgid ""
+"<qt><p>Either the hardware/software the module configures is not available "
+"or the module has been disabled by the administrator.</p></qt>"
+msgstr ""
+"<qt><p>Ou non está dispoñíbel o hardware/software que configura o módulo ou "
+"o módulo foi desactivado polo administrador.</p></qt>"
+
+#: kcmoduleloader.cpp:140
+#, kde-format
+msgid "The module %1 is not a valid configuration module."
+msgstr "O módulo %1 non é un módulo de configuración válido."
+
+#: kcmoduleloader.cpp:141
+#, kde-format
+msgid ""
+"<qt>The diagnosis is:<br />The desktop file %1 does not specify a library.</"
+"qt>"
+msgstr ""
+"<qt>O diagnóstico é:<br/>O ficheiro desktop %1 non especifica unha "
+"biblioteca.</qt>"
+
+#: kcmoduleloader.cpp:156
+msgid ""
+"<qt><p>Possible reasons:<ul><li>An error occurred during your last KDE "
+"upgrade leaving an orphaned control module</li><li>You have old third party "
+"modules lying around.</li></ul></p><p>Check these points carefully and try "
+"to remove the module mentioned in the error message. If this fails, consider "
+"contacting your distributor or packager.</p></qt>"
+msgstr ""
+"<qt><p>Posíbeis razóns:<ul><li>Produciuse un erro a última vez que se anovou "
+"KDE, deixando orfo un módulo de control</li><li>Hai presentes módulos vellos "
+"de terceiros.</li></ul></p><p>Comprobe estes puntos con coidado e tente "
+"eliminar o módulo mencionado na mensaxe de erro. Se isto falla, considere "
+"contactar co seu distribuidor de paquetes.</p></qt>"
+
+#: kcmoduleproxy.cpp:165
+#, kde-format
+msgctxt "Argument is application name"
+msgid "This configuration section is already opened in %1"
+msgstr "Esta sección de configuración xa está aberta en %1"
+
+#: kcmultidialog.cpp:57
+msgid ""
+"The settings of the current module have changed.\n"
+"Do you want to apply the changes or discard them?"
+msgstr ""
+"Cambiáronse as opcións deste módulo.\n"
+"Desexa aplicar os cambios ou rexeitalos?"
+
+#: kcmultidialog.cpp:59
+msgid "Apply Settings"
+msgstr "Aplicar as opcións"
+
+#: kcmultidialog.cpp:206
+msgid "Configure"
+msgstr "Configurar"
+
+#. i18n: ectx: label, entry, group (DesktopIcons)
+#: kdeglobals.kcfg:9
+msgid "Distance between desktop icons"
+msgstr "Distancia entre as iconas do escritorio"
+
+#. i18n: ectx: whatsthis, entry, group (DesktopIcons)
+#: kdeglobals.kcfg:10
+msgid "The distance between icons specified in pixels."
+msgstr "A distancia en píxeles entre as iconas."
+
+#. i18n: ectx: label, entry, group (General)
+#: kdeglobals.kcfg:23
+msgid "Widget style to use"
+msgstr "O estilo de widgets a usar"
+
+#. i18n: ectx: whatsthis, entry, group (General)
+#: kdeglobals.kcfg:24
+msgid ""
+"The name of the widget style, for example \"keramik\" or \"plastik\". "
+"Without quotes."
+msgstr ""
+"O nome do estilo dos widgets, por exemplo «keramik» ou «plastik». Sen aspas."
+
+#. i18n: ectx: label, entry, group (General)
+#: kdeglobals.kcfg:30
+msgid "Use the PC speaker"
+msgstr "Usar o altofalante do PC"
+
+#. i18n: ectx: whatsthis, entry, group (General)
+#: kdeglobals.kcfg:31
+msgid ""
+"Whether the ordinary PC speaker should be used instead of KDE's own "
+"notifications system."
+msgstr ""
+"Indica se debe usar o altofalante do PC no canto do sistema de notificacións "
+"propio de KDE."
+
+#. i18n: ectx: label, entry, group (General)
+#: kdeglobals.kcfg:35
+msgid "What terminal application to use"
+msgstr "O programa de terminal que utilizar"
+
+#. i18n: ectx: whatsthis, entry, group (General)
+#: kdeglobals.kcfg:37
+msgid ""
+"Whenever a terminal application is launched this terminal emulator program "
+"will be used.\n"
+msgstr ""
+"Sempre que se inicie un programa de terminal ha usarse este emulador de "
+"terminal.\n"
+
+#. i18n: ectx: label, entry, group (General)
+#: kdeglobals.kcfg:41
+msgid "Fixed width font"
+msgstr "Tipo de letra de ancho fixo"
+
+#. i18n: ectx: whatsthis, entry, group (General)
+#: kdeglobals.kcfg:43
+msgid ""
+"This font is used when a fixed font is needed. A fixed font has a constant "
+"width.\n"
+msgstr ""
+"Esta fonte tipográfica é usada cando se precise un ancho fixo. Nas fontes "
+"tipográficas de ancho fixo todos os caracteres teñen o mesmo ancho.\n"
+
+#. i18n: ectx: label, entry, group (General)
+#: kdeglobals.kcfg:46
+msgid "System wide font"
+msgstr "Tipo de letra para todo o sistema"
+
+#. i18n: ectx: label, entry, group (General)
+#: kdeglobals.kcfg:49
+msgid "Font for menus"
+msgstr "Tipo de letra dos menús"
+
+#. i18n: ectx: whatsthis, entry, group (General)
+#: kdeglobals.kcfg:50
+msgid "What font to use for menus in applications."
+msgstr "A fonte tipográfica que usar para os menús dos programas."
+
+#. i18n: ectx: label, entry, group (General)
+#: kdeglobals.kcfg:53
+msgid "Color for links"
+msgstr "Cor das ligazóns"
+
+#. i18n: ectx: whatsthis, entry, group (General)
+#: kdeglobals.kcfg:54
+msgid "What color links should be that have not yet been clicked on"
+msgstr "A cor das ligazóns aínda non visitadas."
+
+#. i18n: ectx: label, entry, group (General)
+#: kdeglobals.kcfg:57
+msgid "Color for visited links"
+msgstr "Cor das ligazóns visitadas"
+
+#. i18n: ectx: label, entry, group (General)
+#: kdeglobals.kcfg:60
+msgid "Font for the taskbar"
+msgstr "Tipo de letra da barra de tarefas"
+
+#. i18n: ectx: whatsthis, entry, group (General)
+#: kdeglobals.kcfg:61
+msgid ""
+"What font to use for the panel at the bottom of the screen, where the "
+"currently running applications are."
+msgstr ""
+"O tipo de letra do panel no fondo da pantalla, onde se ven que programas "
+"están a executarse."
+
+#. i18n: ectx: label, entry, group (General)
+#: kdeglobals.kcfg:64
+msgid "Fonts for toolbars"
+msgstr "Tipo de letra das barras de ferramentas"
+
+#. i18n: ectx: label, entry (Desktop Screenshot), group (Global Shortcuts)
+#: kdeglobals.kcfg:73
+msgid "Shortcut for taking screenshot"
+msgstr "Atallo para facer capturas de pantallas"
+
+#. i18n: ectx: label, entry (Enable/Disable Clipboard Actions), group (Global Shortcuts)
+#: kdeglobals.kcfg:78
+msgid "Shortcut for toggling Clipboard Actions on and off"
+msgstr "Atallo para conmutar as accións do portarretallos"
+
+#. i18n: ectx: label, entry (Halt without Confirmation), group (Global Shortcuts)
+#: kdeglobals.kcfg:83
+msgid "Shortcut for shutting down the computer without confirmation"
+msgstr "Atallo para apagar o ordenador sen pedir confirmación"
+
+#. i18n: ectx: label, entry (Sort directories first), group (KFileDialog Settings)
+#: kdeglobals.kcfg:380
+msgid "Show directories first"
+msgstr "Mostrar primeiro os cartafoles"
+
+#. i18n: ectx: whatsthis, entry (Sort directories first), group (KFileDialog Settings)
+#: kdeglobals.kcfg:381
+msgid "Whether directories should be placed at the top when displaying files"
+msgstr "Indica se os cartafoles deben pórse en riba ao mostrar os ficheiros"
+
+#. i18n: ectx: label, entry (Recent URLs), group (KFileDialog Settings)
+#: kdeglobals.kcfg:389
+msgid "The URLs recently visited"
+msgstr "Os URL visitados recentemente"
+
+#. i18n: ectx: whatsthis, entry (Recent URLs), group (KFileDialog Settings)
+#: kdeglobals.kcfg:390
+msgid "Used for auto-completion in file dialogs, for example"
+msgstr ""
+"Úsase por exemplo para completar automaticamente os diálogos de escolla de "
+"ficheiro."
+
+#. i18n: ectx: label, entry (Show Preview), group (KFileDialog Settings)
+#: kdeglobals.kcfg:394
+msgid "Show file preview in file dialog"
+msgstr "Previsualizar o ficheiro no diálogo de escolla de ficheiros"
+
+#. i18n: ectx: label, entry (Show hidden files), group (KFileDialog Settings)
+#: kdeglobals.kcfg:399
+msgid "Show hidden files"
+msgstr "Mostrar os ficheiros acochados"
+
+#. i18n: ectx: whatsthis, entry (Show hidden files), group (KFileDialog Settings)
+#: kdeglobals.kcfg:400
+msgid ""
+"Whether files starting with a dot (convention for hidden files) should be "
+"shown"
+msgstr ""
+"Indica se deben ser mostrados os ficheiros con nome que comece por un punto "
+"(convención que indica que é un ficheiro acochado)"
+
+#. i18n: ectx: label, entry (Show Speedbar), group (KFileDialog Settings)
+#: kdeglobals.kcfg:405
+msgid "Show speedbar"
+msgstr "Mostrar a barra de atallos"
+
+#. i18n: ectx: whatsthis, entry (Show Speedbar), group (KFileDialog Settings)
+#: kdeglobals.kcfg:406
+msgid ""
+"Whether the shortcut icons to the left in the file dialog should be shown"
+msgstr ""
+"Indica se deben mostrarse as iconas de atallo á esquerda no diálogo de "
+"escolla de ficheiros"
+
+#. i18n: ectx: label, entry, group (Locale)
+#: kdeglobals.kcfg:425
+msgid "What country"
+msgstr "País"
+
+#. i18n: ectx: whatsthis, entry, group (Locale)
+#: kdeglobals.kcfg:426
+msgid ""
+"Used to determine how to display numbers, currency and time/date, for example"
+msgstr ""
+"Úsase para determinar como mostrar os números, a moeda e as datas e hora, "
+"entre outras cousas"
+
+#. i18n: ectx: label, entry, group (Locale)
+#: kdeglobals.kcfg:430
+msgid "What language to use to display text"
+msgstr "A lingua na que mostrar o texto"
+
+#. i18n: ectx: label, entry, group (Locale)
+#: kdeglobals.kcfg:433
+msgid "Character used for indicating positive numbers"
+msgstr "Carácter que indica número positivo"
+
+#. i18n: ectx: whatsthis, entry, group (Locale)
+#: kdeglobals.kcfg:434
+msgid "Most countries have no character for this"
+msgstr "A maioría dos países non teñen carácter para isto"
+
+#. i18n: ectx: label, entry, group (Paths)
+#: kdeglobals.kcfg:439
+msgid "Path to the autostart directory"
+msgstr "Ruta ao cartafol de inicios automáticos"
+
+#. i18n: ectx: whatsthis, entry, group (Paths)
+#: kdeglobals.kcfg:440
+msgid "Path to the directory containing executables to be run on session login"
+msgstr ""
+"Ruta ao cartafol que contén os executábeis que executar ao iniciar unha "
+"sesión"
+
+#. i18n: ectx: label, entry, group (Socks)
+#: kdeglobals.kcfg:487
+msgid "Enable SOCKS support"
+msgstr "Activar a compatibilidade con SOCKS"
+
+#. i18n: ectx: whatsthis, entry, group (Socks)
+#: kdeglobals.kcfg:488
+msgid "Whether SOCKS version 4 and 5 should be enabled in KDE's sub systems"
+msgstr ""
+"Indica se deben activarse as versións 4 e 5 de SOCKS nos subsistemas de KDE"
+
+#. i18n: ectx: label, entry, group (Socks)
+#: kdeglobals.kcfg:492
+msgid "Path to custom SOCKS library"
+msgstr "Ruta á biblioteca personalizada de SOCKS"
+
+#. i18n: ectx: label, entry, group (Toolbar style)
+#: kdeglobals.kcfg:498
+msgid "Highlight toolbar buttons on mouse over"
+msgstr ""
+"Realzar os botóns das barras de ferramentas ao pasarlles o rato por riba"
+
+#. i18n: ectx: label, entry, group (Toolbar style)
+#: kdeglobals.kcfg:502
+msgid "Show text on toolbar icons "
+msgstr "Mostrar texto nas iconas da barra de ferramentas"
+
+#. i18n: ectx: whatsthis, entry, group (Toolbar style)
+#: kdeglobals.kcfg:503
+msgid "Whether text should be shown in addition to icons on toolbar icons"
+msgstr ""
+"Indica se debe mostrarse texto ademais da icona nas iconas das barras de "
+"ferramentas"
+
+#. i18n: ectx: label, entry (EchoMode), group (Passwords)
+#: kdeglobals.kcfg:524
+msgid "Password echo type"
+msgstr "Tipo de eco no contrasinal"
+
+#. i18n: ectx: label, entry (Dialog Size), group (KKeyDialog Settings)
+#: kdeglobals.kcfg:534
+msgid "The size of the dialog"
+msgstr "O tamaño do diálogo"
+
+#: kpluginselector.cpp:140
+msgid ""
+"Automatic changes have been performed due to plugin dependencies. Click here "
+"for further information"
+msgstr ""
+"Realizáronse cambios automaticamente debido a dependencias do complemento. "
+"Prema aquí para máis información"
+
+#: kpluginselector.cpp:209
+msgid ""
+"Automatic changes have been performed in order to satisfy plugin "
+"dependencies:\n"
+msgstr ""
+"Realizáronse cambios automaticamente para satisfacer dependencias do "
+"complemento:\n"
+
+#: kpluginselector.cpp:212
+#, kde-format
+msgid ""
+"\n"
+"    %1 plugin has been automatically checked because of the dependency of %2 "
+"plugin"
+msgstr ""
+"\n"
+"    O complemento %1 foi escollido automaticamente debido a que del depende "
+"o complemento %2"
+
+#: kpluginselector.cpp:214
+#, kde-format
+msgid ""
+"\n"
+"    %1 plugin has been automatically unchecked because of its dependency on "
+"%2 plugin"
+msgstr ""
+"\n"
+"    Anulouse automaticamente a selección do complemento %1 debido a que "
+"depende do complemento %2"
+
+#: kpluginselector.cpp:217
+msgid "Dependency Check"
+msgstr "Comprobación das dependencias"
+
+#: kpluginselector.cpp:234
+#, kde-format
+msgid "%1 plugin automatically added due to plugin dependencies"
+msgid_plural "%1 plugins automatically added due to plugin dependencies"
+msgstr[0] "Engadiuse automaticamente %1 complemento debido ás dependencias"
+msgstr[1] "Engadíronse automaticamente %1 complementos debido ás dependencias"
+
+#: kpluginselector.cpp:238
+msgid ", "
+msgstr ", "
+
+#: kpluginselector.cpp:242
+#, kde-format
+msgid "%1 plugin automatically removed due to plugin dependencies"
+msgid_plural "%1 plugins automatically removed due to plugin dependencies"
+msgstr[0] "Eliminouse automaticamente %1 complemento debido ás dependencias"
+msgstr[1] "Elimináronse automaticamente %1 complementos debido a dependencias"
+
+#: kpluginselector.cpp:263
+msgid "Search Plugins"
+msgstr "Buscar complementos"
+
+#: kpluginselector.cpp:795
+#, kde-format
+msgctxt "Used only for plugins"
+msgid "About %1"
+msgstr "Acerca de %1"
+
+#: ksettings/componentsdialog.cpp:55
+msgid "Select Components"
+msgstr "Escoller os compoñentes"
+
+#: ksettings/dialog.cpp:231
+msgid "Enable component"
+msgstr "Activar o compoñente"
