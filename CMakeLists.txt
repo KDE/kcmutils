@@ -23,7 +23,7 @@ include(ECMSetupVersion)
 include(ECMGenerateHeaders)
 include(ECMPackageConfigHelpers)
 
-set(KF5_VERSION "5.15.0") # handled by release scripts
+set(KF5_VERSION "5.16.0") # handled by release scripts
 set(KF5_DEP_VERSION "5.15.0") # handled by release scripts
 ecm_setup_version(${KF5_VERSION} VARIABLE_PREFIX KCMUTILS
                         VERSION_HEADER "${CMAKE_CURRENT_BINARY_DIR}/kcmutils_version.h"
