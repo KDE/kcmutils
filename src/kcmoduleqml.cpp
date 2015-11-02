@@ -118,8 +118,8 @@ void KCModuleQml::showEvent(QShowEvent *event)
 
     d->configModule->mainUi()->setParentItem(d->quickWindow->contentItem());
     //set anchors
-    QQmlExpression expr(d->configModule->engine()->rootContext(), d->configModule->mainUi(), QLatin1String("parent"));
-    QQmlProperty prop(d->configModule->mainUi(), QLatin1String("anchors.fill"));
+    QQmlExpression expr(d->configModule->engine()->rootContext(), d->configModule->mainUi(), QStringLiteral("parent"));
+    QQmlProperty prop(d->configModule->mainUi(), QStringLiteral("anchors.fill"));
     prop.write(expr.evaluate());
 
     layout->addWidget(widget);

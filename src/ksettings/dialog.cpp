@@ -448,8 +448,8 @@ void DialogPrivate::connectItemCheckBox(KPageWidgetItem *item, const KPluginInfo
     checkBox->setVisible(!isPluginImmutable(pinfo));
     checkBox->setChecked(isEnabled);
     q->connect(item, SIGNAL(toggled(bool)), q, SLOT(_k_updateEnabledState(bool)));
-    q->connect(item, SIGNAL(toggled(bool)), checkBox, SLOT(setChecked(bool)));
-    q->connect(checkBox, SIGNAL(clicked(bool)), item, SLOT(setChecked(bool)));
+    q->connect(item, &KPageWidgetItem::toggled, checkBox, &QAbstractButton::setChecked);
+    q->connect(checkBox, &QAbstractButton::clicked, item, &KPageWidgetItem::setChecked);
 }
 
 void DialogPrivate::_k_syncConfiguration()

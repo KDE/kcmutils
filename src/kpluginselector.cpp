@@ -281,9 +281,9 @@ KPluginSelector::KPluginSelector(QWidget *parent)
     d->listView->setMouseTracking(true);
     d->listView->viewport()->setAttribute(Qt::WA_Hover);
 
-    connect(d->lineEdit, SIGNAL(textChanged(QString)), d->proxyModel, SLOT(invalidate()));
-    connect(pluginDelegate, SIGNAL(changed(bool)), this, SIGNAL(changed(bool)));
-    connect(pluginDelegate, SIGNAL(configCommitted(QByteArray)), this, SIGNAL(configCommitted(QByteArray)));
+    connect(d->lineEdit, &QLineEdit::textChanged, d->proxyModel, &QSortFilterProxyModel::invalidate);
+    connect(pluginDelegate, &Private::PluginDelegate::changed, this, &KPluginSelector::changed);
+    connect(pluginDelegate, &Private::PluginDelegate::configCommitted, this, &KPluginSelector::configCommitted);
 
     layout->addWidget(d->lineEdit);
     layout->addWidget(d->listView);
@@ -686,16 +686,16 @@ QList<QWidget *> KPluginSelector::Private::PluginDelegate::createItemWidgets(con
     QList<QWidget *> widgetList;
 
     QCheckBox *enabledCheckBox = new QCheckBox;
-    connect(enabledCheckBox, SIGNAL(clicked(bool)), this, SLOT(slotStateChanged(bool)));
-    connect(enabledCheckBox, SIGNAL(clicked(bool)), this, SLOT(emitChanged()));
+    connect(enabledCheckBox, &QAbstractButton::clicked, this, &PluginDelegate::slotStateChanged);
+    connect(enabledCheckBox, &QAbstractButton::clicked, this, &PluginDelegate::emitChanged);
 
     QPushButton *aboutPushButton = new QPushButton;
     aboutPushButton->setIcon(QIcon::fromTheme(QStringLiteral("dialog-information")));
-    connect(aboutPushButton, SIGNAL(clicked(bool)), this, SLOT(slotAboutClicked()));
+    connect(aboutPushButton, &QAbstractButton::clicked, this, &PluginDelegate::slotAboutClicked);
 
     QPushButton *configurePushButton = new QPushButton;
     configurePushButton->setIcon(QIcon::fromTheme(QStringLiteral("configure")));
-    connect(configurePushButton, SIGNAL(clicked(bool)), this, SLOT(slotConfigureClicked()));
+    connect(configurePushButton, &QAbstractButton::clicked, this, &PluginDelegate::slotConfigureClicked);
 
     setBlockedEventTypes(enabledCheckBox, QList<QEvent::Type>() << QEvent::MouseButtonPress
                          << QEvent::MouseButtonRelease << QEvent::MouseButtonDblClick
@@ -863,9 +863,9 @@ void KPluginSelector::Private::PluginDelegate::slotConfigureClicked()
         KGuiItem::assign(buttonBox->button(QDialogButtonBox::Ok), KStandardGuiItem::ok());
         KGuiItem::assign(buttonBox->button(QDialogButtonBox::Cancel), KStandardGuiItem::cancel());
         KGuiItem::assign(buttonBox->button(QDialogButtonBox::RestoreDefaults), KStandardGuiItem::defaults());
-        connect(buttonBox, SIGNAL(accepted()), &configDialog, SLOT(accept()));
-        connect(buttonBox, SIGNAL(rejected()), &configDialog, SLOT(reject()));
-        connect(buttonBox->button(QDialogButtonBox::RestoreDefaults), SIGNAL(clicked()), this, SLOT(slotDefaultClicked()));
+        connect(buttonBox, &QDialogButtonBox::accepted, &configDialog, &QDialog::accept);
+        connect(buttonBox, &QDialogButtonBox::rejected, &configDialog, &QDialog::reject);
+        connect(buttonBox->button(QDialogButtonBox::RestoreDefaults), &QAbstractButton::clicked, this, &PluginDelegate::slotDefaultClicked);
         layout->addWidget(buttonBox);
 
         configDialog.setLayout(layout);

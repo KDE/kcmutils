@@ -84,7 +84,7 @@ void KCModuleContainer::init()
     d->topLayout->setObjectName(QStringLiteral("topLayout"));
     d->tabWidget = new QTabWidget(this);
     d->tabWidget->setObjectName(QStringLiteral("tabWidget"));
-    connect(d->tabWidget, SIGNAL(currentChanged(int)), SLOT(tabSwitched(int)));
+    connect(d->tabWidget, &QTabWidget::currentChanged, this, &KCModuleContainer::tabSwitched);
     d->topLayout->addWidget(d->tabWidget);
 
     if (!d->modules.isEmpty()) {

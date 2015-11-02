@@ -62,10 +62,10 @@ ComponentsDialog::ComponentsDialog(QWidget *parent, const char *name)
 
     QDialogButtonBox *buttonBox = new QDialogButtonBox(this);
     buttonBox->setStandardButtons(QDialogButtonBox::Ok | QDialogButtonBox::Apply | QDialogButtonBox::Cancel);
-    connect(buttonBox->button(QDialogButtonBox::Apply), SIGNAL(clicked()), this, SLOT(savePluginInfos()));
-    connect(buttonBox, SIGNAL(accepted()), this, SLOT(savePluginInfos()));
-    connect(buttonBox, SIGNAL(accepted()), this, SLOT(accept()));
-    connect(buttonBox, SIGNAL(rejected()), this, SLOT(reject()));
+    connect(buttonBox->button(QDialogButtonBox::Apply), &QAbstractButton::clicked, this, &ComponentsDialog::savePluginInfos);
+    connect(buttonBox, &QDialogButtonBox::accepted, this, &ComponentsDialog::savePluginInfos);
+    connect(buttonBox, &QDialogButtonBox::accepted, this, &QDialog::accept);
+    connect(buttonBox, &QDialogButtonBox::rejected, this, &QDialog::reject);
     layout->addWidget(buttonBox);
 
     QHBoxLayout *hbox = new QHBoxLayout(page);
@@ -91,10 +91,10 @@ ComponentsDialog::ComponentsDialog(QWidget *parent, const char *name)
 
     d->listview->setAcceptDrops(false);
 
-    connect(d->listview, SIGNAL(itemPressed(QTreeWidgetItem*,int)), this,
-            SLOT(executed(QTreeWidgetItem*,int)));
-    connect(d->listview, SIGNAL(itemActivated(QTreeWidgetItem*,int)), this,
-            SLOT(executed(QTreeWidgetItem*,int)));
+    connect(d->listview, &QTreeWidget::itemPressed, this,
+            &ComponentsDialog::executed);
+    connect(d->listview, &QTreeWidget::itemActivated, this,
+            &ComponentsDialog::executed);
     connect(d->listview, SIGNAL(itemSelectionChanged(QTreeWidgetItem*,int)), this,
             SLOT(executed(QTreeWidgetItem*,int)));
 }

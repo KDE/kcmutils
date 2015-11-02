@@ -110,7 +110,7 @@ void KCModuleProxyPrivate::loadModule()
 
         QObject::connect(kcm, SIGNAL(changed(bool)), parent, SLOT(_k_moduleChanged(bool)));
         QObject::connect(kcm, SIGNAL(destroyed()), parent, SLOT(_k_moduleDestroyed()));
-        QObject::connect(kcm, SIGNAL(quickHelpChanged()), parent, SIGNAL(quickHelpChanged()));
+        QObject::connect(kcm, &KCModule::quickHelpChanged, parent, &KCModuleProxy::quickHelpChanged);
         parent->setWhatsThis(kcm->quickHelp());
 
         if (kcm->layout()) {

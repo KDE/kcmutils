@@ -122,14 +122,14 @@ void KCMultiDialogPrivate::_k_clientChanged()
 
         QPushButton *applyButton = q->buttonBox()->button(QDialogButtonBox::Apply);
         if (applyButton) {
-            q->disconnect(applyButton, SIGNAL(clicked()), q, SLOT(slotApplyClicked()));
+            q->disconnect(applyButton, &QAbstractButton::clicked, q, &KCMultiDialog::slotApplyClicked);
             delete applyButton->findChild<KAuth::ObjectDecorator *>();
             applyButton->setEnabled(change);
         }
 
         QPushButton *okButton = q->buttonBox()->button(QDialogButtonBox::Ok);
         if (okButton) {
-            q->disconnect(okButton, SIGNAL(clicked()), q, SLOT(slotOkClicked()));
+            q->disconnect(okButton, &QAbstractButton::clicked, q, &KCMultiDialog::slotOkClicked);
             delete okButton->findChild<KAuth::ObjectDecorator *>();
         }
 
@@ -138,23 +138,23 @@ void KCMultiDialogPrivate::_k_clientChanged()
                 KAuth::ObjectDecorator *decorator = new KAuth::ObjectDecorator(applyButton);
                 decorator->setAuthAction(activeModule->realModule()->authAction());
                 activeModule->realModule()->authAction().setParentWidget(activeModule->realModule());
-                q->connect(decorator, SIGNAL(authorized(KAuth::Action)), SLOT(slotApplyClicked()));
+                q->connect(decorator, &KAuth::ObjectDecorator::authorized, q, &KCMultiDialog::slotApplyClicked);
             }
 
             if (okButton) {
                 KAuth::ObjectDecorator *decorator = new KAuth::ObjectDecorator(okButton);
                 decorator->setAuthAction(activeModule->realModule()->authAction());
                 activeModule->realModule()->authAction().setParentWidget(activeModule->realModule());
-                q->connect(decorator, SIGNAL(authorized(KAuth::Action)), SLOT(slotOkClicked()));
+                q->connect(decorator, &KAuth::ObjectDecorator::authorized, q, &KCMultiDialog::slotOkClicked);
             }
         } else {
             if (applyButton) {
-                q->connect(applyButton, SIGNAL(clicked()), SLOT(slotApplyClicked()));
+                q->connect(applyButton, &QAbstractButton::clicked, q, &KCMultiDialog::slotApplyClicked);
                 delete applyButton->findChild<KAuth::ObjectDecorator *>();
             }
 
             if (okButton) {
-                q->connect(okButton, SIGNAL(clicked()), SLOT(slotOkClicked()));
+                q->connect(okButton, &QAbstractButton::clicked, q, &KCMultiDialog::slotOkClicked);
                 delete okButton->findChild<KAuth::ObjectDecorator *>();
             }
         }
@@ -222,11 +222,11 @@ void KCMultiDialogPrivate::init()
     buttonBox->button(QDialogButtonBox::Reset)->setEnabled(false);
     buttonBox->button(QDialogButtonBox::Apply)->setEnabled(false);
 
-    q->connect(buttonBox->button(QDialogButtonBox::Apply), SIGNAL(clicked()), SLOT(slotApplyClicked()));
-    q->connect(buttonBox->button(QDialogButtonBox::Ok), SIGNAL(clicked()), SLOT(slotOkClicked()));
-    q->connect(buttonBox->button(QDialogButtonBox::RestoreDefaults), SIGNAL(clicked()), SLOT(slotDefaultClicked()));
-    q->connect(buttonBox->button(QDialogButtonBox::Help), SIGNAL(clicked()), SLOT(slotHelpClicked()));
-    q->connect(buttonBox->button(QDialogButtonBox::Reset), SIGNAL(clicked()), SLOT(slotUser1Clicked()));
+    q->connect(buttonBox->button(QDialogButtonBox::Apply), &QAbstractButton::clicked, q, &KCMultiDialog::slotApplyClicked);
+    q->connect(buttonBox->button(QDialogButtonBox::Ok), &QAbstractButton::clicked, q, &KCMultiDialog::slotOkClicked);
+    q->connect(buttonBox->button(QDialogButtonBox::RestoreDefaults), &QAbstractButton::clicked, q, &KCMultiDialog::slotDefaultClicked);
+    q->connect(buttonBox->button(QDialogButtonBox::Help), &QAbstractButton::clicked, q, &KCMultiDialog::slotHelpClicked);
+    q->connect(buttonBox->button(QDialogButtonBox::Reset), &QAbstractButton::clicked, q, &KCMultiDialog::slotUser1Clicked);
 
     q->setButtonBox(buttonBox);
 
