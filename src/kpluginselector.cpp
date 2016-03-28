@@ -449,7 +449,7 @@ void KPluginSelector::Private::PluginModel::addPlugins(const QList<KPluginInfo> 
         pluginEntry.isCheckable = !pluginInfo.isValid() || !pluginEntry.cfgGroup.isEntryImmutable(pluginInfo.pluginName() + QLatin1String("Enabled"));
 
         if (!pluginEntryList.contains(pluginEntry) && !listToAdd.contains(pluginEntry) &&
-                (pluginInfo.category().isEmpty() || !pluginInfo.category().compare(categoryKey, Qt::CaseInsensitive)) &&
+                (categoryKey.isEmpty() || !pluginInfo.category().compare(categoryKey, Qt::CaseInsensitive)) &&
                 (!pluginInfo.service() || !pluginInfo.service()->noDisplay())) {
             listToAdd << pluginEntry;
 
