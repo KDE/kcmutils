@@ -1,0 +1,439 @@
+# translation of kdelibs4.po to Karakh
+#
+# Sairan Kikkarin <sairan@computer.org>, 2005, 2006, 2007, 2008, 2009.
+# Sairan Kikkarin <sairan@computer.org>, 2010, 2011, 2012.
+# Sairan Kikkarin <sairan(at)computer.org>, 2010, 2013.
+msgid ""
+msgstr ""
+"Project-Id-Version: kdelibs4\n"
+"Report-Msgid-Bugs-To: http://bugs.kde.org\n"
+"POT-Creation-Date: 2016-01-28 07:40+0000\n"
+"PO-Revision-Date: 2013-11-08 01:24+0600\n"
+"Last-Translator: Sairan Kikkarin <sairan@computer.org>\n"
+"Language-Team: Kazakh <kde-i18n-doc@kde.org>\n"
+"Language: kk\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Lokalize 1.2\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"\n"
+"\n"
+"\n"
+"\n"
+"\n"
+
+#
+msgctxt "NAME OF TRANSLATORS"
+msgid "Your names"
+msgstr "Сайран Киккарин"
+
+#
+msgctxt "EMAIL OF TRANSLATORS"
+msgid "Your emails"
+msgstr "sairan@computer.org"
+
+#: kcmoduleloader.cpp:79
+#, kde-format
+msgid "The module %1 could not be found."
+msgstr "%1 модулі табылмады."
+
+#: kcmoduleloader.cpp:80
+#, kde-format
+msgid ""
+"<qt><p>The diagnosis is:<br />The desktop file %1 could not be found.</p></"
+"qt>"
+msgstr "<qt><p>Диагностика:<br />%1 desktop файлы табылмады.</p></qt>"
+
+#: kcmoduleloader.cpp:82
+#, kde-format
+msgid "The module %1 is disabled."
+msgstr "%1 модулі бұғатталған."
+
+#: kcmoduleloader.cpp:83
+msgid ""
+"<qt><p>Either the hardware/software the module configures is not available "
+"or the module has been disabled by the administrator.</p></qt>"
+msgstr ""
+"<qt><p>Немесе модуль баптайтын жабдық/бағдарламасы қол жектізбеуде, немесе "
+"бұл модульді әкімші бұғаттап тастаған.</p></qt>"
+
+#: kcmoduleloader.cpp:140
+#, kde-format
+msgid "The module %1 is not a valid configuration module."
+msgstr "%1 модулі дұрыс баптау модулі емес."
+
+#: kcmoduleloader.cpp:141
+#, kde-format
+msgid ""
+"<qt>The diagnosis is:<br />The desktop file %1 does not specify a library.</"
+"qt>"
+msgstr ""
+"<qt>Диагностика:<br />%1 desctop файлында жиын файлы келтірілмеген.</qt>"
+
+#: kcmoduleloader.cpp:156
+msgid ""
+"<qt><p>Possible reasons:<ul><li>An error occurred during your last KDE "
+"upgrade leaving an orphaned control module</li><li>You have old third party "
+"modules lying around.</li></ul></p><p>Check these points carefully and try "
+"to remove the module mentioned in the error message. If this fails, consider "
+"contacting your distributor or packager.</p></qt>"
+msgstr ""
+"<qt><p>Мүмкін себептері:<ul> <li>KDE жүйесін соңғы жаңартқандағы қате - "
+"алдыңғы нұсқасының басқару модулі қалып қойған</li><li>Ескі бөтен басқару "
+"модулі орнатылған.</li></ul></p><p>Бұл жағдайларды мұқият тексеріп қатеге "
+"сеп болған модульді жойып көріңіз. Болмаса - жабдықтаушыңызбен байланысыңыз."
+"</p></qt>"
+
+#: kcmoduleproxy.cpp:165
+#, kde-format
+msgctxt "Argument is application name"
+msgid "This configuration section is already opened in %1"
+msgstr "Бұл баптау модулі әлден %1 дегенде ашылған"
+
+#: kcmultidialog.cpp:57
+msgid ""
+"The settings of the current module have changed.\n"
+"Do you want to apply the changes or discard them?"
+msgstr ""
+"Осы модулінің параметрлері өзгертілген.\n"
+"Өзгерістер іске асырылсын ба, әлде ысырып тасталсын ба?"
+
+#: kcmultidialog.cpp:59
+msgid "Apply Settings"
+msgstr "Іске асыру"
+
+#: kcmultidialog.cpp:206
+msgid "Configure"
+msgstr "Баптау"
+
+#. i18n: ectx: label, entry, group (DesktopIcons)
+#: kdeglobals.kcfg:9
+msgid "Distance between desktop icons"
+msgstr "Таңбашалар ара-қашықтығы"
+
+#. i18n: ectx: whatsthis, entry, group (DesktopIcons)
+#: kdeglobals.kcfg:10
+msgid "The distance between icons specified in pixels."
+msgstr "Пикселдегі таңбашалар ара-қашықтығы."
+
+#. i18n: ectx: label, entry, group (General)
+#: kdeglobals.kcfg:23
+msgid "Widget style to use"
+msgstr "Интерфейс бөлшегілердің стилі"
+
+#. i18n: ectx: whatsthis, entry, group (General)
+#: kdeglobals.kcfg:24
+msgid ""
+"The name of the widget style, for example \"keramik\" or \"plastik\". "
+"Without quotes."
+msgstr ""
+"Интерфес бөлшілелінің стилінің атауы. Мысалы \"keramik\" немесе \"plastik\". "
+"Тырақшасыз, әрине."
+
+#. i18n: ectx: label, entry, group (General)
+#: kdeglobals.kcfg:30
+msgid "Use the PC speaker"
+msgstr "ДК динамигі пайдаланылсын"
+
+#. i18n: ectx: whatsthis, entry, group (General)
+#: kdeglobals.kcfg:31
+msgid ""
+"Whether the ordinary PC speaker should be used instead of KDE's own "
+"notifications system."
+msgstr ""
+"KDE-нің құлақтандыру жүйесінің орнына ДК-ның кәдімгі динамигін пайдалану."
+
+#. i18n: ectx: label, entry, group (General)
+#: kdeglobals.kcfg:35
+msgid "What terminal application to use"
+msgstr "Қай терминал қолданбасын пайдалану"
+
+#. i18n: ectx: whatsthis, entry, group (General)
+#: kdeglobals.kcfg:37
+msgid ""
+"Whenever a terminal application is launched this terminal emulator program "
+"will be used.\n"
+msgstr ""
+"Терминал қолданбасын жеккенде осы терминалдың эмулятор бағдарламасы "
+"шақырылады.\n"
+
+#. i18n: ectx: label, entry, group (General)
+#: kdeglobals.kcfg:41
+msgid "Fixed width font"
+msgstr "Бірқадамды қаріп"
+
+#. i18n: ectx: whatsthis, entry, group (General)
+#: kdeglobals.kcfg:43
+msgid ""
+"This font is used when a fixed font is needed. A fixed font has a constant "
+"width.\n"
+msgstr ""
+"Бірқадамды қаріп керек болғанда осы қаріп пайдаланады. Бірқадамды қаріптің "
+"таңбаларының ені бірыңғай.\n"
+
+#. i18n: ectx: label, entry, group (General)
+#: kdeglobals.kcfg:46
+msgid "System wide font"
+msgstr "Жүйелік қаріп"
+
+#. i18n: ectx: label, entry, group (General)
+#: kdeglobals.kcfg:49
+msgid "Font for menus"
+msgstr "Мәзірлерінің қаріпі"
+
+#. i18n: ectx: whatsthis, entry, group (General)
+#: kdeglobals.kcfg:50
+msgid "What font to use for menus in applications."
+msgstr "Қолданбалардағы мәзірлерінің қаріпі."
+
+#. i18n: ectx: label, entry, group (General)
+#: kdeglobals.kcfg:53
+msgid "Color for links"
+msgstr "Сілтемелердің түсі"
+
+#. i18n: ectx: whatsthis, entry, group (General)
+#: kdeglobals.kcfg:54
+msgid "What color links should be that have not yet been clicked on"
+msgstr "Жолықпаған сілтемелерінің түсі"
+
+#. i18n: ectx: label, entry, group (General)
+#: kdeglobals.kcfg:57
+msgid "Color for visited links"
+msgstr "Жолыққан сілтемелерінің түсі"
+
+#. i18n: ectx: label, entry, group (General)
+#: kdeglobals.kcfg:60
+msgid "Font for the taskbar"
+msgstr "Тапсырмалар панелінің қаріпі"
+
+#. i18n: ectx: whatsthis, entry, group (General)
+#: kdeglobals.kcfg:61
+msgid ""
+"What font to use for the panel at the bottom of the screen, where the "
+"currently running applications are."
+msgstr ""
+"Әдетте экранның төменіндегі жегілген қолданбалар орналасатын панелінде "
+"пайдаланылатын қаріп."
+
+#. i18n: ectx: label, entry, group (General)
+#: kdeglobals.kcfg:64
+msgid "Fonts for toolbars"
+msgstr "Құралдар панелдерінің қаріпі"
+
+#. i18n: ectx: label, entry (Desktop Screenshot), group (Global Shortcuts)
+#: kdeglobals.kcfg:73
+msgid "Shortcut for taking screenshot"
+msgstr "Экранды түсіріп алу перне тіркесімі"
+
+#. i18n: ectx: label, entry (Enable/Disable Clipboard Actions), group (Global Shortcuts)
+#: kdeglobals.kcfg:78
+msgid "Shortcut for toggling Clipboard Actions on and off"
+msgstr "Алмасу буферінің әрекетін қосу/ажырату перне тіркесімі"
+
+#. i18n: ectx: label, entry (Halt without Confirmation), group (Global Shortcuts)
+#: kdeglobals.kcfg:83
+msgid "Shortcut for shutting down the computer without confirmation"
+msgstr "Компьютерді қосымша құптаусыз сөндіру перне тіркесімі"
+
+#. i18n: ectx: label, entry (Sort directories first), group (KFileDialog Settings)
+#: kdeglobals.kcfg:380
+msgid "Show directories first"
+msgstr "Алдымен қапшықтар көрсетілсін"
+
+#. i18n: ectx: whatsthis, entry (Sort directories first), group (KFileDialog Settings)
+#: kdeglobals.kcfg:381
+msgid "Whether directories should be placed at the top when displaying files"
+msgstr "Файлдар тізімінде алдымен каталогтар көрсетіледі"
+
+#. i18n: ectx: label, entry (Recent URLs), group (KFileDialog Settings)
+#: kdeglobals.kcfg:389
+msgid "The URLs recently visited"
+msgstr "Жуырда ашылған URL сілтемелері"
+
+#. i18n: ectx: whatsthis, entry (Recent URLs), group (KFileDialog Settings)
+#: kdeglobals.kcfg:390
+msgid "Used for auto-completion in file dialogs, for example"
+msgstr "Автотолтыруға пайдаланады, мысалы файл диалогында."
+
+#. i18n: ectx: label, entry (Show Preview), group (KFileDialog Settings)
+#: kdeglobals.kcfg:394
+msgid "Show file preview in file dialog"
+msgstr "Файл диалогында файл нобайы көрсетілсін"
+
+#. i18n: ectx: label, entry (Show hidden files), group (KFileDialog Settings)
+#: kdeglobals.kcfg:399
+msgid "Show hidden files"
+msgstr "Жасырын файлдар көрсетілсін"
+
+#. i18n: ectx: whatsthis, entry (Show hidden files), group (KFileDialog Settings)
+#: kdeglobals.kcfg:400
+msgid ""
+"Whether files starting with a dot (convention for hidden files) should be "
+"shown"
+msgstr ""
+"Атауы нүктеден басталатын (жасырын файл белгісі) файлдарды көрсетілетін қылу"
+
+#. i18n: ectx: label, entry (Show Speedbar), group (KFileDialog Settings)
+#: kdeglobals.kcfg:405
+msgid "Show speedbar"
+msgstr "Тездету панелі көрсетілсін"
+
+#. i18n: ectx: whatsthis, entry (Show Speedbar), group (KFileDialog Settings)
+#: kdeglobals.kcfg:406
+msgid ""
+"Whether the shortcut icons to the left in the file dialog should be shown"
+msgstr "Файл диалогының сол жағында жарлық таңбашаларын көрсетілетін қылу"
+
+#. i18n: ectx: label, entry, group (Locale)
+#: kdeglobals.kcfg:425
+msgid "What country"
+msgstr "Қай елдің әдеттері бойынша"
+
+#. i18n: ectx: whatsthis, entry, group (Locale)
+#: kdeglobals.kcfg:426
+msgid ""
+"Used to determine how to display numbers, currency and time/date, for example"
+msgstr "Сан, ақша, уақыт/күнді қалай көрсету керегін анықтау үшін қолданылады"
+
+#. i18n: ectx: label, entry, group (Locale)
+#: kdeglobals.kcfg:430
+msgid "What language to use to display text"
+msgstr "Мәтінді қай тілде көрсету"
+
+#. i18n: ectx: label, entry, group (Locale)
+#: kdeglobals.kcfg:433
+msgid "Character used for indicating positive numbers"
+msgstr "Оң санды белгілейтін таңба"
+
+#. i18n: ectx: whatsthis, entry, group (Locale)
+#: kdeglobals.kcfg:434
+msgid "Most countries have no character for this"
+msgstr "Елдердің көбінде бұған таңба қолданбайды"
+
+#. i18n: ectx: label, entry, group (Paths)
+#: kdeglobals.kcfg:439
+msgid "Path to the autostart directory"
+msgstr "Автобастау қапшығының жолы"
+
+#. i18n: ectx: whatsthis, entry, group (Paths)
+#: kdeglobals.kcfg:440
+msgid "Path to the directory containing executables to be run on session login"
+msgstr "Сеансты бастағанда жегілетін бағдарламалардың қапшығы"
+
+#. i18n: ectx: label, entry, group (Socks)
+#: kdeglobals.kcfg:487
+msgid "Enable SOCKS support"
+msgstr "SOCKS қолдауы болсын"
+
+#. i18n: ectx: whatsthis, entry, group (Socks)
+#: kdeglobals.kcfg:488
+msgid "Whether SOCKS version 4 and 5 should be enabled in KDE's sub systems"
+msgstr ""
+"KDE-тің ішкі жүйелерінде SOCKS 4 және 5-нұсқаларын қолдануын рұқсат ету"
+
+#. i18n: ectx: label, entry, group (Socks)
+#: kdeglobals.kcfg:492
+msgid "Path to custom SOCKS library"
+msgstr "Өзгертілген SOCKS жиын файлының жолы"
+
+#. i18n: ectx: label, entry, group (Toolbar style)
+#: kdeglobals.kcfg:498
+msgid "Highlight toolbar buttons on mouse over"
+msgstr "Тышқан меңзеген панелінің батырмасы ерекшеленсін"
+
+#. i18n: ectx: label, entry, group (Toolbar style)
+#: kdeglobals.kcfg:502
+msgid "Show text on toolbar icons "
+msgstr "Құрал панелінің таңбашасының жазуы көрсетілсін "
+
+#. i18n: ectx: whatsthis, entry, group (Toolbar style)
+#: kdeglobals.kcfg:503
+msgid "Whether text should be shown in addition to icons on toolbar icons"
+msgstr "Құрал панелінің таңбашасына қоса жазуын көрсету"
+
+#. i18n: ectx: label, entry (EchoMode), group (Passwords)
+#: kdeglobals.kcfg:524
+msgid "Password echo type"
+msgstr "Парольді жазу түрі"
+
+#. i18n: ectx: label, entry (Dialog Size), group (KKeyDialog Settings)
+#: kdeglobals.kcfg:534
+msgid "The size of the dialog"
+msgstr "Диалог терезесінің өлшемі"
+
+#: kpluginselector.cpp:140
+msgid ""
+"Automatic changes have been performed due to plugin dependencies. Click here "
+"for further information"
+msgstr ""
+"Плагиннің тәуелдіктеріне қарай автоматты түрде өзгерістер енгізілген. "
+"Қосымша мәлімет үшін осында түртіңіз."
+
+#: kpluginselector.cpp:209
+msgid ""
+"Automatic changes have been performed in order to satisfy plugin "
+"dependencies:\n"
+msgstr ""
+"Плагиннің тәуелдіктеріне қарай автоматты түрде өзгерістер енгізілген:\n"
+
+#: kpluginselector.cpp:212
+#, kde-format
+msgid ""
+"\n"
+"    %1 plugin has been automatically checked because of the dependency of %2 "
+"plugin"
+msgstr ""
+"\n"
+"    %1 плагиннің белгісі автоматты түрде қойылды, өйткені ол %2 плагин "
+"модуліне тәуелді"
+
+#: kpluginselector.cpp:214
+#, kde-format
+msgid ""
+"\n"
+"    %1 plugin has been automatically unchecked because of its dependency on "
+"%2 plugin"
+msgstr ""
+"\n"
+"    %1 плагин модулінің белгісі автоматты түрде алынып тасталған, өйткені ол "
+"%2 плагин модуліне тәуелді"
+
+#: kpluginselector.cpp:217
+msgid "Dependency Check"
+msgstr "Тәуелділігін тексеру"
+
+#: kpluginselector.cpp:234
+#, kde-format
+msgid "%1 plugin automatically added due to plugin dependencies"
+msgid_plural "%1 plugins automatically added due to plugin dependencies"
+msgstr[0] "Плагиннің тәуелдіктеріне қарай %1 плагин автоматты түрде қосылды"
+
+#: kpluginselector.cpp:238
+msgid ", "
+msgstr ", "
+
+#: kpluginselector.cpp:242
+#, kde-format
+msgid "%1 plugin automatically removed due to plugin dependencies"
+msgid_plural "%1 plugins automatically removed due to plugin dependencies"
+msgstr[0] ""
+"Плагиннің тәуелдіктеріне қарай %1 плагин автоматты түрде алынып тасталды"
+
+#: kpluginselector.cpp:263
+msgid "Search Plugins"
+msgstr "Плагиндерді табу"
+
+#: kpluginselector.cpp:793
+#, kde-format
+msgctxt "Used only for plugins"
+msgid "About %1"
+msgstr "%1 туралы"
+
+#: ksettings/componentsdialog.cpp:55
+msgid "Select Components"
+msgstr "Компоненттерді таңдау"
+
+#: ksettings/dialog.cpp:231
+msgid "Enable component"
+msgstr "Компоненті рұқсат ету"
