@@ -27,6 +27,7 @@
 #include <QQuickWindow>
 #include <QQuickItem>
 #include <QGuiApplication>
+#include <QQuickWidget>
 
 #include <kdeclarative/kdeclarative.h>
 #include <kquickaddons/configmodule.h>
@@ -106,17 +107,23 @@ void KCModuleQml::showEvent(QShowEvent *event)
 
     QVBoxLayout* layout = new QVBoxLayout(this);
 
-    d->quickWindow = new QQuickWindow();
+    QQuickWidget *widget = new QQuickWidget(d->configModule->engine(), this);
+    widget->setResizeMode(QQuickWidget::SizeRootObjectToView);
+    d->quickWindow = widget->quickWindow();
     d->quickWindow->setColor(QGuiApplication::palette().window().color());
 #if QT_VERSION >= QT_VERSION_CHECK(5, 4, 0)
     connect(qApp, &QGuiApplication::paletteChanged, [=]() {
         d->quickWindow->setColor(QGuiApplication::palette().window().color());
     });
 #endif
-    //The created widget takes ownership of the QWindow
-    QWidget *widget = QWidget::createWindowContainer(d->quickWindow, this);
 
-    d->configModule->mainUi()->setParentItem(d->quickWindow->contentItem());
+    QQmlComponent *component = new QQmlComponent(d->configModule->engine(), this);
+    component->setData(QByteArrayLiteral("import QtQuick 2.3\nItem{}"), QUrl());
+    QObject *root = component->create();
+    widget->setContent(QUrl(), component, root);
+
+    d->configModule->mainUi()->setParentItem(widget->rootObject());
+
     //set anchors
     QQmlExpression expr(d->configModule->engine()->rootContext(), d->configModule->mainUi(), QStringLiteral("parent"));
     QQmlProperty prop(d->configModule->mainUi(), QStringLiteral("anchors.fill"));

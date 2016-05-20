@@ -28,6 +28,7 @@ target_link_libraries(KF5KCMUtils
     Qt5::DBus       # dbus usage in kcmoduleproxy.cpp
     Qt5::Qml
     Qt5::Quick
+    Qt5::QuickWidgets
     KF5::CoreAddons
     KF5::I18n
     KF5::IconThemes     # KIconLoader
