@@ -34,7 +34,7 @@
 #include <QPushButton>
 #include <QStandardPaths>
 #include <QStyle>
-#include <QStyleOptionViewItemV4>
+#include <QStyleOptionViewItem>
 
 #include <QDebug>
 #include <kurllabel.h>
