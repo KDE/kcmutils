@@ -3,6 +3,7 @@ description: Utilities for working with KCModules
 tier: 3
 type: integration
 platforms:
+    - name: Linux
 portingAid: false
 deprecated: false
 release: true
