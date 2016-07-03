@@ -24,7 +24,6 @@
 #include <QtQml>
 #include <QQmlEngine>
 #include <QQmlContext>
-#include <QQuickWindow>
 #include <QQuickItem>
 #include <QGuiApplication>
 #include <QQuickWidget>
@@ -40,12 +39,12 @@ class KCModuleQmlPrivate
 {
 public:
     KCModuleQmlPrivate(KQuickAddons::ConfigModule *cm)
-        : quickWindow(Q_NULLPTR),
+        : quickWidget(Q_NULLPTR),
           configModule(cm)
     {
     }
 
-    QQuickWindow *quickWindow;
+    QQuickWidget *quickWidget;
     KQuickAddons::ConfigModule *configModule;
 };
 
@@ -100,43 +99,40 @@ KCModuleQml::~KCModuleQml()
 
 void KCModuleQml::showEvent(QShowEvent *event)
 {
-    if (d->quickWindow || !d->configModule->mainUi()) {
+    if (d->quickWidget || !d->configModule->mainUi()) {
         KCModule::showEvent(event);
         return;
     }
 
     QVBoxLayout* layout = new QVBoxLayout(this);
 
-    QQuickWidget *widget = new QQuickWidget(d->configModule->engine(), this);
-    widget->setResizeMode(QQuickWidget::SizeRootObjectToView);
-    d->quickWindow = widget->quickWindow();
-    d->quickWindow->setColor(QGuiApplication::palette().window().color());
-#if QT_VERSION >= QT_VERSION_CHECK(5, 4, 0)
+    d->quickWidget = new QQuickWidget(d->configModule->engine(), this);
+    d->quickWidget->setResizeMode(QQuickWidget::SizeRootObjectToView);
+    d->quickWidget->setClearColor(QGuiApplication::palette().window().color());
     connect(qApp, &QGuiApplication::paletteChanged, [=]() {
-        d->quickWindow->setColor(QGuiApplication::palette().window().color());
+        d->quickWidget->setClearColor(QGuiApplication::palette().window().color());
     });
-#endif
 
     QQmlComponent *component = new QQmlComponent(d->configModule->engine(), this);
     component->setData(QByteArrayLiteral("import QtQuick 2.3\nItem{}"), QUrl());
     QObject *root = component->create();
-    widget->setContent(QUrl(), component, root);
+    d->quickWidget->setContent(QUrl(), component, root);
 
-    d->configModule->mainUi()->setParentItem(widget->rootObject());
+    d->configModule->mainUi()->setParentItem(d->quickWidget->rootObject());
 
     //set anchors
     QQmlExpression expr(d->configModule->engine()->rootContext(), d->configModule->mainUi(), QStringLiteral("parent"));
     QQmlProperty prop(d->configModule->mainUi(), QStringLiteral("anchors.fill"));
     prop.write(expr.evaluate());
 
-    layout->addWidget(widget);
+    layout->addWidget(d->quickWidget);
     KCModule::showEvent(event);
 }
 
 void KCModuleQml::focusInEvent(QFocusEvent *event)
 {
     Q_UNUSED(event)
-    d->quickWindow->requestActivate();
+    d->quickWidget->setFocus();
 }
 
 QSize KCModuleQml::sizeHint() const
