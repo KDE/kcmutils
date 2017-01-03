@@ -40,9 +40,9 @@ public:
     virtual const KAboutData *aboutData() const Q_DECL_OVERRIDE;
 
 public Q_SLOTS:
-    void load();
-    void save();
-    void defaults();
+    void load() Q_DECL_OVERRIDE;
+    void save() Q_DECL_OVERRIDE;
+    void defaults() Q_DECL_OVERRIDE;
 
 protected:
     virtual void showEvent(QShowEvent *event) Q_DECL_OVERRIDE;

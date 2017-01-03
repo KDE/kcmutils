@@ -160,7 +160,7 @@ protected:
     /**
      * Reimplemented to lazy create the dialog on first show.
      */
-    void showEvent(QShowEvent *);
+    void showEvent(QShowEvent *) Q_DECL_OVERRIDE;
 
 Q_SIGNALS:
     /**
