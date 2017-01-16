@@ -40,7 +40,7 @@ class KCModuleQmlPrivate
 {
 public:
     KCModuleQmlPrivate(KQuickAddons::ConfigModule *cm)
-        : quickWindow(Q_NULLPTR),
+        : quickWindow(nullptr),
           configModule(cm)
     {
     }
