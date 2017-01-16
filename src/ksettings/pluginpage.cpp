@@ -30,7 +30,7 @@ class PluginPagePrivate
 {
 public:
     PluginPagePrivate()
-        : selwid(0)
+        : selwid(nullptr)
     {
     }
 

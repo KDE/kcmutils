@@ -55,8 +55,8 @@
 KPluginSelector::Private::Private(KPluginSelector *parent)
     : QObject(parent)
     , parent(parent)
-    , listView(0)
-    , categoryDrawer(0)
+    , listView(nullptr)
+    , categoryDrawer(nullptr)
     , showIcons(false)
 {
 }
@@ -476,7 +476,7 @@ QModelIndex KPluginSelector::Private::PluginModel::index(int row, int column, co
     Q_UNUSED(parent)
 
     return createIndex(row, column, (row < pluginEntryList.count()) ? (void *) &pluginEntryList.at(row)
-                       : 0);
+                       : nullptr);
 }
 
 QVariant KPluginSelector::Private::PluginModel::data(const QModelIndex &index, int role) const
@@ -609,7 +609,7 @@ void KPluginSelector::Private::PluginDelegate::paint(QPainter *painter, const QS
 
     painter->save();
 
-    QApplication::style()->drawPrimitive(QStyle::PE_PanelItemViewItem, &option, painter, 0);
+    QApplication::style()->drawPrimitive(QStyle::PE_PanelItemViewItem, &option, painter, nullptr);
 
     int iconSize = option.rect.height() - MARGIN * 2;
     if (pluginSelector_d->showIcons) {
@@ -805,10 +805,10 @@ void KPluginSelector::Private::PluginDelegate::slotConfigureClicked()
     QDialog configDialog(itemView());
     configDialog.setWindowTitle(model->data(index, NameRole).toString());
     // The number of KCModuleProxies in use determines whether to use a tabwidget
-    QTabWidget *newTabWidget = 0;
+    QTabWidget *newTabWidget = nullptr;
     // Widget to use for the setting dialog's main widget,
     // either a QTabWidget or a KCModuleProxy
-    QWidget *mainWidget = 0;
+    QWidget *mainWidget = nullptr;
     // Widget to use as the KCModuleProxy's parent.
     // The first proxy is owned by the dialog itself
     QWidget *moduleProxyParentWidget = &configDialog;
@@ -832,9 +832,9 @@ void KPluginSelector::Private::PluginDelegate::slotConfigureClicked()
                         mainWidget = newTabWidget;
                     } else {
                         delete newTabWidget;
-                        newTabWidget = 0;
+                        newTabWidget = nullptr;
                         moduleProxyParentWidget = &configDialog;
-                        mainWidget->setParent(0);
+                        mainWidget->setParent(nullptr);
                     }
                 }
 

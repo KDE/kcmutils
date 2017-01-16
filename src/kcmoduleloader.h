@@ -73,7 +73,7 @@ enum ErrorReporting {
  * @return a pointer to the loaded @ref KCModule
  */
 KCMUTILS_EXPORT KCModule *loadModule(const KCModuleInfo &module, ErrorReporting
-                                     report, QWidget *parent = 0, const QStringList &args = QStringList());
+                                     report, QWidget *parent = nullptr, const QStringList &args = QStringList());
 
 /**
  * Loads a @ref KCModule. If loading fails a zero pointer is returned.
@@ -84,7 +84,7 @@ KCMUTILS_EXPORT KCModule *loadModule(const KCModuleInfo &module, ErrorReporting
  * @return a pointer to the loaded @ref KCModule
  */
 KCMUTILS_EXPORT KCModule *loadModule(const QString &module, ErrorReporting report,
-                                     QWidget *parent = 0, const QStringList &args = QStringList());
+                                     QWidget *parent = nullptr, const QStringList &args = QStringList());
 
 /**
  * Unloads the module's library

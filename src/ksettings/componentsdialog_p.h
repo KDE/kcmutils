@@ -49,7 +49,7 @@ public:
       @param parent parent widget
       @param name   name
     */
-    explicit ComponentsDialog(QWidget *parent = 0, const char *name = 0);
+    explicit ComponentsDialog(QWidget *parent = nullptr, const char *name = nullptr);
     ~ComponentsDialog();
 
     /**

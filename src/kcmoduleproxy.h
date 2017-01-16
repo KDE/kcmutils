@@ -76,7 +76,7 @@ public:
      * @param args This is used in the implementation and is internal.
      * Use the default.
      */
-    explicit KCModuleProxy(const KCModuleInfo &info, QWidget *parent = 0,
+    explicit KCModuleProxy(const KCModuleInfo &info, QWidget *parent = nullptr,
                            const QStringList &args = QStringList());
 
     /**
@@ -89,7 +89,7 @@ public:
      * @param args This is used in the implementation and is internal.
      * Use the default.
      */
-    explicit KCModuleProxy(const QString &serviceName, QWidget *parent = 0,
+    explicit KCModuleProxy(const QString &serviceName, QWidget *parent = nullptr,
                            const QStringList &args = QStringList());
 
     /**
@@ -100,7 +100,7 @@ public:
      * @param args This is used in the implementation and is internal.
      * Use the default.
      */
-    explicit KCModuleProxy(const KService::Ptr &service, QWidget *parent = 0,
+    explicit KCModuleProxy(const KService::Ptr &service, QWidget *parent = nullptr,
                            const QStringList &args = QStringList());
 
     /**

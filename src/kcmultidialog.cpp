@@ -86,7 +86,7 @@ void KCMultiDialogPrivate::_k_slotCurrentPageChanged(KPageWidgetItem *current, K
     q->blockSignals(true);
     q->setCurrentPage(previous);
 
-    KCModuleProxy *previousModule = 0;
+    KCModuleProxy *previousModule = nullptr;
     for (int i = 0; i < modules.count(); ++i) {
         if (modules[ i ].item == previous) {
             previousModule = modules[ i ].kcm;
@@ -108,7 +108,7 @@ void KCMultiDialogPrivate::_k_clientChanged()
     Q_Q(KCMultiDialog);
     // qDebug();
     // Get the current module
-    KCModuleProxy *activeModule = 0;
+    KCModuleProxy *activeModule = nullptr;
     for (int i = 0; i < modules.count(); ++i) {
         if (modules[ i ].item == q->currentPage()) {
             activeModule = modules[ i ].kcm;
@@ -408,23 +408,23 @@ KPageWidgetItem *KCMultiDialog::addModule(const QString &path, const QStringList
 
     KService::Ptr service = KService::serviceByStorageId(complete);
 
-    return addModule(KCModuleInfo(service), 0, args);
+    return addModule(KCModuleInfo(service), nullptr, args);
 }
 
 KPageWidgetItem *KCMultiDialog::addModule(const KCModuleInfo &moduleInfo,
         KPageWidgetItem *parentItem, const QStringList &args)
 {
     if (!moduleInfo.service()) {
-        return 0;
+        return nullptr;
     }
 
     //KAuthorized::authorizeControlModule( moduleInfo.service()->menuId() ) is
     //checked in noDisplay already
     if (moduleInfo.service()->noDisplay()) {
-        return 0;
+        return nullptr;
     }
 
-    KCModuleProxy *kcm = new KCModuleProxy(moduleInfo, 0, args);
+    KCModuleProxy *kcm = new KCModuleProxy(moduleInfo, nullptr, args);
 
     // qDebug() << moduleInfo.moduleName();
     KPageWidgetItem *item = new KPageWidgetItem(kcm, moduleInfo.moduleName());

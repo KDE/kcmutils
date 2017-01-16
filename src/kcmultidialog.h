@@ -45,7 +45,7 @@ public:
      *
      * @param parent The parent widget
      **/
-    KCMultiDialog(QWidget *parent = 0);
+    KCMultiDialog(QWidget *parent = nullptr);
 
     /**
      * Destructor
@@ -83,7 +83,7 @@ public:
      *
      * @param args The arguments that should be given to the KCModule when it is created
      **/
-    KPageWidgetItem *addModule(const KCModuleInfo &moduleinfo, KPageWidgetItem *parent = 0,
+    KPageWidgetItem *addModule(const KCModuleInfo &moduleinfo, KPageWidgetItem *parent = nullptr,
                                const QStringList &args = QStringList());
 
     /**
@@ -121,8 +121,8 @@ protected:
     /**
      * This constructor can be used by subclasses to provide a custom KPageWidget.
      */
-    KCMultiDialog(KPageWidget *pageWidget, QWidget *parent, Qt::WindowFlags flags = 0);
-    KCMultiDialog(KCMultiDialogPrivate &dd, KPageWidget *pageWidget, QWidget *parent, Qt::WindowFlags flags = 0);
+    KCMultiDialog(KPageWidget *pageWidget, QWidget *parent, Qt::WindowFlags flags = nullptr);
+    KCMultiDialog(KCMultiDialogPrivate &dd, KPageWidget *pageWidget, QWidget *parent, Qt::WindowFlags flags = nullptr);
 
     KCMultiDialogPrivate *const d_ptr;
 

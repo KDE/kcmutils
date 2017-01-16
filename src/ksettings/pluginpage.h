@@ -78,7 +78,7 @@ public:
      * Automatically creates the KPluginSelector widget.
      */
     explicit PluginPage(const KAboutData *aboutData,
-                        QWidget *parent = 0,
+                        QWidget *parent = nullptr,
                         const QVariantList &args = QVariantList());
 
     ~PluginPage();

@@ -344,7 +344,7 @@ void DialogPrivate::createDialogFromServices()
                         const KService::Ptr service = info.service();
                         // FIXME get weight from service or plugin info
                         const int weight = 1000;
-                        KPageWidgetItem *item = createPageItem(0, service->name(), service->comment(), service->icon(), weight);
+                        KPageWidgetItem *item = createPageItem(nullptr, service->name(), service->comment(), service->icon(), weight);
                         connectItemCheckBox(item, pinfo, pinfo.isPluginEnabled());
                         foundPlugin = true;
                         break;

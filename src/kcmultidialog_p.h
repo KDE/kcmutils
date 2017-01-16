@@ -32,7 +32,7 @@ class KCMultiDialogPrivate
     Q_DECLARE_PUBLIC(KCMultiDialog)
 protected:
     KCMultiDialogPrivate(KCMultiDialog *parent)
-        : currentModule(0), q_ptr(parent)
+        : currentModule(nullptr), q_ptr(parent)
     {
     }
 

@@ -116,7 +116,7 @@ class KPluginSelector::Private::DependenciesWidget
     Q_OBJECT
 
 public:
-    DependenciesWidget(QWidget *parent = 0);
+    DependenciesWidget(QWidget *parent = nullptr);
     ~DependenciesWidget();
 
     void addDependency(const QString &dependency, const QString &pluginCausant, bool added);
@@ -145,7 +145,7 @@ class KPluginSelector::Private::PluginModel
     : public QAbstractListModel
 {
 public:
-    PluginModel(KPluginSelector::Private *pluginSelector_d, QObject *parent = 0);
+    PluginModel(KPluginSelector::Private *pluginSelector_d, QObject *parent = nullptr);
     ~PluginModel();
 
     void addPlugins(const QList<KPluginInfo> &pluginList, const QString &categoryName, const QString &categoryKey, const KConfigGroup &cfgGroup, PluginLoadMethod pluginLoadMethod = ReadConfigFile, bool manuallyAdded = false);
@@ -167,7 +167,7 @@ class KPluginSelector::Private::ProxyModel
     : public KCategorizedSortFilterProxyModel
 {
 public:
-    ProxyModel(KPluginSelector::Private *pluginSelector_d, QObject *parent = 0);
+    ProxyModel(KPluginSelector::Private *pluginSelector_d, QObject *parent = nullptr);
     ~ProxyModel();
 
 protected:
@@ -184,7 +184,7 @@ class KPluginSelector::Private::PluginDelegate
     Q_OBJECT
 
 public:
-    PluginDelegate(KPluginSelector::Private *pluginSelector_d, QObject *parent = 0);
+    PluginDelegate(KPluginSelector::Private *pluginSelector_d, QObject *parent = nullptr);
     ~PluginDelegate();
 
     void paint(QPainter *painter, const QStyleOptionViewItem &option, const QModelIndex &index) const Q_DECL_OVERRIDE;

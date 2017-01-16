@@ -86,7 +86,7 @@ public:
      *                     dialog - centering the dialog over the parent
      *                     widget.
      */
-    explicit Dialog(QWidget *parent = 0);
+    explicit Dialog(QWidget *parent = nullptr);
 
     /**
      * Construct a new Preferences Dialog with the pages for the selected
@@ -100,7 +100,7 @@ public:
      *                     dialog - centering the dialog over the parent
      *                     widget.
      */
-    explicit Dialog(const QStringList &components, QWidget *parent = 0);
+    explicit Dialog(const QStringList &components, QWidget *parent = nullptr);
 
     ~Dialog();
 

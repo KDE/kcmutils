@@ -68,7 +68,7 @@ public:
     /**
       * Create a new KPluginSelector
       */
-    KPluginSelector(QWidget *parent = 0);
+    KPluginSelector(QWidget *parent = nullptr);
 
     /**
       * Destructor

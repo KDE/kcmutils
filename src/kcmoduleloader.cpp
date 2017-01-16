@@ -165,6 +165,6 @@ KCModule *KCModuleLoader::reportError(ErrorReporting report, const QString &text
     if (report & KCModuleLoader::Inline) {
         return new KCMError(text, realDetails, parent);
     }
-    return 0;
+    return nullptr;
 }
 

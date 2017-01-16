@@ -146,7 +146,7 @@ void ComponentsDialog::show()
 void ComponentsDialog::executed(QTreeWidgetItem *item, int)
 {
     // qDebug() ;
-    if (item == 0) {
+    if (item == nullptr) {
         return;
     }
 

@@ -38,8 +38,8 @@ class KCModuleContainer::KCModuleContainerPrivate
 public:
     KCModuleContainerPrivate(const QStringList &mods)
         : modules(mods)
-        , tabWidget(0)
-        , topLayout(0)
+        , tabWidget(nullptr)
+        , topLayout(nullptr)
     {}
 
     QStringList modules;

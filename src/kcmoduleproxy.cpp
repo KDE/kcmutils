@@ -179,7 +179,7 @@ void KCModuleProxyPrivate::_k_ownerChanged(const QString &service, const QString
         // Violence: Get rid of KCMError & CO, so that
         // realModule() attempts to reload the module
         delete kcm;
-        kcm = 0;
+        kcm = nullptr;
         Q_Q(KCModuleProxy);
         q->realModule();
 
@@ -215,7 +215,7 @@ void KCModuleProxy::deleteClient()
 {
     Q_D(KCModuleProxy);
     delete d->kcm;
-    d->kcm = 0;
+    d->kcm = nullptr;
 }
 
 void KCModuleProxyPrivate::_k_moduleChanged(bool c)
@@ -232,7 +232,7 @@ void KCModuleProxyPrivate::_k_moduleChanged(bool c)
 
 void KCModuleProxyPrivate::_k_moduleDestroyed()
 {
-    kcm = 0;
+    kcm = nullptr;
 }
 
 KCModuleProxy::KCModuleProxy(const KService::Ptr &service, QWidget *parent,
@@ -289,7 +289,7 @@ QString KCModuleProxy::quickHelp() const
 
 const KAboutData *KCModuleProxy::aboutData() const
 {
-    return realModule() ? realModule()->aboutData() : 0;
+    return realModule() ? realModule()->aboutData() : nullptr;
 }
 
 KCModule::Buttons KCModuleProxy::buttons() const
