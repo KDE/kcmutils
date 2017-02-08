@@ -111,7 +111,7 @@ void KCModuleQml::showEvent(QShowEvent *event)
     widget->setResizeMode(QQuickWidget::SizeRootObjectToView);
     d->quickWindow = widget->quickWindow();
     d->quickWindow->setColor(QGuiApplication::palette().window().color());
-    connect(qApp, &QGuiApplication::paletteChanged, [=]() {
+    connect(qApp, &QGuiApplication::paletteChanged, d->quickWindow, [=]() {
         d->quickWindow->setColor(QGuiApplication::palette().window().color());
     });
 
