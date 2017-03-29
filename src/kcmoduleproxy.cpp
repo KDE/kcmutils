@@ -45,8 +45,6 @@
 #include <klocalizedstring.h>
 #include <kservice.h>
 
-#include <kuser.h>
-
 #include <kcmoduleloader.h>
 
 #include "kcolorscheme.h"
@@ -55,11 +53,6 @@
 
 /*
  TODO:
-
- - Two Layout problems in runAsRoot:
-    * lblBusy doesn't show
-    * d->kcm/d->rootInfo doesn't get it right when the user
-        presses cancel in the kdesu dialog
 
  - Resizing horizontally is contrained; minimum size is set somewhere.
     It appears to be somehow derived from the module's size.
@@ -119,37 +112,6 @@ void KCModuleProxyPrivate::loadModule()
         topLayout->addWidget(kcm);
         if (!modInfo.handle().isEmpty()) {
             QDBusConnection::sessionBus().registerObject(dbusPath, new KSettingsWidgetAdaptor(parent), QDBusConnection::ExportAllSlots);
-        }
-
-        if (!rootInfo &&  /* If it's not already done */
-                kcm->useRootOnlyMessage() && /* kcm wants root message */
-                !KUser().isSuperUser()) { /* Not necessary if we're root */
-            /*rootInfo = new QLabel( parent );
-            topLayout->insertWidget( 0, rootInfo );
-
-            QPalette palette = rootInfo->palette();
-            KStatefulBrush stbrush(KColorScheme::Window, KColorScheme::NeutralBackground);
-            qDebug() << stbrush.brush(rootInfo);
-            palette.setBrush(QPalette::Window, stbrush.brush(rootInfo));
-            rootInfo->setPalette(palette);
-            rootInfo->setAutoFillBackground(true);
-
-            const QString message = kcm->rootOnlyMessage();
-            if( message.isEmpty() )
-                rootInfo->setText( i18n(
-                      "<b>Changes in this section require root access.</b><br />"
-                      "On applying your changes you will have to supply your root "
-                      "password." ) );
-            else
-                rootInfo->setText(message);
-
-            rootInfo->setWhatsThis( i18n(
-                  "This section requires special permissions, probably "
-                  "for system-wide changes; therefore, it is "
-                  "required that you provide the root password to be "
-                  "able to change the module's properties. If "
-                  "you cannot provide the password, the changes of the "
-                  "module cannot be saved " ) );*/
         }
     } else {
         // qDebug() << "Module already loaded, loading KCMError";
