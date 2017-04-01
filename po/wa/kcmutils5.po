@@ -1,0 +1,506 @@
+# translation of kdelibs4.po to Walloon
+# Ratournaedje e walon des messaedjes di KDE.
+#
+# Lorint Hendschel <lorint.hendschel@skynet.be>, 2002.
+# Pablo Saratxaga <pablo@walon.org>, 2002-2004, 2007.
+# Jean Cayron <jean.cayron@gmail.com>, 2007, 2008, 2009, 2010, 2011.
+# Jean Cayron <jean.cayron@tele2allin.be>, 2007.
+# Jean Cayron <jean.cayron@base.be>, 2011, 2012.
+msgid ""
+msgstr ""
+"Project-Id-Version: kdelibs4\n"
+"Report-Msgid-Bugs-To: http://bugs.kde.org\n"
+"POT-Creation-Date: 2017-03-30 02:43+0200\n"
+"PO-Revision-Date: 2012-07-04 17:33+0200\n"
+"Last-Translator: Jean Cayron <jean.cayron@base.be>\n"
+"Language-Team: Walloon <linux-wa@walon.org>\n"
+"Language: wa\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Lokalize 1.2\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Poedit-Language: Walloon\n"
+
+#, kde-format
+msgctxt "NAME OF TRANSLATORS"
+msgid "Your names"
+msgstr "Lorint Hendschel,Pablo Saratxaga,Djan Cayron"
+
+#, kde-format
+msgctxt "EMAIL OF TRANSLATORS"
+msgid "Your emails"
+msgstr "laurent.hendschel@skynet.be,pablo@walon.org,jean.cayron@gmail.com"
+
+#: kcmoduleloader.cpp:79
+#, kde-format
+msgid "The module %1 could not be found."
+msgstr "Li module %1 n' a nén stî trové."
+
+#: kcmoduleloader.cpp:80
+#, kde-format
+msgid ""
+"<qt><p>The diagnosis is:<br />The desktop file %1 could not be found.</p></"
+"qt>"
+msgstr ""
+
+#: kcmoduleloader.cpp:82
+#, kde-format
+msgid "The module %1 is disabled."
+msgstr "Li module %1 est dismetou."
+
+#: kcmoduleloader.cpp:83
+#, kde-format
+msgid ""
+"<qt><p>Either the hardware/software the module configures is not available "
+"or the module has been disabled by the administrator.</p></qt>"
+msgstr ""
+
+#: kcmoduleloader.cpp:140
+#, kde-format
+msgid "The module %1 is not a valid configuration module."
+msgstr "Li module %1 n' est nén on module d' apontiaedje valide."
+
+#: kcmoduleloader.cpp:141
+#, kde-format
+msgid ""
+"<qt>The diagnosis is:<br />The desktop file %1 does not specify a library.</"
+"qt>"
+msgstr ""
+
+#: kcmoduleloader.cpp:156
+#, kde-format
+msgid ""
+"<qt><p>Possible reasons:<ul><li>An error occurred during your last KDE "
+"upgrade leaving an orphaned control module</li><li>You have old third party "
+"modules lying around.</li></ul></p><p>Check these points carefully and try "
+"to remove the module mentioned in the error message. If this fails, consider "
+"contacting your distributor or packager.</p></qt>"
+msgstr ""
+
+#: kcmoduleproxy.cpp:127
+#, kde-format
+msgctxt "Argument is application name"
+msgid "This configuration section is already opened in %1"
+msgstr "Cisse seccion d' apontiaedje est ddja drovowe divins %1"
+
+#: kcmultidialog.cpp:57
+#, kde-format
+msgid ""
+"The settings of the current module have changed.\n"
+"Do you want to apply the changes or discard them?"
+msgstr ""
+"Les apontiaedjes do module do moumint ont candjî.\n"
+"Voloz vs mete en ouve les candjmint oudonbén les rovyî ?"
+
+#: kcmultidialog.cpp:59
+#, kde-format
+msgid "Apply Settings"
+msgstr "Mete les apontiaedjes en ouve"
+
+#: kcmultidialog.cpp:206
+#, kde-format
+msgid "Configure"
+msgstr "Apontyî"
+
+#. i18n: ectx: label, entry, group (DesktopIcons)
+#: kdeglobals.kcfg:9
+#, kde-format
+msgid "Distance between desktop icons"
+msgstr "Distance etur les imådjetes do scribanne"
+
+#. i18n: ectx: whatsthis, entry, group (DesktopIcons)
+#: kdeglobals.kcfg:10
+#, kde-format
+msgid "The distance between icons specified in pixels."
+msgstr "Li plaece inte les imådjes sipecifieye e picsels."
+
+#. i18n: ectx: label, entry, group (General)
+#: kdeglobals.kcfg:23
+#, kde-format
+msgid "Widget style to use"
+msgstr "Stîle des ahesses a-z eployî"
+
+#. i18n: ectx: whatsthis, entry, group (General)
+#: kdeglobals.kcfg:24
+#, kde-format
+msgid ""
+"The name of the widget style, for example \"keramik\" or \"plastik\". "
+"Without quotes."
+msgstr ""
+"Li no do stîle d' ahesse, metans \"keramik\" oudonbén \"plastik\". Sins les "
+"\" \"."
+
+#. i18n: ectx: label, entry, group (General)
+#: kdeglobals.kcfg:30
+#, kde-format
+msgid "Use the PC speaker"
+msgstr "Eployî les hôt-pårloes do PC"
+
+#. i18n: ectx: whatsthis, entry, group (General)
+#: kdeglobals.kcfg:31
+#, kde-format
+msgid ""
+"Whether the ordinary PC speaker should be used instead of KDE's own "
+"notifications system."
+msgstr ""
+"Si les comons hôt-pårloes do PC duvrént esse eployî al plaece do prôpe "
+"sistinme di notifiaedje da KDE."
+
+#. i18n: ectx: label, entry, group (General)
+#: kdeglobals.kcfg:35
+#, kde-format
+msgid "What terminal application to use"
+msgstr "Ké programe terminå a-z eployî"
+
+#. i18n: ectx: whatsthis, entry, group (General)
+#: kdeglobals.kcfg:37
+#, kde-format
+msgid ""
+"Whenever a terminal application is launched this terminal emulator program "
+"will be used.\n"
+msgstr ""
+"Minme si on programe di terminå est enondé, ci terminå ci serè eployî.\n"
+
+#. i18n: ectx: label, entry, group (General)
+#: kdeglobals.kcfg:41
+#, kde-format
+msgid "Fixed width font"
+msgstr "Fonte a espåçmint ewal"
+
+#. i18n: ectx: whatsthis, entry, group (General)
+#: kdeglobals.kcfg:43
+#, kde-format
+msgid ""
+"This font is used when a fixed font is needed. A fixed font has a constant "
+"width.\n"
+msgstr ""
+"Cisse fonte est eployeye cwand ene fonte a espåçmint ewal est dmandêye. Ene "
+"fonte a espåçmint ewal a todi l' minme espåçmint.\n"
+
+#. i18n: ectx: label, entry, group (General)
+#: kdeglobals.kcfg:46
+#, kde-format
+msgid "System wide font"
+msgstr "Fonte po tot l' sistinme"
+
+#. i18n: ectx: label, entry, group (General)
+#: kdeglobals.kcfg:49
+#, kde-format
+msgid "Font for menus"
+msgstr "Fonte po les menus"
+
+#. i18n: ectx: whatsthis, entry, group (General)
+#: kdeglobals.kcfg:50
+#, kde-format
+msgid "What font to use for menus in applications."
+msgstr "Kéne fonte a-z eployî po les menus des programes."
+
+#. i18n: ectx: label, entry, group (General)
+#: kdeglobals.kcfg:53
+#, kde-format
+msgid "Color for links"
+msgstr "Li coleur des loyéns"
+
+#. i18n: ectx: whatsthis, entry, group (General)
+#: kdeglobals.kcfg:54
+#, kde-format
+msgid "What color links should be that have not yet been clicked on"
+msgstr "Li coleur po les loyéns ki n' ont nén co stî vizités"
+
+#. i18n: ectx: label, entry, group (General)
+#: kdeglobals.kcfg:57
+#, kde-format
+msgid "Color for visited links"
+msgstr "Coleur des loyéns ddja vizités"
+
+#. i18n: ectx: label, entry, group (General)
+#: kdeglobals.kcfg:60
+#, kde-format
+msgid "Font for the taskbar"
+msgstr "Fonte pol bår des bouyes"
+
+#. i18n: ectx: whatsthis, entry, group (General)
+#: kdeglobals.kcfg:61
+#, kde-format
+msgid ""
+"What font to use for the panel at the bottom of the screen, where the "
+"currently running applications are."
+msgstr ""
+"Li fonte a-z eployî pol sicriftôr, la k' les programes ki tournèt pol "
+"moumint sont håynés."
+
+#. i18n: ectx: label, entry, group (General)
+#: kdeglobals.kcfg:64
+#, kde-format
+msgid "Fonts for toolbars"
+msgstr "Fontes po les bårs ås usteyes"
+
+#. i18n: ectx: label, entry (Desktop Screenshot), group (Global Shortcuts)
+#: kdeglobals.kcfg:73
+#, kde-format
+msgid "Shortcut for taking screenshot"
+msgstr "Rascourti po fé ene waitroûlêye"
+
+#. i18n: ectx: label, entry (Enable/Disable Clipboard Actions), group (Global Shortcuts)
+#: kdeglobals.kcfg:78
+#, kde-format
+msgid "Shortcut for toggling Clipboard Actions on and off"
+msgstr "Racourti po mete en alaedje ou nén les accions do presse-papî"
+
+#. i18n: ectx: label, entry (Halt without Confirmation), group (Global Shortcuts)
+#: kdeglobals.kcfg:83
+#, kde-format
+msgid "Shortcut for shutting down the computer without confirmation"
+msgstr "Racourti po distinde li copiutrece sins acertinaedje"
+
+#. i18n: ectx: label, entry (Sort directories first), group (KFileDialog Settings)
+#: kdeglobals.kcfg:380
+#, kde-format
+msgid "Show directories first"
+msgstr "Håyner les ridants å dzeu"
+
+#. i18n: ectx: whatsthis, entry (Sort directories first), group (KFileDialog Settings)
+#: kdeglobals.kcfg:381
+#, kde-format
+msgid "Whether directories should be placed at the top when displaying files"
+msgstr ""
+"Si les ridants duvrîz esse plaecîs al copete cwand vos håynez les fitchîs"
+
+#. i18n: ectx: label, entry (Recent URLs), group (KFileDialog Settings)
+#: kdeglobals.kcfg:389
+#, kde-format
+msgid "The URLs recently visited"
+msgstr "Les URL vizités enawaire"
+
+#. i18n: ectx: whatsthis, entry (Recent URLs), group (KFileDialog Settings)
+#: kdeglobals.kcfg:390
+#, kde-format
+msgid "Used for auto-completion in file dialogs, for example"
+msgstr "Eployî po rimpli tot seu, metans, dins les purneas di fitchîs"
+
+#. i18n: ectx: label, entry (Show Preview), group (KFileDialog Settings)
+#: kdeglobals.kcfg:394
+#, kde-format
+msgid "Show file preview in file dialog"
+msgstr "Mostere li prévoeyaedje e purnea di fitchî"
+
+#. i18n: ectx: label, entry (Show hidden files), group (KFileDialog Settings)
+#: kdeglobals.kcfg:399
+#, kde-format
+msgid "Show hidden files"
+msgstr "Mostrer les fitchîs catchîs"
+
+#. i18n: ectx: whatsthis, entry (Show hidden files), group (KFileDialog Settings)
+#: kdeglobals.kcfg:400
+#, kde-format
+msgid ""
+"Whether files starting with a dot (convention for hidden files) should be "
+"shown"
+msgstr ""
+"Si les fitchîs cominçant avou on pont (convincion po les catchîs fitchîs) "
+"duvrént esse mostrés."
+
+#. i18n: ectx: label, entry (Show Speedbar), group (KFileDialog Settings)
+#: kdeglobals.kcfg:405
+#, kde-format
+msgid "Show speedbar"
+msgstr "Mostrer li bår di radisté"
+
+#. i18n: ectx: whatsthis, entry (Show Speedbar), group (KFileDialog Settings)
+#: kdeglobals.kcfg:406
+#, kde-format
+msgid ""
+"Whether the shortcut icons to the left in the file dialog should be shown"
+msgstr ""
+"Definixh si les imådjetes di racourti a hintche do purnea di fitchî divèt "
+"esse mostré."
+
+#. i18n: ectx: label, entry, group (Locale)
+#: kdeglobals.kcfg:425
+#, kde-format
+msgid "What country"
+msgstr "Ké payis"
+
+#. i18n: ectx: whatsthis, entry, group (Locale)
+#: kdeglobals.kcfg:426
+#, kde-format
+msgid ""
+"Used to determine how to display numbers, currency and time/date, for example"
+msgstr ""
+"Eployî po defini comint håyner, metans, les nombes, manoyes et eure/date."
+
+#. i18n: ectx: label, entry, group (Locale)
+#: kdeglobals.kcfg:430
+#, kde-format
+msgid "What language to use to display text"
+msgstr "Dins ké lingaedje håyner l' tecse"
+
+#. i18n: ectx: label, entry, group (Locale)
+#: kdeglobals.kcfg:433
+#, kde-format
+msgid "Character used for indicating positive numbers"
+msgstr "Caractere eployî po håyner les nombes pôzitifs"
+
+#. i18n: ectx: whatsthis, entry, group (Locale)
+#: kdeglobals.kcfg:434
+#, kde-format
+msgid "Most countries have no character for this"
+msgstr "Bråmint des payis n' eployèt nou caractere po çoula"
+
+#. i18n: ectx: label, entry, group (Paths)
+#: kdeglobals.kcfg:439
+#, kde-format
+msgid "Path to the autostart directory"
+msgstr "Tchimin pol ridant d' enondaedje otomatike"
+
+#. i18n: ectx: whatsthis, entry, group (Paths)
+#: kdeglobals.kcfg:440
+#, kde-format
+msgid "Path to the directory containing executables to be run on session login"
+msgstr ""
+"Tchimins viè l' ridant k' a les fitchîs enondåves a-z enonder a l' "
+"elodjaedje di session"
+
+#. i18n: ectx: label, entry, group (Socks)
+#: kdeglobals.kcfg:487
+#, kde-format
+msgid "Enable SOCKS support"
+msgstr "Permete li sopoirt SOCKS"
+
+#. i18n: ectx: whatsthis, entry, group (Socks)
+#: kdeglobals.kcfg:488
+#, kde-format
+msgid "Whether SOCKS version 4 and 5 should be enabled in KDE's sub systems"
+msgstr ""
+"Definixh sel modêye 4 ou 5 di SOCKS duvreut esse metowe en alaedje divins "
+"les sor-sistinmes da KDE."
+
+#. i18n: ectx: label, entry, group (Socks)
+#: kdeglobals.kcfg:492
+#, kde-format
+msgid "Path to custom SOCKS library"
+msgstr "Tchimin disk' al livreye SOCKS da vosse"
+
+#. i18n: ectx: label, entry, group (Toolbar style)
+#: kdeglobals.kcfg:498
+#, kde-format
+msgid "Highlight toolbar buttons on mouse over"
+msgstr "Sorbriyance des botons pa dzo l' sori"
+
+#. i18n: ectx: label, entry, group (Toolbar style)
+#: kdeglobals.kcfg:502
+#, kde-format
+msgid "Show text on toolbar icons "
+msgstr "Mostrer l' tecse avou ls imådjetes ezès bårs ås usteyes "
+
+#. i18n: ectx: whatsthis, entry, group (Toolbar style)
+#: kdeglobals.kcfg:503
+#, kde-format
+msgid "Whether text should be shown in addition to icons on toolbar icons"
+msgstr ""
+"S' i fåt ou nén mostrer l' tecse avou ls imådjetes dins les botons des bårs "
+"ås usteyes"
+
+#. i18n: ectx: label, entry (EchoMode), group (Passwords)
+#: kdeglobals.kcfg:524
+#, kde-format
+msgid "Password echo type"
+msgstr "Sôre di håynaedje po les screts"
+
+#. i18n: ectx: label, entry (Dialog Size), group (KKeyDialog Settings)
+#: kdeglobals.kcfg:534
+#, kde-format
+msgid "The size of the dialog"
+msgstr "Li grandeu do purnea d' kesse"
+
+#: kpluginselector.cpp:140
+#, kde-format
+msgid ""
+"Automatic changes have been performed due to plugin dependencies. Click here "
+"for further information"
+msgstr ""
+
+#: kpluginselector.cpp:209
+#, kde-format
+msgid ""
+"Automatic changes have been performed in order to satisfy plugin "
+"dependencies:\n"
+msgstr ""
+"Des candjmints otomatikes ont stî fwaits po responde ås aloyances do tchôke-"
+"divins:\n"
+
+#: kpluginselector.cpp:212
+#, kde-format
+msgid ""
+"\n"
+"    %1 plugin has been automatically checked because of the dependency of %2 "
+"plugin"
+msgstr ""
+"\n"
+"    %1 tchôke-divins a stî otomaticmint clitchî a cåze di si aloyance avou "
+"l' tchôke-divins %2"
+
+#: kpluginselector.cpp:214
+#, kde-format
+msgid ""
+"\n"
+"    %1 plugin has been automatically unchecked because of its dependency on "
+"%2 plugin"
+msgstr ""
+"\n"
+"    %1 tchôke-divins a stî otomaticmint disclitchî a cåze d' si aloyance "
+"avou l' tchôke-divins %2"
+
+#: kpluginselector.cpp:217
+#, kde-format
+msgid "Dependency Check"
+msgstr "Verifiaedje des aloyances"
+
+#: kpluginselector.cpp:234
+#, kde-format
+msgid "%1 plugin automatically added due to plugin dependencies"
+msgid_plural "%1 plugins automatically added due to plugin dependencies"
+msgstr[0] ""
+"%1 tchôke-divins a stî otomaticmint radjouté a cåze des aloyances des "
+"tchôkes-divins"
+msgstr[1] ""
+"%1 tchôkes-divins ont stî otomaticmint radjoutés a cåze des aloyances des "
+"tchôkes-divins"
+
+#: kpluginselector.cpp:238
+#, kde-format
+msgid ", "
+msgstr ", "
+
+#: kpluginselector.cpp:242
+#, kde-format
+msgid "%1 plugin automatically removed due to plugin dependencies"
+msgid_plural "%1 plugins automatically removed due to plugin dependencies"
+msgstr[0] ""
+"%1 tchôke-divins a stî otomaticmint oisté a cåze des aloyances des tchôkes-"
+"divins"
+msgstr[1] ""
+"%1 tchôkes-divins ont stî otomaticmint oistés a cåze des aloyances des "
+"tchôkes-divins"
+
+#: kpluginselector.cpp:263
+#, kde-format
+msgid "Search Plugins"
+msgstr "Trover tchôkes-divins"
+
+#: kpluginselector.cpp:793
+#, kde-format
+msgctxt "Used only for plugins"
+msgid "About %1"
+msgstr "Åd fwait di %1"
+
+#: ksettings/componentsdialog.cpp:55
+#, kde-format
+msgid "Select Components"
+msgstr "Tchoezi les componints"
+
+#: ksettings/dialog.cpp:231
+#, kde-format
+msgid "Enable component"
+msgstr "Mete en alaedje componint"
