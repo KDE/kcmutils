@@ -80,6 +80,32 @@ install(FILES
  kcmoduleinit.desktop
 DESTINATION  ${KDE_INSTALL_KSERVICETYPES5DIR} )
 
+if(BUILD_QCH)
+    ecm_add_qch(
+        KF5KCMUtils_QCH
+        NAME KCMUtils
+        BASE_NAME KF5KCMUtils
+        VERSION ${KF5_VERSION}
+        ORG_DOMAIN org.kde
+        SOURCES # using only public headers, to cover only public API
+            ${KCMUtils_HEADERS}
+            ${KSettings_HEADERS}
+            ksettings/README.dox
+        MD_MAINPAGE "${CMAKE_SOURCE_DIR}/README.md"
+        LINK_QCHS
+            Qt5Widgets_QCH
+            KF5ConfigWidgets_QCH
+            KF5Service_QCH
+        BLANK_MACROS
+            KCMUTILS_EXPORT
+            KCMUTILS_DEPRECATED
+            KCMUTILS_DEPRECATED_EXPORT
+        TAGFILE_INSTALL_DESTINATION ${KDE_INSTALL_QTQCHDIR}
+        QCH_INSTALL_DESTINATION ${KDE_INSTALL_QTQCHDIR}
+        COMPONENT Devel
+    )
+endif()
+
 include(ECMGeneratePriFile)
 ecm_generate_pri_file(BASE_NAME KCMUtils LIB_NAME KF5KCMUtils DEPS "widgets KConfigWidgets KService" FILENAME_VAR PRI_FILENAME INCLUDE_INSTALL_DIR ${KDE_INSTALL_INCLUDEDIR_KF5}/KCMUtils)
 install(FILES ${PRI_FILENAME} DESTINATION ${ECM_MKSPECS_INSTALL_DIR})
