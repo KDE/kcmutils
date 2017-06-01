@@ -121,8 +121,8 @@ protected:
     /**
      * This constructor can be used by subclasses to provide a custom KPageWidget.
      */
-    KCMultiDialog(KPageWidget *pageWidget, QWidget *parent, Qt::WindowFlags flags = nullptr);
-    KCMultiDialog(KCMultiDialogPrivate &dd, KPageWidget *pageWidget, QWidget *parent, Qt::WindowFlags flags = nullptr);
+    KCMultiDialog(KPageWidget *pageWidget, QWidget *parent, Qt::WindowFlags flags = Qt::WindowFlags());
+    KCMultiDialog(KCMultiDialogPrivate &dd, KPageWidget *pageWidget, QWidget *parent, Qt::WindowFlags flags = Qt::WindowFlags());
 
     KCMultiDialogPrivate *const d_ptr;
 
