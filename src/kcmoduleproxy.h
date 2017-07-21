@@ -160,11 +160,11 @@ public:
     KCModuleInfo moduleInfo() const;
 
     /**
-     * Returns the DBUS Service name
+     * Returns the D-Bus Service name
      */
     QString dbusService() const;
     /**
-     * Returns the DBUS Path
+     * Returns the D-Bus Path
      */
     QString dbusPath() const;
     /**
