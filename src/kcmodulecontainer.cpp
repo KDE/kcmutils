@@ -33,7 +33,7 @@
 typedef QList<KCModuleProxy *> ModuleList;
 
 /***********************************************************************/
-class KCModuleContainer::KCModuleContainerPrivate
+class Q_DECL_HIDDEN KCModuleContainer::KCModuleContainerPrivate
 {
 public:
     KCModuleContainerPrivate(const QStringList &mods)

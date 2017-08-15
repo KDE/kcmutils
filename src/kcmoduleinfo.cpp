@@ -30,7 +30,7 @@
 
 #include <klocalizedstring.h>
 
-class KCModuleInfo::Private
+class Q_DECL_HIDDEN KCModuleInfo::Private
 {
 public:
     Private();

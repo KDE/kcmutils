@@ -41,7 +41,7 @@ class KCategoryDrawer;
 
 class PluginEntry;
 
-class KPluginSelector::Private
+class Q_DECL_HIDDEN KPluginSelector::Private
     : public QObject
 {
     Q_OBJECT
