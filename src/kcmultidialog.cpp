@@ -25,24 +25,23 @@
 #include "kcmultidialog.h"
 #include "kcmultidialog_p.h"
 
-#include <QtCore/QStringList>
-#include <QtCore/QProcess>
-#include <QtCore/QUrl>
-#include <QDesktopServices>
-#include <QPushButton>
-
-#include <kauthorized.h>
-#include <kguiitem.h>
-#include <kiconloader.h>
-#include <klocalizedstring.h>
-#include <kpagewidgetmodel.h>
-#include <QDebug>
-#include <kmessagebox.h>
-
-#include "kauthaction.h"
-#include "kauthobjectdecorator.h"
-
 #include "kcmoduleproxy.h"
+
+#include <QDebug>
+#include <QDesktopServices>
+#include <QProcess>
+#include <QPushButton>
+#include <QScrollArea>
+#include <QStringList>
+#include <QUrl>
+
+#include <KAuthAction>
+#include <KAuthObjectDecorator>
+#include <KGuiItem>
+#include <KIconLoader>
+#include <KLocalizedString>
+#include <KMessageBox>
+#include <KPageWidgetModel>
 
 bool KCMultiDialogPrivate::resolveChanges(KCModuleProxy *currentProxy)
 {
@@ -424,10 +423,18 @@ KPageWidgetItem *KCMultiDialog::addModule(const KCModuleInfo &moduleInfo,
         return nullptr;
     }
 
-    KCModuleProxy *kcm = new KCModuleProxy(moduleInfo, nullptr, args);
+    // Create the scroller
+    QScrollArea *moduleScroll = new QScrollArea(this);
+    // Prepare the scroll area
+    moduleScroll->setWidgetResizable(true);
+    moduleScroll->setFrameStyle(QFrame::NoFrame);
+    moduleScroll->viewport()->setAutoFillBackground(false);
+
+    KCModuleProxy *kcm = new KCModuleProxy(moduleInfo, moduleScroll, args);
+    moduleScroll->setWidget(kcm);
 
     // qDebug() << moduleInfo.moduleName();
-    KPageWidgetItem *item = new KPageWidgetItem(kcm, moduleInfo.moduleName());
+    KPageWidgetItem *item = new KPageWidgetItem(moduleScroll, moduleInfo.moduleName());
 
     if (kcm->realModule() && kcm->realModule()->useRootOnlyMessage()) {
         item->setHeader(QStringLiteral("<b>") +
