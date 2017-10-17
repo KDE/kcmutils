@@ -38,8 +38,8 @@ public:
 
     QStringList keywords;
     QString     name, icon, lib, handle, fileName, doc, comment;
-    bool        allLoaded;
-    int         weight;
+    bool        allLoaded = false;
+    int         weight = 100;
 
     KService::Ptr service;
 

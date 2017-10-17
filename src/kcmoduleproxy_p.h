@@ -61,16 +61,16 @@ protected:
     void _k_ownerChanged(const QString &service, const QString &oldOwner, const QString &newOwner);
 
     QStringList args;
-    KCModule *kcm;
-    QVBoxLayout *topLayout; /* Contains QScrollView view, and root stuff */
-    QLabel *rootInfo;
+    KCModule *kcm = nullptr;
+    QVBoxLayout *topLayout = nullptr; /* Contains QScrollView view, and root stuff */
+    QLabel *rootInfo = nullptr;
     QString dbusService;
     QString dbusPath;
     KCModuleInfo modInfo;
-    bool changed;
-    bool bogusOccupier;
-    KCModuleProxy *parent;
-    KCModuleProxy *q_ptr;
+    bool changed = false;
+    bool bogusOccupier = false;
+    KCModuleProxy *parent = nullptr;
+    KCModuleProxy *q_ptr = nullptr;
 };
 
 #endif // KCMUTILS_KCMODULEPROXY_P_H
