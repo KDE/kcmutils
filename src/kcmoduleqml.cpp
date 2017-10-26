@@ -106,6 +106,7 @@ void KCModuleQml::showEvent(QShowEvent *event)
     }
 
     QVBoxLayout* layout = new QVBoxLayout(this);
+    layout->setContentsMargins(0, 0, 0, 0);
 
     QQuickWidget *widget = new QQuickWidget(d->configModule->engine(), this);
     widget->setResizeMode(QQuickWidget::SizeRootObjectToView);
