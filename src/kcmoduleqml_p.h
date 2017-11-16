@@ -48,6 +48,7 @@ protected:
     virtual void showEvent(QShowEvent *event) Q_DECL_OVERRIDE;
     virtual void focusInEvent(QFocusEvent *event) Q_DECL_OVERRIDE;
     QSize sizeHint() const Q_DECL_OVERRIDE;
+    bool eventFilter(QObject* watched, QEvent* event) Q_DECL_OVERRIDE;
 
 private:
     KCModuleQmlPrivate *const d;

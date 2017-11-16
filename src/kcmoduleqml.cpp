@@ -46,6 +46,8 @@ public:
     }
 
     QQuickWindow *quickWindow;
+    QQuickWidget *quickWidget;
+    QQuickItem *rootPlaceHolder;
     KQuickAddons::ConfigModule *configModule;
 };
 
@@ -108,34 +110,94 @@ void KCModuleQml::showEvent(QShowEvent *event)
     QVBoxLayout* layout = new QVBoxLayout(this);
     layout->setContentsMargins(0, 0, 0, 0);
 
-    QQuickWidget *widget = new QQuickWidget(d->configModule->engine(), this);
-    widget->setResizeMode(QQuickWidget::SizeRootObjectToView);
-    d->quickWindow = widget->quickWindow();
+    d->quickWidget = new QQuickWidget(d->configModule->engine(), this);
+    d->quickWidget->setResizeMode(QQuickWidget::SizeRootObjectToView);
+    d->quickWidget->setFocusPolicy(Qt::StrongFocus);
+    d->quickWidget->installEventFilter(this);
+    d->quickWindow = d->quickWidget->quickWindow();
     d->quickWindow->setColor(QGuiApplication::palette().window().color());
     connect(qApp, &QGuiApplication::paletteChanged, d->quickWindow, [=]() {
         d->quickWindow->setColor(QGuiApplication::palette().window().color());
     });
 
     QQmlComponent *component = new QQmlComponent(d->configModule->engine(), this);
-    component->setData(QByteArrayLiteral("import QtQuick 2.3\nItem{}"), QUrl());
-    QObject *root = component->create();
-    widget->setContent(QUrl(), component, root);
+    //this has activeFocusOnTab to notice when the navigation wraps
+    //around, so when we need to go outside and inside
+    component->setData(QByteArrayLiteral("import QtQuick 2.3\nItem{activeFocusOnTab:true}"), QUrl());
+    d->rootPlaceHolder = qobject_cast<QQuickItem *>(component->create());
+    d->quickWidget->setContent(QUrl(), component, d->rootPlaceHolder);
 
-    d->configModule->mainUi()->setParentItem(widget->rootObject());
+    d->configModule->mainUi()->setParentItem(d->quickWidget->rootObject());
 
     //set anchors
     QQmlExpression expr(d->configModule->engine()->rootContext(), d->configModule->mainUi(), QStringLiteral("parent"));
     QQmlProperty prop(d->configModule->mainUi(), QStringLiteral("anchors.fill"));
     prop.write(expr.evaluate());
 
-    layout->addWidget(widget);
+    layout->addWidget(d->quickWidget);
     KCModule::showEvent(event);
+}
+
+bool KCModuleQml::eventFilter(QObject* watched, QEvent* event)
+{
+    //FIXME: those are all workarounds around the QQuickWidget brokeness
+    //BUG https://bugreports.qt.io/browse/QTBUG-64561
+    if (watched == d->quickWidget && event->type() == QEvent::KeyPress) {
+        //allow tab navigation inside the qquickwidget
+        QKeyEvent *ke = static_cast<QKeyEvent *>(event);
+
+        QQuickItem *currentItem = d->quickWindow->activeFocusItem();
+        if (!currentItem) {
+            return KCModule::eventFilter(watched, event);
+        }
+        if (currentItem->scopedFocusItem()) {
+            currentItem = currentItem->scopedFocusItem();
+        }
+
+        if (ke->key() == Qt::Key_Tab) {
+            //nextItemInFocusChain will always return something, in the worst case will still be currentItem
+            QQuickItem *nextItem = currentItem->nextItemInFocusChain(true);
+            //when it arrives at the place holder item, go out of the qqw and
+            //go to the other widgets around systemsettigns
+            if (nextItem == d->rootPlaceHolder) {
+                QWidget *w = d->quickWidget->nextInFocusChain();
+                while (!(w->focusPolicy() & Qt::TabFocus)) {
+                    w = w->nextInFocusChain();
+                }
+                w->setFocus(Qt::TabFocusReason);
+            } else {
+                nextItem->forceActiveFocus(Qt::TabFocusReason);
+            }
+            return true;
+        } else if (ke->key() == Qt::Key_Backtab
+                   || (ke->key() == Qt::Key_Tab && (ke->modifiers() & Qt::ShiftModifier))) {
+            QQuickItem *nextItem = currentItem->nextItemInFocusChain(false);
+
+            if (nextItem == d->rootPlaceHolder) {
+                QWidget *w = d->quickWidget->previousInFocusChain();
+                while (!(w->focusPolicy() & Qt::TabFocus)) {
+                    w = w->previousInFocusChain();
+                }
+                w->setFocus(Qt::BacktabFocusReason);
+            } else {
+                nextItem->forceActiveFocus(Qt::BacktabFocusReason);
+            }
+            return true;
+        }
+    }
+    return KCModule::eventFilter(watched, event);
 }
 
 void KCModuleQml::focusInEvent(QFocusEvent *event)
 {
     Q_UNUSED(event)
-    d->quickWindow->requestActivate();
+
+    if (event->reason() == Qt::TabFocusReason) {
+        d->rootPlaceHolder->nextItemInFocusChain(true)->forceActiveFocus(Qt::TabFocusReason);
+    } else if (event->reason() == Qt::BacktabFocusReason) {
+        d->rootPlaceHolder->nextItemInFocusChain(false)->forceActiveFocus(Qt::BacktabFocusReason);
+    }
+    
 }
 
 QSize KCModuleQml::sizeHint() const
