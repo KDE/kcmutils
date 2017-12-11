@@ -89,7 +89,7 @@ void KCModuleContainer::init()
 
     if (!d->modules.isEmpty()) {
         /* Add our modules */
-        for (QStringList::const_iterator it = d->modules.constBegin(); it != d->modules.constEnd(); ++it) {
+        for (QStringList::const_iterator it = d->modules.constBegin(), total = d->modules.constEnd(); it != total; ++it) {
             addModule((*it));
         }
     }

@@ -118,7 +118,7 @@ KPluginSelector::Private::DependenciesWidget::DependenciesWidget(QWidget *parent
 
     details = new QLabel();
 
-    QHBoxLayout *layout = new QHBoxLayout;
+    QHBoxLayout *layout = new QHBoxLayout(this);
 
     QVBoxLayout *dataLayout = new QVBoxLayout;
     dataLayout->setAlignment(Qt::AlignLeft | Qt::AlignVCenter);
@@ -141,7 +141,6 @@ KPluginSelector::Private::DependenciesWidget::DependenciesWidget(QWidget *parent
     dataLayout->addWidget(link);
     dataLayout->addWidget(details);
     layout->addLayout(dataLayout);
-    setLayout(layout);
 
     QObject::connect(link, SIGNAL(leftClickedUrl()), this, SLOT(showDependencyDetails()));
 }
@@ -254,9 +253,8 @@ KPluginSelector::KPluginSelector(QWidget *parent)
     : QWidget(parent)
     , d(new Private(this))
 {
-    QVBoxLayout *layout = new QVBoxLayout;
+    QVBoxLayout *layout = new QVBoxLayout(this);
     layout->setMargin(0);
-    setLayout(layout);
 
     d->lineEdit = new QLineEdit(this);
     d->lineEdit->setClearButtonEnabled(true);
@@ -304,7 +302,7 @@ void KPluginSelector::addPlugins(const QString &componentName,
 {
     QStringList desktopFileNames;
     const QStringList dirs = QStandardPaths::locateAll(QStandardPaths::GenericDataLocation, componentName + QStringLiteral("/kpartplugins"), QStandardPaths::LocateDirectory);
-    Q_FOREACH (const QString &dir, dirs) {
+    for (const QString &dir : dirs) {
         QDirIterator it(dir, QStringList() << QStringLiteral("*.desktop"), QDir::NoFilter, QDirIterator::Subdirectories);
         while (it.hasNext()) {
             desktopFileNames.append(it.next());

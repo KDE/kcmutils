@@ -21,7 +21,6 @@
 #include "dialog_p.h"
 
 #include "dispatcher.h"
-//#include "componentsdialog_p.h"
 
 #include <klocalizedstring.h>
 #include <kservicegroup.h>
@@ -306,16 +305,16 @@ void DialogPrivate::createDialogFromServices()
 {
     Q_Q(Dialog);
     // read .setdlg files   (eg: share/kapp/kapp.setdlg)
-    QString setdlgpath = QStandardPaths::locate(QStandardPaths::DataLocation /*includes appname, too*/,
+    const QString setdlgpath = QStandardPaths::locate(QStandardPaths::DataLocation /*includes appname, too*/,
                          QCoreApplication::instance()->applicationName() + QStringLiteral(".setdlg"));
     if (!setdlgpath.isEmpty()) {
         parseGroupFile(setdlgpath);
     }
 
     const QStringList dirs = QStandardPaths::locateAll(QStandardPaths::DataLocation, QStringLiteral("ksettingsdialog"),  QStandardPaths::LocateDirectory);
-    Q_FOREACH (const QString &dir, dirs) {
+    for (const QString &dir : dirs) {
         const QStringList fileNames = QDir(dir).entryList(QStringList() << QStringLiteral("*.setdlg"));
-        Q_FOREACH (const QString &file, fileNames) {
+        for (const QString &file : fileNames) {
             parseGroupFile(dir + QLatin1Char('/') + file);
         }
     }

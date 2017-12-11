@@ -35,7 +35,7 @@
 namespace KSettings
 {
 
-class ComponentsDialog::ComponentsDialogPrivate
+class Q_DECL_HIDDEN ComponentsDialog::ComponentsDialogPrivate
 {
 public:
     QTreeWidget *listview;
@@ -54,8 +54,7 @@ ComponentsDialog::ComponentsDialog(QWidget *parent, const char *name)
     setModal(false);
     setWindowTitle(i18n("Select Components"));
 
-    QVBoxLayout *layout = new QVBoxLayout;
-    setLayout(layout);
+    QVBoxLayout *layout = new QVBoxLayout(this);
 
     QWidget *page = new QWidget(this);
     layout->addWidget(page);
@@ -112,8 +111,8 @@ void ComponentsDialog::addPluginInfo(KPluginInfo *info)
 void ComponentsDialog::setPluginInfos(const QMap<QString, KPluginInfo *> &
                                       plugininfos)
 {
-    for (QMap<QString, KPluginInfo *>::ConstIterator it = plugininfos.begin();
-            it != plugininfos.end(); ++it) {
+    for (QMap<QString, KPluginInfo *>::ConstIterator it = plugininfos.begin(), total = plugininfos.end();
+            it != total; ++it) {
         d->plugininfolist.append(it.value());
     }
 }
@@ -130,8 +129,8 @@ void ComponentsDialog::show()
     d->plugininfomap.clear();
 
     // construct the treelist
-    for (QList<KPluginInfo *>::ConstIterator it = d->plugininfolist.constBegin();
-            it != d->plugininfolist.constEnd(); ++it) {
+    for (QList<KPluginInfo *>::ConstIterator it = d->plugininfolist.constBegin(), total = d->plugininfolist.constEnd();
+            it != total; ++it) {
         (*it)->load();
         QTreeWidgetItem *item = new QTreeWidgetItem(d->listview, QStringList((*it)->name()));
         if (!(*it)->icon().isEmpty()) {
@@ -166,8 +165,8 @@ void ComponentsDialog::executed(QTreeWidgetItem *item, int)
 
 void ComponentsDialog::savePluginInfos()
 {
-    for (QList<KPluginInfo *>::ConstIterator it = d->plugininfolist.constBegin();
-            it != d->plugininfolist.constEnd(); ++it) {
+    for (QList<KPluginInfo *>::ConstIterator it = d->plugininfolist.constBegin(), total = d->plugininfolist.constEnd();
+            it != total; ++it) {
         if ((*it)->config().isValid()) {
             (*it)->save();
             (*it)->config().sync();

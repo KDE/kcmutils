@@ -34,7 +34,7 @@ class Q_DECL_HIDDEN KCModuleInfo::Private
 {
 public:
     Private();
-    Private(KService::Ptr);
+    Private(const KService::Ptr &);
 
     QStringList keywords;
     QString     name, icon, lib, handle, fileName, doc, comment;
@@ -54,7 +54,7 @@ KCModuleInfo::Private::Private()
 {
 }
 
-KCModuleInfo::Private::Private(KService::Ptr s)
+KCModuleInfo::Private::Private(const KService::Ptr &s)
     : allLoaded(false)
     , service(s)
 {
