@@ -19,6 +19,12 @@ include(KDECMakeSettings)
 set(REQUIRED_QT_VERSION 5.7.0)
 find_package(Qt5 ${REQUIRED_QT_VERSION} NO_MODULE REQUIRED Widgets DBus Qml Quick QuickWidgets)
 
+set(KCMUtils_AUTOMOC_MACRO_NAMES "KCMODULECONTAINER")
+if(NOT CMAKE_VERSION VERSION_LESS "3.10.0")
+    # CMake 3.9+ warns about automoc on files without Q_OBJECT, and doesn't know about other macros.
+    # 3.10+ lets us provide more macro names that require automoc.
+    list(APPEND CMAKE_AUTOMOC_MACRO_NAMES ${KCMUtils_AUTOMOC_MACRO_NAMES})
+endif()
 
 include(GenerateExportHeader)
 include(ECMSetupVersion)
