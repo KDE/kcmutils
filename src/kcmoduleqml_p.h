@@ -36,8 +36,8 @@ public:
     KCModuleQml(KQuickAddons::ConfigModule *configModule, QWidget* parent, const QVariantList& args);
     ~KCModuleQml();
 
-    virtual QString quickHelp() const Q_DECL_OVERRIDE;
-    virtual const KAboutData *aboutData() const Q_DECL_OVERRIDE;
+    QString quickHelp() const Q_DECL_OVERRIDE;
+    const KAboutData *aboutData() const Q_DECL_OVERRIDE;
 
 public Q_SLOTS:
     void load() Q_DECL_OVERRIDE;
@@ -45,8 +45,8 @@ public Q_SLOTS:
     void defaults() Q_DECL_OVERRIDE;
 
 protected:
-    virtual void showEvent(QShowEvent *event) Q_DECL_OVERRIDE;
-    virtual void focusInEvent(QFocusEvent *event) Q_DECL_OVERRIDE;
+    void showEvent(QShowEvent *event) Q_DECL_OVERRIDE;
+    void focusInEvent(QFocusEvent *event) Q_DECL_OVERRIDE;
     QSize sizeHint() const Q_DECL_OVERRIDE;
     bool eventFilter(QObject* watched, QEvent* event) Q_DECL_OVERRIDE;
 
