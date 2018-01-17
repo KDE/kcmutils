@@ -687,10 +687,12 @@ QList<QWidget *> KPluginSelector::Private::PluginDelegate::createItemWidgets(con
 
     QPushButton *aboutPushButton = new QPushButton;
     aboutPushButton->setIcon(QIcon::fromTheme(QStringLiteral("dialog-information")));
+    aboutPushButton->setToolTip(i18n("About"));
     connect(aboutPushButton, &QAbstractButton::clicked, this, &PluginDelegate::slotAboutClicked);
 
     QPushButton *configurePushButton = new QPushButton;
     configurePushButton->setIcon(QIcon::fromTheme(QStringLiteral("configure")));
+    configurePushButton->setToolTip(i18n("Configure"));
     connect(configurePushButton, &QAbstractButton::clicked, this, &PluginDelegate::slotConfigureClicked);
 
     setBlockedEventTypes(enabledCheckBox, QList<QEvent::Type>() << QEvent::MouseButtonPress
