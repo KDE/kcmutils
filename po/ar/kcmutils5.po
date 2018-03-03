@@ -1,0 +1,511 @@
+# translation of kdelibs4.po to Arabic
+# translation of kdelibs4.po to
+# Copyright (C) 2001-2003, 2004, 2006, 2007, 2008, 2009 Free Software Foundation, Inc.
+# Isam Bayazidi <bayazidi@arabeyes.org>, 2001,2003.
+# Sayed Jaffer Al-Mosawi <mosawi@arabeyes.org>, 2002.
+# Hicham Amaoui <amaoui@wanadoo.fr>, 2002.
+# Youcef Rabah Rahal <rahal@arabeyes.org>, 2003.
+# Ahmad M. Zawawi <azawawi@emirates.net.ae>, 2004.
+# Mohammed Gamal <f2c2001@yahoo.com>, 2004.
+# Usamah Ali Al-Maqdad <msareehi@kacst.edu.sa>, 2004.
+# Munzir Taha <munzir@kacst.edu.sa>, 2004.
+# Mohamed SAAD <metehyi@free.fr>, 2006.
+# Khaled Hosny <khaledhosny@eglug.org>, 2007.
+# Youssef Chahibi <chahibi@gmail.com>, 2007.
+# zayed <zayed.alsaidi@gmail.com>, 2008, 2009.
+# Zayed Al-Saidi <zayed.alsaidi@gmail.com>, 2009.
+# hanny <hannysabbagh@hotmail.com>, 2012.
+# Abderrahim Kitouni <a.kitouni@gmail.com>, 2012.
+# Safa Alfulaij <safaalfulaij@hotmail.com>, 2013, 2017.
+msgid ""
+msgstr ""
+"Project-Id-Version: kdelibs4\n"
+"Report-Msgid-Bugs-To: http://bugs.kde.org\n"
+"POT-Creation-Date: 2018-01-17 03:18+0100\n"
+"PO-Revision-Date: 2017-01-25 22:33+0300\n"
+"Last-Translator: Safa Alfulaij <safa1996alfulaij@gmail.com>\n"
+"Language-Team: Arabic <doc@arabeyes.org>\n"
+"Language: ar\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=6; plural=n==0 ? 0 : n==1 ? 1 : n==2 ? 2 : n%100>=3 "
+"&& n%100<=10 ? 3 : n%100>=11 && n%100<=99 ? 4 : 5;\n"
+"X-Generator: Lokalize 2.0\n"
+
+#, kde-format
+msgctxt "NAME OF TRANSLATORS"
+msgid "Your names"
+msgstr "زايد السعيدي,محمد هاني صباغ,صفا الفليج"
+
+#, kde-format
+msgctxt "EMAIL OF TRANSLATORS"
+msgid "Your emails"
+msgstr ""
+"zayed.alsaidi@gmail.com,hannysabbagh@hotmail.com,safa1996alfulaij@gmail.com"
+
+#: kcmoduleloader.cpp:79
+#, kde-format
+msgid "The module %1 could not be found."
+msgstr "تعذّر إيجاد الوحدة %1."
+
+#: kcmoduleloader.cpp:80
+#, kde-format
+msgid ""
+"<qt><p>The diagnosis is:<br />The desktop file %1 could not be found.</p></"
+"qt>"
+msgstr "<qt><p>التّشخيص:<br />تعذّر إيجاد ملفّ سطح المكتب %1.</p></qt>"
+
+#: kcmoduleloader.cpp:82
+#, kde-format
+msgid "The module %1 is disabled."
+msgstr "الوحدة %1 معطّلة."
+
+#: kcmoduleloader.cpp:83
+#, kde-format
+msgid ""
+"<qt><p>Either the hardware/software the module configures is not available "
+"or the module has been disabled by the administrator.</p></qt>"
+msgstr ""
+"<qt><p>إمّا أنّ العتاد/البرمجيّة التي تضبطها الوحدة غير متوفّرة، أو أنّ المدير "
+"عطّل الوحدة.</p></qt>"
+
+#: kcmoduleloader.cpp:139
+#, kde-format
+msgid "The module %1 is not a valid configuration module."
+msgstr "الوحدة %1 ليست وحدة ضبط صالحة."
+
+#: kcmoduleloader.cpp:140
+#, kde-format
+msgid ""
+"<qt>The diagnosis is:<br />The desktop file %1 does not specify a library.</"
+"qt>"
+msgstr "<qt>التّشخيص:<br />ملفّ سطح المكتب %1 لا يحدّد مكتبة.</qt>"
+
+#: kcmoduleloader.cpp:155
+#, kde-format
+msgid ""
+"<qt><p>Possible reasons:<ul><li>An error occurred during your last KDE "
+"upgrade leaving an orphaned control module</li><li>You have old third party "
+"modules lying around.</li></ul></p><p>Check these points carefully and try "
+"to remove the module mentioned in the error message. If this fails, consider "
+"contacting your distributor or packager.</p></qt>"
+msgstr ""
+"<qt><p>الأسباب المحتملة:</p><ul><li>حدوث خطأ أثناء آخر ترقية لكدي تاركاً وحدة "
+"تحكم يتيمة</li><li>توجد عندك وحدات تحكم قديمة من طرف ثالث.</li></ul><p>تأكد "
+"من هذه النقاط بحذر ، وحاول إزالة الوحدات المذكورة في رسالة الخطأ.إذا فشل هذا "
+"خذ في عين الاعتبار الاتصال بموزعك أو من قام بتحزيم توزيعتك.</p></qt>"
+
+#: kcmoduleproxy.cpp:127
+#, kde-format
+msgctxt "Argument is application name"
+msgid "This configuration section is already opened in %1"
+msgstr "فُتح جزء الضّبط هذا بالفعل في «%1»"
+
+#: kcmultidialog.cpp:56
+#, kde-format
+msgid ""
+"The settings of the current module have changed.\n"
+"Do you want to apply the changes or discard them?"
+msgstr ""
+"تغيّرت إعدادت الوحدة الحاليّة.\n"
+"أتريد تطبيقها أو رفضها؟"
+
+#: kcmultidialog.cpp:58
+#, kde-format
+msgid "Apply Settings"
+msgstr "طبّق الإعدادات"
+
+#: kcmultidialog.cpp:205 kpluginselector.cpp:695
+#, kde-format
+msgid "Configure"
+msgstr "اضبط"
+
+#. i18n: ectx: label, entry, group (DesktopIcons)
+#: kdeglobals.kcfg:9
+#, kde-format
+msgid "Distance between desktop icons"
+msgstr "المسافة بين أيقونات سطح المكتب"
+
+#. i18n: ectx: whatsthis, entry, group (DesktopIcons)
+#: kdeglobals.kcfg:10
+#, kde-format
+msgid "The distance between icons specified in pixels."
+msgstr "المسافة بين أيقونات سطح المكتب بالبكسلات."
+
+#. i18n: ectx: label, entry, group (General)
+#: kdeglobals.kcfg:23
+#, kde-format
+msgid "Widget style to use"
+msgstr "نمط الودجات ليُستخدم"
+
+#. i18n: ectx: whatsthis, entry, group (General)
+#: kdeglobals.kcfg:24
+#, fuzzy, kde-format
+msgid ""
+"The name of the widget style, for example \"keramik\" or \"plastik\". "
+"Without quotes."
+msgstr "اسم أسلوب الودجات، \"keramik\" أو \"plastik\" مثلا ، بدون أقواس."
+
+#. i18n: ectx: label, entry, group (General)
+#: kdeglobals.kcfg:30
+#, kde-format
+msgid "Use the PC speaker"
+msgstr "استخدم سمّاعات الحاسوب"
+
+#. i18n: ectx: whatsthis, entry, group (General)
+#: kdeglobals.kcfg:31
+#, kde-format
+msgid ""
+"Whether the ordinary PC speaker should be used instead of KDE's own "
+"notifications system."
+msgstr "فيما إذا كان يجب استخدام سمّاعات الحاسوب بدل نظام «كدي» للإخطارات."
+
+#. i18n: ectx: label, entry, group (General)
+#: kdeglobals.kcfg:35
+#, kde-format
+msgid "What terminal application to use"
+msgstr "تطبيق الطّرفية ليُستخدم"
+
+#. i18n: ectx: whatsthis, entry, group (General)
+#: kdeglobals.kcfg:37
+#, fuzzy, kde-format
+msgid ""
+"Whenever a terminal application is launched this terminal emulator program "
+"will be used.\n"
+msgstr "متى ما أطلق برنامج طرفي ؛ سيستعمل محاكي الطرفية هذا.\n"
+
+#. i18n: ectx: label, entry, group (General)
+#: kdeglobals.kcfg:41
+#, kde-format
+msgid "Fixed width font"
+msgstr "خطّ ثابت العرض"
+
+#. i18n: ectx: whatsthis, entry, group (General)
+#: kdeglobals.kcfg:43
+#, fuzzy, kde-format
+msgid ""
+"This font is used when a fixed font is needed. A fixed font has a constant "
+"width.\n"
+msgstr "يستعمل هذا الخط عند الحاجة إلى خط ثابت. يتميز الخط الثابت بعرض ثابت.\n"
+
+#. i18n: ectx: label, entry, group (General)
+#: kdeglobals.kcfg:46
+#, fuzzy, kde-format
+msgid "System wide font"
+msgstr "الخطوط الشاملة للنظام"
+
+#. i18n: ectx: label, entry, group (General)
+#: kdeglobals.kcfg:49
+#, kde-format
+msgid "Font for menus"
+msgstr "خطّ القوائم"
+
+#. i18n: ectx: whatsthis, entry, group (General)
+#: kdeglobals.kcfg:50
+#, kde-format
+msgid "What font to use for menus in applications."
+msgstr "أيّ خطّ يُستخدم في قوائم التّطبيقات."
+
+#. i18n: ectx: label, entry, group (General)
+#: kdeglobals.kcfg:53
+#, kde-format
+msgid "Color for links"
+msgstr "لون الوصلات"
+
+#. i18n: ectx: whatsthis, entry, group (General)
+#: kdeglobals.kcfg:54
+#, kde-format
+msgid "What color links should be that have not yet been clicked on"
+msgstr "ما لون الوصلات التي لم يُنقر عليها بعد"
+
+#. i18n: ectx: label, entry, group (General)
+#: kdeglobals.kcfg:57
+#, kde-format
+msgid "Color for visited links"
+msgstr "لون الوصلات المزارة"
+
+#. i18n: ectx: label, entry, group (General)
+#: kdeglobals.kcfg:60
+#, kde-format
+msgid "Font for the taskbar"
+msgstr "خطّ شريط المهامّ"
+
+#. i18n: ectx: whatsthis, entry, group (General)
+#: kdeglobals.kcfg:61
+#, fuzzy, kde-format
+msgid ""
+"What font to use for the panel at the bottom of the screen, where the "
+"currently running applications are."
+msgstr ""
+"الخط المراد استعماله في اللوحة الموجودة في أسفل الشاشة ، حيث توجد التطبيقات "
+"المستعملة حاليا."
+
+#. i18n: ectx: label, entry, group (General)
+#: kdeglobals.kcfg:64
+#, kde-format
+msgid "Fonts for toolbars"
+msgstr "خطّ أشرطة الأدوات"
+
+#. i18n: ectx: label, entry (Desktop Screenshot), group (Global Shortcuts)
+#: kdeglobals.kcfg:73
+#, kde-format
+msgid "Shortcut for taking screenshot"
+msgstr "اختصار أخذ لقطات الشّاشة"
+
+#. i18n: ectx: label, entry (Enable/Disable Clipboard Actions), group (Global Shortcuts)
+#: kdeglobals.kcfg:78
+#, fuzzy, kde-format
+msgid "Shortcut for toggling Clipboard Actions on and off"
+msgstr "اختصار تبديل إجراءات الحافظة بين تشغيل و إيقاف"
+
+#. i18n: ectx: label, entry (Halt without Confirmation), group (Global Shortcuts)
+#: kdeglobals.kcfg:83
+#, kde-format
+msgid "Shortcut for shutting down the computer without confirmation"
+msgstr "اختصار توقيف الحاسوب بدون أخذ الموافقة"
+
+#. i18n: ectx: label, entry (Sort directories first), group (KFileDialog Settings)
+#: kdeglobals.kcfg:380
+#, kde-format
+msgid "Show directories first"
+msgstr "أظهر الأدلّة أوّلًا"
+
+#. i18n: ectx: whatsthis, entry (Sort directories first), group (KFileDialog Settings)
+#: kdeglobals.kcfg:381
+#, kde-format
+msgid "Whether directories should be placed at the top when displaying files"
+msgstr "فيما إذا كان يجب وضع الأدلّة في الأعلى عند عرض الملفّات"
+
+#. i18n: ectx: label, entry (Recent URLs), group (KFileDialog Settings)
+#: kdeglobals.kcfg:389
+#, fuzzy, kde-format
+msgid "The URLs recently visited"
+msgstr "الوصلات المزارة حديثًا"
+
+#. i18n: ectx: whatsthis, entry (Recent URLs), group (KFileDialog Settings)
+#: kdeglobals.kcfg:390
+#, fuzzy, kde-format
+msgid "Used for auto-completion in file dialogs, for example"
+msgstr "مستعمل للإتمام الآلي في حوارات الملفات مثلا"
+
+#. i18n: ectx: label, entry (Show Preview), group (KFileDialog Settings)
+#: kdeglobals.kcfg:394
+#, kde-format
+msgid "Show file preview in file dialog"
+msgstr "أظهر معاينة للملفّات في حواريّ الملفّات"
+
+#. i18n: ectx: label, entry (Show hidden files), group (KFileDialog Settings)
+#: kdeglobals.kcfg:399
+#, kde-format
+msgid "Show hidden files"
+msgstr "أظهر الملفّات المخفيّة"
+
+#. i18n: ectx: whatsthis, entry (Show hidden files), group (KFileDialog Settings)
+#: kdeglobals.kcfg:400
+#, fuzzy, kde-format
+msgid ""
+"Whether files starting with a dot (convention for hidden files) should be "
+"shown"
+msgstr ""
+"إذا ما كان ينبغي إظهار الملفات التي تبدأ أسماؤها بنقطة (اصطلاح مستعمل "
+"للملفات المخفية)"
+
+#. i18n: ectx: label, entry (Show Speedbar), group (KFileDialog Settings)
+#: kdeglobals.kcfg:405
+#, kde-format
+msgid "Show speedbar"
+msgstr "أظهر شريط السّرعة"
+
+#. i18n: ectx: whatsthis, entry (Show Speedbar), group (KFileDialog Settings)
+#: kdeglobals.kcfg:406
+#, kde-format
+msgid ""
+"Whether the shortcut icons to the left in the file dialog should be shown"
+msgstr "فيما إذا كان يجب عرض أيقونات الاختصارات على يمين حواريّ الملفّات"
+
+#. i18n: ectx: label, entry, group (Locale)
+#: kdeglobals.kcfg:425
+#, fuzzy, kde-format
+msgid "What country"
+msgstr "أي دولة"
+
+#. i18n: ectx: whatsthis, entry, group (Locale)
+#: kdeglobals.kcfg:426
+#, fuzzy, kde-format
+msgid ""
+"Used to determine how to display numbers, currency and time/date, for example"
+msgstr "يستعمل لتحديد كيفية عرض الأرقام ، والعملة ، والتاريخ  والساعة مثلا"
+
+#. i18n: ectx: label, entry, group (Locale)
+#: kdeglobals.kcfg:430
+#, kde-format
+msgid "What language to use to display text"
+msgstr "أيّ لغة تُستخدم لعرض النّصوص"
+
+#. i18n: ectx: label, entry, group (Locale)
+#: kdeglobals.kcfg:433
+#, fuzzy, kde-format
+msgid "Character used for indicating positive numbers"
+msgstr "المحرف المستخدم لتحديد الأعداد الموجبة"
+
+#. i18n: ectx: whatsthis, entry, group (Locale)
+#: kdeglobals.kcfg:434
+#, kde-format
+msgid "Most countries have no character for this"
+msgstr "معظم الدّول لا تستخدم محرفًا لهذا الغرض"
+
+#. i18n: ectx: label, entry, group (Paths)
+#: kdeglobals.kcfg:439
+#, kde-format
+msgid "Path to the autostart directory"
+msgstr "مسار دليل البدء الآليّ"
+
+#. i18n: ectx: whatsthis, entry, group (Paths)
+#: kdeglobals.kcfg:440
+#, fuzzy, kde-format
+msgid "Path to the directory containing executables to be run on session login"
+msgstr ""
+"مسار الدّليل الذي يحتوي الملفات القابلة للتنفيذ المراد تشغيلها مباشرة عند "
+"الولوج للجلسة"
+
+#. i18n: ectx: label, entry, group (Socks)
+#: kdeglobals.kcfg:487
+#, kde-format
+msgid "Enable SOCKS support"
+msgstr "فعّل دعم SOCKS"
+
+#. i18n: ectx: whatsthis, entry, group (Socks)
+#: kdeglobals.kcfg:488
+#, fuzzy, kde-format
+msgid "Whether SOCKS version 4 and 5 should be enabled in KDE's sub systems"
+msgstr " لتفعيل النسخة 4 و 5 لـSOCKS في الأنظمة الفرعية لكدي"
+
+#. i18n: ectx: label, entry, group (Socks)
+#: kdeglobals.kcfg:492
+#, kde-format
+msgid "Path to custom SOCKS library"
+msgstr "مسار مكتبة SOCKS المخصّصة"
+
+#. i18n: ectx: label, entry, group (Toolbar style)
+#: kdeglobals.kcfg:498
+#, fuzzy, kde-format
+msgid "Highlight toolbar buttons on mouse over"
+msgstr "إبراز أزرار شريط الأدوات عند تمرير الفأرة عليها"
+
+#. i18n: ectx: label, entry, group (Toolbar style)
+#: kdeglobals.kcfg:502
+#, fuzzy, kde-format
+msgid "Show text on toolbar icons "
+msgstr "أظهر النّصّ على أيقونات شريط الأدوات"
+
+#. i18n: ectx: whatsthis, entry, group (Toolbar style)
+#: kdeglobals.kcfg:503
+#, fuzzy, kde-format
+msgid "Whether text should be shown in addition to icons on toolbar icons"
+msgstr "لإظهار النص بجانب الأيقونات في أيقونة شريط الأدوات"
+
+#. i18n: ectx: label, entry (EchoMode), group (Passwords)
+#: kdeglobals.kcfg:524
+#, fuzzy, kde-format
+msgid "Password echo type"
+msgstr "نوع صدى كلمة السر"
+
+#. i18n: ectx: label, entry (Dialog Size), group (KKeyDialog Settings)
+#: kdeglobals.kcfg:534
+#, kde-format
+msgid "The size of the dialog"
+msgstr ""
+
+#: kpluginselector.cpp:140
+#, fuzzy, kde-format
+msgid ""
+"Automatic changes have been performed due to plugin dependencies. Click here "
+"for further information"
+msgstr "تمت تغييرات آلية بسبب اعتمادات الملحقات. انقر هنا لمعلومات أكثر"
+
+#: kpluginselector.cpp:208
+#, fuzzy, kde-format
+msgid ""
+"Automatic changes have been performed in order to satisfy plugin "
+"dependencies:\n"
+msgstr "تمت تغييرات آلية بسبب اعتمادات الملحقات:\n"
+
+#: kpluginselector.cpp:211
+#, fuzzy, kde-format
+msgid ""
+"\n"
+"    %1 plugin has been automatically checked because of the dependency of %2 "
+"plugin"
+msgstr ""
+"\n"
+"    فُعّل الملحق %1 بسبب اعتماده على الملحق %2"
+
+#: kpluginselector.cpp:213
+#, fuzzy, kde-format
+msgid ""
+"\n"
+"    %1 plugin has been automatically unchecked because of its dependency on "
+"%2 plugin"
+msgstr ""
+"\n"
+"    عُطّل الملحق %1 بسبب اعتماده على الملحق %2"
+
+#: kpluginselector.cpp:216
+#, fuzzy, kde-format
+msgid "Dependency Check"
+msgstr "فحص الاعتمادات"
+
+#: kpluginselector.cpp:233
+#, fuzzy, kde-format
+msgid "%1 plugin automatically added due to plugin dependencies"
+msgid_plural "%1 plugins automatically added due to plugin dependencies"
+msgstr[0] "لم يضف شيء بسبب اعتمادات الملاحق"
+msgstr[1] "تمت إضافة محلق واحد آليا بسبب اعتمادات الملاحق"
+msgstr[2] "تمت إضافة محلقين آليا بسبب اعتمادات الملاحق"
+msgstr[3] "تمت إضافة %1 ملاحق آليا بسبب اعتمادات الملاحق"
+msgstr[4] "تمت إضافة %1 ملحقاً آليا بسبب اعتمادات الملاحق"
+msgstr[5] "تمت إضافة %1 ملحق آليا بسبب اعتمادات الملاحق"
+
+#: kpluginselector.cpp:237
+#, fuzzy, kde-format
+msgid ", "
+msgstr "، "
+
+#: kpluginselector.cpp:241
+#, fuzzy, kde-format
+msgid "%1 plugin automatically removed due to plugin dependencies"
+msgid_plural "%1 plugins automatically removed due to plugin dependencies"
+msgstr[0] "لم تتم إزالة أي شي بسبب اعتمادات الملاحق"
+msgstr[1] "تمت إزالة محلق واحد آليا بسبب اعتمادات الملاحق"
+msgstr[2] "تمت إزالة محلقين آليا بسبب اعتمادات الملاحق"
+msgstr[3] "تمت إزالة %1 ملاحق آليا بسبب اعتمادات الملاحق"
+msgstr[4] "تمت إزالة %1 ملحقاً آليا بسبب اعتمادات الملاحق"
+msgstr[5] "تمت إزالة %1 ملحق آليا بسبب اعتمادات الملاحق"
+
+#: kpluginselector.cpp:261
+#, kde-format
+msgid "Search Plugins"
+msgstr "ابحث عن ملحقات"
+
+#: kpluginselector.cpp:690
+#, fuzzy, kde-format
+#| msgid "&About"
+msgid "About"
+msgstr "&حوْل"
+
+#: kpluginselector.cpp:793
+#, kde-format
+msgctxt "Used only for plugins"
+msgid "About %1"
+msgstr "عن «%1»"
+
+#: ksettings/componentsdialog.cpp:55
+#, fuzzy, kde-format
+msgid "Select Components"
+msgstr "اختر المكوّنات"
+
+#: ksettings/dialog.cpp:230
+#, kde-format
+msgid "Enable component"
+msgstr "فعّل المكوّن"
