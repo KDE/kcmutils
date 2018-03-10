@@ -52,7 +52,6 @@ class PluginPagePrivate;
  * All that remains to be done is to create the appropriate .desktop file
  * \verbatim
    [Desktop Entry]
-   Encoding=UTF-8
    Icon=plugin
    Type=Service
    ServiceTypes=KCModule

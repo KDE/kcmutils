@@ -91,7 +91,6 @@ insert it at the right place (with the right icon, name and comment).
 An example file:
 \verbatim
 [Desktop Entry]
-Encoding=UTF-8
 Icon=myapp
 Type=Service
 ServiceTypes=KCModule
@@ -220,7 +219,6 @@ And this is what the .desktop file looks like:
 
 \verbatim
 [Desktop Entry]
-Encoding=UTF-8
 Type=Service
 Icon=<iconname>
 ServiceTypes=KPluginInfo
