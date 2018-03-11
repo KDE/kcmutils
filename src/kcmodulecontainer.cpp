@@ -21,7 +21,7 @@
 
 #include <QLayout>
 #include <QPixmap>
-#include <QtCore/QStringList>
+#include <QStringList>
 #include <QTabWidget>
 
 #include <kcmodule.h>

@@ -21,7 +21,7 @@
 #ifndef KPLUGINSELECTOR_P_H
 #define KPLUGINSELECTOR_P_H
 
-#include <QtCore/QAbstractListModel>
+#include <QAbstractListModel>
 #include <QAbstractItemDelegate>
 
 #include <kconfiggroup.h>

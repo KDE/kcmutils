@@ -24,10 +24,10 @@
 #include "../kcmultidialog_p.h"
 #include "../kcmoduleinfo.h"
 
-#include <QtCore/QHash>
-#include <QtCore/QList>
-#include <QtCore/QSet>
-#include <QtCore/QString>
+#include <QHash>
+#include <QList>
+#include <QSet>
+#include <QString>
 #include <QLabel>
 #include <QWidget>
 

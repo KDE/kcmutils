@@ -18,7 +18,7 @@
 */
 
 #include "ksettingswidgetadaptor.h"
-#include <QtCore/QString>
+#include <QString>
 #include <QGuiApplication>
 
 KSettingsWidgetAdaptor::KSettingsWidgetAdaptor(QObject *parent)

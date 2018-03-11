@@ -22,7 +22,7 @@
 #define KCMUTILS_KCMODULEPROXY_H
 
 #include <QImage>
-#include <QtCore/QStringList>
+#include <QStringList>
 
 #include <kcmodule.h>
 #include <kservice.h>

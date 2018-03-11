@@ -21,8 +21,8 @@
 #define KCMULTIDIALOG_P_H
 
 #include "kcmultidialog.h"
-#include <QtCore/QList>
-#include <QtCore/QStringList>
+#include <QList>
+#include <QStringList>
 
 class KCModuleProxy;
 class KPageWidgetItem;

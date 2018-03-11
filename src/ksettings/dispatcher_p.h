@@ -20,10 +20,10 @@
 #ifndef DISPATCHER_P_H
 #define DISPATCHER_P_H
 
-#include <QtCore/QList>
-#include <QtCore/QPair>
-#include <QtCore/QMap>
-#include <QtCore/QObject>
+#include <QList>
+#include <QPair>
+#include <QMap>
+#include <QObject>
 
 namespace KSettings
 {

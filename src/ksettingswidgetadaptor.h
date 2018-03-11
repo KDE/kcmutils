@@ -20,7 +20,7 @@
 #ifndef KSETTINGSWIDGETADAPTOR_H
 #define KSETTINGSWIDGETADAPTOR_H
 
-#include <QtCore/QObject>
+#include <QObject>
 class QString;
 
 /*

@@ -28,13 +28,13 @@
 #include <kservicetypetrader.h>
 #include <kconfig.h>
 
-#include <QtCore/QFile>
-#include <QtCore/QDir>
+#include <QFile>
+#include <QDir>
 #include <QCheckBox>
 #include <QDialogButtonBox>
 #include <QPushButton>
 #include <QVBoxLayout>
-#include <QtCore/QStack>
+#include <QStack>
 #include <QCoreApplication>
 
 uint qHash(const KCModuleInfo &info)

@@ -22,13 +22,13 @@
 
 #include <QApplication>
 #include <QCursor>
-#include <QtCore/QDataStream>
+#include <QDataStream>
 #include <QKeyEvent>
-#include <QtCore/QFileInfo>
+#include <QFileInfo>
 #include <QFrame>
 #include <QLabel>
 #include <QLayout>
-#include <QtCore/QPoint>
+#include <QPoint>
 
 #include <QImage>
 

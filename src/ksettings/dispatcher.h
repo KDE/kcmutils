@@ -20,8 +20,8 @@
 #ifndef KSETTINGS_DISPATCHER_H
 #define KSETTINGS_DISPATCHER_H
 
-#include <QtCore/QObject>
-#include <QtCore/QMap>
+#include <QObject>
+#include <QMap>
 #include <kcmutils_export.h>
 #include <ksharedconfig.h>
 

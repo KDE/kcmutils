@@ -29,7 +29,7 @@
 #include <kconfig.h>
 #include <kseparator.h>
 
-#include <QtCore/QList>
+#include <QList>
 #include <QTreeWidget>
 
 namespace KSettings

@@ -24,7 +24,7 @@
 #include "kcmoduleloader.h"
 #include "kcmoduleqml_p.h"
 
-#include <QtCore/QFile>
+#include <QFile>
 #include <QLabel>
 #include <QLayout>
 #include <QLibrary>

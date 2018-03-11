@@ -23,7 +23,7 @@
 
 #include "kcmoduleinfo.h"
 
-#include <QtCore/QVariant>
+#include <QVariant>
 
 #include <kdesktopfile.h>
 #include <QDebug>
