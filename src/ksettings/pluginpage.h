@@ -54,7 +54,7 @@ class PluginPagePrivate;
    [Desktop Entry]
    Icon=plugin
    Type=Service
-   ServiceTypes=KCModule
+   X-KDE-ServiceTypes=KCModule
 
    X-KDE-Library=myapppluginconfig
    X-KDE-FactoryName=MyAppPluginConfigFactory
