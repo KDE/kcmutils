@@ -209,6 +209,13 @@ public:
      */
     QStringList configurationArguments() const;
 
+    /**
+     * Shows the configuration dialog for the plugin @p pluginId if it's available
+     *
+     * @since 5.45
+     */
+    void showConfiguration(const QString &pluginId);
+
 Q_SIGNALS:
     /**
       * Tells you whether the configuration is changed or not.

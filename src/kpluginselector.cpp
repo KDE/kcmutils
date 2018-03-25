@@ -414,6 +414,26 @@ QStringList KPluginSelector::configurationArguments() const
     return d->kcmArguments;
 }
 
+void KPluginSelector::showConfiguration(const QString& componentName)
+{
+    QModelIndex idx;
+    for (int i = 0, c = d->proxyModel->rowCount(); i<c; ++i) {
+        const auto currentIndex = d->proxyModel->index(i, 0);
+        const auto entry = currentIndex.data(KPluginSelector::Private::PluginEntryRole).value<PluginEntry *>();
+        if (entry->pluginInfo.pluginName() == componentName) {
+            idx = currentIndex;
+            break;
+        }
+    }
+
+    if (idx.isValid()) {
+        auto delegate = static_cast<KPluginSelector::Private::PluginDelegate*>(d->listView->itemDelegate());
+        delegate->configure(idx);
+    } else {
+        qWarning() << "Could not find plugin" << componentName;
+    }
+}
+
 KPluginSelector::Private::PluginModel::PluginModel(KPluginSelector::Private *pluginSelector_d, QObject *parent)
     : QAbstractListModel(parent)
     , pluginSelector_d(pluginSelector_d)
@@ -796,7 +816,11 @@ void KPluginSelector::Private::PluginDelegate::slotAboutClicked()
 
 void KPluginSelector::Private::PluginDelegate::slotConfigureClicked()
 {
-    const QModelIndex index = focusedIndex();
+    configure(focusedIndex());
+}
+
+void KPluginSelector::Private::PluginDelegate::configure(const QModelIndex& index)
+{
     const QAbstractItemModel *model = index.model();
 
     PluginEntry *pluginEntry = model->data(index, PluginEntryRole).value<PluginEntry *>();
