@@ -30,11 +30,10 @@ class PluginPagePrivate
 {
 public:
     PluginPagePrivate()
-        : selwid(nullptr)
     {
     }
 
-    KPluginSelector *selwid;
+    KPluginSelector *selwid = nullptr;
     void _k_reparseConfiguration(const QByteArray &a);
 };
 

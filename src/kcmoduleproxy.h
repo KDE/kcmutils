@@ -106,7 +106,7 @@ public:
     /**
      * Default destructor
      */
-    ~KCModuleProxy();
+    ~KCModuleProxy() Q_DECL_OVERRIDE;
 
     /**
      * Calling it will cause the contained module to

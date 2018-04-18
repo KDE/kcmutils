@@ -34,7 +34,7 @@ class KCModuleQml : public KCModule
 
 public:
     KCModuleQml(KQuickAddons::ConfigModule *configModule, QWidget* parent, const QVariantList& args);
-    ~KCModuleQml();
+    ~KCModuleQml() Q_DECL_OVERRIDE;
 
     QString quickHelp() const Q_DECL_OVERRIDE;
     const KAboutData *aboutData() const Q_DECL_OVERRIDE;

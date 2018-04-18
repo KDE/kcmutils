@@ -102,7 +102,7 @@ public:
      */
     explicit Dialog(const QStringList &components, QWidget *parent = nullptr);
 
-    ~Dialog();
+    ~Dialog() Q_DECL_OVERRIDE;
 
     /**
      * If you use a Configurable dialog you need to pass KPluginInfo

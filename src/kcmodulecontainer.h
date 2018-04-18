@@ -92,7 +92,7 @@ public:
     /**
      * Default destructor.
      */
-    virtual ~KCModuleContainer();
+    ~KCModuleContainer() Q_DECL_OVERRIDE;
 
     /**
      * @reimp

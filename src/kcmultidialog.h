@@ -45,12 +45,12 @@ public:
      *
      * @param parent The parent widget
      **/
-    KCMultiDialog(QWidget *parent = nullptr);
+    explicit KCMultiDialog(QWidget *parent = nullptr);
 
     /**
      * Destructor
      **/
-    virtual ~KCMultiDialog();
+    ~KCMultiDialog() Q_DECL_OVERRIDE;
 
     /**
      * Add a module.
