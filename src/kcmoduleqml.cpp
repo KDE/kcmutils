@@ -123,16 +123,20 @@ void KCModuleQml::showEvent(QShowEvent *event)
     QQmlComponent *component = new QQmlComponent(d->configModule->engine(), this);
     //this has activeFocusOnTab to notice when the navigation wraps
     //around, so when we need to go outside and inside
-    component->setData(QByteArrayLiteral("import QtQuick 2.3\nItem{activeFocusOnTab:true}"), QUrl());
+    //pushPage/popPage are needed as push of StackView can't be directly invoked from c++
+    //because its parameters are QQmlV4Function which is not public
+    component->setData(QByteArrayLiteral("import QtQuick 2.3\nimport QtQuick.Controls 2.0\nStackView{function pushPage(page){push(page)}\nfunction popPage(){pop()}\nactiveFocusOnTab:true}"), QUrl());
     d->rootPlaceHolder = qobject_cast<QQuickItem *>(component->create());
     d->quickWidget->setContent(QUrl(), component, d->rootPlaceHolder);
 
-    d->configModule->mainUi()->setParentItem(d->quickWidget->rootObject());
+    QMetaObject::invokeMethod(d->rootPlaceHolder, "pushPage", Qt::DirectConnection, Q_ARG(QVariant, QVariant::fromValue(d->configModule->mainUi())));
 
-    //set anchors
-    QQmlExpression expr(d->configModule->engine()->rootContext(), d->configModule->mainUi(), QStringLiteral("parent"));
-    QQmlProperty prop(d->configModule->mainUi(), QStringLiteral("anchors.fill"));
-    prop.write(expr.evaluate());
+    connect(d->configModule, &KQuickAddons::ConfigModule::newPage, this, [this](QQuickItem *page) {
+        QMetaObject::invokeMethod(d->rootPlaceHolder, "pushPage", Qt::DirectConnection, Q_ARG(QVariant, QVariant::fromValue(page)));
+    });
+    connect(d->configModule, &KQuickAddons::ConfigModule::pageRemoved, this, [this]() {
+        QMetaObject::invokeMethod(d->rootPlaceHolder, "popPage", Qt::DirectConnection);
+    });
 
     layout->addWidget(d->quickWidget);
     KCModule::showEvent(event);
