@@ -50,7 +50,7 @@ public:
     /**
      * Destructor
      **/
-    ~KCMultiDialog() Q_DECL_OVERRIDE;
+    ~KCMultiDialog() override;
 
     /**
      * Add a module.
@@ -126,8 +126,8 @@ protected:
 
     KCMultiDialogPrivate *const d_ptr;
 
-    void closeEvent(QCloseEvent *event) Q_DECL_OVERRIDE;
-    void showEvent(QShowEvent *event) Q_DECL_OVERRIDE;
+    void closeEvent(QCloseEvent *event) override;
+    void showEvent(QShowEvent *event) override;
 
 protected Q_SLOTS:
     /**

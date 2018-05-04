@@ -94,13 +94,13 @@ public:
      * KPluginInfo::pluginLoaded() method. If that doesn't fit your needs
      * you can also reimplement this method.
      */
-    void load() Q_DECL_OVERRIDE;
+    void load() override;
 
     /**
      * Save the state of the plugins to KConfig objects
      */
-    void save() Q_DECL_OVERRIDE;
-    void defaults() Q_DECL_OVERRIDE;
+    void save() override;
+    void defaults() override;
 
 protected:
     PluginPagePrivate *const d_ptr;

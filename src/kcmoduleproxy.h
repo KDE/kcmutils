@@ -106,7 +106,7 @@ public:
     /**
      * Default destructor
      */
-    ~KCModuleProxy() Q_DECL_OVERRIDE;
+    ~KCModuleProxy() override;
 
     /**
      * Calling it will cause the contained module to
@@ -170,7 +170,7 @@ public:
     /**
      * Returns the recommended minimum size for the widget
      */
-    QSize minimumSizeHint() const Q_DECL_OVERRIDE;
+    QSize minimumSizeHint() const override;
 
 public Q_SLOTS:
 
@@ -218,7 +218,7 @@ protected:
      * Reimplemented for internal purposes. Makes sure the encapsulated
      * module is loaded before the show event is taken care of.
      */
-    void showEvent(QShowEvent *) Q_DECL_OVERRIDE;
+    void showEvent(QShowEvent *) override;
 
 protected:
     KCModuleProxyPrivate *const d_ptr;

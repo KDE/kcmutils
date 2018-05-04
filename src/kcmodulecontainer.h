@@ -92,22 +92,22 @@ public:
     /**
      * Default destructor.
      */
-    ~KCModuleContainer() Q_DECL_OVERRIDE;
+    ~KCModuleContainer() override;
 
     /**
      * @reimp
      */
-    void save() Q_DECL_OVERRIDE;
+    void save() override;
 
     /**
      * @reimp
      */
-    void load() Q_DECL_OVERRIDE;
+    void load() override;
 
     /**
      * @reimp
      */
-    void defaults() Q_DECL_OVERRIDE;
+    void defaults() override;
 
 private Q_SLOTS:
 

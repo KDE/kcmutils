@@ -66,7 +66,7 @@ protected:
     void _k_updateEnabledState(bool);
     void _k_syncConfiguration();
     void _k_reparseConfiguration(const QByteArray &a);
-    void _k_clientChanged() Q_DECL_OVERRIDE;
+    void _k_clientChanged() override;
 
     KPageWidgetItem *createPageItem(KPageWidgetItem *parentItem,
                                     const QString &name, const QString &comment,

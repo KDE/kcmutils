@@ -34,21 +34,21 @@ class KCModuleQml : public KCModule
 
 public:
     KCModuleQml(KQuickAddons::ConfigModule *configModule, QWidget* parent, const QVariantList& args);
-    ~KCModuleQml() Q_DECL_OVERRIDE;
+    ~KCModuleQml() override;
 
-    QString quickHelp() const Q_DECL_OVERRIDE;
-    const KAboutData *aboutData() const Q_DECL_OVERRIDE;
+    QString quickHelp() const override;
+    const KAboutData *aboutData() const override;
 
 public Q_SLOTS:
-    void load() Q_DECL_OVERRIDE;
-    void save() Q_DECL_OVERRIDE;
-    void defaults() Q_DECL_OVERRIDE;
+    void load() override;
+    void save() override;
+    void defaults() override;
 
 protected:
-    void showEvent(QShowEvent *event) Q_DECL_OVERRIDE;
-    void focusInEvent(QFocusEvent *event) Q_DECL_OVERRIDE;
-    QSize sizeHint() const Q_DECL_OVERRIDE;
-    bool eventFilter(QObject* watched, QEvent* event) Q_DECL_OVERRIDE;
+    void showEvent(QShowEvent *event) override;
+    void focusInEvent(QFocusEvent *event) override;
+    QSize sizeHint() const override;
+    bool eventFilter(QObject* watched, QEvent* event) override;
 
 private:
     KCModuleQmlPrivate *const d;

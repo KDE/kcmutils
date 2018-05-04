@@ -151,10 +151,10 @@ public:
     void addPlugins(const QList<KPluginInfo> &pluginList, const QString &categoryName, const QString &categoryKey, const KConfigGroup &cfgGroup, PluginLoadMethod pluginLoadMethod = ReadConfigFile, bool manuallyAdded = false);
     QList<KService::Ptr> pluginServices(const QModelIndex &index) const;
 
-    QModelIndex index(int row, int column = 0, const QModelIndex &parent = QModelIndex()) const Q_DECL_OVERRIDE;
-    QVariant data(const QModelIndex &index, int role = Qt::DisplayRole) const Q_DECL_OVERRIDE;
-    bool setData(const QModelIndex &index, const QVariant &value, int role = Qt::EditRole) Q_DECL_OVERRIDE;
-    int rowCount(const QModelIndex &parent = QModelIndex()) const Q_DECL_OVERRIDE;
+    QModelIndex index(int row, int column = 0, const QModelIndex &parent = QModelIndex()) const override;
+    QVariant data(const QModelIndex &index, int role = Qt::DisplayRole) const override;
+    bool setData(const QModelIndex &index, const QVariant &value, int role = Qt::EditRole) override;
+    int rowCount(const QModelIndex &parent = QModelIndex()) const override;
 
 public:
     QList<PluginEntry> pluginEntryList;
@@ -171,8 +171,8 @@ public:
     ~ProxyModel();
 
 protected:
-    bool filterAcceptsRow(int sourceRow, const QModelIndex &sourceParent) const Q_DECL_OVERRIDE;
-    bool subSortLessThan(const QModelIndex &left, const QModelIndex &right) const Q_DECL_OVERRIDE;
+    bool filterAcceptsRow(int sourceRow, const QModelIndex &sourceParent) const override;
+    bool subSortLessThan(const QModelIndex &left, const QModelIndex &right) const override;
 
 private:
     KPluginSelector::Private *pluginSelector_d;
@@ -187,8 +187,8 @@ public:
     PluginDelegate(KPluginSelector::Private *pluginSelector_d, QObject *parent = nullptr);
     ~PluginDelegate();
 
-    void paint(QPainter *painter, const QStyleOptionViewItem &option, const QModelIndex &index) const Q_DECL_OVERRIDE;
-    QSize sizeHint(const QStyleOptionViewItem &option, const QModelIndex &index) const Q_DECL_OVERRIDE;
+    void paint(QPainter *painter, const QStyleOptionViewItem &option, const QModelIndex &index) const override;
+    QSize sizeHint(const QStyleOptionViewItem &option, const QModelIndex &index) const override;
     void configure(const QModelIndex &idx);
 
 Q_SIGNALS:
@@ -196,10 +196,10 @@ Q_SIGNALS:
     void configCommitted(const QByteArray &componentName);
 
 protected:
-    QList<QWidget *> createItemWidgets(const QModelIndex &index) const Q_DECL_OVERRIDE;
+    QList<QWidget *> createItemWidgets(const QModelIndex &index) const override;
     void updateItemWidgets(const QList<QWidget *> widgets,
                                    const QStyleOptionViewItem &option,
-                                   const QPersistentModelIndex &index) const Q_DECL_OVERRIDE;
+                                   const QPersistentModelIndex &index) const override;
 
 private Q_SLOTS:
     void slotStateChanged(bool state);

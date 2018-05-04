@@ -102,7 +102,7 @@ public:
      */
     explicit Dialog(const QStringList &components, QWidget *parent = nullptr);
 
-    ~Dialog() Q_DECL_OVERRIDE;
+    ~Dialog() override;
 
     /**
      * If you use a Configurable dialog you need to pass KPluginInfo
@@ -160,7 +160,7 @@ protected:
     /**
      * Reimplemented to lazy create the dialog on first show.
      */
-    void showEvent(QShowEvent *) Q_DECL_OVERRIDE;
+    void showEvent(QShowEvent *) override;
 
 Q_SIGNALS:
     /**
