@@ -43,13 +43,41 @@ public:
         : quickWindow(nullptr),
           configModule(cm)
     {
+        //ensure the engine is present, then ref it
+        engine();
+        engineRef = s_engine;
+    }
+
+    ~KCModuleQmlPrivate()
+    {
+        //when the only remaining are out two refs, reset the pointers, causing deletion
+        //when the refcount is 2, we are sure that the only refs are s_engine and our copy
+        //of engineRef
+        if (engineRef.use_count() == 2) {
+            s_engine.reset();
+        }
+    }
+
+    static QQmlEngine *engine()
+    {
+        if (!s_engine) {
+            s_engine = std::make_shared<QQmlEngine>();
+            KDeclarative::KDeclarative::setupEngine(s_engine.get());
+        }
+        return s_engine.get();
     }
 
     QQuickWindow *quickWindow;
     QQuickWidget *quickWidget;
     QQuickItem *rootPlaceHolder;
     KQuickAddons::ConfigModule *configModule;
+
+    //used to delete the engine
+    std::shared_ptr<QQmlEngine> engineRef;
+    static std::shared_ptr<QQmlEngine> s_engine;
 };
+
+std::shared_ptr<QQmlEngine> KCModuleQmlPrivate::s_engine = std::shared_ptr<QQmlEngine>();
 
 KCModuleQml::KCModuleQml(KQuickAddons::ConfigModule *configModule, QWidget* parent, const QVariantList& args)
     : KCModule(parent, args),
@@ -93,24 +121,14 @@ KCModuleQml::KCModuleQml(KQuickAddons::ConfigModule *configModule, QWidget* pare
         setAuthAction(d->configModule->authActionName());
     });
     setFocusPolicy(Qt::StrongFocus);
-}
 
-KCModuleQml::~KCModuleQml()
-{
-    delete d;
-}
 
-void KCModuleQml::showEvent(QShowEvent *event)
-{
-    if (d->quickWindow || !d->configModule->mainUi()) {
-        KCModule::showEvent(event);
-        return;
-    }
 
+    //Build the UI
     QVBoxLayout* layout = new QVBoxLayout(this);
     layout->setContentsMargins(0, 0, 0, 0);
 
-    d->quickWidget = new QQuickWidget(d->configModule->engine(), this);
+    d->quickWidget = new QQuickWidget(d->engine(), this);
     d->quickWidget->setResizeMode(QQuickWidget::SizeRootObjectToView);
     d->quickWidget->setFocusPolicy(Qt::StrongFocus);
     d->quickWidget->installEventFilter(this);
@@ -120,26 +138,25 @@ void KCModuleQml::showEvent(QShowEvent *event)
         d->quickWindow->setColor(QGuiApplication::palette().window().color());
     });
 
-    QQmlComponent *component = new QQmlComponent(d->configModule->engine(), this);
+    QQmlComponent *component = new QQmlComponent(d->quickWidget->engine(), this);
     //this has activeFocusOnTab to notice when the navigation wraps
     //around, so when we need to go outside and inside
     //pushPage/popPage are needed as push of StackView can't be directly invoked from c++
     //because its parameters are QQmlV4Function which is not public
-    component->setData(QByteArrayLiteral("import QtQuick 2.3\nimport QtQuick.Controls 2.0\nStackView{function pushPage(page){push(page)}\nfunction popPage(){pop()}\nactiveFocusOnTab:true}"), QUrl());
+    component->setData(QByteArrayLiteral("import QtQuick 2.3\nimport org.kde.kirigami 2.4 as Kirigami\nKirigami.ApplicationItem{header:Kirigami.ApplicationHeader{headerStyle:ApplicationHeaderStyle.Breadcrumb;backButtonEnabled:false;background.visible:false}\nfunction __pushPage(page){return pageStack.push(page)}\npageStack.defaultColumnWidth:width\npageStack.separatorVisible:false\nactiveFocusOnTab:true}"), QUrl());
     d->rootPlaceHolder = qobject_cast<QQuickItem *>(component->create());
     d->quickWidget->setContent(QUrl(), component, d->rootPlaceHolder);
 
-    QMetaObject::invokeMethod(d->rootPlaceHolder, "pushPage", Qt::DirectConnection, Q_ARG(QVariant, QVariant::fromValue(d->configModule->mainUi())));
+    QQmlEngine::setContextForObject(d->configModule, QQmlEngine::contextForObject(d->rootPlaceHolder));
 
-    connect(d->configModule, &KQuickAddons::ConfigModule::newPage, this, [this](QQuickItem *page) {
-        QMetaObject::invokeMethod(d->rootPlaceHolder, "pushPage", Qt::DirectConnection, Q_ARG(QVariant, QVariant::fromValue(page)));
-    });
-    connect(d->configModule, &KQuickAddons::ConfigModule::pageRemoved, this, [this]() {
-        QMetaObject::invokeMethod(d->rootPlaceHolder, "popPage", Qt::DirectConnection);
-    });
+    QMetaObject::invokeMethod(d->rootPlaceHolder, "__pushPage", Qt::DirectConnection, Q_ARG(QVariant, QVariant::fromValue(d->configModule->mainUi())));
 
     layout->addWidget(d->quickWidget);
-    KCModule::showEvent(event);
+}
+
+KCModuleQml::~KCModuleQml()
+{
+    delete d;
 }
 
 bool KCModuleQml::eventFilter(QObject* watched, QEvent* event)

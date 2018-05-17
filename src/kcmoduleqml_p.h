@@ -45,7 +45,6 @@ public Q_SLOTS:
     void defaults() Q_DECL_OVERRIDE;
 
 protected:
-    void showEvent(QShowEvent *event) Q_DECL_OVERRIDE;
     void focusInEvent(QFocusEvent *event) Q_DECL_OVERRIDE;
     QSize sizeHint() const Q_DECL_OVERRIDE;
     bool eventFilter(QObject* watched, QEvent* event) Q_DECL_OVERRIDE;
