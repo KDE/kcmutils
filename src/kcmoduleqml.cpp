@@ -161,7 +161,7 @@ bool KCModuleQml::eventFilter(QObject* watched, QEvent* event)
             //go to the other widgets around systemsettigns
             if (nextItem == d->rootPlaceHolder) {
                 QWidget *w = d->quickWidget->nextInFocusChain();
-                while (!(w->focusPolicy() & Qt::TabFocus)) {
+                while (!w->isEnabled() || !(w->focusPolicy() & Qt::TabFocus)) {
                     w = w->nextInFocusChain();
                 }
                 w->setFocus(Qt::TabFocusReason);
@@ -175,7 +175,7 @@ bool KCModuleQml::eventFilter(QObject* watched, QEvent* event)
 
             if (nextItem == d->rootPlaceHolder) {
                 QWidget *w = d->quickWidget->previousInFocusChain();
-                while (!(w->focusPolicy() & Qt::TabFocus)) {
+                while (!w->isEnabled() || !(w->focusPolicy() & Qt::TabFocus)) {
                     w = w->previousInFocusChain();
                 }
                 w->setFocus(Qt::BacktabFocusReason);
