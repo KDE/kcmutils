@@ -143,7 +143,7 @@ KCModuleQml::KCModuleQml(KQuickAddons::ConfigModule *configModule, QWidget* pare
     //around, so when we need to go outside and inside
     //pushPage/popPage are needed as push of StackView can't be directly invoked from c++
     //because its parameters are QQmlV4Function which is not public
-    component->setData(QByteArrayLiteral("import QtQuick 2.3\nimport org.kde.kirigami 2.4 as Kirigami\nKirigami.ApplicationItem{header:Kirigami.ApplicationHeader{headerStyle:ApplicationHeaderStyle.Breadcrumb;backButtonEnabled:false;background.visible:false}\nfunction __pushPage(page){return pageStack.push(page)}\npageStack.defaultColumnWidth:width\npageStack.separatorVisible:false\nactiveFocusOnTab:true}"), QUrl());
+    component->setData(QByteArrayLiteral("import QtQuick 2.3\nimport org.kde.kirigami 2.4 as Kirigami\nKirigami.ApplicationItem{contentItem.anchors.topMargin: Kirigami.Units.gridUnit*2.2;header:Kirigami.ApplicationHeader{headerStyle:ApplicationHeaderStyle.Breadcrumb;backButtonEnabled:false;background.visible:false;maximumHeight: preferredHeight;preferredHeight:Math.round(Kirigami.Units.gridUnit*1.6);}\nfunction __pushPage(page){return pageStack.push(page)}\npageStack.defaultColumnWidth:width\npageStack.separatorVisible:false\nactiveFocusOnTab:true}"), QUrl());
     d->rootPlaceHolder = qobject_cast<QQuickItem *>(component->create());
     d->quickWidget->setContent(QUrl(), component, d->rootPlaceHolder);
 
