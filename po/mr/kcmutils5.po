@@ -1,0 +1,487 @@
+# translation of kdelibs4.po to marathi
+# Copyright (C) YEAR This_file_is_part_of_KDE
+# This file is distributed under the same license as the PACKAGE package.
+#
+# Sandeep Shedmake <sandeep.shedmake@gmail.com>, 2008, 2009.
+# Chetan Khona <chetan@kompkin.com>, 2012, 2013.
+msgid ""
+msgstr ""
+"Project-Id-Version: kdelibs4\n"
+"Report-Msgid-Bugs-To: http://bugs.kde.org\n"
+"POT-Creation-Date: 2018-04-05 03:30+0200\n"
+"PO-Revision-Date: 2013-03-29 16:14+0530\n"
+"Last-Translator: Chetan Khona <chetan@kompkin.com>\n"
+"Language-Team: Marathi <kde-i18n-doc@kde.org>\n"
+"Language: mr\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n!=1);\n"
+"X-Generator: Lokalize 1.5\n"
+
+#, kde-format
+msgctxt "NAME OF TRANSLATORS"
+msgid "Your names"
+msgstr ""
+"संदिप शेडमाके, \n"
+"चेतन खोना"
+
+#, kde-format
+msgctxt "EMAIL OF TRANSLATORS"
+msgid "Your emails"
+msgstr ""
+"sandeep.shedmake@gmail.com, \n"
+"chetan@kompkin.com"
+
+#: kcmoduleloader.cpp:79
+#, kde-format
+msgid "The module %1 could not be found."
+msgstr "विभाग %1 आढळला नाही."
+
+#: kcmoduleloader.cpp:80
+#, kde-format
+msgid ""
+"<qt><p>The diagnosis is:<br />The desktop file %1 could not be found.</p></"
+"qt>"
+msgstr "<qt><p>शोध असा आहे की:<br /> डेस्कटॉप फाईल %1 आढळली नाही.</p></qt>"
+
+#: kcmoduleloader.cpp:82
+#, kde-format
+msgid "The module %1 is disabled."
+msgstr "विभाग %1 अकार्यान्वित आहे."
+
+#: kcmoduleloader.cpp:83
+#, kde-format
+msgid ""
+"<qt><p>Either the hardware/software the module configures is not available "
+"or the module has been disabled by the administrator.</p></qt>"
+msgstr ""
+"<qt><p>एकतर हार्डवेअर / सॉफ़्टवेअर विभाग संयोजना उपलब्ध नाही किंवा विभाग प्रशासक द्वारे "
+"अकार्यक्षम केले असावे.</p></qt>"
+
+#: kcmoduleloader.cpp:139
+#, kde-format
+msgid "The module %1 is not a valid configuration module."
+msgstr "विभाग %1 वैध संयोजना विभाग नाही."
+
+#: kcmoduleloader.cpp:140
+#, kde-format
+msgid ""
+"<qt>The diagnosis is:<br />The desktop file %1 does not specify a library.</"
+"qt>"
+msgstr "<qt>शोध असा आहे की:<br />डेस्कटॉप फाईल %1 लायब्ररी व्याख्यीत करत नाही.</qt>"
+
+#: kcmoduleloader.cpp:155
+#, kde-format
+msgid ""
+"<qt><p>Possible reasons:<ul><li>An error occurred during your last KDE "
+"upgrade leaving an orphaned control module</li><li>You have old third party "
+"modules lying around.</li></ul></p><p>Check these points carefully and try "
+"to remove the module mentioned in the error message. If this fails, consider "
+"contacting your distributor or packager.</p></qt>"
+msgstr ""
+
+#: kcmoduleproxy.cpp:127
+#, kde-format
+msgctxt "Argument is application name"
+msgid "This configuration section is already opened in %1"
+msgstr "हे संयोजना विभाग आधीपासूनच %1 मध्ये उघडले गेले आहे"
+
+#: kcmultidialog.cpp:56
+#, kde-format
+msgid ""
+"The settings of the current module have changed.\n"
+"Do you want to apply the changes or discard them?"
+msgstr ""
+"सध्याच्या विभागाच्या सेटिंग्समध्ये बदल केले गेले आहेत.\n"
+"तुम्हाला बदल साठवायचे आहेत का वगळायचे आहेत?"
+
+#: kcmultidialog.cpp:58
+#, kde-format
+msgid "Apply Settings"
+msgstr "संयोजना साठवा"
+
+#: kcmultidialog.cpp:205 kpluginselector.cpp:715
+#, kde-format
+msgid "Configure"
+msgstr "संयोजीत करा"
+
+#. i18n: ectx: label, entry, group (DesktopIcons)
+#: kdeglobals.kcfg:9
+#, kde-format
+msgid "Distance between desktop icons"
+msgstr "डेस्कटॉप चिन्ह मधील अंतर"
+
+#. i18n: ectx: whatsthis, entry, group (DesktopIcons)
+#: kdeglobals.kcfg:10
+#, kde-format
+msgid "The distance between icons specified in pixels."
+msgstr "डेस्कटॉप चिन्ह अंतर्गत पिक्सेल मध्ये दर्शविलेले अंतर."
+
+#. i18n: ectx: label, entry, group (General)
+#: kdeglobals.kcfg:23
+#, kde-format
+msgid "Widget style to use"
+msgstr "वापरण्याची विजेट शैली"
+
+#. i18n: ectx: whatsthis, entry, group (General)
+#: kdeglobals.kcfg:24
+#, kde-format
+msgid ""
+"The name of the widget style, for example \"keramik\" or \"plastik\". "
+"Without quotes."
+msgstr ""
+"विजेट शैलीचे नाव, उदाहरणार्थ \"keramik\" किंवा \"plastik\".  विना उद्धगार चिन्ह."
+
+#. i18n: ectx: label, entry, group (General)
+#: kdeglobals.kcfg:30
+#, kde-format
+msgid "Use the PC speaker"
+msgstr "PC स्पीकर वापरा"
+
+#. i18n: ectx: whatsthis, entry, group (General)
+#: kdeglobals.kcfg:31
+#, kde-format
+msgid ""
+"Whether the ordinary PC speaker should be used instead of KDE's own "
+"notifications system."
+msgstr "केडीई च्या स्वत:च्या सूचना प्रणालीऐवजी सामान्य PC चे स्पीकर वापराचे का?"
+
+#. i18n: ectx: label, entry, group (General)
+#: kdeglobals.kcfg:35
+#, kde-format
+msgid "What terminal application to use"
+msgstr "वापरणी करिता कुठला टर्मिनल अनुप्रयोग वापरायचा"
+
+#. i18n: ectx: whatsthis, entry, group (General)
+#: kdeglobals.kcfg:37
+#, kde-format
+msgid ""
+"Whenever a terminal application is launched this terminal emulator program "
+"will be used.\n"
+msgstr "जेव्हा टर्मिनल अनुप्रयोग चालू होते तेव्हा हे टर्मिनल एमुलेटर कार्यक्रम वापरले जाईल.\n"
+
+#. i18n: ectx: label, entry, group (General)
+#: kdeglobals.kcfg:41
+#, kde-format
+msgid "Fixed width font"
+msgstr "ठराविक रुंदीचे फॉन्ट"
+
+#. i18n: ectx: whatsthis, entry, group (General)
+#: kdeglobals.kcfg:43
+#, kde-format
+msgid ""
+"This font is used when a fixed font is needed. A fixed font has a constant "
+"width.\n"
+msgstr ""
+"फिक्स फॉन्टची आवश्यकता असल्यास हा फॉन्ट वापरला जाईल. फिक्स फॉन्ट मध्ये स्थिर रूंदी आढळली "
+"जाते.\n"
+
+#. i18n: ectx: label, entry, group (General)
+#: kdeglobals.kcfg:46
+#, kde-format
+msgid "System wide font"
+msgstr "प्रणाली वरील फॉन्ट"
+
+#. i18n: ectx: label, entry, group (General)
+#: kdeglobals.kcfg:49
+#, kde-format
+msgid "Font for menus"
+msgstr "मेन्यू करिता फॉन्ट"
+
+#. i18n: ectx: whatsthis, entry, group (General)
+#: kdeglobals.kcfg:50
+#, kde-format
+msgid "What font to use for menus in applications."
+msgstr "अनुप्रयोग अंतर्गत मेन्यू करिता कुठला फॉन्ट वापरायचा."
+
+#. i18n: ectx: label, entry, group (General)
+#: kdeglobals.kcfg:53
+#, kde-format
+msgid "Color for links"
+msgstr "लिंक करिता रंग"
+
+#. i18n: ectx: whatsthis, entry, group (General)
+#: kdeglobals.kcfg:54
+#, kde-format
+msgid "What color links should be that have not yet been clicked on"
+msgstr "ज्या लिंकवर अजून क्लिक केलेले नाही त्याचा कोणता रंग असावा"
+
+#. i18n: ectx: label, entry, group (General)
+#: kdeglobals.kcfg:57
+#, kde-format
+msgid "Color for visited links"
+msgstr "भेट दिलेल्या लिंक करिता रंग"
+
+#. i18n: ectx: label, entry, group (General)
+#: kdeglobals.kcfg:60
+#, kde-format
+msgid "Font for the taskbar"
+msgstr "कार्यपट्टी करिता फॉन्ट"
+
+#. i18n: ectx: whatsthis, entry, group (General)
+#: kdeglobals.kcfg:61
+#, kde-format
+msgid ""
+"What font to use for the panel at the bottom of the screen, where the "
+"currently running applications are."
+msgstr ""
+"स्क्रीन खालील फलक वरील जेथे सद्या अनुप्रयोग कार्यरत आहे त्यांकरिता कुठला फॉन्ट वापरला "
+"जावा."
+
+#. i18n: ectx: label, entry, group (General)
+#: kdeglobals.kcfg:64
+#, kde-format
+msgid "Fonts for toolbars"
+msgstr "साधनपट्टी करिता फॉन्ट"
+
+#. i18n: ectx: label, entry (Desktop Screenshot), group (Global Shortcuts)
+#: kdeglobals.kcfg:73
+#, kde-format
+msgid "Shortcut for taking screenshot"
+msgstr "स्क्रीनशॉट करिता शॉर्टकट"
+
+#. i18n: ectx: label, entry (Enable/Disable Clipboard Actions), group (Global Shortcuts)
+#: kdeglobals.kcfg:78
+#, kde-format
+msgid "Shortcut for toggling Clipboard Actions on and off"
+msgstr "क्लीपबोर्ड क्रीया चालू व बंद करण्याकरिता शॉर्टकट"
+
+#. i18n: ectx: label, entry (Halt without Confirmation), group (Global Shortcuts)
+#: kdeglobals.kcfg:83
+#, kde-format
+msgid "Shortcut for shutting down the computer without confirmation"
+msgstr "अनिश्चितपणे संगणक बंद करण्यासाठी शॉर्टकट"
+
+#. i18n: ectx: label, entry (Sort directories first), group (KFileDialog Settings)
+#: kdeglobals.kcfg:380
+#, kde-format
+msgid "Show directories first"
+msgstr "प्रथम संचयीका दर्शवा"
+
+#. i18n: ectx: whatsthis, entry (Sort directories first), group (KFileDialog Settings)
+#: kdeglobals.kcfg:381
+#, kde-format
+msgid "Whether directories should be placed at the top when displaying files"
+msgstr "फाईल दर्शवितेवेळी संचयीका सर्वात वर स्थित व्हायला पाहिजे का"
+
+#. i18n: ectx: label, entry (Recent URLs), group (KFileDialog Settings)
+#: kdeglobals.kcfg:389
+#, kde-format
+msgid "The URLs recently visited"
+msgstr "नुकतेच भेट दिलेले URL"
+
+#. i18n: ectx: whatsthis, entry (Recent URLs), group (KFileDialog Settings)
+#: kdeglobals.kcfg:390
+#, kde-format
+msgid "Used for auto-completion in file dialogs, for example"
+msgstr "फाईल संवाद मध्ये स्व-पूर्णतता करिता वापरले जाते, उदाहरणार्थ"
+
+#. i18n: ectx: label, entry (Show Preview), group (KFileDialog Settings)
+#: kdeglobals.kcfg:394
+#, kde-format
+msgid "Show file preview in file dialog"
+msgstr "फाईल संवाद मध्ये फाईल पूर्वावलोकन दर्शवा"
+
+#. i18n: ectx: label, entry (Show hidden files), group (KFileDialog Settings)
+#: kdeglobals.kcfg:399
+#, kde-format
+msgid "Show hidden files"
+msgstr "लपविलेल्या फाईल दर्शवा"
+
+#. i18n: ectx: whatsthis, entry (Show hidden files), group (KFileDialog Settings)
+#: kdeglobals.kcfg:400
+#, kde-format
+msgid ""
+"Whether files starting with a dot (convention for hidden files) should be "
+"shown"
+msgstr "डॉट पासून सुरु होणारे फाईल (लपविलेले फाईल साठी पध्दत) दर्शविले पाहिजे का "
+
+#. i18n: ectx: label, entry (Show Speedbar), group (KFileDialog Settings)
+#: kdeglobals.kcfg:405
+#, kde-format
+msgid "Show speedbar"
+msgstr "गतिकपट्टी दर्शवा"
+
+#. i18n: ectx: whatsthis, entry (Show Speedbar), group (KFileDialog Settings)
+#: kdeglobals.kcfg:406
+#, kde-format
+msgid ""
+"Whether the shortcut icons to the left in the file dialog should be shown"
+msgstr "फाईल संवाद मधील शॉर्टकट प्रतीक डाव्या बाजूस दर्शवायला हवे का"
+
+#. i18n: ectx: label, entry, group (Locale)
+#: kdeglobals.kcfg:425
+#, kde-format
+msgid "What country"
+msgstr "कुठला देश"
+
+#. i18n: ectx: whatsthis, entry, group (Locale)
+#: kdeglobals.kcfg:426
+#, kde-format
+msgid ""
+"Used to determine how to display numbers, currency and time/date, for example"
+msgstr "याचा वापर संख्या कोणत्या पद्धतीने दर्शवायच्या हे ठरविण्यासाठी होतो"
+
+#. i18n: ectx: label, entry, group (Locale)
+#: kdeglobals.kcfg:430
+#, kde-format
+msgid "What language to use to display text"
+msgstr "पाठ्य दर्शविण्याकरिता कुठली भाषा वापरायची"
+
+#. i18n: ectx: label, entry, group (Locale)
+#: kdeglobals.kcfg:433
+#, kde-format
+msgid "Character used for indicating positive numbers"
+msgstr "सकारार्थी संख्यां करिता वापरण्याचे अक्षर"
+
+#. i18n: ectx: whatsthis, entry, group (Locale)
+#: kdeglobals.kcfg:434
+#, kde-format
+msgid "Most countries have no character for this"
+msgstr "बरेच देशांकडे हे दर्शविण्याकरिता अक्षरच नसते"
+
+#. i18n: ectx: label, entry, group (Paths)
+#: kdeglobals.kcfg:439
+#, kde-format
+msgid "Path to the autostart directory"
+msgstr "स्वप्रारंभ संचयीका करिता मार्ग"
+
+#. i18n: ectx: whatsthis, entry, group (Paths)
+#: kdeglobals.kcfg:440
+#, kde-format
+msgid "Path to the directory containing executables to be run on session login"
+msgstr "सत्र प्रवेश करतेवेळी चालविण्याच्या एक्जीक्यूटेबलच्या संचयीकाचे मार्ग"
+
+#. i18n: ectx: label, entry, group (Socks)
+#: kdeglobals.kcfg:487
+#, kde-format
+msgid "Enable SOCKS support"
+msgstr "SOCKS समर्थन कार्यान्वित करा"
+
+#. i18n: ectx: whatsthis, entry, group (Socks)
+#: kdeglobals.kcfg:488
+#, kde-format
+msgid "Whether SOCKS version 4 and 5 should be enabled in KDE's sub systems"
+msgstr "केडीई च्या उप प्रणालीत SOCKS आवृत्ती 4 व 5 कार्यान्वित करायचे "
+
+#. i18n: ectx: label, entry, group (Socks)
+#: kdeglobals.kcfg:492
+#, kde-format
+msgid "Path to custom SOCKS library"
+msgstr "ऐच्छिक SOCKS लायब्ररी करिता मार्ग"
+
+#. i18n: ectx: label, entry, group (Toolbar style)
+#: kdeglobals.kcfg:498
+#, kde-format
+msgid "Highlight toolbar buttons on mouse over"
+msgstr "माऊस फिरविल्यावर साधनपट्टी बटन ठळक करा"
+
+#. i18n: ectx: label, entry, group (Toolbar style)
+#: kdeglobals.kcfg:502
+#, kde-format
+msgid "Show text on toolbar icons "
+msgstr "साधनपट्टी चिन्हावर पाठ्य दर्शवा"
+
+#. i18n: ectx: whatsthis, entry, group (Toolbar style)
+#: kdeglobals.kcfg:503
+#, kde-format
+msgid "Whether text should be shown in addition to icons on toolbar icons"
+msgstr "साधनपट्टीवरील चिन्हाच्या व्यतीरिक्त पाठ्य दर्शविले पाहिजे का"
+
+#. i18n: ectx: label, entry (EchoMode), group (Passwords)
+#: kdeglobals.kcfg:524
+#, kde-format
+msgid "Password echo type"
+msgstr "गुप्तशब्द पडसाद प्रकार"
+
+#. i18n: ectx: label, entry (Dialog Size), group (KKeyDialog Settings)
+#: kdeglobals.kcfg:534
+#, kde-format
+msgid "The size of the dialog"
+msgstr "संवादपटाचे आकार"
+
+#: kpluginselector.cpp:140
+#, kde-format
+msgid ""
+"Automatic changes have been performed due to plugin dependencies. Click here "
+"for further information"
+msgstr "प्लगिन वरील अवलंबनामुळे स्वयंचलित बदल केलेले आहेत. पुढील माहितीसाठी येथे क्लिक करा."
+
+#: kpluginselector.cpp:208
+#, kde-format
+msgid ""
+"Automatic changes have been performed in order to satisfy plugin "
+"dependencies:\n"
+msgstr "प्लगिन वरील अवलंबन सिध्ध करण्याकरिता स्वयंचलित बदल केलेले आहेत:\n"
+
+#: kpluginselector.cpp:211
+#, kde-format
+msgid ""
+"\n"
+"    %1 plugin has been automatically checked because of the dependency of %2 "
+"plugin"
+msgstr ""
+"\n"
+"%1 हे प्लगिन  %2 या प्लगिन वर आधारीत असल्यामुळे त्याची निवड आपोआप केली आहे"
+
+#: kpluginselector.cpp:213
+#, kde-format
+msgid ""
+"\n"
+"    %1 plugin has been automatically unchecked because of its dependency on "
+"%2 plugin"
+msgstr ""
+"\n"
+"%1 हे प्लगिन %2 या प्लगिन वर आधारीत असल्यामुळे त्याची निवड आपोआप काढून टाकली आहे"
+
+#: kpluginselector.cpp:216
+#, kde-format
+msgid "Dependency Check"
+msgstr "अवलंबन तपासणी"
+
+#: kpluginselector.cpp:233
+#, kde-format
+msgid "%1 plugin automatically added due to plugin dependencies"
+msgid_plural "%1 plugins automatically added due to plugin dependencies"
+msgstr[0] "प्लगइन अवलंबनामुळे %1 प्लगइन आपोआप जोडले गेले"
+msgstr[1] "प्लगइन अवलंबनामुळे %1 प्लगइन आपोआप जोडले गेले"
+
+#: kpluginselector.cpp:237
+#, kde-format
+msgid ", "
+msgstr ", "
+
+#: kpluginselector.cpp:241
+#, kde-format
+msgid "%1 plugin automatically removed due to plugin dependencies"
+msgid_plural "%1 plugins automatically removed due to plugin dependencies"
+msgstr[0] "प्लगइन अवलंबनामुळे %1 प्लगइन आपोआप काढून टाकण्यात आले"
+msgstr[1] "प्लगइन अवलंबनामुळे %1 प्लगइन आपोआप काढून टाकण्यात आले"
+
+#: kpluginselector.cpp:261
+#, kde-format
+msgid "Search Plugins"
+msgstr "प्लगइन शोधा"
+
+#: kpluginselector.cpp:710
+#, fuzzy, kde-format
+#| msgid "&About"
+msgid "About"
+msgstr "विषयी (&A)"
+
+#: kpluginselector.cpp:813
+#, kde-format
+msgctxt "Used only for plugins"
+msgid "About %1"
+msgstr "%1 विषयी"
+
+#: ksettings/componentsdialog.cpp:55
+#, kde-format
+msgid "Select Components"
+msgstr "घटक निवडा"
+
+#: ksettings/dialog.cpp:230
+#, kde-format
+msgid "Enable component"
+msgstr "घटक कार्यान्वित करा"
