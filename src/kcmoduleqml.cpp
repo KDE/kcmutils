@@ -143,11 +143,28 @@ KCModuleQml::KCModuleQml(KQuickAddons::ConfigModule *configModule, QWidget* pare
     //around, so when we need to go outside and inside
     //pushPage/popPage are needed as push of StackView can't be directly invoked from c++
     //because its parameters are QQmlV4Function which is not public
-    component->setData(QByteArrayLiteral("import QtQuick 2.3\nimport org.kde.kirigami 2.4 as Kirigami\nKirigami.ApplicationItem{contentItem.anchors.topMargin: Kirigami.Units.gridUnit*2.2;header:Kirigami.ApplicationHeader{headerStyle:ApplicationHeaderStyle.Breadcrumb;backButtonEnabled:false;background.visible:false;maximumHeight: preferredHeight;preferredHeight:Math.round(Kirigami.Units.gridUnit*1.6);}\nfunction __pushPage(page){return pageStack.push(page)}\npageStack.defaultColumnWidth:width\npageStack.separatorVisible:false\nactiveFocusOnTab:true}"), QUrl());
+    component->setData(QByteArrayLiteral("import QtQuick 2.3\n"
+        "import org.kde.kirigami 2.4 as Kirigami\n"
+        "Kirigami.ApplicationItem{"
+            "function __pushPage(page){"
+                "return pageStack.push(page);"
+            "}\n"
+            "signal levelPushed(string title);"
+            "signal levelRemoved();"
+            "pageStack.onPagePushed:levelPushed(page.title);"
+            "pageStack.onPageRemoved:levelRemoved();"
+            "pageStack.defaultColumnWidth:width;"
+            "pageStack.separatorVisible:false;"
+            "pageStack.globalToolBar.style:Kirigami.ApplicationHeaderStyle.None;"
+            "activeFocusOnTab:true"
+        "}"), QUrl());
     d->rootPlaceHolder = qobject_cast<QQuickItem *>(component->create());
     d->quickWidget->setContent(QUrl(), component, d->rootPlaceHolder);
 
     QQmlEngine::setContextForObject(d->configModule, QQmlEngine::contextForObject(d->rootPlaceHolder));
+
+    connect(d->rootPlaceHolder, SIGNAL(levelPushed(QString)), this, SLOT(pushLevel(QString)));
+    connect(d->rootPlaceHolder, SIGNAL(levelRemoved()), this, SLOT(popLevel()));
 
     QMetaObject::invokeMethod(d->rootPlaceHolder, "__pushPage", Qt::DirectConnection, Q_ARG(QVariant, QVariant::fromValue(d->configModule->mainUi())));
 
