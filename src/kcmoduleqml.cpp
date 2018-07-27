@@ -39,8 +39,9 @@
 class KCModuleQmlPrivate
 {
 public:
-    KCModuleQmlPrivate(KQuickAddons::ConfigModule *cm)
-        : quickWindow(nullptr),
+    KCModuleQmlPrivate(KQuickAddons::ConfigModule *cm, KCModuleQml *q)
+        : q(q),
+          quickWindow(nullptr),
           configModule(cm)
     {
         //ensure the engine is present, then ref it
@@ -67,9 +68,16 @@ public:
         return s_engine.get();
     }
 
+    void syncLevel()
+    {
+        q->setCurrentLevel(pageRow->property("currentIndex").toInt());
+    }
+
+    KCModuleQml *q;
     QQuickWindow *quickWindow;
     QQuickWidget *quickWidget;
     QQuickItem *rootPlaceHolder;
+    QQuickItem *pageRow;
     KQuickAddons::ConfigModule *configModule;
 
     //used to delete the engine
@@ -81,7 +89,7 @@ std::shared_ptr<QQmlEngine> KCModuleQmlPrivate::s_engine = std::shared_ptr<QQmlE
 
 KCModuleQml::KCModuleQml(KQuickAddons::ConfigModule *configModule, QWidget* parent, const QVariantList& args)
     : KCModule(parent, args),
-      d(new KCModuleQmlPrivate(configModule))
+      d(new KCModuleQmlPrivate(configModule, this))
 {
 
     connect(configModule, &KQuickAddons::ConfigModule::quickHelpChanged,
@@ -120,6 +128,7 @@ KCModuleQml::KCModuleQml(KQuickAddons::ConfigModule *configModule, QWidget* pare
     connect(configModule, &KQuickAddons::ConfigModule::authActionNameChanged, [=] {
         setAuthAction(d->configModule->authActionName());
     });
+    setAboutData(d->configModule->aboutData());
     setFocusPolicy(Qt::StrongFocus);
 
 
@@ -163,10 +172,21 @@ KCModuleQml::KCModuleQml(KQuickAddons::ConfigModule *configModule, QWidget* pare
 
     QQmlEngine::setContextForObject(d->configModule, QQmlEngine::contextForObject(d->rootPlaceHolder));
 
-    connect(d->rootPlaceHolder, SIGNAL(levelPushed(QString)), this, SLOT(pushLevel(QString)));
-    connect(d->rootPlaceHolder, SIGNAL(levelRemoved()), this, SLOT(popLevel()));
+    d->pageRow = d->rootPlaceHolder->property("pageStack").value<QQuickItem *>();
+    if (d->pageRow) {
+        QMetaObject::invokeMethod(d->pageRow, "push", Qt::DirectConnection, Q_ARG(QVariant, QVariant::fromValue(d->configModule->mainUi())), Q_ARG(QVariant, QVariant()));
 
-    QMetaObject::invokeMethod(d->rootPlaceHolder, "__pushPage", Qt::DirectConnection, Q_ARG(QVariant, QVariant::fromValue(d->configModule->mainUi())));
+        //todo: use directly pageRow
+        connect(d->rootPlaceHolder, SIGNAL(levelPushed(QString)), this, SLOT(pushLevel(QString)));
+        connect(d->rootPlaceHolder, SIGNAL(levelRemoved()), this, SLOT(popLevel()));
+
+        connect(this, &KCModuleQml::currentLevelChanged, this,
+            [this](int level) {
+                d->pageRow->setProperty("currentIndex", level);
+            }
+        );
+        connect(d->pageRow, SIGNAL(currentIndexChanged()), this, SLOT(syncLevel()));
+    }
 
     layout->addWidget(d->quickWidget);
 }
