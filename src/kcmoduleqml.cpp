@@ -68,11 +68,6 @@ public:
         return s_engine.get();
     }
 
-    void syncLevel()
-    {
-        q->setCurrentLevel(pageRow->property("currentIndex").toInt());
-    }
-
     KCModuleQml *q;
     QQuickWindow *quickWindow;
     QQuickWidget *quickWidget;
@@ -155,16 +150,13 @@ KCModuleQml::KCModuleQml(KQuickAddons::ConfigModule *configModule, QWidget* pare
     component->setData(QByteArrayLiteral("import QtQuick 2.3\n"
         "import org.kde.kirigami 2.4 as Kirigami\n"
         "Kirigami.ApplicationItem{"
-            "function __pushPage(page){"
-                "return pageStack.push(page);"
-            "}\n"
-            "signal levelPushed(string title);"
-            "signal levelRemoved();"
-            "pageStack.onPagePushed:levelPushed(page.title);"
-            "pageStack.onPageRemoved:levelRemoved();"
+            // allow only one column for now
             "pageStack.defaultColumnWidth:width;"
             "pageStack.separatorVisible:false;"
-            "pageStack.globalToolBar.style:Kirigami.ApplicationHeaderStyle.None;"
+            "pageStack.globalToolBar.style:Kirigami.ApplicationHeaderStyle.Breadcrumb;"
+            "pageStack.globalToolBar.showNavigationButtons:false;"
+            "pageStack.globalToolBar.preferredHeight:Kirigami.Units.gridUnit*1.6;"
+            "pageStack.globalToolBar.separatorVisible:false;"
             "activeFocusOnTab:true"
         "}"), QUrl());
     d->rootPlaceHolder = qobject_cast<QQuickItem *>(component->create());
@@ -175,17 +167,6 @@ KCModuleQml::KCModuleQml(KQuickAddons::ConfigModule *configModule, QWidget* pare
     d->pageRow = d->rootPlaceHolder->property("pageStack").value<QQuickItem *>();
     if (d->pageRow) {
         QMetaObject::invokeMethod(d->pageRow, "push", Qt::DirectConnection, Q_ARG(QVariant, QVariant::fromValue(d->configModule->mainUi())), Q_ARG(QVariant, QVariant()));
-
-        //todo: use directly pageRow
-        connect(d->rootPlaceHolder, SIGNAL(levelPushed(QString)), this, SLOT(pushLevel(QString)));
-        connect(d->rootPlaceHolder, SIGNAL(levelRemoved()), this, SLOT(popLevel()));
-
-        connect(this, &KCModuleQml::currentLevelChanged, this,
-            [this](int level) {
-                d->pageRow->setProperty("currentIndex", level);
-            }
-        );
-        connect(d->pageRow, SIGNAL(currentIndexChanged()), this, SLOT(syncLevel()));
     }
 
     layout->addWidget(d->quickWidget);

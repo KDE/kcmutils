@@ -51,8 +51,6 @@ protected:
 
 private:
     KCModuleQmlPrivate *const d;
-
-    Q_PRIVATE_SLOT(d, void syncLevel())
 };
 
 #endif
