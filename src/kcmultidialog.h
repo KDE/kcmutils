@@ -23,6 +23,8 @@
 #ifndef KCMULTIDIALOG_H
 #define KCMULTIDIALOG_H
 
+#include <QScrollArea>
+
 #include <kcmoduleinfo.h>
 #include <kpagedialog.h>
 
@@ -178,6 +180,26 @@ private:
     Q_PRIVATE_SLOT(d_func(), void _k_slotCurrentPageChanged(KPageWidgetItem *, KPageWidgetItem *))
     Q_PRIVATE_SLOT(d_func(), void _k_clientChanged())
     Q_PRIVATE_SLOT(d_func(), void _k_updateHeader(bool use, const QString &message))
+};
+
+/**
+ * @brief Custom QScrollArea class that doesn't limit its size hint
+ *
+ * See original QScrollArea::sizeHint() function,
+ * where the size hint is bound by 36*24 font heights
+ *
+ * Workaround for https://bugreports.qt.io/browse/QTBUG-10459
+ */
+
+class UnboundScrollArea : public QScrollArea {
+    Q_OBJECT
+public:
+    QSize sizeHint() const override {
+        return widget() ? widget()->sizeHint() : QSize();
+    }
+
+    UnboundScrollArea(QWidget * w) : QScrollArea(w) {}
+    virtual ~UnboundScrollArea() = default;
 };
 
 #endif

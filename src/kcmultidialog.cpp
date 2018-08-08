@@ -425,7 +425,7 @@ KPageWidgetItem *KCMultiDialog::addModule(const KCModuleInfo &moduleInfo,
     }
 
     // Create the scroller
-    QScrollArea *moduleScroll = new QScrollArea(this);
+    auto *moduleScroll = new UnboundScrollArea(this);
     // Prepare the scroll area
     moduleScroll->setWidgetResizable(true);
     moduleScroll->setFrameStyle(QFrame::NoFrame);
