@@ -35,6 +35,7 @@
 #include <KLocalizedString>
 #include <KPackage/Package>
 #include <KPackage/PackageLoader>
+#include <KPageWidget>
 
 class KCModuleQmlPrivate
 {
@@ -153,7 +154,7 @@ KCModuleQml::KCModuleQml(KQuickAddons::ConfigModule *configModule, QWidget* pare
             // allow only one column for now
             "pageStack.defaultColumnWidth:width;"
             "pageStack.separatorVisible:false;"
-            "pageStack.globalToolBar.style:Kirigami.ApplicationHeaderStyle.Breadcrumb;"
+            "pageStack.globalToolBar.style: pageStack.wideScreen ? Kirigami.ApplicationHeaderStyle.Titles : Kirigami.ApplicationHeaderStyle.Breadcrumb;"
             "pageStack.globalToolBar.showNavigationButtons:false;"
             "pageStack.globalToolBar.preferredHeight:Kirigami.Units.gridUnit*1.6;"
             "pageStack.globalToolBar.separatorVisible:false;"
@@ -167,8 +168,23 @@ KCModuleQml::KCModuleQml(KQuickAddons::ConfigModule *configModule, QWidget* pare
     d->pageRow = d->rootPlaceHolder->property("pageStack").value<QQuickItem *>();
     if (d->pageRow) {
         QMetaObject::invokeMethod(d->pageRow, "push", Qt::DirectConnection, Q_ARG(QVariant, QVariant::fromValue(d->configModule->mainUi())), Q_ARG(QVariant, QVariant()));
-    }
 
+        //HACK: in order to work with old Systemsettings
+        //search if we are in a KPageWidget, search ofr its page, and if it has
+        //an header set, disable our own title
+        //FIXME: eventually remove this hack
+        QObject *candidate = this;
+        while (candidate) {
+            candidate = candidate->parent();
+            KPageWidget *page = qobject_cast<KPageWidget *>(candidate);
+            if (page && !page->currentPage()->header().isEmpty()) {
+                QObject *globalToolBar = d->pageRow->property("globalToolBar").value<QObject *>();
+                //5 is None
+                globalToolBar->setProperty("style", 5);
+            }
+        }
+    }
+    
     layout->addWidget(d->quickWidget);
 }
 
