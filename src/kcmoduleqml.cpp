@@ -31,6 +31,7 @@
 
 #include <kdeclarative/kdeclarative.h>
 #include <kquickaddons/configmodule.h>
+#include <kdeclarative/qmlobjectsharedengine.h>
 #include <KAboutData>
 #include <KLocalizedString>
 #include <KPackage/Package>
@@ -45,28 +46,10 @@ public:
           quickWindow(nullptr),
           configModule(cm)
     {
-        //ensure the engine is present, then ref it
-        engine();
-        engineRef = s_engine;
     }
 
     ~KCModuleQmlPrivate()
     {
-        //when the only remaining are out two refs, reset the pointers, causing deletion
-        //when the refcount is 2, we are sure that the only refs are s_engine and our copy
-        //of engineRef
-        if (engineRef.use_count() == 2) {
-            s_engine.reset();
-        }
-    }
-
-    static QQmlEngine *engine()
-    {
-        if (!s_engine) {
-            s_engine = std::make_shared<QQmlEngine>();
-            KDeclarative::KDeclarative::setupEngine(s_engine.get());
-        }
-        return s_engine.get();
     }
 
     KCModuleQml *q;
@@ -75,13 +58,8 @@ public:
     QQuickItem *rootPlaceHolder;
     QQuickItem *pageRow;
     KQuickAddons::ConfigModule *configModule;
-
-    //used to delete the engine
-    std::shared_ptr<QQmlEngine> engineRef;
-    static std::shared_ptr<QQmlEngine> s_engine;
+    KDeclarative::QmlObjectSharedEngine *qmlObject;
 };
-
-std::shared_ptr<QQmlEngine> KCModuleQmlPrivate::s_engine = std::shared_ptr<QQmlEngine>();
 
 KCModuleQml::KCModuleQml(KQuickAddons::ConfigModule *configModule, QWidget* parent, const QVariantList& args)
     : KCModule(parent, args),
@@ -133,7 +111,8 @@ KCModuleQml::KCModuleQml(KQuickAddons::ConfigModule *configModule, QWidget* pare
     QVBoxLayout* layout = new QVBoxLayout(this);
     layout->setContentsMargins(0, 0, 0, 0);
 
-    d->quickWidget = new QQuickWidget(d->engine(), this);
+    d->qmlObject = new KDeclarative::QmlObjectSharedEngine(this);
+    d->quickWidget = new QQuickWidget(d->qmlObject->engine(), this);
     d->quickWidget->setResizeMode(QQuickWidget::SizeRootObjectToView);
     d->quickWidget->setFocusPolicy(Qt::StrongFocus);
     d->quickWidget->installEventFilter(this);
@@ -143,7 +122,7 @@ KCModuleQml::KCModuleQml(KQuickAddons::ConfigModule *configModule, QWidget* pare
         d->quickWindow->setColor(QGuiApplication::palette().window().color());
     });
 
-    QQmlComponent *component = new QQmlComponent(d->quickWidget->engine(), this);
+    QQmlComponent *component = new QQmlComponent(d->qmlObject->engine(), this);
     //this has activeFocusOnTab to notice when the navigation wraps
     //around, so when we need to go outside and inside
     //pushPage/popPage are needed as push of StackView can't be directly invoked from c++
@@ -163,11 +142,28 @@ KCModuleQml::KCModuleQml(KQuickAddons::ConfigModule *configModule, QWidget* pare
     d->rootPlaceHolder = qobject_cast<QQuickItem *>(component->create());
     d->quickWidget->setContent(QUrl(), component, d->rootPlaceHolder);
 
-    QQmlEngine::setContextForObject(d->configModule, QQmlEngine::contextForObject(d->rootPlaceHolder));
-
     d->pageRow = d->rootPlaceHolder->property("pageStack").value<QQuickItem *>();
     if (d->pageRow) {
         QMetaObject::invokeMethod(d->pageRow, "push", Qt::DirectConnection, Q_ARG(QVariant, QVariant::fromValue(d->configModule->mainUi())), Q_ARG(QVariant, QVariant()));
+
+        connect(d->configModule, &KQuickAddons::ConfigModule::pagePushed, this, [this](QQuickItem *page) {
+                QMetaObject::invokeMethod(d->pageRow, "push", Qt::DirectConnection, Q_ARG(QVariant, QVariant::fromValue(page)), Q_ARG(QVariant, QVariant()));
+            }
+        );
+        connect(d->configModule, &KQuickAddons::ConfigModule::pageRemoved, this, [this]() {
+                QMetaObject::invokeMethod(d->pageRow, "pop", Qt::DirectConnection,  Q_ARG(QVariant, QVariant()));
+            }
+        );
+
+        auto syncColumnWidth = [this](){
+            d->pageRow->setProperty("defaultColumnWidth", d->configModule->columnWidth() > 0 ? d->configModule->columnWidth() : d->rootPlaceHolder->width());
+        };
+        syncColumnWidth();
+        
+        connect(d->configModule, &KQuickAddons::ConfigModule::columnWidthChanged,
+                this, syncColumnWidth);
+        connect(d->rootPlaceHolder, &QQuickItem::widthChanged,
+                this, syncColumnWidth);
 
         //HACK: in order to work with old Systemsettings
         //search if we are in a KPageWidget, search ofr its page, and if it has
