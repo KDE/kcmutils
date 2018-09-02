@@ -1,0 +1,524 @@
+# Translation of kcmutils5.po to Catalan (Valencian)
+# Copyright (C) 2014-2018 This_file_is_part_of_KDE
+# This file is distributed under the license LGPL version 2.1 or
+# version 3 or later versions approved by the membership of KDE e.V.
+#
+# Sebastià Pla i Sanz <sps@sastia.com>, 1998, 1999, 2000, 2001, 2002, 2003, 2004, 2005, 2006, 2007.
+# Antoni Bella Pérez <antonibella5@yahoo.com>, 2003, 2006, 2011, 2012, 2013, 2014.
+# Albert Astals Cid <aacid@kde.org>, 2004, 2005, 2007.
+# Josep Ma. Ferrer <txemaq@gmail.com>, 2007, 2008, 2009, 2010, 2011, 2012, 2013, 2014, 2015, 2016, 2017, 2018.
+# Robert Millan <rmh@aybabtu.com>, 2009.
+# Orestes Mas <orestes@tsc.upc.edu>, 2010.
+msgid ""
+msgstr ""
+"Project-Id-Version: kcmutils5\n"
+"Report-Msgid-Bugs-To: http://bugs.kde.org\n"
+"POT-Creation-Date: 2018-08-16 09:04+0200\n"
+"PO-Revision-Date: 2018-01-17 20:28+0100\n"
+"Last-Translator: Josep Ma. Ferrer <txemaq@gmail.com>\n"
+"Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
+"Language: ca@valencia\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Lokalize 2.0\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Accelerator-Marker: &\n"
+
+#, kde-format
+msgctxt "NAME OF TRANSLATORS"
+msgid "Your names"
+msgstr "Sebastià Pla,Antoni Bella,Albert Astals,Josep Ma. Ferrer"
+
+#, kde-format
+msgctxt "EMAIL OF TRANSLATORS"
+msgid "Your emails"
+msgstr "sps@sastia.com,antonibella5@yahoo.com,aacid@kde.org,txemaq@gmail.com"
+
+#: kcmoduleloader.cpp:79
+#, kde-format
+msgid "The module %1 could not be found."
+msgstr "El mòdul %1 no s'ha pogut trobar."
+
+#: kcmoduleloader.cpp:80
+#, kde-format
+msgid ""
+"<qt><p>The diagnosis is:<br />The desktop file %1 could not be found.</p></"
+"qt>"
+msgstr ""
+"<qt><p>El diagnòstic és:<br />No s'ha pogut trobar el fitxer «desktop» %1.</"
+"p></qt>"
+
+#: kcmoduleloader.cpp:82
+#, kde-format
+msgid "The module %1 is disabled."
+msgstr "El mòdul %1 s'ha desactivat."
+
+#: kcmoduleloader.cpp:83
+#, kde-format
+msgid ""
+"<qt><p>Either the hardware/software the module configures is not available "
+"or the module has been disabled by the administrator.</p></qt>"
+msgstr ""
+"<qt><p>Aquest mòdul configura un maquinari o un programari que ara no estan "
+"disponibles, o l'administrador ha desactivat el mòdul.</p></qt>"
+
+#: kcmoduleloader.cpp:139
+#, kde-format
+msgid "The module %1 is not a valid configuration module."
+msgstr "El mòdul %1 no és un mòdul de configuració vàlid."
+
+#: kcmoduleloader.cpp:140
+#, kde-format
+msgid ""
+"<qt>The diagnosis is:<br />The desktop file %1 does not specify a library.</"
+"qt>"
+msgstr ""
+"<qt>El diagnòstic és:<br />El fitxer «desktop» %1 no especifica cap "
+"biblioteca.</qt>"
+
+#: kcmoduleloader.cpp:155
+#, kde-format
+msgid ""
+"<qt><p>Possible reasons:<ul><li>An error occurred during your last KDE "
+"upgrade leaving an orphaned control module</li><li>You have old third party "
+"modules lying around.</li></ul></p><p>Check these points carefully and try "
+"to remove the module mentioned in the error message. If this fails, consider "
+"contacting your distributor or packager.</p></qt>"
+msgstr ""
+"<qt><p>Motius possibles:<ul> <li>Va haver-hi un error durant la vostra "
+"darrera actualització del KDE, deixant orfe un mòdul de control.</"
+"li><li>Teniu escampats antics mòduls de terceres parts.</li> </ul></"
+"p><p>Comproveu amb cura aquests punts i proveu d'eliminar el mòdul mencionat "
+"al missatge d'error. Si això falla, contacteu amb el vostre distribuïdor o "
+"empaquetador.</p></qt>"
+
+#: kcmoduleproxy.cpp:127
+#, kde-format
+msgctxt "Argument is application name"
+msgid "This configuration section is already opened in %1"
+msgstr "Aquesta secció de configuració ja està oberta a %1"
+
+#: kcmultidialog.cpp:56
+#, kde-format
+msgid ""
+"The settings of the current module have changed.\n"
+"Do you want to apply the changes or discard them?"
+msgstr ""
+"L'arranjament del mòdul actual ha canviat.\n"
+"Voleu aplicar els canvis o descartar-los?"
+
+#: kcmultidialog.cpp:58
+#, kde-format
+msgid "Apply Settings"
+msgstr "Aplica l'arranjament"
+
+#: kcmultidialog.cpp:205 kpluginselector.cpp:715
+#, kde-format
+msgid "Configure"
+msgstr "Configura"
+
+#. i18n: ectx: label, entry, group (DesktopIcons)
+#: kdeglobals.kcfg:9
+#, kde-format
+msgid "Distance between desktop icons"
+msgstr "Distància entre les icones de l'escriptori"
+
+#. i18n: ectx: whatsthis, entry, group (DesktopIcons)
+#: kdeglobals.kcfg:10
+#, kde-format
+msgid "The distance between icons specified in pixels."
+msgstr "La distància entre les icones indicada en píxels."
+
+#. i18n: ectx: label, entry, group (General)
+#: kdeglobals.kcfg:23
+#, kde-format
+msgid "Widget style to use"
+msgstr "Estil de l'estri a usar"
+
+#. i18n: ectx: whatsthis, entry, group (General)
+#: kdeglobals.kcfg:24
+#, kde-format
+msgid ""
+"The name of the widget style, for example \"keramik\" or \"plastik\". "
+"Without quotes."
+msgstr ""
+"El nom de l'estil de l'estri, per exemple «keramik» o «plastik». Sense "
+"cometes."
+
+#. i18n: ectx: label, entry, group (General)
+#: kdeglobals.kcfg:30
+#, kde-format
+msgid "Use the PC speaker"
+msgstr "Usa l'altaveu del PC"
+
+#. i18n: ectx: whatsthis, entry, group (General)
+#: kdeglobals.kcfg:31
+#, kde-format
+msgid ""
+"Whether the ordinary PC speaker should be used instead of KDE's own "
+"notifications system."
+msgstr ""
+"Si s'hauria d'usar l'altaveu normal del PC en lloc del sistema propi de "
+"notificacions del KDE."
+
+#. i18n: ectx: label, entry, group (General)
+#: kdeglobals.kcfg:35
+#, kde-format
+msgid "What terminal application to use"
+msgstr "Quina aplicació de terminal usar"
+
+#. i18n: ectx: whatsthis, entry, group (General)
+#: kdeglobals.kcfg:37
+#, kde-format
+msgid ""
+"Whenever a terminal application is launched this terminal emulator program "
+"will be used.\n"
+msgstr ""
+"Quan s'execute una aplicació de terminal, aquest serà el programa d'emulació "
+"de terminal que s'usarà.\n"
+
+#. i18n: ectx: label, entry, group (General)
+#: kdeglobals.kcfg:41
+#, kde-format
+msgid "Fixed width font"
+msgstr "Tipus de lletra d'amplària fixa"
+
+#. i18n: ectx: whatsthis, entry, group (General)
+#: kdeglobals.kcfg:43
+#, kde-format
+msgid ""
+"This font is used when a fixed font is needed. A fixed font has a constant "
+"width.\n"
+msgstr ""
+"Aquest tipus de lletra s'usa quan cal un tipus de lletra d'amplària fixa. Un "
+"tipus de lletra d'amplària fixa té una amplària constant.\n"
+
+#. i18n: ectx: label, entry, group (General)
+#: kdeglobals.kcfg:46
+#, kde-format
+msgid "System wide font"
+msgstr "Tipus de lletra global del sistema"
+
+#. i18n: ectx: label, entry, group (General)
+#: kdeglobals.kcfg:49
+#, kde-format
+msgid "Font for menus"
+msgstr "Tipus de lletra pels menús"
+
+#. i18n: ectx: whatsthis, entry, group (General)
+#: kdeglobals.kcfg:50
+#, kde-format
+msgid "What font to use for menus in applications."
+msgstr "El tipus de lletra que s'usarà en els menús de les aplicacions."
+
+#. i18n: ectx: label, entry, group (General)
+#: kdeglobals.kcfg:53
+#, kde-format
+msgid "Color for links"
+msgstr "Color pels enllaços"
+
+#. i18n: ectx: whatsthis, entry, group (General)
+#: kdeglobals.kcfg:54
+#, kde-format
+msgid "What color links should be that have not yet been clicked on"
+msgstr "El color que han de tindre els enllaços quan encara no s'hagen clicat"
+
+#. i18n: ectx: label, entry, group (General)
+#: kdeglobals.kcfg:57
+#, kde-format
+msgid "Color for visited links"
+msgstr "Color pels enllaços visitats"
+
+#. i18n: ectx: label, entry, group (General)
+#: kdeglobals.kcfg:60
+#, kde-format
+msgid "Font for the taskbar"
+msgstr "Tipus de lletra per a la barra de tasques"
+
+#. i18n: ectx: whatsthis, entry, group (General)
+#: kdeglobals.kcfg:61
+#, kde-format
+msgid ""
+"What font to use for the panel at the bottom of the screen, where the "
+"currently running applications are."
+msgstr ""
+"El tipus de lletra que s'usarà per al plafó de la part inferior de la "
+"pantalla, a on estan les aplicacions actualment en execució."
+
+#. i18n: ectx: label, entry, group (General)
+#: kdeglobals.kcfg:64
+#, kde-format
+msgid "Fonts for toolbars"
+msgstr "Tipus de lletra per a les barres d'eines"
+
+#. i18n: ectx: label, entry (Desktop Screenshot), group (Global Shortcuts)
+#: kdeglobals.kcfg:73
+#, kde-format
+msgid "Shortcut for taking screenshot"
+msgstr "Drecera per prendre una captura de pantalla"
+
+#. i18n: ectx: label, entry (Enable/Disable Clipboard Actions), group (Global Shortcuts)
+#: kdeglobals.kcfg:78
+#, kde-format
+msgid "Shortcut for toggling Clipboard Actions on and off"
+msgstr "Drecera per commutar les accions del porta-retalls"
+
+#. i18n: ectx: label, entry (Halt without Confirmation), group (Global Shortcuts)
+#: kdeglobals.kcfg:83
+#, kde-format
+msgid "Shortcut for shutting down the computer without confirmation"
+msgstr "Drecera per aturar l'ordinador sense confirmació"
+
+#. i18n: ectx: label, entry (Sort directories first), group (KFileDialog Settings)
+#: kdeglobals.kcfg:380
+#, kde-format
+msgid "Show directories first"
+msgstr "Mostra primer els directoris"
+
+#. i18n: ectx: whatsthis, entry (Sort directories first), group (KFileDialog Settings)
+#: kdeglobals.kcfg:381
+#, kde-format
+msgid "Whether directories should be placed at the top when displaying files"
+msgstr ""
+"Si els directoris s'han de situar a la part superior en mostrar els fitxers"
+
+#. i18n: ectx: label, entry (Recent URLs), group (KFileDialog Settings)
+#: kdeglobals.kcfg:389
+#, kde-format
+msgid "The URLs recently visited"
+msgstr "Els URL visitats recentment"
+
+#. i18n: ectx: whatsthis, entry (Recent URLs), group (KFileDialog Settings)
+#: kdeglobals.kcfg:390
+#, kde-format
+msgid "Used for auto-completion in file dialogs, for example"
+msgstr "Usada per a la compleció automàtica en els diàlegs de fitxers, p. ex."
+
+#. i18n: ectx: label, entry (Show Preview), group (KFileDialog Settings)
+#: kdeglobals.kcfg:394
+#, kde-format
+msgid "Show file preview in file dialog"
+msgstr "Mostra la vista prèvia de fitxer en el diàleg de fitxer"
+
+#. i18n: ectx: label, entry (Show hidden files), group (KFileDialog Settings)
+#: kdeglobals.kcfg:399
+#, kde-format
+msgid "Show hidden files"
+msgstr "Mostra els fitxers ocults"
+
+#. i18n: ectx: whatsthis, entry (Show hidden files), group (KFileDialog Settings)
+#: kdeglobals.kcfg:400
+#, kde-format
+msgid ""
+"Whether files starting with a dot (convention for hidden files) should be "
+"shown"
+msgstr ""
+"Determina si els fitxers que comencen per un punt (una convenció pels "
+"fitxers ocults) s'han de visualitzar"
+
+#. i18n: ectx: label, entry (Show Speedbar), group (KFileDialog Settings)
+#: kdeglobals.kcfg:405
+#, kde-format
+msgid "Show speedbar"
+msgstr "Mostra la barra de velocitat"
+
+#. i18n: ectx: whatsthis, entry (Show Speedbar), group (KFileDialog Settings)
+#: kdeglobals.kcfg:406
+#, kde-format
+msgid ""
+"Whether the shortcut icons to the left in the file dialog should be shown"
+msgstr ""
+"Si s'han de mostrar les icones de les dreceres de l'esquerra al diàleg de "
+"fitxer"
+
+#. i18n: ectx: label, entry, group (Locale)
+#: kdeglobals.kcfg:425
+#, kde-format
+msgid "What country"
+msgstr "Quin país"
+
+#. i18n: ectx: whatsthis, entry, group (Locale)
+#: kdeglobals.kcfg:426
+#, kde-format
+msgid ""
+"Used to determine how to display numbers, currency and time/date, for example"
+msgstr ""
+"S'usa per determinar com es visualitzen els nombres, la moneda i la data i "
+"l'hora, per exemple"
+
+#. i18n: ectx: label, entry, group (Locale)
+#: kdeglobals.kcfg:430
+#, kde-format
+msgid "What language to use to display text"
+msgstr "L'idioma en el qual es mostra el text"
+
+#. i18n: ectx: label, entry, group (Locale)
+#: kdeglobals.kcfg:433
+#, kde-format
+msgid "Character used for indicating positive numbers"
+msgstr "Caràcter usat per indicar nombres positius"
+
+#. i18n: ectx: whatsthis, entry, group (Locale)
+#: kdeglobals.kcfg:434
+#, kde-format
+msgid "Most countries have no character for this"
+msgstr "La majoria de països no tenen un caràcter per això"
+
+#. i18n: ectx: label, entry, group (Paths)
+#: kdeglobals.kcfg:439
+#, kde-format
+msgid "Path to the autostart directory"
+msgstr "Camí al directori d'inici automàtic"
+
+#. i18n: ectx: whatsthis, entry, group (Paths)
+#: kdeglobals.kcfg:440
+#, kde-format
+msgid "Path to the directory containing executables to be run on session login"
+msgstr ""
+"Camí al directori que conté els programes a executar en iniciar la sessió"
+
+#. i18n: ectx: label, entry, group (Socks)
+#: kdeglobals.kcfg:487
+#, kde-format
+msgid "Enable SOCKS support"
+msgstr "Activa el funcionament amb SOCKS"
+
+#. i18n: ectx: whatsthis, entry, group (Socks)
+#: kdeglobals.kcfg:488
+#, kde-format
+msgid "Whether SOCKS version 4 and 5 should be enabled in KDE's sub systems"
+msgstr "Si s'ha d'activar el SOCKS versió 4 i 5 en el subsistema del KDE"
+
+#. i18n: ectx: label, entry, group (Socks)
+#: kdeglobals.kcfg:492
+#, kde-format
+msgid "Path to custom SOCKS library"
+msgstr "Camí a la biblioteca SOCKS personalitzada"
+
+#. i18n: ectx: label, entry, group (Toolbar style)
+#: kdeglobals.kcfg:498
+#, kde-format
+msgid "Highlight toolbar buttons on mouse over"
+msgstr "Realça els botons de la barra d'eines en passar-hi el ratolí"
+
+#. i18n: ectx: label, entry, group (Toolbar style)
+#: kdeglobals.kcfg:502
+#, kde-format
+msgid "Show text on toolbar icons "
+msgstr "Mostra el text a les icones de la barra d'eines "
+
+#. i18n: ectx: whatsthis, entry, group (Toolbar style)
+#: kdeglobals.kcfg:503
+#, kde-format
+msgid "Whether text should be shown in addition to icons on toolbar icons"
+msgstr ""
+"Si s'hauria de mostrar el text addicionalment a les icones de la barra "
+"d'eines"
+
+#. i18n: ectx: label, entry (EchoMode), group (Passwords)
+#: kdeglobals.kcfg:524
+#, kde-format
+msgid "Password echo type"
+msgstr "Tipus d'eco de la contrasenya"
+
+#. i18n: ectx: label, entry (Dialog Size), group (KKeyDialog Settings)
+#: kdeglobals.kcfg:534
+#, kde-format
+msgid "The size of the dialog"
+msgstr "La mida del diàleg"
+
+#: kpluginselector.cpp:140
+#, kde-format
+msgid ""
+"Automatic changes have been performed due to plugin dependencies. Click here "
+"for further information"
+msgstr ""
+"Per dependències del connector, s'han executat canvis automàtics. Cliqueu "
+"ací per a més informació"
+
+#: kpluginselector.cpp:208
+#, kde-format
+msgid ""
+"Automatic changes have been performed in order to satisfy plugin "
+"dependencies:\n"
+msgstr ""
+"S'han executat canvis automàtics per tal de solucionar les dependències dels "
+"connectors:\n"
+
+#: kpluginselector.cpp:211
+#, kde-format
+msgid ""
+"\n"
+"    %1 plugin has been automatically checked because of the dependency of %2 "
+"plugin"
+msgstr ""
+"\n"
+"    el connector %1 s'ha marcat automàticament degut a la dependència del "
+"connector %2"
+
+#: kpluginselector.cpp:213
+#, kde-format
+msgid ""
+"\n"
+"    %1 plugin has been automatically unchecked because of its dependency on "
+"%2 plugin"
+msgstr ""
+"\n"
+"    el connector %1 s'ha desmarcat automàticament degut a la dependència del "
+"connector %2"
+
+#: kpluginselector.cpp:216
+#, kde-format
+msgid "Dependency Check"
+msgstr "Comprovació de les dependències"
+
+#: kpluginselector.cpp:233
+#, kde-format
+msgid "%1 plugin automatically added due to plugin dependencies"
+msgid_plural "%1 plugins automatically added due to plugin dependencies"
+msgstr[0] ""
+"S'ha afegit automàticament %1 connector per les dependències del connector"
+msgstr[1] ""
+"S'han afegit automàticament %1 connectors per les dependències del connector"
+
+#: kpluginselector.cpp:237
+#, kde-format
+msgid ", "
+msgstr ", "
+
+#: kpluginselector.cpp:241
+#, kde-format
+msgid "%1 plugin automatically removed due to plugin dependencies"
+msgid_plural "%1 plugins automatically removed due to plugin dependencies"
+msgstr[0] ""
+"S'ha eliminat automàticament %1 connector per les dependències del connector"
+msgstr[1] ""
+"S'han eliminat automàticament %1 connectors per les dependències del "
+"connector"
+
+#: kpluginselector.cpp:261
+#, kde-format
+msgid "Search Plugins"
+msgstr "Cerca de connectors"
+
+#: kpluginselector.cpp:710
+#, kde-format
+msgid "About"
+msgstr "Quant a"
+
+#: kpluginselector.cpp:813
+#, kde-format
+msgctxt "Used only for plugins"
+msgid "About %1"
+msgstr "Quant a %1"
+
+#: ksettings/componentsdialog.cpp:55
+#, kde-format
+msgid "Select Components"
+msgstr "Seleccioneu els components"
+
+#: ksettings/dialog.cpp:230
+#, kde-format
+msgid "Enable component"
+msgstr "Activa el component"
