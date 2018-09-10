@@ -27,8 +27,10 @@
 
 #include "kcmoduleproxy.h"
 
+#include <QApplication>
 #include <QDebug>
 #include <QDesktopServices>
+#include <QDesktopWidget>
 #include <QProcess>
 #include <QPushButton>
 #include <QScrollArea>
@@ -261,9 +263,18 @@ KCMultiDialog::~KCMultiDialog()
 
 void KCMultiDialog::showEvent(QShowEvent *ev)
 {
-    resize(QSize(800, 550));
-    adjustSize();
     KPageDialog::showEvent(ev);
+    adjustSize();
+    /**
+     * adjustSize() relies on sizeHint but is limited to 2/3 of the desktop size
+     * Workaround for https://bugreports.qt.io/browse/QTBUG-3459
+     *
+     * We adjust the size after passing the show event
+     * because otherwise window pos is set to (0,0)
+     */
+    const QSize maxSize = QApplication::desktop()->availableGeometry(pos()).size();
+    resize(qMin(sizeHint().width(), maxSize.width()),
+           qMin(sizeHint().height(), maxSize.height()));
 }
 
 void KCMultiDialog::slotDefaultClicked()
