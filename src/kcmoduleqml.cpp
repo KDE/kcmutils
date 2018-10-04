@@ -123,7 +123,9 @@ void KCModuleQml::showEvent(QShowEvent *event)
     QQmlComponent *component = new QQmlComponent(d->configModule->engine(), this);
     //this has activeFocusOnTab to notice when the navigation wraps
     //around, so when we need to go outside and inside
-    component->setData(QByteArrayLiteral("import QtQuick 2.3\nItem{activeFocusOnTab:true}"), QUrl());
+    //the managers of onEnter/ReturnPressed are a workaround of
+    //Qt bug https://bugreports.qt.io/browse/QTBUG-70934
+    component->setData(QByteArrayLiteral("import QtQuick 2.3\nItem{activeFocusOnTab:true;Keys.onReturnPressed:{event.accepted=true}Keys.onEnterPressed:{event.accepted=true}}"), QUrl());
     d->rootPlaceHolder = qobject_cast<QQuickItem *>(component->create());
     d->quickWidget->setContent(QUrl(), component, d->rootPlaceHolder);
 
