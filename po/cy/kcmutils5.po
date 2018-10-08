@@ -1,0 +1,512 @@
+# Cyfieithiad o kdelibs4.po i Cymraeg
+# translation of kdelibs4.po to Cymraeg
+# Translation of kdelibs4.po to Cymraeg
+# Translation of clearfuzzytest.po to Cymraeg
+# translation of clearfuzzytest.po to Cymraeg
+# translation of clearfuzzy.po to Cymraeg
+# KDE yn Gymraeg.
+# Copyright (C) 2003, 2004, 2005 Free Software Foundation, Inc.
+# www.kyfieithu.co.uk <kyfieithu@dotmon.com>, 2003.
+# Kgyfieithu <kyfieithu@dotmon.com>, 2003.
+# KGyfieithu <kyfieithu@dotmon.com>, 2003.
+# KD at KGyfieithu <kyfieithu@dotmon.com>, 2003, 2004.
+# Kyfieithu <kyfieithu@dotmon.com>, 2004.
+# Kevin Donnelly <kevin@dotmon.com>, 2005.
+#
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: kdelibs4\n"
+"Report-Msgid-Bugs-To: http://bugs.kde.org\n"
+"POT-Creation-Date: 2018-09-13 03:43+0200\n"
+"PO-Revision-Date: 2005-01-28 17:54+0000\n"
+"Last-Translator: Kevin Donnelly <kevin@dotmon.com>\n"
+"Language-Team: Cymraeg\n"
+"Language: cy\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: KBabel 1.9\n"
+"\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+
+#, kde-format
+msgctxt "NAME OF TRANSLATORS"
+msgid "Your names"
+msgstr "KD wrth KGyfieithu"
+
+#, kde-format
+msgctxt "EMAIL OF TRANSLATORS"
+msgid "Your emails"
+msgstr "kyfieithu@dotmon.com"
+
+#: kcmoduleloader.cpp:79
+#, kde-format
+msgid "The module %1 could not be found."
+msgstr "Methu canfod y modiwl %1."
+
+#: kcmoduleloader.cpp:80
+#, fuzzy, kde-format
+#| msgid ""
+#| "<qt><p>The diagnostics is:<br>The desktop file %1 could not be found.</qt>"
+msgid ""
+"<qt><p>The diagnosis is:<br />The desktop file %1 could not be found.</p></"
+"qt>"
+msgstr ""
+"<qt><p>Y diagnosteg yw:<br>Ni allwyd dod o hyd i'r ffeil benbwrdd %1.</qt>"
+
+#: kcmoduleloader.cpp:82
+#, fuzzy, kde-format
+msgid "The module %1 is disabled."
+msgstr "Methu llwytho'r modiwl %1."
+
+#: kcmoduleloader.cpp:83
+#, kde-format
+msgid ""
+"<qt><p>Either the hardware/software the module configures is not available "
+"or the module has been disabled by the administrator.</p></qt>"
+msgstr ""
+
+#: kcmoduleloader.cpp:139
+#, kde-format
+msgid "The module %1 is not a valid configuration module."
+msgstr "Nid modiwl ffurfweddu dilys yw modiwl %1."
+
+#: kcmoduleloader.cpp:140
+#, fuzzy, kde-format
+#| msgid ""
+#| "<qt><p>The diagnostics is:<br>The desktop file %1 does not specify a "
+#| "library.</qt>"
+msgid ""
+"<qt>The diagnosis is:<br />The desktop file %1 does not specify a library.</"
+"qt>"
+msgstr ""
+"<qt> <p>Y diagnosteg yw: <br>Nid yw'r ffeil benbwrdd %1 yn penodi "
+"rhaglengell.</qt>"
+
+#: kcmoduleloader.cpp:155
+#, fuzzy, kde-format
+#| msgid ""
+#| "<qt><p>The diagnostics is:<br>%1<p>Possible reasons:</p><ul><li>An error "
+#| "occurred during your last KDE upgrade leaving an orphaned control "
+#| "module<li>You have old third party modules lying around.</ul><p>Check "
+#| "these points carefully and try to remove the module mentioned in the "
+#| "error message. If this fails, consider contacting your distributor or "
+#| "packager.</p></qt>"
+msgid ""
+"<qt><p>Possible reasons:<ul><li>An error occurred during your last KDE "
+"upgrade leaving an orphaned control module</li><li>You have old third party "
+"modules lying around.</li></ul></p><p>Check these points carefully and try "
+"to remove the module mentioned in the error message. If this fails, consider "
+"contacting your distributor or packager.</p></qt>"
+msgstr ""
+"<qt><p>Mae'r diagnosteg yn dweud:<br>%1<p>Rhesymau posibl:</"
+"p><ul><li>Digwyddodd gwall yn ystod eich diweddariad KDE diwethaf, yn gadael "
+"modiwl rheolaeth amddifad. <li>Mae gennych hen fodiwlau trydydd blaid o "
+"gwmpas y lle.</ul><p>Gwiriwch y pwyntiau yma yn ofalus, a ceisiwch gwaredu'r "
+"modiwl sy'n cael ei enwi yn y neges gwall.  Os nid yw hyn yn gweithio, "
+"ystyriwch cysylltu â'ch dosbarthwr neu pecynnwr.</p></qt>"
+
+#: kcmoduleproxy.cpp:127
+#, kde-format
+msgctxt "Argument is application name"
+msgid "This configuration section is already opened in %1"
+msgstr ""
+
+#: kcmultidialog.cpp:58
+#, fuzzy, kde-format
+#| msgid ""
+#| "The document \"%1\" has been modified.\n"
+#| "Do you want to save your changes or discard them?"
+msgid ""
+"The settings of the current module have changed.\n"
+"Do you want to apply the changes or discard them?"
+msgstr ""
+"Mae'r ddogfen \"%1\" wedi ei newid.\n"
+"Ydych eisiau cadw eich newidiadau, neu eu taflu?"
+
+#: kcmultidialog.cpp:60
+#, fuzzy, kde-format
+#| msgid "Apply settings"
+msgid "Apply Settings"
+msgstr "Gweithredu gosodiadau"
+
+#: kcmultidialog.cpp:207 kpluginselector.cpp:715
+#, kde-format
+msgid "Configure"
+msgstr "Ffurfweddu"
+
+#. i18n: ectx: label, entry, group (DesktopIcons)
+#: kdeglobals.kcfg:9
+#, kde-format
+msgid "Distance between desktop icons"
+msgstr ""
+
+#. i18n: ectx: whatsthis, entry, group (DesktopIcons)
+#: kdeglobals.kcfg:10
+#, kde-format
+msgid "The distance between icons specified in pixels."
+msgstr ""
+
+#. i18n: ectx: label, entry, group (General)
+#: kdeglobals.kcfg:23
+#, fuzzy, kde-format
+msgid "Widget style to use"
+msgstr "Rhestr darparwyr i'w defnyddio"
+
+#. i18n: ectx: whatsthis, entry, group (General)
+#: kdeglobals.kcfg:24
+#, kde-format
+msgid ""
+"The name of the widget style, for example \"keramik\" or \"plastik\". "
+"Without quotes."
+msgstr ""
+
+#. i18n: ectx: label, entry, group (General)
+#: kdeglobals.kcfg:30
+#, kde-format
+msgid "Use the PC speaker"
+msgstr ""
+
+#. i18n: ectx: whatsthis, entry, group (General)
+#: kdeglobals.kcfg:31
+#, kde-format
+msgid ""
+"Whether the ordinary PC speaker should be used instead of KDE's own "
+"notifications system."
+msgstr ""
+
+#. i18n: ectx: label, entry, group (General)
+#: kdeglobals.kcfg:35
+#, fuzzy, kde-format
+msgid "What terminal application to use"
+msgstr "Peidio â nodi cymwysiadau i'w diweddaru"
+
+#. i18n: ectx: whatsthis, entry, group (General)
+#: kdeglobals.kcfg:37
+#, kde-format
+msgid ""
+"Whenever a terminal application is launched this terminal emulator program "
+"will be used.\n"
+msgstr ""
+
+#. i18n: ectx: label, entry, group (General)
+#: kdeglobals.kcfg:41
+#, fuzzy, kde-format
+msgid "Fixed width font"
+msgstr "Dewislen y Cysawd"
+
+#. i18n: ectx: whatsthis, entry, group (General)
+#: kdeglobals.kcfg:43
+#, kde-format
+msgid ""
+"This font is used when a fixed font is needed. A fixed font has a constant "
+"width.\n"
+msgstr ""
+
+#. i18n: ectx: label, entry, group (General)
+#: kdeglobals.kcfg:46
+#, fuzzy, kde-format
+msgid "System wide font"
+msgstr "Dewislen y Cysawd"
+
+#. i18n: ectx: label, entry, group (General)
+#: kdeglobals.kcfg:49
+#, fuzzy, kde-format
+msgid "Font for menus"
+msgstr "Ffurfio Bar Offer"
+
+#. i18n: ectx: whatsthis, entry, group (General)
+#: kdeglobals.kcfg:50
+#, fuzzy, kde-format
+msgid "What font to use for menus in applications."
+msgstr "Peidio â nodi cymwysiadau i'w diweddaru"
+
+#. i18n: ectx: label, entry, group (General)
+#: kdeglobals.kcfg:53
+#, kde-format
+msgid "Color for links"
+msgstr ""
+
+#. i18n: ectx: whatsthis, entry, group (General)
+#: kdeglobals.kcfg:54
+#, kde-format
+msgid "What color links should be that have not yet been clicked on"
+msgstr ""
+
+#. i18n: ectx: label, entry, group (General)
+#: kdeglobals.kcfg:57
+#, kde-format
+msgid "Color for visited links"
+msgstr ""
+
+#. i18n: ectx: label, entry, group (General)
+#: kdeglobals.kcfg:60
+#, fuzzy, kde-format
+msgid "Font for the taskbar"
+msgstr "Ffurfio Bar Offer"
+
+#. i18n: ectx: whatsthis, entry, group (General)
+#: kdeglobals.kcfg:61
+#, kde-format
+msgid ""
+"What font to use for the panel at the bottom of the screen, where the "
+"currently running applications are."
+msgstr ""
+
+#. i18n: ectx: label, entry, group (General)
+#: kdeglobals.kcfg:64
+#, fuzzy, kde-format
+msgid "Fonts for toolbars"
+msgstr "Ffurfio Bar Offer"
+
+#. i18n: ectx: label, entry (Desktop Screenshot), group (Global Shortcuts)
+#: kdeglobals.kcfg:73
+#, kde-format
+msgid "Shortcut for taking screenshot"
+msgstr ""
+
+#. i18n: ectx: label, entry (Enable/Disable Clipboard Actions), group (Global Shortcuts)
+#: kdeglobals.kcfg:78
+#, kde-format
+msgid "Shortcut for toggling Clipboard Actions on and off"
+msgstr ""
+
+#. i18n: ectx: label, entry (Halt without Confirmation), group (Global Shortcuts)
+#: kdeglobals.kcfg:83
+#, kde-format
+msgid "Shortcut for shutting down the computer without confirmation"
+msgstr ""
+
+#. i18n: ectx: label, entry (Sort directories first), group (KFileDialog Settings)
+#: kdeglobals.kcfg:380
+#, kde-format
+msgid "Show directories first"
+msgstr ""
+
+#. i18n: ectx: whatsthis, entry (Sort directories first), group (KFileDialog Settings)
+#: kdeglobals.kcfg:381
+#, kde-format
+msgid "Whether directories should be placed at the top when displaying files"
+msgstr ""
+
+#. i18n: ectx: label, entry (Recent URLs), group (KFileDialog Settings)
+#: kdeglobals.kcfg:389
+#, kde-format
+msgid "The URLs recently visited"
+msgstr ""
+
+#. i18n: ectx: whatsthis, entry (Recent URLs), group (KFileDialog Settings)
+#: kdeglobals.kcfg:390
+#, kde-format
+msgid "Used for auto-completion in file dialogs, for example"
+msgstr ""
+
+#. i18n: ectx: label, entry (Show Preview), group (KFileDialog Settings)
+#: kdeglobals.kcfg:394
+#, kde-format
+msgid "Show file preview in file dialog"
+msgstr ""
+
+#. i18n: ectx: label, entry (Show hidden files), group (KFileDialog Settings)
+#: kdeglobals.kcfg:399
+#, fuzzy, kde-format
+msgid "Show hidden files"
+msgstr "Dangos cymorth"
+
+#. i18n: ectx: whatsthis, entry (Show hidden files), group (KFileDialog Settings)
+#: kdeglobals.kcfg:400
+#, kde-format
+msgid ""
+"Whether files starting with a dot (convention for hidden files) should be "
+"shown"
+msgstr ""
+
+#. i18n: ectx: label, entry (Show Speedbar), group (KFileDialog Settings)
+#: kdeglobals.kcfg:405
+#, fuzzy, kde-format
+msgid "Show speedbar"
+msgstr "Dangos &Dewislen"
+
+#. i18n: ectx: whatsthis, entry (Show Speedbar), group (KFileDialog Settings)
+#: kdeglobals.kcfg:406
+#, kde-format
+msgid ""
+"Whether the shortcut icons to the left in the file dialog should be shown"
+msgstr ""
+
+#. i18n: ectx: label, entry, group (Locale)
+#: kdeglobals.kcfg:425
+#, fuzzy, kde-format
+msgid "What country"
+msgstr "Gwlad"
+
+#. i18n: ectx: whatsthis, entry, group (Locale)
+#: kdeglobals.kcfg:426
+#, kde-format
+msgid ""
+"Used to determine how to display numbers, currency and time/date, for example"
+msgstr ""
+
+#. i18n: ectx: label, entry, group (Locale)
+#: kdeglobals.kcfg:430
+#, kde-format
+msgid "What language to use to display text"
+msgstr ""
+
+#. i18n: ectx: label, entry, group (Locale)
+#: kdeglobals.kcfg:433
+#, kde-format
+msgid "Character used for indicating positive numbers"
+msgstr ""
+
+#. i18n: ectx: whatsthis, entry, group (Locale)
+#: kdeglobals.kcfg:434
+#, kde-format
+msgid "Most countries have no character for this"
+msgstr ""
+
+#. i18n: ectx: label, entry, group (Paths)
+#: kdeglobals.kcfg:439
+#, fuzzy, kde-format
+#| msgid "No such file."
+msgid "Path to the autostart directory"
+msgstr "Dim ffeil o'r fath."
+
+#. i18n: ectx: whatsthis, entry, group (Paths)
+#: kdeglobals.kcfg:440
+#, kde-format
+msgid "Path to the directory containing executables to be run on session login"
+msgstr ""
+
+#. i18n: ectx: label, entry, group (Socks)
+#: kdeglobals.kcfg:487
+#, kde-format
+msgid "Enable SOCKS support"
+msgstr ""
+
+#. i18n: ectx: whatsthis, entry, group (Socks)
+#: kdeglobals.kcfg:488
+#, kde-format
+msgid "Whether SOCKS version 4 and 5 should be enabled in KDE's sub systems"
+msgstr ""
+
+#. i18n: ectx: label, entry, group (Socks)
+#: kdeglobals.kcfg:492
+#, kde-format
+msgid "Path to custom SOCKS library"
+msgstr ""
+
+#. i18n: ectx: label, entry, group (Toolbar style)
+#: kdeglobals.kcfg:498
+#, kde-format
+msgid "Highlight toolbar buttons on mouse over"
+msgstr ""
+
+#. i18n: ectx: label, entry, group (Toolbar style)
+#: kdeglobals.kcfg:502
+#, kde-format
+msgid "Show text on toolbar icons "
+msgstr ""
+
+#. i18n: ectx: whatsthis, entry, group (Toolbar style)
+#: kdeglobals.kcfg:503
+#, kde-format
+msgid "Whether text should be shown in addition to icons on toolbar icons"
+msgstr ""
+
+#. i18n: ectx: label, entry (EchoMode), group (Passwords)
+#: kdeglobals.kcfg:524
+#, fuzzy, kde-format
+msgid "Password echo type"
+msgstr "Mae'r cyfrineiriau yn wag"
+
+#. i18n: ectx: label, entry (Dialog Size), group (KKeyDialog Settings)
+#: kdeglobals.kcfg:534
+#, fuzzy, kde-format
+msgid "The size of the dialog"
+msgstr "Awgrymiad y Dydd"
+
+#: kpluginselector.cpp:140
+#, kde-format
+msgid ""
+"Automatic changes have been performed due to plugin dependencies. Click here "
+"for further information"
+msgstr ""
+
+#: kpluginselector.cpp:208
+#, kde-format
+msgid ""
+"Automatic changes have been performed in order to satisfy plugin "
+"dependencies:\n"
+msgstr ""
+
+#: kpluginselector.cpp:211
+#, kde-format
+msgid ""
+"\n"
+"    %1 plugin has been automatically checked because of the dependency of %2 "
+"plugin"
+msgstr ""
+
+#: kpluginselector.cpp:213
+#, kde-format
+msgid ""
+"\n"
+"    %1 plugin has been automatically unchecked because of its dependency on "
+"%2 plugin"
+msgstr ""
+
+#: kpluginselector.cpp:216
+#, kde-format
+msgid "Dependency Check"
+msgstr ""
+
+#: kpluginselector.cpp:233
+#, kde-format
+msgid "%1 plugin automatically added due to plugin dependencies"
+msgid_plural "%1 plugins automatically added due to plugin dependencies"
+msgstr[0] ""
+msgstr[1] ""
+
+#: kpluginselector.cpp:237
+#, kde-format
+msgid ", "
+msgstr ""
+
+#: kpluginselector.cpp:241
+#, kde-format
+msgid "%1 plugin automatically removed due to plugin dependencies"
+msgid_plural "%1 plugins automatically removed due to plugin dependencies"
+msgstr[0] ""
+msgstr[1] ""
+
+#: kpluginselector.cpp:261
+#, fuzzy, kde-format
+#| msgid "Search Columns"
+msgid "Search Plugins"
+msgstr "Chwilio Colofnau"
+
+#: kpluginselector.cpp:710
+#, fuzzy, kde-format
+#| msgid "&About"
+msgid "About"
+msgstr "&Ynghylch"
+
+#: kpluginselector.cpp:813
+#, fuzzy, kde-format
+#| msgid "About %1"
+msgctxt "Used only for plugins"
+msgid "About %1"
+msgstr "Ynglyn â %1"
+
+#: ksettings/componentsdialog.cpp:55
+#, kde-format
+msgid "Select Components"
+msgstr "Dewis Cydrannau"
+
+#: ksettings/dialog.cpp:230
+#, fuzzy, kde-format
+#| msgid "Embeddable HTML component"
+msgid "Enable component"
+msgstr "Cydran HTML mewnadeiladedig"
