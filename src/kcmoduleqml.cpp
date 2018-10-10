@@ -31,29 +31,39 @@
 
 #include <kdeclarative/kdeclarative.h>
 #include <kquickaddons/configmodule.h>
+#include <kdeclarative/qmlobjectsharedengine.h>
 #include <KAboutData>
 #include <KLocalizedString>
 #include <KPackage/Package>
 #include <KPackage/PackageLoader>
+#include <KPageWidget>
 
 class KCModuleQmlPrivate
 {
 public:
-    KCModuleQmlPrivate(KQuickAddons::ConfigModule *cm)
-        : quickWindow(nullptr),
+    KCModuleQmlPrivate(KQuickAddons::ConfigModule *cm, KCModuleQml *q)
+        : q(q),
+          quickWindow(nullptr),
           configModule(cm)
     {
     }
 
+    ~KCModuleQmlPrivate()
+    {
+    }
+
+    KCModuleQml *q;
     QQuickWindow *quickWindow;
     QQuickWidget *quickWidget;
     QQuickItem *rootPlaceHolder;
+    QQuickItem *pageRow;
     KQuickAddons::ConfigModule *configModule;
+    KDeclarative::QmlObjectSharedEngine *qmlObject;
 };
 
 KCModuleQml::KCModuleQml(KQuickAddons::ConfigModule *configModule, QWidget* parent, const QVariantList& args)
     : KCModule(parent, args),
-      d(new KCModuleQmlPrivate(configModule))
+      d(new KCModuleQmlPrivate(configModule, this))
 {
 
     connect(configModule, &KQuickAddons::ConfigModule::quickHelpChanged,
@@ -92,25 +102,17 @@ KCModuleQml::KCModuleQml(KQuickAddons::ConfigModule *configModule, QWidget* pare
     connect(configModule, &KQuickAddons::ConfigModule::authActionNameChanged, [=] {
         setAuthAction(d->configModule->authActionName());
     });
+    setAboutData(d->configModule->aboutData());
     setFocusPolicy(Qt::StrongFocus);
-}
 
-KCModuleQml::~KCModuleQml()
-{
-    delete d;
-}
 
-void KCModuleQml::showEvent(QShowEvent *event)
-{
-    if (d->quickWindow || !d->configModule->mainUi()) {
-        KCModule::showEvent(event);
-        return;
-    }
 
+    //Build the UI
     QVBoxLayout* layout = new QVBoxLayout(this);
     layout->setContentsMargins(0, 0, 0, 0);
 
-    d->quickWidget = new QQuickWidget(d->configModule->engine(), this);
+    d->qmlObject = new KDeclarative::QmlObjectSharedEngine(this);
+    d->quickWidget = new QQuickWidget(d->qmlObject->engine(), this);
     d->quickWidget->setResizeMode(QQuickWidget::SizeRootObjectToView);
     d->quickWidget->setFocusPolicy(Qt::StrongFocus);
     d->quickWidget->installEventFilter(this);
@@ -120,24 +122,78 @@ void KCModuleQml::showEvent(QShowEvent *event)
         d->quickWindow->setColor(QGuiApplication::palette().window().color());
     });
 
-    QQmlComponent *component = new QQmlComponent(d->configModule->engine(), this);
+    QQmlComponent *component = new QQmlComponent(d->qmlObject->engine(), this);
     //this has activeFocusOnTab to notice when the navigation wraps
     //around, so when we need to go outside and inside
+    //pushPage/popPage are needed as push of StackView can't be directly invoked from c++
+    //because its parameters are QQmlV4Function which is not public
     //the managers of onEnter/ReturnPressed are a workaround of
     //Qt bug https://bugreports.qt.io/browse/QTBUG-70934
-    component->setData(QByteArrayLiteral("import QtQuick 2.3\nItem{activeFocusOnTab:true;Keys.onReturnPressed:{event.accepted=true}Keys.onEnterPressed:{event.accepted=true}}"), QUrl());
+    component->setData(QByteArrayLiteral("import QtQuick 2.3\n"
+        "import org.kde.kirigami 2.4 as Kirigami\n"
+        "Kirigami.ApplicationItem{"
+            //purely cosmetic space
+            "header: Item {height: Kirigami.Units.largeSpacing}"
+            // allow only one column by default
+            "pageStack.defaultColumnWidth:width;"
+            "pageStack.separatorVisible:false;"
+            "pageStack.globalToolBar.style: pageStack.wideScreen ? Kirigami.ApplicationHeaderStyle.Titles : Kirigami.ApplicationHeaderStyle.Breadcrumb;"
+            "pageStack.globalToolBar.showNavigationButtons:false;"
+            "pageStack.globalToolBar.preferredHeight:Kirigami.Units.gridUnit*1.6;"
+            "pageStack.globalToolBar.separatorVisible:false;"
+            "activeFocusOnTab:true;"
+            "Keys.onReturnPressed:{event.accepted=true}"
+            "Keys.onEnterPressed:{event.accepted=true}"
+        "}"), QUrl());
+
     d->rootPlaceHolder = qobject_cast<QQuickItem *>(component->create());
     d->quickWidget->setContent(QUrl(), component, d->rootPlaceHolder);
 
-    d->configModule->mainUi()->setParentItem(d->quickWidget->rootObject());
+    d->pageRow = d->rootPlaceHolder->property("pageStack").value<QQuickItem *>();
+    if (d->pageRow) {
+        QMetaObject::invokeMethod(d->pageRow, "push", Qt::DirectConnection, Q_ARG(QVariant, QVariant::fromValue(d->configModule->mainUi())), Q_ARG(QVariant, QVariant()));
 
-    //set anchors
-    QQmlExpression expr(d->configModule->engine()->rootContext(), d->configModule->mainUi(), QStringLiteral("parent"));
-    QQmlProperty prop(d->configModule->mainUi(), QStringLiteral("anchors.fill"));
-    prop.write(expr.evaluate());
+        connect(d->configModule, &KQuickAddons::ConfigModule::pagePushed, this, [this](QQuickItem *page) {
+                QMetaObject::invokeMethod(d->pageRow, "push", Qt::DirectConnection, Q_ARG(QVariant, QVariant::fromValue(page)), Q_ARG(QVariant, QVariant()));
+            }
+        );
+        connect(d->configModule, &KQuickAddons::ConfigModule::pageRemoved, this, [this]() {
+                QMetaObject::invokeMethod(d->pageRow, "pop", Qt::DirectConnection,  Q_ARG(QVariant, QVariant()));
+            }
+        );
 
+        auto syncColumnWidth = [this](){
+            d->pageRow->setProperty("defaultColumnWidth", d->configModule->columnWidth() > 0 ? d->configModule->columnWidth() : d->rootPlaceHolder->width());
+        };
+        syncColumnWidth();
+        
+        connect(d->configModule, &KQuickAddons::ConfigModule::columnWidthChanged,
+                this, syncColumnWidth);
+        connect(d->rootPlaceHolder, &QQuickItem::widthChanged,
+                this, syncColumnWidth);
+
+        //HACK: in order to work with old Systemsettings
+        //search if we are in a KPageWidget, search ofr its page, and if it has
+        //an header set, disable our own title
+        //FIXME: eventually remove this hack
+        QObject *candidate = this;
+        while (candidate) {
+            candidate = candidate->parent();
+            KPageWidget *page = qobject_cast<KPageWidget *>(candidate);
+            if (page && !page->currentPage()->header().isEmpty()) {
+                QObject *globalToolBar = d->pageRow->property("globalToolBar").value<QObject *>();
+                //5 is None
+                globalToolBar->setProperty("style", 5);
+            }
+        }
+    }
+    
     layout->addWidget(d->quickWidget);
-    KCModule::showEvent(event);
+}
+
+KCModuleQml::~KCModuleQml()
+{
+    delete d;
 }
 
 bool KCModuleQml::eventFilter(QObject* watched, QEvent* event)

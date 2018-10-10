@@ -25,6 +25,7 @@
 #include "kcmultidialog.h"
 #include "kcmultidialog_p.h"
 
+#include "kcmoduleqml_p.h"
 #include "kcmoduleproxy.h"
 
 #include <QApplication>
@@ -447,6 +448,10 @@ KPageWidgetItem *KCMultiDialog::addModule(const KCModuleInfo &moduleInfo,
 
     // qDebug() << moduleInfo.moduleName();
     KPageWidgetItem *item = new KPageWidgetItem(moduleScroll, moduleInfo.moduleName());
+
+    if (qobject_cast<KCModuleQml *>(kcm->realModule())) {
+        item->setHeaderVisible(false);
+    }
 
     if (kcm->realModule() && kcm->realModule()->useRootOnlyMessage()) {
         item->setHeader(QStringLiteral("<b>") +
