@@ -71,35 +71,35 @@ KCModuleQml::KCModuleQml(KQuickAddons::ConfigModule *configModule, QWidget* pare
     //HACK:Here is important those two enums keep having the exact same values
     //but the kdeclarative one can't use the KCModule's enum
     setButtons((KCModule::Buttons)(int)d->configModule->buttons());
-    connect(configModule, &KQuickAddons::ConfigModule::buttonsChanged, [=] {
+    connect(configModule, &KQuickAddons::ConfigModule::buttonsChanged, this, [=] {
         setButtons((KCModule::Buttons)(int)d->configModule->buttons());
     });
 
     if (d->configModule->needsSave()) {
         emit changed(true);
     }
-    connect(configModule, &KQuickAddons::ConfigModule::needsSaveChanged, [=] {
+    connect(configModule, &KQuickAddons::ConfigModule::needsSaveChanged, this, [=] {
         emit changed(d->configModule->needsSave());
     });
 
     setNeedsAuthorization(d->configModule->needsAuthorization());
-    connect(configModule, &KQuickAddons::ConfigModule::needsAuthorizationChanged, [=] {
+    connect(configModule, &KQuickAddons::ConfigModule::needsAuthorizationChanged, this, [=] {
         setNeedsAuthorization(d->configModule->needsAuthorization());
     });
 
     setRootOnlyMessage(d->configModule->rootOnlyMessage());
     setUseRootOnlyMessage(d->configModule->useRootOnlyMessage());
-    connect(configModule, &KQuickAddons::ConfigModule::rootOnlyMessageChanged, [=] {
+    connect(configModule, &KQuickAddons::ConfigModule::rootOnlyMessageChanged, this, [=] {
         setRootOnlyMessage(d->configModule->rootOnlyMessage());
     });
-    connect(configModule, &KQuickAddons::ConfigModule::useRootOnlyMessageChanged, [=] {
+    connect(configModule, &KQuickAddons::ConfigModule::useRootOnlyMessageChanged, this, [=] {
         setUseRootOnlyMessage(d->configModule->useRootOnlyMessage());
     });
 
     if (!d->configModule->authActionName().isEmpty()) {
         setAuthAction(KAuth::Action(d->configModule->authActionName()));
     }
-    connect(configModule, &KQuickAddons::ConfigModule::authActionNameChanged, [=] {
+    connect(configModule, &KQuickAddons::ConfigModule::authActionNameChanged, this, [=] {
         setAuthAction(d->configModule->authActionName());
     });
     setAboutData(d->configModule->aboutData());
