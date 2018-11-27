@@ -132,14 +132,14 @@ KCModuleQml::KCModuleQml(KQuickAddons::ConfigModule *configModule, QWidget* pare
     component->setData(QByteArrayLiteral("import QtQuick 2.3\n"
         "import org.kde.kirigami 2.4 as Kirigami\n"
         "Kirigami.ApplicationItem{"
-            //purely cosmetic space
-            "header: Item {height: Kirigami.Units.largeSpacing}"
+            //purely cosmetic space, those magic values are to align perfectly within Systemsettings
+            "header: Item {height: Math.round(Kirigami.Units.gridUnit*0.25)}"
             // allow only one column by default
             "pageStack.defaultColumnWidth:width;"
             "pageStack.separatorVisible:false;"
             "pageStack.globalToolBar.style: pageStack.wideScreen ? Kirigami.ApplicationHeaderStyle.Titles : Kirigami.ApplicationHeaderStyle.Breadcrumb;"
             "pageStack.globalToolBar.showNavigationButtons:false;"
-            "pageStack.globalToolBar.preferredHeight:Kirigami.Units.gridUnit*1.6;"
+            "pageStack.globalToolBar.preferredHeight:Kirigami.Units.gridUnit*2;"
             "pageStack.globalToolBar.separatorVisible:false;"
             "activeFocusOnTab:true;"
             "Keys.onReturnPressed:{event.accepted=true}"
