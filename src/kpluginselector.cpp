@@ -70,7 +70,7 @@ void KPluginSelector::Private::updateDependencies(PluginEntry *pluginEntry, bool
     if (added) {
         QStringList dependencyList = pluginEntry->pluginInfo.dependencies();
 
-        if (!dependencyList.count()) {
+        if (dependencyList.isEmpty()) {
             return;
         }
 
@@ -222,7 +222,7 @@ void KPluginSelector::Private::DependenciesWidget::showDependencyDetails()
 
 void KPluginSelector::Private::DependenciesWidget::updateDetails()
 {
-    if (!dependencyMap.count()) {
+    if (dependencyMap.isEmpty()) {
         setVisible(false);
         return;
     }
@@ -477,7 +477,7 @@ void KPluginSelector::Private::PluginModel::addPlugins(const QList<KPluginInfo> 
         }
     }
 
-    if (listToAdd.count()) {
+    if (!listToAdd.isEmpty()) {
         beginInsertRows(QModelIndex(), pluginEntryList.count(), pluginEntryList.count() + listToAdd.count() - 1);
         pluginEntryList << listToAdd;
         endInsertRows();
@@ -874,7 +874,7 @@ void KPluginSelector::Private::PluginDelegate::configure(const QModelIndex& inde
     }
 
     // it could happen that we had services to show, but none of them were real modules.
-    if (moduleProxyList.count()) {
+    if (!moduleProxyList.isEmpty()) {
         QVBoxLayout *layout = new QVBoxLayout;
         layout->addWidget(mainWidget);
         const int marginHint = configDialog.style()->pixelMetric(QStyle::PM_DefaultChildMargin);

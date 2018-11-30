@@ -339,7 +339,7 @@ void DialogPrivate::createDialogFromServices()
             bool foundPlugin = false;
             foreach (const KPluginInfo &pinfo, plugininfos) {
                 if (pinfo.service() == info.service()) {
-                    if (!pinfo.kcmServices().count()) {
+                    if (pinfo.kcmServices().isEmpty()) {
                         const KService::Ptr service = info.service();
                         // FIXME get weight from service or plugin info
                         const int weight = 1000;
