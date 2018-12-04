@@ -52,6 +52,15 @@ public:
     {
     }
 
+    void syncCurrentIndex()
+    {
+        if (!configModule || !pageRow) {
+            return;
+        }
+
+        configModule->setCurrentIndex(pageRow->property("currentIndex").toInt());
+    }
+
     KCModuleQml *q;
     QQuickWindow *quickWindow;
     QQuickWidget *quickWidget;
@@ -161,12 +170,18 @@ KCModuleQml::KCModuleQml(KQuickAddons::ConfigModule *configModule, QWidget* pare
                 QMetaObject::invokeMethod(d->pageRow, "pop", Qt::DirectConnection,  Q_ARG(QVariant, QVariant()));
             }
         );
+        connect(d->configModule, &KQuickAddons::ConfigModule::currentIndexChanged, this, [this]() {
+            d->pageRow->setProperty("currentIndex", d->configModule->currentIndex());
+            }
+        );
+        //New syntax cannot be used to connect to QML types
+        connect(d->pageRow, SIGNAL(currentIndexChanged()), this, SLOT(syncCurrentIndex()));
 
         auto syncColumnWidth = [this](){
             d->pageRow->setProperty("defaultColumnWidth", d->configModule->columnWidth() > 0 ? d->configModule->columnWidth() : d->rootPlaceHolder->width());
         };
         syncColumnWidth();
-        
+
         connect(d->configModule, &KQuickAddons::ConfigModule::columnWidthChanged,
                 this, syncColumnWidth);
         connect(d->rootPlaceHolder, &QQuickItem::widthChanged,
