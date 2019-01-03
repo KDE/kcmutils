@@ -43,7 +43,6 @@ class KCModuleQmlPrivate
 public:
     KCModuleQmlPrivate(KQuickAddons::ConfigModule *cm, KCModuleQml *q)
         : q(q),
-          quickWindow(nullptr),
           configModule(cm)
     {
     }
@@ -62,12 +61,12 @@ public:
     }
 
     KCModuleQml *q;
-    QQuickWindow *quickWindow;
-    QQuickWidget *quickWidget;
-    QQuickItem *rootPlaceHolder;
-    QQuickItem *pageRow;
-    KQuickAddons::ConfigModule *configModule;
-    KDeclarative::QmlObjectSharedEngine *qmlObject;
+    QQuickWindow *quickWindow = nullptr;
+    QQuickWidget *quickWidget = nullptr;
+    QQuickItem *rootPlaceHolder = nullptr;
+    QQuickItem *pageRow = nullptr;
+    KQuickAddons::ConfigModule *configModule = nullptr;
+    KDeclarative::QmlObjectSharedEngine *qmlObject = nullptr;
 };
 
 KCModuleQml::KCModuleQml(KQuickAddons::ConfigModule *configModule, QWidget* parent, const QVariantList& args)

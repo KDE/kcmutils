@@ -51,7 +51,7 @@ QList<QString> componentNames()
 {
     // qDebug() ;
     QList<QString> names;
-    for (QMap<QString, ComponentInfo>::ConstIterator it = d()->m_componentInfo.constBegin(); it != d()->m_componentInfo.constEnd(); ++it) {
+    for (QMap<QString, ComponentInfo>::ConstIterator it = d()->m_componentInfo.constBegin(), total = d()->m_componentInfo.constEnd(); it != total; ++it) {
         if ((*it).count > 0) {
             names.append(it.key());
         }
@@ -77,7 +77,7 @@ void reparseConfiguration(const QString &componentName)
 
 void syncConfiguration()
 {
-    for (QMap<QString, ComponentInfo>::ConstIterator it = d()->m_componentInfo.constBegin(); it != d()->m_componentInfo.constEnd(); ++it) {
+    for (QMap<QString, ComponentInfo>::ConstIterator it = d()->m_componentInfo.constBegin(), total = d()->m_componentInfo.constEnd(); it != total; ++it) {
         KSharedConfig::Ptr config = configForComponentName(it.key());
         config->sync();
     }

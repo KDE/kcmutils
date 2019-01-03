@@ -86,7 +86,8 @@ KCModule *KCModuleLoader::loadModule(const KCModuleInfo &mod, ErrorReporting rep
     if (!mod.library().isEmpty()) {
         QString error;
         QVariantList args2;
-        foreach (const QString &arg, args) {
+        args2.reserve(args.count());
+        for (const QString &arg : args) {
             args2 << arg;
         }
         KCModule *module = mod.service()->createInstance<KCModule>(parent, args2, &error);

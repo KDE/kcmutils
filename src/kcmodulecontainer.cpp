@@ -38,14 +38,12 @@ class Q_DECL_HIDDEN KCModuleContainer::KCModuleContainerPrivate
 public:
     KCModuleContainerPrivate(const QStringList &mods)
         : modules(mods)
-        , tabWidget(nullptr)
-        , topLayout(nullptr)
     {}
 
     QStringList modules;
-    QTabWidget *tabWidget;
+    QTabWidget *tabWidget = nullptr;
     KCModule::Buttons buttons;
-    QVBoxLayout *topLayout;
+    QVBoxLayout *topLayout = nullptr;
 
     /**
      * A list containing KCModuleProxy objects which

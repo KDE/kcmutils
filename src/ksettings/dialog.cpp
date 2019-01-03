@@ -176,6 +176,7 @@ QSet<KCModuleInfo> DialogPrivate::parentComponentsServices(const QStringList &kc
     //qDebug() << "constraint = " << constraint;
     const QList<KService::Ptr> services = KServiceTypeTrader::self()->query(QStringLiteral("KCModule"), constraint);
     QSet<KCModuleInfo> ret;
+    ret.reserve(services.count());
     foreach (const KService::Ptr &service, services) {
         ret << KCModuleInfo(service);
     }
@@ -287,7 +288,7 @@ void DialogPrivate::parseGroupFile(const QString &filename)
 {
     KConfig file(filename, KConfig::SimpleConfig);
     const QStringList groups = file.groupList();
-    foreach (const QString &group, groups) {
+    for (const QString &group : groups) {
         if (group.isEmpty()) {
             continue;
         }
