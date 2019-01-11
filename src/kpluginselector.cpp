@@ -258,7 +258,7 @@ KPluginSelector::KPluginSelector(QWidget *parent)
 
     d->lineEdit = new QLineEdit(this);
     d->lineEdit->setClearButtonEnabled(true);
-    d->lineEdit->setPlaceholderText(i18n("Search Plugins"));
+    d->lineEdit->setPlaceholderText(i18n("Search..."));
     d->listView = new KCategorizedView(this);
     d->categoryDrawer = new KCategoryDrawer(d->listView);
     d->listView->setVerticalScrollMode(QListView::ScrollPerPixel);
