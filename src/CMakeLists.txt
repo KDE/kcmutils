@@ -37,7 +37,6 @@ target_link_libraries(KF5KCMUtils
     KF5::QuickAddons
     KF5::Declarative
     KF5::Package
-    KF5::Auth           #KAuthAction
 )
 set_target_properties(KF5KCMUtils PROPERTIES
                       VERSION ${KCMUTILS_VERSION_STRING}
