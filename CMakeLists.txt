@@ -48,6 +48,7 @@ find_package(KF5IconThemes ${KF5_DEP_VERSION} REQUIRED)
 find_package(KF5Service ${KF5_DEP_VERSION} REQUIRED)
 find_package(KF5XmlGui ${KF5_DEP_VERSION} REQUIRED)
 find_package(KF5Declarative ${KF5_DEP_VERSION} REQUIRED)
+find_package(KF5Auth ${KF5_DEP_VERSION} REQUIRED)
 
 add_definitions(-DTRANSLATION_DOMAIN=\"kcmutils5\")
 if (IS_DIRECTORY "${CMAKE_CURRENT_SOURCE_DIR}/po")
