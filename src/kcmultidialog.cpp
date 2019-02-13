@@ -184,14 +184,18 @@ void KCMultiDialogPrivate::_k_clientChanged()
         if (activeModule->realModule()->needsAuthorization()) {
             if (applyButton) {
                 KAuth::ObjectDecorator *decorator = new KAuth::ObjectDecorator(applyButton);
+#ifndef KCONFIGWIDGETS_NO_KAUTH
                 decorator->setAuthAction(activeModule->realModule()->authAction());
+#endif
                 activeModule->realModule()->authAction().setParentWidget(activeModule->realModule());
                 q->connect(decorator, &KAuth::ObjectDecorator::authorized, q, &KCMultiDialog::slotApplyClicked);
             }
 
             if (okButton) {
                 KAuth::ObjectDecorator *decorator = new KAuth::ObjectDecorator(okButton);
+#ifndef KCONFIGWIDGETS_NO_KAUTH
                 decorator->setAuthAction(activeModule->realModule()->authAction());
+#endif
                 activeModule->realModule()->authAction().setParentWidget(activeModule->realModule());
                 q->connect(decorator, &KAuth::ObjectDecorator::authorized, q, &KCMultiDialog::slotOkClicked);
             }

@@ -104,12 +104,14 @@ KCModuleQml::KCModuleQml(KQuickAddons::ConfigModule *configModule, QWidget* pare
         setUseRootOnlyMessage(d->configModule->useRootOnlyMessage());
     });
 
+#ifndef KCONFIGWIDGETS_NO_KAUTH
     if (!d->configModule->authActionName().isEmpty()) {
         setAuthAction(KAuth::Action(d->configModule->authActionName()));
     }
     connect(configModule, &KQuickAddons::ConfigModule::authActionNameChanged, this, [=] {
         setAuthAction(d->configModule->authActionName());
     });
+#endif
     setAboutData(d->configModule->aboutData());
     setFocusPolicy(Qt::StrongFocus);
 
