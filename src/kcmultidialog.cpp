@@ -173,31 +173,32 @@ void KCMultiDialogPrivate::_k_clientChanged()
         QPushButton *applyButton = q->buttonBox()->button(QDialogButtonBox::Apply);
         if (applyButton) {
             q->disconnect(applyButton, &QAbstractButton::clicked, q, &KCMultiDialog::slotApplyClicked);
+#ifndef KCONFIGWIDGETS_NO_KAUTH
             delete applyButton->findChild<KAuth::ObjectDecorator *>();
+#endif
             applyButton->setEnabled(change);
         }
 
         QPushButton *okButton = q->buttonBox()->button(QDialogButtonBox::Ok);
         if (okButton) {
             q->disconnect(okButton, &QAbstractButton::clicked, q, &KCMultiDialog::slotOkClicked);
+#ifndef KCONFIGWIDGETS_NO_KAUTH
             delete okButton->findChild<KAuth::ObjectDecorator *>();
+#endif
         }
 
+#ifndef KCONFIGWIDGETS_NO_KAUTH
         if (activeModule->realModule()->needsAuthorization()) {
             if (applyButton) {
                 KAuth::ObjectDecorator *decorator = new KAuth::ObjectDecorator(applyButton);
-#ifndef KCONFIGWIDGETS_NO_KAUTH
                 decorator->setAuthAction(activeModule->realModule()->authAction());
-#endif
                 activeModule->realModule()->authAction().setParentWidget(activeModule->realModule());
                 q->connect(decorator, &KAuth::ObjectDecorator::authorized, q, &KCMultiDialog::slotApplyClicked);
             }
 
             if (okButton) {
                 KAuth::ObjectDecorator *decorator = new KAuth::ObjectDecorator(okButton);
-#ifndef KCONFIGWIDGETS_NO_KAUTH
                 decorator->setAuthAction(activeModule->realModule()->authAction());
-#endif
                 activeModule->realModule()->authAction().setParentWidget(activeModule->realModule());
                 q->connect(decorator, &KAuth::ObjectDecorator::authorized, q, &KCMultiDialog::slotOkClicked);
             }
@@ -212,6 +213,7 @@ void KCMultiDialogPrivate::_k_clientChanged()
                 delete okButton->findChild<KAuth::ObjectDecorator *>();
             }
         }
+#endif
     }
 
     QPushButton *resetButton = q->buttonBox()->button(QDialogButtonBox::Reset);
