@@ -40,8 +40,10 @@
 #include <QStyle>
 #include <QUrl>
 
+#ifndef KCONFIGWIDGETS_NO_KAUTH
 #include <KAuthAction>
 #include <KAuthObjectDecorator>
+#endif
 #include <KGuiItem>
 #include <KIconLoader>
 #include <KLocalizedString>
