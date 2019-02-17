@@ -246,11 +246,11 @@ void KCMultiDialogPrivate::_k_updateHeader(bool use, const QString &message)
     KCModuleProxy *kcm = qobject_cast<KCModuleProxy *>(item->widget());
 
     if (use) {
-        item->setHeader(QStringLiteral("<b>") + kcm->moduleInfo().comment() + QStringLiteral("</b><br><i>") +
+        item->setHeader(QStringLiteral("<b>") + kcm->moduleInfo().moduleName() + QStringLiteral("</b><br><i>") +
                         message + QStringLiteral("</i>"));
         item->setIcon(KDE::icon(kcm->moduleInfo().icon(), QStringList() << QStringLiteral("dialog-warning")));
     } else {
-        item->setHeader(kcm->moduleInfo().comment());
+        item->setHeader(kcm->moduleInfo().moduleName());
         item->setIcon(QIcon::fromTheme(kcm->moduleInfo().icon()));
     }
 }
@@ -516,13 +516,13 @@ KPageWidgetItem *KCMultiDialog::addModule(const KCModuleInfo &moduleInfo,
 
     if (kcm->realModule() && kcm->realModule()->useRootOnlyMessage()) {
         item->setHeader(QStringLiteral("<b>") +
-                moduleInfo.comment() +
+                moduleInfo.moduleName() +
                 QStringLiteral("</b><br><i>") +
                 kcm->realModule()->rootOnlyMessage() +
                 QStringLiteral("</i>"));
         item->setIcon(KDE::icon(moduleInfo.icon(), QStringList() << QStringLiteral("dialog-warning")));
     } else {
-        item->setHeader(moduleInfo.comment());
+        item->setHeader(moduleInfo.moduleName());
         item->setIcon(QIcon::fromTheme(moduleInfo.icon()));
     }
     item->setProperty("_k_weight", moduleInfo.weight());
