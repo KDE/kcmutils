@@ -254,7 +254,7 @@ KPluginSelector::KPluginSelector(QWidget *parent)
     , d(new Private(this))
 {
     QVBoxLayout *layout = new QVBoxLayout(this);
-    layout->setMargin(0);
+    layout->setContentsMargins(0, 0, 0, 0);
 
     d->lineEdit = new QLineEdit(this);
     d->lineEdit->setClearButtonEnabled(true);

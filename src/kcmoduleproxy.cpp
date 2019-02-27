@@ -82,7 +82,7 @@ void KCModuleProxyPrivate::loadModule()
 {
     if (!topLayout) {
         topLayout = new QVBoxLayout(parent);
-        topLayout->setMargin(0);
+        topLayout->setContentsMargins(0, 0, 0, 0);
 
         QString name = modInfo.handle();
         name.replace(QLatin1Char('-'), QLatin1Char('_')); // hyphen is not allowed in dbus, only [A-Z][a-z][0-9]_
@@ -107,7 +107,7 @@ void KCModuleProxyPrivate::loadModule()
         parent->setWhatsThis(kcm->quickHelp());
 
         if (kcm->layout()) {
-            kcm->layout()->setMargin(0);
+            kcm->layout()->setContentsMargins(0, 0, 0, 0);
         }
         topLayout->addWidget(kcm);
         if (!modInfo.handle().isEmpty()) {

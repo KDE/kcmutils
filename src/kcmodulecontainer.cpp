@@ -78,7 +78,7 @@ KCModuleContainer::KCModuleContainer(QWidget *parent, const QStringList &mods)
 void KCModuleContainer::init()
 {
     d->topLayout = new QVBoxLayout(this);
-    d->topLayout->setMargin(0);
+    d->topLayout->setContentsMargins(0, 0, 0, 0);
     d->topLayout->setObjectName(QStringLiteral("topLayout"));
     d->tabWidget = new QTabWidget(this);
     d->tabWidget->setObjectName(QStringLiteral("tabWidget"));

@@ -68,7 +68,7 @@ ComponentsDialog::ComponentsDialog(QWidget *parent, const char *name)
     layout->addWidget(buttonBox);
 
     QHBoxLayout *hbox = new QHBoxLayout(page);
-    hbox->setMargin(0);
+    hbox->setContentsMargins(0, 0, 0, 0);
 
     d->listview = new QTreeWidget(page);
     d->listview->setMinimumSize(200, 200);
@@ -76,7 +76,7 @@ ComponentsDialog::ComponentsDialog(QWidget *parent, const char *name)
     d->infowidget->setMinimumSize(200, 200);
 
     QVBoxLayout *vbox = new QVBoxLayout(d->infowidget);
-    vbox->setMargin(0);
+    vbox->setContentsMargins(0, 0, 0, 0);
 
     d->iconwidget = new QLabel(d->infowidget);
     vbox->addWidget(d->iconwidget);
