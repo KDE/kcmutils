@@ -53,7 +53,7 @@ add_definitions(-DTRANSLATION_DOMAIN=\"kcmutils5\")
 if (IS_DIRECTORY "${CMAKE_CURRENT_SOURCE_DIR}/po")
     ki18n_install(po)
 endif()
-
+add_definitions(-DQT_NO_FOREACH)
 add_subdirectory(src)
 
 

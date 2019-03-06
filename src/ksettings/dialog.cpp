@@ -96,7 +96,8 @@ void Dialog::addPluginInfos(const KPluginInfo::List &plugininfos)
             d->kcmInfos << KCModuleInfo(service);
             continue;
         }
-        foreach (const KService::Ptr &service, it->kcmServices()) {
+        const auto lst = it->kcmServices();
+        for (const KService::Ptr &service : lst) {
             d->kcmInfos << KCModuleInfo(service);
         }
     }
@@ -177,7 +178,7 @@ QSet<KCModuleInfo> DialogPrivate::parentComponentsServices(const QStringList &kc
     const QList<KService::Ptr> services = KServiceTypeTrader::self()->query(QStringLiteral("KCModule"), constraint);
     QSet<KCModuleInfo> ret;
     ret.reserve(services.count());
-    foreach (const KService::Ptr &service, services) {
+    for (const KService::Ptr &service : services) {
         ret << KCModuleInfo(service);
     }
     return ret;
@@ -321,10 +322,10 @@ void DialogPrivate::createDialogFromServices()
     }
 
     //qDebug() << kcmInfos.count();
-    foreach (const KCModuleInfo &info, kcmInfos) {
+    for (const KCModuleInfo &info : qAsConst(kcmInfos)) {
         const QStringList parentComponents = info.service()->property(QStringLiteral("X-KDE-ParentComponents")).toStringList();
         bool blacklisted = false;
-        foreach (const QString &parentComponent, parentComponents) {
+        for (const QString &parentComponent : parentComponents) {
             if (componentBlacklist.contains(parentComponent)) {
                 blacklisted = true;
                 break;
@@ -338,7 +339,7 @@ void DialogPrivate::createDialogFromServices()
         if (!parent) {
             // dummy kcm
             bool foundPlugin = false;
-            foreach (const KPluginInfo &pinfo, plugininfos) {
+            for (KPluginInfo pinfo : qAsConst(plugininfos)) {
                 if (pinfo.service() == info.service()) {
                     if (pinfo.kcmServices().isEmpty()) {
                         const KService::Ptr service = info.service();
@@ -357,7 +358,7 @@ void DialogPrivate::createDialogFromServices()
         }
         KPageWidgetItem *item = q->addModule(info, parent, arguments);
         // qDebug() << "added KCM '" << info.moduleName() << "'";
-        foreach (KPluginInfo pinfo, plugininfos) {
+        for (KPluginInfo pinfo : qAsConst(plugininfos)) {
             // qDebug() << pinfo.pluginName();
             if (pinfo.kcmServices().contains(info.service())) {
                 const bool isEnabled = isPluginForKCMEnabled(&info, pinfo);
@@ -397,7 +398,7 @@ void DialogPrivate::createDialogFromServices()
         for (; it != end; ++it) {
             const QModelIndex index = model->index(it.value());
             KPluginInfo pinfo;
-            foreach (const KPluginInfo &p, plugininfos) {
+            for (const KPluginInfo &p : qAsConst(plugininfos)) {
                 if (p.name() == it.key()) {
                     pinfo = p;
                     break;

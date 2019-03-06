@@ -380,7 +380,7 @@ void KCMultiDialogPrivate::apply()
     Q_Q(KCMultiDialog);
     QStringList updatedComponents;
 
-    foreach (const CreatedModule &module, modules) {
+    for (const CreatedModule &module : qAsConst(modules)) {
         KCModuleProxy *proxy = module.kcm;
 
         if (proxy->changed()) {
@@ -390,7 +390,7 @@ void KCMultiDialogPrivate::apply()
                 * of updated components.
                 */
             const QStringList componentNames = module.componentNames;
-            foreach (const QString &componentName, module.componentNames) {
+            for (const QString &componentName : componentNames) {
                 if (!updatedComponents.contains(componentName)) {
                     updatedComponents.append(componentName);
                 }
@@ -399,7 +399,7 @@ void KCMultiDialogPrivate::apply()
     }
 
     // Send the configCommitted signal for every updated component.
-    foreach (const QString &name, updatedComponents) {
+    for (const QString &name : qAsConst(updatedComponents)) {
         emit q->configCommitted(name.toLatin1());
     }
 
@@ -458,7 +458,7 @@ void KCMultiDialog::closeEvent(QCloseEvent *event)
      * in other situations will lead to "module already loaded in Foo," while to the user
      * doesn't appear so(the dialog is hidden)
      */
-    Q_FOREACH(auto &proxy, d->modules) {
+    for(auto &proxy : qAsConst(d->modules)) {
         proxy.kcm->deleteClient();
     }
 }

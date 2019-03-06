@@ -70,7 +70,8 @@ void reparseConfiguration(const QString &componentName)
     KSharedConfig::Ptr config = configForComponentName(componentName);
     config->reparseConfiguration();
 
-    foreach (const ComponentInfo::Slot &slot, d()->m_componentInfo[componentName].slotList) {
+    const auto lstSlot = d()->m_componentInfo[componentName].slotList;
+    for (const ComponentInfo::Slot &slot : lstSlot) {
         QMetaObject::invokeMethod(slot.first, slot.second);
     }
 }

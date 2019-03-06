@@ -206,7 +206,8 @@ void KPluginSelector::Private::DependenciesWidget::clearDependencies()
 void KPluginSelector::Private::DependenciesWidget::showDependencyDetails()
 {
     QString message = i18n("Automatic changes have been performed in order to satisfy plugin dependencies:\n");
-    foreach (const QString &dependency, dependencyMap.keys()) {
+    const auto lstKeys = dependencyMap.keys();
+    for (const QString &dependency : lstKeys) {
         if (dependencyMap[dependency].added) {
             message += i18n("\n    %1 plugin has been automatically checked because of the dependency of %2 plugin", dependency, dependencyMap[dependency].pluginCausant);
         } else {
@@ -448,7 +449,7 @@ void KPluginSelector::Private::PluginModel::addPlugins(const QList<KPluginInfo> 
 {
     QList<PluginEntry> listToAdd;
 
-    foreach (const KPluginInfo &pluginInfo, pluginList) {
+    for (const KPluginInfo &pluginInfo : pluginList) {
         PluginEntry pluginEntry;
         pluginEntry.category = categoryName;
         pluginEntry.pluginInfo = pluginInfo;
@@ -802,7 +803,7 @@ void KPluginSelector::Private::PluginDelegate::slotAboutClicked()
     const QStringList emails = email.split(QLatin1Char(','));
     if (authors.count() == emails.count()) {
         int i = 0;
-        foreach (const QString &author, authors) {
+        for (const QString &author : authors) {
             if (!author.isEmpty()) {
                 aboutData.addAuthor(author, QString(), emails[i]);
             }
@@ -837,7 +838,8 @@ void KPluginSelector::Private::PluginDelegate::configure(const QModelIndex& inde
     // The first proxy is owned by the dialog itself
     QWidget *moduleProxyParentWidget = &configDialog;
 
-    foreach (const KService::Ptr &servicePtr, pluginInfo.kcmServices()) {
+    const auto lstServices = pluginInfo.kcmServices();
+    for (const KService::Ptr &servicePtr : lstServices) {
         if (!servicePtr->noDisplay()) {
             KCModuleInfo moduleInfo(servicePtr);
             KCModuleProxy *currentModuleProxy = new KCModuleProxy(moduleInfo, moduleProxyParentWidget, pluginSelector_d->kcmArguments);
@@ -893,15 +895,15 @@ void KPluginSelector::Private::PluginDelegate::configure(const QModelIndex& inde
         configDialog.setLayout(layout);
 
         if (configDialog.exec() == QDialog::Accepted) {
-            foreach (KCModuleProxy *moduleProxy, moduleProxyList) {
-                QStringList parentComponents = moduleProxy->moduleInfo().service()->property(QStringLiteral("X-KDE-ParentComponents")).toStringList();
+            for (KCModuleProxy *moduleProxy : qAsConst(moduleProxyList)) {
+                const QStringList parentComponents = moduleProxy->moduleInfo().service()->property(QStringLiteral("X-KDE-ParentComponents")).toStringList();
                 moduleProxy->save();
-                foreach (const QString &parentComponent, parentComponents) {
+                for (const QString &parentComponent : parentComponents) {
                     emit configCommitted(parentComponent.toLatin1());
                 }
             }
         } else {
-            foreach (KCModuleProxy *moduleProxy, moduleProxyList) {
+            for (KCModuleProxy *moduleProxy : qAsConst(moduleProxyList)) {
                 moduleProxy->load();
             }
         }
@@ -913,7 +915,7 @@ void KPluginSelector::Private::PluginDelegate::configure(const QModelIndex& inde
 
 void KPluginSelector::Private::PluginDelegate::slotDefaultClicked()
 {
-    foreach (KCModuleProxy *moduleProxy, moduleProxyList) {
+    for (KCModuleProxy *moduleProxy : qAsConst(moduleProxyList)) {
         moduleProxy->defaults();
     }
 }
