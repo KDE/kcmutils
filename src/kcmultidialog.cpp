@@ -99,7 +99,6 @@ void KCMultiDialogPrivate::_k_slotCurrentPageChanged(KPageWidgetItem *current, K
             currentModule = modules[i].kcm;
         }
     }
-    Q_ASSERT(currentModule);
 
     // For some reason the KCModuleQml modules handle their own margin internally
     // to match that we need to adjust the spacing of our page widget
@@ -108,7 +107,7 @@ void KCMultiDialogPrivate::_k_slotCurrentPageChanged(KPageWidgetItem *current, K
 
     // TODO KF6 Fix this situation.
 
-    if (currentModule->realModule() && currentModule->realModule()->inherits("KCModuleQml")) {
+    if (currentModule && currentModule->realModule() && currentModule->realModule()->inherits("KCModuleQml")) {
         bool padHackLeft = false;
         bool padHackRight = false;
         if (q->pageWidget()->model()->rowCount() < 2) {
