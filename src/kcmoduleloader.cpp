@@ -154,7 +154,7 @@ KCModule *KCModuleLoader::reportError(ErrorReporting report, const QString &text
     QString realDetails = details;
     if (realDetails.isNull()) {
         realDetails = i18n("<qt><p>Possible reasons:<ul><li>An error occurred during your last "
-                           "KDE upgrade leaving an orphaned control module</li><li>You have old third party "
+                           "system upgrade, leaving an orphaned control module behind</li><li>You have old third party "
                            "modules lying around.</li></ul></p><p>Check these points carefully and try to remove "
                            "the module mentioned in the error message. If this fails, consider contacting "
                            "your distributor or packager.</p></qt>");
