@@ -287,6 +287,10 @@ KPluginSelector::KPluginSelector(QWidget *parent)
     layout->addWidget(d->lineEdit);
     layout->addWidget(d->listView);
     layout->addWidget(d->dependenciesWidget);
+
+    // When a KPluginSelector instance gets focus,
+    // it should pass over the focus to its child searchbar.
+    setFocusProxy(d->lineEdit);
 }
 
 KPluginSelector::~KPluginSelector()
