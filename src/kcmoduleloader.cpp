@@ -99,7 +99,7 @@ KCModule *KCModuleLoader::loadModule(const KCModuleInfo &mod, ErrorReporting rep
             if (!factory) {
                 qWarning() << "Error loading plugin:" << loader.errorString();
             } else {
-                KQuickAddons::ConfigModule *cm = factory->create<KQuickAddons::ConfigModule >();
+                KQuickAddons::ConfigModule *cm = factory->create<KQuickAddons::ConfigModule>(nullptr, args2);
                 if (!cm) {
                     qWarning() << "Error creating object from plugin" << loader.fileName();
                 }
