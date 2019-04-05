@@ -126,11 +126,9 @@ KCModuleQml::KCModuleQml(KQuickAddons::ConfigModule *configModule, QWidget* pare
     d->quickWidget->setResizeMode(QQuickWidget::SizeRootObjectToView);
     d->quickWidget->setFocusPolicy(Qt::StrongFocus);
     d->quickWidget->installEventFilter(this);
+    d->quickWidget->setAttribute(Qt::WA_AlwaysStackOnTop, true);
     d->quickWindow = d->quickWidget->quickWindow();
-    d->quickWindow->setColor(QGuiApplication::palette().window().color());
-    connect(qApp, &QGuiApplication::paletteChanged, d->quickWindow, [=]() {
-        d->quickWindow->setColor(QGuiApplication::palette().window().color());
-    });
+    d->quickWindow->setColor(Qt::transparent);
 
     QQmlComponent *component = new QQmlComponent(d->qmlObject->engine(), this);
     //this has activeFocusOnTab to notice when the navigation wraps
