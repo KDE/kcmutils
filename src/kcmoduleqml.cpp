@@ -142,7 +142,7 @@ KCModuleQml::KCModuleQml(KQuickAddons::ConfigModule *configModule, QWidget* pare
         "Kirigami.ApplicationItem{"
             //purely cosmetic space, those magic values are to align perfectly within Systemsettings
             "header: Item {height: Math.round(Kirigami.Units.gridUnit*0.25)}"
-            "implicitWidth:pageStack.implicitwidth;"
+            "implicitWidth:pageStack.implicitWidth;"
             "implicitHeight:pageStack.implicitHeight+header.height;"
             // allow only one column by default
             "pageStack.defaultColumnWidth:width;"
