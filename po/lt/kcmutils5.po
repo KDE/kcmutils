@@ -1,0 +1,525 @@
+# translation of kdelibs4.po to Lithuanian
+# Ričardas Čepas <rch@richard.eu.org>, 2002-2004.
+# Donatas Glodenis <dgvirtual@akl.lt>, 2004-2009.
+# Gintautas Miselis <gintautas@miselis.lt>, 2008.
+# Andrius Štikonas <andrius@stikonas.eu>, 2009.
+# Tomas Straupis <tomasstraupis@gmail.com>, 2011.
+# Remigijus Jarmalavičius <remigijus@jarmalavicius.lt>, 2011.
+# Liudas Ališauskas <liudas.alisauskas@gmail.com>, 2011, 2012, 2013, 2014.
+# Liudas Alisauskas <liudas@akmc.lt>, 2013, 2015.
+# Mindaugas Baranauskas <opensuse.lietuviu.kalba@gmail.com>, 2015.
+msgid ""
+msgstr ""
+"Project-Id-Version: kdelibs4\n"
+"Report-Msgid-Bugs-To: https://bugs.kde.org\n"
+"POT-Creation-Date: 2019-05-20 02:55+0200\n"
+"PO-Revision-Date: 2015-12-29 21:20+0200\n"
+"Last-Translator: Mindaugas Baranauskas <opensuse.lietuviu.kalba@gmail.com>\n"
+"Language-Team: lt <kde-i18n-lt@kde.org>\n"
+"Language: lt\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=4; plural=(n==1 ? 0 : n%10>=2 && (n%100<10 || n"
+"%100>=20) ? 1 : n%10==0 || (n%100>10 && n%100<20) ? 2 : 3);\n"
+"X-Generator: Lokalize 1.5\n"
+
+#, kde-format
+msgctxt "NAME OF TRANSLATORS"
+msgid "Your names"
+msgstr ""
+"Ričardas Čepas, Donatas Glodenis, Gintautas Miselis, Andrius Štikonas, "
+"Liudas Ališauskas"
+
+#, kde-format
+msgctxt "EMAIL OF TRANSLATORS"
+msgid "Your emails"
+msgstr ""
+"rch@richard.eu.org, dgvirtual@akl.lt, gintautas@miselis.lt, stikonas@gmail."
+"com, liudas@akmc.lt"
+
+#: kcmoduleloader.cpp:79
+#, kde-format
+msgid "The module %1 could not be found."
+msgstr "Modulis %1 nerastas."
+
+#: kcmoduleloader.cpp:80
+#, kde-format
+msgid ""
+"<qt><p>The diagnosis is:<br />The desktop file %1 could not be found.</p></"
+"qt>"
+msgstr "<qt><p>Diagnozė:<br />Darbalaukio failas %1 nerastas.</p></qt>"
+
+#: kcmoduleloader.cpp:82
+#, kde-format
+msgid "The module %1 is disabled."
+msgstr "Modulis %1 yra atjungtas."
+
+#: kcmoduleloader.cpp:83
+#, kde-format
+msgid ""
+"<qt><p>Either the hardware/software the module configures is not available "
+"or the module has been disabled by the administrator.</p></qt>"
+msgstr ""
+"<qt><p>Neprieinama techninė/programinė įrangą, kurią modulis konfigūruoja "
+"arba administratorius atjungė modulį.</p></qt>"
+
+#: kcmoduleloader.cpp:140
+#, kde-format
+msgid "The module %1 is not a valid configuration module."
+msgstr "Modulis %1 nėra tikras konfigūravimo modulis."
+
+#: kcmoduleloader.cpp:141
+#, kde-format
+msgid ""
+"<qt>The diagnosis is:<br />The desktop file %1 does not specify a library.</"
+"qt>"
+msgstr "<qt>Diagnozė:<br />Darbalaukio failas %1 nenurodo bibliotekos.</qt>"
+
+#: kcmoduleloader.cpp:156
+#, fuzzy, kde-format
+#| msgid ""
+#| "<qt><p>Possible reasons:<ul><li>An error occurred during your last KDE "
+#| "upgrade leaving an orphaned control module</li><li>You have old third "
+#| "party modules lying around.</li></ul></p><p>Check these points carefully "
+#| "and try to remove the module mentioned in the error message. If this "
+#| "fails, consider contacting your distributor or packager.</p></qt>"
+msgid ""
+"<qt><p>Possible reasons:<ul><li>An error occurred during your last system "
+"upgrade, leaving an orphaned control module behind</li><li>You have old "
+"third party modules lying around.</li></ul></p><p>Check these points "
+"carefully and try to remove the module mentioned in the error message. If "
+"this fails, consider contacting your distributor or packager.</p></qt>"
+msgstr ""
+"<qt><p>Galimos priežastys:<ul><li>Per paskutinį KDE atnaujinimą įvyko "
+"klaida, kurios pasėkoje liko nenaudojamas valdymo modulis</li><li>Jūs turite "
+"įdiegę senus trečiųjų šalių modulius.</li></ul></p><p>Atidžiai patikrinkite "
+"šiuos variantus ir pasistenkite pašalinti klaidos pranešime paminėtus "
+"modulius. Jei tai nepavyks, susisiekite su savo distributyvo ar paketų "
+"gamintojais.</p></qt>"
+
+#: kcmoduleproxy.cpp:127
+#, kde-format
+msgctxt "Argument is application name"
+msgid "This configuration section is already opened in %1"
+msgstr "Ši konfigūravimo sekcija jau atverta %1"
+
+#: kcmultidialog.cpp:63
+#, kde-format
+msgid ""
+"The settings of the current module have changed.\n"
+"Do you want to apply the changes or discard them?"
+msgstr ""
+"Esamo modulio nuostatos buvo pakeistos.\n"
+"Norite pritaikyti jas ar atmesti?"
+
+#: kcmultidialog.cpp:65
+#, kde-format
+msgid "Apply Settings"
+msgstr "Pritaikyti nustatymus"
+
+#: kcmultidialog.cpp:261 kpluginselector.cpp:720
+#, kde-format
+msgid "Configure"
+msgstr "Konfigūruoti"
+
+#. i18n: ectx: label, entry, group (DesktopIcons)
+#: kdeglobals.kcfg:9
+#, kde-format
+msgid "Distance between desktop icons"
+msgstr "Atstumai tarp darbalaukio ženklelių"
+
+#. i18n: ectx: whatsthis, entry, group (DesktopIcons)
+#: kdeglobals.kcfg:10
+#, kde-format
+msgid "The distance between icons specified in pixels."
+msgstr "Atstumai tarp ženklelių, nurodyti pikseliais."
+
+#. i18n: ectx: label, entry, group (General)
+#: kdeglobals.kcfg:23
+#, kde-format
+msgid "Widget style to use"
+msgstr "Naudotinas valdiklių stilius"
+
+#. i18n: ectx: whatsthis, entry, group (General)
+#: kdeglobals.kcfg:24
+#, kde-format
+msgid ""
+"The name of the widget style, for example \"keramik\" or \"plastik\". "
+"Without quotes."
+msgstr ""
+"Valdiklių stiliaus pavadinimas, pavyzdžiui „keramik“ arba „plastik“. Be "
+"kabučių."
+
+#. i18n: ectx: label, entry, group (General)
+#: kdeglobals.kcfg:30
+#, kde-format
+msgid "Use the PC speaker"
+msgstr "Naudoti kompiuterio garsiakalbį"
+
+#. i18n: ectx: whatsthis, entry, group (General)
+#: kdeglobals.kcfg:31
+#, kde-format
+msgid ""
+"Whether the ordinary PC speaker should be used instead of KDE's own "
+"notifications system."
+msgstr ""
+"Ar paprastas garsiakalbis turėtų būti naudojamas vietoje KDE pranešimų "
+"sistemos."
+
+#. i18n: ectx: label, entry, group (General)
+#: kdeglobals.kcfg:35
+#, kde-format
+msgid "What terminal application to use"
+msgstr "Kokią terminalo programą naudoti"
+
+#. i18n: ectx: whatsthis, entry, group (General)
+#: kdeglobals.kcfg:37
+#, kde-format
+msgid ""
+"Whenever a terminal application is launched this terminal emulator program "
+"will be used.\n"
+msgstr ""
+"Kai bus paleista terminalinė programa, bus naudojama ši terminalo emuliavimo "
+"programa.\n"
+
+#. i18n: ectx: label, entry, group (General)
+#: kdeglobals.kcfg:41
+#, kde-format
+msgid "Fixed width font"
+msgstr "Lygiaplotis šriftas"
+
+#. i18n: ectx: whatsthis, entry, group (General)
+#: kdeglobals.kcfg:43
+#, kde-format
+msgid ""
+"This font is used when a fixed font is needed. A fixed font has a constant "
+"width.\n"
+msgstr ""
+"Šis šriftas naudojamas, kai reikia lygiapločio šrifto. Lygiaplotis šriftas "
+"turi pastovų plotį.\n"
+
+#. i18n: ectx: label, entry, group (General)
+#: kdeglobals.kcfg:46
+#, kde-format
+msgid "System wide font"
+msgstr "Sistemos šriftas"
+
+#. i18n: ectx: label, entry, group (General)
+#: kdeglobals.kcfg:49
+#, kde-format
+msgid "Font for menus"
+msgstr "Meniu šriftas"
+
+#. i18n: ectx: whatsthis, entry, group (General)
+#: kdeglobals.kcfg:50
+#, kde-format
+msgid "What font to use for menus in applications."
+msgstr "Kokį šriftą naudoti programų meniu."
+
+#. i18n: ectx: label, entry, group (General)
+#: kdeglobals.kcfg:53
+#, kde-format
+msgid "Color for links"
+msgstr "Nuorodų spalva"
+
+#. i18n: ectx: whatsthis, entry, group (General)
+#: kdeglobals.kcfg:54
+#, kde-format
+msgid "What color links should be that have not yet been clicked on"
+msgstr "Kokios spalvos turėtų būti dar nepaspaustos nuorodos"
+
+#. i18n: ectx: label, entry, group (General)
+#: kdeglobals.kcfg:57
+#, kde-format
+msgid "Color for visited links"
+msgstr "Aplankytų nuorodų spalva"
+
+#. i18n: ectx: label, entry, group (General)
+#: kdeglobals.kcfg:60
+#, kde-format
+msgid "Font for the taskbar"
+msgstr "Šriftas užduočių juostai"
+
+#. i18n: ectx: whatsthis, entry, group (General)
+#: kdeglobals.kcfg:61
+#, kde-format
+msgid ""
+"What font to use for the panel at the bottom of the screen, where the "
+"currently running applications are."
+msgstr ""
+"Kokį šriftą naudoti skydeliui ekrano apačioje, kuriame rodomos dabar "
+"veikiančios programos."
+
+#. i18n: ectx: label, entry, group (General)
+#: kdeglobals.kcfg:64
+#, kde-format
+msgid "Fonts for toolbars"
+msgstr "Šriftai įrankinėms"
+
+#. i18n: ectx: label, entry (Desktop Screenshot), group (Global Shortcuts)
+#: kdeglobals.kcfg:73
+#, kde-format
+msgid "Shortcut for taking screenshot"
+msgstr "Klavišų derinys ekranui nukopijuoti"
+
+#. i18n: ectx: label, entry (Enable/Disable Clipboard Actions), group (Global Shortcuts)
+#: kdeglobals.kcfg:78
+#, kde-format
+msgid "Shortcut for toggling Clipboard Actions on and off"
+msgstr "Klavišų derinys iškarpinės veiksmams įjungti ir išjungti"
+
+#. i18n: ectx: label, entry (Halt without Confirmation), group (Global Shortcuts)
+#: kdeglobals.kcfg:83
+#, kde-format
+msgid "Shortcut for shutting down the computer without confirmation"
+msgstr "Klavišų derinys kompiuterio išjungimui be patvirtinimo"
+
+#. i18n: ectx: label, entry (Sort directories first), group (KFileDialog Settings)
+#: kdeglobals.kcfg:380
+#, kde-format
+msgid "Show directories first"
+msgstr "Aplankus rodyti viršuje"
+
+#. i18n: ectx: whatsthis, entry (Sort directories first), group (KFileDialog Settings)
+#: kdeglobals.kcfg:381
+#, kde-format
+msgid "Whether directories should be placed at the top when displaying files"
+msgstr "Ar aplankai turėtų būti rodomi virš failų"
+
+#. i18n: ectx: label, entry (Recent URLs), group (KFileDialog Settings)
+#: kdeglobals.kcfg:389
+#, kde-format
+msgid "The URLs recently visited"
+msgstr "Paskiausiai aplankyti adresai"
+
+#. i18n: ectx: whatsthis, entry (Recent URLs), group (KFileDialog Settings)
+#: kdeglobals.kcfg:390
+#, kde-format
+msgid "Used for auto-completion in file dialogs, for example"
+msgstr "Naudojamas automatiniam užbaigimui, pvz. failų dialoguose"
+
+#. i18n: ectx: label, entry (Show Preview), group (KFileDialog Settings)
+#: kdeglobals.kcfg:394
+#, kde-format
+msgid "Show file preview in file dialog"
+msgstr "Rodyti failo peržiūrą failų dialoge"
+
+#. i18n: ectx: label, entry (Show hidden files), group (KFileDialog Settings)
+#: kdeglobals.kcfg:399
+#, kde-format
+msgid "Show hidden files"
+msgstr "Rodyti slepiamus failus"
+
+#. i18n: ectx: whatsthis, entry (Show hidden files), group (KFileDialog Settings)
+#: kdeglobals.kcfg:400
+#, kde-format
+msgid ""
+"Whether files starting with a dot (convention for hidden files) should be "
+"shown"
+msgstr ""
+"Ar rodyti failus, kurių pavadinimas prasideda tašku (sutartinė slepiamų "
+"failų žymė)"
+
+#. i18n: ectx: label, entry (Show Speedbar), group (KFileDialog Settings)
+#: kdeglobals.kcfg:405
+#, kde-format
+msgid "Show speedbar"
+msgstr "Rodyti greitąją juostą"
+
+#. i18n: ectx: whatsthis, entry (Show Speedbar), group (KFileDialog Settings)
+#: kdeglobals.kcfg:406
+#, kde-format
+msgid ""
+"Whether the shortcut icons to the left in the file dialog should be shown"
+msgstr "Ar rodyti nuorodų ženkliukus failų dialogo kairėje"
+
+#. i18n: ectx: label, entry, group (Locale)
+#: kdeglobals.kcfg:425
+#, kde-format
+msgid "What country"
+msgstr "Kuri valstybė"
+
+#. i18n: ectx: whatsthis, entry, group (Locale)
+#: kdeglobals.kcfg:426
+#, kde-format
+msgid ""
+"Used to determine how to display numbers, currency and time/date, for example"
+msgstr ""
+"Naudojama nustatymui, kaip atvaizduoti skaičius, valiutą, datą/laiką ir t.t."
+
+#. i18n: ectx: label, entry, group (Locale)
+#: kdeglobals.kcfg:430
+#, kde-format
+msgid "What language to use to display text"
+msgstr "Kurią kalbą naudoti teksto rodymui"
+
+#. i18n: ectx: label, entry, group (Locale)
+#: kdeglobals.kcfg:433
+#, kde-format
+msgid "Character used for indicating positive numbers"
+msgstr "Simbolis, naudojamas parodyti teigiamus skaičius"
+
+#. i18n: ectx: whatsthis, entry, group (Locale)
+#: kdeglobals.kcfg:434
+#, kde-format
+msgid "Most countries have no character for this"
+msgstr "Dauguma valstybių tam nenaudoja jokio simbolio"
+
+#. i18n: ectx: label, entry, group (Paths)
+#: kdeglobals.kcfg:439
+#, kde-format
+msgid "Path to the autostart directory"
+msgstr "Kelias iki autostarto aplanko"
+
+#. i18n: ectx: whatsthis, entry, group (Paths)
+#: kdeglobals.kcfg:440
+#, kde-format
+msgid "Path to the directory containing executables to be run on session login"
+msgstr ""
+"Kelias iki aplanko, kuriame esančius vykduomuosius failus reikia įvykdyti "
+"prisijungimo metu"
+
+#. i18n: ectx: label, entry, group (Socks)
+#: kdeglobals.kcfg:487
+#, kde-format
+msgid "Enable SOCKS support"
+msgstr "Įgalinti SOCKS palaikymą"
+
+#. i18n: ectx: whatsthis, entry, group (Socks)
+#: kdeglobals.kcfg:488
+#, kde-format
+msgid "Whether SOCKS version 4 and 5 should be enabled in KDE's sub systems"
+msgstr "Ar SOCKS versijos 4 ir 5 turį būti įgalintos KDE posistemėse"
+
+#. i18n: ectx: label, entry, group (Socks)
+#: kdeglobals.kcfg:492
+#, kde-format
+msgid "Path to custom SOCKS library"
+msgstr "Kelias iki savos SOCKS bibliotekos"
+
+#. i18n: ectx: label, entry, group (Toolbar style)
+#: kdeglobals.kcfg:498
+#, kde-format
+msgid "Highlight toolbar buttons on mouse over"
+msgstr "Paryškinti įrankinių mygtukus, kai užvedama pelė"
+
+#. i18n: ectx: label, entry, group (Toolbar style)
+#: kdeglobals.kcfg:502
+#, kde-format
+msgid "Show text on toolbar icons "
+msgstr "Rodyti tekstą ant ženkliukų įrankinėse"
+
+#. i18n: ectx: whatsthis, entry, group (Toolbar style)
+#: kdeglobals.kcfg:503
+#, kde-format
+msgid "Whether text should be shown in addition to icons on toolbar icons"
+msgstr "Ar rodyti tekstą prie ženkliukų įrankinėse"
+
+#. i18n: ectx: label, entry (EchoMode), group (Passwords)
+#: kdeglobals.kcfg:524
+#, kde-format
+msgid "Password echo type"
+msgstr "Slaptažodžio rodymo būdas"
+
+#. i18n: ectx: label, entry (Dialog Size), group (KKeyDialog Settings)
+#: kdeglobals.kcfg:534
+#, kde-format
+msgid "The size of the dialog"
+msgstr "Dialogo lango dydis"
+
+#: kpluginselector.cpp:140
+#, kde-format
+msgid ""
+"Automatic changes have been performed due to plugin dependencies. Click here "
+"for further information"
+msgstr ""
+"Automatiniai pakeitimai atlikti dėl papildinių priklausomybių. Spauskite čia "
+"norėdami gauti daugiau informacijos"
+
+#: kpluginselector.cpp:208
+#, kde-format
+msgid ""
+"Automatic changes have been performed in order to satisfy plugin "
+"dependencies:\n"
+msgstr ""
+"Automatiniai pakeitimai atlikti, kad būtų patenkintos papildinių "
+"priklausomybės:\n"
+
+#: kpluginselector.cpp:212
+#, kde-format
+msgid ""
+"\n"
+"    %1 plugin has been automatically checked because of the dependency of %2 "
+"plugin"
+msgstr ""
+"\n"
+"    %1 papildinys buvo pažymėtas automatiškai dėl %2 papildinio "
+"priklausomybės"
+
+#: kpluginselector.cpp:214
+#, kde-format
+msgid ""
+"\n"
+"    %1 plugin has been automatically unchecked because of its dependency on "
+"%2 plugin"
+msgstr ""
+"\n"
+"    %1 papildinio pažymėjimas buvo panaikintas automatiškai dėl jo "
+"priklausomybės nuo %2 papildinio"
+
+#: kpluginselector.cpp:217
+#, kde-format
+msgid "Dependency Check"
+msgstr "Priklausomybių patikrinimas"
+
+#: kpluginselector.cpp:234
+#, kde-format
+msgid "%1 plugin automatically added due to plugin dependencies"
+msgid_plural "%1 plugins automatically added due to plugin dependencies"
+msgstr[0] "%1 automatinis pakeitimas atliktas dėl papildinių priklausomybių"
+msgstr[1] "%1 automatiniai pakeitimai atlikti dėl papildinių priklausomybių"
+msgstr[2] "%1 automatinių pakeitimų atlikta dėl papildinių priklausomybių"
+msgstr[3] "%1 automatinis pakeitimas atliktas dėl papildinių priklausomybių"
+
+#: kpluginselector.cpp:238
+#, kde-format
+msgid ", "
+msgstr ", "
+
+#: kpluginselector.cpp:242
+#, kde-format
+msgid "%1 plugin automatically removed due to plugin dependencies"
+msgid_plural "%1 plugins automatically removed due to plugin dependencies"
+msgstr[0] "%1 papildinys automatiškai pašalintas dėl papildinių priklausomybių"
+msgstr[1] "%1 papildiniai automatiškai pašalinti dėl papildinių priklausomybių"
+msgstr[2] "%1 papildinių automatiškai pašalinta dėl papildinių priklausomybių"
+msgstr[3] "%1 papildinys automatiškai pašalintas dėl papildinių priklausomybių"
+
+#: kpluginselector.cpp:262
+#, kde-format
+msgid "Search..."
+msgstr ""
+
+#: kpluginselector.cpp:715
+#, fuzzy, kde-format
+#| msgctxt "Used only for plugins"
+#| msgid "About %1"
+msgid "About"
+msgstr "Apie %1"
+
+#: kpluginselector.cpp:818
+#, kde-format
+msgctxt "Used only for plugins"
+msgid "About %1"
+msgstr "Apie %1"
+
+#: ksettings/componentsdialog.cpp:55
+#, kde-format
+msgid "Select Components"
+msgstr "Pasirinkti komponentus"
+
+#: ksettings/dialog.cpp:232
+#, kde-format
+msgid "Enable component"
+msgstr "Įgalinti komponentą"
