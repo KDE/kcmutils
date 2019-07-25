@@ -108,34 +108,14 @@ void KCMultiDialogPrivate::_k_slotCurrentPageChanged(KPageWidgetItem *current, K
     // TODO KF6 Fix this situation.
 
     if (currentModule && currentModule->realModule() && currentModule->realModule()->inherits("KCModuleQml")) {
-        bool padHackLeft = false;
-        bool padHackRight = false;
-        if (q->pageWidget()->model()->rowCount() < 2) {
-            padHackLeft = true;
-            padHackRight = true;
-        } else if (qApp->isRightToLeft()) {
-            padHackLeft = true;
-        } else {
-            padHackRight = true;
-        }
-
-        q->layout()->setContentsMargins(padHackLeft ? 0: q->style()->pixelMetric(QStyle::PM_LayoutLeftMargin),
-                                        q->style()->pixelMetric(QStyle::PM_LayoutTopMargin),
-                                        padHackRight ? 0 : q->style()->pixelMetric(QStyle::PM_LayoutRightMargin),
-                                        q->style()->pixelMetric(QStyle::PM_LayoutBottomMargin));
         q->pageWidget()->layout()->setSpacing(0);
-        q->buttonBox()->setContentsMargins(padHackLeft ? q->style()->pixelMetric(QStyle::PM_LayoutLeftMargin) : 0,
+        q->buttonBox()->setContentsMargins(q->style()->pixelMetric(QStyle::PM_LayoutLeftMargin),
                                            0,
-                                           padHackRight ? q->style()->pixelMetric(QStyle::PM_LayoutRightMargin) : 0,
-                                           0);
+                                           q->style()->pixelMetric(QStyle::PM_LayoutRightMargin),
+                                           q->style()->pixelMetric(QStyle::PM_LayoutBottomMargin));
     } else {
         q->buttonBox()->setContentsMargins(0, 0, 0, 0);
         q->pageWidget()->layout()->setSpacing(q->style()->pixelMetric(QStyle::PM_LayoutHorizontalSpacing));
-        q->layout()->setContentsMargins(
-                q->style()->pixelMetric(QStyle::PM_LayoutLeftMargin),
-                q->style()->pixelMetric(QStyle::PM_LayoutTopMargin),
-                q->style()->pixelMetric(QStyle::PM_LayoutRightMargin),
-                q->style()->pixelMetric(QStyle::PM_LayoutBottomMargin));
     }
 
     q->blockSignals(true);
