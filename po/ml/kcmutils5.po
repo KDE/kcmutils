@@ -1,0 +1,493 @@
+# translation of kdelibs4.po to
+# Malayalam translation of kdelibs4.
+# Copyright (C) 2007-2010 This_file_is_part_of_KDE
+# This file is distributed under the same license as the kdelibs package.
+# Anoop | അനൂപ് Panavalappil | പനവളപ്പില്‍ <gnuanu@gmail.com>, 2008.
+# ANI PETER|അനി പീറ്റര്‍ <peter.ani@gmail.com>, 2008.
+# Maxin B. John <maxinbjohn@gmail.com>, 2007.
+# Manu S Madhav | മനു എസ് മാധവ് <manusmad@gmail.com>, 2008.
+# Praveen Arimbrathodiyil <pravi.a@gmail.com>, 2007, 2008, 2009, 2010.
+msgid ""
+msgstr ""
+"Project-Id-Version: kdelibs4\n"
+"Report-Msgid-Bugs-To: https://bugs.kde.org\n"
+"POT-Creation-Date: 2019-07-26 02:43+0200\n"
+"PO-Revision-Date: 2010-12-29 15:32+0530\n"
+"Last-Translator: \n"
+"Language-Team:  <en@li.org>\n"
+"Language: ml\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: KBabel 1.11.4\n"
+"X-Poedit-Country: INDIA\n"
+
+#, kde-format
+msgctxt "NAME OF TRANSLATORS"
+msgid "Your names"
+msgstr "പ്രവീണ്‍ അരിമ്പ്രത്തൊടിയില്‍, അനി പീറ്റര്‍, മാക്സിന്‍ ജോണ്‍, അനൂപ് പനവളപ്പില്‍, മനു എസ് മാധവ്"
+
+#, kde-format
+msgctxt "EMAIL OF TRANSLATORS"
+msgid "Your emails"
+msgstr ""
+"pravi.a@gmail.com, peter.ani@gmail.com, maxinbjohn@gmail.com, gnuanu@gmail."
+"com, manusmad@gmail.com"
+
+#: kcmoduleloader.cpp:79
+#, kde-format
+msgid "The module %1 could not be found."
+msgstr "ഘടകം %1 ലഭ്യമല്ല."
+
+#: kcmoduleloader.cpp:80
+#, kde-format
+msgid ""
+"<qt><p>The diagnosis is:<br />The desktop file %1 could not be found.</p></"
+"qt>"
+msgstr ""
+
+#: kcmoduleloader.cpp:82
+#, kde-format
+msgid "The module %1 is disabled."
+msgstr "ഘടകം %1 പ്രവര്‍ത്തന രഹിതമാണു്."
+
+#: kcmoduleloader.cpp:83
+#, kde-format
+msgid ""
+"<qt><p>Either the hardware/software the module configures is not available "
+"or the module has been disabled by the administrator.</p></qt>"
+msgstr ""
+
+#: kcmoduleloader.cpp:140
+#, kde-format
+msgid "The module %1 is not a valid configuration module."
+msgstr "ഘടകം %1 ശരിയായ ഒരു ക്രമീകരണ ഘടകമല്ല."
+
+#: kcmoduleloader.cpp:141
+#, kde-format
+msgid ""
+"<qt>The diagnosis is:<br />The desktop file %1 does not specify a library.</"
+"qt>"
+msgstr ""
+
+#: kcmoduleloader.cpp:156
+#, kde-format
+msgid ""
+"<qt><p>Possible reasons:<ul><li>An error occurred during your last system "
+"upgrade, leaving an orphaned control module behind</li><li>You have old "
+"third party modules lying around.</li></ul></p><p>Check these points "
+"carefully and try to remove the module mentioned in the error message. If "
+"this fails, consider contacting your distributor or packager.</p></qt>"
+msgstr ""
+
+#: kcmoduleproxy.cpp:127
+#, kde-format
+msgctxt "Argument is application name"
+msgid "This configuration section is already opened in %1"
+msgstr "ക്രമീകരണഭാഗം നിലവില്‍ %1-ല്‍ തുറന്നിരിക്കുന്നു."
+
+#: kcmultidialog.cpp:63
+#, kde-format
+msgid ""
+"The settings of the current module have changed.\n"
+"Do you want to apply the changes or discard them?"
+msgstr ""
+"ഇപ്പോഴുള്ള രേഖയുടെ സജ്ജീകരണങ്ങളില്‍ മാറ്റങ്ങള്‍ വരുത്തിയിരിക്കുന്നു.\n"
+"നിങ്ങള്‍ക്കവ സൂക്ഷിക്കണമോ വേണ്ടന്നു് വയ്ക്കണമോ?"
+
+#: kcmultidialog.cpp:65
+#, kde-format
+msgid "Apply Settings"
+msgstr "സജ്ജീകരണങ്ങള്‍ പ്രാഭല്യത്തിലാക്കുക"
+
+#: kcmultidialog.cpp:241 kpluginselector.cpp:720
+#, kde-format
+msgid "Configure"
+msgstr "ക്രമീകരിയ്ക്കുക"
+
+#. i18n: ectx: label, entry, group (DesktopIcons)
+#: kdeglobals.kcfg:9
+#, kde-format
+msgid "Distance between desktop icons"
+msgstr "പണിയിടത്തിലെ ചിഹ്നങ്ങള്‍ക്കിടയിലെ ദൂരം"
+
+#. i18n: ectx: whatsthis, entry, group (DesktopIcons)
+#: kdeglobals.kcfg:10
+#, kde-format
+msgid "The distance between icons specified in pixels."
+msgstr "ചിഹ്നങ്ങള്‍ക്കിടയിലെ ദൂരം പിക്സലില്‍ പ്രസ്ഥാപിച്ചത്"
+
+#. i18n: ectx: label, entry, group (General)
+#: kdeglobals.kcfg:23
+#, kde-format
+msgid "Widget style to use"
+msgstr "ഉപയോഗിയ്ക്കേണ്ട വിഡ്ജറ്റിന്റെ രീതി"
+
+#. i18n: ectx: whatsthis, entry, group (General)
+#: kdeglobals.kcfg:24
+#, kde-format
+msgid ""
+"The name of the widget style, for example \"keramik\" or \"plastik\". "
+"Without quotes."
+msgstr ""
+"ഉരുപ്പടി ശൈലികളുടെ പേരു്, ഉദാഹരണം \"keramik\" അല്ലെങ്കില്‍ \"plastik\". ക്വോട്ടുകളില്ലാതെ."
+
+#. i18n: ectx: label, entry, group (General)
+#: kdeglobals.kcfg:30
+#, kde-format
+msgid "Use the PC speaker"
+msgstr "പിസി സ്പീക്കറുപയോഗിയ്ക്കുക"
+
+#. i18n: ectx: whatsthis, entry, group (General)
+#: kdeglobals.kcfg:31
+#, kde-format
+msgid ""
+"Whether the ordinary PC speaker should be used instead of KDE's own "
+"notifications system."
+msgstr "കെഡിഇയുടെ അറിയിപ്പു് സംവിധാനങ്ങള്‍ക്കു് പകരം പിസിയുടെ സ്പീക്കര്‍ ഉപയോഗിയ്ക്കണമോ എന്നു്"
+
+#. i18n: ectx: label, entry, group (General)
+#: kdeglobals.kcfg:35
+#, kde-format
+msgid "What terminal application to use"
+msgstr "ഏത് ടെര്‍മിനല്‍ പ്രയോഗമാണുപയോഗിയ്ക്കേണ്ടത്"
+
+#. i18n: ectx: whatsthis, entry, group (General)
+#: kdeglobals.kcfg:37
+#, kde-format
+msgid ""
+"Whenever a terminal application is launched this terminal emulator program "
+"will be used.\n"
+msgstr ""
+"ടെര്‍മിനലില്‍ പ്രവര്‍ത്തിപ്പിയ്ക്കേണ്ട പ്രയോഗങ്ങള്‍ തുടങ്ങുമ്പോഴൊക്കെ ഈ ടെര്‍മിനലിനെ അനുകരിയ്ക്കുന്ന "
+"പ്രോഗ്രാം ഉപയോഗിയ്ക്കുന്നതായിരിയ്ക്കും.\n"
+
+#. i18n: ectx: label, entry, group (General)
+#: kdeglobals.kcfg:41
+#, kde-format
+msgid "Fixed width font"
+msgstr "തുല്യ വീതിയുള്ള അക്ഷരരൂപം"
+
+#. i18n: ectx: whatsthis, entry, group (General)
+#: kdeglobals.kcfg:43
+#, kde-format
+msgid ""
+"This font is used when a fixed font is needed. A fixed font has a constant "
+"width.\n"
+msgstr ""
+"നിശ്ചിത അക്ഷരരൂപം ആവശ്യമുള്ളപ്പോള്‍ ഈ അക്ഷരരൂപം ഉപയോഗിയ്ക്കുന്നതായിരിയ്ക്കും. ഒരു നിശ്ചിത "
+"അക്ഷരരൂപത്തിനു് നിശ്ചിതമായ വീതിയുണ്ടു്.\n"
+
+#. i18n: ectx: label, entry, group (General)
+#: kdeglobals.kcfg:46
+#, kde-format
+msgid "System wide font"
+msgstr "സിസ്റ്റം മുഴുവനായുമുള്ള അക്ഷരരൂപം"
+
+#. i18n: ectx: label, entry, group (General)
+#: kdeglobals.kcfg:49
+#, kde-format
+msgid "Font for menus"
+msgstr "മെനുകള്‍ക്കായുള്ള അക്ഷരരൂപം"
+
+#. i18n: ectx: whatsthis, entry, group (General)
+#: kdeglobals.kcfg:50
+#, kde-format
+msgid "What font to use for menus in applications."
+msgstr "പ്രയോഗങ്ങളിലെ മെനുകളിലുപയോഗിയ്ക്കേണ്ട അക്ഷരരൂപമേത്."
+
+#. i18n: ectx: label, entry, group (General)
+#: kdeglobals.kcfg:53
+#, kde-format
+msgid "Color for links"
+msgstr "കണ്ണികള്‍ക്കുപയോഗിയ്ക്കേണ്ട നിറം"
+
+#. i18n: ectx: whatsthis, entry, group (General)
+#: kdeglobals.kcfg:54
+#, kde-format
+msgid "What color links should be that have not yet been clicked on"
+msgstr "ഇതുവരെ അമര്‍ത്തിയിട്ടില്ലാത്ത കണ്ണികള്‍‌ക്കേത് നിറമാണ് വേണ്ടത്"
+
+#. i18n: ectx: label, entry, group (General)
+#: kdeglobals.kcfg:57
+#, kde-format
+msgid "Color for visited links"
+msgstr "സന്ദര്‍ശിച്ച കണ്ണികള്‍ക്ക് വേണ്ട നിറം"
+
+#. i18n: ectx: label, entry, group (General)
+#: kdeglobals.kcfg:60
+#, kde-format
+msgid "Font for the taskbar"
+msgstr "ടാസ്ക്ബാറിന് വേണ്ട അക്ഷരരൂപം"
+
+#. i18n: ectx: whatsthis, entry, group (General)
+#: kdeglobals.kcfg:61
+#, kde-format
+msgid ""
+"What font to use for the panel at the bottom of the screen, where the "
+"currently running applications are."
+msgstr ""
+"ഇപ്പോള്‍ പ്രവര്‍ത്തിച്ചുകൊണ്ടിരിയ്ക്കുന്ന പ്രയോഗങ്ങളുള്ള സ്ക്രീനിന്റെ താഴെയുള്ള പാളിയിലുപയോഗിയ്ക്കേണ്ട "
+"അക്ഷരരൂപം ഏതാണു്."
+
+#. i18n: ectx: label, entry, group (General)
+#: kdeglobals.kcfg:64
+#, kde-format
+msgid "Fonts for toolbars"
+msgstr "പണിയായുധനിരകള്‍ക്ക് വേണ്ട നിറം"
+
+#. i18n: ectx: label, entry (Desktop Screenshot), group (Global Shortcuts)
+#: kdeglobals.kcfg:73
+#, kde-format
+msgid "Shortcut for taking screenshot"
+msgstr "സ്ക്രീന്‍ഷോട്ടെടുക്കാന്‍ വേണ്ട കുറുക്കുവഴി"
+
+#. i18n: ectx: label, entry (Enable/Disable Clipboard Actions), group (Global Shortcuts)
+#: kdeglobals.kcfg:78
+#, kde-format
+msgid "Shortcut for toggling Clipboard Actions on and off"
+msgstr "ക്ലിപ്ബോര്‍ഡ് നടപടികള്‍ ഓണാക്കാനും ഓഫാക്കാനും വേണ്ട കുറുക്കുവഴി"
+
+#. i18n: ectx: label, entry (Halt without Confirmation), group (Global Shortcuts)
+#: kdeglobals.kcfg:83
+#, kde-format
+msgid "Shortcut for shutting down the computer without confirmation"
+msgstr "ചോദിയ്ക്കാതെ തന്നെ കമ്പ്യൂട്ടര്‍ അടച്ചു് പൂട്ടാന്‍ വേണ്ട കുറുക്കുവഴി"
+
+#. i18n: ectx: label, entry (Sort directories first), group (KFileDialog Settings)
+#: kdeglobals.kcfg:380
+#, kde-format
+msgid "Show directories first"
+msgstr "തട്ടുകള്‍ ആദ്യം കാണിയ്ക്കുക"
+
+#. i18n: ectx: whatsthis, entry (Sort directories first), group (KFileDialog Settings)
+#: kdeglobals.kcfg:381
+#, kde-format
+msgid "Whether directories should be placed at the top when displaying files"
+msgstr "ഫയലുകള്‍ കാണിയ്ക്കുമ്പോള്‍ തട്ടുകള്‍ മുകളില്‍ കാണിയ്ക്കണമോ എന്ന്"
+
+#. i18n: ectx: label, entry (Recent URLs), group (KFileDialog Settings)
+#: kdeglobals.kcfg:389
+#, kde-format
+msgid "The URLs recently visited"
+msgstr "അടുത്തിടെ സന്ദര്‍ശിച്ച യുആര്‍എല്ലുകള്‍"
+
+#. i18n: ectx: whatsthis, entry (Recent URLs), group (KFileDialog Settings)
+#: kdeglobals.kcfg:390
+#, kde-format
+msgid "Used for auto-completion in file dialogs, for example"
+msgstr "ഉദാഹരണത്തിന് ഫയല്‍ ഡയലോഗുകളില്‍ സ്വയം പൂര്‍ത്തിയാക്കാനുപയോഗിയ്ക്കുന്നു"
+
+#. i18n: ectx: label, entry (Show Preview), group (KFileDialog Settings)
+#: kdeglobals.kcfg:394
+#, kde-format
+msgid "Show file preview in file dialog"
+msgstr "ഫയല്‍ ഡയലോഗില്‍ ഫയല്‍ കണ്ടുനോക്കുന്നത് ചേര്‍ക്കുക"
+
+#. i18n: ectx: label, entry (Show hidden files), group (KFileDialog Settings)
+#: kdeglobals.kcfg:399
+#, kde-format
+msgid "Show hidden files"
+msgstr "ഒളിപ്പിച്ച് വച്ചിരിയ്ക്കുന്ന ഫയലുകള്‍ കാണിയ്ക്കുക"
+
+#. i18n: ectx: whatsthis, entry (Show hidden files), group (KFileDialog Settings)
+#: kdeglobals.kcfg:400
+#, kde-format
+msgid ""
+"Whether files starting with a dot (convention for hidden files) should be "
+"shown"
+msgstr ""
+"ഒരു കുത്തു് കൊണ്ടു് തുടങ്ങുന്ന ഫയലുകള്‍ (ഒളിപ്പിയ്ക്കേണ്ട ഫയലുകള്‍ക്കായുപയോഗിയ്ക്കുന്നതു്) കാണിയ്ക്കണോ എന്നു്"
+
+#. i18n: ectx: label, entry (Show Speedbar), group (KFileDialog Settings)
+#: kdeglobals.kcfg:405
+#, kde-format
+msgid "Show speedbar"
+msgstr "വേഗതാബാര്‍ കാണിയ്ക്കുക"
+
+#. i18n: ectx: whatsthis, entry (Show Speedbar), group (KFileDialog Settings)
+#: kdeglobals.kcfg:406
+#, kde-format
+msgid ""
+"Whether the shortcut icons to the left in the file dialog should be shown"
+msgstr "ഫയലിനുള്ള ചെറുജാലകത്തിന്റെ ഇടതുവശത്തു് കുറുക്കുവഴിയ്ക്കുള്ള ചിഹ്നങ്ങള്‍ കാണിയ്ക്കണമോ എന്നു്"
+
+#. i18n: ectx: label, entry, group (Locale)
+#: kdeglobals.kcfg:425
+#, kde-format
+msgid "What country"
+msgstr "ഏത് രാജ്യം"
+
+#. i18n: ectx: whatsthis, entry, group (Locale)
+#: kdeglobals.kcfg:426
+#, kde-format
+msgid ""
+"Used to determine how to display numbers, currency and time/date, for example"
+msgstr ""
+"ഉദാഹരണത്തിന് സമയം/തിയ്യതി, നാണയം, അക്കങ്ങള്‍ തുടങ്ങിയവ "
+"കാണിയ്ക്കുന്നതെങ്ങനെയെന്നു്നിശ്ചയിയ്ക്കാനുപയോഗിയ്ക്കുന്നു"
+
+#. i18n: ectx: label, entry, group (Locale)
+#: kdeglobals.kcfg:430
+#, kde-format
+msgid "What language to use to display text"
+msgstr "പദാവലി കാണിയ്ക്കേണ്ട ഭാഷയേത്"
+
+#. i18n: ectx: label, entry, group (Locale)
+#: kdeglobals.kcfg:433
+#, kde-format
+msgid "Character used for indicating positive numbers"
+msgstr "പോസിറ്റീവ് അക്കങ്ങളെ സൂചിപ്പിയ്ക്കാനുപയോഗിയ്ക്കുന്ന അക്ഷരം"
+
+#. i18n: ectx: whatsthis, entry, group (Locale)
+#: kdeglobals.kcfg:434
+#, kde-format
+msgid "Most countries have no character for this"
+msgstr "കൂടുതല്‍ രാജ്യങ്ങള്‍ക്കും ഇതിനൊരു പ്രത്യേകാക്ഷരമൊന്നുമില്ല"
+
+#. i18n: ectx: label, entry, group (Paths)
+#: kdeglobals.kcfg:439
+#, kde-format
+msgid "Path to the autostart directory"
+msgstr "സ്വയം തുടങ്ങേണ്ട തട്ടിലേയ്ക്കുള്ള വഴി"
+
+#. i18n: ectx: whatsthis, entry, group (Paths)
+#: kdeglobals.kcfg:440
+#, kde-format
+msgid "Path to the directory containing executables to be run on session login"
+msgstr "പ്രവര്‍ത്തനവേള തുടങ്ങുമ്പോള്‍ പ്രവര്‍ത്തിപ്പിയ്ക്കേണ്ട പ്രോഗ്രാമുകളുള്ള തട്ടിലേയ്ക്കുള്ള വഴി"
+
+#. i18n: ectx: label, entry, group (Socks)
+#: kdeglobals.kcfg:487
+#, kde-format
+msgid "Enable SOCKS support"
+msgstr "സോക്സ് പിന്തുണ പ്രവര്‍ത്തികമാക്കുക"
+
+#. i18n: ectx: whatsthis, entry, group (Socks)
+#: kdeglobals.kcfg:488
+#, kde-format
+msgid "Whether SOCKS version 4 and 5 should be enabled in KDE's sub systems"
+msgstr "കെഡിഇയുടെ ഉപസംവിധാനങ്ങളില്‍ സോക്സ് ലക്കം 4 ഉം 5 ഉം പ്രാവര്‍ത്തികമാക്കണമോ എന്ന്"
+
+#. i18n: ectx: label, entry, group (Socks)
+#: kdeglobals.kcfg:492
+#, kde-format
+msgid "Path to custom SOCKS library"
+msgstr "സ്വന്തം സോക്സ് തട്ടിലേയ്ക്കുള്ള വഴി"
+
+#. i18n: ectx: label, entry, group (Toolbar style)
+#: kdeglobals.kcfg:498
+#, kde-format
+msgid "Highlight toolbar buttons on mouse over"
+msgstr "പണിയായുധനിരയിലെ ബട്ടണുകള്‍ മൌസ് മുകളില്‍ വരുമ്പോള്‍ എടുത്ത് കാണിയ്ക്കുക"
+
+#. i18n: ectx: label, entry, group (Toolbar style)
+#: kdeglobals.kcfg:502
+#, kde-format
+msgid "Show text on toolbar icons "
+msgstr "പണിയായുധനിരയിലെ ചിഹ്നങ്ങളില്‍ പദാവലി കാണിയ്ക്കുക "
+
+#. i18n: ectx: whatsthis, entry, group (Toolbar style)
+#: kdeglobals.kcfg:503
+#, kde-format
+msgid "Whether text should be shown in addition to icons on toolbar icons"
+msgstr "ചിഹ്നങ്ങളെക്കൂടാതെ പദാവലിയും പണിയായുധനിരയിലെ ചിഹ്നങ്ങളില്‍ കാണിയ്ക്കണമോ എന്ന്"
+
+#. i18n: ectx: label, entry (EchoMode), group (Passwords)
+#: kdeglobals.kcfg:524
+#, kde-format
+msgid "Password echo type"
+msgstr "അടയാളവാക്ക് കാണിയ്ക്കുന്ന തരം"
+
+#. i18n: ectx: label, entry (Dialog Size), group (KKeyDialog Settings)
+#: kdeglobals.kcfg:534
+#, kde-format
+msgid "The size of the dialog"
+msgstr "ഡയലോഗിന്റെ വലിപ്പം"
+
+#: kpluginselector.cpp:140
+#, kde-format
+msgid ""
+"Automatic changes have been performed due to plugin dependencies. Click here "
+"for further information"
+msgstr ""
+
+#: kpluginselector.cpp:208
+#, kde-format
+msgid ""
+"Automatic changes have been performed in order to satisfy plugin "
+"dependencies:\n"
+msgstr ""
+
+#: kpluginselector.cpp:212
+#, kde-format
+msgid ""
+"\n"
+"    %1 plugin has been automatically checked because of the dependency of %2 "
+"plugin"
+msgstr ""
+"\n"
+"    %2 പ്ലഗിന്റെ ആശ്രയത്വം മൂലം %1 പ്ലഗിന്‍ തനിയെ ചെക്ക് ചെയ്യപ്പെട്ടു"
+
+#: kpluginselector.cpp:214
+#, kde-format
+msgid ""
+"\n"
+"    %1 plugin has been automatically unchecked because of its dependency on "
+"%2 plugin"
+msgstr ""
+"\n"
+"    %2 പ്ലഗിന്റെ ആശ്രയത്വം മൂലം %1 പ്ലഗിന്‍ തനിയെ അണ്‍ചെക്ക് ചെയ്യപ്പെട്ടു"
+
+#: kpluginselector.cpp:217
+#, kde-format
+msgid "Dependency Check"
+msgstr "ഡിപന്‍ഡന്‍സി ചെക്കു്"
+
+#: kpluginselector.cpp:234
+#, kde-format
+msgid "%1 plugin automatically added due to plugin dependencies"
+msgid_plural "%1 plugins automatically added due to plugin dependencies"
+msgstr[0] "പ്ലഗിന്‍ ആശ്രയത്വം മൂലം %1 പ്ലഗിന്‍ തനിയെ കൂട്ടിച്ചേര്‍ത്തു"
+msgstr[1] "പ്ലഗിന്‍ ആശ്രയത്വം മൂലം %1 പ്ലഗിനുകള്‍ തനിയെ കൂട്ടിച്ചേര്‍ത്തു"
+
+#: kpluginselector.cpp:238
+#, kde-format
+msgid ", "
+msgstr ", "
+
+#: kpluginselector.cpp:242
+#, kde-format
+msgid "%1 plugin automatically removed due to plugin dependencies"
+msgid_plural "%1 plugins automatically removed due to plugin dependencies"
+msgstr[0] "പ്ലഗിന്‍ ആശ്രയത്വം മൂലം %1 പ്ലഗിന്‍ തനിയെ നീക്കം ചെയ്തു"
+msgstr[1] "പ്ലഗിന്‍ ആശ്രയത്വം മൂലം %1 പ്ലഗിനുകള്‍ തനിയെ നീക്കം ചെയ്തു"
+
+#: kpluginselector.cpp:262
+#, fuzzy, kde-format
+#| msgid "Search"
+msgid "Search..."
+msgstr "തെരയുക"
+
+#: kpluginselector.cpp:715
+#, fuzzy, kde-format
+#| msgid "&About"
+msgid "About"
+msgstr "&സംബന്ധിച്ചു്"
+
+#: kpluginselector.cpp:818
+#, kde-format
+msgctxt "Used only for plugins"
+msgid "About %1"
+msgstr "%1 സംബന്ധിച്ചു്"
+
+#: ksettings/componentsdialog.cpp:55
+#, kde-format
+msgid "Select Components"
+msgstr "ഘടകങ്ങള്‍ തെരഞ്ഞെടുക്കുക"
+
+#: ksettings/dialog.cpp:232
+#, kde-format
+msgid "Enable component"
+msgstr "ഘടകം സജ്ജമാക്കുക"
