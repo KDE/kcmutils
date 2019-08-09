@@ -35,7 +35,6 @@
 #include <QLayout>
 #include <QProcess>
 #include <QPushButton>
-#include <QScrollArea>
 #include <QStringList>
 #include <QStyle>
 #include <QUrl>
@@ -45,10 +44,10 @@
 #include <KAuthObjectDecorator>
 #endif
 #include <KGuiItem>
-#include <KIconLoader>
 #include <KLocalizedString>
 #include <KMessageBox>
 #include <KPageWidgetModel>
+#include <KIconLoader>
 
 bool KCMultiDialogPrivate::resolveChanges(KCModuleProxy *currentProxy)
 {

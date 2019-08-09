@@ -25,7 +25,6 @@
 
 #include <kcmodule.h>
 #include <kcmutils_export.h>
-#include <QList>
 
 class QWidget;
 

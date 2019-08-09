@@ -18,22 +18,16 @@
 
 #include "kcmoduleqml_p.h"
 
-#include <QDebug>
 
 #include <QVBoxLayout>
-#include <QtQml>
-#include <QQmlEngine>
-#include <QQmlContext>
 #include <QQuickWindow>
 #include <QQuickItem>
-#include <QGuiApplication>
 #include <QQuickWidget>
 
 #include <kdeclarative/kdeclarative.h>
 #include <kquickaddons/configmodule.h>
 #include <kdeclarative/qmlobjectsharedengine.h>
 #include <KAboutData>
-#include <KLocalizedString>
 #include <KPackage/Package>
 #include <KPackage/PackageLoader>
 #include <KPageWidget>

@@ -19,10 +19,10 @@
 
 #include "kcmodulecontainer.h"
 
-#include <QLayout>
-#include <QPixmap>
 #include <QStringList>
 #include <QTabWidget>
+#include <QHBoxLayout>
+#include <QVBoxLayout>
 
 #include <kcmodule.h>
 #include <kcmoduleinfo.h>

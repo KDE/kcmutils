@@ -21,16 +21,8 @@
 #include "kcmoduleproxy_p.h"
 
 #include <QApplication>
-#include <QCursor>
-#include <QDataStream>
-#include <QKeyEvent>
-#include <QFileInfo>
-#include <QFrame>
-#include <QLabel>
 #include <QLayout>
-#include <QPoint>
 
-#include <QImage>
 
 #include <QDBusConnection>
 #include <QDBusConnectionInterface>

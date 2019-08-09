@@ -20,12 +20,13 @@
 #include "componentsdialog_p.h"
 #include <klocalizedstring.h>
 #include <QDialogButtonBox>
-#include <QLayout>
 #include <QLabel>
 #include <QPushButton>
 #include <kplugininfo.h>
 #include <kiconloader.h>
 #include <QDebug>
+#include <QVBoxLayout>
+#include <QHBoxLayout>
 #include <kconfig.h>
 #include <kseparator.h>
 

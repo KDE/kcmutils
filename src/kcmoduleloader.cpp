@@ -24,9 +24,7 @@
 #include "kcmoduleloader.h"
 #include "kcmoduleqml_p.h"
 
-#include <QFile>
 #include <QLabel>
-#include <QLayout>
 #include <QLibrary>
 
 #include <kpluginloader.h>
@@ -34,6 +32,7 @@
 #include <klocalizedstring.h>
 #include <kmessagebox.h>
 #include <kaboutdata.h>
+#include <QVBoxLayout>
 
 #include <KQuickAddons/ConfigModule>
 

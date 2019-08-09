@@ -19,7 +19,6 @@
 
 #include "ksettings/pluginpage.h"
 #include "kpluginselector.h"
-#include <QLayout>
 #include "ksettings/dispatcher.h"
 #include <kaboutdata.h>
 

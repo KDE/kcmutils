@@ -28,13 +28,13 @@
 #include <QLabel>
 #include <QLineEdit>
 #include <QPainter>
-#include <QBoxLayout>
 #include <QApplication>
 #include <QCheckBox>
 #include <QPushButton>
 #include <QStandardPaths>
 #include <QStyle>
 #include <QStyleOptionViewItem>
+#include <QVBoxLayout>
 
 #include <QDebug>
 #include <kurllabel.h>

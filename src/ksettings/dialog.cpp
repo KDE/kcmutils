@@ -28,7 +28,6 @@
 #include <kservicetypetrader.h>
 #include <kconfig.h>
 
-#include <QFile>
 #include <QDir>
 #include <QCheckBox>
 #include <QDialogButtonBox>
@@ -36,6 +35,7 @@
 #include <QVBoxLayout>
 #include <QStack>
 #include <QCoreApplication>
+#include <QLabel>
 
 uint qHash(const KCModuleInfo &info)
 {

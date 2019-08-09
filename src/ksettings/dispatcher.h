@@ -21,7 +21,6 @@
 #define KSETTINGS_DISPATCHER_H
 
 #include <QObject>
-#include <QMap>
 #include <kcmutils_export.h>
 #include <ksharedconfig.h>
 

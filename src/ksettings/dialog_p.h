@@ -25,11 +25,8 @@
 #include "../kcmoduleinfo.h"
 
 #include <QHash>
-#include <QList>
 #include <QSet>
 #include <QString>
-#include <QLabel>
-#include <QWidget>
 
 #include <kpagewidgetmodel.h>
 #include <kservice.h>
