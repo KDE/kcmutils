@@ -21,7 +21,6 @@
 
 #include <QStringList>
 #include <QTabWidget>
-#include <QHBoxLayout>
 #include <QVBoxLayout>
 
 #include <kcmodule.h>
