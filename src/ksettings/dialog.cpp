@@ -171,7 +171,7 @@ QSet<KCModuleInfo> DialogPrivate::instanceServices()
 QSet<KCModuleInfo> DialogPrivate::parentComponentsServices(const QStringList &kcdparents)
 {
     registeredComponents += kcdparents;
-    QString constraint = kcdparents.join(QStringLiteral("' in [X-KDE-ParentComponents]) or ('"));
+    QString constraint = kcdparents.join(QLatin1String("' in [X-KDE-ParentComponents]) or ('"));
     constraint = QStringLiteral("('") + constraint + QStringLiteral("' in [X-KDE-ParentComponents])");
 
     //qDebug() << "constraint = " << constraint;
