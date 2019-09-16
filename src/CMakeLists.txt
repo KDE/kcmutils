@@ -97,6 +97,8 @@ if(BUILD_QCH)
             Qt5Widgets_QCH
             KF5ConfigWidgets_QCH
             KF5Service_QCH
+        INCLUDE_DIRS
+            ${CMAKE_CURRENT_BINARY_DIR}
         BLANK_MACROS
             KCMUTILS_EXPORT
             KCMUTILS_DEPRECATED
