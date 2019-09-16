@@ -256,6 +256,19 @@ bool KCModuleQml::eventFilter(QObject* watched, QEvent* event)
     return KCModule::eventFilter(watched, event);
 }
 
+bool KCModuleQml::event(QEvent *event)
+{
+    // more QQuickWidget hacks
+    // if a mouse press is handled by the new input handlers it is not accepted
+    // this causes the breeze style to start a window drag
+    // mark all mouse events as accepted after being processed
+    bool rc = KCModule::event(event);
+    if (event->type () == QEvent::MouseButtonPress || event->type() == QEvent::MouseButtonRelease) {
+        event->accept();
+    }
+    return rc;
+}
+
 void KCModuleQml::focusInEvent(QFocusEvent *event)
 {
     Q_UNUSED(event)

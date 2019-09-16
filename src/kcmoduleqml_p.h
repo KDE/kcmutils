@@ -47,6 +47,7 @@ public Q_SLOTS:
 protected:
     void focusInEvent(QFocusEvent *event) override;
     QSize sizeHint() const override;
+    bool event(QEvent* event) override;
     bool eventFilter(QObject* watched, QEvent* event) override;
 
 private:
