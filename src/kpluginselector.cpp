@@ -692,11 +692,14 @@ QSize KPluginSelector::Private::PluginDelegate::sizeHint(const QStyleOptionViewI
         i--;
     }
 
-    QFont font = titleFont(option.font);
-    QFontMetrics fmTitle(font);
+    const QFont font = titleFont(option.font);
+    const QFontMetrics fmTitle(font);
+    const QString text = index.model()->data(index, Qt::DisplayRole).toString();
+    const QString comment = index.model()->data(index, CommentRole).toString();
+    const int maxTextWidth = qMax(fmTitle.boundingRect(text).width(),
+                                  option.fontMetrics.boundingRect(comment).width());
 
-    return QSize(qMax(fmTitle.width(index.model()->data(index, Qt::DisplayRole).toString()),
-                      option.fontMetrics.width(index.model()->data(index, CommentRole).toString())) +
+    return QSize(maxTextWidth +
                  (pluginSelector_d->showIcons ? KIconLoader::SizeMedium : 0) + MARGIN * i + pushButton->sizeHint().width() * j,
                  qMax(KIconLoader::SizeMedium + MARGIN * 2, fmTitle.height() + option.fontMetrics.height() + MARGIN * 2));
 }

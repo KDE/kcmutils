@@ -35,6 +35,7 @@
 #include <QLayout>
 #include <QProcess>
 #include <QPushButton>
+#include <QScreen>
 #include <QStringList>
 #include <QStyle>
 #include <QUrl>
@@ -305,9 +306,12 @@ void KCMultiDialog::showEvent(QShowEvent *ev)
      * We adjust the size after passing the show event
      * because otherwise window pos is set to (0,0)
      */
-    const QSize maxSize = QApplication::desktop()->availableGeometry(pos()).size();
-    resize(qMin(sizeHint().width(), maxSize.width()),
-           qMin(sizeHint().height(), maxSize.height()));
+    QScreen *screen = QApplication::screenAt(pos());
+    if (screen) {
+        const QSize maxSize = screen->availableGeometry().size();
+        resize(qMin(sizeHint().width(), maxSize.width()),
+                qMin(sizeHint().height(), maxSize.height()));
+    }
 }
 
 void KCMultiDialog::slotDefaultClicked()
@@ -513,7 +517,7 @@ KPageWidgetItem *KCMultiDialog::addModule(const KCModuleInfo &moduleInfo,
         const int siblingCount = model->rowCount(parentIndex);
         int row = 0;
         for (; row < siblingCount; ++row) {
-            KPageWidgetItem *siblingItem = model->item(parentIndex.child(row, 0));
+            KPageWidgetItem *siblingItem = model->item(model->index(row, 0, parentIndex));
             if (siblingItem->property("_k_weight").toInt() > moduleInfo.weight()) {
                 // the item we found is heavier than the new module
                 // qDebug() << "adding KCM " << item->name() << " before " << siblingItem->name();

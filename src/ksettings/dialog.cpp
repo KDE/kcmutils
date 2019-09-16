@@ -254,7 +254,7 @@ KPageWidgetItem *DialogPrivate::createPageItem(KPageWidgetItem *parentItem,
         const int siblingCount = model->rowCount(parentIndex);
         int row = 0;
         for (; row < siblingCount; ++row) {
-            KPageWidgetItem *siblingItem = model->item(parentIndex.child(row, 0));
+            KPageWidgetItem *siblingItem = model->item(model->index(row, 0, parentIndex));
             if (siblingItem->property("_k_weight").toInt() > weight) {
                 // the item we found is heavier than the new module
                 q->insertPage(siblingItem, item);
@@ -409,7 +409,7 @@ void DialogPrivate::createDialogFromServices()
                 allowEmpty = pinfo.property(QStringLiteral("X-KDE-PluginInfo-AllowEmptySettings")).toBool();
             }
 
-            if (!index.child(0, 0).isValid()) {
+            if (model->rowCount(index) == 0) {
                 // no children, and it's not allowed => remove this item
                 if (!allowEmpty) {
                     q->removePage(it.value());
@@ -531,7 +531,7 @@ void DialogPrivate::_k_updateEnabledState(bool enabled)
 
     //qDebug() ;
 
-    QModelIndex firstborn = index.child(0, 0);
+    QModelIndex firstborn = model->index(0, 0, index);
     if (firstborn.isValid()) {
         //qDebug() << "iterating over children";
         // change all children
@@ -542,7 +542,7 @@ void DialogPrivate::_k_updateEnabledState(bool enabled)
             KPageWidgetItem *item = model->item(index);
             //qDebug() << "item->setEnabled(" << enabled << ')';
             item->setEnabled(enabled);
-            firstborn = index.child(0, 0);
+            firstborn = model->index(0, 0, index);
             if (firstborn.isValid()) {
                 stack.push(index);
                 index = firstborn;
