@@ -116,6 +116,16 @@ void KCMultiDialogPrivate::_k_slotCurrentPageChanged(KPageWidgetItem *current, K
     } else {
         q->buttonBox()->setContentsMargins(0, 0, 0, 0);
         q->pageWidget()->layout()->setSpacing(q->style()->pixelMetric(QStyle::PM_LayoutHorizontalSpacing));
+
+        if (modules.count() == 1) {
+            q->layout()->setContentsMargins(
+                q->style()->pixelMetric(QStyle::PM_LayoutLeftMargin),
+                q->style()->pixelMetric(QStyle::PM_LayoutTopMargin),
+                q->style()->pixelMetric(QStyle::PM_LayoutRightMargin),
+                q->style()->pixelMetric(QStyle::PM_LayoutBottomMargin));
+        } else {
+            q->layout()->setContentsMargins(0, 0, 0, 0);
+        }
     }
 
     q->blockSignals(true);
