@@ -33,7 +33,7 @@ class KCModuleQml : public KCModule
     Q_OBJECT
 
 public:
-    KCModuleQml(KQuickAddons::ConfigModule *configModule, QWidget* parent, const QVariantList& args);
+    KCModuleQml(std::unique_ptr<KQuickAddons::ConfigModule> configModule, QWidget* parent, const QVariantList& args);
     ~KCModuleQml() override;
 
     QString quickHelp() const override;

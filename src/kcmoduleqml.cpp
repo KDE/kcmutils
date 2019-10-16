@@ -35,9 +35,9 @@
 class KCModuleQmlPrivate
 {
 public:
-    KCModuleQmlPrivate(KQuickAddons::ConfigModule *cm, KCModuleQml *q)
+    KCModuleQmlPrivate(std::unique_ptr<KQuickAddons::ConfigModule> cm, KCModuleQml *q)
         : q(q),
-          configModule(cm)
+          configModule(std::move(cm))
     {
     }
 
@@ -59,42 +59,42 @@ public:
     QQuickWidget *quickWidget = nullptr;
     QQuickItem *rootPlaceHolder = nullptr;
     QQuickItem *pageRow = nullptr;
-    KQuickAddons::ConfigModule *configModule = nullptr;
+    std::unique_ptr<KQuickAddons::ConfigModule> configModule;
     KDeclarative::QmlObjectSharedEngine *qmlObject = nullptr;
 };
 
-KCModuleQml::KCModuleQml(KQuickAddons::ConfigModule *configModule, QWidget* parent, const QVariantList& args)
+KCModuleQml::KCModuleQml(std::unique_ptr<KQuickAddons::ConfigModule> configModule, QWidget* parent, const QVariantList& args)
     : KCModule(parent, args),
-      d(new KCModuleQmlPrivate(configModule, this))
+      d(new KCModuleQmlPrivate(std::move(configModule), this))
 {
 
-    connect(configModule, &KQuickAddons::ConfigModule::quickHelpChanged,
+    connect(d->configModule.get(), &KQuickAddons::ConfigModule::quickHelpChanged,
             this, &KCModuleQml::quickHelpChanged);
     //HACK:Here is important those two enums keep having the exact same values
     //but the kdeclarative one can't use the KCModule's enum
     setButtons((KCModule::Buttons)(int)d->configModule->buttons());
-    connect(configModule, &KQuickAddons::ConfigModule::buttonsChanged, this, [=] {
+    connect(d->configModule.get(), &KQuickAddons::ConfigModule::buttonsChanged, this, [=] {
         setButtons((KCModule::Buttons)(int)d->configModule->buttons());
     });
 
     if (d->configModule->needsSave()) {
         emit changed(true);
     }
-    connect(configModule, &KQuickAddons::ConfigModule::needsSaveChanged, this, [=] {
+    connect(d->configModule.get(), &KQuickAddons::ConfigModule::needsSaveChanged, this, [=] {
         emit changed(d->configModule->needsSave());
     });
 
     setNeedsAuthorization(d->configModule->needsAuthorization());
-    connect(configModule, &KQuickAddons::ConfigModule::needsAuthorizationChanged, this, [=] {
+    connect(d->configModule.get(), &KQuickAddons::ConfigModule::needsAuthorizationChanged, this, [=] {
         setNeedsAuthorization(d->configModule->needsAuthorization());
     });
 
     setRootOnlyMessage(d->configModule->rootOnlyMessage());
     setUseRootOnlyMessage(d->configModule->useRootOnlyMessage());
-    connect(configModule, &KQuickAddons::ConfigModule::rootOnlyMessageChanged, this, [=] {
+    connect(d->configModule.get(), &KQuickAddons::ConfigModule::rootOnlyMessageChanged, this, [=] {
         setRootOnlyMessage(d->configModule->rootOnlyMessage());
     });
-    connect(configModule, &KQuickAddons::ConfigModule::useRootOnlyMessageChanged, this, [=] {
+    connect(d->configModule.get(), &KQuickAddons::ConfigModule::useRootOnlyMessageChanged, this, [=] {
         setUseRootOnlyMessage(d->configModule->useRootOnlyMessage());
     });
 
@@ -102,11 +102,13 @@ KCModuleQml::KCModuleQml(KQuickAddons::ConfigModule *configModule, QWidget* pare
     if (!d->configModule->authActionName().isEmpty()) {
         setAuthAction(KAuth::Action(d->configModule->authActionName()));
     }
-    connect(configModule, &KQuickAddons::ConfigModule::authActionNameChanged, this, [=] {
+    connect(d->configModule.get(), &KQuickAddons::ConfigModule::authActionNameChanged, this, [=] {
         setAuthAction(d->configModule->authActionName());
     });
 #endif
-    setAboutData(d->configModule->aboutData());
+
+    //KCModule takes ownership of the kabout data so we need to force a copy
+    setAboutData(new KAboutData(*d->configModule->aboutData()));
     setFocusPolicy(Qt::StrongFocus);
 
 
@@ -157,15 +159,15 @@ KCModuleQml::KCModuleQml(KQuickAddons::ConfigModule *configModule, QWidget* pare
     if (d->pageRow) {
         QMetaObject::invokeMethod(d->pageRow, "push", Qt::DirectConnection, Q_ARG(QVariant, QVariant::fromValue(d->configModule->mainUi())), Q_ARG(QVariant, QVariant()));
 
-        connect(d->configModule, &KQuickAddons::ConfigModule::pagePushed, this, [this](QQuickItem *page) {
+        connect(d->configModule.get(), &KQuickAddons::ConfigModule::pagePushed, this, [this](QQuickItem *page) {
                 QMetaObject::invokeMethod(d->pageRow, "push", Qt::DirectConnection, Q_ARG(QVariant, QVariant::fromValue(page)), Q_ARG(QVariant, QVariant()));
             }
         );
-        connect(d->configModule, &KQuickAddons::ConfigModule::pageRemoved, this, [this]() {
+        connect(d->configModule.get(), &KQuickAddons::ConfigModule::pageRemoved, this, [this]() {
                 QMetaObject::invokeMethod(d->pageRow, "pop", Qt::DirectConnection,  Q_ARG(QVariant, QVariant()));
             }
         );
-        connect(d->configModule, &KQuickAddons::ConfigModule::currentIndexChanged, this, [this]() {
+        connect(d->configModule.get(), &KQuickAddons::ConfigModule::currentIndexChanged, this, [this]() {
             d->pageRow->setProperty("currentIndex", d->configModule->currentIndex());
             }
         );
@@ -177,7 +179,7 @@ KCModuleQml::KCModuleQml(KQuickAddons::ConfigModule *configModule, QWidget* pare
         };
         syncColumnWidth();
 
-        connect(d->configModule, &KQuickAddons::ConfigModule::columnWidthChanged,
+        connect(d->configModule.get(), &KQuickAddons::ConfigModule::columnWidthChanged,
                 this, syncColumnWidth);
         connect(d->rootPlaceHolder, &QQuickItem::widthChanged,
                 this, syncColumnWidth);

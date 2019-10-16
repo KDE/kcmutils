@@ -98,14 +98,14 @@ KCModule *KCModuleLoader::loadModule(const KCModuleInfo &mod, ErrorReporting rep
             if (!factory) {
                 qWarning() << "Error loading plugin:" << loader.errorString();
             } else {
-                KQuickAddons::ConfigModule *cm = factory->create<KQuickAddons::ConfigModule>(nullptr, args2);
+                std::unique_ptr<KQuickAddons::ConfigModule> cm(factory->create<KQuickAddons::ConfigModule>(nullptr, args2));
                 if (!cm) {
                     qWarning() << "Error creating object from plugin" << loader.fileName();
                 } else {
                     if (!cm->mainUi()) {
                         return reportError(report, i18n("Error loading QML file."), cm->errorString(), parent);
                     }
-                    module = new KCModuleQml(cm, parent, args2);
+                    module = new KCModuleQml(std::move(cm), parent, args2);
                     return module;
                 }
             }
