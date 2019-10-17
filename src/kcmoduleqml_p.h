@@ -20,6 +20,7 @@
 #define KCMODULEQML_H
 
 #include <kcmodule.h>
+#include <memory>
 
 class QQuickItem;
 class KCModuleQmlPrivate;
