@@ -46,8 +46,8 @@
 #include <kcategorydrawer.h>
 #include <kcategorizedview.h>
 #include <kcategorizedsortfilterproxymodel.h>
-#include <kaboutdata.h>
-#include <kaboutapplicationdialog.h>
+#include <KPluginMetaData>
+#include <KAboutPluginDialog>
 #include <KStandardGuiItem>
 
 #define MARGIN 5
@@ -796,29 +796,10 @@ void KPluginSelector::Private::PluginDelegate::slotAboutClicked()
     const QModelIndex index = focusedIndex();
     const QAbstractItemModel *model = index.model();
 
-    const QString name = model->data(index, NameRole).toString();
-    const QString comment = model->data(index, CommentRole).toString();
-    const QString author = model->data(index, AuthorRole).toString();
-    const QString email = model->data(index, EmailRole).toString();
-    const QString website = model->data(index, WebsiteRole).toString();
-    const QString version = model->data(index, VersionRole).toString();
-    const QString license = model->data(index, LicenseRole).toString();
+    PluginEntry *pluginEntry = model->data(index, PluginEntryRole).value<PluginEntry *>();
+    KPluginMetaData pluginMetaData = pluginEntry->pluginInfo.toMetaData();
 
-    KAboutData aboutData(name, name, version, comment, KAboutLicense::byKeyword(license).key(), QString(), QString(), website);
-    aboutData.setProgramIconName(index.model()->data(index, Qt::DecorationRole).toString());
-    const QStringList authors = author.split(QLatin1Char(','));
-    const QStringList emails = email.split(QLatin1Char(','));
-    if (authors.count() == emails.count()) {
-        int i = 0;
-        for (const QString &author : authors) {
-            if (!author.isEmpty()) {
-                aboutData.addAuthor(author, QString(), emails[i]);
-            }
-            i++;
-        }
-    }
-    KAboutApplicationDialog aboutPlugin(aboutData, itemView());
-    aboutPlugin.setWindowTitle(i18nc("Used only for plugins", "About %1", aboutData.displayName()));
+    KAboutPluginDialog aboutPlugin(pluginMetaData, itemView());
     aboutPlugin.exec();
 }
 
