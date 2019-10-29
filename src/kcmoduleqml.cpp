@@ -145,7 +145,6 @@ KCModuleQml::KCModuleQml(std::unique_ptr<KQuickAddons::ConfigModule> configModul
             "pageStack.separatorVisible:false;"
             "pageStack.globalToolBar.style: pageStack.wideScreen ? Kirigami.ApplicationHeaderStyle.Titles : Kirigami.ApplicationHeaderStyle.Breadcrumb;"
             "pageStack.globalToolBar.showNavigationButtons:false;"
-            "pageStack.globalToolBar.preferredHeight:Kirigami.Units.gridUnit*2;"
             "pageStack.globalToolBar.separatorVisible:false;"
             "activeFocusOnTab:true;"
             "Keys.onReturnPressed:{event.accepted=true}"
