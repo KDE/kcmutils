@@ -94,6 +94,7 @@ void KCModuleProxyPrivate::loadModule()
         kcm = KCModuleLoader::loadModule(modInfo, KCModuleLoader::Inline, parent, args);
 
         QObject::connect(kcm, SIGNAL(changed(bool)), parent, SLOT(_k_moduleChanged(bool)));
+        QObject::connect(kcm, SIGNAL(defaulted(bool)), parent, SLOT(_k_moduleDefaulted(bool)));
         QObject::connect(kcm, SIGNAL(destroyed()), parent, SLOT(_k_moduleDestroyed()));
         QObject::connect(kcm, &KCModule::quickHelpChanged, parent, &KCModuleProxy::quickHelpChanged);
         parent->setWhatsThis(kcm->quickHelp());
@@ -184,6 +185,18 @@ void KCModuleProxyPrivate::_k_moduleChanged(bool c)
     emit q->changed(q);
 }
 
+void KCModuleProxyPrivate::_k_moduleDefaulted(bool d)
+{
+    if (defaulted == d) {
+        return;
+    }
+
+    Q_Q(KCModuleProxy);
+    defaulted = d;
+    emit q->changed(changed);
+    emit q->changed(q);
+}
+
 void KCModuleProxyPrivate::_k_moduleDestroyed()
 {
     kcm = nullptr;
@@ -258,6 +271,12 @@ bool KCModuleProxy::changed() const
 {
     Q_D(const KCModuleProxy);
     return d->changed;
+}
+
+bool KCModuleProxy::defaulted() const
+{
+    Q_D(const KCModuleProxy);
+    return d->defaulted;
 }
 
 KCModuleInfo KCModuleProxy::moduleInfo() const

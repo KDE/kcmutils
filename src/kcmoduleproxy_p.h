@@ -31,7 +31,7 @@ class KCModuleProxyPrivate
 protected:
     KCModuleProxyPrivate(KCModuleProxy *_parent, const KCModuleInfo &info, const QStringList &_args)
         : args(_args), kcm(nullptr), topLayout(nullptr), rootInfo(nullptr), modInfo(info),
-          changed(false), bogusOccupier(false), parent(_parent)
+          changed(false), defaulted(false), bogusOccupier(false), parent(_parent)
     {
     }
 
@@ -47,6 +47,11 @@ protected:
      * Makes sure the proper variables is set and signals are emitted.
      */
     void _k_moduleChanged(bool);
+
+    /**
+     * Makes sure the proper variables is set and signals are emitted.
+     */
+    void _k_moduleDefaulted(bool);
 
     /**
      * Zeroes d->kcm
@@ -68,6 +73,7 @@ protected:
     QString dbusPath;
     KCModuleInfo modInfo;
     bool changed = false;
+    bool defaulted = false;
     bool bogusOccupier = false;
     KCModuleProxy *parent = nullptr;
     KCModuleProxy *q_ptr = nullptr;

@@ -145,6 +145,13 @@ public:
     bool changed() const;
 
     /**
+     * @return true if the module is matching default settings
+     *
+     * @since 5.65
+     */
+    bool defaulted() const;
+
+    /**
      * Access to the actual module.
      * It may return NULL if anything goes wrong.
      *
@@ -224,6 +231,7 @@ protected:
 
 private:
     Q_PRIVATE_SLOT(d_func(), void _k_moduleChanged(bool))
+    Q_PRIVATE_SLOT(d_func(), void _k_moduleDefaulted(bool))
     Q_PRIVATE_SLOT(d_func(), void _k_moduleDestroyed())
     Q_PRIVATE_SLOT(d_func(), void _k_ownerChanged(const QString &service, const QString &oldOwner, const QString &newOwner))
 };
