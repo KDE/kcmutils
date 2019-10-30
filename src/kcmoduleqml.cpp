@@ -83,6 +83,9 @@ KCModuleQml::KCModuleQml(std::unique_ptr<KQuickAddons::ConfigModule> configModul
     connect(d->configModule.get(), &KQuickAddons::ConfigModule::needsSaveChanged, this, [=] {
         emit changed(d->configModule->needsSave());
     });
+    connect(d->configModule.get(), &KQuickAddons::ConfigModule::representsDefaultsChanged, this, [=] {
+        emit defaulted(d->configModule->representsDefaults());
+    });
 
     setNeedsAuthorization(d->configModule->needsAuthorization());
     connect(d->configModule.get(), &KQuickAddons::ConfigModule::needsAuthorizationChanged, this, [=] {
