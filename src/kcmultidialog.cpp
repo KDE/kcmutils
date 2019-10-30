@@ -156,8 +156,10 @@ void KCMultiDialogPrivate::_k_clientChanged()
     }
 
     bool change = false;
+    bool defaulted = false;
     if (activeModule) {
         change = activeModule->changed();
+        defaulted = activeModule->defaulted();
 
         QPushButton *applyButton = q->buttonBox()->button(QDialogButtonBox::Apply);
         if (applyButton) {
@@ -223,7 +225,7 @@ void KCMultiDialogPrivate::_k_clientChanged()
 
         QPushButton *defaultButton = q->buttonBox()->button(QDialogButtonBox::RestoreDefaults);
         if (defaultButton) {
-            defaultButton->setEnabled(activeModule->buttons() & KCModule::Default);
+            defaultButton->setEnabled((activeModule->buttons() & KCModule::Default) && !defaulted);
         }
     }
 }
