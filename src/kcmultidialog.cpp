@@ -121,7 +121,7 @@ void KCMultiDialogPrivate::_k_slotCurrentPageChanged(KPageWidgetItem *current, K
             q->layout()->setContentsMargins(
                 q->style()->pixelMetric(QStyle::PM_LayoutLeftMargin),
                 q->style()->pixelMetric(QStyle::PM_LayoutTopMargin),
-                0,
+                q->style()->pixelMetric(QStyle::PM_LayoutRightMargin),
                 q->style()->pixelMetric(QStyle::PM_LayoutBottomMargin));
         } else {
             q->layout()->setContentsMargins(0, 0, 0, 0);
