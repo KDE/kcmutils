@@ -155,6 +155,10 @@ KCModuleQml::KCModuleQml(std::unique_ptr<KQuickAddons::ConfigModule> configModul
         "}"), QUrl());
 
     d->rootPlaceHolder = qobject_cast<QQuickItem *>(component->create());
+    if (!d->rootPlaceHolder) {
+        qCritical() << component->errors();
+        qFatal("Failed to intiailize KCModuleQML");
+    }
     d->quickWidget->setContent(QUrl(), component, d->rootPlaceHolder);
 
     d->pageRow = d->rootPlaceHolder->property("pageStack").value<QQuickItem *>();
