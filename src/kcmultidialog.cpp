@@ -100,23 +100,8 @@ void KCMultiDialogPrivate::_k_slotCurrentPageChanged(KPageWidgetItem *current, K
         }
     }
 
-    // For some reason the KCModuleQml modules handle their own margin internally
-    // to match that we need to adjust the spacing of our page widget
-    // by removing the spacing between the left pane and the edge, and the layout on the right
-    // when we reduce the layout on the right we need to pad the buttons back to match
-
-    // TODO KF6 Fix this situation.
-
-    if (currentModule && currentModule->realModule() && currentModule->realModule()->inherits("KCModuleQml")) {
-        q->pageWidget()->layout()->setSpacing(0);
-        q->buttonBox()->setContentsMargins(q->style()->pixelMetric(QStyle::PM_LayoutLeftMargin),
-                                           0,
-                                           q->style()->pixelMetric(QStyle::PM_LayoutRightMargin),
-                                           q->style()->pixelMetric(QStyle::PM_LayoutBottomMargin));
-    } else {
-        q->buttonBox()->setContentsMargins(0, 0, 0, 0);
-        q->pageWidget()->layout()->setSpacing(q->style()->pixelMetric(QStyle::PM_LayoutHorizontalSpacing));
-    }
+    // Remove margins for the buttonbox; KPageDialog handles that already
+    q->buttonBox()->setContentsMargins(0, 0, 0, 0);
 
     q->blockSignals(true);
     q->setCurrentPage(previous);
