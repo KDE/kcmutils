@@ -50,7 +50,7 @@ find_package(KF5XmlGui ${KF5_DEP_VERSION} REQUIRED)
 find_package(KF5Declarative ${KF5_DEP_VERSION} REQUIRED)
 
 add_definitions(-DQT_DISABLE_DEPRECATED_BEFORE=0x050d00)
-add_definitions(-DKF_DISABLE_DEPRECATED_BEFORE_AND_AT=0x053f00)
+add_definitions(-DKF_DISABLE_DEPRECATED_BEFORE_AND_AT=0x054000)
 add_definitions(-DTRANSLATION_DOMAIN=\"kcmutils5\")
 if (IS_DIRECTORY "${CMAKE_CURRENT_SOURCE_DIR}/po")
     ki18n_install(po)
