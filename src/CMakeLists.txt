@@ -30,8 +30,8 @@ target_link_libraries(KF5KCMUtils
     Qt5::Quick
     Qt5::QuickWidgets
     KF5::CoreAddons
+    KF5::GuiAddons # KIconUtils
     KF5::I18n
-    KF5::IconThemes     # KIconLoader
     KF5::ItemViews       # KWidgetItemDelegate
     KF5::XmlGui          # KAboutApplicationDialog
     KF5::QuickAddons

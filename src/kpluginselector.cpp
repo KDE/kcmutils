@@ -41,7 +41,6 @@
 #include <kcmoduleinfo.h>
 #include <kcmoduleproxy.h>
 #include <kmessagebox.h>
-#include <kiconloader.h>
 #include <klocalizedstring.h>
 #include <kcategorydrawer.h>
 #include <kcategorizedview.h>
@@ -699,9 +698,10 @@ QSize KPluginSelector::Private::PluginDelegate::sizeHint(const QStyleOptionViewI
     const int maxTextWidth = qMax(fmTitle.boundingRect(text).width(),
                                   option.fontMetrics.boundingRect(comment).width());
 
+    const auto iconSize = pluginSelector_d->listView->style()->pixelMetric(QStyle::PM_IconViewIconSize);
     return QSize(maxTextWidth +
-                 (pluginSelector_d->showIcons ? KIconLoader::SizeMedium : 0) + MARGIN * i + pushButton->sizeHint().width() * j,
-                 qMax(KIconLoader::SizeMedium + MARGIN * 2, fmTitle.height() + option.fontMetrics.height() + MARGIN * 2));
+                 (pluginSelector_d->showIcons ? iconSize : 0) + MARGIN * i + pushButton->sizeHint().width() * j,
+                 qMax(iconSize + MARGIN * 2, fmTitle.height() + option.fontMetrics.height() + MARGIN * 2));
 }
 
 QList<QWidget *> KPluginSelector::Private::PluginDelegate::createItemWidgets(const QModelIndex &index) const

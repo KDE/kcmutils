@@ -45,10 +45,10 @@
 #include <KAuthObjectDecorator>
 #endif
 #include <KGuiItem>
+#include <KIconUtils>
 #include <KLocalizedString>
 #include <KMessageBox>
 #include <KPageWidgetModel>
-#include <KIconLoader>
 
 bool KCMultiDialogPrivate::resolveChanges(KCModuleProxy *currentProxy)
 {
@@ -214,7 +214,7 @@ void KCMultiDialogPrivate::_k_updateHeader(bool use, const QString &message)
     if (use) {
         item->setHeader(QStringLiteral("<b>") + kcm->moduleInfo().moduleName() + QStringLiteral("</b><br><i>") +
                         message + QStringLiteral("</i>"));
-        item->setIcon(KDE::icon(kcm->moduleInfo().icon(), QStringList() << QStringLiteral("dialog-warning")));
+        item->setIcon(KIconUtils::addOverlay(QIcon::fromTheme(kcm->moduleInfo().icon()), QIcon::fromTheme(QStringLiteral("dialog-warning")), Qt::BottomRightCorner));
     } else {
         item->setHeader(kcm->moduleInfo().moduleName());
         item->setIcon(QIcon::fromTheme(kcm->moduleInfo().icon()));
@@ -489,7 +489,7 @@ KPageWidgetItem *KCMultiDialog::addModule(const KCModuleInfo &moduleInfo,
                 QStringLiteral("</b><br><i>") +
                 kcm->realModule()->rootOnlyMessage() +
                 QStringLiteral("</i>"));
-        item->setIcon(KDE::icon(moduleInfo.icon(), QStringList() << QStringLiteral("dialog-warning")));
+        item->setIcon(KIconUtils::addOverlay(QIcon::fromTheme(moduleInfo.icon()), QIcon::fromTheme(QStringLiteral("dialog-warning")), Qt::BottomRightCorner));
     } else {
         item->setHeader(moduleInfo.moduleName());
         item->setIcon(QIcon::fromTheme(moduleInfo.icon()));

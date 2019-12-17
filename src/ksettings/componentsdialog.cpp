@@ -23,7 +23,6 @@
 #include <QLabel>
 #include <QPushButton>
 #include <kplugininfo.h>
-#include <kiconloader.h>
 #include <QDebug>
 #include <QVBoxLayout>
 #include <QHBoxLayout>
