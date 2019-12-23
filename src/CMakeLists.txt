@@ -15,8 +15,14 @@ set(kcmutils_LIB_SRCS
 )
 
 add_library(KF5KCMUtils ${kcmutils_LIB_SRCS})
-generate_export_header(KF5KCMUtils BASE_NAME KCMUtils)
-
+ecm_generate_export_header(KF5KCMUtils
+    BASE_NAME KCMUtils
+    GROUP_BASE_NAME KF
+    VERSION ${KF5_VERSION}
+    DEPRECATED_BASE_VERSION 0
+    DEPRECATION_VERSIONS 5.66
+    EXCLUDE_DEPRECATED_BEFORE_AND_AT ${EXCLUDE_DEPRECATED_BEFORE_AND_AT}
+)
 target_include_directories(KF5KCMUtils INTERFACE "$<INSTALL_INTERFACE:${KDE_INSTALL_INCLUDEDIR_KF5}/KCMUtils>")
 
 target_link_libraries(KF5KCMUtils

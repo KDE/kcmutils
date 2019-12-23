@@ -26,7 +26,7 @@ if(NOT CMAKE_VERSION VERSION_LESS "3.10.0")
     list(APPEND CMAKE_AUTOMOC_MACRO_NAMES ${KCMUtils_AUTOMOC_MACRO_NAMES})
 endif()
 
-include(GenerateExportHeader)
+include(ECMGenerateExportHeader)
 include(ECMSetupVersion)
 include(ECMGenerateHeaders)
 include(CMakePackageConfigHelpers)

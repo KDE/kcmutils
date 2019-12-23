@@ -30,6 +30,7 @@ class QWidget;
 
 class KCModuleProxy;
 
+#if KCMUTILS_ENABLE_DEPRECATED_SINCE(5,66)
 /**
  * @brief KCModuleContainer is a convenience class encapsulating several KCModules.
  *
@@ -42,6 +43,8 @@ class KCModuleProxy;
  * can be achieved by sub classing KCModuleContainer, doing the probing/testing checks and then manually
  * call addModule for each module which should be displayed. When all calls to addModule is done, call
  * finalize() which performs some necessary final steps.
+ *
+ * @deprecated since 5.66, no known users.
  *
  * @author Frans Englich <frans.englich@telia.com>
  */
@@ -58,7 +61,9 @@ public:
      * KCModule is its service name, that is the name of the desktop file without
      * the ".desktop" part
      *
+     * @deprecated since 5.66, no known users.
      */
+    KCMUTILS_DEPRECATED_VERSION(5, 66, "No known users")
     KCModuleContainer(QWidget *parent, const QStringList &mods);
 
     /**
@@ -76,7 +81,10 @@ public:
      * @param parent The parent widget
      * @param mods The modules to load
      * @return The KCModule containing the requested modules.
+     *
+     * @deprecated since 5.66, no known users.
      */
+    KCMUTILS_DEPRECATED_VERSION(5, 66, "No known users")
     explicit KCModuleContainer(QWidget *parent, const QString &mods = QString());
 
     /**
@@ -85,7 +93,10 @@ public:
      *
      * @param module the name of the module to add. The name is the desktop file's name
      * without the ".desktop" part.
+     *
+     * @deprecated since 5.66, no known users.
      */
+    KCMUTILS_DEPRECATED_VERSION(5, 66, "No known users")
     void addModule(const QString &module);
 
     /**
@@ -140,6 +151,8 @@ private:
  *
  * @param modules the modules to put in the container
  * @param factoryName what factory name the module should have
+ *
+ * @deprecated since 5.66, no known users.
  */
 #define KCMODULECONTAINER(modules, factoryName) \
     class KCModuleContainer##factoryName : public KCModuleContainer \
@@ -154,5 +167,6 @@ private:
                      registerPlugin<KCModuleContainer#factoryName>(); \
                     )
 
+#endif
 #endif // KCMODULECONTAINER_H
 

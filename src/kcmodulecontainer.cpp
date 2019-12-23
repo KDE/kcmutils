@@ -31,6 +31,8 @@
 
 typedef QList<KCModuleProxy *> ModuleList;
 
+#if KCMUTILS_BUILD_DEPRECATED_SINCE(5,66)
+
 /***********************************************************************/
 class Q_DECL_HIDDEN KCModuleContainer::KCModuleContainerPrivate
 {
@@ -181,6 +183,8 @@ KCModuleContainer::~KCModuleContainer()
 {
     delete d;
 }
+
+#endif
 
 /***********************************************************************/
 
