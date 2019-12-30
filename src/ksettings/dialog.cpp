@@ -161,7 +161,7 @@ QSet<KCModuleInfo> DialogPrivate::instanceServices()
                 ret << KCModuleInfo(service);
             } else
                 qWarning() << "KServiceGroup::childGroup returned"
-                           " something else than a KService" << endl;
+                           " something else than a KService";
         }
     }
 
@@ -371,8 +371,7 @@ void DialogPrivate::createDialogFromServices()
                         if (plugin != pinfo) {
                             qCritical() << "A group contains more than one plugin: '"
                                         << plugin.pluginName() << "' and '" << pinfo.pluginName()
-                                        << "'. Now it won't be possible to enable/disable the plugin."
-                                        << endl;
+                                        << "'. Now it won't be possible to enable/disable the plugin.";
                             parent->setCheckable(false);
                             q->disconnect(parent, SIGNAL(toggled(bool)), q, SLOT(_k_updateEnabledState(bool)));
                         }
