@@ -1,0 +1,534 @@
+# Thomas Diehl <thd@kde.org>, 2002, 2003, 2004, 2005.
+# Stefan Winter <swinter@kde.org>, 2004.
+# Thomas Fischer <thomas.fischer@t-fischer.net>, 2004.
+# Stephan Johach <hunsum@gmx.de>, 2004, 2005, 2006, 2007.
+# Georg Schuster <gschuster@utanet.at>, 2005.
+# Thomas Reitelbach <tr@erdfunkstelle.de>, 2005, 2006, 2007, 2008, 2009.
+# Burkhard Lück <lueck@hube-lueck.de>, 2006, 2007, 2009, 2010, 2011, 2012, 2013, 2014, 2018, 2019.
+# Frederik Schwarzer <schwarzer@kde.org>, 2007, 2008, 2009, 2010, 2011, 2012, 2013.
+# Johannes Obermayr <johannesobermayr@gmx.de>, 2010.
+# Panagiotis Papadopoulos <pano_90@gmx.net>, 2010.
+# Rolf Eike Beer <kde@opensource.sf-tec.de>, 2012.
+msgid ""
+msgstr ""
+"Project-Id-Version: kdelibs4\n"
+"Report-Msgid-Bugs-To: https://bugs.kde.org\n"
+"POT-Creation-Date: 2019-12-19 02:46+0100\n"
+"PO-Revision-Date: 2019-10-14 07:05+0200\n"
+"Last-Translator: Burkhard Lück <lueck@hube-lueck.de>\n"
+"Language-Team: German <kde-i18n-de@kde.org>\n"
+"Language: de\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Lokalize 18.12.3\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+
+#, kde-format
+msgctxt "NAME OF TRANSLATORS"
+msgid "Your names"
+msgstr "Thomas Reitelbach, Stephan Johach, Thomas Diehl"
+
+#, kde-format
+msgctxt "EMAIL OF TRANSLATORS"
+msgid "Your emails"
+msgstr "tr@erdfunkstelle.de, hunsum@gmx.de, thd@kde.org"
+
+#: kcmoduleloader.cpp:78
+#, kde-format
+msgid "The module %1 could not be found."
+msgstr "Das Modul %1 kann nicht gefunden werden."
+
+#: kcmoduleloader.cpp:79
+#, kde-format
+msgid ""
+"<qt><p>The diagnosis is:<br />The desktop file %1 could not be found.</p></"
+"qt>"
+msgstr ""
+"<qt><p>Die Fehlerdiagnose lautet: <br />Die Desktop-Datei %1 kann nicht "
+"gefunden werden.</p></qt>"
+
+#: kcmoduleloader.cpp:81
+#, kde-format
+msgid "The module %1 is disabled."
+msgstr "Das Modul %1 ist nicht aktiviert."
+
+#: kcmoduleloader.cpp:82
+#, kde-format
+msgid ""
+"<qt><p>Either the hardware/software the module configures is not available "
+"or the module has been disabled by the administrator.</p></qt>"
+msgstr ""
+"<qt><p>Entweder ist die Hardware/Software, die mit dem Modul eingerichtet "
+"wird, nicht verfügbar oder der Systemverwalter hat das Modul deaktiviert.</"
+"p></qt>"
+
+#: kcmoduleloader.cpp:106
+#, kde-format
+msgid "Error loading QML file."
+msgstr "Fehler beim Laden der QML-Datei."
+
+#: kcmoduleloader.cpp:143
+#, kde-format
+msgid "The module %1 is not a valid configuration module."
+msgstr "Das Modul %1 ist kein gültiges Einrichtungsmodul."
+
+#: kcmoduleloader.cpp:144
+#, kde-format
+msgid ""
+"<qt>The diagnosis is:<br />The desktop file %1 does not specify a library.</"
+"qt>"
+msgstr ""
+"<qt>Die Fehlerdiagnose lautet: <br />Die Desktop-Datei %1 enthält keine "
+"Bibliotheksangabe.</qt>"
+
+#: kcmoduleloader.cpp:159
+#, kde-format
+msgid ""
+"<qt><p>Possible reasons:<ul><li>An error occurred during your last system "
+"upgrade, leaving an orphaned control module behind</li><li>You have old "
+"third party modules lying around.</li></ul></p><p>Check these points "
+"carefully and try to remove the module mentioned in the error message. If "
+"this fails, consider contacting your distributor or packager.</p></qt>"
+msgstr ""
+"<qt><p>Mögliche Ursachen:<ul><li>Bei der letzten Aktualisierung Ihres "
+"Systems ist ein Problem aufgetreten, und es wurde ein vereinzeltes "
+"Kontrollmodul der Vorgängerversion übrig gelassen.</li><li>Es existieren "
+"ältere Module von Programmen, die nicht zum eigentlichen KDE gehören.</li></"
+"ul></p><p>Bitte überprüfen Sie diese Punkte sorgfältig und versuchen Sie, "
+"die Module zu entfernen, die in der Fehlermeldung auftauchen. Falls das "
+"nicht gelingt, sollten Sie vielleicht Kontakt zu Ihrem (Linux/"
+"Unix-)Distributor bzw. dem Ersteller der aktualisierten Pakete aufnehmen.</"
+"p></qt>"
+
+#: kcmoduleproxy.cpp:120
+#, kde-format
+msgctxt "Argument is application name"
+msgid "This configuration section is already opened in %1"
+msgstr "Diese Einstellungen sind bereits in der Anwendung „%1“ geöffnet."
+
+#: kcmultidialog.cpp:63
+#, kde-format
+msgid ""
+"The settings of the current module have changed.\n"
+"Do you want to apply the changes or discard them?"
+msgstr ""
+"Die Einstellungen im aktuellen Modul wurden geändert.\n"
+"Möchten Sie die Änderungen anwenden oder verwerfen?"
+
+#: kcmultidialog.cpp:65
+#, kde-format
+msgid "Apply Settings"
+msgstr "Einstellungen anwenden"
+
+#: kcmultidialog.cpp:228 kpluginselector.cpp:723
+#, kde-format
+msgid "Configure"
+msgstr "Einrichten"
+
+#. i18n: ectx: label, entry, group (DesktopIcons)
+#: kdeglobals.kcfg:9
+#, kde-format
+msgid "Distance between desktop icons"
+msgstr "Abstand zwischen Arbeitsflächensymbolen"
+
+#. i18n: ectx: whatsthis, entry, group (DesktopIcons)
+#: kdeglobals.kcfg:10
+#, kde-format
+msgid "The distance between icons specified in pixels."
+msgstr "Der Abstand zwischen Symbolen in Pixeln."
+
+#. i18n: ectx: label, entry, group (General)
+#: kdeglobals.kcfg:23
+#, kde-format
+msgid "Widget style to use"
+msgstr "Verwendeter Stil der Bedienelemente"
+
+#. i18n: ectx: whatsthis, entry, group (General)
+#: kdeglobals.kcfg:24
+#, kde-format
+msgid ""
+"The name of the widget style, for example \"keramik\" or \"plastik\". "
+"Without quotes."
+msgstr ""
+"Der Name des Widget-Stils, zum Beispiel „keramik“ oder „plastik“ Ohne "
+"Anführungszeichen."
+
+#. i18n: ectx: label, entry, group (General)
+#: kdeglobals.kcfg:30
+#, kde-format
+msgid "Use the PC speaker"
+msgstr "PC-Lautsprecher verwenden"
+
+#. i18n: ectx: whatsthis, entry, group (General)
+#: kdeglobals.kcfg:31
+#, kde-format
+msgid ""
+"Whether the ordinary PC speaker should be used instead of KDE's own "
+"notifications system."
+msgstr ""
+"Verwenden des PC-Lautsprechers anstelle des Benachrichtigungssystems von KDE."
+
+#. i18n: ectx: label, entry, group (General)
+#: kdeglobals.kcfg:35
+#, kde-format
+msgid "What terminal application to use"
+msgstr "Welche Terminal-Anwendung soll verwendet werden."
+
+#. i18n: ectx: whatsthis, entry, group (General)
+#: kdeglobals.kcfg:37
+#, kde-format
+msgid ""
+"Whenever a terminal application is launched this terminal emulator program "
+"will be used.\n"
+msgstr ""
+"Wenn eine Terminal-Anwendung gestartet wird, wird diese Terminal-Emulator-"
+"Anwendung verwendet.\n"
+
+#. i18n: ectx: label, entry, group (General)
+#: kdeglobals.kcfg:41
+#, kde-format
+msgid "Fixed width font"
+msgstr "Schrift mit fester Zeichenbreite"
+
+#. i18n: ectx: whatsthis, entry, group (General)
+#: kdeglobals.kcfg:43
+#, kde-format
+msgid ""
+"This font is used when a fixed font is needed. A fixed font has a constant "
+"width.\n"
+msgstr ""
+"Diese Schrift wird verwendet, wenn eine Schriftart mit fester Zeichenbreite "
+"benötigt wird.\n"
+
+#. i18n: ectx: label, entry, group (General)
+#: kdeglobals.kcfg:46
+#, kde-format
+msgid "System wide font"
+msgstr "Systemweite Schrift"
+
+#. i18n: ectx: label, entry, group (General)
+#: kdeglobals.kcfg:49
+#, kde-format
+msgid "Font for menus"
+msgstr "Schriftart für Menüs"
+
+#. i18n: ectx: whatsthis, entry, group (General)
+#: kdeglobals.kcfg:50
+#, kde-format
+msgid "What font to use for menus in applications."
+msgstr "Schrift, die für die Menüs der Anwendungen verwendet wird."
+
+#. i18n: ectx: label, entry, group (General)
+#: kdeglobals.kcfg:53
+#, kde-format
+msgid "Color for links"
+msgstr "Farbe für Verknüpfungen"
+
+#. i18n: ectx: whatsthis, entry, group (General)
+#: kdeglobals.kcfg:54
+#, kde-format
+msgid "What color links should be that have not yet been clicked on"
+msgstr ""
+"Die Farbe, in der noch nicht verwendete Verknüpfungen dargestellt werden."
+
+#. i18n: ectx: label, entry, group (General)
+#: kdeglobals.kcfg:57
+#, kde-format
+msgid "Color for visited links"
+msgstr "Farbe für besuchte Verknüpfungen"
+
+#. i18n: ectx: label, entry, group (General)
+#: kdeglobals.kcfg:60
+#, kde-format
+msgid "Font for the taskbar"
+msgstr "Schrift für Programmleiste"
+
+#. i18n: ectx: whatsthis, entry, group (General)
+#: kdeglobals.kcfg:61
+#, kde-format
+msgid ""
+"What font to use for the panel at the bottom of the screen, where the "
+"currently running applications are."
+msgstr ""
+"Die Schrift, die von der Programmleiste in der Kontrollleiste verwendet wird."
+
+#. i18n: ectx: label, entry, group (General)
+#: kdeglobals.kcfg:64
+#, kde-format
+msgid "Fonts for toolbars"
+msgstr "Schriften für Werkzeugleisten"
+
+#. i18n: ectx: label, entry (Desktop Screenshot), group (Global Shortcuts)
+#: kdeglobals.kcfg:73
+#, kde-format
+msgid "Shortcut for taking screenshot"
+msgstr "Kurzbefehl zum Erstellen eines Bildschirmfotos"
+
+#. i18n: ectx: label, entry (Enable/Disable Clipboard Actions), group (Global Shortcuts)
+#: kdeglobals.kcfg:78
+#, kde-format
+msgid "Shortcut for toggling Clipboard Actions on and off"
+msgstr ""
+"Kurzbefehl, mit dem Aktionen für die Zwischenablage an- bzw. abgeschaltet "
+"werden."
+
+#. i18n: ectx: label, entry (Halt without Confirmation), group (Global Shortcuts)
+#: kdeglobals.kcfg:83
+#, kde-format
+msgid "Shortcut for shutting down the computer without confirmation"
+msgstr "Kurzbefehl, mit dem der Rechner ohne Rückfrage heruntergefahren wird."
+
+#. i18n: ectx: label, entry (Sort directories first), group (KFileDialog Settings)
+#: kdeglobals.kcfg:380
+#, kde-format
+msgid "Show directories first"
+msgstr "Ordner zuerst anzeigen"
+
+#. i18n: ectx: whatsthis, entry (Sort directories first), group (KFileDialog Settings)
+#: kdeglobals.kcfg:381
+#, kde-format
+msgid "Whether directories should be placed at the top when displaying files"
+msgstr ""
+"Legt fest, ob Ordner bei der Anzeige von Dateien als erste dargestellt "
+"werden sollen."
+
+#. i18n: ectx: label, entry (Recent URLs), group (KFileDialog Settings)
+#: kdeglobals.kcfg:389
+#, kde-format
+msgid "The URLs recently visited"
+msgstr "Die zuletzt besuchten Adressen"
+
+#. i18n: ectx: whatsthis, entry (Recent URLs), group (KFileDialog Settings)
+#: kdeglobals.kcfg:390
+#, kde-format
+msgid "Used for auto-completion in file dialogs, for example"
+msgstr ""
+"Dies wird beispielsweise für die Autovervollständigung in Dialogen zur "
+"Dateiauswahl verwendet."
+
+#. i18n: ectx: label, entry (Show Preview), group (KFileDialog Settings)
+#: kdeglobals.kcfg:394
+#, kde-format
+msgid "Show file preview in file dialog"
+msgstr "Dateivorschau im Dateiauswahl-Dialog anzeigen"
+
+#. i18n: ectx: label, entry (Show hidden files), group (KFileDialog Settings)
+#: kdeglobals.kcfg:399
+#, kde-format
+msgid "Show hidden files"
+msgstr "Versteckte Dateien anzeigen"
+
+#. i18n: ectx: whatsthis, entry (Show hidden files), group (KFileDialog Settings)
+#: kdeglobals.kcfg:400
+#, kde-format
+msgid ""
+"Whether files starting with a dot (convention for hidden files) should be "
+"shown"
+msgstr ""
+"Legt fest, ob Dateien, deren Name mit einem Punkt (der üblichen Konvention "
+"für versteckte Dateien) beginnt, angezeigt werden sollen."
+
+#. i18n: ectx: label, entry (Show Speedbar), group (KFileDialog Settings)
+#: kdeglobals.kcfg:405
+#, kde-format
+msgid "Show speedbar"
+msgstr "Navigationsbereich anzeigen"
+
+#. i18n: ectx: whatsthis, entry (Show Speedbar), group (KFileDialog Settings)
+#: kdeglobals.kcfg:406
+#, kde-format
+msgid ""
+"Whether the shortcut icons to the left in the file dialog should be shown"
+msgstr ""
+"Legt fest, ob die Zugriffs-Symbole links im Dialog zur Dateiauswahl "
+"angezeigt werden sollen."
+
+#. i18n: ectx: label, entry, group (Locale)
+#: kdeglobals.kcfg:425
+#, kde-format
+msgid "What country"
+msgstr "Welches Land"
+
+#. i18n: ectx: whatsthis, entry, group (Locale)
+#: kdeglobals.kcfg:426
+#, kde-format
+msgid ""
+"Used to determine how to display numbers, currency and time/date, for example"
+msgstr ""
+"Wird verwendet, um die Darstellung von z. B. Zahlen, Währungen und Uhrzeit/"
+"Datum festzulegen."
+
+#. i18n: ectx: label, entry, group (Locale)
+#: kdeglobals.kcfg:430
+#, kde-format
+msgid "What language to use to display text"
+msgstr "Sprache, in der Text dargestellt wird"
+
+#. i18n: ectx: label, entry, group (Locale)
+#: kdeglobals.kcfg:433
+#, kde-format
+msgid "Character used for indicating positive numbers"
+msgstr "Zeichen, das zur Kennzeichnung positiver Zahlen verwendet wird."
+
+#. i18n: ectx: whatsthis, entry, group (Locale)
+#: kdeglobals.kcfg:434
+#, kde-format
+msgid "Most countries have no character for this"
+msgstr "Die meisten Länder besitzen hierfür kein Zeichen."
+
+#. i18n: ectx: label, entry, group (Paths)
+#: kdeglobals.kcfg:439
+#, kde-format
+msgid "Path to the autostart directory"
+msgstr "Pfad zum Autostart-Ordner"
+
+#. i18n: ectx: whatsthis, entry, group (Paths)
+#: kdeglobals.kcfg:440
+#, kde-format
+msgid "Path to the directory containing executables to be run on session login"
+msgstr ""
+"Pfad zum Ordner mit ausführbaren Dateien, die beim Anmelden einer Sitzung "
+"ausgeführt werden sollen."
+
+#. i18n: ectx: label, entry, group (Socks)
+#: kdeglobals.kcfg:487
+#, kde-format
+msgid "Enable SOCKS support"
+msgstr "SOCKS-Unterstützung aktivieren"
+
+#. i18n: ectx: whatsthis, entry, group (Socks)
+#: kdeglobals.kcfg:488
+#, kde-format
+msgid "Whether SOCKS version 4 and 5 should be enabled in KDE's sub systems"
+msgstr ""
+"Legt fest, ob das KDE-Subsystem für SOCKS in der Version 4 und 5 "
+"eingeschaltet werden soll."
+
+#. i18n: ectx: label, entry, group (Socks)
+#: kdeglobals.kcfg:492
+#, kde-format
+msgid "Path to custom SOCKS library"
+msgstr "Pfad zur benutzerdefinierten SOCKS-Bibliothek"
+
+#. i18n: ectx: label, entry, group (Toolbar style)
+#: kdeglobals.kcfg:498
+#, kde-format
+msgid "Highlight toolbar buttons on mouse over"
+msgstr ""
+"Knöpfe in Werkzeugleisten hervorheben, sobald sich der Mauszeiger darüber "
+"befindet."
+
+#. i18n: ectx: label, entry, group (Toolbar style)
+#: kdeglobals.kcfg:502
+#, kde-format
+msgid "Show text on toolbar icons "
+msgstr "Text in Werkzeugleisten-Symbolen anzeigen"
+
+#. i18n: ectx: whatsthis, entry, group (Toolbar style)
+#: kdeglobals.kcfg:503
+#, kde-format
+msgid "Whether text should be shown in addition to icons on toolbar icons"
+msgstr ""
+"Legt fest, ob zusätzlich zu den Symbolen in der Werkzeugleiste auch Text "
+"angezeigt werden soll."
+
+#. i18n: ectx: label, entry (EchoMode), group (Passwords)
+#: kdeglobals.kcfg:524
+#, kde-format
+msgid "Password echo type"
+msgstr "Art der Passwortanzeige"
+
+#. i18n: ectx: label, entry (Dialog Size), group (KKeyDialog Settings)
+#: kdeglobals.kcfg:534
+#, kde-format
+msgid "The size of the dialog"
+msgstr "Die Größe des Dialogs"
+
+#: kpluginselector.cpp:139
+#, kde-format
+msgid ""
+"Automatic changes have been performed due to plugin dependencies. Click here "
+"for further information"
+msgstr ""
+"Es wurden Änderungen durchgeführt, die durch Modul-Abhängigkeiten "
+"erforderlich waren. Klicken Sie hier für weitere Informationen."
+
+#: kpluginselector.cpp:207
+#, kde-format
+msgid ""
+"Automatic changes have been performed in order to satisfy plugin "
+"dependencies:\n"
+msgstr ""
+"Es wurden Änderungen durchgeführt, die zum Auflösen von Modul-Abhängigkeiten "
+"erforderlich waren:\n"
+
+#: kpluginselector.cpp:211
+#, kde-format
+msgid ""
+"\n"
+"    %1 plugin has been automatically checked because of the dependency of %2 "
+"plugin"
+msgstr ""
+"\n"
+"    Das Modul %1 wurde automatisch aktiviert, da eine Abhängigkeit zum Modul "
+"%2 besteht"
+
+#: kpluginselector.cpp:213
+#, kde-format
+msgid ""
+"\n"
+"    %1 plugin has been automatically unchecked because of its dependency on "
+"%2 plugin"
+msgstr ""
+"\n"
+"    Das Modul %1 wurde automatisch deaktiviert, da eine Abhängigkeit zum "
+"Modul %2 besteht"
+
+#: kpluginselector.cpp:216
+#, kde-format
+msgid "Dependency Check"
+msgstr "Abhängigkeitsprüfung"
+
+#: kpluginselector.cpp:233
+#, kde-format
+msgid "%1 plugin automatically added due to plugin dependencies"
+msgid_plural "%1 plugins automatically added due to plugin dependencies"
+msgstr[0] ""
+"%1 Modul wurde aufgrund von Modul-Abhängigkeiten automatisch hinzugefügt."
+msgstr[1] ""
+"%1 Module wurden aufgrund von Modul-Abhängigkeiten automatisch hinzugefügt."
+
+#: kpluginselector.cpp:237
+#, kde-format
+msgid ", "
+msgstr ", "
+
+#: kpluginselector.cpp:241
+#, kde-format
+msgid "%1 plugin automatically removed due to plugin dependencies"
+msgid_plural "%1 plugins automatically removed due to plugin dependencies"
+msgstr[0] ""
+"%1 Modul wurde aufgrund von Modul-Abhängigkeiten automatisch entfernt."
+msgstr[1] ""
+"%1 Module wurden aufgrund von Modul-Abhängigkeiten automatisch entfernt."
+
+#: kpluginselector.cpp:261
+#, kde-format
+msgid "Search..."
+msgstr "Suchen ..."
+
+#: kpluginselector.cpp:718
+#, kde-format
+msgid "About"
+msgstr "Über"
+
+#: ksettings/componentsdialog.cpp:55
+#, kde-format
+msgid "Select Components"
+msgstr "Komponenten auswählen"
+
+#: ksettings/dialog.cpp:232
+#, kde-format
+msgid "Enable component"
+msgstr "Komponente aktivieren"
