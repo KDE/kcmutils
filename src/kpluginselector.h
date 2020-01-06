@@ -229,6 +229,12 @@ Q_SIGNALS:
       */
     void configCommitted(const QByteArray &componentName);
 
+    /**
+      * Emitted after configuration is changed, tell if configuration represent default or not
+      * @since 5.67
+     */
+    void defaulted(bool isDefault);
+
 private:
     class Private;
     Private *const d;

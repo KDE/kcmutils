@@ -202,7 +202,7 @@ protected:
 
 private Q_SLOTS:
     void slotStateChanged(bool state);
-    void emitChanged();
+    void emitChanged(bool state);
     void slotAboutClicked();
     void slotConfigureClicked();
     void slotDefaultClicked();

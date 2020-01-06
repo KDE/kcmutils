@@ -283,6 +283,8 @@ KPluginSelector::KPluginSelector(QWidget *parent)
     connect(pluginDelegate, &Private::PluginDelegate::changed, this, &KPluginSelector::changed);
     connect(pluginDelegate, &Private::PluginDelegate::configCommitted, this, &KPluginSelector::configCommitted);
 
+    connect(this, &KPluginSelector::changed, [this]{ emit defaulted(isDefault()); });
+
     layout->addWidget(d->lineEdit);
     layout->addWidget(d->listView);
     layout->addWidget(d->dependenciesWidget);
@@ -375,13 +377,15 @@ void KPluginSelector::save()
 
 void KPluginSelector::defaults()
 {
+    bool isChanged = false;
     for (int i = 0; i < d->pluginModel->rowCount(); i++) {
         const QModelIndex index = d->pluginModel->index(i, 0);
         PluginEntry *pluginEntry = static_cast<PluginEntry *>(index.internalPointer());
+        isChanged |= pluginEntry->pluginInfo.isPluginEnabled() != pluginEntry->pluginInfo.isPluginEnabledByDefault();
         d->pluginModel->setData(index, pluginEntry->pluginInfo.isPluginEnabledByDefault(), Qt::CheckStateRole);
     }
 
-    emit changed(true);
+    emit changed(isChanged);
 }
 
 bool KPluginSelector::isDefault() const
@@ -786,9 +790,12 @@ void KPluginSelector::Private::PluginDelegate::slotStateChanged(bool state)
     const_cast<QAbstractItemModel *>(index.model())->setData(index, state, Qt::CheckStateRole);
 }
 
-void KPluginSelector::Private::PluginDelegate::emitChanged()
+void KPluginSelector::Private::PluginDelegate::emitChanged(bool state)
 {
-    emit changed(true);
+    const QModelIndex index = focusedIndex();
+    PluginEntry *pluginEntry = index.model()->data(index, PluginEntryRole).value<PluginEntry *>();
+
+    emit changed(pluginEntry->pluginInfo.isPluginEnabled() != state);
 }
 
 void KPluginSelector::Private::PluginDelegate::slotAboutClicked()
