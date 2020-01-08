@@ -142,7 +142,6 @@ void KCMultiDialogPrivate::_k_clientChanged()
 #ifndef KCONFIGWIDGETS_NO_KAUTH
             delete applyButton->findChild<KAuth::ObjectDecorator *>();
 #endif
-            applyButton->setEnabled(change);
         }
 
         QPushButton *okButton = q->buttonBox()->button(QDialogButtonBox::Ok);
@@ -182,26 +181,44 @@ void KCMultiDialogPrivate::_k_clientChanged()
 #endif
     }
 
+    auto buttons = activeModule->buttons();
+
     QPushButton *resetButton = q->buttonBox()->button(QDialogButtonBox::Reset);
     if (resetButton) {
+        resetButton->setVisible(buttons & KCModule::Apply);
         resetButton->setEnabled(change);
     }
 
     QPushButton *applyButton = q->buttonBox()->button(QDialogButtonBox::Apply);
     if (applyButton) {
+        applyButton->setVisible(buttons & KCModule::Apply);
         applyButton->setEnabled(change);
     }
 
-    if (activeModule) {
-        QPushButton *helpButton = q->buttonBox()->button(QDialogButtonBox::Help);
-        if (helpButton) {
-            helpButton->setEnabled(activeModule->buttons() & KCModule::Help);
-        }
+    QPushButton *cancelButton = q->buttonBox()->button(QDialogButtonBox::Cancel);
+    if (cancelButton) {
+        cancelButton->setVisible(buttons & KCModule::Apply);
+    }
 
-        QPushButton *defaultButton = q->buttonBox()->button(QDialogButtonBox::RestoreDefaults);
-        if (defaultButton) {
-            defaultButton->setEnabled((activeModule->buttons() & KCModule::Default) && !defaulted);
-        }
+    QPushButton *okButton = q->buttonBox()->button(QDialogButtonBox::Ok);
+    if (okButton) {
+        okButton->setVisible(buttons & KCModule::Apply);
+    }
+
+    QPushButton *closeButton = q->buttonBox()->button(QDialogButtonBox::Close);
+    if (closeButton) {
+        closeButton->setHidden(buttons & KCModule::Apply);
+    }
+
+    QPushButton *helpButton = q->buttonBox()->button(QDialogButtonBox::Help);
+    if (helpButton) {
+        helpButton->setVisible(buttons & KCModule::Help);
+    }
+
+    QPushButton *defaultButton = q->buttonBox()->button(QDialogButtonBox::RestoreDefaults);
+    if (defaultButton) {
+        defaultButton->setVisible(buttons & KCModule::Default);
+        defaultButton->setEnabled(!defaulted);
     }
 }
 
@@ -233,14 +250,17 @@ void KCMultiDialogPrivate::init()
                                   | QDialogButtonBox::RestoreDefaults
                                   | QDialogButtonBox::Cancel
                                   | QDialogButtonBox::Apply
+                                  | QDialogButtonBox::Close
                                   | QDialogButtonBox::Ok
                                   | QDialogButtonBox::Reset);
     KGuiItem::assign(buttonBox->button(QDialogButtonBox::Ok), KStandardGuiItem::ok());
     KGuiItem::assign(buttonBox->button(QDialogButtonBox::Cancel), KStandardGuiItem::cancel());
     KGuiItem::assign(buttonBox->button(QDialogButtonBox::RestoreDefaults), KStandardGuiItem::defaults());
     KGuiItem::assign(buttonBox->button(QDialogButtonBox::Apply), KStandardGuiItem::apply());
+    KGuiItem::assign(buttonBox->button(QDialogButtonBox::Close), KStandardGuiItem::close());
     KGuiItem::assign(buttonBox->button(QDialogButtonBox::Reset), KStandardGuiItem::reset());
     KGuiItem::assign(buttonBox->button(QDialogButtonBox::Help), KStandardGuiItem::help());
+    buttonBox->button(QDialogButtonBox::Close)->setVisible(false);
     buttonBox->button(QDialogButtonBox::Reset)->setEnabled(false);
     buttonBox->button(QDialogButtonBox::Apply)->setEnabled(false);
 
