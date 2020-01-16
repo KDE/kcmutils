@@ -311,6 +311,7 @@ const KAboutData *KCModuleQml::aboutData() const
 void KCModuleQml::load()
 {
     d->configModule->load();
+    emit defaulted(d->configModule->representsDefaults());
 }
 
 void KCModuleQml::save()
