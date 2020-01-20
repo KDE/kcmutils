@@ -89,27 +89,30 @@ KCModule *KCModuleLoader::loadModule(const KCModuleInfo &mod, ErrorReporting rep
         for (const QString &arg : args) {
             args2 << arg;
         }
-        KCModule *module = mod.service()->createInstance<KCModule>(parent, args2, &error);
-        if (module) {
-            return module;
+
+        KCModule *module = nullptr;
+
+        KPluginLoader loader(KPluginLoader::findPlugin(QLatin1String("kcms/") + mod.service()->library()));
+        KPluginFactory* factory = loader.factory();
+        if (!factory) {
+            qWarning() << "Couldn't load plugin:" << loader.errorString();
         } else {
-            KPluginLoader loader(KPluginLoader::findPlugin(QLatin1String("kcms/") + mod.service()->library()));
-            KPluginFactory* factory = loader.factory();
-            if (!factory) {
-                qWarning() << "Error loading plugin:" << loader.errorString();
+            std::unique_ptr<KQuickAddons::ConfigModule> cm(factory->create<KQuickAddons::ConfigModule>(nullptr, args2));
+            if (!cm) {
+                qWarning() << "Error creating object from plugin" << loader.fileName();
             } else {
-                std::unique_ptr<KQuickAddons::ConfigModule> cm(factory->create<KQuickAddons::ConfigModule>(nullptr, args2));
-                if (!cm) {
-                    qWarning() << "Error creating object from plugin" << loader.fileName();
-                } else {
-                    if (!cm->mainUi()) {
-                        return reportError(report, i18n("Error loading QML file."), cm->errorString(), parent);
-                    }
-                    module = new KCModuleQml(std::move(cm), parent, args2);
-                    return module;
+                if (!cm->mainUi()) {
+                    return reportError(report, i18n("Error loading QML file."), cm->errorString(), parent);
                 }
+                module = new KCModuleQml(std::move(cm), parent, args2);
+                return module;
             }
         }
+
+        module = mod.service()->createInstance<KCModule>(parent, args2, &error);
+        if (module) {
+            return module;
+        } else
 //#ifndef NDEBUG
         {
             // get the create_ function
