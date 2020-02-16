@@ -181,7 +181,7 @@ void KCMultiDialogPrivate::_k_clientChanged()
 #endif
     }
 
-    auto buttons = activeModule->buttons();
+    auto buttons = activeModule ? activeModule->buttons() : KCModule::NoAdditionalButton;
 
     QPushButton *resetButton = q->buttonBox()->button(QDialogButtonBox::Reset);
     if (resetButton) {
