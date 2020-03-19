@@ -180,6 +180,10 @@ KCModuleQml::KCModuleQml(std::unique_ptr<KQuickAddons::ConfigModule> configModul
             d->pageRow->setProperty("currentIndex", d->configModule->currentIndex());
             }
         );
+        connect(d->configModule.get(), &KQuickAddons::ConfigModule::passiveNotificationRequested, this, [this](const QString &message, const QVariant &timeout, const QString &actionText, const QJSValue &callBack) {
+                d->rootPlaceHolder->metaObject()->invokeMethod(d->rootPlaceHolder, "showPassiveNotification", Q_ARG(QVariant, message), Q_ARG(QVariant, timeout), Q_ARG(QVariant, actionText), Q_ARG(QVariant, QVariant::fromValue(callBack)));
+            }
+        );
         //New syntax cannot be used to connect to QML types
         connect(d->pageRow, SIGNAL(currentIndexChanged()), this, SLOT(syncCurrentIndex()));
 
