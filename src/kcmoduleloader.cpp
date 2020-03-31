@@ -9,6 +9,7 @@
 */
 
 #include "kcmoduleloader.h"
+#include "kcmoduledata.h"
 #include "kcmoduleqml_p.h"
 #include <kcmutils_debug.h>
 
@@ -150,6 +151,32 @@ void KCModuleLoader::unloadModule(const KCModuleInfo &mod)
     KPluginLoader loader(mod.library());
     loader.unload();
 }
+
+bool KCModuleLoader::isDefaults(const KCModuleInfo &mod, const QStringList &args)
+{
+    if (!mod.service() || mod.service()->noDisplay() || mod.library().isEmpty()) {
+        return true;
+    }
+
+    QVariantList args2(args.cbegin(), args.cend());
+
+    KPluginLoader loader(KPluginLoader::findPlugin(QLatin1String("kcms/") + mod.service()->library()));
+    KPluginFactory* factory = loader.factory();
+    if (factory) {
+        std::unique_ptr<KCModuleData> probe(factory->create<KCModuleData>(nullptr, args2));
+        if (probe) {
+            return probe->isDefaults();
+        }
+    }
+
+    std::unique_ptr<KCModuleData> probe(mod.service()->createInstance<KCModuleData>(nullptr, args2));
+    if (probe) {
+        return probe->isDefaults();
+    }
+
+    return true;
+}
+
 
 KCModule *KCModuleLoader::reportError(ErrorReporting report, const QString &text,
                                       const QString &details, QWidget *parent)

@@ -92,6 +92,15 @@ KCMUTILS_EXPORT void unloadModule(const KCModuleInfo &mod);
 KCMUTILS_EXPORT KCModule *reportError(ErrorReporting report, const QString &text,
                                       const QString &details, QWidget *parent);
 
+/**
+ * For a specified module, return false if configuration is not the default one and true in all other case including if module is not found
+ * @param module what module to load
+ *
+ * @return a boolean representing if module configuration is in default state
+ *
+ * @since 5.74
+ */
+KCMUTILS_EXPORT bool isDefaults(const KCModuleInfo &module, const QStringList &args = QStringList());
 }
 
 #endif // KCMODULELOADER_H

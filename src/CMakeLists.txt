@@ -1,6 +1,7 @@
 ########### kcmutils ###############
 set(kcmutils_LIB_SRCS
     kcmoduleinfo.cpp
+    kcmoduledata.cpp
     kcmoduleloader.cpp
     kcmoduleqml.cpp
     kcmultidialog.cpp
@@ -65,6 +66,7 @@ ecm_generate_headers(KCMUtils_HEADERS
   KCModuleProxy
   KPluginSelector
   KCModuleContainer
+  KCModuleData
 
   REQUIRED_HEADERS KCMUtils_HEADERS
 )
