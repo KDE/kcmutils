@@ -19,18 +19,12 @@ include(KDECMakeSettings)
 set(REQUIRED_QT_VERSION 5.12.0)
 find_package(Qt5 ${REQUIRED_QT_VERSION} NO_MODULE REQUIRED Widgets DBus Qml Quick QuickWidgets)
 
-set(KCMUtils_AUTOMOC_MACRO_NAMES "KCMODULECONTAINER")
-if(NOT CMAKE_VERSION VERSION_LESS "3.10.0")
-    # CMake 3.9+ warns about automoc on files without Q_OBJECT, and doesn't know about other macros.
-    # 3.10+ lets us provide more macro names that require automoc.
-    list(APPEND CMAKE_AUTOMOC_MACRO_NAMES ${KCMUtils_AUTOMOC_MACRO_NAMES})
-endif()
-
 include(ECMGenerateExportHeader)
 include(ECMSetupVersion)
 include(ECMGenerateHeaders)
 include(CMakePackageConfigHelpers)
 include(ECMAddQch)
+include(ECMSetupQtPluginMacroNames)
 
 option(BUILD_QCH "Build API documentation in QCH format (for e.g. Qt Assistant, Qt Creator & KDevelop)" OFF)
 add_feature_info(QCH ${BUILD_QCH} "API documentation in QCH format (for e.g. Qt Assistant, Qt Creator & KDevelop)")
@@ -48,6 +42,13 @@ find_package(KF5I18n ${KF5_DEP_VERSION} REQUIRED)
 find_package(KF5Service ${KF5_DEP_VERSION} REQUIRED)
 find_package(KF5XmlGui ${KF5_DEP_VERSION} REQUIRED)
 find_package(KF5Declarative ${KF5_DEP_VERSION} REQUIRED)
+
+ecm_setup_qtplugin_macro_names(
+    JSON_NONE
+        "KCMODULECONTAINER"
+    CONFIG_CODE_VARIABLE
+        PACKAGE_SETUP_AUTOMOC_VARIABLES
+)
 
 add_definitions(-DQT_DISABLE_DEPRECATED_BEFORE=0x050d00)
 add_definitions(-DKF_DISABLE_DEPRECATED_BEFORE_AND_AT=0x054400)
