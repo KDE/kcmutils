@@ -28,12 +28,14 @@
 #include <kdesktopfile.h>
 #include <QDebug>
 
+#include <KPluginInfo>
 #include <klocalizedstring.h>
 
 class Q_DECL_HIDDEN KCModuleInfo::Private
 {
 public:
     Private();
+    Private(const KPluginInfo &);
     Private(const KService::Ptr &);
 
     QStringList keywords;
@@ -41,7 +43,7 @@ public:
     bool        allLoaded = false;
     int         weight = 100;
 
-    KService::Ptr service;
+    KPluginInfo pluginInfo;
 
     /**
      * Reads the service entries specific for KCModule from the desktop file.
@@ -54,22 +56,21 @@ KCModuleInfo::Private::Private()
 {
 }
 
-KCModuleInfo::Private::Private(const KService::Ptr &s)
+KCModuleInfo::Private::Private(const KPluginInfo &pluginInfo)
     : allLoaded(false)
-    , service(s)
+    , pluginInfo(pluginInfo)
 {
-    if (!service) {
-        // qDebug() << "Could not find the service.";
+    if (!pluginInfo.isValid()) {
         return;
     }
 
     // set the modules simple attributes
-    name = service->name();
-    comment = service->comment();
-    icon = service->icon();
-    fileName = service->entryPath();
-    lib = service->library();
-    keywords = service->keywords();
+    name = pluginInfo.name();
+    comment = pluginInfo.comment();
+    icon = pluginInfo.icon();
+    fileName = pluginInfo.entryPath();
+    lib = pluginInfo.libraryPath();
+    keywords = pluginInfo.property(QStringLiteral("Keywords")).toStringList();
 }
 
 KCModuleInfo::KCModuleInfo()
@@ -78,12 +79,18 @@ KCModuleInfo::KCModuleInfo()
 }
 
 KCModuleInfo::KCModuleInfo(const QString &desktopFile)
-    : d(new Private(KService::serviceByStorageId(desktopFile)))
+// TODO KF6: turn this into KPluginMetaData(file) so that most callers still work, after adding the JSON to the .so files
+    : d(new Private(KPluginInfo(KService::serviceByStorageId(desktopFile))))
 {
 }
 
-KCModuleInfo::KCModuleInfo(KService::Ptr moduleInfo)
-    : d(new Private(moduleInfo))
+KCModuleInfo::KCModuleInfo(KService::Ptr service)
+    : d(new Private(KPluginInfo(service)))
+{
+}
+
+KCModuleInfo::KCModuleInfo(const KPluginInfo &pluginInfo)
+    : d(new Private(pluginInfo))
 {
 }
 
@@ -118,22 +125,22 @@ void KCModuleInfo::Private::loadAll()
 {
     allLoaded = true;
 
-    if (!service) { /* We have a bogus service. All get functions will return empty/zero values */
+    if (!pluginInfo.isValid()) { /* We have a bogus service. All get functions will return empty/zero values */
         return;
     }
 
     // get the documentation path
-    doc = service->property(QStringLiteral("X-DocPath"), QVariant::String).toString();
+    doc = pluginInfo.property(QStringLiteral("X-DocPath")).toString();
     if (doc.isEmpty()) {
-        doc = service->property(QStringLiteral("DocPath"), QVariant::String).toString();
+        doc = pluginInfo.property(QStringLiteral("DocPath")).toString();
     }
 
     // read weight
-    QVariant tmp = service->property(QStringLiteral("X-KDE-Weight"), QVariant::Int);
+    QVariant tmp = pluginInfo.property(QStringLiteral("X-KDE-Weight")).toInt();
     weight = tmp.isValid() ? tmp.toInt() : 100;
 
     // factory handle
-    tmp = service->property(QStringLiteral("X-KDE-FactoryName"), QVariant::String);
+    tmp = pluginInfo.property(QStringLiteral("X-KDE-FactoryName"));
     handle = tmp.isValid() ? tmp.toString() : lib;
 
 }
@@ -155,7 +162,12 @@ QString KCModuleInfo::moduleName() const
 
 KService::Ptr KCModuleInfo::service() const
 {
-    return d->service;
+    return d->pluginInfo.service();
+}
+
+KPluginInfo KCModuleInfo::pluginInfo() const
+{
+    return d->pluginInfo;
 }
 
 QString KCModuleInfo::comment() const

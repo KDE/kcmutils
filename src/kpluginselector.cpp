@@ -891,7 +891,7 @@ void KPluginSelector::Private::PluginDelegate::configure(const QModelIndex& inde
 
         if (configDialog.exec() == QDialog::Accepted) {
             for (KCModuleProxy *moduleProxy : qAsConst(moduleProxyList)) {
-                const QStringList parentComponents = moduleProxy->moduleInfo().service()->property(QStringLiteral("X-KDE-ParentComponents")).toStringList();
+                const QStringList parentComponents = moduleProxy->moduleInfo().pluginInfo().property(QStringLiteral("X-KDE-ParentComponents")).toStringList();
                 moduleProxy->save();
                 for (const QString &parentComponent : parentComponents) {
                     emit configCommitted(parentComponent.toLatin1());

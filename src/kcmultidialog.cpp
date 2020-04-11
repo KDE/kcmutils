@@ -49,6 +49,7 @@
 #include <KLocalizedString>
 #include <KMessageBox>
 #include <KPageWidgetModel>
+#include <KPluginInfo>
 
 bool KCMultiDialogPrivate::resolveChanges(KCModuleProxy *currentProxy)
 {
@@ -463,13 +464,13 @@ KPageWidgetItem *KCMultiDialog::addModule(const KCModuleInfo &moduleInfo,
         KPageWidgetItem *parentItem, const QStringList &args)
 {
     Q_D(KCMultiDialog);
-    if (!moduleInfo.service()) {
+    if (!moduleInfo.pluginInfo().isValid()) {
         return nullptr;
     }
 
     //KAuthorized::authorizeControlModule( moduleInfo.service()->menuId() ) is
     //checked in noDisplay already
-    if (moduleInfo.service()->noDisplay()) {
+    if (moduleInfo.service() && moduleInfo.service()->noDisplay()) {
         return nullptr;
     }
 
@@ -489,7 +490,7 @@ KPageWidgetItem *KCMultiDialog::addModule(const KCModuleInfo &moduleInfo,
     KCMultiDialogPrivate::CreatedModule cm;
     cm.kcm = kcm;
     cm.item = item;
-    cm.componentNames = moduleInfo.service()->property(QStringLiteral("X-KDE-ParentComponents")).toStringList();
+    cm.componentNames = moduleInfo.pluginInfo().property(QStringLiteral("X-KDE-ParentComponents")).toStringList();
     d->modules.append(cm);
 
     if (qobject_cast<KCModuleQml *>(kcm->realModule())) {

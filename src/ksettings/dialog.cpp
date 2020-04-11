@@ -24,10 +24,11 @@
 
 #include <klocalizedstring.h>
 #include <kservicegroup.h>
-#include <QDebug>
 #include <kservicetypetrader.h>
 #include <kconfig.h>
+#include <KPluginMetaData>
 
+#include <QDebug>
 #include <QDir>
 #include <QCheckBox>
 #include <QDialogButtonBox>
@@ -93,8 +94,7 @@ void Dialog::addPluginInfos(const KPluginInfo::List &plugininfos)
         if (lst.isEmpty()) {
             // this plugin has no kcm services, still we want to show the disable/enable stuff
             // so add a dummy kcm
-            KService::Ptr service = it->service();
-            d->kcmInfos << KCModuleInfo(service);
+            d->kcmInfos << KCModuleInfo(*it);
             continue;
         }
         for (const KService::Ptr &service : lst) {
@@ -191,7 +191,7 @@ bool DialogPrivate::isPluginForKCMEnabled(const KCModuleInfo *moduleinfo, KPlugi
     bool enabled = true;
     //qDebug() << "check whether the '" << moduleinfo->moduleName() << "' KCM should be shown";
     // for all parent components
-    const QStringList parentComponents = moduleinfo->service()->property(
+    const QStringList parentComponents = moduleinfo->pluginInfo().property(
             QStringLiteral("X-KDE-ParentComponents")).toStringList();
     for (QStringList::ConstIterator pcit = parentComponents.begin();
             pcit != parentComponents.end(); ++pcit) {
@@ -323,7 +323,7 @@ void DialogPrivate::createDialogFromServices()
 
     //qDebug() << kcmInfos.count();
     for (const KCModuleInfo &info : qAsConst(kcmInfos)) {
-        const QStringList parentComponents = info.service()->property(QStringLiteral("X-KDE-ParentComponents")).toStringList();
+        const QStringList parentComponents = info.pluginInfo().property(QStringLiteral("X-KDE-ParentComponents")).toStringList();
         bool blacklisted = false;
         for (const QString &parentComponent : parentComponents) {
             if (componentBlacklist.contains(parentComponent)) {
@@ -334,18 +334,17 @@ void DialogPrivate::createDialogFromServices()
         if (blacklisted) {
             continue;
         }
-        const QString parentId = info.service()->property(QStringLiteral("X-KDE-CfgDlgHierarchy"), QVariant::String).toString();
+        const QString parentId = info.pluginInfo().property(QStringLiteral("X-KDE-CfgDlgHierarchy")).toString();
         KPageWidgetItem *parent = pageItemForGroupId.value(parentId);
         if (!parent) {
             // dummy kcm
             bool foundPlugin = false;
-            for (KPluginInfo pinfo : qAsConst(plugininfos)) {
-                if (pinfo.service() == info.service()) {
+            for (const KPluginInfo &pinfo : qAsConst(plugininfos)) {
+                if (pinfo.libraryPath() == info.library()) {
                     if (pinfo.kcmServices().isEmpty()) {
-                        const KService::Ptr service = info.service();
                         // FIXME get weight from service or plugin info
                         const int weight = 1000;
-                        KPageWidgetItem *item = createPageItem(nullptr, service->name(), service->comment(), service->icon(), weight);
+                        KPageWidgetItem *item = createPageItem(nullptr, pinfo.name(), pinfo.comment(), pinfo.icon(), weight);
                         connectItemCheckBox(item, pinfo, pinfo.isPluginEnabled());
                         foundPlugin = true;
                         break;

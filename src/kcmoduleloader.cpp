@@ -26,13 +26,14 @@
 
 #include <QLabel>
 #include <QLibrary>
-
-#include <kpluginloader.h>
 #include <QDebug>
+#include <QVBoxLayout>
+
+#include <KPluginInfo>
+#include <kpluginloader.h>
 #include <klocalizedstring.h>
 #include <kmessagebox.h>
 #include <kaboutdata.h>
-#include <QVBoxLayout>
 
 #include <KQuickAddons/ConfigModule>
 
@@ -73,11 +74,11 @@ KCModule *KCModuleLoader::loadModule(const KCModuleInfo &mod, ErrorReporting rep
      *  from the factory.
      */
 
-    if (!mod.service())
+    if (!mod.pluginInfo().isValid())
         return reportError(report,
                            i18n("The module %1 could not be found.",
                                 mod.moduleName()), i18n("<qt><p>The diagnosis is:<br />The desktop file %1 could not be found.</p></qt>", mod.fileName()), parent);
-    if (mod.service()->noDisplay())
+    if (mod.service() && mod.service()->noDisplay())
         return reportError(report, i18n("The module %1 is disabled.", mod.moduleName()),
                            i18n("<qt><p>Either the hardware/software the module configures is not available or the module has been disabled by the administrator.</p></qt>"),
                            parent);
@@ -92,11 +93,11 @@ KCModule *KCModuleLoader::loadModule(const KCModuleInfo &mod, ErrorReporting rep
 
         KCModule *module = nullptr;
 
-        KPluginLoader loader(KPluginLoader::findPlugin(QLatin1String("kcms/") + mod.service()->library()));
+        KPluginLoader loader(KPluginLoader::findPlugin(QLatin1String("kcms/") + mod.library()));
         KPluginFactory* factory = loader.factory();
         if (!factory) {
             // KF6 TODO: make this a warning, and remove mention of fallback
-            qDebug() << "Couldn't load plugin" << QLatin1String("kcms/") + mod.service()->library() << ":" << loader.errorString() << " -- falling back to old-style loading from desktop file";
+            qDebug() << "Couldn't load plugin" << QLatin1String("kcms/") + mod.library() << ":" << loader.errorString() << " -- falling back to old-style loading from desktop file";
         } else {
             std::unique_ptr<KQuickAddons::ConfigModule> cm(factory->create<KQuickAddons::ConfigModule>(nullptr, args2));
             if (!cm) {
@@ -111,7 +112,9 @@ KCModule *KCModuleLoader::loadModule(const KCModuleInfo &mod, ErrorReporting rep
         }
 
         // KF6 TODO: remove this compat block
-        module = mod.service()->createInstance<KCModule>(parent, args2, &error);
+        if (mod.service()) {
+            module = mod.service()->createInstance<KCModule>(parent, args2, &error);
+        }
         if (module) {
             return module;
         } else

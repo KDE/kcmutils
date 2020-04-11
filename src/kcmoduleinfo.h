@@ -27,6 +27,7 @@
 #include <kcmutils_export.h>
 #include <kservice.h>
 
+class KPluginInfo;
 class QString;
 class QStringList;
 
@@ -59,6 +60,16 @@ public:
     KCModuleInfo(const QString &desktopFile);
 
     /**
+     * Same as above but takes a KPluginInfo as argument.
+     * This allows to encapsulate both the case of KService (desktop file)
+     * and the case of KPluginMetaData (JSon data in .so file) under the same API.
+     *
+     * @param pluginInfo specifies the module
+     * @since 5.70
+     */
+    KCModuleInfo(const KPluginInfo &pluginInfo);
+
+    /**
      * Same as above but takes a KService::Ptr as argument.
      *
      * @note @p moduleInfo must be a valid pointer.
@@ -68,9 +79,8 @@ public:
     KCModuleInfo(KService::Ptr moduleInfo);
 
     /**
-     * Same as above but takes a KCModuleInfo as argument.
-     *
-     * @param rhs specifies the module
+     * Copy constructor
+     * @param rhs specifies the module info to copy
      */
     KCModuleInfo(const KCModuleInfo &rhs);
 
@@ -117,8 +127,16 @@ public:
 
     /**
      * @return a QExplicitlySharedDataPointer to KService created from the modules .desktop file
+     * @warning This will be null if this KCModuleInfo was created from a KPluginInfo coming from KPluginMetaData.
+     * Prefer using pluginInfo() instead, which works for both kinds.
      */
-    KService::Ptr service() const;
+    KService::Ptr service() const; // TODO KF6 REMOVE
+
+    /**
+     * @return the KPluginInfo containing more information about this module
+     * @since 5.70
+     */
+    KPluginInfo pluginInfo() const;
 
     /**
      * @return the module's (translated) comment field
