@@ -314,11 +314,17 @@ void DialogPrivate::createDialogFromServices()
     }
 
     const QStringList dirs = QStandardPaths::locateAll(QStandardPaths::DataLocation, QStringLiteral("ksettingsdialog"),  QStandardPaths::LocateDirectory);
+    QMap<QString /*fileName*/, QString /*fullPath*/> fileMap;
     for (const QString &dir : dirs) {
         const QStringList fileNames = QDir(dir).entryList(QStringList() << QStringLiteral("*.setdlg"));
         for (const QString &file : fileNames) {
-            parseGroupFile(dir + QLatin1Char('/') + file);
+            if (!fileMap.contains(file)) {
+                fileMap.insert(file, dir + QLatin1Char('/') + file);
+            }
         }
+    }
+    for (auto it = fileMap.constBegin(); it != fileMap.constEnd(); ++it) {
+        parseGroupFile(it.value());
     }
 
     //qDebug() << kcmInfos.count();
