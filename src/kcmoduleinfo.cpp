@@ -73,23 +73,23 @@ KCModuleInfo::Private::Private(const KService::Ptr &s)
 }
 
 KCModuleInfo::KCModuleInfo()
+    : d(new Private)
 {
-    d = new Private;
 }
 
 KCModuleInfo::KCModuleInfo(const QString &desktopFile)
+    : d(new Private(KService::serviceByStorageId(desktopFile)))
 {
-    d = new Private(KService::serviceByStorageId(desktopFile));
 }
 
 KCModuleInfo::KCModuleInfo(KService::Ptr moduleInfo)
+    : d(new Private(moduleInfo))
 {
-    d = new Private(moduleInfo);
 }
 
 KCModuleInfo::KCModuleInfo(const KCModuleInfo &rhs)
+    : d(new Private)
 {
-    d = new Private;
     (*this) = rhs;
 }
 
