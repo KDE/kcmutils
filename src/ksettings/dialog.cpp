@@ -89,14 +89,14 @@ void Dialog::addPluginInfos(const KPluginInfo::List &plugininfos)
     for (KPluginInfo::List::ConstIterator it = plugininfos.begin();
             it != plugininfos.end(); ++it) {
         d->registeredComponents.append(it->pluginName());
-        if (it->kcmServices().isEmpty()) {
+        const auto lst = it->kcmServices();
+        if (lst.isEmpty()) {
             // this plugin has no kcm services, still we want to show the disable/enable stuff
             // so add a dummy kcm
             KService::Ptr service = it->service();
             d->kcmInfos << KCModuleInfo(service);
             continue;
         }
-        const auto lst = it->kcmServices();
         for (const KService::Ptr &service : lst) {
             d->kcmInfos << KCModuleInfo(service);
         }
