@@ -95,7 +95,8 @@ KCModule *KCModuleLoader::loadModule(const KCModuleInfo &mod, ErrorReporting rep
         KPluginLoader loader(KPluginLoader::findPlugin(QLatin1String("kcms/") + mod.service()->library()));
         KPluginFactory* factory = loader.factory();
         if (!factory) {
-            qWarning() << "Couldn't load plugin:" << loader.errorString();
+            // KF6 TODO: make this a warning, and remove mention of fallback
+            qDebug() << "Couldn't load plugin" << QLatin1String("kcms/") + mod.service()->library() << ":" << loader.errorString() << " -- falling back to old-style loading from desktop file";
         } else {
             std::unique_ptr<KQuickAddons::ConfigModule> cm(factory->create<KQuickAddons::ConfigModule>(nullptr, args2));
             if (!cm) {
@@ -109,12 +110,14 @@ KCModule *KCModuleLoader::loadModule(const KCModuleInfo &mod, ErrorReporting rep
             }
         }
 
+        // KF6 TODO: remove this compat block
         module = mod.service()->createInstance<KCModule>(parent, args2, &error);
         if (module) {
             return module;
         } else
 //#ifndef NDEBUG
         {
+            // KF6 TODO: remove this old compat block
             // get the create_ function
             QLibrary lib(KPluginLoader::findPlugin(mod.library()));
             if (lib.load()) {
