@@ -17,7 +17,7 @@ include(KDEFrameworkCompilerSettings NO_POLICY_SCOPE)
 include(KDECMakeSettings)
 
 set(REQUIRED_QT_VERSION 5.12.0)
-find_package(Qt5 ${REQUIRED_QT_VERSION} NO_MODULE REQUIRED Widgets DBus Qml Quick QuickWidgets)
+find_package(Qt5 ${REQUIRED_QT_VERSION} NO_MODULE REQUIRED Widgets DBus Qml Quick QuickWidgets Test)
 
 include(ECMGenerateExportHeader)
 include(ECMSetupVersion)
@@ -58,6 +58,9 @@ if (IS_DIRECTORY "${CMAKE_CURRENT_SOURCE_DIR}/po")
 endif()
 add_definitions(-DQT_NO_FOREACH)
 add_subdirectory(src)
+if(BUILD_TESTING)
+add_subdirectory(autotests)
+endif()
 
 
 # create a Config.cmake and a ConfigVersion.cmake file and install them

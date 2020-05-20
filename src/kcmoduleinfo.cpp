@@ -43,7 +43,11 @@ public:
     bool        allLoaded = false;
     int         weight = 100;
 
+    // For real C++ plugins
     KPluginInfo pluginInfo;
+
+    // Can be a C++ plugin, or just a desktop file launching an executable (see autotest)
+    KService::Ptr service;
 
     /**
      * Reads the service entries specific for KCModule from the desktop file.
@@ -61,6 +65,7 @@ KCModuleInfo::Private::Private(const KPluginInfo &pluginInfo)
     , pluginInfo(pluginInfo)
 {
     if (!pluginInfo.isValid()) {
+        qWarning() << "Invalid plugin";
         return;
     }
 
@@ -73,19 +78,35 @@ KCModuleInfo::Private::Private(const KPluginInfo &pluginInfo)
     keywords = pluginInfo.property(QStringLiteral("Keywords")).toStringList();
 }
 
+KCModuleInfo::Private::Private(const KService::Ptr &service)
+    : allLoaded(false),
+      pluginInfo(),
+      service(service)
+{
+    if (!service) {
+        return;
+    }
+
+    name = service->name();
+    comment = service->comment();
+    icon = service->icon();
+    fileName = service->entryPath();
+    lib = service->library();
+    keywords = service->keywords();
+}
+
 KCModuleInfo::KCModuleInfo()
     : d(new Private)
 {
 }
 
 KCModuleInfo::KCModuleInfo(const QString &desktopFile)
-// TODO KF6: turn this into KPluginMetaData(file) so that most callers still work, after adding the JSON to the .so files
-    : d(new Private(KPluginInfo(KService::serviceByStorageId(desktopFile))))
+    : d(new Private(KService::serviceByStorageId(desktopFile)))
 {
 }
 
 KCModuleInfo::KCModuleInfo(KService::Ptr service)
-    : d(new Private(KPluginInfo(service)))
+    : d(new Private(service))
 {
 }
 
@@ -125,24 +146,39 @@ void KCModuleInfo::Private::loadAll()
 {
     allLoaded = true;
 
-    if (!pluginInfo.isValid()) { /* We have a bogus service. All get functions will return empty/zero values */
+    if (!pluginInfo.isValid() && !service) { /* We have a bogus service. All get functions will return empty/zero values */
         return;
     }
 
-    // get the documentation path
-    doc = pluginInfo.property(QStringLiteral("X-DocPath")).toString();
-    if (doc.isEmpty()) {
-        doc = pluginInfo.property(QStringLiteral("DocPath")).toString();
+    if (service) {
+        // get the documentation path
+        doc = service->property(QStringLiteral("X-DocPath"), QVariant::String).toString();
+        if (doc.isEmpty()) {
+            doc = service->property(QStringLiteral("DocPath"), QVariant::String).toString();
+        }
+
+        // read weight
+        QVariant tmp = service->property(QStringLiteral("X-KDE-Weight"), QVariant::Int);
+        weight = tmp.isValid() ? tmp.toInt() : 100;
+
+        // factory handle
+        tmp = service->property(QStringLiteral("X-KDE-FactoryName"), QVariant::String);
+        handle = tmp.isValid() ? tmp.toString() : lib;
+    } else {
+        // get the documentation path
+        doc = pluginInfo.property(QStringLiteral("X-DocPath")).toString();
+        if (doc.isEmpty()) {
+            doc = pluginInfo.property(QStringLiteral("DocPath")).toString();
+        }
+
+        // read weight
+        QVariant tmp = pluginInfo.property(QStringLiteral("X-KDE-Weight")).toInt();
+        weight = tmp.isValid() ? tmp.toInt() : 100;
+
+        // factory handle
+        tmp = pluginInfo.property(QStringLiteral("X-KDE-FactoryName"));
+        handle = tmp.isValid() ? tmp.toString() : lib;
     }
-
-    // read weight
-    QVariant tmp = pluginInfo.property(QStringLiteral("X-KDE-Weight")).toInt();
-    weight = tmp.isValid() ? tmp.toInt() : 100;
-
-    // factory handle
-    tmp = pluginInfo.property(QStringLiteral("X-KDE-FactoryName"));
-    handle = tmp.isValid() ? tmp.toString() : lib;
-
 }
 
 QString KCModuleInfo::fileName() const
@@ -162,6 +198,12 @@ QString KCModuleInfo::moduleName() const
 
 KService::Ptr KCModuleInfo::service() const
 {
+    if (d->service) {
+        return d->service;
+    }
+    if (!d->pluginInfo.isValid()) {
+        return {};
+    }
     return d->pluginInfo.service();
 }
 
