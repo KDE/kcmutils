@@ -162,7 +162,7 @@ QString KCModuleInfo::moduleName() const
 
 KService::Ptr KCModuleInfo::service() const
 {
-    return d->pluginInfo.service();
+    return d->pluginInfo.isValid() ? d->pluginInfo.service() : KService::Ptr(nullptr);
 }
 
 KPluginInfo KCModuleInfo::pluginInfo() const
