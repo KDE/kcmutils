@@ -74,14 +74,20 @@ KCModule *KCModuleLoader::loadModule(const KCModuleInfo &mod, ErrorReporting rep
      *  from the factory.
      */
 
-    if (!mod.pluginInfo().isValid())
+    if (!mod.service()) {
         return reportError(report,
-                           i18n("The module %1 could not be found.",
-                                mod.moduleName()), i18n("<qt><p>The diagnosis is:<br />The desktop file %1 could not be found.</p></qt>", mod.fileName()), parent);
-    if (mod.service() && mod.service()->noDisplay())
-        return reportError(report, i18n("The module %1 is disabled.", mod.moduleName()),
-                           i18n("<qt><p>Either the hardware/software the module configures is not available or the module has been disabled by the administrator.</p></qt>"),
+                           i18n("The module %1 could not be found.", mod.moduleName()),
+                           i18n("<qt><p>The diagnosis is:<br />The desktop file %1 could not be found.</p></qt>", mod.fileName()),
                            parent);
+    }
+
+    if (mod.service()->noDisplay()) {
+        return reportError(report,
+                           i18n("The module %1 is disabled.", mod.moduleName()),
+                           i18n("<qt><p>Either the hardware/software the module configures is not available or"
+                                " the module has been disabled by the administrator.</p></qt>"),
+                           parent);
+    }
 
     if (!mod.library().isEmpty()) {
         QString error;
@@ -112,9 +118,8 @@ KCModule *KCModuleLoader::loadModule(const KCModuleInfo &mod, ErrorReporting rep
         }
 
         // KF6 TODO: remove this compat block
-        if (mod.service()) {
-            module = mod.service()->createInstance<KCModule>(parent, args2, &error);
-        }
+        module = mod.service()->createInstance<KCModule>(parent, args2, &error);
+
         if (module) {
             return module;
         } else
