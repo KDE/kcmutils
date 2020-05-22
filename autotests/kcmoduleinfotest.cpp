@@ -21,16 +21,20 @@
 #include <QTest>
 #include <QObject>
 #include <KCModuleInfo>
+#include <KPluginLoader>
+#include <KPluginMetaData>
+#include <KPluginInfo>
 
-class KPluginInfoTest : public QObject
+class KCModuleInfoTest : public QObject
 {
     Q_OBJECT
 
 private Q_SLOTS:
     void testExternalApp();
+    void testFakeKCM();
 };
 
-void KPluginInfoTest::testExternalApp()
+void KCModuleInfoTest::testExternalApp()
 {
     const QString yast = QFINDTESTDATA("YaST-systemsettings.desktop");
     QVERIFY(!yast.isEmpty());
@@ -38,5 +42,27 @@ void KPluginInfoTest::testExternalApp()
     QVERIFY(info.service());
 }
 
-QTEST_MAIN(KPluginInfoTest)
-#include "kplugininfotest.moc"
+void KCModuleInfoTest::testFakeKCM()
+{
+    // Similar to kontact's code
+    const QVector<KPluginMetaData> pluginMetaDatas = KPluginLoader::findPlugins(
+            QStringLiteral("testplugins"), [](const KPluginMetaData &) { return true; });
+    const QList<KPluginInfo> pluginInfos = KPluginInfo::fromMetaData(pluginMetaDatas);
+    QVERIFY(pluginInfos.count() > 0);
+    KPluginInfo pluginInfo = pluginInfos.at(0);
+    QVERIFY(pluginInfo.isValid());
+
+    // WHEN
+    KCModuleInfo info(pluginInfo); // like Dialog::addPluginInfos does
+
+    // THEN
+    QCOMPARE(info.pluginInfo().name(), QStringLiteral("Test"));
+    QCOMPARE(QFileInfo(info.library()).fileName(), QStringLiteral("jsonplugin.so"));
+    QCOMPARE(info.icon(), QStringLiteral("view-pim-mail"));
+    QCOMPARE(info.comment(), QStringLiteral("Test plugin"));
+    QCOMPARE(info.docPath(), QStringLiteral("doc/path"));
+    QVERIFY(!info.service());
+}
+
+QTEST_MAIN(KCModuleInfoTest)
+#include "kcmoduleinfotest.moc"
