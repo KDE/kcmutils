@@ -329,7 +329,7 @@ void DialogPrivate::createDialogFromServices()
 
     //qDebug() << kcmInfos.count();
     for (const KCModuleInfo &info : qAsConst(kcmInfos)) {
-        const QStringList parentComponents = info.pluginInfo().property(QStringLiteral("X-KDE-ParentComponents")).toStringList();
+        const QStringList parentComponents = info.property(QStringLiteral("X-KDE-ParentComponents")).toStringList();
         bool blacklisted = false;
         for (const QString &parentComponent : parentComponents) {
             if (componentBlacklist.contains(parentComponent)) {
@@ -340,7 +340,7 @@ void DialogPrivate::createDialogFromServices()
         if (blacklisted) {
             continue;
         }
-        const QString parentId = info.pluginInfo().property(QStringLiteral("X-KDE-CfgDlgHierarchy")).toString();
+        const QString parentId = info.property(QStringLiteral("X-KDE-CfgDlgHierarchy")).toString();
         KPageWidgetItem *parent = pageItemForGroupId.value(parentId);
         if (!parent) {
             // dummy kcm
