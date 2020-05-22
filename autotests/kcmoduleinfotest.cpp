@@ -49,6 +49,8 @@ void KCModuleInfoTest::testExternalApp()
 void KCModuleInfoTest::testFakeKCM()
 {
     // Similar to kontact's code
+    // This is the case of loading a plugin, and then asking it for its kcmServices()
+    // If there are none, Dialog::addPluginInfos still creates a fake KCM, so the plugin can be enabled/disabled.
     const QVector<KPluginMetaData> pluginMetaDatas = KPluginLoader::findPlugins(
             QStringLiteral("testplugins"), [](const KPluginMetaData &) { return true; });
     const QList<KPluginInfo> pluginInfos = KPluginInfo::fromMetaData(pluginMetaDatas);
