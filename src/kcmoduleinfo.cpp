@@ -142,6 +142,11 @@ KCModuleInfo::~KCModuleInfo()
     delete d;
 }
 
+bool KCModuleInfo::isValid() const
+{
+    return d->pluginInfo.isValid() || d->service;
+}
+
 void KCModuleInfo::Private::loadAll()
 {
     allLoaded = true;
@@ -252,5 +257,14 @@ int KCModuleInfo::weight() const
     }
 
     return d->weight;
+}
+
+QVariant KCModuleInfo::property(const QString &key) const
+{
+    if (d->service) {
+        return d->service->property(key);
+    } else {
+        return d->pluginInfo.property(key);
+    }
 }
 

@@ -111,6 +111,12 @@ public:
     ~KCModuleInfo();
 
     /**
+     * Returns true if the KCM was found
+     * @since 5.71
+     */
+    bool isValid() const;
+
+    /**
      * @return the filename of the .desktop file that describes the KCM
      */
     QString fileName() const;
@@ -169,6 +175,14 @@ public:
      * the KCMultiDialog. It's set by the X-KDE-Weight field.
      */
     int weight() const;
+
+    /**
+     * @return The value associated to the @p key. You can use it if you
+     *         want to read custom values. To do this you need to define
+     *         your own servicetype and add it to the ServiceTypes keys.
+     * @since 5.71
+     */
+    QVariant property(const QString &key) const;
 
 private:
     class Private;

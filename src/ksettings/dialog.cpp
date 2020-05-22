@@ -191,7 +191,7 @@ bool DialogPrivate::isPluginForKCMEnabled(const KCModuleInfo *moduleinfo, KPlugi
     bool enabled = true;
     //qDebug() << "check whether the '" << moduleinfo->moduleName() << "' KCM should be shown";
     // for all parent components
-    const QStringList parentComponents = moduleinfo->pluginInfo().property(
+    const QStringList parentComponents = moduleinfo->property(
             QStringLiteral("X-KDE-ParentComponents")).toStringList();
     for (QStringList::ConstIterator pcit = parentComponents.begin();
             pcit != parentComponents.end(); ++pcit) {

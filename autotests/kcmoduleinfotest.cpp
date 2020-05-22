@@ -21,6 +21,7 @@
 #include <QTest>
 #include <QObject>
 #include <KCModuleInfo>
+#include <KCMultiDialog>
 #include <KPluginLoader>
 #include <KPluginMetaData>
 #include <KPluginInfo>
@@ -33,6 +34,7 @@ private Q_SLOTS:
     void testExternalApp();
     void testFakeKCM();
     void testDesktopFileKCM();
+    void testInvalidKCM();
 };
 
 void KCModuleInfoTest::testExternalApp()
@@ -41,6 +43,7 @@ void KCModuleInfoTest::testExternalApp()
     QVERIFY(!yast.isEmpty());
     KCModuleInfo info(yast);
     QVERIFY(info.service());
+    QVERIFY(info.isValid());
 }
 
 void KCModuleInfoTest::testFakeKCM()
@@ -57,6 +60,7 @@ void KCModuleInfoTest::testFakeKCM()
     KCModuleInfo info(pluginInfo); // like Dialog::addPluginInfos does
 
     // THEN
+    QVERIFY(info.isValid());
     QCOMPARE(info.pluginInfo().name(), QStringLiteral("Test"));
     QCOMPARE(QFileInfo(info.library()).fileName(), QStringLiteral("jsonplugin.so"));
     QCOMPARE(QFileInfo(info.fileName()).fileName(), QStringLiteral("jsonplugin.so"));
@@ -75,6 +79,7 @@ void KCModuleInfoTest::testDesktopFileKCM()
     KCModuleInfo info(desktopFile);
 
     // THEN
+    QVERIFY(info.isValid());
     QVERIFY(info.service());
     QVERIFY(!info.pluginInfo().isValid());
     QCOMPARE(QFileInfo(info.library()).fileName(), QStringLiteral("kcm_kded"));
@@ -82,6 +87,17 @@ void KCModuleInfoTest::testDesktopFileKCM()
     QCOMPARE(info.icon(), QStringLiteral("preferences-system-session-services"));
     QCOMPARE(info.comment(), QStringLiteral("Configure background services"));
     QCOMPARE(info.docPath(), QStringLiteral("kcontrol/kded/index.html"));
+
+    // WHEN actually loading the module
+    KCMultiDialog dlg;
+    QVERIFY(dlg.addModule(info));
+}
+
+void KCModuleInfoTest::testInvalidKCM()
+{
+    KCModuleInfo info(QStringLiteral("doest_not_exist.desktop"));
+    QVERIFY(!info.isValid());
+    QVERIFY(!info.service());
 }
 
 QTEST_MAIN(KCModuleInfoTest)

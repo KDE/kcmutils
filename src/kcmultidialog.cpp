@@ -464,7 +464,7 @@ KPageWidgetItem *KCMultiDialog::addModule(const KCModuleInfo &moduleInfo,
         KPageWidgetItem *parentItem, const QStringList &args)
 {
     Q_D(KCMultiDialog);
-    if (!moduleInfo.pluginInfo().isValid()) {
+    if (!moduleInfo.isValid()) {
         return nullptr;
     }
 
@@ -490,7 +490,7 @@ KPageWidgetItem *KCMultiDialog::addModule(const KCModuleInfo &moduleInfo,
     KCMultiDialogPrivate::CreatedModule cm;
     cm.kcm = kcm;
     cm.item = item;
-    cm.componentNames = moduleInfo.pluginInfo().property(QStringLiteral("X-KDE-ParentComponents")).toStringList();
+    cm.componentNames = moduleInfo.property(QStringLiteral("X-KDE-ParentComponents")).toStringList();
     d->modules.append(cm);
 
     if (qobject_cast<KCModuleQml *>(kcm->realModule())) {
