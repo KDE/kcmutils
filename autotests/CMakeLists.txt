@@ -7,3 +7,4 @@ ecm_add_tests(
 )
 
 add_subdirectory(jsonplugin)
+add_subdirectory(desktopfilekcm)

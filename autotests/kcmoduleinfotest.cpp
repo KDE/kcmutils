@@ -32,6 +32,7 @@ class KCModuleInfoTest : public QObject
 private Q_SLOTS:
     void testExternalApp();
     void testFakeKCM();
+    void testDesktopFileKCM();
 };
 
 void KCModuleInfoTest::testExternalApp()
@@ -58,10 +59,29 @@ void KCModuleInfoTest::testFakeKCM()
     // THEN
     QCOMPARE(info.pluginInfo().name(), QStringLiteral("Test"));
     QCOMPARE(QFileInfo(info.library()).fileName(), QStringLiteral("jsonplugin.so"));
+    QCOMPARE(QFileInfo(info.fileName()).fileName(), QStringLiteral("jsonplugin.so"));
     QCOMPARE(info.icon(), QStringLiteral("view-pim-mail"));
     QCOMPARE(info.comment(), QStringLiteral("Test plugin"));
     QCOMPARE(info.docPath(), QStringLiteral("doc/path"));
     QVERIFY(!info.service());
+}
+
+void KCModuleInfoTest::testDesktopFileKCM()
+{
+    const QString desktopFile = QFINDTESTDATA("desktopfilekcm/kcmtest.desktop");
+    QVERIFY(!desktopFile.isEmpty());
+
+    // WHEN
+    KCModuleInfo info(desktopFile);
+
+    // THEN
+    QVERIFY(info.service());
+    QVERIFY(!info.pluginInfo().isValid());
+    QCOMPARE(QFileInfo(info.library()).fileName(), QStringLiteral("kcm_kded"));
+    QCOMPARE(QFileInfo(info.fileName()).fileName(), QStringLiteral("kcmtest.desktop"));
+    QCOMPARE(info.icon(), QStringLiteral("preferences-system-session-services"));
+    QCOMPARE(info.comment(), QStringLiteral("Configure background services"));
+    QCOMPARE(info.docPath(), QStringLiteral("kcontrol/kded/index.html"));
 }
 
 QTEST_MAIN(KCModuleInfoTest)
