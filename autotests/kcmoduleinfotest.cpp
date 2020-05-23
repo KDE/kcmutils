@@ -64,8 +64,15 @@ void KCModuleInfoTest::testFakeKCM()
     // THEN
     QVERIFY(info.isValid());
     QCOMPARE(info.pluginInfo().name(), QStringLiteral("Test"));
+
+#ifdef Q_OS_WIN
+    QCOMPARE(QFileInfo(info.library()).fileName(), QStringLiteral("jsonplugin.dll"));
+    QCOMPARE(QFileInfo(info.fileName()).fileName(), QStringLiteral("jsonplugin.dll"));
+#else
     QCOMPARE(QFileInfo(info.library()).fileName(), QStringLiteral("jsonplugin.so"));
     QCOMPARE(QFileInfo(info.fileName()).fileName(), QStringLiteral("jsonplugin.so"));
+#endif
+
     QCOMPARE(info.icon(), QStringLiteral("view-pim-mail"));
     QCOMPARE(info.comment(), QStringLiteral("Test plugin"));
     QCOMPARE(info.docPath(), QStringLiteral("doc/path"));
