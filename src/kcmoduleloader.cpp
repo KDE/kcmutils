@@ -88,10 +88,12 @@ KCModule *KCModuleLoader::loadModule(const KCModuleInfo &mod, ErrorReporting rep
     if (!mod.library().isEmpty()) {
         QString error;
         QVariantList args2;
-        args2.reserve(args.count());
+        const QVariantList additionalArgs = mod.property(QStringLiteral("X-KDE-KCM-Args")).toList();
+        args2.reserve(args.count() + additionalArgs.count());
         for (const QString &arg : args) {
             args2 << arg;
         }
+        args2 << additionalArgs;
 
         KCModule *module = nullptr;
 

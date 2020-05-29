@@ -123,3 +123,7 @@ Type=QString
 # the list of ids of QPAs the module supports, if empty list or not set all are supported
 [PropertyDef::X-KDE-OnlyShowOnQtPlatforms]
 Type=QStringList
+
+# extra arguments for the KCModule
+[PropertyDef::X-KDE-KCM-Args]
+Type=QStringList
