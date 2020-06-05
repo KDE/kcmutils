@@ -209,7 +209,11 @@ KService::Ptr KCModuleInfo::service() const
     if (!d->pluginInfo.isValid()) {
         return {};
     }
+QT_WARNING_PUSH
+QT_WARNING_DISABLE_CLANG("-Wdeprecated-declarations")
+QT_WARNING_DISABLE_GCC("-Wdeprecated-declarations")
     return d->pluginInfo.service();
+QT_WARNING_POP
 }
 
 KPluginInfo KCModuleInfo::pluginInfo() const

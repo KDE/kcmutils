@@ -452,6 +452,15 @@ KPluginSelector::Private::PluginModel::~PluginModel()
 {
 }
 
+static bool hasServiceNoDisplaySet(const KPluginInfo &pluginInfo)
+{
+QT_WARNING_PUSH
+QT_WARNING_DISABLE_CLANG("-Wdeprecated-declarations")
+QT_WARNING_DISABLE_GCC("-Wdeprecated-declarations")
+    return pluginInfo.service() && pluginInfo.service()->noDisplay();
+QT_WARNING_POP
+}
+
 void KPluginSelector::Private::PluginModel::addPlugins(const QList<KPluginInfo> &pluginList, const QString &categoryName, const QString &categoryKey, const KConfigGroup &cfgGroup, PluginLoadMethod pluginLoadMethod, bool manuallyAdded)
 {
     QList<PluginEntry> listToAdd;
@@ -476,7 +485,7 @@ void KPluginSelector::Private::PluginModel::addPlugins(const QList<KPluginInfo> 
 
         if (!pluginEntryList.contains(pluginEntry) && !listToAdd.contains(pluginEntry) &&
                 (categoryKey.isEmpty() || !pluginInfo.category().compare(categoryKey, Qt::CaseInsensitive)) &&
-                (!pluginInfo.service() || !pluginInfo.service()->noDisplay())) {
+                (!hasServiceNoDisplaySet(pluginInfo))) {
             listToAdd << pluginEntry;
 
             if (!pluginSelector_d->showIcons && !pluginInfo.icon().isEmpty()) {
