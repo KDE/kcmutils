@@ -883,8 +883,6 @@ void KPluginSelector::Private::PluginDelegate::configure(const QModelIndex& inde
     if (!moduleProxyList.isEmpty()) {
         QVBoxLayout *layout = new QVBoxLayout;
         layout->addWidget(mainWidget);
-        const int marginHint = configDialog.style()->pixelMetric(QStyle::PM_DefaultChildMargin);
-        layout->insertSpacing(-1, marginHint);
 
         QDialogButtonBox *buttonBox = new QDialogButtonBox(&configDialog);
         buttonBox->setStandardButtons(QDialogButtonBox::Ok | QDialogButtonBox::Cancel | QDialogButtonBox::RestoreDefaults);
