@@ -178,6 +178,13 @@ public:
      */
     QSize minimumSizeHint() const override;
 
+    /**
+     * Show or hide an indicator when settings have changed from their default value
+     *
+     * @since 5.73
+     */
+    void setDefaultsIndicatorsVisible(bool show);
+
 public Q_SLOTS:
 
     /**

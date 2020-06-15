@@ -111,6 +111,7 @@ KCModuleQml::KCModuleQml(std::unique_ptr<KQuickAddons::ConfigModule> configModul
     });
 #endif
 
+    connect(this, &KCModule::defaultsIndicatorsVisibleChanged, d->configModule.get(), &KQuickAddons::ConfigModule::setDefaultsIndicatorsVisible);
     //KCModule takes ownership of the kabout data so we need to force a copy
     setAboutData(new KAboutData(*d->configModule->aboutData()));
     setFocusPolicy(Qt::StrongFocus);

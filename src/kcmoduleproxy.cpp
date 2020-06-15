@@ -302,6 +302,14 @@ QSize KCModuleProxy::minimumSizeHint() const
     return QWidget::minimumSizeHint();
 }
 
+void KCModuleProxy::setDefaultsIndicatorsVisible(bool show)
+{
+    Q_D(KCModuleProxy);
+    if (realModule()) {
+        d->kcm->setDefaultsIndicatorsVisible(show);
+    }
+}
+
 //X void KCModuleProxy::emitQuickHelpChanged()
 //X {
 //X     emit quickHelpChanged();
