@@ -359,6 +359,7 @@ void KPluginSelector::load()
         d->pluginModel->setData(index, pluginEntry->pluginInfo.isPluginEnabled(), Qt::CheckStateRole);
     }
 
+    static_cast<KPluginSelector::Private::PluginDelegate*>(d->listView->itemDelegate())->clearChangedEntries();
     emit changed(false);
 }
 
@@ -372,17 +373,24 @@ void KPluginSelector::save()
         pluginEntry->cfgGroup.sync();
     }
 
+    static_cast<KPluginSelector::Private::PluginDelegate*>(d->listView->itemDelegate())->clearChangedEntries();
     emit changed(false);
 }
 
 void KPluginSelector::defaults()
 {
     bool isChanged = false;
+    auto delegate = static_cast<KPluginSelector::Private::PluginDelegate*>(d->listView->itemDelegate());
+    delegate->clearChangedEntries();
     for (int i = 0; i < d->pluginModel->rowCount(); i++) {
         const QModelIndex index = d->pluginModel->index(i, 0);
         PluginEntry *pluginEntry = static_cast<PluginEntry *>(index.internalPointer());
-        isChanged |= pluginEntry->pluginInfo.isPluginEnabled() != pluginEntry->pluginInfo.isPluginEnabledByDefault();
+        bool entryChanged = pluginEntry->pluginInfo.isPluginEnabled() != pluginEntry->pluginInfo.isPluginEnabledByDefault();
+        isChanged |= entryChanged;
         d->pluginModel->setData(index, pluginEntry->pluginInfo.isPluginEnabledByDefault(), Qt::CheckStateRole);
+        if (entryChanged) {
+            delegate->addChangedEntry(pluginEntry);
+        }
     }
 
     emit changed(isChanged);
@@ -403,6 +411,7 @@ bool KPluginSelector::isDefault() const
 
 void KPluginSelector::updatePluginsState()
 {
+    static_cast<KPluginSelector::Private::PluginDelegate*>(d->listView->itemDelegate())->clearChangedEntries();
     for (int i = 0; i < d->pluginModel->rowCount(); i++) {
         const QModelIndex index = d->pluginModel->index(i, 0);
         PluginEntry *pluginEntry = static_cast<PluginEntry *>(index.internalPointer());
@@ -803,8 +812,12 @@ void KPluginSelector::Private::PluginDelegate::emitChanged(bool state)
 {
     const QModelIndex index = focusedIndex();
     PluginEntry *pluginEntry = index.model()->data(index, PluginEntryRole).value<PluginEntry *>();
-
-    emit changed(pluginEntry->pluginInfo.isPluginEnabled() != state);
+    if (pluginEntry->pluginInfo.isPluginEnabled() != state) {
+        changedEntries << pluginEntry;
+    } else {
+        changedEntries.remove(pluginEntry);
+    }
+    emit changed(!changedEntries.isEmpty());
 }
 
 void KPluginSelector::Private::PluginDelegate::slotAboutClicked()

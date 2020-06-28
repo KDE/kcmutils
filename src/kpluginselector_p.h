@@ -22,6 +22,7 @@
 #define KPLUGINSELECTOR_P_H
 
 #include <QAbstractListModel>
+#include <QSet>
 
 #include <kconfiggroup.h>
 #include <kplugininfo.h>
@@ -189,6 +190,8 @@ public:
     void paint(QPainter *painter, const QStyleOptionViewItem &option, const QModelIndex &index) const override;
     QSize sizeHint(const QStyleOptionViewItem &option, const QModelIndex &index) const override;
     void configure(const QModelIndex &idx);
+    inline void clearChangedEntries() { changedEntries.clear(); };
+    inline void addChangedEntry(PluginEntry *entry) { changedEntries << entry; };
 
 Q_SIGNALS:
     void changed(bool hasChanged);
@@ -213,6 +216,7 @@ private:
     QCheckBox *checkBox;
     QPushButton *pushButton;
     QList<KCModuleProxy *> moduleProxyList;
+    QSet<PluginEntry *> changedEntries;
 
     KPluginSelector::Private *pluginSelector_d;
 };
