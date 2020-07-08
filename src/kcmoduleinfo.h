@@ -25,7 +25,7 @@
 #define KCMODULEINFO_H
 
 #include <kcmutils_export.h>
-#include <kservice.h>
+#include <KService>
 
 class KPluginInfo;
 class QString;

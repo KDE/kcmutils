@@ -18,16 +18,16 @@
 */
 
 #include "componentsdialog_p.h"
-#include <klocalizedstring.h>
+#include <KLocalizedString>
 #include <QDialogButtonBox>
 #include <QLabel>
 #include <QPushButton>
-#include <kplugininfo.h>
+#include <KPluginInfo>
 #include <QDebug>
 #include <QVBoxLayout>
 #include <QHBoxLayout>
-#include <kconfig.h>
-#include <kseparator.h>
+#include <KConfig>
+#include <KSeparator>
 
 #include <QList>
 #include <QTreeWidget>

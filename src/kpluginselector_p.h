@@ -24,10 +24,10 @@
 #include <QAbstractListModel>
 #include <QSet>
 
-#include <kconfiggroup.h>
-#include <kplugininfo.h>
+#include <KConfigGroup>
+#include <KPluginInfo>
 #include <kwidgetitemdelegate.h>
-#include <kcategorizedsortfilterproxymodel.h>
+#include <KCategorizedSortFilterProxyModel>
 
 class QLabel;
 class QCheckBox;

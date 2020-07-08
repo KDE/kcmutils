@@ -23,11 +23,11 @@
 #include <QTabWidget>
 #include <QVBoxLayout>
 
-#include <kcmodule.h>
+#include <KCModule>
 #include <kcmoduleinfo.h>
 #include <kcmoduleproxy.h>
 #include <QDebug>
-#include <kservice.h>
+#include <KService>
 
 typedef QList<KCModuleProxy *> ModuleList;
 

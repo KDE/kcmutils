@@ -20,7 +20,7 @@
 #include "ksettings/pluginpage.h"
 #include "kpluginselector.h"
 #include "ksettings/dispatcher.h"
-#include <kaboutdata.h>
+#include <KAboutData>
 
 namespace KSettings
 {

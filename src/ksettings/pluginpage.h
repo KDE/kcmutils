@@ -20,7 +20,7 @@
 #ifndef KSETTINGS_PLUGINPAGE_H
 #define KSETTINGS_PLUGINPAGE_H
 
-#include <kcmodule.h>
+#include <KCModule>
 #include <kcmutils_export.h>
 
 class KPluginSelector;

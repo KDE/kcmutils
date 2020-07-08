@@ -26,7 +26,7 @@
 #include <QList>
 
 #include <kcmutils_export.h>
-#include <ksharedconfig.h>
+#include <KSharedConfig>
 
 class KPluginInfo;
 

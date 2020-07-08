@@ -37,14 +37,14 @@
 #include <QVBoxLayout>
 
 #include <QDebug>
-#include <kurllabel.h>
+#include <KUrlLabel>
 #include <kcmoduleinfo.h>
 #include <kcmoduleproxy.h>
-#include <kmessagebox.h>
-#include <klocalizedstring.h>
-#include <kcategorydrawer.h>
-#include <kcategorizedview.h>
-#include <kcategorizedsortfilterproxymodel.h>
+#include <KMessageBox>
+#include <KLocalizedString>
+#include <KCategoryDrawer>
+#include <KCategorizedView>
+#include <KCategorizedSortFilterProxyModel>
 #include <KPluginMetaData>
 #include <KAboutPluginDialog>
 #include <KStandardGuiItem>

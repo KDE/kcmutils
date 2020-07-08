@@ -23,8 +23,8 @@
 
 #include <QStringList>
 
-#include <kcmodule.h>
-#include <kservice.h>
+#include <KCModule>
+#include <KService>
 #include <kcmutils_export.h>
 
 class KAboutData;

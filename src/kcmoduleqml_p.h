@@ -19,7 +19,7 @@
 #ifndef KCMODULEQML_H
 #define KCMODULEQML_H
 
-#include <kcmodule.h>
+#include <KCModule>
 #include <memory>
 
 class QQuickItem;

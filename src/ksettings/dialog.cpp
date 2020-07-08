@@ -22,10 +22,10 @@
 
 #include "dispatcher.h"
 
-#include <klocalizedstring.h>
-#include <kservicegroup.h>
-#include <kservicetypetrader.h>
-#include <kconfig.h>
+#include <KLocalizedString>
+#include <KServiceGroup>
+#include <KServiceTypeTrader>
+#include <KConfig>
 #include <KPluginMetaData>
 
 #include <QDebug>

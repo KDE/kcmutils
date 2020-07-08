@@ -29,17 +29,17 @@
 #include <QDBusInterface>
 #include <QDBusReply>
 
-#include <kaboutdata.h>
-#include <kcmodule.h>
+#include <KAboutData>
+#include <KCModule>
 #include <kcmoduleinfo.h>
 
 #include <QDebug>
-#include <klocalizedstring.h>
-#include <kservice.h>
+#include <KLocalizedString>
+#include <KService>
 
 #include <kcmoduleloader.h>
 
-#include "kcolorscheme.h"
+#include <KColorScheme>
 
 #include "ksettingswidgetadaptor.h"
 

@@ -23,8 +23,8 @@
 #include <kcmutils_export.h>
 #include <kcmultidialog.h>
 
-#include <kservice.h>
-#include <kplugininfo.h>
+#include <KService>
+#include <KPluginInfo>
 
 template<class T> class QList;
 class KPluginInfo;

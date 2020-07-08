@@ -5,7 +5,7 @@
 */
 
 #include "jsonplugin.h"
-#include <kpluginfactory.h>
+#include <KPluginFactory>
 
 JsonPlugin::JsonPlugin(QObject *parent, const QVariantList &args)
     : QObject(parent)

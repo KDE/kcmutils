@@ -22,7 +22,7 @@
 #ifndef KCMODULELOADER_H
 #define KCMODULELOADER_H
 
-#include <kcmodule.h>
+#include <KCModule>
 #include <kcmoduleinfo.h>
 
 class QWidget;

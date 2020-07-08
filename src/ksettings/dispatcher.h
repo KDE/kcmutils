@@ -22,7 +22,7 @@
 
 #include <QObject>
 #include <kcmutils_export.h>
-#include <ksharedconfig.h>
+#include <KSharedConfig>
 
 namespace KSettings
 {

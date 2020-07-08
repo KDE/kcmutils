@@ -26,7 +26,7 @@
 #include <QScrollArea>
 
 #include <kcmoduleinfo.h>
-#include <kpagedialog.h>
+#include <KPageDialog>
 
 class KCMultiDialogPrivate;
 

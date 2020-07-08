@@ -19,7 +19,7 @@
 */
 
 #include "kcmtest.h"
-#include <kpluginfactory.h>
+#include <KPluginFactory>
 
 KCMTest::KCMTest(QObject *parent, const QVariantList &args)
     : QObject(parent)

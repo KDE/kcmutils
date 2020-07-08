@@ -25,11 +25,11 @@
 
 #include <QVariant>
 
-#include <kdesktopfile.h>
+#include <KDesktopFile>
 #include <QDebug>
 
 #include <KPluginInfo>
-#include <klocalizedstring.h>
+#include <KLocalizedString>
 
 class Q_DECL_HIDDEN KCModuleInfo::Private
 {

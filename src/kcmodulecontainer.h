@@ -23,7 +23,7 @@
 #include <QString>
 #include <QStringList>
 
-#include <kcmodule.h>
+#include <KCModule>
 #include <kcmutils_export.h>
 
 class QWidget;

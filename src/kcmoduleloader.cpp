@@ -30,10 +30,10 @@
 #include <QVBoxLayout>
 
 #include <KPluginInfo>
-#include <kpluginloader.h>
-#include <klocalizedstring.h>
-#include <kmessagebox.h>
-#include <kaboutdata.h>
+#include <KPluginLoader>
+#include <KLocalizedString>
+#include <KMessageBox>
+#include <KAboutData>
 
 #include <KQuickAddons/ConfigModule>
 

@@ -28,9 +28,9 @@
 #include <QSet>
 #include <QString>
 
-#include <kpagewidgetmodel.h>
-#include <kservice.h>
-#include <kplugininfo.h>
+#include <KPageWidgetModel>
+#include <KService>
+#include <KPluginInfo>
 
 class QCheckBox;
 
