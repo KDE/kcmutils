@@ -18,6 +18,7 @@
 */
 
 #include "kcmodulecontainer.h"
+#include <kcmutils_debug.h>
 
 #include <QStringList>
 #include <QTabWidget>
@@ -26,7 +27,6 @@
 #include <KCModule>
 #include <kcmoduleinfo.h>
 #include <kcmoduleproxy.h>
-#include <QDebug>
 #include <KService>
 
 typedef QList<KCModuleProxy *> ModuleList;

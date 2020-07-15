@@ -21,6 +21,7 @@
 #include "dialog_p.h"
 
 #include "dispatcher.h"
+#include <kcmutils_debug.h>
 
 #include <KLocalizedString>
 #include <KServiceGroup>
@@ -28,7 +29,6 @@
 #include <KConfig>
 #include <KPluginMetaData>
 
-#include <QDebug>
 #include <QDir>
 #include <QCheckBox>
 #include <QDialogButtonBox>
@@ -160,7 +160,7 @@ QSet<KCModuleInfo> DialogPrivate::instanceServices()
                 const KService::Ptr service(static_cast<KService*>(p.data()));
                 ret << KCModuleInfo(service);
             } else
-                qWarning() << "KServiceGroup::childGroup returned"
+                qCWarning(KCMUTILS_LOG) << "KServiceGroup::childGroup returned"
                            " something else than a KService";
         }
     }
@@ -374,7 +374,7 @@ void DialogPrivate::createDialogFromServices()
                     const KPluginInfo &plugin = pluginForItem.value(parent);
                     if (plugin.isValid()) {
                         if (plugin != pinfo) {
-                            qCritical() << "A group contains more than one plugin: '"
+                            qCCritical(KCMUTILS_LOG) << "A group contains more than one plugin: '"
                                         << plugin.pluginName() << "' and '" << pinfo.pluginName()
                                         << "'. Now it won't be possible to enable/disable the plugin.";
                             parent->setCheckable(false);
@@ -506,7 +506,7 @@ void DialogPrivate::_k_updateEnabledState(bool enabled)
     Q_Q(Dialog);
     KPageWidgetItem *item = qobject_cast<KPageWidgetItem *>(q->sender());
     if (!item) {
-        qWarning() << "invalid sender";
+        qCWarning(KCMUTILS_LOG) << "invalid sender";
         return;
     }
 
@@ -515,13 +515,13 @@ void DialogPrivate::_k_updateEnabledState(bool enabled)
     Q_ASSERT(model);
     QModelIndex index = model->index(item);
     if (!index.isValid()) {
-        qWarning() << "could not find item in model";
+        qCWarning(KCMUTILS_LOG) << "could not find item in model";
         return;
     }
 
     const KPluginInfo &pinfo = pluginForItem.value(item);
     if (!pinfo.isValid()) {
-        qWarning() << "could not find KPluginInfo in item";
+        qCWarning(KCMUTILS_LOG) << "could not find KPluginInfo in item";
         return;
     }
     if (pinfo.isPluginEnabled() != enabled) {

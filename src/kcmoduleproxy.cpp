@@ -33,7 +33,6 @@
 #include <KCModule>
 #include <kcmoduleinfo.h>
 
-#include <QDebug>
 #include <KLocalizedString>
 #include <KService>
 
@@ -41,6 +40,7 @@
 
 #include <KColorScheme>
 
+#include <kcmutils_debug.h>
 #include "ksettingswidgetadaptor.h"
 
 /*

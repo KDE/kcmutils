@@ -20,7 +20,7 @@
 #include "dispatcher.h"
 #include "dispatcher_p.h"
 
-#include <QDebug>
+#include <kcmutils_debug.h>
 
 namespace KSettings
 {
@@ -87,7 +87,7 @@ void syncConfiguration()
 void DispatcherPrivate::unregisterComponent(QObject *obj)
 {
     if (!m_componentName.contains(obj)) {
-        qWarning() << Q_FUNC_INFO << "Tried to unregister an object which is not already registered.";
+        qCWarning(KCMUTILS_LOG) << Q_FUNC_INFO << "Tried to unregister an object which is not already registered.";
         return;
     }
 

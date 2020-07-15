@@ -27,9 +27,9 @@
 
 #include "kcmoduleqml_p.h"
 #include "kcmoduleproxy.h"
+#include <kcmutils_debug.h>
 
 #include <QApplication>
-#include <QDebug>
 #include <QDesktopServices>
 #include <QDesktopWidget>
 #include <QLayout>

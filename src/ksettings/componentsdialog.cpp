@@ -18,12 +18,13 @@
 */
 
 #include "componentsdialog_p.h"
+#include <kcmutils_debug.h>
+
 #include <KLocalizedString>
 #include <QDialogButtonBox>
 #include <QLabel>
 #include <QPushButton>
 #include <KPluginInfo>
-#include <QDebug>
 #include <QVBoxLayout>
 #include <QHBoxLayout>
 #include <KConfig>

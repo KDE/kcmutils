@@ -21,6 +21,8 @@
 #include "kpluginselector.h"
 #include "kpluginselector_p.h"
 
+#include <kcmutils_debug.h>
+
 #include <QDir>
 #include <QDirIterator>
 #include <QDialog>
@@ -36,7 +38,6 @@
 #include <QStyleOptionViewItem>
 #include <QVBoxLayout>
 
-#include <QDebug>
 #include <KUrlLabel>
 #include <kcmoduleinfo.h>
 #include <kcmoduleproxy.h>
@@ -447,7 +448,7 @@ void KPluginSelector::showConfiguration(const QString& componentName)
         auto delegate = static_cast<KPluginSelector::Private::PluginDelegate*>(d->listView->itemDelegate());
         delegate->configure(idx);
     } else {
-        qWarning() << "Could not find plugin" << componentName;
+        qCWarning(KCMUTILS_LOG) << "Could not find plugin" << componentName;
     }
 }
 

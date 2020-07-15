@@ -23,10 +23,10 @@
 
 #include "kcmoduleloader.h"
 #include "kcmoduleqml_p.h"
+#include <kcmutils_debug.h>
 
 #include <QLabel>
 #include <QLibrary>
-#include <QDebug>
 #include <QVBoxLayout>
 
 #include <KPluginInfo>
@@ -101,11 +101,11 @@ KCModule *KCModuleLoader::loadModule(const KCModuleInfo &mod, ErrorReporting rep
         KPluginFactory* factory = loader.factory();
         if (!factory) {
             // KF6 TODO: make this a warning, and remove mention of fallback
-            qDebug() << "Couldn't load plugin" << QLatin1String("kcms/") + mod.library() << ":" << loader.errorString() << " -- falling back to old-style loading from desktop file";
+            qCDebug(KCMUTILS_LOG) << "Couldn't load plugin" << QLatin1String("kcms/") + mod.library() << ":" << loader.errorString() << " -- falling back to old-style loading from desktop file";
         } else {
             std::unique_ptr<KQuickAddons::ConfigModule> cm(factory->create<KQuickAddons::ConfigModule>(nullptr, args2));
             if (!cm) {
-                qWarning() << "Error creating object from plugin" << loader.fileName();
+                qCWarning(KCMUTILS_LOG) << "Error creating object from plugin" << loader.fileName();
             } else {
                 if (!cm->mainUi()) {
                     return reportError(report, i18n("Error loading QML file."), cm->errorString(), parent);
@@ -135,7 +135,7 @@ KCModule *KCModuleLoader::loadModule(const KCModuleInfo &mod, ErrorReporting rep
                 if (create) {
                     return create(parent, mod.handle().toLatin1().constData());
                 } else {
-                    qWarning() << "This module has no valid entry symbol at all. The reason could be that it's still using K_EXPORT_COMPONENT_FACTORY with a custom X-KDE-FactoryName which is not supported anymore";
+                    qCWarning(KCMUTILS_LOG) << "This module has no valid entry symbol at all. The reason could be that it's still using K_EXPORT_COMPONENT_FACTORY with a custom X-KDE-FactoryName which is not supported anymore";
                 }
                 lib.unload();
             }

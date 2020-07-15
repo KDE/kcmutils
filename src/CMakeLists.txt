@@ -14,6 +14,14 @@ set(kcmutils_LIB_SRCS
     ksettings/componentsdialog.cpp
 )
 
+ecm_qt_declare_logging_category(kcmutils_LIB_SRCS
+    HEADER kcmutils_debug.h
+    IDENTIFIER KCMUTILS_LOG
+    CATEGORY_NAME kf.kcmutils
+    DESCRIPTION "KCMUtils"
+    EXPORT KCMUTILS
+)
+
 add_library(KF5KCMUtils ${kcmutils_LIB_SRCS})
 ecm_generate_export_header(KF5KCMUtils
     BASE_NAME KCMUtils
@@ -118,3 +126,9 @@ endif()
 include(ECMGeneratePriFile)
 ecm_generate_pri_file(BASE_NAME KCMUtils LIB_NAME KF5KCMUtils DEPS "widgets KConfigWidgets KService" FILENAME_VAR PRI_FILENAME INCLUDE_INSTALL_DIR ${KDE_INSTALL_INCLUDEDIR_KF5}/KCMUtils)
 install(FILES ${PRI_FILENAME} DESTINATION ${ECM_MKSPECS_INSTALL_DIR})
+
+ecm_qt_install_logging_categories(
+    EXPORT KCMUTILS
+    FILE kcmutils.categories
+    DESTINATION "${KDE_INSTALL_LOGGINGCATEGORIESDIR}"
+)

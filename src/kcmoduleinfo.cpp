@@ -23,10 +23,11 @@
 
 #include "kcmoduleinfo.h"
 
+#include <kcmutils_debug.h>
+
 #include <QVariant>
 
 #include <KDesktopFile>
-#include <QDebug>
 
 #include <KPluginInfo>
 #include <KLocalizedString>
@@ -65,7 +66,7 @@ KCModuleInfo::Private::Private(const KPluginInfo &pluginInfo)
     , pluginInfo(pluginInfo)
 {
     if (!pluginInfo.isValid()) {
-        qWarning() << "Invalid plugin";
+        qCWarning(KCMUTILS_LOG) << "Invalid plugin";
         return;
     }
 

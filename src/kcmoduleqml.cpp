@@ -18,6 +18,7 @@
 
 #include "kcmoduleqml_p.h"
 
+#include <kcmutils_debug.h>
 
 #include <QVBoxLayout>
 #include <QQuickWindow>
@@ -159,7 +160,7 @@ KCModuleQml::KCModuleQml(std::unique_ptr<KQuickAddons::ConfigModule> configModul
 
     d->rootPlaceHolder = qobject_cast<QQuickItem *>(component->create());
     if (!d->rootPlaceHolder) {
-        qCritical() << component->errors();
+        qCCritical(KCMUTILS_LOG) << component->errors();
         qFatal("Failed to intiailize KCModuleQML");
     }
     d->quickWidget->setContent(QUrl(), component, d->rootPlaceHolder);
