@@ -149,6 +149,7 @@ public:
     ~PluginModel();
 
     void addPlugins(const QList<KPluginInfo> &pluginList, const QString &categoryName, const QString &categoryKey, const KConfigGroup &cfgGroup, PluginLoadMethod pluginLoadMethod = ReadConfigFile, bool manuallyAdded = false);
+    void clear();
     QList<KService::Ptr> pluginServices(const QModelIndex &index) const;
 
     QModelIndex index(int row, int column = 0, const QModelIndex &parent = QModelIndex()) const override;

@@ -153,6 +153,12 @@ public:
                     const KSharedConfig::Ptr &config = KSharedConfig::Ptr());
 
     /**
+     * Remove all plugins from the entry list.
+     * @since 5.73
+     */
+    void clearPlugins();
+
+    /**
       * Load the state of the plugins (selected or not) from the KPluginInfo
       * objects
       */

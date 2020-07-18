@@ -351,6 +351,11 @@ void KPluginSelector::addPlugins(const QList<KPluginInfo> &pluginInfoList,
     d->proxyModel->sort(0);
 }
 
+void KPluginSelector::clearPlugins()
+{
+    d->pluginModel->clear();
+}
+
 void KPluginSelector::load()
 {
     for (int i = 0; i < d->pluginModel->rowCount(); i++) {
@@ -509,6 +514,13 @@ void KPluginSelector::Private::PluginModel::addPlugins(const QList<KPluginInfo> 
         pluginEntryList << listToAdd;
         endInsertRows();
     }
+}
+
+void KPluginSelector::Private::PluginModel::clear()
+{
+    beginResetModel();
+    pluginEntryList.clear();
+    endResetModel();
 }
 
 QList<KService::Ptr> KPluginSelector::Private::PluginModel::pluginServices(const QModelIndex &index) const
