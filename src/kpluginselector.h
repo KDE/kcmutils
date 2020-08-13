@@ -17,6 +17,7 @@
 #include <KSharedConfig>
 
 class KPluginInfo;
+class QPushButton;
 
 /**
   * @short A widget to select what plugins to load and configure the plugins.
@@ -209,6 +210,14 @@ public:
      * @since 5.45
      */
     void showConfiguration(const QString &pluginId);
+
+    /**
+     * Add additional widgets to each row of the plugin selector
+     * @param handler returns the additional button that should be displayed in the row
+     * the handler can return a null pointer if no button should be displayed
+     * @since 5.74
+     */
+    void setAdditionalButtonHandler(std::function<QPushButton*(const KPluginInfo &)> handler);
 
 Q_SIGNALS:
     /**

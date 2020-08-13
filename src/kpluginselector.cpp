@@ -445,6 +445,11 @@ void KPluginSelector::showConfiguration(const QString& componentName)
     }
 }
 
+void KPluginSelector::setAdditionalButtonHandler(std::function<QPushButton*(const KPluginInfo &)> handler)
+{
+    static_cast<Private::PluginDelegate*>(d->listView->itemDelegate())->setHandler(handler);
+}
+
 KPluginSelector::Private::PluginModel::PluginModel(KPluginSelector::Private *pluginSelector_d, QObject *parent)
     : QAbstractListModel(parent)
     , pluginSelector_d(pluginSelector_d)
@@ -670,6 +675,10 @@ void KPluginSelector::Private::PluginDelegate::paint(QPainter *painter, const QS
     if (index.model()->data(index, ServicesCountRole).toBool()) {
         lessHorizontalSpace += MARGIN + pushButton->sizeHint().width();
     }
+    // Reserve space for extra button
+    if (handler) {
+        lessHorizontalSpace += MARGIN + pushButton->sizeHint().width();
+    }
 
     contentsRect.setWidth(contentsRect.width() - lessHorizontalSpace);
 
@@ -708,6 +717,10 @@ QSize KPluginSelector::Private::PluginDelegate::sizeHint(const QStyleOptionViewI
     if (index.model()->data(index, ServicesCountRole).toBool()) {
         i = 6;
         j = 2;
+    }
+    // Reserve space for extra button
+    if (handler) {
+        ++j;
     }
 
     if (!pluginSelector_d->showIcons) {
@@ -759,6 +772,12 @@ QList<QWidget *> KPluginSelector::Private::PluginDelegate::createItemWidgets(con
                          << QEvent::KeyPress << QEvent::KeyRelease);
 
     widgetList << enabledCheckBox << configurePushButton << aboutPushButton;
+    if (handler) {
+        QPushButton *btn = handler(pluginSelector_d->pluginModel->pluginEntryList.at(index.row()).pluginInfo);
+        if (btn) {
+            widgetList << btn;
+        }
+    }
 
     return widgetList;
 }
@@ -767,6 +786,12 @@ void KPluginSelector::Private::PluginDelegate::updateItemWidgets(const QList<QWi
         const QStyleOptionViewItem &option,
         const QPersistentModelIndex &index) const
 {
+    int extraButtonWidth = 0;
+    QPushButton *extraButton = nullptr;
+    if (widgets.count() == 4) {
+        extraButton = static_cast<QPushButton *>(widgets[3]);
+        extraButtonWidth = extraButton->sizeHint().width() + MARGIN;
+    }
     QCheckBox *checkBox = static_cast<QCheckBox *>(widgets[0]);
     checkBox->resize(checkBox->sizeHint());
     checkBox->move(pluginSelector_d->dependantLayoutValue(MARGIN, checkBox->sizeHint().width(), option.rect.width()), option.rect.height() / 2 - checkBox->sizeHint().height() / 2);
@@ -774,17 +799,25 @@ void KPluginSelector::Private::PluginDelegate::updateItemWidgets(const QList<QWi
     QPushButton *aboutPushButton = static_cast<QPushButton *>(widgets[2]);
     QSize aboutPushButtonSizeHint = aboutPushButton->sizeHint();
     aboutPushButton->resize(aboutPushButtonSizeHint);
-    aboutPushButton->move(pluginSelector_d->dependantLayoutValue(option.rect.width() - MARGIN - aboutPushButtonSizeHint.width(), aboutPushButtonSizeHint.width(), option.rect.width()), option.rect.height() / 2 - aboutPushButtonSizeHint.height() / 2);
+    aboutPushButton->move(pluginSelector_d->dependantLayoutValue(option.rect.width() - MARGIN - aboutPushButtonSizeHint.width() - extraButtonWidth, aboutPushButtonSizeHint.width(), option.rect.width()), option.rect.height() / 2 - aboutPushButtonSizeHint.height() / 2);
 
     QPushButton *configurePushButton = static_cast<QPushButton *>(widgets[1]);
     QSize configurePushButtonSizeHint = configurePushButton->sizeHint();
     configurePushButton->resize(configurePushButtonSizeHint);
-    configurePushButton->move(pluginSelector_d->dependantLayoutValue(option.rect.width() - MARGIN * 2 - configurePushButtonSizeHint.width() - aboutPushButtonSizeHint.width(), configurePushButtonSizeHint.width(), option.rect.width()), option.rect.height() / 2 - configurePushButtonSizeHint.height() / 2);
+    configurePushButton->move(pluginSelector_d->dependantLayoutValue(option.rect.width() - MARGIN * 2 - configurePushButtonSizeHint.width() - aboutPushButtonSizeHint.width() - extraButtonWidth, configurePushButtonSizeHint.width(), option.rect.width()), option.rect.height() / 2 - configurePushButtonSizeHint.height() / 2);
+    if (extraButton) {
+        QSize extraPushButtonSizeHint = extraButton->sizeHint();
+        extraButton->resize(extraPushButtonSizeHint);
+        extraButton->move(pluginSelector_d->dependantLayoutValue(option.rect.width() - extraButtonWidth, extraPushButtonSizeHint.width(), option.rect.width()), option.rect.height() / 2 - extraPushButtonSizeHint.height() / 2);
+    }
 
     if (!index.isValid() || !index.internalPointer()) {
         checkBox->setVisible(false);
         aboutPushButton->setVisible(false);
         configurePushButton->setVisible(false);
+        if (extraButton) {
+            extraButton->setVisible(false);
+        }
     } else {
         checkBox->setChecked(index.model()->data(index, Qt::CheckStateRole).toBool());
         checkBox->setEnabled(index.model()->data(index, IsCheckableRole).toBool());
@@ -942,6 +975,10 @@ QFont KPluginSelector::Private::PluginDelegate::titleFont(const QFont &baseFont)
     retFont.setBold(true);
 
     return retFont;
+}
+void KPluginSelector::Private::PluginDelegate::setHandler(std::function<QPushButton*(const KPluginInfo &)> handler)
+{
+    this->handler = handler;
 }
 
 #include "moc_kpluginselector_p.cpp"

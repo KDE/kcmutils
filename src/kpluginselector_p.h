@@ -181,6 +181,7 @@ public:
     void configure(const QModelIndex &idx);
     inline void clearChangedEntries() { changedEntries.clear(); };
     inline void addChangedEntry(PluginEntry *entry) { changedEntries << entry; };
+    void setHandler(std::function<QPushButton*(const KPluginInfo &)> handler);
 
 Q_SIGNALS:
     void changed(bool hasChanged);
@@ -206,6 +207,7 @@ private:
     QPushButton *pushButton;
     QList<KCModuleProxy *> moduleProxyList;
     QSet<PluginEntry *> changedEntries;
+    std::function<QPushButton*(const KPluginInfo &)> handler = nullptr;
 
     KPluginSelector::Private *pluginSelector_d;
 };
