@@ -48,6 +48,18 @@ public:
     */
     virtual bool isDefaults() const;
 
+    /**
+    * Revert module to default value and save them
+    */
+    virtual bool revertToDefaults();
+
+    /**
+     * return true if this module match a given query, used by module search engine
+     * @param query
+     * @return true if this module match a given query, used by module search engine
+     */
+    virtual bool matchQuery(const QString query) const;
+
 protected Q_SLOTS:
     /**
      * Allow to register manually skeleton class.

@@ -71,12 +71,27 @@ bool KCModuleData::isDefaults() const
     return defaults;
 }
 
+bool KCModuleData::revertToDefaults()
+{
+    for (const auto &skeleton : qAsConst(d->_skeletons)) {
+        skeleton->useDefaults(true);
+        skeleton->save();
+    }
+}
+
 void KCModuleData::autoRegisterSkeletons()
 {
     const auto skeletons = findChildren<KCoreConfigSkeleton*>();
     for (auto *skeleton : skeletons) {
         registerSkeleton(skeleton);
     }
+}
+
+bool KCModuleData::matchQuery(const QString query) const
+{
+    // Currently not implemented, here for future use case
+    Q_UNUSED(query)
+    return false;
 }
 
 #include "moc_kcmoduledata.cpp"
