@@ -10,6 +10,7 @@
 #define KCMULTIDIALOG_H
 
 #include <QScrollArea>
+#include <QScrollBar>
 
 #include <kcmoduleinfo.h>
 #include <KPageDialog>
@@ -180,9 +181,18 @@ private:
 class UnboundScrollArea : public QScrollArea {
     Q_OBJECT
 public:
-    QSize sizeHint() const override {
-        return widget() ? widget()->sizeHint() : QSize();
-    }
+     QSize sizeHint() const override {
+         if (widget()) {
+             // Try to avoid horizontal scrollbar, which just scrolls a scrollbar width.
+             // We always need to reserve space for the vertical scroll bar,
+             // because we can’t know here whether vertical scrolling will be used.
+             QSize withScrollbar = widget()->sizeHint();
+             withScrollbar.rwidth() += verticalScrollBar()->sizeHint().width() + 4;
+             return withScrollbar;
+         } else {
+             return QScrollArea::sizeHint();
+         }
+     }
 
     UnboundScrollArea(QWidget * w) : QScrollArea(w) {}
     virtual ~UnboundScrollArea() = default;
