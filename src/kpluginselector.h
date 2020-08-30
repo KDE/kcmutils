@@ -25,7 +25,7 @@ class QPushButton;
   * It shows the list of available plugins
   *
   * Since the user needs a way to know what a specific plugin does every plugin
-  * sould install a desktop file containing a name, comment and category field.
+  * should install a desktop file containing a name, comment and category field.
   * The category is useful for applications that can use different kinds of
   * plugins like a playlist, skin or visualization
   *
