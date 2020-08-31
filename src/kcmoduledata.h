@@ -51,7 +51,7 @@ public:
     /**
     * Revert module to default value and save them
     */
-    virtual bool revertToDefaults();
+    virtual void revertToDefaults();
 
     /**
      * return true if this module match a given query, used by module search engine

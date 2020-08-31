@@ -71,7 +71,7 @@ bool KCModuleData::isDefaults() const
     return defaults;
 }
 
-bool KCModuleData::revertToDefaults()
+void KCModuleData::revertToDefaults()
 {
     for (const auto &skeleton : qAsConst(d->_skeletons)) {
         skeleton->useDefaults(true);
