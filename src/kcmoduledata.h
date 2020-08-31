@@ -9,10 +9,11 @@
 #define KCMODULEDATA_H
 
 #include <QObject>
+#include <QVariantList>
 #include <kcmutils_export.h>
-#include <KConfigCore/KCoreConfigSkeleton>
 
 class KCModuleDataPrivate;
+class KCoreConfigSkeleton;
 
 /**
  * @short A base class that offers information about a KCModule state
@@ -29,23 +30,23 @@ public:
     ~KCModuleData() override;
 
     /**
-    * return false if configuration is not the default one else true
-    *
-    * @return a boolean representing if module configuration is in default state
-    */
+     * Checks if the configuration is identical to the default one.
+     *
+     * @return @c true if the module configuration is in the default state, @c false otherwise
+     */
     virtual bool isDefaults() const;
 
     /**
-    * Revert module to default value and save them
-    */
+     * Revert module to default values and save them.
+     */
     virtual void revertToDefaults();
 
     /**
-     * return true if this module match a given query, used by module search engine
-     * @param query
-     * @return true if this module match a given query, used by module search engine
+     * Checks if this module matches a given query.
+     * @param query the text user search for, it is not expected to be a regex pattern but a full text search.
+     * @return @c true if this module matches a given query, @c false otherwise
      */
-    virtual bool matchQuery(const QString query) const;
+    virtual bool matchesQuery(const QString &query) const;
 
 protected Q_SLOTS:
     /**

@@ -8,11 +8,9 @@
 #include "kcmoduledata.h"
 
 #include <QList>
-#include <QDebug>
 #include <QPointer>
-#include <QVariantList>
 
-#include <KConfigCore/KCoreConfigSkeleton>
+#include <KCoreConfigSkeleton>
 
 class KCModuleDataPrivate
 {
@@ -74,7 +72,7 @@ void KCModuleData::autoRegisterSkeletons()
     }
 }
 
-bool KCModuleData::matchQuery(const QString query) const
+bool KCModuleData::matchesQuery(const QString &query) const
 {
     // Currently not implemented, here for future use case
     Q_UNUSED(query)
