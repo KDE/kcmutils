@@ -115,7 +115,6 @@ KCModuleQml::KCModuleQml(std::unique_ptr<KQuickAddons::ConfigModule> configModul
     d->quickWidget = new QQuickWidget(d->qmlObject->engine(), this);
     d->quickWidget->setResizeMode(QQuickWidget::SizeRootObjectToView);
     d->quickWidget->setFocusPolicy(Qt::StrongFocus);
-    d->quickWidget->installEventFilter(this);
     d->quickWidget->setAttribute(Qt::WA_AlwaysStackOnTop, true);
     d->quickWindow = d->quickWidget->quickWindow();
     d->quickWindow->setColor(Qt::transparent);
@@ -153,6 +152,7 @@ KCModuleQml::KCModuleQml(std::unique_ptr<KQuickAddons::ConfigModule> configModul
         qCCritical(KCMUTILS_LOG) << component->errors();
         qFatal("Failed to intiailize KCModuleQML");
     }
+    d->rootPlaceHolder->installEventFilter(this);
     d->quickWidget->setContent(QUrl(), component, d->rootPlaceHolder);
 
     d->pageRow = d->rootPlaceHolder->property("pageStack").value<QQuickItem *>();
@@ -214,48 +214,21 @@ KCModuleQml::~KCModuleQml()
 
 bool KCModuleQml::eventFilter(QObject* watched, QEvent* event)
 {
-    //FIXME: those are all workarounds around the QQuickWidget brokeness
-    //BUG https://bugreports.qt.io/browse/QTBUG-64561
-    if (watched == d->quickWidget && event->type() == QEvent::KeyPress) {
-        //allow tab navigation inside the qquickwidget
-        QKeyEvent *ke = static_cast<QKeyEvent *>(event);
-
-        QQuickItem *currentItem = d->quickWindow->activeFocusItem();
-        if (!currentItem) {
-            return KCModule::eventFilter(watched, event);
-        }
-        if (currentItem->scopedFocusItem()) {
-            currentItem = currentItem->scopedFocusItem();
-        }
-
-        if (ke->key() == Qt::Key_Tab) {
-            //nextItemInFocusChain will always return something, in the worst case will still be currentItem
-            QQuickItem *nextItem = currentItem->nextItemInFocusChain(true);
-            //when it arrives at the place holder item, go out of the qqw and
-            //go to the other widgets around systemsettigns
-            if (nextItem == d->rootPlaceHolder) {
-                QWidget *w = d->quickWidget->nextInFocusChain();
-                while (!w->isEnabled() || !(w->focusPolicy() & Qt::TabFocus)) {
-                    w = w->nextInFocusChain();
+    if (watched == d->rootPlaceHolder && event->type() == QEvent::FocusIn) {
+        auto focusEvent = static_cast<QFocusEvent*>(event);
+        if (focusEvent->reason() == Qt::TabFocusReason) {
+            QWidget *w = d->quickWidget->nextInFocusChain();
+               while (!w->isEnabled() || !(w->focusPolicy() & Qt::TabFocus)) {
+                   w = w->nextInFocusChain();
                 }
-                w->setFocus(Qt::TabFocusReason);
-            } else {
-                nextItem->forceActiveFocus(Qt::TabFocusReason);
+                w->setFocus(Qt::TabFocusReason);        //allow tab navigation inside the qquickwidget
+                return true;
+        } else if (focusEvent->reason() == Qt::BacktabFocusReason) {
+            QWidget *w = d->quickWidget->previousInFocusChain();
+            while (!w->isEnabled() || !(w->focusPolicy() & Qt::TabFocus)) {
+                w = w->previousInFocusChain();
             }
-            return true;
-        } else if (ke->key() == Qt::Key_Backtab
-                   || (ke->key() == Qt::Key_Tab && (ke->modifiers() & Qt::ShiftModifier))) {
-            QQuickItem *nextItem = currentItem->nextItemInFocusChain(false);
-
-            if (nextItem == d->rootPlaceHolder) {
-                QWidget *w = d->quickWidget->previousInFocusChain();
-                while (!w->isEnabled() || !(w->focusPolicy() & Qt::TabFocus)) {
-                    w = w->previousInFocusChain();
-                }
-                w->setFocus(Qt::BacktabFocusReason);
-            } else {
-                nextItem->forceActiveFocus(Qt::BacktabFocusReason);
-            }
+            w->setFocus(Qt::BacktabFocusReason);
             return true;
         }
     }
