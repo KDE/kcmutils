@@ -132,16 +132,13 @@ KCModuleQml::KCModuleQml(std::unique_ptr<KQuickAddons::ConfigModule> configModul
         "Kirigami.ApplicationItem{"
             //force it to *never* try to resize itself
             "width: Window.width;"
-            //purely cosmetic space, those magic values are to align perfectly within Systemsettings
-            "header: Item {height: Math.round(Kirigami.Units.gridUnit*0.25)}"
             "implicitWidth:pageStack.implicitWidth;"
-            "implicitHeight:pageStack.implicitHeight+header.height;"
+            "implicitHeight:pageStack.implicitHeight;"
             // allow only one column by default
             "pageStack.defaultColumnWidth:width;"
             "pageStack.separatorVisible:false;"
             "pageStack.globalToolBar.style: pageStack.wideScreen ? Kirigami.ApplicationHeaderStyle.Titles : Kirigami.ApplicationHeaderStyle.Breadcrumb;"
             "pageStack.globalToolBar.showNavigationButtons:true;"
-            "pageStack.globalToolBar.separatorVisible:false;"
             "activeFocusOnTab:true;"
             "Keys.onReturnPressed:{event.accepted=true}"
             "Keys.onEnterPressed:{event.accepted=true}"
