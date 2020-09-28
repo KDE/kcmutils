@@ -134,3 +134,19 @@ ecm_qt_install_logging_categories(
     FILE kcmutils.categories
     DESTINATION "${KDE_INSTALL_LOGGINGCATEGORIESDIR}"
 )
+
+set(SHARE_INSTALL_DIR share
+    CACHE
+    PATH
+    "read-only architecture-independent data"
+    )
+
+set(KDE_MODULES_INSTALL_DIR ${SHARE_INSTALL_DIR}/ECM/kde-modules/)
+
+install(
+    FILES
+    KCMUtilsGenerateModuleData.cmake
+    kcmutilsgeneratemoduledata.cpp.in
+    kcmutilsgeneratemoduledata.h.in
+    DESTINATION ${KDE_MODULES_INSTALL_DIR}
+)
