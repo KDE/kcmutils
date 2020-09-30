@@ -181,6 +181,10 @@ Kirigami.ApplicationItem {
     if (d->pageRow) {
         QMetaObject::invokeMethod(d->pageRow, "push", Qt::DirectConnection, Q_ARG(QVariant, QVariant::fromValue(d->configModule->mainUi())), Q_ARG(QVariant, QVariant()));
 
+        for (int i = 0 ; i < d->configModule->depth() -1 ; i++) {
+                QMetaObject::invokeMethod(d->pageRow, "push", Qt::DirectConnection, Q_ARG(QVariant, QVariant::fromValue(d->configModule->subPage(i))), Q_ARG(QVariant, QVariant()));
+        }
+
         connect(d->configModule.get(), &KQuickAddons::ConfigModule::pagePushed, this, [this](QQuickItem *page) {
                 QMetaObject::invokeMethod(d->pageRow, "push", Qt::DirectConnection, Q_ARG(QVariant, QVariant::fromValue(page)), Q_ARG(QVariant, QVariant()));
             }
