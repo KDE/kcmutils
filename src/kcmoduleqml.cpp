@@ -143,6 +143,7 @@ KCModuleQml::KCModuleQml(std::unique_ptr<KQuickAddons::ConfigModule> configModul
             "pageStack.globalToolBar.showNavigationButtons:true;"
             "pageStack.globalToolBar.separatorVisible:false;"
             "activeFocusOnTab:true;"
+            "controlsVisible:false;"
             "Keys.onReturnPressed:{event.accepted=true}"
             "Keys.onEnterPressed:{event.accepted=true}"
         "}"), QUrl());
