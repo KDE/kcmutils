@@ -1,0 +1,488 @@
+# translation of kdelibs4.po to Chinese Simplified
+# Copyright (C) 2007 Free Software Foundation, Inc.
+#
+# Lie Ex <lilith.ex@gmail.com> 2007-2011.
+# Wang Jian <lark@linux.ustc.edu.cn>, 1998.
+# Sarah Smith <sarahs@redhat.com>, 2002.
+# Xiong Jiang <jxiong@offtopic.org>, 2002,2003,2004.
+# Funda Wang <fundawang@linux.net.cn>, 2002,2003,2004.
+# Liang Qi <cavendish.qi@gmail.com>, 2007.
+# Feng Chao <chaofeng111@gmail.com>, 2010, 2012, 2014, 2019.
+# Ni Hui <shuizhuyuanluo@126.com>, 2010, 2011, 2012.
+# Weng Xuetian <wengxt@gmail.com>, 2011, 2012, 2013.
+msgid ""
+msgstr ""
+"Project-Id-Version: kdeorg\n"
+"Report-Msgid-Bugs-To: https://bugs.kde.org\n"
+"POT-Creation-Date: 2020-08-17 02:04+0200\n"
+"PO-Revision-Date: 2020-09-23 12:18\n"
+"Last-Translator: \n"
+"Language-Team: Chinese Simplified\n"
+"Language: zh_CN\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"X-Crowdin-Project: kdeorg\n"
+"X-Crowdin-Project-ID: 269464\n"
+"X-Crowdin-Language: zh-CN\n"
+"X-Crowdin-File: /kf5-trunk/messages/kcmutils/kcmutils5.pot\n"
+"X-Crowdin-File-ID: 5566\n"
+
+#, kde-format
+msgctxt "NAME OF TRANSLATORS"
+msgid "Your names"
+msgstr "KDE 中国, Feng Chao"
+
+#, kde-format
+msgctxt "EMAIL OF TRANSLATORS"
+msgid "Your emails"
+msgstr "kde-china@kde.org, chaofeng111@gmail.com"
+
+#: kcmoduleloader.cpp:67
+#, kde-format
+msgid "The module %1 could not be found."
+msgstr "找不到指定的模块 %1。"
+
+#: kcmoduleloader.cpp:68
+#, kde-format
+msgid ""
+"<qt><p>The diagnosis is:<br />The desktop file %1 could not be found.</p></"
+"qt>"
+msgstr "<qt><p>诊断信息为：<br />找不到桌面文件 %1。</p></qt>"
+
+#: kcmoduleloader.cpp:71
+#, kde-format
+msgid "The module %1 is disabled."
+msgstr "模块 %1 被禁用。"
+
+#: kcmoduleloader.cpp:72
+#, kde-format
+msgid ""
+"<qt><p>Either the hardware/software the module configures is not available "
+"or the module has been disabled by the administrator.</p></qt>"
+msgstr ""
+"<qt><p>这个模块中的有关硬件或软件的配置都不可用，或者这个模块已经被管理员禁"
+"用。</p></qt>"
+
+#: kcmoduleloader.cpp:99
+#, kde-format
+msgid "Error loading QML file."
+msgstr "加载 QML 文件时出错"
+
+#: kcmoduleloader.cpp:144
+#, kde-format
+msgid "The module %1 is not a valid configuration module."
+msgstr "模块 %1 不是有效的配置模块。"
+
+#: kcmoduleloader.cpp:145
+#, kde-format
+msgid ""
+"<qt>The diagnosis is:<br />The desktop file %1 does not specify a library.</"
+"qt>"
+msgstr "<qt>诊断信息为：<br />桌面文件 %1 没有指定库。</qt>"
+
+#: kcmoduleloader.cpp:194
+#, kde-format
+msgid ""
+"<qt><p>Possible reasons:<ul><li>An error occurred during your last system "
+"upgrade, leaving an orphaned control module behind</li><li>You have old "
+"third party modules lying around.</li></ul></p><p>Check these points "
+"carefully and try to remove the module mentioned in the error message. If "
+"this fails, consider contacting your distributor or packager.</p></qt>"
+msgstr ""
+"<qt><p>可能的原因：</p><ul><li>上次您的 KDE 升级时发生错误，留下一个孤儿控制"
+"模块。</li><li>您的系统中有第三方的软件模块。</li></ul><p>请仔细检查这些情"
+"况，尝试删除错误信息中提到的模块。如果这样仍然失败，请考虑和您的发行商或者软"
+"件包装者联系。</p></qt>"
+
+#: kcmoduleproxy.cpp:109
+#, kde-format
+msgctxt "Argument is application name"
+msgid "This configuration section is already opened in %1"
+msgstr "此配置节已经在 %1 中打开了"
+
+#: kcmultidialog.cpp:50
+#, kde-format
+msgid ""
+"The settings of the current module have changed.\n"
+"Do you want to apply the changes or discard them?"
+msgstr ""
+"当前模块的设置已经被修改。\n"
+"您想要应用还是丢弃更改？"
+
+#: kcmultidialog.cpp:52
+#, kde-format
+msgid "Apply Settings"
+msgstr "应用设置"
+
+#: kcmultidialog.cpp:225 kpluginselector.cpp:759
+#, kde-format
+msgid "Configure"
+msgstr "配置"
+
+#. i18n: ectx: label, entry, group (DesktopIcons)
+#: kdeglobals.kcfg:9
+#, kde-format
+msgid "Distance between desktop icons"
+msgstr "桌面图标之间的距离"
+
+#. i18n: ectx: whatsthis, entry, group (DesktopIcons)
+#: kdeglobals.kcfg:10
+#, kde-format
+msgid "The distance between icons specified in pixels."
+msgstr "以像素为单位指定图标之间的距离。"
+
+#. i18n: ectx: label, entry, group (General)
+#: kdeglobals.kcfg:23
+#, kde-format
+msgid "Widget style to use"
+msgstr "要使用的部件风格"
+
+#. i18n: ectx: whatsthis, entry, group (General)
+#: kdeglobals.kcfg:24
+#, kde-format
+msgid ""
+"The name of the widget style, for example \"keramik\" or \"plastik\". "
+"Without quotes."
+msgstr "部件风格的名称，例如“keramik”或者“plastik”。"
+
+#. i18n: ectx: label, entry, group (General)
+#: kdeglobals.kcfg:30
+#, kde-format
+msgid "Use the PC speaker"
+msgstr "使用 PC 扬声器"
+
+#. i18n: ectx: whatsthis, entry, group (General)
+#: kdeglobals.kcfg:31
+#, kde-format
+msgid ""
+"Whether the ordinary PC speaker should be used instead of KDE's own "
+"notifications system."
+msgstr "是否应使用普通 PC 扬声器来代替 KDE 本身的通知系统。"
+
+#. i18n: ectx: label, entry, group (General)
+#: kdeglobals.kcfg:35
+#, kde-format
+msgid "What terminal application to use"
+msgstr "所用的终端应用程序"
+
+#. i18n: ectx: whatsthis, entry, group (General)
+#: kdeglobals.kcfg:37
+#, kde-format
+msgid ""
+"Whenever a terminal application is launched this terminal emulator program "
+"will be used.\n"
+msgstr "只要一个终端应用程序被启动，这个终端模拟程序就会被使用。\n"
+
+#. i18n: ectx: label, entry, group (General)
+#: kdeglobals.kcfg:41
+#, kde-format
+msgid "Fixed width font"
+msgstr "等宽字体"
+
+#. i18n: ectx: whatsthis, entry, group (General)
+#: kdeglobals.kcfg:43
+#, kde-format
+msgid ""
+"This font is used when a fixed font is needed. A fixed font has a constant "
+"width.\n"
+msgstr "这个字体会在需要使用固定字体的时候用到。一个固定字体用于固定的宽度。\n"
+
+#. i18n: ectx: label, entry, group (General)
+#: kdeglobals.kcfg:46
+#, kde-format
+msgid "System wide font"
+msgstr "全系统字体"
+
+#. i18n: ectx: label, entry, group (General)
+#: kdeglobals.kcfg:49
+#, kde-format
+msgid "Font for menus"
+msgstr "菜单字体"
+
+#. i18n: ectx: whatsthis, entry, group (General)
+#: kdeglobals.kcfg:50
+#, kde-format
+msgid "What font to use for menus in applications."
+msgstr "应用程序中菜单所用的字体"
+
+#. i18n: ectx: label, entry, group (General)
+#: kdeglobals.kcfg:53
+#, kde-format
+msgid "Color for links"
+msgstr "链接颜色"
+
+#. i18n: ectx: whatsthis, entry, group (General)
+#: kdeglobals.kcfg:54
+#, kde-format
+msgid "What color links should be that have not yet been clicked on"
+msgstr "还没有被点击过的链接所用的颜色"
+
+#. i18n: ectx: label, entry, group (General)
+#: kdeglobals.kcfg:57
+#, kde-format
+msgid "Color for visited links"
+msgstr "已访问过的链接颜色"
+
+#. i18n: ectx: label, entry, group (General)
+#: kdeglobals.kcfg:60
+#, kde-format
+msgid "Font for the taskbar"
+msgstr "任务栏字体"
+
+#. i18n: ectx: whatsthis, entry, group (General)
+#: kdeglobals.kcfg:61
+#, kde-format
+msgid ""
+"What font to use for the panel at the bottom of the screen, where the "
+"currently running applications are."
+msgstr "屏幕底部面板所用的字体，那里显示的是当前都有哪些程序正在运行。"
+
+#. i18n: ectx: label, entry, group (General)
+#: kdeglobals.kcfg:64
+#, kde-format
+msgid "Fonts for toolbars"
+msgstr "工具栏字体"
+
+#. i18n: ectx: label, entry (Desktop Screenshot), group (Global Shortcuts)
+#: kdeglobals.kcfg:73
+#, kde-format
+msgid "Shortcut for taking screenshot"
+msgstr "获得截屏的快捷键"
+
+#. i18n: ectx: label, entry (Enable/Disable Clipboard Actions), group (Global Shortcuts)
+#: kdeglobals.kcfg:78
+#, kde-format
+msgid "Shortcut for toggling Clipboard Actions on and off"
+msgstr "用于切换剪贴板动作打开或者关闭的快捷键"
+
+#. i18n: ectx: label, entry (Halt without Confirmation), group (Global Shortcuts)
+#: kdeglobals.kcfg:83
+#, kde-format
+msgid "Shortcut for shutting down the computer without confirmation"
+msgstr "不经确认就关闭计算机的快捷键"
+
+#. i18n: ectx: label, entry (Sort directories first), group (KFileDialog Settings)
+#: kdeglobals.kcfg:380
+#, kde-format
+msgid "Show directories first"
+msgstr "首先显示目录"
+
+#. i18n: ectx: whatsthis, entry (Sort directories first), group (KFileDialog Settings)
+#: kdeglobals.kcfg:381
+#, kde-format
+msgid "Whether directories should be placed at the top when displaying files"
+msgstr "在显示文件的时候，目录应该被放在顶部"
+
+#. i18n: ectx: label, entry (Recent URLs), group (KFileDialog Settings)
+#: kdeglobals.kcfg:389
+#, kde-format
+msgid "The URLs recently visited"
+msgstr "最近访问的 URL"
+
+#. i18n: ectx: whatsthis, entry (Recent URLs), group (KFileDialog Settings)
+#: kdeglobals.kcfg:390
+#, kde-format
+msgid "Used for auto-completion in file dialogs, for example"
+msgstr "例如在文件对话框的自动补全中使用"
+
+#. i18n: ectx: label, entry (Show Preview), group (KFileDialog Settings)
+#: kdeglobals.kcfg:394
+#, kde-format
+msgid "Show file preview in file dialog"
+msgstr "在文件对话框中显示文件预览"
+
+#. i18n: ectx: label, entry (Show hidden files), group (KFileDialog Settings)
+#: kdeglobals.kcfg:399
+#, kde-format
+msgid "Show hidden files"
+msgstr "显示隐藏文件"
+
+#. i18n: ectx: whatsthis, entry (Show hidden files), group (KFileDialog Settings)
+#: kdeglobals.kcfg:400
+#, kde-format
+msgid ""
+"Whether files starting with a dot (convention for hidden files) should be "
+"shown"
+msgstr "是否显示以一个点(通常用于隐藏文件)开始的文件"
+
+#. i18n: ectx: label, entry (Show Speedbar), group (KFileDialog Settings)
+#: kdeglobals.kcfg:405
+#, kde-format
+msgid "Show speedbar"
+msgstr "显示加速栏"
+
+#. i18n: ectx: whatsthis, entry (Show Speedbar), group (KFileDialog Settings)
+#: kdeglobals.kcfg:406
+#, kde-format
+msgid ""
+"Whether the shortcut icons to the left in the file dialog should be shown"
+msgstr "是否在文件对话框的左面显示快捷图标"
+
+#. i18n: ectx: label, entry, group (Locale)
+#: kdeglobals.kcfg:425
+#, kde-format
+msgid "What country"
+msgstr "所在国家"
+
+#. i18n: ectx: whatsthis, entry, group (Locale)
+#: kdeglobals.kcfg:426
+#, kde-format
+msgid ""
+"Used to determine how to display numbers, currency and time/date, for example"
+msgstr "例如用户决定如何显示数字、货币单位和时间/日期"
+
+#. i18n: ectx: label, entry, group (Locale)
+#: kdeglobals.kcfg:430
+#, kde-format
+msgid "What language to use to display text"
+msgstr "用于显示文本的语言"
+
+#. i18n: ectx: label, entry, group (Locale)
+#: kdeglobals.kcfg:433
+#, kde-format
+msgid "Character used for indicating positive numbers"
+msgstr "用于指示负数的字符"
+
+#. i18n: ectx: whatsthis, entry, group (Locale)
+#: kdeglobals.kcfg:434
+#, kde-format
+msgid "Most countries have no character for this"
+msgstr "绝大多数国家没有用于这个的字符"
+
+#. i18n: ectx: label, entry, group (Paths)
+#: kdeglobals.kcfg:439
+#, kde-format
+msgid "Path to the autostart directory"
+msgstr "指向自启动目录的路径"
+
+#. i18n: ectx: whatsthis, entry, group (Paths)
+#: kdeglobals.kcfg:440
+#, kde-format
+msgid "Path to the directory containing executables to be run on session login"
+msgstr "指向包含在会话登入时运行的二进制程序的目录的路径"
+
+#. i18n: ectx: label, entry, group (Socks)
+#: kdeglobals.kcfg:487
+#, kde-format
+msgid "Enable SOCKS support"
+msgstr "打开 SOCKS 支持"
+
+#. i18n: ectx: whatsthis, entry, group (Socks)
+#: kdeglobals.kcfg:488
+#, kde-format
+msgid "Whether SOCKS version 4 and 5 should be enabled in KDE's sub systems"
+msgstr "在 KDE 子系统中是否打开 SOCKS 版本4和5"
+
+#. i18n: ectx: label, entry, group (Socks)
+#: kdeglobals.kcfg:492
+#, kde-format
+msgid "Path to custom SOCKS library"
+msgstr "指向自定义 SOCKS 库的路径"
+
+#. i18n: ectx: label, entry, group (Toolbar style)
+#: kdeglobals.kcfg:498
+#, kde-format
+msgid "Highlight toolbar buttons on mouse over"
+msgstr "当鼠标悬停在工具栏按钮上时高亮显示"
+
+#. i18n: ectx: label, entry, group (Toolbar style)
+#: kdeglobals.kcfg:502
+#, kde-format
+msgid "Show text on toolbar icons "
+msgstr "在工具栏图标上显示文本"
+
+#. i18n: ectx: whatsthis, entry, group (Toolbar style)
+#: kdeglobals.kcfg:503
+#, kde-format
+msgid "Whether text should be shown in addition to icons on toolbar icons"
+msgstr "是否在工具栏图标之外显示文本"
+
+#. i18n: ectx: label, entry (EchoMode), group (Passwords)
+#: kdeglobals.kcfg:524
+#, kde-format
+msgid "Password echo type"
+msgstr "密码回显类型"
+
+#. i18n: ectx: label, entry (Dialog Size), group (KKeyDialog Settings)
+#: kdeglobals.kcfg:534
+#, kde-format
+msgid "The size of the dialog"
+msgstr "对话框大小"
+
+#: kpluginselector.cpp:128
+#, kde-format
+msgid ""
+"Automatic changes have been performed due to plugin dependencies. Click here "
+"for further information"
+msgstr "由于插件的依赖关系，已经执行自动改变。点击这里获取更多信息"
+
+#: kpluginselector.cpp:196
+#, kde-format
+msgid ""
+"Automatic changes have been performed in order to satisfy plugin "
+"dependencies:\n"
+msgstr "为了满足插件的依赖关系，已经自动执行了更改：\n"
+
+#: kpluginselector.cpp:200
+#, kde-format
+msgid ""
+"\n"
+"    %1 plugin has been automatically checked because of the dependency of %2 "
+"plugin"
+msgstr ""
+"\n"
+"    因为 %2 插件的依赖关系，%1 插件已经被自动选中"
+
+#: kpluginselector.cpp:202
+#, kde-format
+msgid ""
+"\n"
+"    %1 plugin has been automatically unchecked because of its dependency on "
+"%2 plugin"
+msgstr ""
+"\n"
+"    因为对于 %2 插件的依赖，%1 插件已被自动取消选中"
+
+#: kpluginselector.cpp:205
+#, kde-format
+msgid "Dependency Check"
+msgstr "依赖检查"
+
+#: kpluginselector.cpp:222
+#, kde-format
+msgid "%1 plugin automatically added due to plugin dependencies"
+msgid_plural "%1 plugins automatically added due to plugin dependencies"
+msgstr[0] "由于插件的依赖关系，已经自动添加了 %1 个插件"
+
+#: kpluginselector.cpp:226
+#, kde-format
+msgid ", "
+msgstr ", "
+
+#: kpluginselector.cpp:230
+#, kde-format
+msgid "%1 plugin automatically removed due to plugin dependencies"
+msgid_plural "%1 plugins automatically removed due to plugin dependencies"
+msgstr[0] "由于插件的依赖关系，已经自动移除了 %1 个插件"
+
+#: kpluginselector.cpp:250
+#, kde-format
+msgid "Search..."
+msgstr "搜索..."
+
+#: kpluginselector.cpp:754
+#, kde-format
+msgid "About"
+msgstr "关于"
+
+#: ksettings/componentsdialog.cpp:44
+#, kde-format
+msgid "Select Components"
+msgstr "选择组件"
+
+#: ksettings/dialog.cpp:220
+#, kde-format
+msgid "Enable component"
+msgstr "启用组件"
