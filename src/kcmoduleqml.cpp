@@ -129,23 +129,24 @@ KCModuleQml::KCModuleQml(std::unique_ptr<KQuickAddons::ConfigModule> configModul
     component->setData(QByteArrayLiteral("import QtQuick 2.3\n"
         "import org.kde.kirigami 2.4 as Kirigami\n"
         "import QtQuick.Window 2.2\n"
-        "Kirigami.ApplicationItem{"
+        "import QtQuick.Controls 2.2\n"
+        "Kirigami.ApplicationItem {"
             //force it to *never* try to resize itself
             "width: Window.width;"
             //purely cosmetic space, those magic values are to align perfectly within Systemsettings
-            "header: Item {height: Math.round(Kirigami.Units.gridUnit*0.25)}"
             "implicitWidth:pageStack.implicitWidth;"
             "implicitHeight:pageStack.implicitHeight+header.height;"
             // allow only one column by default
             "pageStack.defaultColumnWidth:width;"
             "pageStack.separatorVisible:false;"
             "pageStack.globalToolBar.style: pageStack.wideScreen ? Kirigami.ApplicationHeaderStyle.Titles : Kirigami.ApplicationHeaderStyle.Breadcrumb;"
+            "pageStack.globalToolBar.preferredHeight: toolButton.implicitHeight + Kirigami.Units.smallSpacing * 2;"
             "pageStack.globalToolBar.showNavigationButtons:true;"
-            "pageStack.globalToolBar.separatorVisible:false;"
             "activeFocusOnTab:true;"
             "controlsVisible:false;"
             "Keys.onReturnPressed:{event.accepted=true}"
             "Keys.onEnterPressed:{event.accepted=true}"
+            "ToolButton{id:toolButton;visible: false;icon.name:\"go-previous\"}"
         "}"), QUrl());
 
     d->rootPlaceHolder = qobject_cast<QQuickItem *>(component->create());
