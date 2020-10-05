@@ -126,28 +126,48 @@ KCModuleQml::KCModuleQml(std::unique_ptr<KQuickAddons::ConfigModule> configModul
     //because its parameters are QQmlV4Function which is not public
     //the managers of onEnter/ReturnPressed are a workaround of
     //Qt bug https://bugreports.qt.io/browse/QTBUG-70934
-    component->setData(QByteArrayLiteral("import QtQuick 2.3\n"
-        "import org.kde.kirigami 2.4 as Kirigami\n"
-        "import QtQuick.Window 2.2\n"
-        "import QtQuick.Controls 2.2\n"
-        "Kirigami.ApplicationItem {"
-            //force it to *never* try to resize itself
-            "width: Window.width;"
-            //purely cosmetic space, those magic values are to align perfectly within Systemsettings
-            "implicitWidth:pageStack.implicitWidth;"
-            "implicitHeight:pageStack.implicitHeight+header.height;"
-            // allow only one column by default
-            "pageStack.defaultColumnWidth:width;"
-            "pageStack.separatorVisible:false;"
-            "pageStack.globalToolBar.style: pageStack.wideScreen ? Kirigami.ApplicationHeaderStyle.Titles : Kirigami.ApplicationHeaderStyle.Breadcrumb;"
-            "pageStack.globalToolBar.preferredHeight: toolButton.implicitHeight + Kirigami.Units.smallSpacing * 2;"
-            "pageStack.globalToolBar.showNavigationButtons:true;"
-            "activeFocusOnTab:true;"
-            "controlsVisible:false;"
-            "Keys.onReturnPressed:{event.accepted=true}"
-            "Keys.onEnterPressed:{event.accepted=true}"
-            "ToolButton{id:toolButton;visible: false;icon.name:\"go-previous\"}"
-        "}"), QUrl());
+    component->setData(QByteArrayLiteral(R"(
+import QtQuick 2.3
+import QtQuick.Window 2.2
+import QtQuick.Controls 2.2
+import org.kde.kirigami 2.4 as Kirigami
+
+Kirigami.ApplicationItem {
+    //force it to *never* try to resize itself
+    width: Window.width
+
+    implicitWidth: pageStack.implicitWidth
+    implicitHeight: pageStack.implicitHeight + header.height
+
+    activeFocusOnTab: true
+    controlsVisible: false
+
+    ToolButton {
+        id:toolButton
+        visible: false
+        icon.name: "go-previous"
+    }
+
+    // purely cosmetic space, those magic values are to align perfectly within Systemsettings
+    header: Item {
+        height: Math.round(Kirigami.Units.gridUnit*0.25)
+    }
+
+    // allow only one column by default
+    pageStack.defaultColumnWidth: width
+    pageStack.separatorVisible: false
+    pageStack.globalToolBar.preferredHeight: toolButton.implicitHeight + Kirigami.Units.smallSpacing * 2
+    pageStack.globalToolBar.style: pageStack.wideScreen ? Kirigami.ApplicationHeaderStyle.Titles : Kirigami.ApplicationHeaderStyle.Breadcrumb
+    pageStack.globalToolBar.showNavigationButtons: true
+
+    Keys.onReturnPressed: {
+        event.accepted = true
+    }
+    Keys.onEnterPressed: {
+        event.accepted = true
+    }
+}
+    )"), QUrl());
 
     d->rootPlaceHolder = qobject_cast<QQuickItem *>(component->create());
     if (!d->rootPlaceHolder) {
