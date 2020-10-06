@@ -25,7 +25,6 @@ protected:
         , modInfo(info)
         , changed(false)
         , defaulted(false)
-        , bogusOccupier(false)
         , parent(_parent)
     {
     }
@@ -69,7 +68,6 @@ protected:
     KCModuleInfo modInfo;
     bool changed = false;
     bool defaulted = false;
-    bool bogusOccupier = false;
     KCModuleProxy *parent = nullptr;
     KCModuleProxy *q_ptr = nullptr;
 };
