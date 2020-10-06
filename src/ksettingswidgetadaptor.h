@@ -23,6 +23,7 @@ public:
 
 public Q_SLOTS:
     QString applicationName();
+    void updateArguments(const QStringList &args, const QVariantList &platform_data);
 };
 
 #endif // KSETTINGSWIDGETADAPTOR_H

@@ -85,6 +85,9 @@ void KCModuleProxyPrivate::loadModule()
                              SIGNAL(serviceOwnerChanged(QString, QString, QString)),
                              parent,
                              SLOT(_k_ownerChanged(QString, QString, QString)));
+            /* Update the previous instance with the new arguments */
+            proxy.call(QStringLiteral("updateArguments"), args, QVariantList());
+            // TODO: Do not load the error module, but just change focus to the loaded KCM
             kcm = KCModuleLoader::reportError(KCModuleLoader::Inline,
                                               i18nc("Argument is application name",
                                                     "This configuration section is already opened in %1",

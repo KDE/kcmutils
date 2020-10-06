@@ -9,6 +9,8 @@
 #include <QGuiApplication>
 #include <QString>
 
+#include "kcmoduleproxy.h"
+
 KSettingsWidgetAdaptor::KSettingsWidgetAdaptor(QObject *parent)
     : QObject(parent)
 {
@@ -21,4 +23,9 @@ QString KSettingsWidgetAdaptor::applicationName()
         return displayName;
     }
     return QCoreApplication::applicationName();
+}
+
+void KSettingsWidgetAdaptor::updateArguments(const QStringList &args, const QVariantList &platform_data)
+{
+    static_cast<KCModuleProxy *>(parent())->updateArguments(args, platform_data);
 }

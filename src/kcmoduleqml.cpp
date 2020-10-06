@@ -103,6 +103,8 @@ KCModuleQml::KCModuleQml(std::unique_ptr<KQuickAddons::ConfigModule> configModul
     setAboutData(new KAboutData(*d->configModule->aboutData()));
     setFocusPolicy(Qt::StrongFocus);
 
+    connect(this, &KCModule::argumentsUpdated, d->configModule.get(), &KQuickAddons::ConfigModule::argumentsUpdated);
+
     // Build the UI
     QVBoxLayout *layout = new QVBoxLayout(this);
     layout->setContentsMargins(0, 0, 0, 0);

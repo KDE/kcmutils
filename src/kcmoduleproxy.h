@@ -170,6 +170,14 @@ public:
      */
     void setDefaultsIndicatorsVisible(bool show);
 
+    /**
+     * This method is called when the module is already loaded, and another application tries
+     * to load it again. It can be used to pass new arguments to an open module.
+     *
+     * @since 5.80
+     */
+    void updateArguments(const QStringList &args, const QVariantList &platformData);
+
 public Q_SLOTS:
 
     /**
