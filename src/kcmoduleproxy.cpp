@@ -72,56 +72,50 @@ void KCModuleProxyPrivate::loadModule()
         dbusPath = QLatin1String("/internal/KSettingsWidget/") + name;
     }
 
-    if (QDBusConnection::sessionBus().registerService(dbusService) || bogusOccupier) {
-        /* We got the name we requested, because no one was before us,
-         * or, it was an random application which had picked that name */
-        // qDebug() << "Module not already loaded, loading module " << modInfo.moduleName() << " from library " << modInfo.library() << " using symbol " <<
-        // modInfo.handle();
-
-        kcm = KCModuleLoader::loadModule(modInfo, KCModuleLoader::Inline, parent, args);
-
-        QObject::connect(kcm, SIGNAL(changed(bool)), parent, SLOT(_k_moduleChanged(bool)));
-        QObject::connect(kcm, SIGNAL(defaulted(bool)), parent, SLOT(_k_moduleDefaulted(bool)));
-        QObject::connect(kcm, SIGNAL(destroyed()), parent, SLOT(_k_moduleDestroyed()));
-        QObject::connect(kcm, &KCModule::quickHelpChanged, parent, &KCModuleProxy::quickHelpChanged);
-        parent->setWhatsThis(kcm->quickHelp());
-
-        if (kcm->layout()) {
-            kcm->layout()->setContentsMargins(0, 0, 0, 0);
-        }
-        if (qobject_cast<KCModuleQml *>(kcm)) {
-            topLayout->setContentsMargins(0, 0, 0, 0);
-        }
-
-        topLayout->addWidget(kcm);
-        if (!modInfo.handle().isEmpty()) {
-            QDBusConnection::sessionBus().registerObject(dbusPath, new KSettingsWidgetAdaptor(parent), QDBusConnection::ExportAllSlots);
-        }
-    } else {
-        // qDebug() << "Module already loaded, loading KCMError";
-
+    const bool registerOk = QDBusConnection::sessionBus().registerService(dbusService);
+    if (!registerOk) {
+        /* We didn't get the name we requested, because it's already taken, */
         /* Figure out the name of where the module is already loaded */
         QDBusInterface proxy(dbusService, dbusPath, QStringLiteral("org.kde.internal.KSettingsWidget"));
         QDBusReply<QString> reply = proxy.call(QStringLiteral("applicationName"));
-
+        /* If we get a valid application name, the module is already loaded */
         if (reply.isValid()) {
+            // qDebug() << "Module already loaded, loading KCMError";
             QObject::connect(QDBusConnection::sessionBus().interface(),
                              SIGNAL(serviceOwnerChanged(QString, QString, QString)),
                              parent,
                              SLOT(_k_ownerChanged(QString, QString, QString)));
             kcm = KCModuleLoader::reportError(KCModuleLoader::Inline,
                                               i18nc("Argument is application name",
-                                                    "This configuration section is "
-                                                    "already opened in %1",
+                                                    "This configuration section is already opened in %1",
                                                     reply.value()),
                                               QStringLiteral(" "),
                                               parent);
             topLayout->addWidget(kcm);
-        } else {
-            // qDebug() << "Calling KCModuleProxy's DBus interface for fetching the name failed.";
-            bogusOccupier = true;
-            loadModule();
+            return;
         }
+    }
+
+    // qDebug() << "Module not already loaded, loading module " << modInfo.moduleName() << " from library " << modInfo.library() << " using symbol " << modInfo.handle();
+    kcm = KCModuleLoader::loadModule(modInfo, KCModuleLoader::Inline, parent, args);
+
+    QObject::connect(kcm, SIGNAL(changed(bool)), parent, SLOT(_k_moduleChanged(bool)));
+    QObject::connect(kcm, SIGNAL(defaulted(bool)), parent, SLOT(_k_moduleDefaulted(bool)));
+    QObject::connect(kcm, SIGNAL(destroyed()), parent, SLOT(_k_moduleDestroyed()));
+    QObject::connect(kcm, &KCModule::quickHelpChanged, parent, &KCModuleProxy::quickHelpChanged);
+    parent->setWhatsThis(kcm->quickHelp());
+
+    if (kcm->layout()) {
+        kcm->layout()->setContentsMargins(0, 0, 0, 0);
+    }
+    if (qobject_cast<KCModuleQml *>(kcm)) {
+        topLayout->setContentsMargins(0, 0, 0, 0);
+    }
+
+    topLayout->addWidget(kcm);
+
+    if (!modInfo.handle().isEmpty()) {
+        QDBusConnection::sessionBus().registerObject(dbusPath, new KSettingsWidgetAdaptor(parent), QDBusConnection::ExportAllSlots);
     }
 }
 
