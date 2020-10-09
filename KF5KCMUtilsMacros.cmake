@@ -1,5 +1,5 @@
 #.rst:
-# KCMUtilsGenerateModuleData
+# KF5KCMUtilsGenerateModuleData
 # ---------------------------
 #
 # This module provides the ``kcmutils_generate_module_data`` function for

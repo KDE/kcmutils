@@ -90,6 +90,14 @@ install(FILES
   COMPONENT Devel
 )
 
+install(
+    FILES
+    ${CMAKE_CURRENT_SOURCE_DIR}/KF5KCMUtilsMacros.cmake
+    ${CMAKE_CURRENT_SOURCE_DIR}/src/kcmutilsgeneratemoduledata.cpp.in
+    ${CMAKE_CURRENT_SOURCE_DIR}/src/kcmutilsgeneratemoduledata.h.in
+    DESTINATION ${CMAKECONFIG_INSTALL_DIR}
+)
+
 install(EXPORT KF5KCMUtilsTargets DESTINATION "${CMAKECONFIG_INSTALL_DIR}" FILE KF5KCMUtilsTargets.cmake NAMESPACE KF5:: )
 
 install(FILES
