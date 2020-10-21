@@ -7,6 +7,8 @@
 
 #include "kcmoduledata.h"
 
+@OPEN_NAMESPACE@
+
 @SETTINGS_FORWARD_DECLARATION@
 
 class @MODULE_DATA_CLASS_NAME@ : public KCModuleData
@@ -20,5 +22,7 @@ public:
 private:
     @SETTINGS_ATTRIBUTE_DECLARATION@
 };
+
+@CLOSE_NAMESPACE@
 
 #endif

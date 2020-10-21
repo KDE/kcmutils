@@ -26,7 +26,7 @@ set(_KCMODULE_DATA_TEMPLATE_H   "${CMAKE_CURRENT_LIST_DIR}/kcmutilsgeneratemodul
 
 function(kcmutils_generate_module_data sources_var)
     set(options)
-    set(oneValueArgs MODULE_DATA_CLASS_NAME MODULE_DATA_HEADER)
+    set(oneValueArgs MODULE_DATA_CLASS_NAME MODULE_DATA_HEADER NAMESPACE)
     set(multiValueArgs SETTINGS_HEADERS SETTINGS_CLASSES)
     cmake_parse_arguments(ARG "${options}" "${oneValueArgs}" "${multiValueArgs}" ${ARGN})
 
@@ -97,6 +97,11 @@ function(kcmutils_generate_module_data sources_var)
     return ${_setting_attribute};
 }\n\n")
     endforeach()
+
+    if(ARG_NAMESPACE)
+        set(OPEN_NAMESPACE "namespace ${ARG_NAMESPACE} {")
+        set(CLOSE_NAMESPACE "}")
+    endif()
     configure_file("${_KCMODULE_DATA_TEMPLATE_CPP}" "${cpp_filename}")
     configure_file("${_KCMODULE_DATA_TEMPLATE_H}" "${ARG_MODULE_DATA_HEADER}")
 

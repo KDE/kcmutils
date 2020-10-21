@@ -6,6 +6,8 @@
 
 @INCLUDES_SETTINGS@
 
+@OPEN_NAMESPACE@
+
 @MODULE_DATA_CLASS_NAME@::@MODULE_DATA_CLASS_NAME@(QObject *parent, const QVariantList &args)
 : KCModuleData(parent, args)
 @SETTINGS_CONSTRUCTOR_INITIALIZATION@
@@ -14,4 +16,5 @@ autoRegisterSkeletons();
 }
 
 @SETTINGS_METHOD_DEFINITION@
+@CLOSE_NAMESPACE@
 #include "@MOC_FILENAME@"
