@@ -17,6 +17,8 @@ namespace KSettings
 {
 class PluginPagePrivate;
 
+#if KCMUTILS_ENABLE_DEPRECATED_SINCE(5,76)
+
 /**
  * @short Convenience KCModule for creating a plugins config page.
  *
@@ -54,6 +56,7 @@ class PluginPagePrivate;
    \endverbatim
  *
  * @author Matthias Kretz <kretz@kde.org>
+ * @deprecated since 5.76, use KPluginSelector instead.
  */
 class KCMUTILS_EXPORT PluginPage : public KCModule
 {
@@ -64,6 +67,7 @@ public:
      * Standard KCModule constructor.
      * Automatically creates the KPluginSelector widget.
      */
+    KCMUTILS_DEPRECATED_VERSION(5, 76, "Use KPluginSelector instead")
     explicit PluginPage(const KAboutData *aboutData,
                         QWidget *parent = nullptr,
                         const QVariantList &args = QVariantList());
@@ -96,6 +100,8 @@ protected:
 private:
     Q_PRIVATE_SLOT(d_func(), void _k_reparseConfiguration(const QByteArray &a))
 };
+
+#endif
 
 }
 

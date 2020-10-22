@@ -13,6 +13,8 @@
 namespace KSettings
 {
 
+#if KCMUTILS_BUILD_DEPRECATED_SINCE(5,76)
+
 class PluginPagePrivate
 {
 public:
@@ -64,6 +66,8 @@ void PluginPage::defaults()
 {
     d_ptr->selwid->defaults();
 }
+
+#endif
 
 } //namespace
 
