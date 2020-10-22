@@ -137,7 +137,7 @@ Kirigami.ApplicationItem {
     width: Window.width
 
     implicitWidth: pageStack.implicitWidth
-    implicitHeight: pageStack.implicitHeight + header.height
+    implicitHeight: pageStack.implicitHeight
 
     activeFocusOnTab: true
     controlsVisible: false
