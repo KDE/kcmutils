@@ -19,11 +19,9 @@
 #include <QDBusReply>
 
 #include <KAboutData>
-#include <KCModule>
 #include <kcmoduleinfo.h>
 
 #include <KLocalizedString>
-#include <KService>
 
 #include <kcmoduleloader.h>
 

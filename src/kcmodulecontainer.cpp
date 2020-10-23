@@ -8,11 +8,9 @@
 #include "kcmodulecontainer.h"
 #include <kcmutils_debug.h>
 
-#include <QStringList>
 #include <QTabWidget>
 #include <QVBoxLayout>
 
-#include <KCModule>
 #include <kcmoduleinfo.h>
 #include <kcmoduleproxy.h>
 #include <KService>
