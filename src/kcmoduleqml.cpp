@@ -148,8 +148,6 @@ Kirigami.ApplicationItem {
         icon.name: "go-previous"
     }
 
-    // allow only one column by default
-    pageStack.defaultColumnWidth: width
     pageStack.separatorVisible: false
     pageStack.globalToolBar.preferredHeight: toolButton.implicitHeight + Kirigami.Units.smallSpacing * 2
     pageStack.globalToolBar.style: pageStack.wideScreen ? Kirigami.ApplicationHeaderStyle.Titles : Kirigami.ApplicationHeaderStyle.Breadcrumb
