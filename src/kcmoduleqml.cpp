@@ -209,20 +209,6 @@ Kirigami.ApplicationItem {
         connect(d->rootPlaceHolder, &QQuickItem::widthChanged,
                 this, syncColumnWidth);
 
-        //HACK: in order to work with old Systemsettings
-        //search if we are in a KPageWidget, search ofr its page, and if it has
-        //an header set, disable our own title
-        //FIXME: eventually remove this hack
-        QObject *candidate = this;
-        while (candidate) {
-            candidate = candidate->parent();
-            KPageWidget *page = qobject_cast<KPageWidget *>(candidate);
-            if (page && !page->currentPage()->header().isEmpty()) {
-                QObject *globalToolBar = d->pageRow->property("globalToolBar").value<QObject *>();
-                //5 is None
-                globalToolBar->setProperty("style", 5);
-            }
-        }
     }
     
     layout->addWidget(d->quickWidget);
