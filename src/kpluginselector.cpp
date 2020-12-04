@@ -928,7 +928,7 @@ void KPluginSelector::Private::PluginDelegate::configure(const QModelIndex& inde
 
     // it could happen that we had services to show, but none of them were real modules.
     if (!moduleProxyList.isEmpty()) {
-        QVBoxLayout *layout = new QVBoxLayout;
+        QVBoxLayout *layout = new QVBoxLayout(&configDialog);
         layout->addWidget(mainWidget);
 
         QDialogButtonBox *buttonBox = new QDialogButtonBox(&configDialog);
@@ -940,8 +940,6 @@ void KPluginSelector::Private::PluginDelegate::configure(const QModelIndex& inde
         connect(buttonBox, &QDialogButtonBox::rejected, &configDialog, &QDialog::reject);
         connect(buttonBox->button(QDialogButtonBox::RestoreDefaults), &QAbstractButton::clicked, this, &PluginDelegate::slotDefaultClicked);
         layout->addWidget(buttonBox);
-
-        configDialog.setLayout(layout);
 
         if (configDialog.exec() == QDialog::Accepted) {
             for (KCModuleProxy *moduleProxy : qAsConst(moduleProxyList)) {

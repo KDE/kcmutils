@@ -226,7 +226,6 @@ KPageWidgetItem *DialogPrivate::createPageItem(KPageWidgetItem *parentItem,
     layout->addWidget(iconLabel);
     layout->addWidget(commentLabel);
     layout->addStretch();
-    page->setLayout(layout);
 
     KPageWidgetItem *item = new KPageWidgetItem(page, name);
     item->setIcon(QIcon::fromTheme(iconName));
