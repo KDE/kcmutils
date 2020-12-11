@@ -862,8 +862,9 @@ void KPluginSelector::Private::PluginDelegate::slotAboutClicked()
     PluginEntry *pluginEntry = model->data(index, PluginEntryRole).value<PluginEntry *>();
     KPluginMetaData pluginMetaData = pluginEntry->pluginInfo.toMetaData();
 
-    KAboutPluginDialog aboutPlugin(pluginMetaData, itemView());
-    aboutPlugin.exec();
+    auto *aboutPlugin = new KAboutPluginDialog(pluginMetaData, itemView());
+    aboutPlugin->setAttribute(Qt::WA_DeleteOnClose);
+    aboutPlugin->show();
 }
 
 void KPluginSelector::Private::PluginDelegate::slotConfigureClicked()
