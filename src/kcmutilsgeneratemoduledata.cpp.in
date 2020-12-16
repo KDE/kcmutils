@@ -2,8 +2,6 @@
 
 #include "@HEADER_NAME@"
 
-#include <QVariantList>
-
 @INCLUDES_SETTINGS@
 
 @OPEN_NAMESPACE@

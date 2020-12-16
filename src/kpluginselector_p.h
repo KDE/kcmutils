@@ -70,6 +70,7 @@ public:
     DependenciesWidget *dependenciesWidget;
     bool showIcons;
     QStringList kcmArguments;
+    bool showDefaultIndicator;
 };
 
 class PluginEntry
@@ -182,6 +183,9 @@ public:
     inline void clearChangedEntries() { changedEntries.clear(); };
     inline void addChangedEntry(PluginEntry *entry) { changedEntries << entry; };
     void setHandler(std::function<QPushButton*(const KPluginInfo &)> handler);
+
+public Q_SLOTS:
+    void slotResetModel();
 
 Q_SIGNALS:
     void changed(bool hasChanged);

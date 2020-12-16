@@ -45,7 +45,9 @@ KPluginSelector::Private::Private(KPluginSelector *parent)
     , parent(parent)
     , listView(nullptr)
     , categoryDrawer(nullptr)
+    , pluginDelegate(nullptr)
     , showIcons(false)
+    , showDefaultIndicator(false)
 {
 }
 
@@ -271,6 +273,7 @@ KPluginSelector::KPluginSelector(QWidget *parent)
     connect(d->lineEdit, &QLineEdit::textChanged, d->proxyModel, &QSortFilterProxyModel::invalidate);
     connect(pluginDelegate, &Private::PluginDelegate::changed, this, &KPluginSelector::changed);
     connect(pluginDelegate, &Private::PluginDelegate::configCommitted, this, &KPluginSelector::configCommitted);
+    connect(this, &KPluginSelector::defaultsIndicatorsVisible, pluginDelegate, &Private::PluginDelegate::slotResetModel);
 
     connect(this, &KPluginSelector::changed, [this]{ emit defaulted(isDefault()); });
 
@@ -371,6 +374,19 @@ void KPluginSelector::save()
     emit changed(false);
 }
 
+bool KPluginSelector::isSaveNeeded() const
+{
+    for (int i = 0; i < d->pluginModel->rowCount(); i++) {
+        const QModelIndex index = d->pluginModel->index(i, 0);
+        PluginEntry *pluginEntry = static_cast<PluginEntry *>(index.internalPointer());
+        if (d->pluginModel->data(index, Qt::CheckStateRole).toBool() != pluginEntry->pluginInfo.isPluginEnabled()) {
+            return true;
+        }
+    }
+
+    return false;
+}
+
 void KPluginSelector::defaults()
 {
     bool isChanged = false;
@@ -448,6 +464,14 @@ void KPluginSelector::showConfiguration(const QString& componentName)
 void KPluginSelector::setAdditionalButtonHandler(std::function<QPushButton*(const KPluginInfo &)> handler)
 {
     static_cast<Private::PluginDelegate*>(d->listView->itemDelegate())->setHandler(handler);
+}
+
+void KPluginSelector::setDefaultsIndicatorsVisible(bool isVisible)
+{
+    if (isVisible != d->showDefaultIndicator) {
+        d->showDefaultIndicator = isVisible;
+        emit defaultsIndicatorsVisible();
+    }
 }
 
 KPluginSelector::Private::PluginModel::PluginModel(KPluginSelector::Private *pluginSelector_d, QObject *parent)
@@ -819,6 +843,10 @@ void KPluginSelector::Private::PluginDelegate::updateItemWidgets(const QList<QWi
             extraButton->setVisible(false);
         }
     } else {
+        PluginEntry *pluginEntry = index.model()->data(index, PluginEntryRole).value<PluginEntry *>();
+        bool isDefault = pluginEntry->pluginInfo.isPluginEnabledByDefault() == index.model()->data(index, Qt::CheckStateRole).toBool();
+        checkBox->setProperty("_kde_highlight_neutral", pluginSelector_d->showDefaultIndicator && !isDefault);
+
         checkBox->setChecked(index.model()->data(index, Qt::CheckStateRole).toBool());
         checkBox->setEnabled(index.model()->data(index, IsCheckableRole).toBool());
         configurePushButton->setVisible(index.model()->data(index, ServicesCountRole).toBool());
@@ -846,6 +874,7 @@ void KPluginSelector::Private::PluginDelegate::emitChanged(bool state)
 {
     const QModelIndex index = focusedIndex();
     PluginEntry *pluginEntry = index.model()->data(index, PluginEntryRole).value<PluginEntry *>();
+
     if (pluginEntry->pluginInfo.isPluginEnabled() != state) {
         changedEntries << pluginEntry;
     } else {
@@ -966,6 +995,11 @@ void KPluginSelector::Private::PluginDelegate::slotDefaultClicked()
     for (KCModuleProxy *moduleProxy : qAsConst(moduleProxyList)) {
         moduleProxy->defaults();
     }
+}
+
+void KPluginSelector::Private::PluginDelegate::slotResetModel()
+{
+    resetModel();
 }
 
 QFont KPluginSelector::Private::PluginDelegate::titleFont(const QFont &baseFont) const

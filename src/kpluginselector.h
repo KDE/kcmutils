@@ -159,6 +159,13 @@ public:
     void save();
 
     /**
+     * Returns true if the plugin selector has any changes that are not yet saved to configuration.
+     * @see save()
+     * @since 5.78
+     */
+    bool isSaveNeeded() const;
+
+    /**
       * Change to applications defaults
       * @see isDefault()
       */
@@ -219,6 +226,13 @@ public:
      */
     void setAdditionalButtonHandler(std::function<QPushButton*(const KPluginInfo &)> handler);
 
+    /**
+     * Show an indicator when a plugin status is different from default
+     *
+     * @since 5.78
+     */
+    void setDefaultsIndicatorsVisible(bool isVisible);
+
 Q_SIGNALS:
     /**
       * Tells you whether the configuration is changed or not.
@@ -237,6 +251,14 @@ Q_SIGNALS:
       * @since 5.67
      */
     void defaulted(bool isDefault);
+
+    /**
+     * Emitted when show defaults indicators changed
+     * @see setDefaultsIndicatorsVisible
+     *
+     * @since 5.78
+     */
+    void defaultsIndicatorsVisible();
 
 private:
     class Private;
