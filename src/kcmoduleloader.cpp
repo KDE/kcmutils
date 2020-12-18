@@ -158,15 +158,7 @@ bool KCModuleLoader::isDefaults(const KCModuleInfo &mod, const QStringList &args
         return true;
     }
 
-#if QT_VERSION >= QT_VERSION_CHECK(5, 14, 0)
     QVariantList args2(args.cbegin(), args.cend());
-#else
-     QVariantList args2;
-     args2.reserve(args.count());
-     for (const QString &arg : args) {
-         args2 << arg;
-     }
-#endif
 
     KPluginLoader loader(KPluginLoader::findPlugin(QLatin1String("kcms/") + mod.service()->library()));
     KPluginFactory* factory = loader.factory();
