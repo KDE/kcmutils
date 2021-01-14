@@ -50,11 +50,7 @@ public:
 /***********************************************************************/
 KCModuleContainer::KCModuleContainer(QWidget *parent, const QString &mods)
     : KCModule(parent),
-#if QT_VERSION < QT_VERSION_CHECK(5, 15, 0)
-      d(new KCModuleContainerPrivate(QString(mods).remove(QLatin1Char(' ')).split(QLatin1Char(','), QString::SkipEmptyParts)))
-#else
       d(new KCModuleContainerPrivate(QString(mods).remove(QLatin1Char(' ')).split(QLatin1Char(','), Qt::SkipEmptyParts)))
-#endif
 {
     init();
 }
