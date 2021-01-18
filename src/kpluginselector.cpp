@@ -275,7 +275,7 @@ KPluginSelector::KPluginSelector(QWidget *parent)
     connect(pluginDelegate, &Private::PluginDelegate::configCommitted, this, &KPluginSelector::configCommitted);
     connect(this, &KPluginSelector::defaultsIndicatorsVisible, pluginDelegate, &Private::PluginDelegate::slotResetModel);
 
-    connect(this, &KPluginSelector::changed, [this]{ emit defaulted(isDefault()); });
+    connect(this, &KPluginSelector::changed, [this]{ Q_EMIT defaulted(isDefault()); });
 
     layout->addWidget(d->lineEdit);
     layout->addWidget(d->listView);
@@ -357,7 +357,7 @@ void KPluginSelector::load()
     }
 
     static_cast<KPluginSelector::Private::PluginDelegate*>(d->listView->itemDelegate())->clearChangedEntries();
-    emit changed(false);
+    Q_EMIT changed(false);
 }
 
 void KPluginSelector::save()
@@ -371,7 +371,7 @@ void KPluginSelector::save()
     }
 
     static_cast<KPluginSelector::Private::PluginDelegate*>(d->listView->itemDelegate())->clearChangedEntries();
-    emit changed(false);
+    Q_EMIT changed(false);
 }
 
 bool KPluginSelector::isSaveNeeded() const
@@ -403,7 +403,7 @@ void KPluginSelector::defaults()
         }
     }
 
-    emit changed(isChanged);
+    Q_EMIT changed(isChanged);
 }
 
 bool KPluginSelector::isDefault() const
@@ -470,7 +470,7 @@ void KPluginSelector::setDefaultsIndicatorsVisible(bool isVisible)
 {
     if (isVisible != d->showDefaultIndicator) {
         d->showDefaultIndicator = isVisible;
-        emit defaultsIndicatorsVisible();
+        Q_EMIT defaultsIndicatorsVisible();
     }
 }
 
@@ -612,7 +612,7 @@ bool KPluginSelector::Private::PluginModel::setData(const QModelIndex &index, co
     }
 
     if (ret) {
-        emit dataChanged(index, index);
+        Q_EMIT dataChanged(index, index);
     }
 
     return ret;
@@ -880,7 +880,7 @@ void KPluginSelector::Private::PluginDelegate::emitChanged(bool state)
     } else {
         changedEntries.remove(pluginEntry);
     }
-    emit changed(!changedEntries.isEmpty());
+    Q_EMIT changed(!changedEntries.isEmpty());
 }
 
 void KPluginSelector::Private::PluginDelegate::slotAboutClicked()
@@ -976,7 +976,7 @@ void KPluginSelector::Private::PluginDelegate::configure(const QModelIndex& inde
                 const QStringList parentComponents = moduleProxy->moduleInfo().property(QStringLiteral("X-KDE-ParentComponents")).toStringList();
                 moduleProxy->save();
                 for (const QString &parentComponent : parentComponents) {
-                    emit configCommitted(parentComponent.toLatin1());
+                    Q_EMIT configCommitted(parentComponent.toLatin1());
                 }
             }
         } else {

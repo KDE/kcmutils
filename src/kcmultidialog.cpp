@@ -370,10 +370,10 @@ void KCMultiDialogPrivate::apply()
 
     // Send the configCommitted signal for every updated component.
     for (const QString &name : qAsConst(updatedComponents)) {
-        emit q->configCommitted(name.toLatin1());
+        Q_EMIT q->configCommitted(name.toLatin1());
     }
 
-    emit q->configCommitted();
+    Q_EMIT q->configCommitted();
 }
 
 void KCMultiDialog::slotApplyClicked()

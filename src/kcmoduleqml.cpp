@@ -68,13 +68,13 @@ KCModuleQml::KCModuleQml(std::unique_ptr<KQuickAddons::ConfigModule> configModul
     });
 
     if (d->configModule->needsSave()) {
-        emit changed(true);
+        Q_EMIT changed(true);
     }
     connect(d->configModule.get(), &KQuickAddons::ConfigModule::needsSaveChanged, this, [=] {
-        emit changed(d->configModule->needsSave());
+        Q_EMIT changed(d->configModule->needsSave());
     });
     connect(d->configModule.get(), &KQuickAddons::ConfigModule::representsDefaultsChanged, this, [=] {
-        emit defaulted(d->configModule->representsDefaults());
+        Q_EMIT defaulted(d->configModule->representsDefaults());
     });
 
     setNeedsAuthorization(d->configModule->needsAuthorization());
@@ -274,7 +274,7 @@ const KAboutData *KCModuleQml::aboutData() const
 void KCModuleQml::load()
 {
     d->configModule->load();
-    emit defaulted(d->configModule->representsDefaults());
+    Q_EMIT defaulted(d->configModule->representsDefaults());
 }
 
 void KCModuleQml::save()

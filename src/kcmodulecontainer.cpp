@@ -129,7 +129,7 @@ void KCModuleContainer::save()
         (*it)->save();
     }
 
-    emit changed(false);
+    Q_EMIT changed(false);
 
 }
 
@@ -141,7 +141,7 @@ void KCModuleContainer::load()
         (*it)->load();
     }
 
-    emit changed(false);
+    Q_EMIT changed(false);
 }
 
 void KCModuleContainer::defaults()
@@ -152,7 +152,7 @@ void KCModuleContainer::defaults()
         (*it)->defaults();
     }
 
-    emit changed(true);
+    Q_EMIT changed(true);
 }
 
 void KCModuleContainer::moduleChanged(KCModuleProxy *proxy)
@@ -162,7 +162,7 @@ void KCModuleContainer::moduleChanged(KCModuleProxy *proxy)
         return;
     }
 
-    emit changed(true);
+    Q_EMIT changed(true);
 }
 
 KCModuleContainer::~KCModuleContainer()

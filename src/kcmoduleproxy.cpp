@@ -168,8 +168,8 @@ void KCModuleProxyPrivate::_k_moduleChanged(bool c)
 
     Q_Q(KCModuleProxy);
     changed = c;
-    emit q->changed(c);
-    emit q->changed(q);
+    Q_EMIT q->changed(c);
+    Q_EMIT q->changed(q);
 }
 
 void KCModuleProxyPrivate::_k_moduleDefaulted(bool d)
@@ -180,8 +180,8 @@ void KCModuleProxyPrivate::_k_moduleDefaulted(bool d)
 
     Q_Q(KCModuleProxy);
     defaulted = d;
-    emit q->changed(changed);
-    emit q->changed(q);
+    Q_EMIT q->changed(changed);
+    Q_EMIT q->changed(q);
 }
 
 void KCModuleProxyPrivate::_k_moduleDestroyed()

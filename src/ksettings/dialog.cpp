@@ -456,7 +456,7 @@ void DialogPrivate::_k_syncConfiguration()
         pinfo.save();
     }
     if (pluginStateDirty > 0) {
-        emit q->pluginSelectionChanged();
+        Q_EMIT q->pluginSelectionChanged();
         pluginStateDirty = 0;
     }
     Dispatcher::syncConfiguration();
