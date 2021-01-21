@@ -130,7 +130,7 @@ KCModuleQml::KCModuleQml(std::unique_ptr<KQuickAddons::ConfigModule> configModul
 import QtQuick 2.3
 import QtQuick.Window 2.2
 import QtQuick.Controls 2.2
-import org.kde.kirigami 2.4 as Kirigami
+import org.kde.kirigami 2.14 as Kirigami
 
 Kirigami.ApplicationItem {
     //force it to *never* try to resize itself
@@ -142,6 +142,8 @@ Kirigami.ApplicationItem {
     activeFocusOnTab: true
     controlsVisible: false
 
+    property QtObject kcm
+
     ToolButton {
         id:toolButton
         visible: false
@@ -150,8 +152,16 @@ Kirigami.ApplicationItem {
 
     pageStack.separatorVisible: false
     pageStack.globalToolBar.preferredHeight: toolButton.implicitHeight + Kirigami.Units.smallSpacing * 2
-    pageStack.globalToolBar.style: pageStack.wideScreen ? Kirigami.ApplicationHeaderStyle.Titles : Kirigami.ApplicationHeaderStyle.Breadcrumb
+    pageStack.globalToolBar.style: pageStack.wideMode && pageStack.columnView.columnResizeMode !== Kirigami.ColumnView.SingleColumn
+        ? Kirigami.ApplicationHeaderStyle.Titles
+        : Kirigami.ApplicationHeaderStyle.Breadcrumb
     pageStack.globalToolBar.showNavigationButtons: true
+
+    pageStack.columnView.columnResizeMode: pageStack.items.length > 0 && pageStack.items[0].Kirigami.ColumnView.fillWidth
+        ? Kirigami.ColumnView.SingleColumn
+        : Kirigami.ColumnView.FixedColumns
+
+    pageStack.defaultColumnWidth: kcm && kcm.columnWidth > 0 ? kcm.columnWidth : Kirigami.Units.gridUnit * 20
 
     Keys.onReturnPressed: {
         event.accepted = true
@@ -167,6 +177,7 @@ Kirigami.ApplicationItem {
         qCCritical(KCMUTILS_LOG) << component->errors();
         qFatal("Failed to intiailize KCModuleQML");
     }
+    d->rootPlaceHolder->setProperty("kcm", QVariant::fromValue(d->configModule.get()));
     d->rootPlaceHolder->installEventFilter(this);
     d->quickWidget->setContent(QUrl(), component, d->rootPlaceHolder);
 
@@ -196,16 +207,6 @@ Kirigami.ApplicationItem {
         );
         //New syntax cannot be used to connect to QML types
         connect(d->pageRow, SIGNAL(currentIndexChanged()), this, SLOT(syncCurrentIndex()));
-
-        auto syncColumnWidth = [this](){
-            d->pageRow->setProperty("defaultColumnWidth", d->configModule->columnWidth() > 0 ? d->configModule->columnWidth() : d->rootPlaceHolder->width());
-        };
-        syncColumnWidth();
-
-        connect(d->configModule.get(), &KQuickAddons::ConfigModule::columnWidthChanged,
-                this, syncColumnWidth);
-        connect(d->rootPlaceHolder, &QQuickItem::widthChanged,
-                this, syncColumnWidth);
 
     }
     
