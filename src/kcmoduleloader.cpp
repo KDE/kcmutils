@@ -95,6 +95,10 @@ KCModule *KCModuleLoader::loadModule(const KCModuleInfo &mod, ErrorReporting rep
             if (!cm) {
                 qCWarning(KCMUTILS_LOG) << "Error creating object from plugin" << loader.fileName();
             } else {
+                if (!cm->aboutData()) {
+                    // Derive about data from plugin metadata unless the module set explicit data.
+                    cm->setAboutData(KPluginMetaData(loader));
+                }
                 if (!cm->mainUi()) {
                     return reportError(report, i18n("Error loading QML file."), cm->errorString(), parent);
                 }
