@@ -4,6 +4,7 @@
     SPDX-FileCopyrightText: 2000 Matthias Elter <elter@kde.org>
     SPDX-FileCopyrightText: 2003 Daniel Molkentin <molkentin@kde.org>
     SPDX-FileCopyrightText: 2003, 2006 Matthias Kretz <kretz@kde.org>
+    SPDX-FileCopyrightText: 2021 Harald Sitter <sitter@kde.org>
 
     SPDX-License-Identifier: LGPL-2.0-only
 */
@@ -12,6 +13,7 @@
 
 #include <kcmutils_debug.h>
 
+#include <QFileInfo>
 #include <QVariant>
 
 #include <KDesktopFile>
@@ -61,8 +63,8 @@ KCModuleInfo::Private::Private(const KPluginInfo &pluginInfo)
     name = pluginInfo.name();
     comment = pluginInfo.comment();
     icon = pluginInfo.icon();
-    fileName = pluginInfo.entryPath();
-    lib = pluginInfo.libraryPath();
+    fileName = QFileInfo(pluginInfo.entryPath()).fileName();
+    lib = QFileInfo(pluginInfo.libraryPath()).fileName();
     keywords = pluginInfo.property(QStringLiteral("Keywords")).toStringList();
 }
 
@@ -78,7 +80,7 @@ KCModuleInfo::Private::Private(const KService::Ptr &service)
     name = service->name();
     comment = service->comment();
     icon = service->icon();
-    fileName = service->entryPath();
+    fileName = QFileInfo(service->entryPath()).fileName();
     lib = service->library();
     keywords = service->keywords();
 }

@@ -1,6 +1,7 @@
 /*
     This file is part of the KDE Frameworks
     SPDX-FileCopyrightText: 2020 David Faure <faure@kde.org>
+    SPDX-FileCopyrightText: 2021 Harald Sitter <sitter@kde.org>
 
     SPDX-License-Identifier: LGPL-2.0-only OR LGPL-3.0-only OR LicenseRef-KDE-Accepted-LGPL
 */
@@ -53,11 +54,11 @@ void KCModuleInfoTest::testFakeKCM()
     QCOMPARE(info.pluginInfo().name(), QStringLiteral("Test"));
 
 #ifdef Q_OS_WIN
-    QCOMPARE(QFileInfo(info.library()).fileName(), QStringLiteral("jsonplugin.dll"));
-    QCOMPARE(QFileInfo(info.fileName()).fileName(), QStringLiteral("jsonplugin.dll"));
+    QCOMPARE(info.library(), QStringLiteral("jsonplugin.dll"));
+    QCOMPARE(info.fileName(), QStringLiteral("jsonplugin.dll"));
 #else
-    QCOMPARE(QFileInfo(info.library()).fileName(), QStringLiteral("jsonplugin.so"));
-    QCOMPARE(QFileInfo(info.fileName()).fileName(), QStringLiteral("jsonplugin.so"));
+    QCOMPARE(info.library(), QStringLiteral("jsonplugin.so"));
+    QCOMPARE(info.fileName(), QStringLiteral("jsonplugin.so"));
 #endif
 
     QCOMPARE(info.icon(), QStringLiteral("view-pim-mail"));
@@ -78,8 +79,8 @@ void KCModuleInfoTest::testDesktopFileKCM()
     QVERIFY(info.isValid());
     QVERIFY(info.service());
     QVERIFY(!info.pluginInfo().isValid());
-    QCOMPARE(QFileInfo(info.library()).fileName(), QStringLiteral("kcm_kded"));
-    QCOMPARE(QFileInfo(info.fileName()).fileName(), QStringLiteral("kcmtest.desktop"));
+    QCOMPARE(info.library(), QStringLiteral("kcm_kded"));
+    QCOMPARE(info.fileName(), QStringLiteral("kcmtest.desktop"));
     QCOMPARE(info.icon(), QStringLiteral("preferences-system-session-services"));
     QCOMPARE(info.comment(), QStringLiteral("Configure background services"));
     QCOMPARE(info.docPath(), QStringLiteral("kcontrol/kded/index.html"));
