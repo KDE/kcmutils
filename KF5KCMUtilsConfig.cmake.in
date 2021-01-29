@@ -1,8 +1,8 @@
 @PACKAGE_INIT@
 
 include(CMakeFindDependencyMacro)
-find_dependency(KF5ConfigWidgets  "@KF5_DEP_VERSION@")
-find_dependency(KF5Service        "@KF5_DEP_VERSION@")
+find_dependency(KF5ConfigWidgets  "@KF_DEP_VERSION@")
+find_dependency(KF5Service        "@KF_DEP_VERSION@")
 
 @PACKAGE_SETUP_AUTOMOC_VARIABLES@
 
