@@ -82,8 +82,28 @@ void KCMultiDialogPrivate::_k_slotCurrentPageChanged(KPageWidgetItem *current, K
         }
     }
 
-    // Remove margins for the buttonbox; KPageDialog handles that already
-    q->buttonBox()->setContentsMargins(0, 0, 0, 0);
+    // Delete global margins and spacing, since we want the contents to
+    // be able to touch the edges of the window
+    q->layout()->setContentsMargins(0,0,0,0);
+
+    const KPageWidget *pageWidget = q->pageWidget();
+    pageWidget->layout()->setSpacing(0);
+
+    // Then, we set the margins for the title header and the buttonBox footer
+    const QStyle *style = q->style();
+    const QMargins layoutMargins = QMargins(
+        style->pixelMetric(QStyle::PM_LayoutLeftMargin),
+        style->pixelMetric(QStyle::PM_LayoutTopMargin),
+        style->pixelMetric(QStyle::PM_LayoutRightMargin),
+        style->pixelMetric(QStyle::PM_LayoutBottomMargin)
+    );
+
+    if (pageWidget->pageHeader()) {
+        pageWidget->pageHeader()->setContentsMargins(layoutMargins);
+    }
+
+    // Do not set buttonBox's top margin as that space will be covered by the content's bottom margin
+    q->buttonBox()->setContentsMargins(layoutMargins.left(), 0, layoutMargins.right(), layoutMargins.bottom());
 
     q->blockSignals(true);
     q->setCurrentPage(previous);

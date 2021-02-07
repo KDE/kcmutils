@@ -209,8 +209,9 @@ Kirigami.ApplicationItem {
         connect(d->pageRow, SIGNAL(currentIndexChanged()), this, SLOT(syncCurrentIndex()));
 
     }
-    
+
     layout->addWidget(d->quickWidget);
+    layout->setContentsMargins(0, 0, 0, 0);
 }
 
 KCModuleQml::~KCModuleQml()
@@ -250,7 +251,7 @@ void KCModuleQml::focusInEvent(QFocusEvent *event)
     } else if (event->reason() == Qt::BacktabFocusReason) {
         d->rootPlaceHolder->nextItemInFocusChain(false)->forceActiveFocus(Qt::BacktabFocusReason);
     }
-    
+
 }
 
 QSize KCModuleQml::sizeHint() const
