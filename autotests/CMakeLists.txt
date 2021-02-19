@@ -8,3 +8,4 @@ ecm_add_tests(
 
 add_subdirectory(jsonplugin)
 add_subdirectory(desktopfilekcm)
+add_subdirectory(module_data_codegen)
