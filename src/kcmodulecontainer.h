@@ -142,6 +142,7 @@ private:
  *
  * @deprecated since 5.66, no known users.
  */
+// clang-format off
 #define KCMODULECONTAINER(modules, factoryName) \
     class KCModuleContainer##factoryName : public KCModuleContainer \
     { \
@@ -154,7 +155,7 @@ private:
     K_PLUGIN_FACTORY(KCModuleContainer##factoryName##Factory, \
                      registerPlugin<KCModuleContainer#factoryName>(); \
                     )
-
+// clang-format on
 #endif
 #endif // KCMODULECONTAINER_H
 

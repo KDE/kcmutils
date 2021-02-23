@@ -50,7 +50,7 @@ enum ErrorReporting {
     /**
      * does both Inline and Dialog
      */
-    Both = 3
+    Both = 3,
 };
 
 /**

@@ -271,9 +271,9 @@ void KCMultiDialogPrivate::init()
     q->connect(buttonBox->button(QDialogButtonBox::Reset), &QAbstractButton::clicked, q, &KCMultiDialog::slotUser1Clicked);
 
     q->setButtonBox(buttonBox);
-
-    q->connect(q, SIGNAL(currentPageChanged(KPageWidgetItem*,KPageWidgetItem*)),
-               SLOT(_k_slotCurrentPageChanged(KPageWidgetItem*,KPageWidgetItem*)));
+    // clang-format off
+    q->connect(q, SIGNAL(currentPageChanged(KPageWidgetItem*,KPageWidgetItem*)), SLOT(_k_slotCurrentPageChanged(KPageWidgetItem*,KPageWidgetItem*)));
+    // clang-format off
 }
 
 KCMultiDialog::KCMultiDialog(QWidget *parent)
@@ -560,8 +560,10 @@ KPageWidgetItem *KCMultiDialog::addModule(const KCModuleInfo &moduleInfo,
         }
     }
 
+    // clang-format off
     connect(kcm, SIGNAL(changed(bool)), this, SLOT(_k_clientChanged()));
     connect(kcm->realModule(), SIGNAL(rootOnlyMessageChanged(bool,QString)), this, SLOT(_k_updateHeader(bool,QString)));
+    // clang-format on
 
     if (d->modules.count() == 1 || updateCurrentPage) {
         setCurrentPage(item);

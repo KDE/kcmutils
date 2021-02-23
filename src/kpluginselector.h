@@ -51,7 +51,7 @@ class KCMUTILS_EXPORT KPluginSelector
 public:
     enum PluginLoadMethod {
         ReadConfigFile = 0,
-        IgnoreConfigFile
+        IgnoreConfigFile,
     };
 
     /**

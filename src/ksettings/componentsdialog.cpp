@@ -83,8 +83,9 @@ ComponentsDialog::ComponentsDialog(QWidget *parent, const char *name)
             &ComponentsDialog::executed);
     connect(d->listview, &QTreeWidget::itemActivated, this,
             &ComponentsDialog::executed);
-    connect(d->listview, SIGNAL(itemSelectionChanged(QTreeWidgetItem*,int)), this,
-            SLOT(executed(QTreeWidgetItem*,int)));
+    // clang-format off
+    connect(d->listview, SIGNAL(itemSelectionChanged(QTreeWidgetItem*,int)), this, SLOT(executed(QTreeWidgetItem*,int)));
+    // clang-format ob
 }
 
 ComponentsDialog::~ComponentsDialog()

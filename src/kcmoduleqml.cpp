@@ -126,6 +126,7 @@ KCModuleQml::KCModuleQml(std::unique_ptr<KQuickAddons::ConfigModule> configModul
     //because its parameters are QQmlV4Function which is not public
     //the managers of onEnter/ReturnPressed are a workaround of
     //Qt bug https://bugreports.qt.io/browse/QTBUG-70934
+    // clang-format off
     component->setData(QByteArrayLiteral(R"(
 import QtQuick 2.3
 import QtQuick.Window 2.2
@@ -171,6 +172,7 @@ Kirigami.ApplicationItem {
     }
 }
     )"), QUrl());
+    // clang-format on
 
     d->rootPlaceHolder = qobject_cast<QQuickItem *>(component->create());
     if (!d->rootPlaceHolder) {
