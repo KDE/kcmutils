@@ -26,6 +26,8 @@ include(CMakePackageConfigHelpers)
 include(ECMAddQch)
 include(ECMQtDeclareLoggingCategory)
 include(ECMSetupQtPluginMacroNames)
+include(KDEClangFormat)
+include(KDEGitCommitHooks)
 
 option(BUILD_QCH "Build API documentation in QCH format (for e.g. Qt Assistant, Qt Creator & KDevelop)" OFF)
 add_feature_info(QCH ${BUILD_QCH} "API documentation in QCH format (for e.g. Qt Assistant, Qt Creator & KDevelop)")
@@ -108,3 +110,7 @@ install(FILES
 )
 
 feature_summary(WHAT ALL FATAL_ON_MISSING_REQUIRED_PACKAGES)
+
+file(GLOB_RECURSE ALL_CLANG_FORMAT_SOURCE_FILES *.cpp *.h)
+kde_clang_format(${ALL_CLANG_FORMAT_SOURCE_FILES})
+kde_configure_git_pre_commit_hook(CHECKS CLANG_FORMAT)
