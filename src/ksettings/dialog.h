@@ -8,13 +8,14 @@
 #ifndef KSETTINGS_DIALOG_H
 #define KSETTINGS_DIALOG_H
 
-#include <kcmutils_export.h>
 #include <kcmultidialog.h>
+#include <kcmutils_export.h>
 
-#include <KService>
 #include <KPluginInfo>
+#include <KService>
 
-template<class T> class QList;
+template<class T>
+class QList;
 class KPluginInfo;
 class KCModuleInfo;
 
@@ -161,7 +162,7 @@ Q_SIGNALS:
     void pluginSelectionChanged();
 
 private:
-    //Q_PRIVATE_SLOT(d_func(), void _k_configureTree())
+    // Q_PRIVATE_SLOT(d_func(), void _k_configureTree())
     Q_PRIVATE_SLOT(d_func(), void _k_updateEnabledState(bool))
     Q_PRIVATE_SLOT(d_func(), void _k_syncConfiguration())
     Q_PRIVATE_SLOT(d_func(), void _k_reparseConfiguration(const QByteArray &))

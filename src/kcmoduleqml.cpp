@@ -9,25 +9,25 @@
 
 #include <kcmutils_debug.h>
 
-#include <QVBoxLayout>
-#include <QQuickWindow>
 #include <QQuickItem>
 #include <QQuickWidget>
+#include <QQuickWindow>
+#include <QVBoxLayout>
 
-#include <kdeclarative/kdeclarative.h>
-#include <kquickaddons/configmodule.h>
-#include <kdeclarative/qmlobjectsharedengine.h>
 #include <KAboutData>
 #include <KPackage/Package>
 #include <KPackage/PackageLoader>
 #include <KPageWidget>
+#include <kdeclarative/kdeclarative.h>
+#include <kdeclarative/qmlobjectsharedengine.h>
+#include <kquickaddons/configmodule.h>
 
 class KCModuleQmlPrivate
 {
 public:
     KCModuleQmlPrivate(std::unique_ptr<KQuickAddons::ConfigModule> cm, KCModuleQml *q)
-        : q(q),
-          configModule(std::move(cm))
+        : q(q)
+        , configModule(std::move(cm))
     {
     }
 
@@ -53,15 +53,13 @@ public:
     KDeclarative::QmlObjectSharedEngine *qmlObject = nullptr;
 };
 
-KCModuleQml::KCModuleQml(std::unique_ptr<KQuickAddons::ConfigModule> configModule, QWidget* parent, const QVariantList& args)
-    : KCModule(parent, args),
-      d(new KCModuleQmlPrivate(std::move(configModule), this))
+KCModuleQml::KCModuleQml(std::unique_ptr<KQuickAddons::ConfigModule> configModule, QWidget *parent, const QVariantList &args)
+    : KCModule(parent, args)
+    , d(new KCModuleQmlPrivate(std::move(configModule), this))
 {
-
-    connect(d->configModule.get(), &KQuickAddons::ConfigModule::quickHelpChanged,
-            this, &KCModuleQml::quickHelpChanged);
-    //HACK:Here is important those two enums keep having the exact same values
-    //but the kdeclarative one can't use the KCModule's enum
+    connect(d->configModule.get(), &KQuickAddons::ConfigModule::quickHelpChanged, this, &KCModuleQml::quickHelpChanged);
+    // HACK:Here is important those two enums keep having the exact same values
+    // but the kdeclarative one can't use the KCModule's enum
     setButtons((KCModule::Buttons)(int)d->configModule->buttons());
     connect(d->configModule.get(), &KQuickAddons::ConfigModule::buttonsChanged, this, [=] {
         setButtons((KCModule::Buttons)(int)d->configModule->buttons());
@@ -101,14 +99,12 @@ KCModuleQml::KCModuleQml(std::unique_ptr<KQuickAddons::ConfigModule> configModul
 #endif
 
     connect(this, &KCModule::defaultsIndicatorsVisibleChanged, d->configModule.get(), &KQuickAddons::ConfigModule::setDefaultsIndicatorsVisible);
-    //KCModule takes ownership of the kabout data so we need to force a copy
+    // KCModule takes ownership of the kabout data so we need to force a copy
     setAboutData(new KAboutData(*d->configModule->aboutData()));
     setFocusPolicy(Qt::StrongFocus);
 
-
-
-    //Build the UI
-    QVBoxLayout* layout = new QVBoxLayout(this);
+    // Build the UI
+    QVBoxLayout *layout = new QVBoxLayout(this);
     layout->setContentsMargins(0, 0, 0, 0);
 
     d->qmlObject = new KDeclarative::QmlObjectSharedEngine(this);
@@ -120,12 +116,12 @@ KCModuleQml::KCModuleQml(std::unique_ptr<KQuickAddons::ConfigModule> configModul
     d->quickWindow->setColor(Qt::transparent);
 
     QQmlComponent *component = new QQmlComponent(d->qmlObject->engine(), this);
-    //this has activeFocusOnTab to notice when the navigation wraps
-    //around, so when we need to go outside and inside
-    //pushPage/popPage are needed as push of StackView can't be directly invoked from c++
-    //because its parameters are QQmlV4Function which is not public
-    //the managers of onEnter/ReturnPressed are a workaround of
-    //Qt bug https://bugreports.qt.io/browse/QTBUG-70934
+    // this has activeFocusOnTab to notice when the navigation wraps
+    // around, so when we need to go outside and inside
+    // pushPage/popPage are needed as push of StackView can't be directly invoked from c++
+    // because its parameters are QQmlV4Function which is not public
+    // the managers of onEnter/ReturnPressed are a workaround of
+    // Qt bug https://bugreports.qt.io/browse/QTBUG-70934
     // clang-format off
     component->setData(QByteArrayLiteral(R"(
 import QtQuick 2.3
@@ -185,31 +181,42 @@ Kirigami.ApplicationItem {
 
     d->pageRow = d->rootPlaceHolder->property("pageStack").value<QQuickItem *>();
     if (d->pageRow) {
-        QMetaObject::invokeMethod(d->pageRow, "push", Qt::DirectConnection, Q_ARG(QVariant, QVariant::fromValue(d->configModule->mainUi())), Q_ARG(QVariant, QVariant()));
+        QMetaObject::invokeMethod(d->pageRow,
+                                  "push",
+                                  Qt::DirectConnection,
+                                  Q_ARG(QVariant, QVariant::fromValue(d->configModule->mainUi())),
+                                  Q_ARG(QVariant, QVariant()));
 
-        for (int i = 0 ; i < d->configModule->depth() -1 ; i++) {
-                QMetaObject::invokeMethod(d->pageRow, "push", Qt::DirectConnection, Q_ARG(QVariant, QVariant::fromValue(d->configModule->subPage(i))), Q_ARG(QVariant, QVariant()));
+        for (int i = 0; i < d->configModule->depth() - 1; i++) {
+            QMetaObject::invokeMethod(d->pageRow,
+                                      "push",
+                                      Qt::DirectConnection,
+                                      Q_ARG(QVariant, QVariant::fromValue(d->configModule->subPage(i))),
+                                      Q_ARG(QVariant, QVariant()));
         }
 
         connect(d->configModule.get(), &KQuickAddons::ConfigModule::pagePushed, this, [this](QQuickItem *page) {
-                QMetaObject::invokeMethod(d->pageRow, "push", Qt::DirectConnection, Q_ARG(QVariant, QVariant::fromValue(page)), Q_ARG(QVariant, QVariant()));
-            }
-        );
+            QMetaObject::invokeMethod(d->pageRow, "push", Qt::DirectConnection, Q_ARG(QVariant, QVariant::fromValue(page)), Q_ARG(QVariant, QVariant()));
+        });
         connect(d->configModule.get(), &KQuickAddons::ConfigModule::pageRemoved, this, [this]() {
-                QMetaObject::invokeMethod(d->pageRow, "pop", Qt::DirectConnection,  Q_ARG(QVariant, QVariant()));
-            }
-        );
+            QMetaObject::invokeMethod(d->pageRow, "pop", Qt::DirectConnection, Q_ARG(QVariant, QVariant()));
+        });
         connect(d->configModule.get(), &KQuickAddons::ConfigModule::currentIndexChanged, this, [this]() {
             d->pageRow->setProperty("currentIndex", d->configModule->currentIndex());
-            }
-        );
-        connect(d->configModule.get(), &KQuickAddons::ConfigModule::passiveNotificationRequested, this, [this](const QString &message, const QVariant &timeout, const QString &actionText, const QJSValue &callBack) {
-                d->rootPlaceHolder->metaObject()->invokeMethod(d->rootPlaceHolder, "showPassiveNotification", Q_ARG(QVariant, message), Q_ARG(QVariant, timeout), Q_ARG(QVariant, actionText), Q_ARG(QVariant, QVariant::fromValue(callBack)));
-            }
-        );
-        //New syntax cannot be used to connect to QML types
+        });
+        connect(d->configModule.get(),
+                &KQuickAddons::ConfigModule::passiveNotificationRequested,
+                this,
+                [this](const QString &message, const QVariant &timeout, const QString &actionText, const QJSValue &callBack) {
+                    d->rootPlaceHolder->metaObject()->invokeMethod(d->rootPlaceHolder,
+                                                                   "showPassiveNotification",
+                                                                   Q_ARG(QVariant, message),
+                                                                   Q_ARG(QVariant, timeout),
+                                                                   Q_ARG(QVariant, actionText),
+                                                                   Q_ARG(QVariant, QVariant::fromValue(callBack)));
+                });
+        // New syntax cannot be used to connect to QML types
         connect(d->pageRow, SIGNAL(currentIndexChanged()), this, SLOT(syncCurrentIndex()));
-
     }
 
     layout->addWidget(d->quickWidget);
@@ -221,17 +228,17 @@ KCModuleQml::~KCModuleQml()
     delete d;
 }
 
-bool KCModuleQml::eventFilter(QObject* watched, QEvent* event)
+bool KCModuleQml::eventFilter(QObject *watched, QEvent *event)
 {
     if (watched == d->rootPlaceHolder && event->type() == QEvent::FocusIn) {
-        auto focusEvent = static_cast<QFocusEvent*>(event);
+        auto focusEvent = static_cast<QFocusEvent *>(event);
         if (focusEvent->reason() == Qt::TabFocusReason) {
             QWidget *w = d->quickWidget->nextInFocusChain();
-               while (!w->isEnabled() || !(w->focusPolicy() & Qt::TabFocus)) {
-                   w = w->nextInFocusChain();
-                }
-                w->setFocus(Qt::TabFocusReason);        //allow tab navigation inside the qquickwidget
-                return true;
+            while (!w->isEnabled() || !(w->focusPolicy() & Qt::TabFocus)) {
+                w = w->nextInFocusChain();
+            }
+            w->setFocus(Qt::TabFocusReason); // allow tab navigation inside the qquickwidget
+            return true;
         } else if (focusEvent->reason() == Qt::BacktabFocusReason) {
             QWidget *w = d->quickWidget->previousInFocusChain();
             while (!w->isEnabled() || !(w->focusPolicy() & Qt::TabFocus)) {
@@ -253,7 +260,6 @@ void KCModuleQml::focusInEvent(QFocusEvent *event)
     } else if (event->reason() == Qt::BacktabFocusReason) {
         d->rootPlaceHolder->nextItemInFocusChain(false)->forceActiveFocus(Qt::BacktabFocusReason);
     }
-
 }
 
 QSize KCModuleQml::sizeHint() const

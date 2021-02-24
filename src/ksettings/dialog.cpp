@@ -11,20 +11,20 @@
 #include "dispatcher.h"
 #include <kcmutils_debug.h>
 
+#include <KConfig>
 #include <KLocalizedString>
+#include <KPluginMetaData>
 #include <KServiceGroup>
 #include <KServiceTypeTrader>
-#include <KConfig>
-#include <KPluginMetaData>
 
-#include <QDir>
 #include <QCheckBox>
-#include <QDialogButtonBox>
-#include <QPushButton>
-#include <QVBoxLayout>
-#include <QStack>
 #include <QCoreApplication>
+#include <QDialogButtonBox>
+#include <QDir>
 #include <QLabel>
+#include <QPushButton>
+#include <QStack>
+#include <QVBoxLayout>
 
 uint qHash(const KCModuleInfo &info)
 {
@@ -33,7 +33,6 @@ uint qHash(const KCModuleInfo &info)
 
 namespace KSettings
 {
-
 Dialog::Dialog(QWidget *parent)
     : KCMultiDialog(*new DialogPrivate(this), new KPageWidget, parent)
 {
@@ -75,8 +74,7 @@ void Dialog::setComponentBlacklist(const QStringList &blacklist)
 void Dialog::addPluginInfos(const KPluginInfo::List &plugininfos)
 {
     Q_D(Dialog);
-    for (KPluginInfo::List::ConstIterator it = plugininfos.begin();
-            it != plugininfos.end(); ++it) {
+    for (KPluginInfo::List::ConstIterator it = plugininfos.begin(); it != plugininfos.end(); ++it) {
         d->registeredComponents.append(it->pluginName());
         const auto lst = it->kcmServices();
         if (lst.isEmpty()) {
@@ -123,33 +121,35 @@ void Dialog::showEvent(QShowEvent *)
 }
 
 DialogPrivate::DialogPrivate(Dialog *parent)
-    : KCMultiDialogPrivate(parent), staticlistview(true), firstshow(true), pluginStateDirty(0)
+    : KCMultiDialogPrivate(parent)
+    , staticlistview(true)
+    , firstshow(true)
+    , pluginStateDirty(0)
 {
 }
 
 QSet<KCModuleInfo> DialogPrivate::instanceServices()
 {
-    //qDebug() ;
+    // qDebug() ;
     QString componentName = QCoreApplication::instance()->applicationName();
     registeredComponents.append(componentName);
-    //qDebug() << "calling KServiceGroup::childGroup( " << componentName << " )";
+    // qDebug() << "calling KServiceGroup::childGroup( " << componentName << " )";
     KServiceGroup::Ptr service = KServiceGroup::childGroup(componentName);
 
     QSet<KCModuleInfo> ret;
 
     if (service && service->isValid()) {
-        //qDebug() << "call was successful";
+        // qDebug() << "call was successful";
         const KServiceGroup::List list = service->entries();
-        for (KServiceGroup::List::ConstIterator it = list.begin();
-                it != list.end(); ++it) {
+        for (KServiceGroup::List::ConstIterator it = list.begin(); it != list.end(); ++it) {
             KSycocaEntry::Ptr p = (*it);
             if (p->isType(KST_KService)) {
-                //qDebug() << "found service";
-                const KService::Ptr service(static_cast<KService*>(p.data()));
+                // qDebug() << "found service";
+                const KService::Ptr service(static_cast<KService *>(p.data()));
                 ret << KCModuleInfo(service);
             } else
                 qCWarning(KCMUTILS_LOG) << "KServiceGroup::childGroup returned"
-                           " something else than a KService";
+                                           " something else than a KService";
         }
     }
 
@@ -162,7 +162,7 @@ QSet<KCModuleInfo> DialogPrivate::parentComponentsServices(const QStringList &kc
     QString constraint = kcdparents.join(QLatin1String("' in [X-KDE-ParentComponents]) or ('"));
     constraint = QStringLiteral("('") + constraint + QStringLiteral("' in [X-KDE-ParentComponents])");
 
-    //qDebug() << "constraint = " << constraint;
+    // qDebug() << "constraint = " << constraint;
     const QList<KService::Ptr> services = KServiceTypeTrader::self()->query(QStringLiteral("KCModule"), constraint);
     QSet<KCModuleInfo> ret;
     ret.reserve(services.count());
@@ -177,12 +177,10 @@ bool DialogPrivate::isPluginForKCMEnabled(const KCModuleInfo *moduleinfo, KPlugi
     // if the user of this class requested to hide disabled modules
     // we check whether it should be enabled or not
     bool enabled = true;
-    //qDebug() << "check whether the '" << moduleinfo->moduleName() << "' KCM should be shown";
+    // qDebug() << "check whether the '" << moduleinfo->moduleName() << "' KCM should be shown";
     // for all parent components
-    const QStringList parentComponents = moduleinfo->property(
-            QStringLiteral("X-KDE-ParentComponents")).toStringList();
-    for (QStringList::ConstIterator pcit = parentComponents.begin();
-            pcit != parentComponents.end(); ++pcit) {
+    const QStringList parentComponents = moduleinfo->property(QStringLiteral("X-KDE-ParentComponents")).toStringList();
+    for (QStringList::ConstIterator pcit = parentComponents.begin(); pcit != parentComponents.end(); ++pcit) {
         // if the parentComponent is not registered ignore it
         if (!registeredComponents.contains(*pcit)) {
             continue;
@@ -195,7 +193,7 @@ bool DialogPrivate::isPluginForKCMEnabled(const KCModuleInfo *moduleinfo, KPlugi
             // it is a plugin: we check whether the plugin is enabled
             pinfo.load();
             enabled = pinfo.isPluginEnabled();
-            //qDebug() << "parent " << *pcit << " is " << (enabled ? "enabled" : "disabled");
+            // qDebug() << "parent " << *pcit << " is " << (enabled ? "enabled" : "disabled");
         }
         // if it is enabled we're done for this KCModuleInfo
         if (enabled) {
@@ -210,9 +208,7 @@ bool DialogPrivate::isPluginImmutable(const KPluginInfo &pinfo) const
     return pinfo.property(QStringLiteral("X-KDE-PluginInfo-Immutable")).toBool();
 }
 
-KPageWidgetItem *DialogPrivate::createPageItem(KPageWidgetItem *parentItem,
-        const QString &name, const QString &comment,
-        const QString &iconName, int weight)
+KPageWidgetItem *DialogPrivate::createPageItem(KPageWidgetItem *parentItem, const QString &name, const QString &comment, const QString &iconName, int weight)
 {
     Q_Q(Dialog);
     QWidget *page = new QWidget(q);
@@ -284,8 +280,8 @@ void DialogPrivate::parseGroupFile(const QString &filename)
 
         const QString parentId = conf.readEntry("Parent");
         KPageWidgetItem *parentItem = pageItemForGroupId.value(parentId);
-        KPageWidgetItem *item = createPageItem(parentItem, conf.readEntry("Name"), conf.readEntry("Comment"),
-                                               conf.readEntry("Icon"), conf.readEntry("Weight", 100));
+        KPageWidgetItem *item =
+            createPageItem(parentItem, conf.readEntry("Name"), conf.readEntry("Comment"), conf.readEntry("Icon"), conf.readEntry("Weight", 100));
         pageItemForGroupId.insert(group, item);
     }
 }
@@ -295,12 +291,12 @@ void DialogPrivate::createDialogFromServices()
     Q_Q(Dialog);
     // read .setdlg files   (eg: share/kapp/kapp.setdlg)
     const QString setdlgpath = QStandardPaths::locate(QStandardPaths::AppDataLocation /*includes appname, too*/,
-                         QCoreApplication::instance()->applicationName() + QStringLiteral(".setdlg"));
+                                                      QCoreApplication::instance()->applicationName() + QStringLiteral(".setdlg"));
     if (!setdlgpath.isEmpty()) {
         parseGroupFile(setdlgpath);
     }
 
-    const QStringList dirs = QStandardPaths::locateAll(QStandardPaths::AppDataLocation, QStringLiteral("ksettingsdialog"),  QStandardPaths::LocateDirectory);
+    const QStringList dirs = QStandardPaths::locateAll(QStandardPaths::AppDataLocation, QStringLiteral("ksettingsdialog"), QStandardPaths::LocateDirectory);
     QMap<QString /*fileName*/, QString /*fullPath*/> fileMap;
     for (const QString &dir : dirs) {
         const QStringList fileNames = QDir(dir).entryList(QStringList() << QStringLiteral("*.setdlg"));
@@ -314,7 +310,7 @@ void DialogPrivate::createDialogFromServices()
         parseGroupFile(it.value());
     }
 
-    //qDebug() << kcmInfos.count();
+    // qDebug() << kcmInfos.count();
     for (const KCModuleInfo &info : qAsConst(kcmInfos)) {
         const QStringList parentComponents = info.property(QStringLiteral("X-KDE-ParentComponents")).toStringList();
         bool blacklisted = false;
@@ -361,9 +357,8 @@ void DialogPrivate::createDialogFromServices()
                     const KPluginInfo &plugin = pluginForItem.value(parent);
                     if (plugin.isValid()) {
                         if (plugin != pinfo) {
-                            qCCritical(KCMUTILS_LOG) << "A group contains more than one plugin: '"
-                                        << plugin.pluginName() << "' and '" << pinfo.pluginName()
-                                        << "'. Now it won't be possible to enable/disable the plugin.";
+                            qCCritical(KCMUTILS_LOG) << "A group contains more than one plugin: '" << plugin.pluginName() << "' and '" << pinfo.pluginName()
+                                                     << "'. Now it won't be possible to enable/disable the plugin.";
                             parent->setCheckable(false);
                             q->disconnect(parent, SIGNAL(toggled(bool)), q, SLOT(_k_updateEnabledState(bool)));
                         }
@@ -421,12 +416,11 @@ void DialogPrivate::createDialogFromServices()
     // KPluginSelector to only reset the current visible plugin KCM and not
     // touch the plugin selections.
     // I have no idea how to check that in KPluginSelector::load()...
-    //q->showButton(KDialog::User1, true);
+    // q->showButton(KDialog::User1, true);
 
     QObject::connect(q->button(QDialogButtonBox::Ok), SIGNAL(clicked()), q, SLOT(_k_syncConfiguration()));
     QObject::connect(q->button(QDialogButtonBox::Apply), SIGNAL(clicked()), q, SLOT(_k_syncConfiguration()));
-    QObject::connect(q, SIGNAL(configCommitted(QByteArray)), q,
-                     SLOT(_k_reparseConfiguration(QByteArray)));
+    QObject::connect(q, SIGNAL(configCommitted(QByteArray)), q, SLOT(_k_reparseConfiguration(QByteArray)));
 }
 
 void DialogPrivate::connectItemCheckBox(KPageWidgetItem *item, const KPluginInfo &pinfo, bool isEnabled)
@@ -520,18 +514,18 @@ void DialogPrivate::_k_updateEnabledState(bool enabled)
         _k_clientChanged();
     }
 
-    //qDebug() ;
+    // qDebug() ;
 
     QModelIndex firstborn = model->index(0, 0, index);
     if (firstborn.isValid()) {
-        //qDebug() << "iterating over children";
+        // qDebug() << "iterating over children";
         // change all children
         index = firstborn;
         QStack<QModelIndex> stack;
         while (index.isValid()) {
-            //qDebug() << index;
+            // qDebug() << index;
             KPageWidgetItem *item = model->item(index);
-            //qDebug() << "item->setEnabled(" << enabled << ')';
+            // qDebug() << "item->setEnabled(" << enabled << ')';
             item->setEnabled(enabled);
             firstborn = model->index(0, 0, index);
             if (firstborn.isValid()) {
@@ -548,7 +542,6 @@ void DialogPrivate::_k_updateEnabledState(bool enabled)
     }
 }
 
-} //namespace
+} // namespace
 
 #include "moc_dialog.cpp"
-

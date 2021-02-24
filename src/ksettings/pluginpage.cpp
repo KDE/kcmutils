@@ -12,8 +12,7 @@
 
 namespace KSettings
 {
-
-#if KCMUTILS_BUILD_DEPRECATED_SINCE(5,76)
+#if KCMUTILS_BUILD_DEPRECATED_SINCE(5, 76)
 
 class PluginPagePrivate
 {
@@ -27,14 +26,13 @@ public:
 };
 
 PluginPage::PluginPage(const KAboutData *aboutData, QWidget *parent, const QVariantList &args)
-    : KCModule(aboutData, parent, args),
-      d_ptr(new PluginPagePrivate)
+    : KCModule(aboutData, parent, args)
+    , d_ptr(new PluginPagePrivate)
 {
     Q_D(PluginPage);
     d->selwid = new KPluginSelector(this);
     connect(d->selwid, SIGNAL(changed(bool)), this, SIGNAL(changed(bool)));
-    connect(d->selwid, SIGNAL(configCommitted(QByteArray)), this,
-            SLOT(_k_reparseConfiguration(QByteArray)));
+    connect(d->selwid, SIGNAL(configCommitted(QByteArray)), this, SLOT(_k_reparseConfiguration(QByteArray)));
 }
 
 void PluginPagePrivate::_k_reparseConfiguration(const QByteArray &a)
@@ -69,6 +67,6 @@ void PluginPage::defaults()
 
 #endif
 
-} //namespace
+} // namespace
 
 #include "moc_pluginpage.cpp"

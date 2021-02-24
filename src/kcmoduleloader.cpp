@@ -17,11 +17,11 @@
 #include <QLibrary>
 #include <QVBoxLayout>
 
-#include <KPluginInfo>
-#include <KPluginLoader>
+#include <KAboutData>
 #include <KLocalizedString>
 #include <KMessageBox>
-#include <KAboutData>
+#include <KPluginInfo>
+#include <KPluginLoader>
 
 #include <KQuickAddons/ConfigModule>
 
@@ -64,13 +64,16 @@ KCModule *KCModuleLoader::loadModule(const KCModuleInfo &mod, ErrorReporting rep
 
     if (!mod.isValid()) {
         return reportError(report,
-                           i18n("The module %1 could not be found.",
-                                mod.moduleName()), i18n("<qt><p>The diagnosis is:<br />The desktop file %1 could not be found.</p></qt>", mod.fileName()), parent);
+                           i18n("The module %1 could not be found.", mod.moduleName()),
+                           i18n("<qt><p>The diagnosis is:<br />The desktop file %1 could not be found.</p></qt>", mod.fileName()),
+                           parent);
     }
     if (mod.service() && mod.service()->noDisplay()) {
-        return reportError(report, i18n("The module %1 is disabled.", mod.moduleName()),
-                           i18n("<qt><p>Either the hardware/software the module configures is not available or the module has been disabled by the administrator.</p></qt>"),
-                           parent);
+        return reportError(
+            report,
+            i18n("The module %1 is disabled.", mod.moduleName()),
+            i18n("<qt><p>Either the hardware/software the module configures is not available or the module has been disabled by the administrator.</p></qt>"),
+            parent);
     }
 
     if (!mod.library().isEmpty()) {
@@ -86,10 +89,11 @@ KCModule *KCModuleLoader::loadModule(const KCModuleInfo &mod, ErrorReporting rep
         KCModule *module = nullptr;
 
         KPluginLoader loader(KPluginLoader::findPlugin(QLatin1String("kcms/") + mod.library()));
-        KPluginFactory* factory = loader.factory();
+        KPluginFactory *factory = loader.factory();
         if (!factory) {
             // KF6 TODO: make this a warning, and remove mention of fallback
-            qCDebug(KCMUTILS_LOG) << "Couldn't load plugin" << QLatin1String("kcms/") + mod.library() << ":" << loader.errorString() << " -- falling back to old-style loading from desktop file";
+            qCDebug(KCMUTILS_LOG) << "Couldn't load plugin" << QLatin1String("kcms/") + mod.library() << ":" << loader.errorString()
+                                  << " -- falling back to old-style loading from desktop file";
         } else {
             std::unique_ptr<KQuickAddons::ConfigModule> cm(factory->create<KQuickAddons::ConfigModule>(nullptr, args2));
             if (!cm) {
@@ -110,7 +114,7 @@ KCModule *KCModuleLoader::loadModule(const KCModuleInfo &mod, ErrorReporting rep
         if (module) {
             return module;
         } else
-//#ifndef NDEBUG
+        //#ifndef NDEBUG
         {
             // KF6 TODO: remove this old compat block
             // get the create_ function
@@ -123,12 +127,13 @@ KCModule *KCModuleLoader::loadModule(const KCModuleInfo &mod, ErrorReporting rep
                 if (create) {
                     return create(parent, mod.handle().toLatin1().constData());
                 } else {
-                    qCWarning(KCMUTILS_LOG) << "This module has no valid entry symbol at all. The reason could be that it's still using K_EXPORT_COMPONENT_FACTORY with a custom X-KDE-FactoryName which is not supported anymore";
+                    qCWarning(KCMUTILS_LOG) << "This module has no valid entry symbol at all. The reason could be that it's still using "
+                                               "K_EXPORT_COMPONENT_FACTORY with a custom X-KDE-FactoryName which is not supported anymore";
                 }
                 lib.unload();
             }
         }
-//#endif // NDEBUG
+        //#endif // NDEBUG
         return reportError(report, error, QString(), parent);
     }
 
@@ -142,7 +147,8 @@ KCModule *KCModuleLoader::loadModule(const KCModuleInfo &mod, ErrorReporting rep
      */
     return reportError(report,
                        i18n("The module %1 is not a valid configuration module.", mod.moduleName()),
-                       i18n("<qt>The diagnosis is:<br />The desktop file %1 does not specify a library.</qt>", mod.fileName()), parent);
+                       i18n("<qt>The diagnosis is:<br />The desktop file %1 does not specify a library.</qt>", mod.fileName()),
+                       parent);
 }
 
 void KCModuleLoader::unloadModule(const KCModuleInfo &mod)
@@ -161,7 +167,7 @@ bool KCModuleLoader::isDefaults(const KCModuleInfo &mod, const QStringList &args
     QVariantList args2(args.cbegin(), args.cend());
 
     KPluginLoader loader(KPluginLoader::findPlugin(QLatin1String("kcms/") + mod.service()->library()));
-    KPluginFactory* factory = loader.factory();
+    KPluginFactory *factory = loader.factory();
     if (factory) {
         std::unique_ptr<KCModuleData> probe(factory->create<KCModuleData>(nullptr, args2));
         if (probe) {
@@ -177,17 +183,16 @@ bool KCModuleLoader::isDefaults(const KCModuleInfo &mod, const QStringList &args
     return true;
 }
 
-
-KCModule *KCModuleLoader::reportError(ErrorReporting report, const QString &text,
-                                      const QString &details, QWidget *parent)
+KCModule *KCModuleLoader::reportError(ErrorReporting report, const QString &text, const QString &details, QWidget *parent)
 {
     QString realDetails = details;
     if (realDetails.isNull()) {
-        realDetails = i18n("<qt><p>Possible reasons:<ul><li>An error occurred during your last "
-                           "system upgrade, leaving an orphaned control module behind</li><li>You have old third party "
-                           "modules lying around.</li></ul></p><p>Check these points carefully and try to remove "
-                           "the module mentioned in the error message. If this fails, consider contacting "
-                           "your distributor or packager.</p></qt>");
+        realDetails = i18n(
+            "<qt><p>Possible reasons:<ul><li>An error occurred during your last "
+            "system upgrade, leaving an orphaned control module behind</li><li>You have old third party "
+            "modules lying around.</li></ul></p><p>Check these points carefully and try to remove "
+            "the module mentioned in the error message. If this fails, consider contacting "
+            "your distributor or packager.</p></qt>");
     }
     if (report & KCModuleLoader::Dialog) {
         KMessageBox::detailedError(parent, text, realDetails);
@@ -197,4 +202,3 @@ KCModule *KCModuleLoader::reportError(ErrorReporting report, const QString &text
     }
     return nullptr;
 }
-

@@ -14,7 +14,7 @@ class QString;
 /*
  * Simple D-Bus object to return the KGlobal::caption()
  */
-class KSettingsWidgetAdaptor: public QObject
+class KSettingsWidgetAdaptor : public QObject
 {
     Q_OBJECT
     Q_CLASSINFO("D-Bus Interface", "org.kde.internal.KSettingsWidget")

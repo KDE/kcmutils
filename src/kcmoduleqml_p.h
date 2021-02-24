@@ -13,8 +13,9 @@
 class QQuickItem;
 class KCModuleQmlPrivate;
 
-namespace KQuickAddons {
-    class ConfigModule;
+namespace KQuickAddons
+{
+class ConfigModule;
 }
 
 class KCModuleQml : public KCModule
@@ -22,7 +23,7 @@ class KCModuleQml : public KCModule
     Q_OBJECT
 
 public:
-    KCModuleQml(std::unique_ptr<KQuickAddons::ConfigModule> configModule, QWidget* parent, const QVariantList& args);
+    KCModuleQml(std::unique_ptr<KQuickAddons::ConfigModule> configModule, QWidget *parent, const QVariantList &args);
     ~KCModuleQml() override;
 
     QString quickHelp() const override;
@@ -36,7 +37,7 @@ public Q_SLOTS:
 protected:
     void focusInEvent(QFocusEvent *event) override;
     QSize sizeHint() const override;
-    bool eventFilter(QObject* watched, QEvent* event) override;
+    bool eventFilter(QObject *watched, QEvent *event) override;
 
 private:
     KCModuleQmlPrivate *const d;

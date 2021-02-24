@@ -20,11 +20,14 @@ class KCMultiDialogPrivate
     Q_DECLARE_PUBLIC(KCMultiDialog)
 protected:
     KCMultiDialogPrivate(KCMultiDialog *parent)
-        : currentModule(nullptr), q_ptr(parent)
+        : currentModule(nullptr)
+        , q_ptr(parent)
     {
     }
 
-    virtual ~KCMultiDialogPrivate() {}
+    virtual ~KCMultiDialogPrivate()
+    {
+    }
 
     KCModuleProxy *currentModule;
 
@@ -43,6 +46,7 @@ protected:
     void _k_updateHeader(bool use, const QString &message);
 
     KCMultiDialog *q_ptr;
+
 private:
     void init();
     void apply();

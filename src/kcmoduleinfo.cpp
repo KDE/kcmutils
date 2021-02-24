@@ -16,8 +16,8 @@
 
 #include <KDesktopFile>
 
-#include <KPluginInfo>
 #include <KLocalizedString>
+#include <KPluginInfo>
 
 class Q_DECL_HIDDEN KCModuleInfo::Private
 {
@@ -27,9 +27,9 @@ public:
     Private(const KService::Ptr &);
 
     QStringList keywords;
-    QString     name, icon, lib, handle, fileName, doc, comment;
-    bool        allLoaded = false;
-    int         weight = 100;
+    QString name, icon, lib, handle, fileName, doc, comment;
+    bool allLoaded = false;
+    int weight = 100;
 
     // For real C++ plugins
     KPluginInfo pluginInfo;
@@ -67,9 +67,9 @@ KCModuleInfo::Private::Private(const KPluginInfo &pluginInfo)
 }
 
 KCModuleInfo::Private::Private(const KService::Ptr &service)
-    : allLoaded(false),
-      pluginInfo(),
-      service(service)
+    : allLoaded(false)
+    , pluginInfo()
+    , service(service)
 {
     if (!service) {
         return;
@@ -122,7 +122,7 @@ bool KCModuleInfo::operator==(const KCModuleInfo &rhs) const
 
 bool KCModuleInfo::operator!=(const KCModuleInfo &rhs) const
 {
-    return ! operator==(rhs);
+    return !operator==(rhs);
 }
 
 KCModuleInfo::~KCModuleInfo()
@@ -197,11 +197,11 @@ KService::Ptr KCModuleInfo::service() const
     if (!d->pluginInfo.isValid()) {
         return {};
     }
-QT_WARNING_PUSH
-QT_WARNING_DISABLE_CLANG("-Wdeprecated-declarations")
-QT_WARNING_DISABLE_GCC("-Wdeprecated-declarations")
+    QT_WARNING_PUSH
+    QT_WARNING_DISABLE_CLANG("-Wdeprecated-declarations")
+    QT_WARNING_DISABLE_GCC("-Wdeprecated-declarations")
     return d->pluginInfo.service();
-QT_WARNING_POP
+    QT_WARNING_POP
 }
 
 KPluginInfo KCModuleInfo::pluginInfo() const
@@ -259,4 +259,3 @@ QVariant KCModuleInfo::property(const QString &key) const
         return d->pluginInfo.property(key);
     }
 }
-

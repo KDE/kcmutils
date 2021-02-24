@@ -63,8 +63,7 @@ public:
      * @param args This is used in the implementation and is internal.
      * Use the default.
      */
-    explicit KCModuleProxy(const KCModuleInfo &info, QWidget *parent = nullptr,
-                           const QStringList &args = QStringList());
+    explicit KCModuleProxy(const KCModuleInfo &info, QWidget *parent = nullptr, const QStringList &args = QStringList());
 
     /**
      * Constructs a KCModuleProxy from a module's service name, which is
@@ -76,8 +75,7 @@ public:
      * @param args This is used in the implementation and is internal.
      * Use the default.
      */
-    explicit KCModuleProxy(const QString &serviceName, QWidget *parent = nullptr,
-                           const QStringList &args = QStringList());
+    explicit KCModuleProxy(const QString &serviceName, QWidget *parent = nullptr, const QStringList &args = QStringList());
 
     /**
      * Constructs a KCModuleProxy from KService. Otherwise equal to the one above.
@@ -87,8 +85,7 @@ public:
      * @param args This is used in the implementation and is internal.
      * Use the default.
      */
-    explicit KCModuleProxy(const KService::Ptr &service, QWidget *parent = nullptr,
-                           const QStringList &args = QStringList());
+    explicit KCModuleProxy(const KService::Ptr &service, QWidget *parent = nullptr, const QStringList &args = QStringList());
 
     /**
      * Default destructor
@@ -214,7 +211,6 @@ Q_SIGNALS:
     void quickHelpChanged();
 
 protected:
-
     /**
      * Reimplemented for internal purposes. Makes sure the encapsulated
      * module is loaded before the show event is taken care of.

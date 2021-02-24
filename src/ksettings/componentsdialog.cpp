@@ -8,22 +8,21 @@
 #include "componentsdialog_p.h"
 #include <kcmutils_debug.h>
 
+#include <KConfig>
 #include <KLocalizedString>
+#include <KPluginInfo>
+#include <KSeparator>
 #include <QDialogButtonBox>
+#include <QHBoxLayout>
 #include <QLabel>
 #include <QPushButton>
-#include <KPluginInfo>
 #include <QVBoxLayout>
-#include <QHBoxLayout>
-#include <KConfig>
-#include <KSeparator>
 
 #include <QList>
 #include <QTreeWidget>
 
 namespace KSettings
 {
-
 class Q_DECL_HIDDEN ComponentsDialog::ComponentsDialogPrivate
 {
 public:
@@ -37,7 +36,8 @@ public:
 };
 
 ComponentsDialog::ComponentsDialog(QWidget *parent, const char *name)
-    : QDialog(parent), d(new ComponentsDialogPrivate)
+    : QDialog(parent)
+    , d(new ComponentsDialogPrivate)
 {
     setObjectName(QString::fromLatin1(name));
     setModal(false);
@@ -79,10 +79,8 @@ ComponentsDialog::ComponentsDialog(QWidget *parent, const char *name)
 
     d->listview->setAcceptDrops(false);
 
-    connect(d->listview, &QTreeWidget::itemPressed, this,
-            &ComponentsDialog::executed);
-    connect(d->listview, &QTreeWidget::itemActivated, this,
-            &ComponentsDialog::executed);
+    connect(d->listview, &QTreeWidget::itemPressed, this, &ComponentsDialog::executed);
+    connect(d->listview, &QTreeWidget::itemActivated, this, &ComponentsDialog::executed);
     // clang-format off
     connect(d->listview, SIGNAL(itemSelectionChanged(QTreeWidgetItem*,int)), this, SLOT(executed(QTreeWidgetItem*,int)));
     // clang-format ob

@@ -12,10 +12,8 @@
 
 namespace KSettings
 {
-
 namespace Dispatcher
 {
-
 Q_GLOBAL_STATIC(DispatcherPrivate, d)
 
 void registerComponent(const QString &componentName, QObject *recv, const char *slot)
@@ -51,7 +49,7 @@ void reparseConfiguration(const QString &componentName)
 {
     // qDebug() << componentName;
     // check if the componentName is valid:
-    if (! d()->m_componentInfo.contains(componentName)) {
+    if (!d()->m_componentInfo.contains(componentName)) {
         return;
     }
     // first we reparse the config so that the KConfig object will be up to date
@@ -80,7 +78,7 @@ void DispatcherPrivate::unregisterComponent(QObject *obj)
     }
 
     QString name = m_componentName[obj];
-    m_componentName.remove(obj); //obj will be destroyed when we return, so we better remove this entry
+    m_componentName.remove(obj); // obj will be destroyed when we return, so we better remove this entry
     --(m_componentInfo[name].count);
     // qDebug() << "componentName=" << name << "refcount=" << m_componentInfo[name].count;
     Q_ASSERT(m_componentInfo[name].count >= 0);

@@ -6,8 +6,8 @@
 */
 
 #include "ksettingswidgetadaptor.h"
-#include <QString>
 #include <QGuiApplication>
+#include <QString>
 
 KSettingsWidgetAdaptor::KSettingsWidgetAdaptor(QObject *parent)
     : QObject(parent)
@@ -22,4 +22,3 @@ QString KSettingsWidgetAdaptor::applicationName()
     }
     return QCoreApplication::applicationName();
 }
-

@@ -9,15 +9,14 @@
 #define DISPATCHER_P_H
 
 #include <QList>
-#include <QPair>
 #include <QMap>
 #include <QObject>
+#include <QPair>
 
 namespace KSettings
 {
 namespace Dispatcher
 {
-
 class ComponentInfo
 {
 public:
@@ -25,7 +24,10 @@ public:
     QList<Slot> slotList;
     int count;
 
-    ComponentInfo() : count(0) {}
+    ComponentInfo()
+        : count(0)
+    {
+    }
 };
 
 class DispatcherPrivate : public QObject

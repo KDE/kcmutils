@@ -12,8 +12,8 @@
 #include <QScrollArea>
 #include <QScrollBar>
 
-#include <kcmoduleinfo.h>
 #include <KPageDialog>
+#include <kcmoduleinfo.h>
 
 class KCMultiDialogPrivate;
 
@@ -54,8 +54,7 @@ public:
      *
      * @returns The @see KPageWidgetItem associated with the new dialog page.
      **/
-    KPageWidgetItem *addModule(const QString &module, const QStringList &
-                               args = QStringList());
+    KPageWidgetItem *addModule(const QString &module, const QStringList &args = QStringList());
 
     /**
      * Add a module.
@@ -72,8 +71,7 @@ public:
      *
      * @param args The arguments that should be given to the KCModule when it is created
      **/
-    KPageWidgetItem *addModule(const KCModuleInfo &moduleinfo, KPageWidgetItem *parent = nullptr,
-                               const QStringList &args = QStringList());
+    KPageWidgetItem *addModule(const KCModuleInfo &moduleinfo, KPageWidgetItem *parent = nullptr, const QStringList &args = QStringList());
 
     /**
      * Removes all modules from the dialog.
@@ -178,23 +176,28 @@ private:
  * Workaround for https://bugreports.qt.io/browse/QTBUG-10459
  */
 
-class UnboundScrollArea : public QScrollArea {
+class UnboundScrollArea : public QScrollArea
+{
     Q_OBJECT
 public:
-     QSize sizeHint() const override {
-         if (widget()) {
-             // Try to avoid horizontal scrollbar, which just scrolls a scrollbar width.
-             // We always need to reserve space for the vertical scroll bar,
-             // because we can’t know here whether vertical scrolling will be used.
-             QSize withScrollbar = widget()->sizeHint();
-             withScrollbar.rwidth() += verticalScrollBar()->sizeHint().width() + 4;
-             return withScrollbar;
-         } else {
-             return QScrollArea::sizeHint();
-         }
-     }
+    QSize sizeHint() const override
+    {
+        if (widget()) {
+            // Try to avoid horizontal scrollbar, which just scrolls a scrollbar width.
+            // We always need to reserve space for the vertical scroll bar,
+            // because we can’t know here whether vertical scrolling will be used.
+            QSize withScrollbar = widget()->sizeHint();
+            withScrollbar.rwidth() += verticalScrollBar()->sizeHint().width() + 4;
+            return withScrollbar;
+        } else {
+            return QScrollArea::sizeHint();
+        }
+    }
 
-    UnboundScrollArea(QWidget * w) : QScrollArea(w) {}
+    UnboundScrollArea(QWidget *w)
+        : QScrollArea(w)
+    {
+    }
     virtual ~UnboundScrollArea() = default;
 };
 

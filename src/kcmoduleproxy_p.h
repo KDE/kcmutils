@@ -18,8 +18,15 @@ class KCModuleProxyPrivate
     Q_DECLARE_PUBLIC(KCModuleProxy)
 protected:
     KCModuleProxyPrivate(KCModuleProxy *_parent, const KCModuleInfo &info, const QStringList &_args)
-        : args(_args), kcm(nullptr), topLayout(nullptr), rootInfo(nullptr), modInfo(info),
-          changed(false), defaulted(false), bogusOccupier(false), parent(_parent)
+        : args(_args)
+        , kcm(nullptr)
+        , topLayout(nullptr)
+        , rootInfo(nullptr)
+        , modInfo(info)
+        , changed(false)
+        , defaulted(false)
+        , bogusOccupier(false)
+        , parent(_parent)
     {
     }
 

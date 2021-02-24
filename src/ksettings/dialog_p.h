@@ -8,23 +8,22 @@
 #ifndef KSETTINGS_DIALOG_P_H
 #define KSETTINGS_DIALOG_P_H
 
-#include "dialog.h"
-#include "../kcmultidialog_p.h"
 #include "../kcmoduleinfo.h"
+#include "../kcmultidialog_p.h"
+#include "dialog.h"
 
 #include <QHash>
 #include <QSet>
 #include <QString>
 
 #include <KPageWidgetModel>
-#include <KService>
 #include <KPluginInfo>
+#include <KService>
 
 class QCheckBox;
 
 namespace KSettings
 {
-
 class DialogPrivate : public KCMultiDialogPrivate
 {
     friend class PageNode;
@@ -47,18 +46,15 @@ protected:
     bool firstshow : 1;
     quint32 pluginStateDirty : 30;
 
-    //void _k_configureTree();
+    // void _k_configureTree();
     void _k_updateEnabledState(bool);
     void _k_syncConfiguration();
     void _k_reparseConfiguration(const QByteArray &a);
     void _k_clientChanged() override;
 
-    KPageWidgetItem *createPageItem(KPageWidgetItem *parentItem,
-                                    const QString &name, const QString &comment,
-                                    const QString &iconName, int weight);
+    KPageWidgetItem *createPageItem(KPageWidgetItem *parentItem, const QString &name, const QString &comment, const QString &iconName, int weight);
 
-    void connectItemCheckBox(KPageWidgetItem *item, const KPluginInfo &pinfo,
-                             bool isEnabled);
+    void connectItemCheckBox(KPageWidgetItem *item, const KPluginInfo &pinfo, bool isEnabled);
 
 private:
     /**
@@ -82,7 +78,7 @@ private:
      * If this module is put into a TreeList hierarchy this will return a
      * list of the names of the parent modules.
      */
-    //QStringList parentModuleNames(KCModuleInfo *);
+    // QStringList parentModuleNames(KCModuleInfo *);
 
     /**
      * @internal

@@ -11,8 +11,8 @@
 #ifndef KCMODULEINFO_H
 #define KCMODULEINFO_H
 
-#include <kcmutils_export.h>
 #include <KService>
+#include <kcmutils_export.h>
 
 class KPluginInfo;
 class QString;
@@ -34,9 +34,7 @@ class QStringList;
  */
 class KCMUTILS_EXPORT KCModuleInfo // krazy:exclude=dpointer (implicitly shared)
 {
-
 public:
-
     /**
      * Constructs a KCModuleInfo.
      * @note a KCModuleInfo object will have to be manually deleted, it is not
@@ -177,4 +175,3 @@ private:
 };
 
 #endif // KCMODULEINFO_H
-

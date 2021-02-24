@@ -27,7 +27,7 @@ class QWidget;
  * @author Matthias Hoelzer-Kluepfel <mhk@kde.org>
  * @author Frans Englich <frans.englich@telia.com>
  * @internal
-**/
+ **/
 namespace KCModuleLoader
 {
 /**
@@ -60,8 +60,7 @@ enum ErrorReporting {
  *
  * @return a pointer to the loaded @ref KCModule
  */
-KCMUTILS_EXPORT KCModule *loadModule(const KCModuleInfo &module, ErrorReporting
-                                     report, QWidget *parent = nullptr, const QStringList &args = QStringList());
+KCMUTILS_EXPORT KCModule *loadModule(const KCModuleInfo &module, ErrorReporting report, QWidget *parent = nullptr, const QStringList &args = QStringList());
 
 /**
  * Loads a @ref KCModule. If loading fails a zero pointer is returned.
@@ -71,8 +70,7 @@ KCMUTILS_EXPORT KCModule *loadModule(const KCModuleInfo &module, ErrorReporting
  *
  * @return a pointer to the loaded @ref KCModule
  */
-KCMUTILS_EXPORT KCModule *loadModule(const QString &module, ErrorReporting report,
-                                     QWidget *parent = nullptr, const QStringList &args = QStringList());
+KCMUTILS_EXPORT KCModule *loadModule(const QString &module, ErrorReporting report, QWidget *parent = nullptr, const QStringList &args = QStringList());
 
 /**
  * Unloads the module's library
@@ -89,8 +87,7 @@ KCMUTILS_EXPORT void unloadModule(const KCModuleInfo &mod);
  *
  * @internal
  */
-KCMUTILS_EXPORT KCModule *reportError(ErrorReporting report, const QString &text,
-                                      const QString &details, QWidget *parent);
+KCMUTILS_EXPORT KCModule *reportError(ErrorReporting report, const QString &text, const QString &details, QWidget *parent);
 
 /**
  * For a specified module, return false if configuration is not the default one and true in all other case including if module is not found

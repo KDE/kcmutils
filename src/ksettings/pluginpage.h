@@ -17,7 +17,7 @@ namespace KSettings
 {
 class PluginPagePrivate;
 
-#if KCMUTILS_ENABLE_DEPRECATED_SINCE(5,76)
+#if KCMUTILS_ENABLE_DEPRECATED_SINCE(5, 76)
 
 /**
  * @short Convenience KCModule for creating a plugins config page.
@@ -68,9 +68,7 @@ public:
      * Automatically creates the KPluginSelector widget.
      */
     KCMUTILS_DEPRECATED_VERSION(5, 76, "Use KPluginSelector instead")
-    explicit PluginPage(const KAboutData *aboutData,
-                        QWidget *parent = nullptr,
-                        const QVariantList &args = QVariantList());
+    explicit PluginPage(const KAboutData *aboutData, QWidget *parent = nullptr, const QVariantList &args = QVariantList());
 
     ~PluginPage();
 

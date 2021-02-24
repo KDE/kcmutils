@@ -12,7 +12,6 @@
 #include <QApplication>
 #include <QLayout>
 
-
 #include <QDBusConnection>
 #include <QDBusConnectionInterface>
 #include <QDBusInterface>
@@ -28,8 +27,8 @@
 
 #include <KColorScheme>
 
-#include <kcmutils_debug.h>
 #include "ksettingswidgetadaptor.h"
+#include <kcmutils_debug.h>
 
 /*
  TODO:
@@ -76,7 +75,8 @@ void KCModuleProxyPrivate::loadModule()
     if (QDBusConnection::sessionBus().registerService(dbusService) || bogusOccupier) {
         /* We got the name we requested, because no one was before us,
          * or, it was an random application which had picked that name */
-        // qDebug() << "Module not already loaded, loading module " << modInfo.moduleName() << " from library " << modInfo.library() << " using symbol " << modInfo.handle();
+        // qDebug() << "Module not already loaded, loading module " << modInfo.moduleName() << " from library " << modInfo.library() << " using symbol " <<
+        // modInfo.handle();
 
         kcm = KCModuleLoader::loadModule(modInfo, KCModuleLoader::Inline, parent, args);
 
@@ -105,11 +105,17 @@ void KCModuleProxyPrivate::loadModule()
         QDBusReply<QString> reply = proxy.call(QStringLiteral("applicationName"));
 
         if (reply.isValid()) {
-            QObject::connect(QDBusConnection::sessionBus().interface(), SIGNAL(serviceOwnerChanged(QString,QString,QString)),
-                             parent, SLOT(_k_ownerChanged(QString,QString,QString)));
+            QObject::connect(QDBusConnection::sessionBus().interface(),
+                             SIGNAL(serviceOwnerChanged(QString, QString, QString)),
+                             parent,
+                             SLOT(_k_ownerChanged(QString, QString, QString)));
             kcm = KCModuleLoader::reportError(KCModuleLoader::Inline,
-                                              i18nc("Argument is application name", "This configuration section is "
-                                                    "already opened in %1",  reply.value()), QStringLiteral(" "), parent);
+                                              i18nc("Argument is application name",
+                                                    "This configuration section is "
+                                                    "already opened in %1",
+                                                    reply.value()),
+                                              QStringLiteral(" "),
+                                              parent);
             topLayout->addWidget(kcm);
         } else {
             // qDebug() << "Calling KCModuleProxy's DBus interface for fetching the name failed.";
@@ -146,7 +152,6 @@ void KCModuleProxy::showEvent(QShowEvent *ev)
     }
 
     QWidget::showEvent(ev);
-
 }
 
 KCModuleProxy::~KCModuleProxy()
@@ -193,23 +198,23 @@ void KCModuleProxyPrivate::_k_moduleDestroyed()
     kcm = nullptr;
 }
 
-KCModuleProxy::KCModuleProxy(const KService::Ptr &service, QWidget *parent,
-                             const QStringList &args)
-    : QWidget(parent), d_ptr(new KCModuleProxyPrivate(this, KCModuleInfo(service), args))
+KCModuleProxy::KCModuleProxy(const KService::Ptr &service, QWidget *parent, const QStringList &args)
+    : QWidget(parent)
+    , d_ptr(new KCModuleProxyPrivate(this, KCModuleInfo(service), args))
 {
     d_ptr->q_ptr = this;
 }
 
-KCModuleProxy::KCModuleProxy(const KCModuleInfo &info, QWidget *parent,
-                             const QStringList &args)
-    : QWidget(parent), d_ptr(new KCModuleProxyPrivate(this, info, args))
+KCModuleProxy::KCModuleProxy(const KCModuleInfo &info, QWidget *parent, const QStringList &args)
+    : QWidget(parent)
+    , d_ptr(new KCModuleProxyPrivate(this, info, args))
 {
     d_ptr->q_ptr = this;
 }
 
-KCModuleProxy::KCModuleProxy(const QString &serviceName, QWidget *parent,
-                             const QStringList &args)
-    : QWidget(parent), d_ptr(new KCModuleProxyPrivate(this, KCModuleInfo(serviceName), args))
+KCModuleProxy::KCModuleProxy(const QString &serviceName, QWidget *parent, const QStringList &args)
+    : QWidget(parent)
+    , d_ptr(new KCModuleProxyPrivate(this, KCModuleInfo(serviceName), args))
 {
     d_ptr->q_ptr = this;
 }
@@ -301,11 +306,10 @@ void KCModuleProxy::setDefaultsIndicatorsVisible(bool show)
     }
 }
 
-//X void KCModuleProxy::emitQuickHelpChanged()
-//X {
-//X     emit quickHelpChanged();
-//X }
+// X void KCModuleProxy::emitQuickHelpChanged()
+// X {
+// X     emit quickHelpChanged();
+// X }
 
 /***************************************************************/
 #include "moc_kcmoduleproxy.cpp"
-

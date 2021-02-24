@@ -8,8 +8,8 @@
 #ifndef COMPONENTSDIALOG_P_H
 #define COMPONENTSDIALOG_P_H
 
-#include <kcmutils_export.h>
 #include <QDialog>
+#include <kcmutils_export.h>
 
 #include <QList>
 
@@ -19,7 +19,6 @@ class QTreeWidgetItem;
 
 namespace KSettings
 {
-
 /**
   Dialog for selecting which plugins should be active for an application. Set
   the list of available plugins with \ref setPluginInfos. The dialog will save the

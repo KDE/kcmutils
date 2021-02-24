@@ -12,10 +12,10 @@
 #include <QAbstractListModel>
 #include <QSet>
 
+#include <KCategorizedSortFilterProxyModel>
 #include <KConfigGroup>
 #include <KPluginInfo>
 #include <kwidgetitemdelegate.h>
-#include <KCategorizedSortFilterProxyModel>
 
 class QLabel;
 class QCheckBox;
@@ -29,24 +29,23 @@ class KCategoryDrawer;
 
 class PluginEntry;
 
-class Q_DECL_HIDDEN KPluginSelector::Private
-    : public QObject
+class Q_DECL_HIDDEN KPluginSelector::Private : public QObject
 {
     Q_OBJECT
 
 public:
     enum ExtraRoles {
-        PluginEntryRole   = 0x09386561,
+        PluginEntryRole = 0x09386561,
         ServicesCountRole = 0x1422E2AA,
-        NameRole          = 0x0CBBBB00,
-        CommentRole       = 0x19FC6DE2,
-        AuthorRole        = 0x30861E10,
-        EmailRole         = 0x02BE3775,
-        WebsiteRole       = 0x13095A34,
-        VersionRole       = 0x0A0CB450,
-        LicenseRole       = 0x001F308A,
-        DependenciesRole  = 0x04CAB650,
-        IsCheckableRole   = 0x0AC2AFF8,
+        NameRole = 0x0CBBBB00,
+        CommentRole = 0x19FC6DE2,
+        AuthorRole = 0x30861E10,
+        EmailRole = 0x02BE3775,
+        WebsiteRole = 0x13095A34,
+        VersionRole = 0x0A0CB450,
+        LicenseRole = 0x001F308A,
+        DependenciesRole = 0x04CAB650,
+        IsCheckableRole = 0x0AC2AFF8,
     };
 
     Private(KPluginSelector *parent);
@@ -88,8 +87,7 @@ public:
     {
         // just comparing the entry path is not enough, since it is now also possible
         // to load the plugin information directly from a library (without .desktop files)
-        return pluginInfo.entryPath() == pe.pluginInfo.entryPath()
-            && pluginInfo.libraryPath() == pe.pluginInfo.libraryPath();
+        return pluginInfo.entryPath() == pe.pluginInfo.entryPath() && pluginInfo.libraryPath() == pe.pluginInfo.libraryPath();
     }
 };
 
@@ -99,8 +97,7 @@ Q_DECLARE_METATYPE(PluginEntry *)
  * This widget will inform the user about changes that happened automatically
  * due to plugin dependencies.
  */
-class KPluginSelector::Private::DependenciesWidget
-    : public QWidget
+class KPluginSelector::Private::DependenciesWidget : public QWidget
 {
     Q_OBJECT
 
@@ -130,14 +127,18 @@ private:
     int removedByDependencies;
 };
 
-class KPluginSelector::Private::PluginModel
-    : public QAbstractListModel
+class KPluginSelector::Private::PluginModel : public QAbstractListModel
 {
 public:
     PluginModel(KPluginSelector::Private *pluginSelector_d, QObject *parent = nullptr);
     ~PluginModel();
 
-    void addPlugins(const QList<KPluginInfo> &pluginList, const QString &categoryName, const QString &categoryKey, const KConfigGroup &cfgGroup, PluginLoadMethod pluginLoadMethod = ReadConfigFile, bool manuallyAdded = false);
+    void addPlugins(const QList<KPluginInfo> &pluginList,
+                    const QString &categoryName,
+                    const QString &categoryKey,
+                    const KConfigGroup &cfgGroup,
+                    PluginLoadMethod pluginLoadMethod = ReadConfigFile,
+                    bool manuallyAdded = false);
     void clear();
     QList<KService::Ptr> pluginServices(const QModelIndex &index) const;
 
@@ -153,8 +154,7 @@ private:
     KPluginSelector::Private *pluginSelector_d;
 };
 
-class KPluginSelector::Private::ProxyModel
-    : public KCategorizedSortFilterProxyModel
+class KPluginSelector::Private::ProxyModel : public KCategorizedSortFilterProxyModel
 {
 public:
     ProxyModel(KPluginSelector::Private *pluginSelector_d, QObject *parent = nullptr);
@@ -168,8 +168,7 @@ private:
     KPluginSelector::Private *pluginSelector_d;
 };
 
-class KPluginSelector::Private::PluginDelegate
-    : public KWidgetItemDelegate
+class KPluginSelector::Private::PluginDelegate : public KWidgetItemDelegate
 {
     Q_OBJECT
 
@@ -180,9 +179,15 @@ public:
     void paint(QPainter *painter, const QStyleOptionViewItem &option, const QModelIndex &index) const override;
     QSize sizeHint(const QStyleOptionViewItem &option, const QModelIndex &index) const override;
     void configure(const QModelIndex &idx);
-    inline void clearChangedEntries() { changedEntries.clear(); };
-    inline void addChangedEntry(PluginEntry *entry) { changedEntries << entry; };
-    void setHandler(std::function<QPushButton*(const KPluginInfo &)> handler);
+    inline void clearChangedEntries()
+    {
+        changedEntries.clear();
+    };
+    inline void addChangedEntry(PluginEntry *entry)
+    {
+        changedEntries << entry;
+    };
+    void setHandler(std::function<QPushButton *(const KPluginInfo &)> handler);
 
 public Q_SLOTS:
     void slotResetModel();
@@ -193,9 +198,7 @@ Q_SIGNALS:
 
 protected:
     QList<QWidget *> createItemWidgets(const QModelIndex &index) const override;
-    void updateItemWidgets(const QList<QWidget *> widgets,
-                                   const QStyleOptionViewItem &option,
-                                   const QPersistentModelIndex &index) const override;
+    void updateItemWidgets(const QList<QWidget *> widgets, const QStyleOptionViewItem &option, const QPersistentModelIndex &index) const override;
 
 private Q_SLOTS:
     void slotStateChanged(bool state);
@@ -211,7 +214,7 @@ private:
     QPushButton *pushButton;
     QList<KCModuleProxy *> moduleProxyList;
     QSet<PluginEntry *> changedEntries;
-    std::function<QPushButton*(const KPluginInfo &)> handler = nullptr;
+    std::function<QPushButton *(const KPluginInfo &)> handler = nullptr;
 
     KPluginSelector::Private *pluginSelector_d;
 };

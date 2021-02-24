@@ -5,13 +5,13 @@
     SPDX-License-Identifier: LGPL-2.0-only OR LGPL-3.0-only OR LicenseRef-KDE-Accepted-LGPL
 */
 
-#include <QTest>
-#include <QObject>
 #include <KCModuleInfo>
 #include <KCMultiDialog>
+#include <KPluginInfo>
 #include <KPluginLoader>
 #include <KPluginMetaData>
-#include <KPluginInfo>
+#include <QObject>
+#include <QTest>
 
 class KCModuleInfoTest : public QObject
 {
@@ -38,8 +38,9 @@ void KCModuleInfoTest::testFakeKCM()
     // Similar to kontact's code
     // This is the case of loading a plugin, and then asking it for its kcmServices()
     // If there are none, Dialog::addPluginInfos still creates a fake KCM, so the plugin can be enabled/disabled.
-    const QVector<KPluginMetaData> pluginMetaDatas = KPluginLoader::findPlugins(
-            QStringLiteral("testplugins"), [](const KPluginMetaData &) { return true; });
+    const QVector<KPluginMetaData> pluginMetaDatas = KPluginLoader::findPlugins(QStringLiteral("testplugins"), [](const KPluginMetaData &) {
+        return true;
+    });
     const QList<KPluginInfo> pluginInfos = KPluginInfo::fromMetaData(pluginMetaDatas);
     QVERIFY(pluginInfos.count() > 0);
     KPluginInfo pluginInfo = pluginInfos.at(0);

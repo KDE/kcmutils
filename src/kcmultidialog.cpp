@@ -11,8 +11,8 @@
 #include "kcmultidialog.h"
 #include "kcmultidialog_p.h"
 
-#include "kcmoduleqml_p.h"
 #include "kcmoduleproxy.h"
+#include "kcmoduleqml_p.h"
 #include <kcmutils_debug.h>
 
 #include <QApplication>
@@ -45,14 +45,13 @@ bool KCMultiDialogPrivate::resolveChanges(KCModuleProxy *currentProxy)
     }
 
     // Let the user decide
-    const int queryUser = KMessageBox::warningYesNoCancel(
-                              q,
-                              i18n("The settings of the current module have changed.\n"
-                                   "Do you want to apply the changes or discard them?"),
-                              i18n("Apply Settings"),
-                              KStandardGuiItem::apply(),
-                              KStandardGuiItem::discard(),
-                              KStandardGuiItem::cancel());
+    const int queryUser = KMessageBox::warningYesNoCancel(q,
+                                                          i18n("The settings of the current module have changed.\n"
+                                                               "Do you want to apply the changes or discard them?"),
+                                                          i18n("Apply Settings"),
+                                                          KStandardGuiItem::apply(),
+                                                          KStandardGuiItem::discard(),
+                                                          KStandardGuiItem::cancel());
 
     switch (queryUser) {
     case KMessageBox::Yes:
@@ -84,19 +83,17 @@ void KCMultiDialogPrivate::_k_slotCurrentPageChanged(KPageWidgetItem *current, K
 
     // Delete global margins and spacing, since we want the contents to
     // be able to touch the edges of the window
-    q->layout()->setContentsMargins(0,0,0,0);
+    q->layout()->setContentsMargins(0, 0, 0, 0);
 
     const KPageWidget *pageWidget = q->pageWidget();
     pageWidget->layout()->setSpacing(0);
 
     // Then, we set the margins for the title header and the buttonBox footer
     const QStyle *style = q->style();
-    const QMargins layoutMargins = QMargins(
-        style->pixelMetric(QStyle::PM_LayoutLeftMargin),
-        style->pixelMetric(QStyle::PM_LayoutTopMargin),
-        style->pixelMetric(QStyle::PM_LayoutRightMargin),
-        style->pixelMetric(QStyle::PM_LayoutBottomMargin)
-    );
+    const QMargins layoutMargins = QMargins(style->pixelMetric(QStyle::PM_LayoutLeftMargin),
+                                            style->pixelMetric(QStyle::PM_LayoutTopMargin),
+                                            style->pixelMetric(QStyle::PM_LayoutRightMargin),
+                                            style->pixelMetric(QStyle::PM_LayoutBottomMargin));
 
     if (pageWidget->pageHeader()) {
         pageWidget->pageHeader()->setContentsMargins(layoutMargins);
@@ -124,8 +121,8 @@ void KCMultiDialogPrivate::_k_clientChanged()
     // Get the current module
     KCModuleProxy *activeModule = nullptr;
     for (int i = 0; i < modules.count(); ++i) {
-        if (modules[ i ].item == q->currentPage()) {
-            activeModule = modules[ i ].kcm;
+        if (modules[i].item == q->currentPage()) {
+            activeModule = modules[i].kcm;
             break;
         }
     }
@@ -229,9 +226,9 @@ void KCMultiDialogPrivate::_k_updateHeader(bool use, const QString &message)
     KCModuleProxy *kcm = qobject_cast<KCModuleProxy *>(item->widget());
 
     if (use) {
-        item->setHeader(QStringLiteral("<b>") + kcm->moduleInfo().moduleName() + QStringLiteral("</b><br><i>") +
-                        message + QStringLiteral("</i>"));
-        item->setIcon(KIconUtils::addOverlay(QIcon::fromTheme(kcm->moduleInfo().icon()), QIcon::fromTheme(QStringLiteral("dialog-warning")), Qt::BottomRightCorner));
+        item->setHeader(QStringLiteral("<b>") + kcm->moduleInfo().moduleName() + QStringLiteral("</b><br><i>") + message + QStringLiteral("</i>"));
+        item->setIcon(
+            KIconUtils::addOverlay(QIcon::fromTheme(kcm->moduleInfo().icon()), QIcon::fromTheme(QStringLiteral("dialog-warning")), Qt::BottomRightCorner));
     } else {
         item->setHeader(kcm->moduleInfo().moduleName());
         item->setIcon(QIcon::fromTheme(kcm->moduleInfo().icon()));
@@ -246,13 +243,8 @@ void KCMultiDialogPrivate::init()
     q->setModal(false);
 
     QDialogButtonBox *buttonBox = new QDialogButtonBox(q);
-    buttonBox->setStandardButtons(QDialogButtonBox::Help
-                                  | QDialogButtonBox::RestoreDefaults
-                                  | QDialogButtonBox::Cancel
-                                  | QDialogButtonBox::Apply
-                                  | QDialogButtonBox::Close
-                                  | QDialogButtonBox::Ok
-                                  | QDialogButtonBox::Reset);
+    buttonBox->setStandardButtons(QDialogButtonBox::Help | QDialogButtonBox::RestoreDefaults | QDialogButtonBox::Cancel | QDialogButtonBox::Apply
+                                  | QDialogButtonBox::Close | QDialogButtonBox::Ok | QDialogButtonBox::Reset);
     KGuiItem::assign(buttonBox->button(QDialogButtonBox::Ok), KStandardGuiItem::ok());
     KGuiItem::assign(buttonBox->button(QDialogButtonBox::Cancel), KStandardGuiItem::cancel());
     KGuiItem::assign(buttonBox->button(QDialogButtonBox::RestoreDefaults), KStandardGuiItem::defaults());
@@ -578,8 +570,8 @@ void KCMultiDialog::clear()
     // qDebug() ;
 
     for (int i = 0; i < d->modules.count(); ++i) {
-        removePage(d->modules[ i ].item);
-        delete d->modules[ i ].kcm;
+        removePage(d->modules[i].item);
+        delete d->modules[i].kcm;
     }
 
     d->modules.clear();

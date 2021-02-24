@@ -18,7 +18,7 @@ class QWidget;
 
 class KCModuleProxy;
 
-#if KCMUTILS_ENABLE_DEPRECATED_SINCE(5,66)
+#if KCMUTILS_ENABLE_DEPRECATED_SINCE(5, 66)
 /**
  * @brief KCModuleContainer is a convenience class encapsulating several KCModules.
  *
@@ -44,7 +44,7 @@ public:
      * Creates a KCModuleContainer with tabs, each one containing one of the
      * specified modules in @p mods.
      *
-             * @param parent the parent QWidget.
+     * @param parent the parent QWidget.
      * @param mods The list of KCModules to be loaded. The name of each
      * KCModule is its service name, that is the name of the desktop file without
      * the ".desktop" part
@@ -117,12 +117,10 @@ private Q_SLOTS:
     void moduleChanged(KCModuleProxy *proxy);
 
 private:
-
     void init();
 
     class KCModuleContainerPrivate;
     KCModuleContainerPrivate *const d;
-
 };
 
 /**
@@ -158,4 +156,3 @@ private:
 // clang-format on
 #endif
 #endif // KCMODULECONTAINER_H
-

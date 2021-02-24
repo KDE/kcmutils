@@ -8,13 +8,12 @@
 #ifndef KSETTINGS_DISPATCHER_H
 #define KSETTINGS_DISPATCHER_H
 
+#include <KSharedConfig>
 #include <QObject>
 #include <kcmutils_export.h>
-#include <KSharedConfig>
 
 namespace KSettings
 {
-
 /**
  * @short Dispatch change notifications from the KCMs to the program.
  *

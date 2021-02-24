@@ -11,5 +11,5 @@ class KCMTest : public QObject
 {
     Q_OBJECT
 public:
-     explicit KCMTest(QObject* parent, const QVariantList& foo = QVariantList());
+    explicit KCMTest(QObject *parent, const QVariantList &foo = QVariantList());
 };

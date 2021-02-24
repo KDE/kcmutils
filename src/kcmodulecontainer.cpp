@@ -11,13 +11,13 @@
 #include <QTabWidget>
 #include <QVBoxLayout>
 
+#include <KService>
 #include <kcmoduleinfo.h>
 #include <kcmoduleproxy.h>
-#include <KService>
 
 typedef QList<KCModuleProxy *> ModuleList;
 
-#if KCMUTILS_BUILD_DEPRECATED_SINCE(5,66)
+#if KCMUTILS_BUILD_DEPRECATED_SINCE(5, 66)
 
 /***********************************************************************/
 class Q_DECL_HIDDEN KCModuleContainer::KCModuleContainerPrivate
@@ -25,7 +25,8 @@ class Q_DECL_HIDDEN KCModuleContainer::KCModuleContainerPrivate
 public:
     KCModuleContainerPrivate(const QStringList &mods)
         : modules(mods)
-    {}
+    {
+    }
 
     QStringList modules;
     QTabWidget *tabWidget = nullptr;
@@ -42,22 +43,21 @@ public:
      * A list of all modules which are encapsulated.
      */
     ModuleList allModules;
-
 };
 /***********************************************************************/
 
 // The KCModuleContainer is only a wrapper around real KCModules.
 /***********************************************************************/
 KCModuleContainer::KCModuleContainer(QWidget *parent, const QString &mods)
-    : KCModule(parent),
-      d(new KCModuleContainerPrivate(QString(mods).remove(QLatin1Char(' ')).split(QLatin1Char(','), Qt::SkipEmptyParts)))
+    : KCModule(parent)
+    , d(new KCModuleContainerPrivate(QString(mods).remove(QLatin1Char(' ')).split(QLatin1Char(','), Qt::SkipEmptyParts)))
 {
     init();
 }
 
 KCModuleContainer::KCModuleContainer(QWidget *parent, const QStringList &mods)
-    : KCModule(parent),
-      d(new KCModuleContainerPrivate(mods))
+    : KCModule(parent)
+    , d(new KCModuleContainerPrivate(mods))
 {
     init();
 }
@@ -102,7 +102,8 @@ void KCModuleContainer::addModule(const QString &module)
 
     proxy->setObjectName(module);
 
-    d->tabWidget->addTab(proxy, QIcon::fromTheme(proxy->moduleInfo().icon()),
+    d->tabWidget->addTab(proxy,
+                         QIcon::fromTheme(proxy->moduleInfo().icon()),
                          /* Qt eats ampersands for dinner. But not this time. */
                          proxy->moduleInfo().moduleName().replace(QLatin1Char('&'), QStringLiteral("&&")));
 
@@ -130,7 +131,6 @@ void KCModuleContainer::save()
     }
 
     Q_EMIT changed(false);
-
 }
 
 void KCModuleContainer::load()
@@ -173,4 +173,3 @@ KCModuleContainer::~KCModuleContainer()
 #endif
 
 /***********************************************************************/
-

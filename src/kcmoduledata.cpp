@@ -25,7 +25,8 @@ public:
 };
 
 KCModuleData::KCModuleData(QObject *parent, const QVariantList &)
-    : QObject(parent), d(new KCModuleDataPrivate(this))
+    : QObject(parent)
+    , d(new KCModuleDataPrivate(this))
 {
 }
 
@@ -66,7 +67,7 @@ void KCModuleData::revertToDefaults()
 
 void KCModuleData::autoRegisterSkeletons()
 {
-    const auto skeletons = findChildren<KCoreConfigSkeleton*>();
+    const auto skeletons = findChildren<KCoreConfigSkeleton *>();
     for (auto *skeleton : skeletons) {
         registerSkeleton(skeleton);
     }
