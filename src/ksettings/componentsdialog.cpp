@@ -83,7 +83,7 @@ ComponentsDialog::ComponentsDialog(QWidget *parent, const char *name)
     connect(d->listview, &QTreeWidget::itemActivated, this, &ComponentsDialog::executed);
     // clang-format off
     connect(d->listview, SIGNAL(itemSelectionChanged(QTreeWidgetItem*,int)), this, SLOT(executed(QTreeWidgetItem*,int)));
-    // clang-format ob
+    // clang-format on
 }
 
 ComponentsDialog::~ComponentsDialog()
@@ -96,11 +96,9 @@ void ComponentsDialog::addPluginInfo(KPluginInfo *info)
     d->plugininfolist.append(info);
 }
 
-void ComponentsDialog::setPluginInfos(const QMap<QString, KPluginInfo *> &
-                                      plugininfos)
+void ComponentsDialog::setPluginInfos(const QMap<QString, KPluginInfo *> &plugininfos)
 {
-    for (QMap<QString, KPluginInfo *>::ConstIterator it = plugininfos.begin(), total = plugininfos.end();
-            it != total; ++it) {
+    for (QMap<QString, KPluginInfo *>::ConstIterator it = plugininfos.begin(), total = plugininfos.end(); it != total; ++it) {
         d->plugininfolist.append(it.value());
     }
 }
@@ -117,15 +115,14 @@ void ComponentsDialog::show()
     d->plugininfomap.clear();
 
     // construct the treelist
-    for (QList<KPluginInfo *>::ConstIterator it = d->plugininfolist.constBegin(), total = d->plugininfolist.constEnd();
-            it != total; ++it) {
+    for (QList<KPluginInfo *>::ConstIterator it = d->plugininfolist.constBegin(), total = d->plugininfolist.constEnd(); it != total; ++it) {
         (*it)->load();
         QTreeWidgetItem *item = new QTreeWidgetItem(d->listview, QStringList((*it)->name()));
         if (!(*it)->icon().isEmpty()) {
             item->setIcon(0, QIcon::fromTheme((*it)->icon()));
         }
         item->setCheckState(0, (*it)->isPluginEnabled() ? Qt::Checked : Qt::Unchecked);
-        d->plugininfomap[ item ] = (*it);
+        d->plugininfomap[item] = (*it);
     }
     QDialog::show();
 }
@@ -142,19 +139,18 @@ void ComponentsDialog::executed(QTreeWidgetItem *item, int)
     // qDebug() << "it's a " << ( checked ? "checked" : "unchecked" )
     //    << " QCheckListItem" << endl;
 
-    KPluginInfo *info = d->plugininfomap[ item ];
+    KPluginInfo *info = d->plugininfomap[item];
     info->setPluginEnabled(checked);
-    //checkDependencies( info );
+    // checkDependencies( info );
     // show info about the component on the right
     d->iconwidget->setPixmap(QIcon::fromTheme(info->icon()).pixmap(style()->pixelMetric(QStyle::PM_MessageBoxIconSize)));
     d->commentwidget->setText(info->comment());
-    //d->descriptionwidget->setText( info->description() );
+    // d->descriptionwidget->setText( info->description() );
 }
 
 void ComponentsDialog::savePluginInfos()
 {
-    for (QList<KPluginInfo *>::ConstIterator it = d->plugininfolist.constBegin(), total = d->plugininfolist.constEnd();
-            it != total; ++it) {
+    for (QList<KPluginInfo *>::ConstIterator it = d->plugininfolist.constBegin(), total = d->plugininfolist.constEnd(); it != total; ++it) {
         if ((*it)->config().isValid()) {
             (*it)->save();
             (*it)->config().sync();
@@ -162,6 +158,6 @@ void ComponentsDialog::savePluginInfos()
     }
 }
 
-} //namespace
+} // namespace
 
 #include "moc_componentsdialog_p.cpp"
