@@ -265,7 +265,7 @@ void KCMultiDialogPrivate::init()
     q->setButtonBox(buttonBox);
     // clang-format off
     q->connect(q, SIGNAL(currentPageChanged(KPageWidgetItem*,KPageWidgetItem*)), SLOT(_k_slotCurrentPageChanged(KPageWidgetItem*,KPageWidgetItem*)));
-    // clang-format off
+    // clang-format on
 }
 
 KCMultiDialog::KCMultiDialog(QWidget *parent)
@@ -308,8 +308,7 @@ void KCMultiDialog::showEvent(QShowEvent *ev)
     QScreen *screen = QApplication::screenAt(pos());
     if (screen) {
         const QSize maxSize = screen->availableGeometry().size();
-        resize(qMin(sizeHint().width(), maxSize.width()),
-                qMin(sizeHint().height(), maxSize.height()));
+        resize(qMin(sizeHint().width(), maxSize.width()), qMin(sizeHint().height(), maxSize.height()));
     }
 }
 
@@ -322,8 +321,8 @@ void KCMultiDialog::slotDefaultClicked()
     }
 
     for (int i = 0; i < d->modules.count(); ++i) {
-        if (d->modules[ i ].item == item) {
-            d->modules[ i ].kcm->defaults();
+        if (d->modules[i].item == item) {
+            d->modules[i].kcm->defaults();
             d->_k_clientChanged();
             return;
         }
@@ -339,8 +338,8 @@ void KCMultiDialog::slotUser1Clicked()
 
     Q_D(KCMultiDialog);
     for (int i = 0; i < d->modules.count(); ++i) {
-        if (d->modules[ i ].item == item) {
-            d->modules[ i ].kcm->load();
+        if (d->modules[i].item == item) {
+            d->modules[i].kcm->load();
             d->_k_clientChanged();
             return;
         }
@@ -368,9 +367,9 @@ void KCMultiDialogPrivate::apply()
         if (proxy->changed()) {
             proxy->save();
             /**
-                * Add name of the components the kcm belongs to the list
-                * of updated components.
-                */
+             * Add name of the components the kcm belongs to the list
+             * of updated components.
+             */
             const QStringList componentNames = module.componentNames;
             for (const QString &componentName : componentNames) {
                 if (!updatedComponents.contains(componentName)) {
@@ -415,8 +414,8 @@ void KCMultiDialog::slotHelpClicked()
     Q_D(KCMultiDialog);
     QString docPath;
     for (int i = 0; i < d->modules.count(); ++i) {
-        if (d->modules[ i ].item == item) {
-            docPath = d->modules[ i ].kcm->moduleInfo().docPath();
+        if (d->modules[i].item == item) {
+            docPath = d->modules[i].kcm->moduleInfo().docPath();
             break;
         }
     }
@@ -440,7 +439,7 @@ void KCMultiDialog::closeEvent(QCloseEvent *event)
      * in other situations will lead to "module already loaded in Foo," while to the user
      * doesn't appear so(the dialog is hidden)
      */
-    for(auto &proxy : qAsConst(d->modules)) {
+    for (auto &proxy : qAsConst(d->modules)) {
         proxy.kcm->deleteClient();
     }
 }
@@ -458,16 +457,15 @@ KPageWidgetItem *KCMultiDialog::addModule(const QString &path, const QStringList
     return addModule(KCModuleInfo(service), nullptr, args);
 }
 
-KPageWidgetItem *KCMultiDialog::addModule(const KCModuleInfo &moduleInfo,
-        KPageWidgetItem *parentItem, const QStringList &args)
+KPageWidgetItem *KCMultiDialog::addModule(const KCModuleInfo &moduleInfo, KPageWidgetItem *parentItem, const QStringList &args)
 {
     Q_D(KCMultiDialog);
     if (!moduleInfo.isValid()) {
         return nullptr;
     }
 
-    //KAuthorized::authorizeControlModule( moduleInfo.service()->menuId() ) is
-    //checked in noDisplay already
+    // KAuthorized::authorizeControlModule( moduleInfo.service()->menuId() ) is
+    // checked in noDisplay already
     if (moduleInfo.service() && moduleInfo.service()->noDisplay()) {
         return nullptr;
     }
@@ -496,11 +494,8 @@ KPageWidgetItem *KCMultiDialog::addModule(const KCModuleInfo &moduleInfo,
     }
 
     if (kcm->realModule() && kcm->realModule()->useRootOnlyMessage()) {
-        item->setHeader(QStringLiteral("<b>") +
-                moduleInfo.moduleName() +
-                QStringLiteral("</b><br><i>") +
-                kcm->realModule()->rootOnlyMessage() +
-                QStringLiteral("</i>"));
+        item->setHeader(QStringLiteral("<b>") + moduleInfo.moduleName() + QStringLiteral("</b><br><i>") + kcm->realModule()->rootOnlyMessage()
+                        + QStringLiteral("</i>"));
         item->setIcon(KIconUtils::addOverlay(QIcon::fromTheme(moduleInfo.icon()), QIcon::fromTheme(QStringLiteral("dialog-warning")), Qt::BottomRightCorner));
     } else {
         item->setHeader(moduleInfo.moduleName());
