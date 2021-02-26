@@ -15,4 +15,3 @@ autoRegisterSkeletons();
 
 @SETTINGS_METHOD_DEFINITION@
 @CLOSE_NAMESPACE@
-#include "@MOC_FILENAME@"
