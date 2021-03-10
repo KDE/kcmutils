@@ -12,6 +12,7 @@
 
 #include <KCModule>
 #include <kcmoduleinfo.h>
+#include <kcmoduledata.h>
 
 class QWidget;
 
@@ -98,6 +99,15 @@ KCMUTILS_EXPORT KCModule *reportError(ErrorReporting report, const QString &text
  * @since 5.74
  */
 KCMUTILS_EXPORT bool isDefaults(const KCModuleInfo &module, const QStringList &args = QStringList());
+
+/**
+ * Loads a @ref KCModuleData. If fails to load, return nullptr.
+ *
+ * @param module what module to load
+ *
+ * @since 5.81
+ */
+KCMUTILS_EXPORT KCModuleData *loadModuleData(const KCModuleInfo &module, const QStringList &args = QStringList());
 }
 
 #endif // KCMODULELOADER_H

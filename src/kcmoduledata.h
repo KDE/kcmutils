@@ -48,6 +48,20 @@ public:
      */
     virtual bool matchesQuery(const QString &query) const;
 
+Q_SIGNALS:
+    /**
+     * This signal is emitted when KCModuleData is loaded.
+     */
+    void loaded();
+
+    /**
+     * Internal use
+     *
+     * Triggers the emit of @see loaded() signal. This is the default behavior.
+     * To handle when loaded() is emitted in subclass, disconnect this signal in derived constructor.
+     */
+    void aboutToLoad(QPrivateSignal);
+
 protected Q_SLOTS:
     /**
      * Allow to register manually skeleton class.

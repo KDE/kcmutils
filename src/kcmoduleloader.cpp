@@ -160,30 +160,16 @@ void KCModuleLoader::unloadModule(const KCModuleInfo &mod)
 
 bool KCModuleLoader::isDefaults(const KCModuleInfo &mod, const QStringList &args)
 {
-    if (!mod.service() || mod.service()->noDisplay() || mod.library().isEmpty()) {
-        return true;
-    }
-
-    QVariantList args2(args.cbegin(), args.cend());
-
-    KPluginLoader loader(KPluginLoader::findPlugin(QLatin1String("kcms/") + mod.service()->library()));
-    KPluginFactory *factory = loader.factory();
-    if (factory) {
-        std::unique_ptr<KCModuleData> probe(factory->create<KCModuleData>(nullptr, args2));
-        if (probe) {
-            return probe->isDefaults();
-        }
-    }
-
-    std::unique_ptr<KCModuleData> probe(mod.service()->createInstance<KCModuleData>(nullptr, args2));
-    if (probe) {
-        return probe->isDefaults();
+    std::unique_ptr<KCModuleData> moduleData(loadModuleData(mod, args));
+    if (moduleData) {
+        return moduleData->isDefaults();
     }
 
     return true;
 }
 
-KCModule *KCModuleLoader::reportError(ErrorReporting report, const QString &text, const QString &details, QWidget *parent)
+KCModule *KCModuleLoader::reportError(ErrorReporting report, const QString &text,
+                                      const QString &details, QWidget *parent)
 {
     QString realDetails = details;
     if (realDetails.isNull()) {
@@ -200,5 +186,30 @@ KCModule *KCModuleLoader::reportError(ErrorReporting report, const QString &text
     if (report & KCModuleLoader::Inline) {
         return new KCMError(text, realDetails, parent);
     }
+    return nullptr;
+}
+
+KCModuleData *KCModuleLoader::loadModuleData(const KCModuleInfo &mod, const QStringList &args)
+{
+    if (!mod.service() || mod.service()->noDisplay() || mod.library().isEmpty()) {
+        return nullptr;
+    }
+
+    QVariantList args2(args.cbegin(), args.cend());
+
+    KPluginLoader loader(KPluginLoader::findPlugin(QLatin1String("kcms/") + mod.service()->library()));
+    KPluginFactory *factory = loader.factory();
+    if (factory) {
+        KCModuleData *probe(factory->create<KCModuleData>(nullptr, args2));
+        if (probe) {
+            return probe;
+        }
+    }
+
+    KCModuleData *probe(mod.service()->createInstance<KCModuleData>(nullptr, args2));
+    if (probe) {
+        return probe;
+    }
+
     return nullptr;
 }
