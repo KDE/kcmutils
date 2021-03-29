@@ -9,6 +9,7 @@
 #include <QGuiApplication>
 #include <QString>
 
+#if KCMUTILS_BUILD_DEPRECATED_SINCE(5, 82)
 KSettingsWidgetAdaptor::KSettingsWidgetAdaptor(QObject *parent)
     : QObject(parent)
 {
@@ -22,3 +23,4 @@ QString KSettingsWidgetAdaptor::applicationName()
     }
     return QCoreApplication::applicationName();
 }
+#endif

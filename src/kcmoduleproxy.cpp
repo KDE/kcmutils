@@ -27,7 +27,10 @@
 
 #include <KColorScheme>
 
+#if KCMUTILS_BUILD_DEPRECATED_SINCE(5, 82)
 #include "ksettingswidgetadaptor.h"
+#endif
+
 #include <kcmutils_debug.h>
 
 /*
@@ -94,9 +97,11 @@ void KCModuleProxyPrivate::loadModule()
         }
 
         topLayout->addWidget(kcm);
+#if KCMUTILS_BUILD_DEPRECATED_SINCE(5, 82)
         if (!modInfo.handle().isEmpty()) {
             QDBusConnection::sessionBus().registerObject(dbusPath, new KSettingsWidgetAdaptor(parent), QDBusConnection::ExportAllSlots);
         }
+#endif
     } else {
         // qDebug() << "Module already loaded, loading KCMError";
 
