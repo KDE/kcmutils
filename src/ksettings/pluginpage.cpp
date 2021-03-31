@@ -52,7 +52,7 @@ KPluginSelector *PluginPage::pluginSelector()
 
 void PluginPage::load()
 {
-    d_ptr->selwid->load();
+    //     d_ptr->selwid->load();
 }
 
 void PluginPage::save()

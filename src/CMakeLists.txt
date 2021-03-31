@@ -8,6 +8,7 @@ set(kcmutils_LIB_SRCS
     kcmoduleproxy.cpp
     kpluginselector.cpp
     kcmodulecontainer.cpp
+    kpluginmodel.cpp
     ksettingswidgetadaptor.cpp
     ksettings/dispatcher.cpp
     ksettings/dialog.cpp
@@ -52,6 +53,8 @@ target_link_libraries(KF5KCMUtils
     KF5::QuickAddons
     KF5::Declarative
     KF5::Package
+
+    Qt5::Test
 )
 set_target_properties(KF5KCMUtils PROPERTIES
                       VERSION ${KCMUTILS_VERSION_STRING}
