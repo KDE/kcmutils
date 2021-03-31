@@ -6,8 +6,8 @@
     SPDX-License-Identifier: LGPL-2.0-only
 */
 
-#ifndef KPLUGINSELECTOR_H
-#define KPLUGINSELECTOR_H
+#ifndef KPLUGINWIDGET_H
+#define KPLUGINWIDGET_H
 
 #include <QVector>
 #include <QWidget>
@@ -17,16 +17,16 @@
 #include <kcmutils_export.h>
 
 class QPushButton;
-class KPluginSelectorPrivate;
+class KPluginWidgetPrivate;
 
-class KCMUTILS_EXPORT KPluginSelector : public QWidget
+class KCMUTILS_EXPORT KPluginWidget : public QWidget
 {
     Q_OBJECT
 
 public:
-    KPluginSelector(QWidget *parent = nullptr);
+    KPluginWidget(QWidget *parent = nullptr);
 
-    ~KPluginSelector();
+    ~KPluginWidget();
 
     void addPlugins(const QVector<KPluginMetaData> plugins, const QString &categoryLabel);
 
@@ -86,7 +86,7 @@ Q_SIGNALS:
     void defaulted(bool isDefault);
 
 private:
-    KPluginSelectorPrivate *const d;
+    KPluginWidgetPrivate *const d;
 };
 
 #endif

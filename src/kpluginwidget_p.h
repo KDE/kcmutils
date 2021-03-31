@@ -30,10 +30,10 @@ class KCModuleProxy;
 class KCategoryDrawer;
 
 class PluginEntry;
-class KPluginSelectorProxyModel;
+class KPluginWidgetProxyModel;
 class PluginDelegate;
 
-class KPluginSelectorPrivate
+class KPluginWidgetPrivate
 {
 public:
     int dependantLayoutValue(int value, int width, int totalWidth) const;
@@ -43,22 +43,22 @@ public:
     KCategorizedView *listView;
     KCategoryDrawer *categoryDrawer;
     KPluginModel *pluginModel;
-    KPluginSelectorProxyModel *proxyModel;
+    KPluginWidgetProxyModel *proxyModel;
     QStringList kcmArguments;
 };
 
-class KPluginSelectorProxyModel : public KCategorizedSortFilterProxyModel
+class KPluginWidgetProxyModel : public KCategorizedSortFilterProxyModel
 {
 public:
-    KPluginSelectorProxyModel(KPluginSelectorPrivate *pluginSelector_d, QObject *parent = nullptr);
-    ~KPluginSelectorProxyModel();
+    KPluginWidgetProxyModel(KPluginWidgetPrivate *pluginSelector_d, QObject *parent = nullptr);
+    ~KPluginWidgetProxyModel();
 
 protected:
     bool filterAcceptsRow(int sourceRow, const QModelIndex &sourceParent) const override;
     bool subSortLessThan(const QModelIndex &left, const QModelIndex &right) const override;
 
 private:
-    KPluginSelectorPrivate *pluginSelector_d;
+    KPluginWidgetPrivate *pluginSelector_d;
 };
 
 class PluginDelegate : public KWidgetItemDelegate
@@ -66,7 +66,7 @@ class PluginDelegate : public KWidgetItemDelegate
     Q_OBJECT
 
 public:
-    PluginDelegate(KPluginSelectorPrivate *pluginSelector_d, QObject *parent = nullptr);
+    PluginDelegate(KPluginWidgetPrivate *pluginSelector_d, QObject *parent = nullptr);
     ~PluginDelegate();
 
     void paint(QPainter *painter, const QStyleOptionViewItem &option, const QModelIndex &index) const override;
@@ -94,7 +94,7 @@ private:
     QPushButton *pushButton;
     std::function<QPushButton *(const KPluginInfo &)> handler = nullptr;
 
-    KPluginSelectorPrivate *pluginSelector_d;
+    KPluginWidgetPrivate *pluginSelector_d;
 };
 
 #endif // KPLUGINSELECTOR_P_H

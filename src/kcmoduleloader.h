@@ -11,8 +11,8 @@
 #define KCMODULELOADER_H
 
 #include <KCModule>
-#include <kcmoduleinfo.h>
 #include <kcmoduledata.h>
+#include <kcmoduleinfo.h>
 
 class QWidget;
 

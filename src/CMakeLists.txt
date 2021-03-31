@@ -9,6 +9,7 @@ set(kcmutils_LIB_SRCS
     kpluginselector.cpp
     kcmodulecontainer.cpp
     kpluginmodel.cpp
+    kpluginwidget.cpp
     ksettingswidgetadaptor.cpp
     ksettings/dispatcher.cpp
     ksettings/dialog.cpp
@@ -70,6 +71,7 @@ ecm_generate_headers(KCMUtils_HEADERS
   KPluginSelector
   KCModuleContainer
   KCModuleData
+  KPluginWidget
 
   REQUIRED_HEADERS KCMUtils_HEADERS
 )

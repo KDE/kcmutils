@@ -168,8 +168,7 @@ bool KCModuleLoader::isDefaults(const KCModuleInfo &mod, const QStringList &args
     return true;
 }
 
-KCModule *KCModuleLoader::reportError(ErrorReporting report, const QString &text,
-                                      const QString &details, QWidget *parent)
+KCModule *KCModuleLoader::reportError(ErrorReporting report, const QString &text, const QString &details, QWidget *parent)
 {
     QString realDetails = details;
     if (realDetails.isNull()) {

@@ -6,8 +6,8 @@
     SPDX-License-Identifier: LGPL-2.0-only
 */
 
-#include "kpluginselector.h"
-#include "kpluginselector_p.h"
+#include "kpluginwidget.h"
+#include "kpluginwidget_p.h"
 
 #include <kcmutils_debug.h>
 
@@ -42,7 +42,7 @@
 
 #define MARGIN 5
 
-int KPluginSelectorPrivate::dependantLayoutValue(int value, int width, int totalWidth) const
+int KPluginWidgetPrivate::dependantLayoutValue(int value, int width, int totalWidth) const
 {
     if (listView->layoutDirection() == Qt::LeftToRight) {
         return value;
@@ -51,9 +51,9 @@ int KPluginSelectorPrivate::dependantLayoutValue(int value, int width, int total
     return totalWidth - width - value;
 }
 
-KPluginSelector::KPluginSelector(QWidget *parent)
+KPluginWidget::KPluginWidget(QWidget *parent)
     : QWidget(parent)
-    , d(new KPluginSelectorPrivate)
+    , d(new KPluginWidgetPrivate)
 {
     QVBoxLayout *layout = new QVBoxLayout(this);
     layout->setContentsMargins(0, 0, 0, 0);
@@ -80,7 +80,7 @@ KPluginSelector::KPluginSelector(QWidget *parent)
 
     auto tester = new QAbstractItemModelTester(d->pluginModel, QAbstractItemModelTester::FailureReportingMode::Fatal);
 
-    d->proxyModel = new KPluginSelectorProxyModel(d, this);
+    d->proxyModel = new KPluginWidgetProxyModel(d, this);
     auto tester2 = new QAbstractItemModelTester(d->proxyModel, QAbstractItemModelTester::FailureReportingMode::Fatal);
     d->proxyModel->setCategorizedModel(true);
     d->proxyModel->setSourceModel(d->pluginModel);
@@ -94,51 +94,51 @@ KPluginSelector::KPluginSelector(QWidget *parent)
     d->listView->viewport()->setAttribute(Qt::WA_Hover);
 
     connect(d->lineEdit, &QLineEdit::textChanged, d->proxyModel, &QSortFilterProxyModel::invalidate);
-    connect(pluginDelegate, &PluginDelegate::configCommitted, this, &KPluginSelector::configCommitted);
-    connect(pluginDelegate, &PluginDelegate::changed, this, &KPluginSelector::changed);
+    connect(pluginDelegate, &PluginDelegate::configCommitted, this, &KPluginWidget::configCommitted);
+    connect(pluginDelegate, &PluginDelegate::changed, this, &KPluginWidget::changed);
 
     layout->addWidget(d->lineEdit);
     layout->addWidget(d->listView);
 
-    // When a KPluginSelector instance gets focus,
+    // When a KPluginWidget instance gets focus,
     // it should pass over the focus to its child searchbar.
     setFocusProxy(d->lineEdit);
 }
 
-KPluginSelector::~KPluginSelector()
+KPluginWidget::~KPluginWidget()
 {
     delete d->listView->itemDelegate();
     delete d->listView; // depends on some other things in d, make sure this dies first.
     delete d;
 }
 
-void KPluginSelector::addPlugins(const QVector<KPluginMetaData> plugins, const QString &categoryLabel)
+void KPluginWidget::addPlugins(const QVector<KPluginMetaData> plugins, const QString &categoryLabel)
 {
     d->pluginModel->addPlugins(plugins, categoryLabel);
     d->proxyModel->sort(0);
 }
 
-void KPluginSelector::setConfig(const KConfigGroup &config)
+void KPluginWidget::setConfig(const KConfigGroup &config)
 {
     d->pluginModel->setConfig(config);
 }
 
-void KPluginSelector::clear()
+void KPluginWidget::clear()
 {
     d->pluginModel->clear();
 }
 
-void KPluginSelector::save()
+void KPluginWidget::save()
 {
     d->pluginModel->save();
 }
 
-void KPluginSelector::defaults()
+void KPluginWidget::defaults()
 {
     d->pluginModel->defaults();
 }
 
-bool KPluginSelector::isDefault() const
+bool KPluginWidget::isDefault() const
 {
     for (int i = 0; i < d->pluginModel->rowCount(); i++) {
         const QModelIndex index = d->pluginModel->index(i, 0);
@@ -150,17 +150,17 @@ bool KPluginSelector::isDefault() const
     return true;
 }
 
-void KPluginSelector::setConfigurationArguments(const QStringList &arguments)
+void KPluginWidget::setConfigurationArguments(const QStringList &arguments)
 {
     d->kcmArguments = arguments;
 }
 
-QStringList KPluginSelector::configurationArguments() const
+QStringList KPluginWidget::configurationArguments() const
 {
     return d->kcmArguments;
 }
 
-void KPluginSelector::showConfiguration(const QString &pluginId)
+void KPluginWidget::showConfiguration(const QString &pluginId)
 {
     QModelIndex idx;
     for (int i = 0, c = d->proxyModel->rowCount(); i < c; ++i) {
@@ -180,18 +180,18 @@ void KPluginSelector::showConfiguration(const QString &pluginId)
     }
 }
 
-KPluginSelectorProxyModel::KPluginSelectorProxyModel(KPluginSelectorPrivate *pluginSelector_d, QObject *parent)
+KPluginWidgetProxyModel::KPluginWidgetProxyModel(KPluginWidgetPrivate *pluginSelector_d, QObject *parent)
     : KCategorizedSortFilterProxyModel(parent)
     , pluginSelector_d(pluginSelector_d)
 {
     sort(0);
 }
 
-KPluginSelectorProxyModel::~KPluginSelectorProxyModel()
+KPluginWidgetProxyModel::~KPluginWidgetProxyModel()
 {
 }
 
-bool KPluginSelectorProxyModel::filterAcceptsRow(int sourceRow, const QModelIndex &sourceParent) const
+bool KPluginWidgetProxyModel::filterAcceptsRow(int sourceRow, const QModelIndex &sourceParent) const
 {
     Q_UNUSED(sourceParent)
 
@@ -216,12 +216,12 @@ bool KPluginSelectorProxyModel::filterAcceptsRow(int sourceRow, const QModelInde
     return false;
 }
 
-bool KPluginSelectorProxyModel::subSortLessThan(const QModelIndex &left, const QModelIndex &right) const
+bool KPluginWidgetProxyModel::subSortLessThan(const QModelIndex &left, const QModelIndex &right) const
 {
     return left.data(KPluginModel::NameRole).toString().compare(right.data(KPluginModel::NameRole).toString()) < 0;
 }
 
-PluginDelegate::PluginDelegate(KPluginSelectorPrivate *pluginSelector_d, QObject *parent)
+PluginDelegate::PluginDelegate(KPluginWidgetPrivate *pluginSelector_d, QObject *parent)
     : KWidgetItemDelegate(pluginSelector_d->listView, parent)
     , checkBox(new QCheckBox)
     , pushButton(new QPushButton)
