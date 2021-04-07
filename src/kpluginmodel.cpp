@@ -2,6 +2,8 @@
 
 #include "kcategorizedsortfilterproxymodel.h"
 
+#include <KServiceTypeTrader>
+
 KPluginModel::KPluginModel(QObject *parent)
     : QAbstractListModel(parent)
 {
@@ -31,7 +33,7 @@ QVariant KPluginModel::data(const QModelIndex &index, int role) const
     case KCategorizedSortFilterProxyModel::CategorySortRole:
         return m_categoryLabels[plugin.pluginId()];
     case ConfigRole:
-        return plugin.value(QStringLiteral("X-KDE-ConfigModule"));
+        return findConfig(plugin);
     case IdRole:
         return plugin.pluginId();
     case EnabledByDefaultRole:
@@ -107,7 +109,7 @@ void KPluginModel::save()
 {
     if (m_config.isValid()) {
         for (auto it = m_pendingStates.cbegin(); it != m_pendingStates.cend(); ++it) {
-            return m_config.writeEntry(it.key() + QLatin1String("Enabled"), it.value());
+            m_config.writeEntry(it.key() + QLatin1String("Enabled"), it.value());
         }
         m_config.sync();
     }
@@ -131,4 +133,21 @@ void KPluginModel::defaults()
     }
 
     if (!m_plugins.isEmpty()) { }
+}
+
+QString KPluginModel::findConfig(const KPluginMetaData &plugin) const
+{
+    const QString metaDataKCM = plugin.value(QStringLiteral("X-KDE-ConfigModule"));
+
+    if (!metaDataKCM.isEmpty()) {
+        return metaDataKCM;
+    }
+
+    qDebug() << plugin.pluginId();
+
+    // TODO KF6 remove
+    const auto services =
+        KServiceTypeTrader::self()->query(QStringLiteral("KCModule"), QLatin1Char('\'') + plugin.pluginId() + QLatin1String("' in [X-KDE-ParentComponents]"));
+
+    return services.isEmpty() ? QString() : services.first()->desktopEntryName();
 }

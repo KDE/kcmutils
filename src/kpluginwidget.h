@@ -19,6 +19,9 @@
 class QPushButton;
 class KPluginWidgetPrivate;
 
+/**
+ * A widget that shows a list of available plugins and allows to disable/enable them and open their configuration UI.
+ */
 class KCMUTILS_EXPORT KPluginWidget : public QWidget
 {
     Q_OBJECT
@@ -39,6 +42,8 @@ public:
     void defaults();
 
     bool isDefault() const;
+
+    // TODO setAutoSave?
 
     /**
      * Sets the @p arguments with which the configuration modules will be initialized

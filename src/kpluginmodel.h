@@ -37,6 +37,7 @@ public:
 
 private:
     bool isPluginEnabled(const KPluginMetaData &plugin) const;
+    QString findConfig(const KPluginMetaData &plugin) const;
 
     QVector<KPluginMetaData> m_plugins;
     KConfigGroup m_config;
