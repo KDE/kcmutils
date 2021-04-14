@@ -15,8 +15,6 @@
 #include <QVBoxLayout>
 
 #include <KAboutData>
-#include <KPackage/Package>
-#include <KPackage/PackageLoader>
 #include <KPageWidget>
 #include <kdeclarative/kdeclarative.h>
 #include <kdeclarative/qmlobjectsharedengine.h>
