@@ -13,11 +13,13 @@
 #include <QApplication>
 #include <QLayout>
 
+#ifdef QT_DBUS_LIB
 #include <QDBusConnection>
 #include <QDBusConnectionInterface>
 #include <QDBusInterface>
 #include <QDBusReply>
 #include <QDBusServiceWatcher>
+#endif
 
 #include <KAboutData>
 #include <kcmoduleinfo.h>

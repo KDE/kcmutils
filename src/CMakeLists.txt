@@ -52,7 +52,6 @@ target_link_libraries(KF5KCMUtils
     KF5::Service        # KService
   PRIVATE
     KF5KCMUtilsCore
-    Qt${QT_MAJOR_VERSION}::DBus       # dbus usage in kcmoduleproxy.cpp
     Qt${QT_MAJOR_VERSION}::Qml
     Qt${QT_MAJOR_VERSION}::Quick
     Qt${QT_MAJOR_VERSION}::QuickWidgets
@@ -64,6 +63,9 @@ target_link_libraries(KF5KCMUtils
     KF5::QuickAddons
     KF5::Declarative
 )
+if(Qt5DBus_FOUND)
+    target_link_libraries(KF5KCMUtils PRIVATE Qt${QT_MAJOR_VERSION}::DBus)# dbus usage in kcmoduleproxy.cpp
+endif()
 set_target_properties(KF5KCMUtils PROPERTIES
                       VERSION ${KCMUTILS_VERSION}
                       SOVERSION ${KCMUTILS_SOVERSION}
