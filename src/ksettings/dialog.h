@@ -16,7 +16,6 @@
 
 template<class T>
 class QList;
-class KPluginInfo;
 class KCModuleInfo;
 
 namespace KSettings
