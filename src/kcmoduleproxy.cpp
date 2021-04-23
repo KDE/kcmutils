@@ -16,6 +16,7 @@
 #include <QDBusConnectionInterface>
 #include <QDBusInterface>
 #include <QDBusReply>
+#include <QDBusServiceWatcher>
 
 #include <KAboutData>
 #include <kcmoduleinfo.h>
@@ -116,15 +117,19 @@ void KCModuleProxyPrivate::loadModule()
         QDBusReply<QString> reply = proxy.call(QStringLiteral("applicationName"));
 
         if (reply.isValid()) {
-            QObject::connect(QDBusConnection::sessionBus().interface(),
-                             SIGNAL(serviceOwnerChanged(QString, QString, QString)),
+            auto *watcher = new QDBusServiceWatcher(parent);
+            watcher->addWatchedService(dbusService);
+            watcher->setConnection(QDBusConnection::sessionBus());
+            watcher->setWatchMode(QDBusServiceWatcher::WatchForOwnerChange);
+            QObject::connect(watcher,
+                             &QDBusServiceWatcher::serviceOwnerChanged,
                              parent,
-                             SLOT(_k_ownerChanged(QString, QString, QString)));
+                             [this](const QString &serviceName, const QString &oldOwner, const QString &newOwner) {
+                                 _k_ownerChanged(serviceName, oldOwner, newOwner);
+                             });
+
             kcm = KCModuleLoader::reportError(KCModuleLoader::Inline,
-                                              i18nc("Argument is application name",
-                                                    "This configuration section is "
-                                                    "already opened in %1",
-                                                    reply.value()),
+                                              i18nc("Argument is application name", "This configuration section is already opened in %1", reply.value()),
                                               QStringLiteral(" "),
                                               parent);
             topLayout->addWidget(kcm);
