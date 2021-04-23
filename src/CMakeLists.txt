@@ -12,7 +12,6 @@ set(kcmutils_LIB_SRCS
     ksettings/dispatcher.cpp
     ksettings/dialog.cpp
     ksettings/pluginpage.cpp
-    ksettings/componentsdialog.cpp
 )
 
 ecm_qt_declare_logging_category(kcmutils_LIB_SRCS
