@@ -83,9 +83,15 @@ void KCModuleProxyPrivate::loadModule()
 
         kcm = KCModuleLoader::loadModule(modInfo, KCModuleLoader::Inline, parent, args);
 
-        QObject::connect(kcm, SIGNAL(changed(bool)), parent, SLOT(_k_moduleChanged(bool)));
-        QObject::connect(kcm, SIGNAL(defaulted(bool)), parent, SLOT(_k_moduleDefaulted(bool)));
-        QObject::connect(kcm, SIGNAL(destroyed()), parent, SLOT(_k_moduleDestroyed()));
+        QObject::connect(kcm, &KCModule::changed, parent, [this](bool state) {
+            _k_moduleChanged(state);
+        });
+        QObject::connect(kcm, &KCModule::defaulted, parent, [this](bool state) {
+            _k_moduleDefaulted(state);
+        });
+        QObject::connect(kcm, &KCModule::destroyed, parent, [this]() {
+            _k_moduleDestroyed();
+        });
         QObject::connect(kcm, &KCModule::quickHelpChanged, parent, &KCModuleProxy::quickHelpChanged);
         parent->setWhatsThis(kcm->quickHelp());
 

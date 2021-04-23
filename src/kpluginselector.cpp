@@ -131,7 +131,7 @@ KPluginSelector::Private::DependenciesWidget::DependenciesWidget(QWidget *parent
     dataLayout->addWidget(details);
     layout->addLayout(dataLayout);
 
-    QObject::connect(link, SIGNAL(leftClickedUrl()), this, SLOT(showDependencyDetails()));
+    QObject::connect(link, &KUrlLabel::leftClickedUrl, this, &KPluginSelector::Private::DependenciesWidget::showDependencyDetails);
 }
 
 KPluginSelector::Private::DependenciesWidget::~DependenciesWidget()

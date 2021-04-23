@@ -108,9 +108,9 @@ void KCModuleContainer::addModule(const QString &module)
                          proxy->moduleInfo().moduleName().replace(QLatin1Char('&'), QStringLiteral("&&")));
 
     d->tabWidget->setTabToolTip(d->tabWidget->indexOf(proxy), proxy->moduleInfo().comment());
-    // clang-format off
-    connect(proxy, SIGNAL(changed(KCModuleProxy*)), SLOT(moduleChanged(KCModuleProxy*)));
-    // clang-format on
+
+    connect(proxy, QOverload<KCModuleProxy *>::of(&KCModuleProxy::changed), this, &KCModuleContainer::moduleChanged);
+
     /* Collect our buttons - we go for the common deliminator */
     setButtons(buttons() | proxy->realModule()->buttons());
 }

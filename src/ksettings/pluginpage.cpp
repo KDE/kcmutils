@@ -21,7 +21,7 @@ public:
     {
     }
 
-    KPluginSelector *selwid = nullptr;
+    KPluginSelector *m_pluginSelector = nullptr;
     void _k_reparseConfiguration(const QByteArray &a);
 };
 
@@ -30,9 +30,11 @@ PluginPage::PluginPage(const KAboutData *aboutData, QWidget *parent, const QVari
     , d_ptr(new PluginPagePrivate)
 {
     Q_D(PluginPage);
-    d->selwid = new KPluginSelector(this);
-    connect(d->selwid, SIGNAL(changed(bool)), this, SIGNAL(changed(bool)));
-    connect(d->selwid, SIGNAL(configCommitted(QByteArray)), this, SLOT(_k_reparseConfiguration(QByteArray)));
+    d->m_pluginSelector = new KPluginSelector(this);
+    connect(d->m_pluginSelector, &KPluginSelector::changed, this, &KCModule::changed);
+    connect(d->m_pluginSelector, &KPluginSelector::configCommitted, this, [d](const QByteArray &componentName) {
+        d->_k_reparseConfiguration(componentName);
+    });
 }
 
 void PluginPagePrivate::_k_reparseConfiguration(const QByteArray &a)
@@ -47,22 +49,22 @@ PluginPage::~PluginPage()
 
 KPluginSelector *PluginPage::pluginSelector()
 {
-    return d_ptr->selwid;
+    return d_ptr->m_pluginSelector;
 }
 
 void PluginPage::load()
 {
-    d_ptr->selwid->load();
+    d_ptr->m_pluginSelector->load();
 }
 
 void PluginPage::save()
 {
-    d_ptr->selwid->save();
+    d_ptr->m_pluginSelector->save();
 }
 
 void PluginPage::defaults()
 {
-    d_ptr->selwid->defaults();
+    d_ptr->m_pluginSelector->defaults();
 }
 
 #endif

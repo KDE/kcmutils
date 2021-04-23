@@ -418,9 +418,15 @@ void DialogPrivate::createDialogFromServices()
     // I have no idea how to check that in KPluginSelector::load()...
     // q->showButton(KDialog::User1, true);
 
-    QObject::connect(q->button(QDialogButtonBox::Ok), SIGNAL(clicked()), q, SLOT(_k_syncConfiguration()));
-    QObject::connect(q->button(QDialogButtonBox::Apply), SIGNAL(clicked()), q, SLOT(_k_syncConfiguration()));
-    QObject::connect(q, SIGNAL(configCommitted(QByteArray)), q, SLOT(_k_reparseConfiguration(QByteArray)));
+    QObject::connect(q->button(QDialogButtonBox::Ok), &QPushButton::clicked, q, [this]() {
+        _k_syncConfiguration();
+    });
+    QObject::connect(q->button(QDialogButtonBox::Apply), &QPushButton::clicked, q, [this]() {
+        _k_syncConfiguration();
+    });
+    QObject::connect(q, QOverload<const QByteArray &>::of(&KCMultiDialog::configCommitted), q, [this](const QByteArray &componentName) {
+        _k_reparseConfiguration(componentName);
+    });
 }
 
 void DialogPrivate::connectItemCheckBox(KPageWidgetItem *item, const KPluginInfo &pinfo, bool isEnabled)
@@ -460,17 +466,6 @@ void DialogPrivate::_k_reparseConfiguration(const QByteArray &a)
 {
     Dispatcher::reparseConfiguration(QString::fromLatin1(a));
 }
-
-/*
-void DialogPrivate::_k_configureTree()
-{
-    // qDebug() ;
-    QObject::connect(subdlg, SIGNAL(okClicked()), q, SLOT(_k_updateTreeList()));
-    QObject::connect(subdlg, SIGNAL(applyClicked()), q, SLOT(_k_updateTreeList()));
-    QObject::connect(subdlg, SIGNAL(okClicked()), q, SIGNAL(pluginSelectionChanged()));
-    QObject::connect(subdlg, SIGNAL(applyClicked()), q, SIGNAL(pluginSelectionChanged()));
-}
-*/
 
 void DialogPrivate::_k_clientChanged()
 {

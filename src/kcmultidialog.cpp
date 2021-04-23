@@ -263,9 +263,9 @@ void KCMultiDialogPrivate::init()
     q->connect(buttonBox->button(QDialogButtonBox::Reset), &QAbstractButton::clicked, q, &KCMultiDialog::slotUser1Clicked);
 
     q->setButtonBox(buttonBox);
-    // clang-format off
-    q->connect(q, SIGNAL(currentPageChanged(KPageWidgetItem*,KPageWidgetItem*)), SLOT(_k_slotCurrentPageChanged(KPageWidgetItem*,KPageWidgetItem*)));
-    // clang-format on
+    q->connect(q, &KPageDialog::currentPageChanged, q, [this](KPageWidgetItem *current, KPageWidgetItem *before) {
+        _k_slotCurrentPageChanged(current, before);
+    });
 }
 
 KCMultiDialog::KCMultiDialog(QWidget *parent)
@@ -547,10 +547,13 @@ KPageWidgetItem *KCMultiDialog::addModule(const KCModuleInfo &moduleInfo, KPageW
         }
     }
 
-    // clang-format off
-    connect(kcm, SIGNAL(changed(bool)), this, SLOT(_k_clientChanged()));
-    connect(kcm->realModule(), SIGNAL(rootOnlyMessageChanged(bool,QString)), this, SLOT(_k_updateHeader(bool,QString)));
-    // clang-format on
+    QObject::connect(kcm, QOverload<bool>::of(&KCModuleProxy::changed), this, [d]() {
+        d->_k_clientChanged();
+    });
+
+    QObject::connect(kcm->realModule(), &KCModule::rootOnlyMessageChanged, this, [d](bool use, QString message) {
+        d->_k_updateHeader(use, message);
+    });
 
     if (d->modules.count() == 1 || updateCurrentPage) {
         setCurrentPage(item);
