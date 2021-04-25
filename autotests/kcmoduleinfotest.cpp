@@ -24,6 +24,15 @@ private Q_SLOTS:
     void testInvalidKCM();
 };
 
+#ifndef Q_OS_WIN
+void initLocale()
+{
+    setenv("LC_ALL", "en_US.utf-8", 1);
+}
+
+Q_CONSTRUCTOR_FUNCTION(initLocale)
+#endif
+
 void KCModuleInfoTest::testExternalApp()
 {
     const QString yast = QFINDTESTDATA("YaST-systemsettings.desktop");
