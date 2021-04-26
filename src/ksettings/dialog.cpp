@@ -8,7 +8,6 @@
 #include "dialog.h"
 #include "dialog_p.h"
 
-#include "dispatcher.h"
 #include <kcmutils_debug.h>
 
 #include <KConfig>
@@ -16,6 +15,7 @@
 #include <KPluginMetaData>
 #include <KServiceGroup>
 #include <KServiceTypeTrader>
+#include <KSharedConfig>
 
 #include <QCheckBox>
 #include <QCoreApplication>
@@ -117,7 +117,11 @@ void Dialog::showEvent(QShowEvent *)
         d->firstshow = false;
         setUpdatesEnabled(true);
     }
-    Dispatcher::syncConfiguration();
+
+    for (const QString &compName : qAsConst(d->components)) {
+        KSharedConfig::Ptr config = KSharedConfig::openConfig(compName + QLatin1String("rc"));
+        config->sync();
+    }
 }
 
 DialogPrivate::DialogPrivate(Dialog *parent)
@@ -418,14 +422,13 @@ void DialogPrivate::createDialogFromServices()
     // I have no idea how to check that in KPluginSelector::load()...
     // q->showButton(KDialog::User1, true);
 
-    QObject::connect(q->button(QDialogButtonBox::Ok), &QPushButton::clicked, q, [this]() {
-        _k_syncConfiguration();
+    QObject::connect(q, QOverload<>::of(&KCMultiDialog::configCommitted), q, [this]() {
+        updateConfiguration();
     });
-    QObject::connect(q->button(QDialogButtonBox::Apply), &QPushButton::clicked, q, [this]() {
-        _k_syncConfiguration();
-    });
-    QObject::connect(q, QOverload<const QByteArray &>::of(&KCMultiDialog::configCommitted), q, [this](const QByteArray &componentName) {
-        _k_reparseConfiguration(componentName);
+
+    QObject::connect(q, QOverload<const QByteArray &>::of(&KCMultiDialog::configCommitted), q, [](const QByteArray &componentName) {
+        KSharedConfig::Ptr config = KSharedConfig::openConfig(QString::fromLatin1(componentName) + QLatin1String("rc"));
+        config->reparseConfiguration();
     });
 }
 
@@ -444,7 +447,7 @@ void DialogPrivate::connectItemCheckBox(KPageWidgetItem *item, const KPluginInfo
     q->connect(checkBox, &QAbstractButton::clicked, item, &KPageWidgetItem::setChecked);
 }
 
-void DialogPrivate::_k_syncConfiguration()
+void DialogPrivate::updateConfiguration()
 {
     Q_Q(Dialog);
     const QHash<KPageWidgetItem *, KPluginInfo>::Iterator endIt = pluginForItem.end();
@@ -455,16 +458,11 @@ void DialogPrivate::_k_syncConfiguration()
         pinfo.setPluginEnabled(item->isChecked());
         pinfo.save();
     }
+
     if (pluginStateDirty > 0) {
         Q_EMIT q->pluginSelectionChanged();
         pluginStateDirty = 0;
     }
-    Dispatcher::syncConfiguration();
-}
-
-void DialogPrivate::_k_reparseConfiguration(const QByteArray &a)
-{
-    Dispatcher::reparseConfiguration(QString::fromLatin1(a));
 }
 
 void DialogPrivate::_k_clientChanged()

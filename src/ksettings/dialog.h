@@ -27,34 +27,43 @@ class DialogPrivate;
  *
  * For more information see \ref KSettings.
  *
- * This class aims to standardize the use of configuration dialogs in KDE
- * applications. Especially when using KParts and/or Plugins you face problems
- * creating a consistent config dialog.
+ * This class aims to standardize the use of configuration dialogs in applications.
+ * Especially when using KParts and/or Plugins you face problems creating consistent
+ * config dialogs.
  *
  * To show a configuration dialog you only have to call the show method and be
  * done with it. A code example:
  *
- * You initialize \p m_cfgdlg with
- * \code
- * m_cfgdlg = new Dialog( this );
- * \endcode
+ * You initialize @c m_cfgdlg with
+ * @code
+ * m_cfgdlg = new Dialog(this);
+ * @endcode
+ *
  * If you use a KPart that was not especially designed for your app you can use
  * the second constructor:
- * \code
+ * @code
  * QStringList kpartslist;
- * for( all my kparts )
+ * for (all my kparts) {
  *   kpartslist += m_mypart->componentData().componentName();
- * m_cfgdlg = new Dialog( kpartslist, this );
- * \endcode
- * and the action for the config dialog is connected to the show slot:
- * \code
- * KStandardAction::preferences( m_cfgdlg, SLOT( show() ), actionCollection() );
- * \endcode
+ * }
  *
- * If you need to be informed when the config was changed and applied in the
- * dialog you might want to take a look at Dispatcher.
+ * m_cfgdlg = new Dialog(kpartslist, this);
+ * @endcode
  *
- * For more information see \ref KSettings.
+ * and ideally you can connect the "Configure MyApp" action to the config
+ * dialog show() slot:
+ * @code
+ * KStandardAction::preferences(m_cfgdlg, &QDialog::show, actionCollection());
+ * @endcode
+ *
+ * If you need to be informed when the config is changed by the dialog, you can
+ * connect to the @c KCMultiDialog::configCommitted() signal (which emits the
+ * component name as its argument):
+ * @code
+ * connect(m_cfgdlg, QOverload<const QByteArray &>::of(&KCMultiDialog::configCommitted), this, &Foo::slotConfigUpdated);
+ * @endcode
+ *
+ * @see KSettings.
  *
  * @author Matthias Kretz <kretz@kde.org>
  */
@@ -163,8 +172,6 @@ Q_SIGNALS:
 private:
     // Q_PRIVATE_SLOT(d_func(), void _k_configureTree())
     Q_PRIVATE_SLOT(d_func(), void _k_updateEnabledState(bool))
-    Q_PRIVATE_SLOT(d_func(), void _k_syncConfiguration())
-    Q_PRIVATE_SLOT(d_func(), void _k_reparseConfiguration(const QByteArray &))
 };
 
 }

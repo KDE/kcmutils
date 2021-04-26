@@ -48,8 +48,7 @@ protected:
 
     // void _k_configureTree();
     void _k_updateEnabledState(bool);
-    void _k_syncConfiguration();
-    void _k_reparseConfiguration(const QByteArray &a);
+    void updateConfiguration();
     void _k_clientChanged() override;
 
     KPageWidgetItem *createPageItem(KPageWidgetItem *parentItem, const QString &name, const QString &comment, const QString &iconName, int weight);
