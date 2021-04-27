@@ -34,7 +34,7 @@ uint qHash(const KCModuleInfo &info)
 namespace KSettings
 {
 Dialog::Dialog(QWidget *parent)
-    : KCMultiDialog(*new DialogPrivate(this), new KPageWidget, parent)
+    : Dialog(QStringList{}, parent)
 {
 }
 
