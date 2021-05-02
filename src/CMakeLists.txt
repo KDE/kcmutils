@@ -52,7 +52,7 @@ target_link_libraries(KF5KCMUtils
     KF5::Declarative
 )
 set_target_properties(KF5KCMUtils PROPERTIES
-                      VERSION ${KCMUTILS_VERSION_STRING}
+                      VERSION ${KCMUTILS_VERSION}
                       SOVERSION ${KCMUTILS_SOVERSION}
                       EXPORT_NAME KCMUtils)
 
