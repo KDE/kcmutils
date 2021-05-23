@@ -58,7 +58,6 @@ add_definitions(-DKSERVICE_DISABLE_DEPRECATED_BEFORE_AND_AT=0x054E00) # for KPlu
 add_definitions(-DKCOREADDONS_DISABLE_DEPRECATED_BEFORE_AND_AT=0x054E00) # for KPluginInfo::dependencies
 add_definitions(-DTRANSLATION_DOMAIN=\"kcmutils5\")
 ki18n_install(po)
-add_definitions(-DQT_NO_FOREACH)
 add_subdirectory(src)
 if(BUILD_TESTING)
 add_subdirectory(autotests)
