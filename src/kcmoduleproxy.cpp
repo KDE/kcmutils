@@ -106,7 +106,11 @@ void KCModuleProxyPrivate::loadModule()
     }
 
     // qDebug() << "Module not already loaded, loading module " << modInfo.moduleName() << " from library " << modInfo.library() << " using symbol " << modInfo.handle();
-    kcm = KCModuleLoader::loadModule(modInfo, KCModuleLoader::Inline, parent, args);
+    if (metaData.isValid()) {
+        kcm = KCModuleLoader::loadModule(metaData, KCModuleLoader::Inline, parent, args);
+    } else {
+        kcm = KCModuleLoader::loadModule(modInfo, KCModuleLoader::Inline, parent, args);
+    }
 
     QObject::connect(kcm, &KCModule::changed, parent, [this](bool state) {
         _k_moduleChanged(state);
@@ -212,6 +216,13 @@ void KCModuleProxyPrivate::_k_moduleDestroyed()
 KCModuleProxy::KCModuleProxy(const KService::Ptr &service, QWidget *parent, const QStringList &args)
     : QWidget(parent)
     , d_ptr(new KCModuleProxyPrivate(this, KCModuleInfo(service), args))
+{
+    d_ptr->q_ptr = this;
+}
+
+KCModuleProxy::KCModuleProxy(const KPluginMetaData &metaData, QWidget *parent, const QStringList &args)
+    : QWidget(parent)
+    , d_ptr(new KCModuleProxyPrivate(this, metaData, args))
 {
     d_ptr->q_ptr = this;
 }

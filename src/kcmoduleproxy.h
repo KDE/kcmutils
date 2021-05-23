@@ -88,6 +88,12 @@ public:
     explicit KCModuleProxy(const KService::Ptr &service, QWidget *parent = nullptr, const QStringList &args = QStringList());
 
     /**
+     * Constructs a KCModuleProxy from KPluginMetaData
+     * @since 5.83
+     */
+    explicit KCModuleProxy(const KPluginMetaData &metaData, QWidget *parent = nullptr, const QStringList &args = QStringList());
+
+    /**
      * Default destructor
      */
     ~KCModuleProxy() override;

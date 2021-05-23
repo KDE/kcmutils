@@ -64,6 +64,16 @@ enum ErrorReporting {
 KCMUTILS_EXPORT KCModule *loadModule(const KCModuleInfo &module, ErrorReporting report, QWidget *parent = nullptr, const QStringList &args = QStringList());
 
 /**
+ * Loads a @ref KCModule. If loading fails KCM with KCM whihc displays and error message is returned
+ * @param metaData KPluginMetaData for loding the plgin,
+ * @param report see ErrorReporting
+ *
+ * @return a pointer to the loaded @ref KCModule
+ * @since 5.83
+ */
+KCMUTILS_EXPORT KCModule *
+loadModule(const KPluginMetaData &metaData, ErrorReporting report, QWidget *parent = nullptr, const QStringList &args = QStringList());
+/**
  * Loads a @ref KCModule. If loading fails a zero pointer is returned.
  *
  * @param module what module to load

@@ -18,6 +18,7 @@
 #include <QVBoxLayout>
 
 #include <KAboutData>
+#include <KAuthorized>
 #include <KLocalizedString>
 #include <KMessageBox>
 #include <KPluginInfo>
@@ -151,6 +152,41 @@ KCModule *KCModuleLoader::loadModule(const KCModuleInfo &mod, ErrorReporting rep
                        parent);
 }
 
+KCModule *KCModuleLoader::loadModule(const KPluginMetaData &metaData, ErrorReporting report, QWidget *parent, const QStringList &args)
+{
+    Q_ASSERT(metaData.isValid());
+    if (!KAuthorized::authorizeControlModule(metaData.pluginId())) {
+        return reportError(report,
+                           i18n("The module %1 is disabled.", metaData.pluginId()),
+                           i18n("<qt><p>The module has been disabled by the administrator.</p></qt>"),
+                           parent);
+    }
+    QVariantList args2;
+    const auto additionalArgs = metaData.rawData().value(QStringLiteral("X-KDE-KCM-Args")).toArray();
+    args2.reserve(args.count() + additionalArgs.count());
+    for (const QString &arg : args) {
+        args2 << arg;
+    }
+    args2 << additionalArgs;
+
+    KPluginLoader loader(metaData.fileName());
+    KPluginFactory *factory = loader.factory();
+    auto *cm = factory->create<QObject>(nullptr, args2);
+    if (auto kcm = qobject_cast<KQuickAddons::ConfigModule *>(cm)) {
+        if (!kcm->mainUi()) {
+            delete kcm;
+            return reportError(report, i18n("Error loading QML file."), kcm->errorString(), parent);
+        }
+        return new KCModuleQml(std::unique_ptr<KQuickAddons::ConfigModule>(kcm), parent, args2);
+    } else if (auto kcm = qobject_cast<KCModule *>(cm)) {
+        return kcm;
+    } else {
+        qCWarning(KCMUTILS_LOG) << "Error creating object from plugin" << loader.fileName();
+    }
+
+    return reportError(report, loader.errorString(), QString(), parent);
+}
+
 void KCModuleLoader::unloadModule(const KCModuleInfo &mod)
 {
     // get the library loader instance
@@ -168,8 +204,7 @@ bool KCModuleLoader::isDefaults(const KCModuleInfo &mod, const QStringList &args
     return true;
 }
 
-KCModule *KCModuleLoader::reportError(ErrorReporting report, const QString &text,
-                                      const QString &details, QWidget *parent)
+KCModule *KCModuleLoader::reportError(ErrorReporting report, const QString &text, const QString &details, QWidget *parent)
 {
     QString realDetails = details;
     if (realDetails.isNull()) {
