@@ -29,6 +29,8 @@ protected:
     {
     }
 
+    KPageWidgetItem *addModule(const KPluginMetaData &metaData);
+
     KCModuleProxy *currentModule;
 
     struct CreatedModule {

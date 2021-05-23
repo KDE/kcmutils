@@ -56,6 +56,8 @@ public:
      **/
     KPageWidgetItem *addModule(const QString &module, const QStringList &args = QStringList());
 
+    KPageWidgetItem *addModule(const KPluginMetaData &metaData);
+
     /**
      * Add a module.
      *
