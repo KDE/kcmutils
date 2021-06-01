@@ -171,7 +171,7 @@ Kirigami.ApplicationItem {
     d->rootPlaceHolder = qobject_cast<QQuickItem *>(component->create());
     if (!d->rootPlaceHolder) {
         qCCritical(KCMUTILS_LOG) << component->errors();
-        qFatal("Failed to intiailize KCModuleQML");
+        qFatal("Failed to initialize KCModuleQML");
     }
     d->rootPlaceHolder->setProperty("kcm", QVariant::fromValue(d->configModule.get()));
     d->rootPlaceHolder->installEventFilter(this);
