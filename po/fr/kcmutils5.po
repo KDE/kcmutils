@@ -1,0 +1,222 @@
+# translation of kdelibs4.po to Français
+# translation of kdelibs4.po to
+# Matthieu Robin <kde@macolu.org>, 2002,2003, 2004.
+# Robert Jacolin <rjacolin@ifrance.com>, 2003,2004.
+# Gilles Caulier <caulier.gilles@free.fr>, 2003.
+# Gérard Delafond <gerard@delafond.org>, 2003, 2004.
+# Matthieu Robin <kde@macolu.org>, 2004, 2005, 2006.
+# Cedric Pasteur <cedric.pasteur@free.fr>, 2004.
+# Nicolas Ternisien <nicolas.ternisien@gmail.com>, 2004, 2005, 2006, 2007, 2008.
+# Matthieu Robin <matthieu@macolu.org>, 2005.
+# Éric Bischoff <ebischoff@nerim.net>, 2005.
+# Sébastien Renard <Sebastien.Renard@digitalfox.org>, 2006, 2007, 2008.
+# Anne-Marie Mahfouf <annma@kde.org>, 2007, 2008, 2012.
+# Ludovic Grossard <grossard@kde.org>, 2008.
+# Mickael Sibelle <kimael@gmail.com>, 2008.
+# Nicolas Lécureuil <nlecureuil@mandriva.com>, 2010.
+# Joëlle Cornavin <jcorn@free.fr>, 2007, 2008, 2009, 2010, 2011, 2012, 2013.
+# Sebastien Renard <renard@kde.org>, 2013, 2014.
+# Simon Depiets <sdepiets@gmail.com>, 2019.
+msgid ""
+msgstr ""
+"Project-Id-Version: kdelibs4\n"
+"Report-Msgid-Bugs-To: https://bugs.kde.org\n"
+"POT-Creation-Date: 2021-04-27 00:15+0000\n"
+"PO-Revision-Date: 2019-11-10 17:42+0800\n"
+"Last-Translator: Simon Depiets <sdepiets@gmail.com>\n"
+"Language-Team: French <kde-francophone@kde.org>\n"
+"Language: fr\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+"X-Generator: Lokalize 19.07.70\n"
+"X-Environment: kde\n"
+"X-Accelerator-Marker: &\n"
+"X-Text-Markup: kde4\n"
+
+#, kde-format
+msgctxt "NAME OF TRANSLATORS"
+msgid "Your names"
+msgstr "Joëlle Cornavin,Matthieu Robin, Sébastien Renard, Simon Depiets"
+
+#, kde-format
+msgctxt "EMAIL OF TRANSLATORS"
+msgid "Your emails"
+msgstr "jcorn@free.fr,kde@macolu.org,renard@kde.org, sdepiets@gmail.com"
+
+#: kcmoduleloader.cpp:67
+#, kde-format
+msgid "The module %1 could not be found."
+msgstr "Il est impossible de trouver le module « %1 »."
+
+#: kcmoduleloader.cpp:68
+#, kde-format
+msgid ""
+"<qt><p>The diagnosis is:<br />The desktop file %1 could not be found.</p></"
+"qt>"
+msgstr ""
+"<qt><p>Le diagnostic est :<br />Il est impossible de trouver le fichier "
+"« desktop » %1.</p></qt>"
+
+#: kcmoduleloader.cpp:74
+#, kde-format
+msgid "The module %1 is disabled."
+msgstr "Le module « %1 » est désactivé."
+
+#: kcmoduleloader.cpp:75
+#, kde-format
+msgid ""
+"<qt><p>Either the hardware/software the module configures is not available "
+"or the module has been disabled by the administrator.</p></qt>"
+msgstr ""
+"<qt><p>Soit le matériel / logiciel que le module configure n'est pas "
+"disponible, soit le module a été désactivé par l'administrateur.</p></qt>"
+
+#: kcmoduleloader.cpp:103
+#, kde-format
+msgid "Error loading QML file."
+msgstr "Erreur lors du chargement du fichier QML."
+
+#: kcmoduleloader.cpp:149
+#, kde-format
+msgid "The module %1 is not a valid configuration module."
+msgstr "Le module « %1 » n'est pas un module de configuration valable."
+
+#: kcmoduleloader.cpp:150
+#, kde-format
+msgid ""
+"<qt>The diagnosis is:<br />The desktop file %1 does not specify a library.</"
+"qt>"
+msgstr ""
+"<qt>Le diagnostic est :<br />Le fichier « desktop » %1 ne spécifie pas de "
+"bibliothèque.</qt>"
+
+#: kcmoduleloader.cpp:177
+#, kde-format
+msgid ""
+"<qt><p>Possible reasons:<ul><li>An error occurred during your last system "
+"upgrade, leaving an orphaned control module behind</li><li>You have old "
+"third party modules lying around.</li></ul></p><p>Check these points "
+"carefully and try to remove the module mentioned in the error message. If "
+"this fails, consider contacting your distributor or packager.</p></qt>"
+msgstr ""
+"<qt><p>Raisons possibles :<ul><li>Une erreur est survenue pendant la "
+"dernière mise à niveau de votre système, en oubliant de mettre à jour un "
+"module de configuration orphelin.</li><li>Vous avez un ancien module de "
+"tierce partie quelque part.</li></ul></p><p>Vérifiez ces points avec soin et "
+"essayez de supprimer le module mentionné dans le message d'erreur. Si cette "
+"opération échoue, pensez à contacter votre distributeur ou votre "
+"conditionneur.</p></qt>"
+
+#: kcmoduleproxy.cpp:100
+#, kde-format
+msgctxt "Argument is application name"
+msgid "This configuration section is already opened in %1"
+msgstr "Cette section de configuration est déjà ouverte dans %1"
+
+#: kcmultidialog.cpp:49
+#, kde-format
+msgid ""
+"The settings of the current module have changed.\n"
+"Do you want to apply the changes or discard them?"
+msgstr ""
+"Les paramètres du module actuel ont changé.\n"
+"Voulez-vous appliquer les changements ou les abandonner ?"
+
+#: kcmultidialog.cpp:51
+#, kde-format
+msgid "Apply Settings"
+msgstr "Appliquer les réglages"
+
+#: kcmultidialog.cpp:242 kpluginselector.cpp:806
+#, kde-format
+msgid "Configure"
+msgstr "Configuration"
+
+#: kpluginselector.cpp:129
+#, kde-format
+msgid ""
+"Automatic changes have been performed due to plugin dependencies. Click here "
+"for further information"
+msgstr ""
+"Des modifications automatiques ont été effectuées en raison des dépendances "
+"des modules externes. Cliquez ici pour plus d'informations"
+
+#: kpluginselector.cpp:197
+#, kde-format
+msgid ""
+"Automatic changes have been performed in order to satisfy plugin "
+"dependencies:\n"
+msgstr ""
+"Des modifications automatiques ont été effectuées afin de satisfaire les "
+"dépendances des modules externes :\n"
+
+#: kpluginselector.cpp:201
+#, kde-format
+msgid ""
+"\n"
+"    %1 plugin has been automatically checked because of the dependency of %2 "
+"plugin"
+msgstr ""
+"\n"
+"    le module externe %1 a été automatiquement coché à cause des dépendances "
+"du module externe %2"
+
+#: kpluginselector.cpp:205
+#, kde-format
+msgid ""
+"\n"
+"    %1 plugin has been automatically unchecked because of its dependency on "
+"%2 plugin"
+msgstr ""
+"\n"
+"    le module externe %1 a été automatiquement décoché à cause de ses "
+"dépendances sur le module externe %2"
+
+#: kpluginselector.cpp:210
+#, kde-format
+msgid "Dependency Check"
+msgstr "Vérification des dépendances"
+
+#: kpluginselector.cpp:228
+#, kde-format
+msgid "%1 plugin automatically added due to plugin dependencies"
+msgid_plural "%1 plugins automatically added due to plugin dependencies"
+msgstr[0] ""
+"Le module externe %1 a été automatiquement ajouté en raison des dépendances "
+"des modules externes"
+msgstr[1] ""
+"Les modules externes %1 ont été automatiquement ajoutés en raison des "
+"dépendances des modules externes"
+
+#: kpluginselector.cpp:232
+#, kde-format
+msgid ", "
+msgstr ", "
+
+#: kpluginselector.cpp:236
+#, kde-format
+msgid "%1 plugin automatically removed due to plugin dependencies"
+msgid_plural "%1 plugins automatically removed due to plugin dependencies"
+msgstr[0] ""
+"Le module externe %1 a été automatiquement supprimé en raison des "
+"dépendances des modules externes"
+msgstr[1] ""
+"Les modules externes %1 ont été automatiquement supprimés en raison des "
+"dépendances des modules externes"
+
+#: kpluginselector.cpp:258
+#, kde-format
+msgid "Search..."
+msgstr "Chercher…"
+
+#: kpluginselector.cpp:801
+#, kde-format
+msgid "About"
+msgstr "À propos"
+
+#: ksettings/dialog.cpp:216
+#, kde-format
+msgid "Enable component"
+msgstr "Activer le composant"
