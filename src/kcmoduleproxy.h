@@ -2,6 +2,7 @@
     This file is part of the KDE project
     SPDX-FileCopyrightText: 2003 Matthias Kretz <kretz@kde.org>
     SPDX-FileCopyrightText: 2004 Frans Englich <frans.englich@telia.com>
+    SPDX-FileCopyrightText: 2021 Alexander Lohnau <alexander.lohnau@gmx.de>
 
     SPDX-License-Identifier: LGPL-2.0-only
 */
@@ -86,6 +87,12 @@ public:
      * Use the default.
      */
     explicit KCModuleProxy(const KService::Ptr &service, QWidget *parent = nullptr, const QStringList &args = QStringList());
+
+    /**
+     * Constructs a KCModuleProxy from KPluginMetaData
+     * @since 5.84
+     */
+    explicit KCModuleProxy(const KPluginMetaData &metaData, QWidget *parent = nullptr, const QStringList &args = QStringList());
 
     /**
      * Default destructor

@@ -2,6 +2,7 @@
     This file is part of the KDE project
     SPDX-FileCopyrightText: 2004 Frans Englich <frans.englich@telia.com>
     SPDX-FileCopyrightText: 2003 Matthias Kretz <kretz@kde.org>
+    SPDX-FileCopyrightText: 2021 Alexander Lohnau <alexander.lohnau@gmx.de>
 
     SPDX-License-Identifier: LGPL-2.0-only
 */
@@ -106,7 +107,11 @@ void KCModuleProxyPrivate::loadModule()
     }
 
     // qDebug() << "Module not already loaded, loading module " << modInfo.moduleName() << " from library " << modInfo.library() << " using symbol " << modInfo.handle();
-    kcm = KCModuleLoader::loadModule(modInfo, KCModuleLoader::Inline, parent, args);
+    if (metaData.isValid()) {
+        kcm = KCModuleLoader::loadModule(metaData, parent, QVariantList(args.cbegin(), args.cend()));
+    } else {
+        kcm = KCModuleLoader::loadModule(modInfo, KCModuleLoader::Inline, parent, args);
+    }
 
     QObject::connect(kcm, &KCModule::changed, parent, [this](bool state) {
         _k_moduleChanged(state);
@@ -216,18 +221,22 @@ KCModuleProxy::KCModuleProxy(const KService::Ptr &service, QWidget *parent, cons
     d_ptr->q_ptr = this;
 }
 
+KCModuleProxy::KCModuleProxy(const KPluginMetaData &metaData, QWidget *parent, const QStringList &args)
+    : QWidget(parent)
+    , d_ptr(new KCModuleProxyPrivate(this, KCModuleInfo(), args, metaData))
+{
+}
+
 KCModuleProxy::KCModuleProxy(const KCModuleInfo &info, QWidget *parent, const QStringList &args)
     : QWidget(parent)
     , d_ptr(new KCModuleProxyPrivate(this, info, args))
 {
-    d_ptr->q_ptr = this;
 }
 
 KCModuleProxy::KCModuleProxy(const QString &serviceName, QWidget *parent, const QStringList &args)
     : QWidget(parent)
     , d_ptr(new KCModuleProxyPrivate(this, KCModuleInfo(serviceName), args))
 {
-    d_ptr->q_ptr = this;
 }
 
 void KCModuleProxy::load()

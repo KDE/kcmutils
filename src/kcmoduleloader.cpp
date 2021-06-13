@@ -4,6 +4,7 @@
     SPDX-FileCopyrightText: 2000 Matthias Elter <elter@kde.org>
     SPDX-FileCopyrightText: 2003, 2004, 2006 Matthias Kretz <kretz@kde.org>
     SPDX-FileCopyrightText: 2004 Frans Englich <frans.englich@telia.com>
+    SPDX-FileCopyrightText: 2021 Alexander Lohnau <alexander.lohnau@gmx.de>
 
     SPDX-License-Identifier: LGPL-2.0-only
 */
@@ -18,6 +19,7 @@
 #include <QVBoxLayout>
 
 #include <KAboutData>
+#include <KAuthorized>
 #include <KLocalizedString>
 #include <KMessageBox>
 #include <KPluginInfo>
@@ -149,6 +151,35 @@ KCModule *KCModuleLoader::loadModule(const KCModuleInfo &mod, ErrorReporting rep
                        i18n("The module %1 is not a valid configuration module.", mod.moduleName()),
                        i18n("<qt>The diagnosis is:<br />The desktop file %1 does not specify a library.</qt>", mod.fileName()),
                        parent);
+}
+
+KCModule *KCModuleLoader::loadModule(const KPluginMetaData &metaData, QWidget *parent, const QVariantList &args)
+{
+    Q_ASSERT(metaData.isValid());
+    if (!KAuthorized::authorizeControlModule(metaData.pluginId())) {
+        return reportError(ErrorReporting::Inline,
+                           i18n("The module %1 is disabled.", metaData.pluginId()),
+                           i18n("The module has been disabled by the system administrator."),
+                           parent);
+    }
+    const QVariantList args2 = QVariantList(args) << metaData.rawData().value(QStringLiteral("X-KDE-KCM-Args")).toArray();
+
+    KPluginLoader loader(metaData.fileName());
+    KPluginFactory *factory = loader.factory();
+    if (!factory) {
+        qCDebug(KCMUTILS_LOG) << "Couldn't load plugin" << loader.fileName() << ":" << loader.errorString();
+    } else if (auto kcm = std::unique_ptr<KQuickAddons::ConfigModule>(factory->create<KQuickAddons::ConfigModule>(nullptr, args2))) {
+        if (!kcm->mainUi()) {
+            return reportError(ErrorReporting::Inline, i18n("Error loading QML file."), kcm->errorString(), parent);
+        }
+        return new KCModuleQml(std::move(kcm), parent, args2);
+    } else if (auto kcm = factory->create<KCModule>(parent, args2)) {
+        return kcm;
+    } else {
+        qCWarning(KCMUTILS_LOG) << "Error creating object from plugin" << loader.fileName();
+    }
+
+    return reportError(ErrorReporting::Inline, loader.errorString(), QString(), parent);
 }
 
 void KCModuleLoader::unloadModule(const KCModuleInfo &mod)

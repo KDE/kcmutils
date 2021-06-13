@@ -2,6 +2,7 @@
     SPDX-FileCopyrightText: 2000 Matthias Elter <elter@kde.org>
     SPDX-FileCopyrightText: 2003 Daniel Molkentin <molkentin@kde.org>
     SPDX-FileCopyrightText: 2003, 2006 Matthias Kretz <kretz@kde.org>
+    SPDX-FileCopyrightText: 2021 Alexander Lohnau <alexander.lohnau@gmx.de>
 
     SPDX-License-Identifier: LGPL-2.0-or-later
 */
@@ -55,6 +56,13 @@ public:
      * @returns The @see KPageWidgetItem associated with the new dialog page.
      **/
     KPageWidgetItem *addModule(const QString &module, const QStringList &args = QStringList());
+
+    /**
+     * Add a module to the dialog. Its position will be determined based on the @c X-KDE-Weight value.
+     * @param metaData KPluginMetaData that will be used to load the plugin
+     * @since 5.84
+     */
+    KPageWidgetItem *addModule(const KPluginMetaData &metaData);
 
     /**
      * Add a module.

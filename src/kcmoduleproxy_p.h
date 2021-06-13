@@ -10,6 +10,7 @@
 
 #include "kcmoduleinfo.h"
 #include "kcmoduleproxy.h"
+#include <KPluginMetaData>
 #include <QLabel>
 class QVBoxLayout;
 
@@ -17,7 +18,7 @@ class KCModuleProxyPrivate
 {
     Q_DECLARE_PUBLIC(KCModuleProxy)
 protected:
-    KCModuleProxyPrivate(KCModuleProxy *_parent, const KCModuleInfo &info, const QStringList &_args)
+    KCModuleProxyPrivate(KCModuleProxy *_parent, const KCModuleInfo &info, const QStringList &_args, const KPluginMetaData &metaData = KPluginMetaData())
         : args(_args)
         , kcm(nullptr)
         , topLayout(nullptr)
@@ -26,6 +27,9 @@ protected:
         , changed(false)
         , defaulted(false)
         , parent(_parent)
+        , q_ptr(_parent)
+        , metaData(metaData)
+
     {
     }
 
@@ -70,6 +74,7 @@ protected:
     bool defaulted = false;
     KCModuleProxy *parent = nullptr;
     KCModuleProxy *q_ptr = nullptr;
+    KPluginMetaData metaData;
 };
 
 #endif // KCMUTILS_KCMODULEPROXY_P_H

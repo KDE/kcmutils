@@ -4,6 +4,7 @@
     SPDX-FileCopyrightText: 2003, 2006 Matthias Kretz <kretz@kde.org>
     SPDX-FileCopyrightText: 2004 Frans Englich <frans.englich@telia.com>
     SPDX-FileCopyrightText: 2006 Tobias Koenig <tokoe@kde.org>
+    SPDX-FileCopyrightText: 2021 Alexander Lohnau <alexander.lohnau@gmx.de>
 
     SPDX-License-Identifier: LGPL-2.0-or-later
 */
@@ -18,6 +19,7 @@
 #include <QApplication>
 #include <QDesktopServices>
 #include <QDesktopWidget>
+#include <QJsonArray>
 #include <QLayout>
 #include <QProcess>
 #include <QPushButton>
@@ -36,6 +38,7 @@
 #include <KMessageBox>
 #include <KPageWidgetModel>
 #include <KPluginInfo>
+#include <KPluginMetaData>
 
 bool KCMultiDialogPrivate::resolveChanges(KCModuleProxy *currentProxy)
 {
@@ -442,6 +445,79 @@ void KCMultiDialog::closeEvent(QCloseEvent *event)
     for (auto &proxy : qAsConst(d->modules)) {
         proxy.kcm->deleteClient();
     }
+}
+
+KPageWidgetItem *KCMultiDialog::addModule(const KPluginMetaData &metaData)
+{
+    Q_D(KCMultiDialog);
+    // Create the scroller
+    auto *moduleScroll = new UnboundScrollArea(this);
+    // Prepare the scroll area
+    moduleScroll->setWidgetResizable(true);
+    moduleScroll->setFrameStyle(QFrame::NoFrame);
+    moduleScroll->viewport()->setAutoFillBackground(false);
+
+    KCModuleProxy *kcm = new KCModuleProxy(metaData, moduleScroll, QStringList());
+    moduleScroll->setWidget(kcm);
+
+    KPageWidgetItem *item = new KPageWidgetItem(moduleScroll, metaData.name());
+
+    KCMultiDialogPrivate::CreatedModule createdModule;
+    createdModule.kcm = kcm;
+    createdModule.item = item;
+    d->modules.append(createdModule);
+
+    if (qobject_cast<KCModuleQml *>(kcm->realModule())) {
+        item->setHeaderVisible(false);
+    }
+
+    if (kcm->realModule() && kcm->realModule()->useRootOnlyMessage()) {
+        item->setHeader(QStringLiteral("<b>%1</b><br><i>%2</i>").arg(metaData.name(), kcm->realModule()->rootOnlyMessage()));
+        item->setIcon(KIconUtils::addOverlay(QIcon::fromTheme(metaData.iconName()), QIcon::fromTheme(QStringLiteral("dialog-warning")), Qt::BottomRightCorner));
+    } else {
+        item->setHeader(metaData.name());
+        item->setIcon(QIcon::fromTheme(metaData.iconName()));
+    }
+    const int weight = metaData.rawData().value(QStringLiteral("X-KDE-Weight")).toInt();
+    item->setProperty("_k_weight", weight);
+
+    bool updateCurrentPage = false;
+    const KPageWidgetModel *model = qobject_cast<const KPageWidgetModel *>(pageWidget()->model());
+    Q_ASSERT(model);
+    const int siblingCount = model->rowCount();
+    int row = 0;
+    for (; row < siblingCount; ++row) {
+        KPageWidgetItem *siblingItem = model->item(model->index(row, 0));
+        if (siblingItem->property("_k_weight").toInt() > weight) {
+            // the item we found is heavier than the new module
+            // qDebug() << "adding KCM " << item->name() << " before " << siblingItem->name();
+            insertPage(siblingItem, item);
+            if (siblingItem == currentPage()) {
+                updateCurrentPage = true;
+            }
+
+            break;
+        }
+    }
+    if (row == siblingCount) {
+        // the new module is either the first or the heaviest item
+        // qDebug() << "adding KCM " << item->name() << " at the top level";
+        addPage(item);
+    }
+
+    QObject::connect(kcm, QOverload<bool>::of(&KCModuleProxy::changed), this, [d]() {
+        d->_k_clientChanged();
+    });
+
+    QObject::connect(kcm->realModule(), &KCModule::rootOnlyMessageChanged, this, [d](bool use, const QString &message) {
+        d->_k_updateHeader(use, message);
+    });
+
+    if (d->modules.count() == 1 || updateCurrentPage) {
+        setCurrentPage(item);
+        d->_k_clientChanged();
+    }
+    return item;
 }
 
 KPageWidgetItem *KCMultiDialog::addModule(const QString &path, const QStringList &args)
