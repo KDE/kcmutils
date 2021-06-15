@@ -467,7 +467,7 @@ void KPluginSelector::showConfiguration(const QString &componentName)
     }
 }
 
-void KPluginSelector::setAdditionalButtonHandler(const std::function<QPushButton *(const KPluginInfo &)> &handler)
+void KPluginSelector::setAdditionalButtonHandler(std::function<QPushButton *(const KPluginInfo &)> handler)
 {
     static_cast<Private::PluginDelegate *>(d->listView->itemDelegate())->setHandler(handler);
 }
@@ -1041,7 +1041,7 @@ QFont KPluginSelector::Private::PluginDelegate::titleFont(const QFont &baseFont)
 
     return retFont;
 }
-void KPluginSelector::Private::PluginDelegate::setHandler(const std::function<QPushButton *(const KPluginInfo &)> &handler)
+void KPluginSelector::Private::PluginDelegate::setHandler(std::function<QPushButton *(const KPluginInfo &)> handler)
 {
     this->handler = handler;
 }

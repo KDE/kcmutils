@@ -61,7 +61,7 @@ public:
      *
      * @param moduleInfo specifies the module
      */
-    KCModuleInfo(const KService::Ptr &moduleInfo);
+    KCModuleInfo(KService::Ptr moduleInfo);
 
     /**
      * Copy constructor

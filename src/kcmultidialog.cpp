@@ -627,7 +627,7 @@ KPageWidgetItem *KCMultiDialog::addModule(const KCModuleInfo &moduleInfo, KPageW
         d->_k_clientChanged();
     });
 
-    QObject::connect(kcm->realModule(), &KCModule::rootOnlyMessageChanged, this, [d](bool use, const QString &message) {
+    QObject::connect(kcm->realModule(), &KCModule::rootOnlyMessageChanged, this, [d](bool use, QString message) {
         d->_k_updateHeader(use, message);
     });
 
