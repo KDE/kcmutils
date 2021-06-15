@@ -223,7 +223,7 @@ public:
      * the handler can return a null pointer if no button should be displayed
      * @since 5.74
      */
-    void setAdditionalButtonHandler(std::function<QPushButton *(const KPluginInfo &)> handler);
+    void setAdditionalButtonHandler(const std::function<QPushButton *(const KPluginInfo &)> &handler);
 
     /**
      * Show an indicator when a plugin status is different from default

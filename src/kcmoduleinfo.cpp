@@ -93,7 +93,7 @@ KCModuleInfo::KCModuleInfo(const QString &desktopFile)
 {
 }
 
-KCModuleInfo::KCModuleInfo(KService::Ptr service)
+KCModuleInfo::KCModuleInfo(const KService::Ptr &service)
     : d(new Private(service))
 {
 }

@@ -187,7 +187,7 @@ public:
     {
         changedEntries << entry;
     };
-    void setHandler(std::function<QPushButton *(const KPluginInfo &)> handler);
+    void setHandler(const std::function<QPushButton *(const KPluginInfo &)> &handler);
 
 public Q_SLOTS:
     void slotResetModel();
