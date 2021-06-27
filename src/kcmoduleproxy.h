@@ -19,6 +19,7 @@
 class KAboutData;
 class KCModuleInfo;
 class KCModuleProxyPrivate;
+class KPluginMetaData;
 
 /**
  *
@@ -156,6 +157,13 @@ public:
      * module
      */
     KCModuleInfo moduleInfo() const;
+
+    /**
+     * Returns the KPluginMetaData used to load the KCM. If the KCM is not loaded using KPluginMetaData the returned object is invalid.
+     * @return a KPluginMetaData for the encapsulated module
+     * @since 5.84
+     */
+    KPluginMetaData metaData() const;
 
     /**
      * Returns the D-Bus Service name

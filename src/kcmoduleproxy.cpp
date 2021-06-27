@@ -301,6 +301,12 @@ KCModuleInfo KCModuleProxy::moduleInfo() const
     return d->modInfo;
 }
 
+KPluginMetaData KCModuleProxy::metaData() const
+{
+    Q_D(const KCModuleProxy);
+    return d->metaData;
+}
+
 QString KCModuleProxy::dbusService() const
 {
     Q_D(const KCModuleProxy);
