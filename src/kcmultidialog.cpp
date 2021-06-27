@@ -419,6 +419,9 @@ void KCMultiDialog::slotHelpClicked()
     for (int i = 0; i < d->modules.count(); ++i) {
         if (d->modules[i].item == item) {
             docPath = d->modules[i].kcm->moduleInfo().docPath();
+            if (docPath.isEmpty()) {
+                docPath = d->modules[i].kcm->metaData().value(QStringLiteral("X-DocPath"));
+            }
             break;
         }
     }
