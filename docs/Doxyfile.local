@@ -1,0 +1,6 @@
+### KApiDox Project-specific Overrides File
+
+# define so that deprecated API is not skipped
+PREDEFINED += \
+    "KCMUTILS_ENABLE_DEPRECATED_SINCE(x, y)=1" \
+    "KCMUTILS_BUILD_DEPRECATED_SINCE(x, y)=1"
