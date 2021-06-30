@@ -6,6 +6,8 @@
 */
 
 #include "dispatcher.h"
+
+#if KCMUTILS_BUILD_DEPRECATED_SINCE(5, 85)
 #include "dispatcher_p.h"
 
 #include <kcmutils_debug.h>
@@ -91,3 +93,4 @@ void DispatcherPrivate::unregisterComponent(QObject *obj)
 } // namespace KSettings
 
 #include "moc_dispatcher_p.cpp"
+#endif

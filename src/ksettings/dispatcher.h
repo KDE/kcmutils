@@ -12,6 +12,7 @@
 #include <QObject>
 #include <kcmutils_export.h>
 
+#if KCMUTILS_ENABLE_DEPRECATED_SINCE(5, 85)
 namespace KSettings
 {
 /**
@@ -37,18 +38,25 @@ namespace Dispatcher
  * @param componentName     The name of the component
  * @param recv         The object that should receive the signal
  * @param slot         The slot to be called: "slotName"
+ * @deprecated Since 5.85, connect to the @ref KCMultiDialog::configCommitted signal of the dialogs instead and check the componentName
  */
+
+KCMUTILS_DEPRECATED_VERSION(5, 85, "Connect to the KCMultiDialog::configCommitted signal of the dialogs instead and check the componentName")
 KCMUTILS_EXPORT void registerComponent(const QString &componentName, QObject *recv, const char *slot);
 
 /**
  * @return the KConfig object that belongs to the componentName
+ * @deprecated Since 5.85, use KSharedConfig::openConfig(componentName + QStringLiteral("rc")) instaed
  */
+KCMUTILS_DEPRECATED_VERSION(5, 85, "Use KSharedConfig::openConfig(componentName + QStringLiteral(\"rc\")) instaed")
 KCMUTILS_EXPORT KSharedConfig::Ptr configForComponentName(const QString &componentName);
 
 /**
  * @return a list of all the componentData names that are currently
  * registered
+ * @deprecated Since 5.85, this method is obsolete, see @p registerComponent API docs.
  */
+KCMUTILS_DEPRECATED_VERSION(5, 85, "method is obsolete, see KSettings::registerComponent API docs")
 KCMUTILS_EXPORT QList<QString> componentNames();
 
 /**
@@ -56,7 +64,9 @@ KCMUTILS_EXPORT QList<QString> componentNames();
  * componentData name has changed. The registered slot will be called.
  *
  * @param componentName The value of X-KDE-ParentComponents.
+ * @deprecated Since 5.85, manually reparse the config instead
  */
+KCMUTILS_DEPRECATED_VERSION(5, 85, "Manually reparse the config instead")
 KCMUTILS_EXPORT void reparseConfiguration(const QString &componentName);
 
 /**
@@ -64,9 +74,12 @@ KCMUTILS_EXPORT void reparseConfiguration(const QString &componentName);
  * instances are sync()ed. This is useful when some other KConfig
  * objects will read/write from/to the same config file, so that you
  * can first write out the current state of the KConfig objects.
+ * @deprecated Since 5.85, manually sync the config instead
  */
+KCMUTILS_DEPRECATED_VERSION(5, 85, "Manually sync the config instead")
 KCMUTILS_EXPORT void syncConfiguration();
 } // namespace Dispatcher
 
 }
 #endif // KSETTINGS_DISPATCHER_H
+#endif

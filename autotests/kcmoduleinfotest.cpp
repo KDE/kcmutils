@@ -94,9 +94,11 @@ void KCModuleInfoTest::testDesktopFileKCM()
     QCOMPARE(info.comment(), QStringLiteral("Configure background services"));
     QCOMPARE(info.docPath(), QStringLiteral("kcontrol/kded/index.html"));
 
+#if KCMUTILS_BUILD_DEPRECATED_SINCE(5, 85)
     // WHEN actually loading the module
     KCMultiDialog dlg;
     QVERIFY(dlg.addModule(info));
+#endif
 }
 
 void KCModuleInfoTest::testInvalidKCM()

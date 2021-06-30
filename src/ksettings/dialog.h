@@ -11,6 +11,7 @@
 #include <kcmultidialog.h>
 #include <kcmutils_export.h>
 
+#if KCMUTILS_ENABLE_DEPRECATED_SINCE(5, 85)
 #include <KPluginInfo>
 #include <KService>
 
@@ -82,7 +83,9 @@ public:
      * @param parent       The parent is only used as the parent for the
      *                     dialog - centering the dialog over the parent
      *                     widget.
+     * @deprecated Since 5.85, use @ref KCMultiDialog instead
      */
+    KCMUTILS_DEPRECATED_VERSION(5, 85, "use KCMultiDialog instead")
     explicit Dialog(QWidget *parent = nullptr);
 
     /**
@@ -96,7 +99,9 @@ public:
      * @param parent       The parent is only used as the parent for the
      *                     dialog - centering the dialog over the parent
      *                     widget.
+     * @deprecated Since 5.85, use @ref KCMultiDialog instead
      */
+    KCMUTILS_DEPRECATED_VERSION(5, 85, "use KCMultiDialog instead")
     explicit Dialog(const QStringList &components, QWidget *parent = nullptr);
 
     ~Dialog() override;
@@ -177,3 +182,4 @@ private:
 }
 
 #endif // KSETTINGS_DIALOG_H
+#endif

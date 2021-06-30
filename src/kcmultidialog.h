@@ -42,6 +42,7 @@ public:
      **/
     ~KCMultiDialog() override;
 
+#if KCMUTILS_ENABLE_DEPRECATED_SINCE(5, 85)
     /**
      * Add a module.
      *
@@ -54,8 +55,11 @@ public:
      * @param args The arguments that should be given to the KCModule when it is created
      *
      * @returns The @see KPageWidgetItem associated with the new dialog page.
+     * @deprecated Since 5.85, use @p addModule(const KPluginMetaData &metaData) instead
      **/
+    KCMUTILS_DEPRECATED_VERSION(5, 85, "use addModule(const KPluginMetaData &metaData) instead")
     KPageWidgetItem *addModule(const QString &module, const QStringList &args = QStringList());
+#endif
 
     /**
      * Add a module to the dialog. Its position will be determined based on the @c X-KDE-Weight value.
@@ -64,6 +68,7 @@ public:
      */
     KPageWidgetItem *addModule(const KPluginMetaData &metaData);
 
+#if KCMUTILS_ENABLE_DEPRECATED_SINCE(5, 85)
     /**
      * Add a module.
      *
@@ -78,8 +83,11 @@ public:
      *               in the tree view or a 0 pointer if there is no parent.
      *
      * @param args The arguments that should be given to the KCModule when it is created
+     * @deprecated Since 5.85, use @p addModule(const KPluginMetaData &metaData) instead
      **/
+    KCMUTILS_DEPRECATED_VERSION(5, 85, "use addModule(const KPluginMetaData &metaData) instead")
     KPageWidgetItem *addModule(const KCModuleInfo &moduleinfo, KPageWidgetItem *parent = nullptr, const QStringList &args = QStringList());
+#endif
 
     /**
      * Removes all modules from the dialog.

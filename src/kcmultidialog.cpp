@@ -523,6 +523,7 @@ KPageWidgetItem *KCMultiDialog::addModule(const KPluginMetaData &metaData)
     return item;
 }
 
+#if KCMUTILS_BUILD_DEPRECATED_SINCE(5, 85)
 KPageWidgetItem *KCMultiDialog::addModule(const QString &path, const QStringList &args)
 {
     QString complete = path;
@@ -535,7 +536,9 @@ KPageWidgetItem *KCMultiDialog::addModule(const QString &path, const QStringList
 
     return addModule(KCModuleInfo(service), nullptr, args);
 }
+#endif
 
+#if KCMUTILS_BUILD_DEPRECATED_SINCE(5, 85)
 KPageWidgetItem *KCMultiDialog::addModule(const KCModuleInfo &moduleInfo, KPageWidgetItem *parentItem, const QStringList &args)
 {
     Q_D(KCMultiDialog);
@@ -640,6 +643,7 @@ KPageWidgetItem *KCMultiDialog::addModule(const KCModuleInfo &moduleInfo, KPageW
     }
     return item;
 }
+#endif
 
 void KCMultiDialog::clear()
 {

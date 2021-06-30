@@ -6,6 +6,7 @@
 */
 
 #include "dialog.h"
+#if KCMUTILS_BUILD_DEPRECATED_SINCE(5, 85)
 #include "dialog_p.h"
 
 #include <kcmutils_debug.h>
@@ -538,3 +539,4 @@ void DialogPrivate::_k_updateEnabledState(bool enabled)
 } // namespace
 
 #include "moc_dialog.cpp"
+#endif
