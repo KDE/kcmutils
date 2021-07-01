@@ -38,10 +38,10 @@ namespace Dispatcher
  * @param componentName     The name of the component
  * @param recv         The object that should receive the signal
  * @param slot         The slot to be called: "slotName"
- * @deprecated Since 5.85, connect to the @ref KCMultiDialog::configCommitted signal of the dialogs instead and check the componentName
+ * @deprecated Since 5.85, connect to the @ref KCMultiDialog::configCommitted() signal of the dialog instead and check the componentName
  */
 
-KCMUTILS_DEPRECATED_VERSION(5, 85, "Connect to the KCMultiDialog::configCommitted signal of the dialogs instead and check the componentName")
+KCMUTILS_DEPRECATED_VERSION(5, 85, "Connect to the KCMultiDialog::configCommitted() signal of the dialog instead and check the componentName")
 KCMUTILS_EXPORT void registerComponent(const QString &componentName, QObject *recv, const char *slot);
 
 /**

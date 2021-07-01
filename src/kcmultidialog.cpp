@@ -369,6 +369,7 @@ void KCMultiDialogPrivate::apply()
 
         if (proxy->changed()) {
             proxy->save();
+#if KCMUTILS_BUILD_DEPRECATED_SINCE(5, 85)
             /**
              * Add name of the components the kcm belongs to the list
              * of updated components.
@@ -379,13 +380,16 @@ void KCMultiDialogPrivate::apply()
                     updatedComponents.append(componentName);
                 }
             }
+#endif
         }
     }
 
+#if KCMUTILS_BUILD_DEPRECATED_SINCE(5, 85)
     // Send the configCommitted signal for every updated component.
     for (const QString &name : qAsConst(updatedComponents)) {
         Q_EMIT q->configCommitted(name.toLatin1());
     }
+#endif
 
     Q_EMIT q->configCommitted();
 }

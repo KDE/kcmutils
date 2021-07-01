@@ -103,6 +103,7 @@ Q_SIGNALS:
      */
     void configCommitted();
 
+#if KCMUTILS_ENABLE_DEPRECATED_SINCE(5, 85)
     /**
      * Emitted after the KCModules have been told to save their configuration.
      * It is emitted once for every instance the KCMs that were changed belong
@@ -117,8 +118,11 @@ Q_SIGNALS:
      *
      * @param componentName The name of the instance that needs to reload its
      *                     configuration.
+     * @deprecated Since 5.85, use @p KCMultiDialog::configCommitted() instead
      */
+    KCMUTILS_DEPRECATED_VERSION(5, 85, "use KCMultiDialog::configCommitted() instead")
     void configCommitted(const QByteArray &componentName);
+#endif
 
 protected:
     /**
