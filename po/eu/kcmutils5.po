@@ -1,0 +1,209 @@
+# Translation of kcmutils5.po to Euskara/Basque (eu).
+# Copyright (C) 1999-2018, Free Software Foundation.
+# Copyright (C) 2019, this file is copyright:
+# This file is distributed under the same license as the kcmutils package.
+# KDE euskaratzeko proiektuaren arduraduna <xalba@euskalnet.net>.
+#
+# Translators:
+# Marcos <marcos@euskalgnu.org>, 2002,2003, 2004, 2005.
+# Ion Gaztañaga <igaztanaga@gmail.com>, 2005.
+# marcos <marcos@euskalgnu.org>, 2006, 2007, 2008, 2009, 2010.
+# Iñaki Larrañaga Murgoitio <dooteo@euskalgnu.org>, 2009.
+# Iñigo Salvador Azurmendi <xalba@euskalnet.net>, 2010, 2011, 2012, 2013, 2014, 2018, 2019.
+msgid ""
+msgstr ""
+"Project-Id-Version: kcmutils\n"
+"Report-Msgid-Bugs-To: https://bugs.kde.org\n"
+"POT-Creation-Date: 2021-06-14 00:14+0000\n"
+"PO-Revision-Date: 2019-10-20 19:19+0200\n"
+"Last-Translator: Iñigo Salvador Azurmendi <xalba@euskalnet.net>\n"
+"Language-Team: Basque <kde-i18n-eu@kde.org>\n"
+"Language: eu\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Lokalize 19.08.2\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#, kde-format
+msgctxt "NAME OF TRANSLATORS"
+msgid "Your names"
+msgstr "Marcos,Ion Gaztañaga,Iñigo Salvador Azurmendi"
+
+#, kde-format
+msgctxt "EMAIL OF TRANSLATORS"
+msgid "Your emails"
+msgstr "marcos@euskalgnu.org,igaztanaga@gmail.com,xalba@euskalnet.net"
+
+#: kcmoduleloader.cpp:69
+#, kde-format
+msgid "The module %1 could not be found."
+msgstr "%1 modulua ezin izan da aurkitu."
+
+#: kcmoduleloader.cpp:70
+#, kde-format
+msgid ""
+"<qt><p>The diagnosis is:<br />The desktop file %1 could not be found.</p></"
+"qt>"
+msgstr ""
+"<qt><p>Diagnostikoa:<br />Ezin izan da mahaigaineko %1 fitxategia aurkitu.</"
+"p></qt>"
+
+#: kcmoduleloader.cpp:76 kcmoduleloader.cpp:161
+#, kde-format
+msgid "The module %1 is disabled."
+msgstr "%1 modulua desgaituta dago."
+
+#: kcmoduleloader.cpp:77
+#, kde-format
+msgid ""
+"<qt><p>Either the hardware/software the module configures is not available "
+"or the module has been disabled by the administrator.</p></qt>"
+msgstr ""
+"<qt><p>Hardware/softwareko moduloaren konfigurazioa ez dago eskuragarri edo "
+"administratzaileak desgaitu egin du moduloa.</p></qt>"
+
+#: kcmoduleloader.cpp:105 kcmoduleloader.cpp:173
+#, kde-format
+msgid "Error loading QML file."
+msgstr "Errorea QML fitxategia zamatzean."
+
+#: kcmoduleloader.cpp:151
+#, kde-format
+msgid "The module %1 is not a valid configuration module."
+msgstr "%1 modulua konfigurazio modulu baliogabea da."
+
+#: kcmoduleloader.cpp:152
+#, kde-format
+msgid ""
+"<qt>The diagnosis is:<br />The desktop file %1 does not specify a library.</"
+"qt>"
+msgstr ""
+"<qt>Diagnostikoa:<br />Mahaigaineko %1 fitxategiak ez du liburutegi bat "
+"zehazten.</qt>"
+
+#: kcmoduleloader.cpp:162
+#, fuzzy, kde-format
+#| msgid "Please contact your system administrator."
+msgid "The module has been disabled by the system administrator."
+msgstr "Jar zaitez sistemako administratzailearekin harrementan."
+
+#: kcmoduleloader.cpp:208
+#, kde-format
+msgid ""
+"<qt><p>Possible reasons:<ul><li>An error occurred during your last system "
+"upgrade, leaving an orphaned control module behind</li><li>You have old "
+"third party modules lying around.</li></ul></p><p>Check these points "
+"carefully and try to remove the module mentioned in the error message. If "
+"this fails, consider contacting your distributor or packager.</p></qt>"
+msgstr ""
+"<qt><p>Arrazoi posibleak:<ul><li>Errore bat gertatu da zure sistema "
+"azkenekoz bertsio-berritzean, aginte-modulu bat umezurtz utzi duena.</li> "
+"<li>Hirugarrenen modulu zaharrak dituzu hortik zehar.</li></ul></p> "
+"<p>Egiaztatu puntu hauek arretaz eta saiatu errore-mezuetan aipatutako "
+"modulua kentzen. Honek huts egiten badu, zure banatzailearekin edo "
+"paketegilearekin harremanetan jartzea aintzat hartu.</p></qt>"
+
+#: kcmoduleproxy.cpp:101
+#, kde-format
+msgctxt "Argument is application name"
+msgid "This configuration section is already opened in %1"
+msgstr "Konfigurazioko atal hau dagoeneko %1(e)n irekita dago"
+
+#: kcmultidialog.cpp:52
+#, kde-format
+msgid ""
+"The settings of the current module have changed.\n"
+"Do you want to apply the changes or discard them?"
+msgstr ""
+"Uneko moduluaren ezarpenak aldatu egin dira.\n"
+"Aldaketak ezarri edo baztertu nahi dituzu?"
+
+#: kcmultidialog.cpp:54
+#, kde-format
+msgid "Apply Settings"
+msgstr "Ezarpenak ezarri"
+
+#: kcmultidialog.cpp:245 kpluginselector.cpp:806
+#, kde-format
+msgid "Configure"
+msgstr "Konfiguratu"
+
+#: kpluginselector.cpp:129
+#, kde-format
+msgid ""
+"Automatic changes have been performed due to plugin dependencies. Click here "
+"for further information"
+msgstr ""
+"Plugin mendekotasunak direla eta aldaketa automatikoak burutu dira. Klik "
+"egin hemen informazio gehiagorako"
+
+#: kpluginselector.cpp:197
+#, kde-format
+msgid ""
+"Automatic changes have been performed in order to satisfy plugin "
+"dependencies:\n"
+msgstr "Plugin mendekotasunak betetzeko aldaketa automatikoak burutu dira:\n"
+
+#: kpluginselector.cpp:201
+#, kde-format
+msgid ""
+"\n"
+"    %1 plugin has been automatically checked because of the dependency of %2 "
+"plugin"
+msgstr ""
+"\n"
+"    %1 plugina hautatu da automatikoki %2 pluginaren mendekotasunak direla "
+"eta"
+
+#: kpluginselector.cpp:205
+#, kde-format
+msgid ""
+"\n"
+"    %1 plugin has been automatically unchecked because of its dependency on "
+"%2 plugin"
+msgstr ""
+"\n"
+"    %1 plugina desautatu da automatikoki %2 pluginaren mendekotasunak direla "
+"eta"
+
+#: kpluginselector.cpp:210
+#, kde-format
+msgid "Dependency Check"
+msgstr "Egiaztatu mendekotasunak"
+
+#: kpluginselector.cpp:228
+#, kde-format
+msgid "%1 plugin automatically added due to plugin dependencies"
+msgid_plural "%1 plugins automatically added due to plugin dependencies"
+msgstr[0] "Plugin mendekotasunak direla eta %1 plugina automatikoki gehitu da"
+msgstr[1] ""
+"Plugin mendekotasunak direla eta %1 pluginak automatikoki gehitu dira"
+
+#: kpluginselector.cpp:232
+#, kde-format
+msgid ", "
+msgstr ", "
+
+#: kpluginselector.cpp:236
+#, kde-format
+msgid "%1 plugin automatically removed due to plugin dependencies"
+msgid_plural "%1 plugins automatically removed due to plugin dependencies"
+msgstr[0] "Plugin mendekotasunak direla eta %1 plugina automatikoki kendu da"
+msgstr[1] ""
+"Plugin mendekotasunak direla eta %1 pluginak automatikoki kendu dira"
+
+#: kpluginselector.cpp:258
+#, kde-format
+msgid "Search..."
+msgstr "Bilatu..."
+
+#: kpluginselector.cpp:801
+#, kde-format
+msgid "About"
+msgstr "Honi buruz"
+
+#: ksettings/dialog.cpp:220
+#, kde-format
+msgid "Enable component"
+msgstr "Gaitu osagaia"

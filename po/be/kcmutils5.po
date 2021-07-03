@@ -1,0 +1,206 @@
+# translation of kdelibs4.po to Belarusian
+# translation of kdelibs4.po to
+#
+# Eugene Zelenko <greendeath@mail.ru>, 2002-2004.
+# Ihar Hrachyshka <ihar.hrachyshka@gmail.com>, 2006.
+# Darafei Praliaskouski <komzpa@licei2.com>, 2007.
+# Komяpa <symbol@me.by>, 2007.
+# Komяpa <komzpa@gmail.com>, 2007.
+# Darafei Praliaskoski <komzpa@gmail.com>, 2007.
+# Darafei Praliaskouski <komzpa@gmail.com>, 2008, 2009.
+# Siarhei Liantsevich <serzh.by@gmail.com>, 2008.
+# kom <me@komzpa.net>, 2008.
+msgid ""
+msgstr ""
+"Project-Id-Version: kdelibs4\n"
+"Report-Msgid-Bugs-To: https://bugs.kde.org\n"
+"POT-Creation-Date: 2021-06-14 00:14+0000\n"
+"PO-Revision-Date: 2009-09-06 15:21+0300\n"
+"Last-Translator: Darafei Praliaskouski <komzpa@gmail.com>\n"
+"Language-Team: Belarusian <i18n@mova.org>\n"
+"Language: be\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Lokalize 1.0\n"
+"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
+"%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
+
+#, kde-format
+msgctxt "NAME OF TRANSLATORS"
+msgid "Your names"
+msgstr "Дарафей Праляскоўскі"
+
+#, kde-format
+msgctxt "EMAIL OF TRANSLATORS"
+msgid "Your emails"
+msgstr "komzpa@gmail.com"
+
+#: kcmoduleloader.cpp:69
+#, kde-format
+msgid "The module %1 could not be found."
+msgstr "Модуль %1 не знойдзены."
+
+#: kcmoduleloader.cpp:70
+#, fuzzy, kde-format
+#| msgid ""
+#| "<qt><p>The diagnostics is:<br />The desktop file %1 could not be found.</"
+#| "p></qt>"
+msgid ""
+"<qt><p>The diagnosis is:<br />The desktop file %1 could not be found.</p></"
+"qt>"
+msgstr "<qt><p>Дыягностыка:<br>Файл працоўнага стала %1 не знойдзены.</p></qt>"
+
+#: kcmoduleloader.cpp:76 kcmoduleloader.cpp:161
+#, kde-format
+msgid "The module %1 is disabled."
+msgstr "Модуль %1 адключаны."
+
+#: kcmoduleloader.cpp:77
+#, kde-format
+msgid ""
+"<qt><p>Either the hardware/software the module configures is not available "
+"or the module has been disabled by the administrator.</p></qt>"
+msgstr ""
+
+#: kcmoduleloader.cpp:105 kcmoduleloader.cpp:173
+#, fuzzy, kde-format
+#| msgid "Error opening file."
+msgid "Error loading QML file."
+msgstr "Памылка адкрыцця файла."
+
+#: kcmoduleloader.cpp:151
+#, kde-format
+msgid "The module %1 is not a valid configuration module."
+msgstr "Модуль %1 не з'яўляецца нармальным модулем настаўлення."
+
+#: kcmoduleloader.cpp:152
+#, fuzzy, kde-format
+#| msgid ""
+#| "<qt>The diagnostics is:<br />The desktop file %1 does not specify a "
+#| "library.</qt>"
+msgid ""
+"<qt>The diagnosis is:<br />The desktop file %1 does not specify a library.</"
+"qt>"
+msgstr ""
+"<qt><p>Дыягностыка:<br>Файл працоўнага стала %1 не вызначыў бібліятэчны файл."
+"</qt>"
+
+#: kcmoduleloader.cpp:162
+#, fuzzy, kde-format
+#| msgid "Please contact your system administrator."
+msgid "The module has been disabled by the system administrator."
+msgstr "Калі ласка, звяжыцеся з сістэмным адміністратарам."
+
+#: kcmoduleloader.cpp:208
+#, kde-format
+msgid ""
+"<qt><p>Possible reasons:<ul><li>An error occurred during your last system "
+"upgrade, leaving an orphaned control module behind</li><li>You have old "
+"third party modules lying around.</li></ul></p><p>Check these points "
+"carefully and try to remove the module mentioned in the error message. If "
+"this fails, consider contacting your distributor or packager.</p></qt>"
+msgstr ""
+
+#: kcmoduleproxy.cpp:101
+#, kde-format
+msgctxt "Argument is application name"
+msgid "This configuration section is already opened in %1"
+msgstr "Гэты раздзел настаўлення ўжо адкрыты ў праграме %1"
+
+#: kcmultidialog.cpp:52
+#, fuzzy, kde-format
+#| msgid ""
+#| "The document \"%1\" has been modified.\n"
+#| "Do you want to save your changes or discard them?"
+msgid ""
+"The settings of the current module have changed.\n"
+"Do you want to apply the changes or discard them?"
+msgstr ""
+"Дакумент \"%1\" быў зменены.\n"
+"Вы хочаце захаваць змены ці адхіліць іх?"
+
+#: kcmultidialog.cpp:54
+#, fuzzy, kde-format
+#| msgid "Settings"
+msgid "Apply Settings"
+msgstr "Настаўленні"
+
+#: kcmultidialog.cpp:245 kpluginselector.cpp:806
+#, kde-format
+msgid "Configure"
+msgstr "Настаўленне"
+
+#: kpluginselector.cpp:129
+#, kde-format
+msgid ""
+"Automatic changes have been performed due to plugin dependencies. Click here "
+"for further information"
+msgstr ""
+
+#: kpluginselector.cpp:197
+#, kde-format
+msgid ""
+"Automatic changes have been performed in order to satisfy plugin "
+"dependencies:\n"
+msgstr ""
+
+#: kpluginselector.cpp:201
+#, kde-format
+msgid ""
+"\n"
+"    %1 plugin has been automatically checked because of the dependency of %2 "
+"plugin"
+msgstr ""
+
+#: kpluginselector.cpp:205
+#, kde-format
+msgid ""
+"\n"
+"    %1 plugin has been automatically unchecked because of its dependency on "
+"%2 plugin"
+msgstr ""
+
+#: kpluginselector.cpp:210
+#, kde-format
+msgid "Dependency Check"
+msgstr "Праверка залежнасці"
+
+#: kpluginselector.cpp:228
+#, kde-format
+msgid "%1 plugin automatically added due to plugin dependencies"
+msgid_plural "%1 plugins automatically added due to plugin dependencies"
+msgstr[0] ""
+msgstr[1] ""
+msgstr[2] ""
+
+#: kpluginselector.cpp:232
+#, kde-format
+msgid ", "
+msgstr ", "
+
+#: kpluginselector.cpp:236
+#, kde-format
+msgid "%1 plugin automatically removed due to plugin dependencies"
+msgid_plural "%1 plugins automatically removed due to plugin dependencies"
+msgstr[0] ""
+msgstr[1] ""
+msgstr[2] ""
+
+#: kpluginselector.cpp:258
+#, fuzzy, kde-format
+#| msgid "Search"
+msgid "Search..."
+msgstr "Пошук"
+
+#: kpluginselector.cpp:801
+#, fuzzy, kde-format
+#| msgid "&About"
+msgid "About"
+msgstr "&Пра праграму"
+
+#: ksettings/dialog.cpp:220
+#, fuzzy, kde-format
+#| msgid "Embeddable HTML component"
+msgid "Enable component"
+msgstr "Убудаваны кампанент HTML"
