@@ -38,7 +38,7 @@
 /*
  TODO:
 
- - Resizing horizontally is contrained; minimum size is set somewhere.
+ - Resizing horizontally is constrained; minimum size is set somewhere.
     It appears to be somehow derived from the module's size.
 
  - Prettify: set icon in KCMultiDialog.

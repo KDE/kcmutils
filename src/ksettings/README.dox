@@ -10,7 +10,7 @@ component boundaries
 <hr>
 <h3>1. Open the dialog from your app</h3>
 
-All you need to do is instanciate KSettings::Dialog and show() it. I recommend
+All you need to do is instantiate KSettings::Dialog and show() it. I recommend
 the following:
 
 create the 'Configure MyApp' StdAction like this:
