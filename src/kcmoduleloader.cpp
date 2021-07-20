@@ -116,7 +116,7 @@ KCModule *KCModuleLoader::loadModule(const KCModuleInfo &mod, ErrorReporting rep
         if (module) {
             return module;
         } else
-        //#ifndef NDEBUG
+#if KCMUTILS_BUILD_DEPRECATED_SINCE(5, 85)
         {
             // KF6 TODO: remove this old compat block
             // get the create_ function
@@ -135,7 +135,7 @@ KCModule *KCModuleLoader::loadModule(const KCModuleInfo &mod, ErrorReporting rep
                 lib.unload();
             }
         }
-        //#endif // NDEBUG
+#endif
         return reportError(report, error, QString(), parent);
     }
 

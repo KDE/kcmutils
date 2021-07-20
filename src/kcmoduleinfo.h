@@ -149,11 +149,15 @@ public:
      */
     QString library() const;
 
+#if KCMUTILS_ENABLE_DEPRECATED_SINCE(5, 85)
     /**
      * @return a handle (the contents of the X-KDE-FactoryName field if it exists,
      * else the same as the library name)
+     * @deprecated Since 5.85, use KPluginMetaData::pluginId or KCModuleInfo::library instead
      */
+    KCMUTILS_DEPRECATED_VERSION(5, 85, "Use KPluginMetaData::pluginId or KCModuleInfo::library instead")
     QString handle() const;
+#endif
 
     /**
      * @return the weight of the module which determines the order of the pages in

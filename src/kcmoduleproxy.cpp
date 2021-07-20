@@ -67,7 +67,11 @@ void KCModuleProxyPrivate::loadModule()
     if (!topLayout) {
         topLayout = new QVBoxLayout(parent);
 
+#if KCMUTILS_BUILD_DEPRECATED_SINCE(5, 85)
         QString name = modInfo.handle();
+#else
+        QString name = modInfo.library();
+#endif
         name.replace(QLatin1Char('-'), QLatin1Char('_')); // hyphen is not allowed in dbus, only [A-Z][a-z][0-9]_
         name.replace(QLatin1Char('/'), QLatin1Char('_')); // same goes for '/'
         dbusService = QLatin1String("org.kde.internal.KSettingsWidget_") + name;

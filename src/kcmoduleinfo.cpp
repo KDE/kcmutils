@@ -233,6 +233,7 @@ QString KCModuleInfo::docPath() const
     return d->doc;
 }
 
+#if KCMUTILS_BUILD_DEPRECATED_SINCE(5, 85)
 QString KCModuleInfo::handle() const
 {
     if (!d->allLoaded) {
@@ -241,6 +242,7 @@ QString KCModuleInfo::handle() const
 
     return d->handle;
 }
+#endif
 
 int KCModuleInfo::weight() const
 {
