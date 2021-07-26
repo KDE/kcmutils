@@ -456,6 +456,11 @@ void KCMultiDialog::closeEvent(QCloseEvent *event)
 
 KPageWidgetItem *KCMultiDialog::addModule(const KPluginMetaData &metaData)
 {
+    return addModule(metaData, QStringList());
+}
+
+KPageWidgetItem *KCMultiDialog::addModule(const KPluginMetaData &metaData, const QStringList &args)
+{
     Q_D(KCMultiDialog);
     // Create the scroller
     auto *moduleScroll = new UnboundScrollArea(this);
@@ -464,7 +469,7 @@ KPageWidgetItem *KCMultiDialog::addModule(const KPluginMetaData &metaData)
     moduleScroll->setFrameStyle(QFrame::NoFrame);
     moduleScroll->viewport()->setAutoFillBackground(false);
 
-    KCModuleProxy *kcm = new KCModuleProxy(metaData, moduleScroll, QStringList());
+    KCModuleProxy *kcm = new KCModuleProxy(metaData, moduleScroll, args);
     moduleScroll->setWidget(kcm);
 
     KPageWidgetItem *item = new KPageWidgetItem(moduleScroll, metaData.name());

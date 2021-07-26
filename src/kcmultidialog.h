@@ -62,11 +62,18 @@ public:
 #endif
 
     /**
-     * Add a module to the dialog. Its position will be determined based on the @c X-KDE-Weight value.
-     * @param metaData KPluginMetaData that will be used to load the plugin
      * @since 5.84
+     * @overload
      */
     KPageWidgetItem *addModule(const KPluginMetaData &metaData);
+
+    /**
+     * Add a module to the dialog. Its position will be determined based on the @c X-KDE-Weight value.
+     * @param metaData KPluginMetaData that will be used to load the plugin
+     * @param args The arguments that should be given to the KCModule when it is created
+     * @since 5.85
+     */
+    KPageWidgetItem *addModule(const KPluginMetaData &metaData, const QStringList &args); // TODO KF6 merge with overload
 
 #if KCMUTILS_ENABLE_DEPRECATED_SINCE(5, 85)
     /**
