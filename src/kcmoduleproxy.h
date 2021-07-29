@@ -120,10 +120,14 @@ public:
      */
     QString quickHelp() const;
 
+#if KCMUTILS_ENABLE_DEPRECATED_SINCE(5, 85)
     /**
      * @return the module's aboutData()
+     * @deprecated since 5.85, use metaData() instead.
      */
+    KCMUTILS_DEPRECATED_VERSION(5, 85, "Use metaData() instead")
     const KAboutData *aboutData() const;
+#endif
 
     /**
      * @return what buttons the module

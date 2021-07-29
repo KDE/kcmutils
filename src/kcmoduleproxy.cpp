@@ -274,10 +274,12 @@ QString KCModuleProxy::quickHelp() const
     return realModule() ? realModule()->quickHelp() : QString();
 }
 
+#if KCMUTILS_BUILD_DEPRECATED_SINCE(5, 85)
 const KAboutData *KCModuleProxy::aboutData() const
 {
     return realModule() ? realModule()->aboutData() : nullptr;
 }
+#endif
 
 KCModule::Buttons KCModuleProxy::buttons() const
 {
