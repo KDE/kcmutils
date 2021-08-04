@@ -129,3 +129,7 @@ Type=QStringList
 # extra arguments for the KCModule
 [PropertyDef::X-KDE-KCM-Args]
 Type=QStringList
+
+# the path of the KCModule's documentation
+[PropertyDef::X-DocPath]
+Type=QString
