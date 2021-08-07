@@ -195,18 +195,17 @@ void KPluginSelector::Private::DependenciesWidget::clearDependencies()
 void KPluginSelector::Private::DependenciesWidget::showDependencyDetails()
 {
     QString message = i18n("Automatic changes have been performed in order to satisfy plugin dependencies:\n");
-    const auto lstKeys = dependencyMap.keys();
-    for (const QString &dependency : lstKeys) {
-        if (dependencyMap[dependency].added) {
-            message += i18n("\n    %1 plugin has been automatically checked because of the dependency of %2 plugin",
-                            dependency,
-                            dependencyMap[dependency].pluginCausant);
+
+    for (auto it = dependencyMap.cbegin(); it != dependencyMap.cend(); ++it) {
+        const QString &dependency = it.key();
+        const FurtherInfo &info = it.value();
+        if (info.added) {
+            message += i18n("\n    %1 plugin has been automatically checked because of the dependency of %2 plugin", dependency, info.pluginCausant);
         } else {
-            message += i18n("\n    %1 plugin has been automatically unchecked because of its dependency on %2 plugin",
-                            dependency,
-                            dependencyMap[dependency].pluginCausant);
+            message += i18n("\n    %1 plugin has been automatically unchecked because of its dependency on %2 plugin", dependency, info.pluginCausant);
         }
     }
+
     KMessageBox::information(this, message, i18n("Dependency Check"));
 
     addedByDependencies = 0;
