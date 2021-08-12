@@ -152,9 +152,10 @@ QSet<KCModuleInfo> DialogPrivate::instanceServices()
                 // qDebug() << "found service";
                 const KService::Ptr service(static_cast<KService *>(p.data()));
                 ret << KCModuleInfo(service);
-            } else
+            } else {
                 qCWarning(KCMUTILS_LOG) << "KServiceGroup::childGroup returned"
                                            " something else than a KService";
+            }
         }
     }
 
