@@ -22,9 +22,9 @@ class QStringList;
  * A class that provides information about a KCModule
  *
  * KCModuleInfo provides various technical information, such as icon, library
- * etc. about a KCModule.n
- * @note Any values set with the set* functions is not
- * written back with KCModuleInfo it only reads value from the desktop file.
+ * etc. about a KCModule.
+ * @note Any values set with the set* functions are not
+ * written back, KCModuleInfo only reads values from the desktop file.
  *
  * @internal
  * @author Matthias Hoelzer-Kluepfel <mhk@kde.org>
@@ -86,7 +86,7 @@ public:
     bool operator==(const KCModuleInfo &rhs) const;
 
     /**
-     * @return true if @p rhs is not equal itself
+     * @return true if @p rhs is not the same KCModule as this object.
      */
     bool operator!=(const KCModuleInfo &rhs) const;
 
