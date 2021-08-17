@@ -23,7 +23,6 @@
 #include <KLocalizedString>
 #include <KMessageBox>
 #include <KPluginInfo>
-#include <KPluginLoader>
 
 #include <KQuickAddons/ConfigModule>
 
@@ -90,22 +89,26 @@ KCModule *KCModuleLoader::loadModule(const KCModuleInfo &mod, ErrorReporting rep
 
         KCModule *module = nullptr;
 
-        KPluginLoader loader(KPluginLoader::findPlugin(QLatin1String("kcms/") + mod.library()));
-        KPluginFactory *factory = loader.factory();
-        if (!factory) {
-            // KF6 TODO: make this a warning, and remove mention of fallback
-            qCDebug(KCMUTILS_LOG) << "Couldn't load plugin" << QLatin1String("kcms/") + mod.library() << ":" << loader.errorString()
-                                  << " -- falling back to old-style loading from desktop file";
+        const auto result =
+            KPluginFactory::instantiatePlugin<KQuickAddons::ConfigModule>(KPluginMetaData(QLatin1String("kcms/") + mod.library()), nullptr, args2);
+
+        if (result) {
+            std::unique_ptr<KQuickAddons::ConfigModule> cm(result.plugin);
+
+            if (!cm->mainUi()) {
+                return reportError(report, i18n("Error loading QML file."), cm->errorString(), parent);
+            }
+            module = new KCModuleQml(std::move(cm), parent, args2);
+            return module;
         } else {
-            std::unique_ptr<KQuickAddons::ConfigModule> cm(factory->create<KQuickAddons::ConfigModule>(nullptr, args2));
-            if (!cm) {
-                qCWarning(KCMUTILS_LOG) << "Error creating object from plugin" << loader.fileName();
+            // If the error is that the plugin was not found fall through to the compat code
+            // Otherwise abort and show the error to the user
+            if (result.errorReason != KPluginFactory::INVALID_PLUGIN) {
+                return reportError(report, i18n("Error loading config module"), result.errorString, parent);
             } else {
-                if (!cm->mainUi()) {
-                    return reportError(report, i18n("Error loading QML file."), cm->errorString(), parent);
-                }
-                module = new KCModuleQml(std::move(cm), parent, args2);
-                return module;
+                // KF6 TODO: make this an error
+                qCDebug(KCMUTILS_LOG) << "Couldn't find plugin" << QLatin1String("kcms/") + mod.library()
+                                      << "-- falling back to old-style loading from desktop file";
             }
         }
 
@@ -120,7 +123,7 @@ KCModule *KCModuleLoader::loadModule(const KCModuleInfo &mod, ErrorReporting rep
         {
             // KF6 TODO: remove this old compat block
             // get the create_ function
-            QLibrary lib(KPluginLoader::findPlugin(mod.library()));
+            QLibrary lib(QPluginLoader(mod.library()).fileName());
             if (lib.load()) {
                 KCModule *(*create)(QWidget *, const char *);
                 QByteArray factorymethod("create_");
@@ -164,28 +167,30 @@ KCModule *KCModuleLoader::loadModule(const KPluginMetaData &metaData, QWidget *p
     }
     const QVariantList args2 = QVariantList(args) << metaData.rawData().value(QStringLiteral("X-KDE-KCM-Args")).toArray();
 
-    KPluginLoader loader(metaData.fileName());
-    KPluginFactory *factory = loader.factory();
-    if (!factory) {
-        qCDebug(KCMUTILS_LOG) << "Couldn't load plugin" << loader.fileName() << ":" << loader.errorString();
-    } else if (auto kcm = std::unique_ptr<KQuickAddons::ConfigModule>(factory->create<KQuickAddons::ConfigModule>(nullptr, args2))) {
+    const auto qmlKCMResult = KPluginFactory::instantiatePlugin<KQuickAddons::ConfigModule>(metaData, parent, args2);
+
+    if (qmlKCMResult) {
+        std::unique_ptr<KQuickAddons::ConfigModule> kcm(qmlKCMResult.plugin);
+
         if (!kcm->mainUi()) {
             return reportError(ErrorReporting::Inline, i18n("Error loading QML file."), kcm->errorString(), parent);
         }
         return new KCModuleQml(std::move(kcm), parent, args2);
-    } else if (auto kcm = factory->create<KCModule>(parent, args2)) {
-        return kcm;
-    } else {
-        qCWarning(KCMUTILS_LOG) << "Error creating object from plugin" << loader.fileName();
     }
 
-    return reportError(ErrorReporting::Inline, loader.errorString(), QString(), parent);
+    const auto kcmoduleResult = KPluginFactory::instantiatePlugin<KCModule>(metaData, parent, args2);
+
+    if (kcmoduleResult) {
+        return kcmoduleResult.plugin;
+    }
+
+    return reportError(ErrorReporting::Inline, kcmoduleResult.errorString, QString(), parent);
 }
 
 void KCModuleLoader::unloadModule(const KCModuleInfo &mod)
 {
     // get the library loader instance
-    KPluginLoader loader(mod.library());
+    QPluginLoader loader(mod.library());
     loader.unload();
 }
 
@@ -228,13 +233,10 @@ KCModuleData *KCModuleLoader::loadModuleData(const KCModuleInfo &mod, const QStr
 
     QVariantList args2(args.cbegin(), args.cend());
 
-    KPluginLoader loader(KPluginLoader::findPlugin(QLatin1String("kcms/") + mod.service()->library()));
-    KPluginFactory *factory = loader.factory();
-    if (factory) {
-        KCModuleData *probe(factory->create<KCModuleData>(nullptr, args2));
-        if (probe) {
-            return probe;
-        }
+    const auto result = KPluginFactory::instantiatePlugin<KCModuleData>(KPluginMetaData(QLatin1String("kcms/") + mod.service()->library()), nullptr, args2);
+
+    if (result) {
+        return result.plugin;
     }
 
     KCModuleData *probe(mod.service()->createInstance<KCModuleData>(nullptr, args2));
