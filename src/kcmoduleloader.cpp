@@ -167,10 +167,26 @@ KCModule *KCModuleLoader::loadModule(const KPluginMetaData &metaData, QWidget *p
     }
     const QVariantList args2 = QVariantList(args) << metaData.rawData().value(QStringLiteral("X-KDE-KCM-Args")).toArray();
 
-    const auto qmlKCMResult = KPluginFactory::instantiatePlugin<KQuickAddons::ConfigModule>(metaData, parent, args2);
+    auto factoryResult = KPluginFactory::loadFactory(metaData);
+    QString pluginKeyword = metaData.value(QStringLiteral("X-KDE-PluginKeyword"));
+    if (!factoryResult) {
+        // This is where QML KCMs used to be before the namespaces were changed based on https://phabricator.kde.org/T14517
+        // But the X-KDE-Library did not reflect this change, instead the "kcms" namespace was prepended
+        if (KPluginMetaData data(QLatin1String("kcms/") + metaData.fileName()); data.isValid()) {
+            factoryResult = KPluginFactory::loadFactory(data);
+            pluginKeyword.clear();
+        }
+    }
+
+    if (!factoryResult) {
+        return reportError(ErrorReporting::Inline, factoryResult.errorString, QString(), parent);
+    }
+
+    KPluginFactory *factory = factoryResult.plugin;
+    const auto qmlKCMResult = factory->create<KQuickAddons::ConfigModule>(pluginKeyword, parent, args2);
 
     if (qmlKCMResult) {
-        std::unique_ptr<KQuickAddons::ConfigModule> kcm(qmlKCMResult.plugin);
+        std::unique_ptr<KQuickAddons::ConfigModule> kcm(qmlKCMResult);
 
         if (!kcm->mainUi()) {
             return reportError(ErrorReporting::Inline, i18n("Error loading QML file."), kcm->errorString(), parent);
@@ -178,13 +194,13 @@ KCModule *KCModuleLoader::loadModule(const KPluginMetaData &metaData, QWidget *p
         return new KCModuleQml(std::move(kcm), parent, args2);
     }
 
-    const auto kcmoduleResult = KPluginFactory::instantiatePlugin<KCModule>(metaData, parent, args2);
+    const auto kcmoduleResult = factory->create<KCModule>(pluginKeyword, parent, args2);
 
     if (kcmoduleResult) {
-        return kcmoduleResult.plugin;
+        return kcmoduleResult;
     }
 
-    return reportError(ErrorReporting::Inline, kcmoduleResult.errorString, QString(), parent);
+    return reportError(ErrorReporting::Inline, QString(), QString(), parent);
 }
 
 void KCModuleLoader::unloadModule(const KCModuleInfo &mod)
