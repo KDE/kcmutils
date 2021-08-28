@@ -1003,7 +1003,7 @@ void KPluginSelector::Private::PluginDelegate::configure(const QModelIndex &inde
         layout->addWidget(buttonBox);
 
         if (configDialog.exec() == QDialog::Accepted) {
-            for (KCModuleProxy *moduleProxy : qAsConst(moduleProxyList)) {
+            for (KCModuleProxy *moduleProxy : std::as_const(moduleProxyList)) {
                 const QStringList parentComponents = moduleProxy->moduleInfo().property(QStringLiteral("X-KDE-ParentComponents")).toStringList();
                 moduleProxy->save();
                 for (const QString &parentComponent : parentComponents) {
@@ -1011,7 +1011,7 @@ void KPluginSelector::Private::PluginDelegate::configure(const QModelIndex &inde
                 }
             }
         } else {
-            for (KCModuleProxy *moduleProxy : qAsConst(moduleProxyList)) {
+            for (KCModuleProxy *moduleProxy : std::as_const(moduleProxyList)) {
                 moduleProxy->load();
             }
         }
@@ -1023,7 +1023,7 @@ void KPluginSelector::Private::PluginDelegate::configure(const QModelIndex &inde
 
 void KPluginSelector::Private::PluginDelegate::slotDefaultClicked()
 {
-    for (KCModuleProxy *moduleProxy : qAsConst(moduleProxyList)) {
+    for (KCModuleProxy *moduleProxy : std::as_const(moduleProxyList)) {
         moduleProxy->defaults();
     }
 }

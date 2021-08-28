@@ -53,7 +53,7 @@ void KCModuleData::registerSkeleton(KCoreConfigSkeleton *skeleton)
 bool KCModuleData::isDefaults() const
 {
     bool defaults = true;
-    for (const auto &skeleton : qAsConst(d->_skeletons)) {
+    for (const auto &skeleton : std::as_const(d->_skeletons)) {
         defaults &= skeleton->isDefaults();
     }
     return defaults;
@@ -61,7 +61,7 @@ bool KCModuleData::isDefaults() const
 
 void KCModuleData::revertToDefaults()
 {
-    for (const auto &skeleton : qAsConst(d->_skeletons)) {
+    for (const auto &skeleton : std::as_const(d->_skeletons)) {
         skeleton->useDefaults(true);
         skeleton->save();
     }

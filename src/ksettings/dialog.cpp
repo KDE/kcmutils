@@ -119,7 +119,7 @@ void Dialog::showEvent(QShowEvent *)
         setUpdatesEnabled(true);
     }
 
-    for (const QString &compName : qAsConst(d->components)) {
+    for (const QString &compName : std::as_const(d->components)) {
         KSharedConfig::Ptr config = KSharedConfig::openConfig(compName + QLatin1String("rc"));
         config->sync();
     }
@@ -317,7 +317,7 @@ void DialogPrivate::createDialogFromServices()
     }
 
     // qDebug() << kcmInfos.count();
-    for (const KCModuleInfo &info : qAsConst(kcmInfos)) {
+    for (const KCModuleInfo &info : std::as_const(kcmInfos)) {
         const QStringList parentComponents = info.property(QStringLiteral("X-KDE-ParentComponents")).toStringList();
         bool blacklisted = false;
         for (const QString &parentComponent : parentComponents) {
@@ -334,7 +334,7 @@ void DialogPrivate::createDialogFromServices()
         if (!parent) {
             // dummy kcm
             bool foundPlugin = false;
-            for (const KPluginInfo &pinfo : qAsConst(plugininfos)) {
+            for (const KPluginInfo &pinfo : std::as_const(plugininfos)) {
                 if (pinfo.libraryPath() == info.library()) {
                     if (pinfo.kcmServices().isEmpty()) {
                         // FIXME get weight from service or plugin info
@@ -352,7 +352,7 @@ void DialogPrivate::createDialogFromServices()
         }
         KPageWidgetItem *item = q->addModule(info, parent, arguments);
         // qDebug() << "added KCM '" << info.moduleName() << "'";
-        for (KPluginInfo pinfo : qAsConst(plugininfos)) {
+        for (KPluginInfo pinfo : std::as_const(plugininfos)) {
             // qDebug() << pinfo.pluginName();
             if (pinfo.kcmServices().contains(info.service())) {
                 const bool isEnabled = isPluginForKCMEnabled(&info, pinfo);
@@ -390,7 +390,7 @@ void DialogPrivate::createDialogFromServices()
         for (; it != end; ++it) {
             const QModelIndex index = model->index(it.value());
             KPluginInfo pinfo;
-            for (const KPluginInfo &p : qAsConst(plugininfos)) {
+            for (const KPluginInfo &p : std::as_const(plugininfos)) {
                 if (p.name() == it.key()) {
                     pinfo = p;
                     break;
