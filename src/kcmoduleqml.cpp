@@ -23,8 +23,8 @@
 class KCModuleQmlPrivate
 {
 public:
-    KCModuleQmlPrivate(std::unique_ptr<KQuickAddons::ConfigModule> cm, KCModuleQml *q)
-        : q(q)
+    KCModuleQmlPrivate(std::unique_ptr<KQuickAddons::ConfigModule> cm, KCModuleQml *qq)
+        : q(qq)
         , configModule(std::move(cm))
     {
     }
