@@ -424,11 +424,11 @@ void DialogPrivate::createDialogFromServices()
     // I have no idea how to check that in KPluginSelector::load()...
     // q->showButton(KDialog::User1, true);
 
-    QObject::connect(q, QOverload<>::of(&KCMultiDialog::configCommitted), q, [this]() {
+    QObject::connect(q, qOverload<>(&KCMultiDialog::configCommitted), q, [this]() {
         updateConfiguration();
     });
 
-    QObject::connect(q, QOverload<const QByteArray &>::of(&KCMultiDialog::configCommitted), q, [](const QByteArray &componentName) {
+    QObject::connect(q, qOverload<const QByteArray &>(&KCMultiDialog::configCommitted), q, [](const QByteArray &componentName) {
         KSharedConfig::Ptr config = KSharedConfig::openConfig(QString::fromLatin1(componentName) + QLatin1String("rc"));
         config->reparseConfiguration();
     });

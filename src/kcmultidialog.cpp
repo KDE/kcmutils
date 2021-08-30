@@ -517,7 +517,7 @@ KPageWidgetItem *KCMultiDialog::addModule(const KPluginMetaData &metaData, const
         addPage(item);
     }
 
-    QObject::connect(kcm, QOverload<bool>::of(&KCModuleProxy::changed), this, [d]() {
+    QObject::connect(kcm, qOverload<bool>(&KCModuleProxy::changed), this, [d]() {
         d->_k_clientChanged();
     });
 
@@ -638,7 +638,7 @@ KPageWidgetItem *KCMultiDialog::addModule(const KCModuleInfo &moduleInfo, KPageW
         }
     }
 
-    QObject::connect(kcm, QOverload<bool>::of(&KCModuleProxy::changed), this, [d]() {
+    QObject::connect(kcm, qOverload<bool>(&KCModuleProxy::changed), this, [d]() {
         d->_k_clientChanged();
     });
 
