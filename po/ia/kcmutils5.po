@@ -1,0 +1,202 @@
+# Copyright (C) YEAR This_file_is_part_of_KDE
+# This file is distributed under the same license as the PACKAGE package.
+#
+# g.sora <g.sora@tiscali.it>, 2010, 2011, 2012, 2013, 2019, 2021.
+msgid ""
+msgstr ""
+"Project-Id-Version: \n"
+"Report-Msgid-Bugs-To: https://bugs.kde.org\n"
+"POT-Creation-Date: 2021-08-22 00:14+0000\n"
+"PO-Revision-Date: 2021-08-30 16:17+0200\n"
+"Last-Translator: giovanni <g.sora@tiscali.it>\n"
+"Language-Team: Interlingua <kde-i18n-doc@kde.org>\n"
+"Language: ia\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Lokalize 20.04.2\n"
+
+#, kde-format
+msgctxt "NAME OF TRANSLATORS"
+msgid "Your names"
+msgstr "Giovanni Sora"
+
+#, kde-format
+msgctxt "EMAIL OF TRANSLATORS"
+msgid "Your emails"
+msgstr "g.sora@tiscali.it"
+
+#: kcmoduleloader.cpp:68
+#, kde-format
+msgid "The module %1 could not be found."
+msgstr "Le modulo %1 non pote esser trovate."
+
+#: kcmoduleloader.cpp:69
+#, kde-format
+msgid ""
+"<qt><p>The diagnosis is:<br />The desktop file %1 could not be found.</p></"
+"qt>"
+msgstr ""
+"<qt><p>Le diagnosis es:<br/>Le file de scriptorio %1 non pote esser trovate."
+"</p></qt>"
+
+#: kcmoduleloader.cpp:75 kcmoduleloader.cpp:164
+#, kde-format
+msgid "The module %1 is disabled."
+msgstr "Le modulo %1 es inhabilitate."
+
+#: kcmoduleloader.cpp:76
+#, kde-format
+msgid ""
+"<qt><p>Either the hardware/software the module configures is not available "
+"or the module has been disabled by the administrator.</p></qt>"
+msgstr ""
+"<qt><p>O le hardware/software que le modulo configura non es disponibile o "
+"le modulo ha essite inhabilitate per le administrator.</p></qt>"
+
+#: kcmoduleloader.cpp:99 kcmoduleloader.cpp:176
+#, kde-format
+msgid "Error loading QML file."
+msgstr "Error in cargamento de file QML."
+
+#: kcmoduleloader.cpp:107
+#, kde-format
+msgid "Error loading config module"
+msgstr "Error in cargamento de modulo de config"
+
+#: kcmoduleloader.cpp:154
+#, kde-format
+msgid "The module %1 is not a valid configuration module."
+msgstr "Le modulo %1 non es un valide modulo de configuration."
+
+#: kcmoduleloader.cpp:155
+#, kde-format
+msgid ""
+"<qt>The diagnosis is:<br />The desktop file %1 does not specify a library.</"
+"qt>"
+msgstr ""
+"<qt>Le diagnosis es:<br/>Le file de scriptorio %1 non specifica un libreria."
+"</qt>"
+
+#: kcmoduleloader.cpp:165
+#, kde-format
+msgid "The module has been disabled by the system administrator."
+msgstr "Le modulo ha essite dishabilitate per le administrator de systema"
+
+#: kcmoduleloader.cpp:213
+#, kde-format
+msgid ""
+"<qt><p>Possible reasons:<ul><li>An error occurred during your last system "
+"upgrade, leaving an orphaned control module behind</li><li>You have old "
+"third party modules lying around.</li></ul></p><p>Check these points "
+"carefully and try to remove the module mentioned in the error message. If "
+"this fails, consider contacting your distributor or packager.</p></qt>"
+msgstr ""
+"<qt><p>Motivos possibile:<ul><li>Un error occurreva durante tu ultime "
+"actualisation de systema que lassava un modulo de controlo orphano</"
+"li><li>Tu ha vetere modulos de tertie partes in circulation.</li></ul></"
+"p><p>Tu controla ille punctos con cura e cerca de remover le module citate "
+"in le message de error. Si isto falle, considera que tu continge tu "
+"distributor o impaccator.</p></qt>"
+
+#: kcmoduleproxy.cpp:105
+#, kde-format
+msgctxt "Argument is application name"
+msgid "This configuration section is already opened in %1"
+msgstr "Le section de configuration ja es aperite in %1"
+
+#: kcmultidialog.cpp:52
+#, kde-format
+msgid ""
+"The settings of the current module have changed.\n"
+"Do you want to apply the changes or discard them?"
+msgstr ""
+"Le preferentias del modulo currente ha cambiate.\n"
+"Tu vole applicar le variationes o rejectar los?"
+
+#: kcmultidialog.cpp:54
+#, kde-format
+msgid "Apply Settings"
+msgstr "Applica preferentias"
+
+#: kcmultidialog.cpp:245 kpluginselector.cpp:805
+#, kde-format
+msgid "Configure"
+msgstr "Configura"
+
+#: kpluginselector.cpp:129
+#, kde-format
+msgid ""
+"Automatic changes have been performed due to plugin dependencies. Click here "
+"for further information"
+msgstr ""
+"Il ha realisate cambios automatic per causa de dependentias de plugin. "
+"Pressa hic pro ulterior information"
+
+#: kpluginselector.cpp:197
+#, kde-format
+msgid ""
+"Automatic changes have been performed in order to satisfy plugin "
+"dependencies:\n"
+msgstr ""
+"Il ha realisate cambios automatic per satisfacer le dependentias de plugin:\n"
+
+#: kpluginselector.cpp:203
+#, kde-format
+msgid ""
+"\n"
+"    %1 plugin has been automatically checked because of the dependency of %2 "
+"plugin"
+msgstr ""
+"\n"
+"%1 plugin ha essite marcate automaticamente per le dependentia del %2 plugin"
+
+#: kpluginselector.cpp:205
+#, kde-format
+msgid ""
+"\n"
+"    %1 plugin has been automatically unchecked because of its dependency on "
+"%2 plugin"
+msgstr ""
+"\n"
+"%1 plugin ha essite de-marcate per su dependentia sur le %2 plugin"
+
+#: kpluginselector.cpp:209
+#, kde-format
+msgid "Dependency Check"
+msgstr "Controlo de dependentia"
+
+#: kpluginselector.cpp:227
+#, kde-format
+msgid "%1 plugin automatically added due to plugin dependencies"
+msgid_plural "%1 plugins automatically added due to plugin dependencies"
+msgstr[0] "%1 plugin addite automaticamente per dependentias de plugin"
+msgstr[1] "%1 plugins addite automaticamente per dependentias de plugin"
+
+#: kpluginselector.cpp:231
+#, kde-format
+msgid ", "
+msgstr ","
+
+#: kpluginselector.cpp:235
+#, kde-format
+msgid "%1 plugin automatically removed due to plugin dependencies"
+msgid_plural "%1 plugins automatically removed due to plugin dependencies"
+msgstr[0] "%1 plugin removite automaticamente per su dependentias de plugin"
+msgstr[1] "%1 plugins removite automaticamente per su dependentias de plugin"
+
+#: kpluginselector.cpp:257
+#, kde-format
+msgid "Search..."
+msgstr "Il cerca ..."
+
+#: kpluginselector.cpp:800
+#, kde-format
+msgid "About"
+msgstr "A proposito"
+
+#: ksettings/dialog.cpp:222
+#, kde-format
+msgid "Enable component"
+msgstr "Habilitar le componente"
