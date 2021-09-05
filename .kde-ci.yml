@@ -1,0 +1,16 @@
+Dependencies:
+- 'on': ['Linux', 'FreeBSD']
+  'require':
+    'frameworks/extra-cmake-modules': '@same'
+    'frameworks/kitemviews' : '@same'
+    'frameworks/kconfigwidgets' : '@same'
+    'frameworks/kcoreaddons' : '@same'
+    'frameworks/ki18n' : '@same'
+    'frameworks/kiconthemes' : '@same'
+    'frameworks/kservice' : '@same'
+    'frameworks/kxmlgui' : '@same'
+    'frameworks/kdeclarative' : '@same'
+    'frameworks/kauth' : '@same'
+
+Options:
+  test-before-installing: True
