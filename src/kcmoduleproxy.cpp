@@ -198,7 +198,9 @@ void KCModuleProxyPrivate::_k_moduleChanged(bool c)
     Q_Q(KCModuleProxy);
     changed = c;
     Q_EMIT q->changed(c);
+#if KCMUTILS_BUILD_DEPRECATED_SINCE(5, 87)
     Q_EMIT q->changed(q);
+#endif
 }
 
 void KCModuleProxyPrivate::_k_moduleDefaulted(bool d)
@@ -210,7 +212,9 @@ void KCModuleProxyPrivate::_k_moduleDefaulted(bool d)
     Q_Q(KCModuleProxy);
     defaulted = d;
     Q_EMIT q->changed(changed);
+#if KCMUTILS_BUILD_DEPRECATED_SINCE(5, 87)
     Q_EMIT q->changed(q);
+#endif
 }
 
 void KCModuleProxyPrivate::_k_moduleDestroyed()

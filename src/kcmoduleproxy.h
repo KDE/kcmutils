@@ -211,11 +211,15 @@ Q_SIGNALS:
      */
     void changed(bool state);
 
+#if KCMUTILS_ENABLE_DEPRECATED_SINCE(5, 87)
     /**
      * This is emitted in the same situations as in the one above. Practical
      * when several KCModuleProxys are loaded.
+     * @deprecated Since 5.87, use changed(bool) instead
      */
+    KCMUTILS_DEPRECATED_VERSION(5, 87, "use changed(bool) instead")
     void changed(KCModuleProxy *mod);
+#endif
 
     /**
      * When a module running with root privileges and exits, returns to normal mode, the
