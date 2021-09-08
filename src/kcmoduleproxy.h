@@ -135,11 +135,21 @@ public:
      */
     KCModule::Buttons buttons() const;
 
+#if KCMUTILS_ENABLE_DEPRECATED_SINCE(5, 87)
     /**
      * @return true if the module is modified
      * and needs to be saved.
+     * @deprecated Since 5.87, use isChanged instead
      */
+    KCMUTILS_DEPRECATED_VERSION(5, 87, "use isChanged instead")
     bool changed() const;
+#endif
+    /**
+     * @return true if the module is modified
+     * and needs to be saved.
+     * @since 5.87
+     */
+    bool isChanged() const;
 
     /**
      * @return true if the module is matching default settings

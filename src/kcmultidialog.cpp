@@ -43,7 +43,7 @@
 bool KCMultiDialogPrivate::resolveChanges(KCModuleProxy *currentProxy)
 {
     Q_Q(KCMultiDialog);
-    if (!currentProxy || !currentProxy->changed()) {
+    if (!currentProxy || !currentProxy->isChanged()) {
         return true;
     }
 
@@ -133,7 +133,7 @@ void KCMultiDialogPrivate::_k_clientChanged()
     bool change = false;
     bool defaulted = false;
     if (activeModule) {
-        change = activeModule->changed();
+        change = activeModule->isChanged();
         defaulted = activeModule->defaulted();
 
         QPushButton *applyButton = q->buttonBox()->button(QDialogButtonBox::Apply);
@@ -367,7 +367,7 @@ void KCMultiDialogPrivate::apply()
     for (const CreatedModule &module : std::as_const(modules)) {
         KCModuleProxy *proxy = module.kcm;
 
-        if (proxy->changed()) {
+        if (proxy->isChanged()) {
             proxy->save();
 #if KCMUTILS_BUILD_DEPRECATED_SINCE(5, 85)
             /**

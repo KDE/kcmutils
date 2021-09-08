@@ -293,7 +293,15 @@ KCModule::Buttons KCModuleProxy::buttons() const
     return KCModule::Buttons(KCModule::Help | KCModule::Default | KCModule::Apply);
 }
 
+#if KCMUTILS_BUILD_DEPRECATED_SINCE(5, 87)
 bool KCModuleProxy::changed() const
+{
+    Q_D(const KCModuleProxy);
+    return d->changed;
+}
+#endif
+
+bool KCModuleProxy::isChanged() const
 {
     Q_D(const KCModuleProxy);
     return d->changed;
