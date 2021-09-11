@@ -57,6 +57,7 @@ class KCMUTILS_EXPORT KCModuleProxy : public QWidget
     Q_DECLARE_PRIVATE(KCModuleProxy)
     Q_OBJECT
 public:
+#if KCMUTILS_ENABLE_DEPRECATED_SINCE(5, 88)
     /**
      * Constructs a KCModuleProxy from a KCModuleInfo class.
      *
@@ -64,9 +65,13 @@ public:
      * @param parent the parent QWidget.
      * @param args This is used in the implementation and is internal.
      * Use the default.
+     * @deprecated Since 5.88, use KCModuleProxy(KPluginMetaData, QWidget *, QStringList) instead
      */
+    KCMUTILS_DEPRECATED_VERSION(5, 88, "Use KCModuleProxy(KPluginMetaData, QWidget *, QStringList) instead")
     explicit KCModuleProxy(const KCModuleInfo &info, QWidget *parent = nullptr, const QStringList &args = QStringList());
+#endif
 
+#if KCMUTILS_ENABLE_DEPRECATED_SINCE(5, 88)
     /**
      * Constructs a KCModuleProxy from a module's service name, which is
      * equivalent to the desktop file for the kcm without the ".desktop" part.
@@ -76,9 +81,13 @@ public:
      * @param parent the parent QWidget.
      * @param args This is used in the implementation and is internal.
      * Use the default.
+     * @deprecated Since 5.88, use KCModuleProxy(KPluginMetaData, QWidget *, QStringList) instead
      */
+    KCMUTILS_DEPRECATED_VERSION(5, 88, "Use KCModuleProxy(KPluginMetaData, QWidget *, QStringList) instead")
     explicit KCModuleProxy(const QString &serviceName, QWidget *parent = nullptr, const QStringList &args = QStringList());
+#endif
 
+#if KCMUTILS_ENABLE_DEPRECATED_SINCE(5, 88)
     /**
      * Constructs a KCModuleProxy from KService. Otherwise equal to the one above.
      *
@@ -86,8 +95,11 @@ public:
      * @param parent the parent QWidget.
      * @param args This is used in the implementation and is internal.
      * Use the default.
+     * @deprecated Since 5.88, use KCModuleProxy(KPluginMetaData, QWidget *, QStringList) instead
      */
+    KCMUTILS_DEPRECATED_VERSION(5, 88, "Use KCModuleProxy(KPluginMetaData, QWidget *, QStringList) instead")
     explicit KCModuleProxy(const KService::Ptr &service, QWidget *parent = nullptr, const QStringList &args = QStringList());
+#endif
 
     /**
      * Constructs a KCModuleProxy from KPluginMetaData
@@ -166,11 +178,15 @@ public:
      */
     KCModule *realModule() const;
 
+#if KCMUTILS_ENABLE_DEPRECATED_SINCE(5, 88)
     /**
      * @return a KCModuleInfo for the encapsulated
      * module
+     * @deprecated Since 5.87 method is obsolete with deprecation of KCModuleInfo constructor, use metaData() instead
      */
+    KCMUTILS_DEPRECATED_VERSION(5, 88, "method is obsolete with deprecation of KCModuleInfo constructor, use metaData() instead")
     KCModuleInfo moduleInfo() const;
+#endif
 
     /**
      * Returns the KPluginMetaData used to load the KCM. If the KCM is not loaded using KPluginMetaData the returned object is invalid.
