@@ -953,8 +953,15 @@ void KPluginSelector::Private::PluginDelegate::configure(const QModelIndex &inde
     const auto lstServices = pluginInfo.kcmServices();
     for (const KService::Ptr &servicePtr : lstServices) {
         if (!servicePtr->noDisplay()) {
+#if KCMUTILS_BUILD_DEPRECATED_SINCE(5, 88)
             KCModuleInfo moduleInfo(servicePtr);
+            QString moduleName = moduleInfo.moduleName();
             KCModuleProxy *currentModuleProxy = new KCModuleProxy(moduleInfo, moduleProxyParentWidget, pluginSelector_d->kcmArguments);
+#else
+            QString moduleName = servicePtr->name();
+            KCModuleProxy *currentModuleProxy =
+                new KCModuleProxy(KPluginInfo(servicePtr).toMetaData(), moduleProxyParentWidget, pluginSelector_d->kcmArguments);
+#endif
             if (currentModuleProxy->realModule()) {
                 moduleProxyList << currentModuleProxy;
                 if (mainWidget && !newTabWidget) {
@@ -966,7 +973,7 @@ void KPluginSelector::Private::PluginDelegate::configure(const QModelIndex &inde
                     mainWidget->setParent(newTabWidget);
                     KCModuleProxy *moduleProxy = qobject_cast<KCModuleProxy *>(mainWidget);
                     if (moduleProxy) {
-                        newTabWidget->addTab(mainWidget, moduleProxy->moduleInfo().moduleName());
+                        newTabWidget->addTab(mainWidget, moduleName);
                         mainWidget = newTabWidget;
                     } else {
                         delete newTabWidget;
@@ -1004,7 +1011,12 @@ void KPluginSelector::Private::PluginDelegate::configure(const QModelIndex &inde
 
         if (configDialog.exec() == QDialog::Accepted) {
             for (KCModuleProxy *moduleProxy : std::as_const(moduleProxyList)) {
+#if KCMUTILS_BUILD_DEPRECATED_SINCE(5, 88)
                 const QStringList parentComponents = moduleProxy->moduleInfo().property(QStringLiteral("X-KDE-ParentComponents")).toStringList();
+#else
+                const QStringList parentComponents =
+                    moduleProxy->metaData().rawData().value(QStringLiteral("X-KDE-ParentComponents")).toVariant().toStringList();
+#endif
                 moduleProxy->save();
                 for (const QString &parentComponent : parentComponents) {
                     Q_EMIT configCommitted(parentComponent.toLatin1());
