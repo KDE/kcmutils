@@ -10,6 +10,8 @@
 
 #include "kcmoduleinfo.h"
 
+#if KCMUTILS_BUILD_DEPRECATED_SINCE(5, 88)
+
 #include <kcmutils_debug.h>
 
 #include <QVariant>
@@ -261,3 +263,5 @@ QVariant KCModuleInfo::property(const QString &key) const
         return d->pluginInfo.property(key);
     }
 }
+
+#endif

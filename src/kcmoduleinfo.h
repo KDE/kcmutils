@@ -14,6 +14,7 @@
 #include <KService>
 #include <kcmutils_export.h>
 
+#if KCMUTILS_ENABLE_DEPRECATED_SINCE(5, 88)
 class KPluginInfo;
 class QString;
 class QStringList;
@@ -41,7 +42,9 @@ public:
      * done automatically for you.
      * @param desktopFile the desktop file representing the module, or
      * the name of the module.
+     * @deprecated Since 5.88, use KPluginMetaData API instead
      */
+    KCMUTILS_DEPRECATED_VERSION(5, 88, "use KPluginMetaData API instead")
     KCModuleInfo(const QString &desktopFile);
 
     /**
@@ -51,7 +54,9 @@ public:
      *
      * @param pluginInfo specifies the module
      * @since 5.70
+     * @deprecated Since 5.88, use KPluginMetaData API instead
      */
+    KCMUTILS_DEPRECATED_VERSION(5, 88, "use KPluginMetaData API instead")
     KCModuleInfo(const KPluginInfo &pluginInfo);
 
     /**
@@ -60,13 +65,17 @@ public:
      * @note @p moduleInfo must be a valid pointer.
      *
      * @param moduleInfo specifies the module
+     * @deprecated Since 5.88, use KPluginMetaData API instead
      */
+    KCMUTILS_DEPRECATED_VERSION(5, 88, "use KPluginMetaData API instead")
     KCModuleInfo(KService::Ptr moduleInfo);
 
     /**
      * Copy constructor
      * @param rhs specifies the module info to copy
+     * @deprecated Since 5.88, use KPluginMetaData API instead
      */
+    KCMUTILS_DEPRECATED_VERSION(5, 88, "use KPluginMetaData API instead")
     KCModuleInfo(const KCModuleInfo &rhs);
 
     /**
@@ -162,7 +171,9 @@ public:
     /**
      * @return the weight of the module which determines the order of the pages in
      * the KCMultiDialog. It's set by the X-KDE-Weight field.
+     * @deprecated Since 5.88, read X-KDE-Weight from KPluginMetaData instance instead
      */
+    KCMUTILS_DEPRECATED_VERSION(5, 88, "read X-KDE-Weight from KPluginMetaData instance instead")
     int weight() const;
 
     /**
@@ -178,4 +189,5 @@ private:
     Private *d;
 };
 
+#endif
 #endif // KCMODULEINFO_H
