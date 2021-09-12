@@ -55,14 +55,18 @@ enum ErrorReporting {
     Both = 3,
 };
 
+#if KCMUTILS_ENABLE_DEPRECATED_SINCE(5, 88)
 /**
  * Loads a @ref KCModule. If loading fails a zero pointer is returned.
  * @param module what module to load
  * @param report see ErrorReporting
  *
  * @return a pointer to the loaded @ref KCModule
+ * @deprecated Since 5.88, use loadModule(KPluginMetaData, QWidget *, QVariantList) instead
  */
+KCMUTILS_DEPRECATED_VERSION(5, 88, "use loadModule(KPluginMetaData, QWidget *, QVariantList) instead")
 KCMUTILS_EXPORT KCModule *loadModule(const KCModuleInfo &module, ErrorReporting report, QWidget *parent = nullptr, const QStringList &args = QStringList());
+#endif
 
 /**
  * Loads a @ref KCModule. If loading fails a KCM which displays an error message is returned.
@@ -72,6 +76,8 @@ KCMUTILS_EXPORT KCModule *loadModule(const KCModuleInfo &module, ErrorReporting 
  * @since 5.84
  */
 KCMUTILS_EXPORT KCModule *loadModule(const KPluginMetaData &metaData, QWidget *parent = nullptr, const QVariantList &args = {});
+
+#if KCMUTILS_ENABLE_DEPRECATED_SINCE(5, 88)
 /**
  * Loads a @ref KCModule. If loading fails a zero pointer is returned.
  *
@@ -79,14 +85,21 @@ KCMUTILS_EXPORT KCModule *loadModule(const KPluginMetaData &metaData, QWidget *p
  * @param report see ErrorReporting
  *
  * @return a pointer to the loaded @ref KCModule
+ * @deprecated Since 5.88, use loadModule(KPluginMetaData, QWidget *, QVariantList) instead
  */
+KCMUTILS_DEPRECATED_VERSION(5, 88, "use loadModule(KPluginMetaData, QWidget *, QVariantList) instead")
 KCMUTILS_EXPORT KCModule *loadModule(const QString &module, ErrorReporting report, QWidget *parent = nullptr, const QStringList &args = QStringList());
+#endif
 
+#if KCMUTILS_ENABLE_DEPRECATED_SINCE(5, 88)
 /**
  * Unloads the module's library
  * @param mod What module to unload for
+ * @deprecated Since 5.88, use QPluginLoader directly
  */
+KCMUTILS_DEPRECATED_VERSION(5, 88, "use QPluginLoader directly")
 KCMUTILS_EXPORT void unloadModule(const KCModuleInfo &mod);
+#endif
 
 /**
  * Returns a KCModule containing the messages @p report and @p text.
@@ -99,6 +112,7 @@ KCMUTILS_EXPORT void unloadModule(const KCModuleInfo &mod);
  */
 KCMUTILS_EXPORT KCModule *reportError(ErrorReporting report, const QString &text, const QString &details, QWidget *parent);
 
+#if KCMUTILS_ENABLE_DEPRECATED_SINCE(5, 88)
 /**
  * For a specified module, return false if configuration is not the default one and true in all other case including if module is not found
  * @param module what module to load
@@ -106,17 +120,24 @@ KCMUTILS_EXPORT KCModule *reportError(ErrorReporting report, const QString &text
  * @return a boolean representing if module configuration is in default state
  *
  * @since 5.74
+ * @deprecated Since 5.88, use KPluginFactory::instantiatePlugin<KCModuleData> and save the result in a QScopedPointer instead
  */
+KCMUTILS_DEPRECATED_VERSION(5, 88, "use KPluginFactory::instantiatePlugin<KCModuleData> and save the result in a QScopedPointer instead")
 KCMUTILS_EXPORT bool isDefaults(const KCModuleInfo &module, const QStringList &args = QStringList());
+#endif
 
+#if KCMUTILS_ENABLE_DEPRECATED_SINCE(5, 88)
 /**
  * Loads a @ref KCModuleData. If fails to load, return nullptr.
  *
  * @param module what module to load
  *
  * @since 5.81
+ * @deprecated Since 5.88, use KPluginFactory::instantiatePlugin<KCModuleData> instead
  */
+KCMUTILS_DEPRECATED_VERSION(5, 88, "use KPluginFactory::instantiatePlugin<KCModuleData> instead")
 KCMUTILS_EXPORT KCModuleData *loadModuleData(const KCModuleInfo &module, const QStringList &args = QStringList());
+#endif
 }
 
 #endif // KCMODULELOADER_H
