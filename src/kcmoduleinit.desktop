@@ -98,4 +98,4 @@ Type=QString
 
 # the startup phase in which the kcminit code should be called
 [PropertyDef::X-KDE-Init-Phase]
-Type=Int
+Type=int
