@@ -1,0 +1,224 @@
+# translation of kdelibs4.po to Kannada
+# Copyright (C) YEAR This_file_is_part_of_KDE
+# This file is distributed under the same license as the PACKAGE package.
+#
+# Umesh Rudrapatna <urudrapatna@yahoo.com>, 2007.
+# Umesh Rudrapatna <umeshrs@gmail.com>, 2007, 2008, 2009.
+# Shankar Prasad <svenkate@redhat.com>, 2008, 2010.
+msgid ""
+msgstr ""
+"Project-Id-Version: kdelibs4\n"
+"Report-Msgid-Bugs-To: https://bugs.kde.org\n"
+"POT-Creation-Date: 2021-09-11 00:14+0000\n"
+"PO-Revision-Date: 2010-06-24 18:32+0530\n"
+"Last-Translator: Shankar Prasad <svenkate@redhat.com>\n"
+"Language-Team: kn_IN <kde-i18n-doc@kde.org>\n"
+"Language: kn\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"\n"
+"X-Generator: Lokalize 1.0\n"
+
+#, kde-format
+msgctxt "NAME OF TRANSLATORS"
+msgid "Your names"
+msgstr "ಉಮೇಶ್ ರುದ್ರಪಟ್ಟಣ, ಸಿದ್ಧಾರೂಢ ಪಿ ಟಿ, ಶಂಕರ ಪ್ರಸಾದ್ ಎಂ ವಿ"
+
+#, kde-format
+msgctxt "EMAIL OF TRANSLATORS"
+msgid "Your emails"
+msgstr "umeshrs@gmail.com, siddharudh@gmail.com, svenkate@redhat.com"
+
+#: kcmoduleloader.cpp:68
+#, kde-format
+msgid "The module %1 could not be found."
+msgstr "ನಿರ್ದಿಷ್ಟಗೊಳಿಸಿದ ಘಟಕ %1 ಕಾಣಸಿಗಲಿಲ್ಲ."
+
+#: kcmoduleloader.cpp:69
+#, fuzzy, kde-format
+#| msgid ""
+#| "<qt><p>The diagnostics is:<br />The desktop file %1 could not be found.</"
+#| "p></qt>"
+msgid ""
+"<qt><p>The diagnosis is:<br />The desktop file %1 could not be found.</p></"
+"qt>"
+msgstr "<qt><p>ರೋಗನಿದಾನ ಈ ರೀತಿಯಿದೆ:<br />ಗಣಕತೆರೆ ಕಡತ %1 ಕಾಣಬರಲಿಲ್ಲ.</p></qt>"
+
+#: kcmoduleloader.cpp:75 kcmoduleloader.cpp:164
+#, kde-format
+msgid "The module %1 is disabled."
+msgstr "ಘಟಕ %1 ಅಶಕ್ತಗೊಂಡಿದೆ."
+
+#: kcmoduleloader.cpp:76
+#, kde-format
+msgid ""
+"<qt><p>Either the hardware/software the module configures is not available "
+"or the module has been disabled by the administrator.</p></qt>"
+msgstr ""
+"<qt><p>ಘಟಕವು ಸಂರಚಿಸುವ ಯಂತ್ರಾಂಶ/ತಂತ್ರಾಂಶ ಲಭ್ಯವಿಲ್ಲ ಇಲ್ಲವೇ ಈ ಘಟಕವನ್ನು ನಿರ್ವಾಹಕ "
+"(ಅಡ್ಮಿನಿಸ್ಟ್ರೇಟರ್) ಅಶಕ್ತಗೊಳಿಸಿರಬಹುದು.</p></qt>"
+
+#: kcmoduleloader.cpp:99 kcmoduleloader.cpp:192
+#, fuzzy, kde-format
+#| msgid "Error loading '%1'.\n"
+msgid "Error loading QML file."
+msgstr "'%1' ಉತ್ಥಾಪಿಸುವಾಗ (ಲೋಡ್) ದೋಷ.\n"
+
+#: kcmoduleloader.cpp:107
+#, fuzzy, kde-format
+#| msgid "Error loading '%1'.\n"
+msgid "Error loading config module"
+msgstr "'%1' ಉತ್ಥಾಪಿಸುವಾಗ (ಲೋಡ್) ದೋಷ.\n"
+
+#: kcmoduleloader.cpp:154
+#, kde-format
+msgid "The module %1 is not a valid configuration module."
+msgstr "ಘಟಕ %1 ಒಂದು ಮಾನ್ಯ ಸಂರಚನಾ ಘಟಕವಲ್ಲ."
+
+#: kcmoduleloader.cpp:155
+#, fuzzy, kde-format
+#| msgid ""
+#| "<qt>The diagnostics is:<br />The desktop file %1 does not specify a "
+#| "library.</qt>"
+msgid ""
+"<qt>The diagnosis is:<br />The desktop file %1 does not specify a library.</"
+"qt>"
+msgstr ""
+"<qt>ರೋಗನಿದಾನ ಈ ರೀತಿಯಿದೆ:<br />ಗಣಕತೆರೆ ಕಡತ %1 ಒಂದು ಭಂಡಾರವನ್ನು "
+"ನಿರ್ದಿಷ್ಟಗೊಳಿಸುತ್ತಿಲ್ಲ.</qt>"
+
+#: kcmoduleloader.cpp:165
+#, fuzzy, kde-format
+#| msgid "Please contact your system administrator."
+msgid "The module has been disabled by the system administrator."
+msgstr "ದಯವಿಟ್ಟು ನಿಮ್ಮ ಗಣಕ-ನಿರ್ವಾಹಕರನ್ನು ಸಂಪರ್ಕಿಸಿ."
+
+#: kcmoduleloader.cpp:229
+#, kde-format
+msgid ""
+"<qt><p>Possible reasons:<ul><li>An error occurred during your last system "
+"upgrade, leaving an orphaned control module behind</li><li>You have old "
+"third party modules lying around.</li></ul></p><p>Check these points "
+"carefully and try to remove the module mentioned in the error message. If "
+"this fails, consider contacting your distributor or packager.</p></qt>"
+msgstr ""
+
+#: kcmoduleproxy.cpp:105
+#, kde-format
+msgctxt "Argument is application name"
+msgid "This configuration section is already opened in %1"
+msgstr "ಈ ಸಂರಚನಾ ವಿಭಾಗವನ್ನು %1 ನಲ್ಲಿ ಈಗಾಗಲೆ ತೆರೆಯಲಾಗಿದೆ"
+
+#: kcmultidialog.cpp:52
+#, fuzzy, kde-format
+#| msgid ""
+#| "The document \"%1\" has been modified.\n"
+#| "Do you want to save your changes or discard them?"
+msgid ""
+"The settings of the current module have changed.\n"
+"Do you want to apply the changes or discard them?"
+msgstr ""
+"ದಸ್ತಾವೇಜು \"%1\" ಬದಲಾಗಿದೆ.\n"
+"ಬದಲಾವಣೆಗಳನ್ನು ಉಳಿಸಬೇಕೇ ಅಥವಾ ತಿರಸ್ಕರಿಸಬೇಕೇ?"
+
+#: kcmultidialog.cpp:54
+#, fuzzy, kde-format
+#| msgid "Settings"
+msgid "Apply Settings"
+msgstr "ಸಂಯೋಜನೆಗಳು"
+
+#: kcmultidialog.cpp:245 kpluginselector.cpp:805
+#, kde-format
+msgid "Configure"
+msgstr "ಸಂರಚಿಸು"
+
+#: kpluginselector.cpp:129
+#, kde-format
+msgid ""
+"Automatic changes have been performed due to plugin dependencies. Click here "
+"for further information"
+msgstr ""
+"ಮಿಳಿತಾನ್ವಯಗಳ (ಪ್ಲಗಿನ್) ಅವಲಂಬನೆಗಳಿಂದಾಗಿ ಸ್ವಯಂಚಾಲಿತ ಬದಲಾವಣೆಗಳನ್ನು ಮಾಡಲಾಗಿದೆ. "
+"ಹೆಚ್ಚುವರಿ ಮಾಹಿತಿಗಾಗಿ ಇಲ್ಲಿ ಒತ್ತಿರಿ"
+
+#: kpluginselector.cpp:197
+#, kde-format
+msgid ""
+"Automatic changes have been performed in order to satisfy plugin "
+"dependencies:\n"
+msgstr ""
+"ಮಿಳಿತಾನ್ವಯಗಳ (ಪ್ಲಗಿನ್) ಅವಲಂಬನೆಗಳನ್ನು ತೃಪ್ತಿಪಡಿಸಲು ಸ್ವಯಂಚಾಲಿತ ಬದಲಾವಣೆಗಳನ್ನು "
+"ಮಾಡಲಾಗಿದೆ:\n"
+
+#: kpluginselector.cpp:203
+#, kde-format
+msgid ""
+"\n"
+"    %1 plugin has been automatically checked because of the dependency of %2 "
+"plugin"
+msgstr ""
+"\n"
+"     %2 ಮಿಳಿತಾನ್ವಯದ (ಪ್ಲಗಿನ್) ಅವಲಂಬನೆಯಿಂದಾಗಿ %1 ಮಿಳಿತಾನ್ವಯ ಸ್ವಯಂಚಾಲಿತವಾಗಿ "
+"ಗುರುತುಹಾಕಲ್ಪಟ್ಟಿದೆ"
+
+#: kpluginselector.cpp:205
+#, kde-format
+msgid ""
+"\n"
+"    %1 plugin has been automatically unchecked because of its dependency on "
+"%2 plugin"
+msgstr ""
+"\n"
+"     %2 ಮಿಳಿತಾನ್ವಯದ (ಪ್ಲಗಿನ್) ಅವಲಂಬನೆಯಿಂದಾಗಿ %1 ಮಿಳಿತಾನ್ವಯದ ಗುರುತನ್ನು "
+"ಸ್ವಯಂಚಾಲಿತವಾಗಿ ತೆಗೆದುಹಾಕಲಾಗಿದೆ"
+
+#: kpluginselector.cpp:209
+#, kde-format
+msgid "Dependency Check"
+msgstr "ಅವಲಂಬನೆಗಳ ಪರಿಶೀಲನೆ"
+
+#: kpluginselector.cpp:227
+#, kde-format
+msgid "%1 plugin automatically added due to plugin dependencies"
+msgid_plural "%1 plugins automatically added due to plugin dependencies"
+msgstr[0] ""
+"ಮಿಳಿತಾನ್ವಯಗಳ (ಪ್ಲಗಿನ್) ಅವಲಂಬನೆಗಳಿಂದಾಗಿ %1 ಮಿಳಿತಾನ್ವಯವನ್ನು ಸ್ವಯಂಚಾಲಿತವಾಗಿ "
+"ಸೇರಿಸಲಾಗಿದೆ"
+msgstr[1] ""
+"ಮಿಳಿತಾನ್ವಯಗಳ (ಪ್ಲಗಿನ್) ಅವಲಂಬನೆಗಳಿಂದಾಗಿ %1 ಮಿಳಿತಾನ್ವಯಗಳನ್ನು ಸ್ವಯಂಚಾಲಿತವಾಗಿ "
+"ಸೇರಿಸಲಾಗಿದೆ"
+
+#: kpluginselector.cpp:231
+#, kde-format
+msgid ", "
+msgstr ", "
+
+#: kpluginselector.cpp:235
+#, kde-format
+msgid "%1 plugin automatically removed due to plugin dependencies"
+msgid_plural "%1 plugins automatically removed due to plugin dependencies"
+msgstr[0] ""
+"ಮಿಳಿತಾನ್ವಯಗಳ (ಪ್ಲಗಿನ್) ಅವಲಂಬನೆಗಳಿಂದಾಗಿ %1 ಮಿಳಿತಾನ್ವಯವನ್ನು ಸ್ವಯಂಚಾಲಿತವಾಗಿ "
+"ತೆಗೆದುಹಾಕಲಾಗಿದೆ"
+msgstr[1] ""
+"ಮಿಳಿತಾನ್ವಯಗಳ (ಪ್ಲಗಿನ್) ಅವಲಂಬನೆಗಳಿಂದಾಗಿ %1 ಮಿಳಿತಾನ್ವಯಗಳನ್ನು ಸ್ವಯಂಚಾಲಿತವಾಗಿ "
+"ತೆಗೆದುಹಾಕಲಾಗಿದೆ"
+
+#: kpluginselector.cpp:257
+#, fuzzy, kde-format
+#| msgid "Search"
+msgid "Search..."
+msgstr "ಹುಡುಕು"
+
+#: kpluginselector.cpp:800
+#, fuzzy, kde-format
+#| msgid "&About"
+msgid "About"
+msgstr "ಬಗ್ಗೆ(&A)"
+
+#: ksettings/dialog.cpp:222
+#, kde-format
+msgid "Enable component"
+msgstr "ಅಂಗವನ್ನು ಶಕ್ತಗೊಳಿಸು"
