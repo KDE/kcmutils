@@ -570,7 +570,9 @@ QVariant KPluginSelector::Private::PluginModel::data(const QModelIndex &index, i
     case PluginEntryRole:
         return QVariant::fromValue(pluginEntry);
     case ServicesCountRole:
-        return pluginEntry->pluginInfo.kcmServices().count();
+        return pluginEntry->pluginInfo.kcmServices().count() +
+            // if we have a X-KDE-ConfigModule key, we know that we have a config module
+            (pluginEntry->pluginInfo.property(QStringLiteral("X-KDE-ConfigModule")).toString().isEmpty() ? 0 : 1);
     case NameRole:
         return pluginEntry->pluginInfo.name();
     case CommentRole:
@@ -945,18 +947,22 @@ void KPluginSelector::Private::PluginDelegate::configure(const QModelIndex &inde
     // The first proxy is owned by the dialog itself
     QWidget *moduleProxyParentWidget = &configDialog;
 
-    const auto lstServices = pluginInfo.kcmServices();
-    for (const KService::Ptr &servicePtr : lstServices) {
-        if (!servicePtr->noDisplay()) {
-#if KCMUTILS_BUILD_DEPRECATED_SINCE(5, 88)
-            KCModuleInfo moduleInfo(servicePtr);
-            QString moduleName = moduleInfo.moduleName();
-            KCModuleProxy *currentModuleProxy = new KCModuleProxy(moduleInfo, moduleProxyParentWidget, pluginSelector_d->kcmArguments);
-#else
-            QString moduleName = servicePtr->name();
-            KCModuleProxy *currentModuleProxy =
-                new KCModuleProxy(KPluginInfo(servicePtr).toMetaData(), moduleProxyParentWidget, pluginSelector_d->kcmArguments);
-#endif
+    QVector<KPluginMetaData> metaDataList;
+    const auto lstServices = KPluginInfo::fromServices(pluginInfo.kcmServices());
+    for (const KPluginInfo &info : lstServices) {
+        metaDataList << info.toMetaData();
+    }
+    const QString configModule = pluginInfo.property(QStringLiteral("X-KDE-ConfigModule")).toString();
+    if (!configModule.isEmpty()) {
+        // the KCMs don't need any metadata themselves, just set the name to make sure the KPluginMetaData object
+        // is valid & the internal usage has the data it needs
+        QJsonObject kplugin({{QLatin1String("Name"), pluginInfo.name()}});
+        KPluginMetaData data(QJsonObject{{QLatin1String("KPlugin"), kplugin}}, configModule);
+        metaDataList = {data}; // Clear the list to avoid old desktop files to appear twice
+    }
+    for (const KPluginMetaData &data : std::as_const(metaDataList)) {
+        if (!data.rawData().value(QStringLiteral("NoDisplay")).toBool()) {
+            KCModuleProxy *currentModuleProxy = new KCModuleProxy(data, moduleProxyParentWidget, pluginSelector_d->kcmArguments);
             if (currentModuleProxy->realModule()) {
                 moduleProxyList << currentModuleProxy;
                 if (mainWidget && !newTabWidget) {
@@ -968,7 +974,7 @@ void KPluginSelector::Private::PluginDelegate::configure(const QModelIndex &inde
                     mainWidget->setParent(newTabWidget);
                     KCModuleProxy *moduleProxy = qobject_cast<KCModuleProxy *>(mainWidget);
                     if (moduleProxy) {
-                        newTabWidget->addTab(mainWidget, moduleName);
+                        newTabWidget->addTab(mainWidget, data.name());
                         mainWidget = newTabWidget;
                     } else {
                         delete newTabWidget;
@@ -979,7 +985,7 @@ void KPluginSelector::Private::PluginDelegate::configure(const QModelIndex &inde
                 }
 
                 if (newTabWidget) {
-                    newTabWidget->addTab(currentModuleProxy, servicePtr->name());
+                    newTabWidget->addTab(currentModuleProxy, pluginInfo.name());
                 } else {
                     mainWidget = currentModuleProxy;
                 }
