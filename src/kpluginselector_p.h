@@ -140,7 +140,6 @@ public:
                     PluginLoadMethod pluginLoadMethod = ReadConfigFile,
                     bool manuallyAdded = false);
     void clear();
-    QList<KService::Ptr> pluginServices(const QModelIndex &index) const;
 
     QModelIndex index(int row, int column = 0, const QModelIndex &parent = QModelIndex()) const override;
     QVariant data(const QModelIndex &index, int role = Qt::DisplayRole) const override;

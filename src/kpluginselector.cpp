@@ -549,11 +549,6 @@ void KPluginSelector::Private::PluginModel::clear()
     endResetModel();
 }
 
-QList<KService::Ptr> KPluginSelector::Private::PluginModel::pluginServices(const QModelIndex &index) const
-{
-    return static_cast<PluginEntry *>(index.internalPointer())->pluginInfo.kcmServices();
-}
-
 QModelIndex KPluginSelector::Private::PluginModel::index(int row, int column, const QModelIndex &parent) const
 {
     Q_UNUSED(parent)
