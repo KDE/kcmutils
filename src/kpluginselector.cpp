@@ -954,11 +954,20 @@ void KPluginSelector::Private::PluginDelegate::configure(const QModelIndex &inde
     }
     const QString configModule = pluginInfo.property(QStringLiteral("X-KDE-ConfigModule")).toString();
     if (!configModule.isEmpty()) {
-        // the KCMs don't need any metadata themselves, just set the name to make sure the KPluginMetaData object
-        // is valid & the internal usage has the data it needs
-        QJsonObject kplugin({{QLatin1String("Name"), pluginInfo.name()}});
-        KPluginMetaData data(QJsonObject{{QLatin1String("KPlugin"), kplugin}}, configModule);
-        metaDataList = {data}; // Clear the list to avoid old desktop files to appear twice
+        const QString absoluteKCMPath = QPluginLoader(configModule).fileName();
+        // If we have a static plugin the filename does not exist
+        if (absoluteKCMPath.isEmpty()) {
+            const int idx = configModule.lastIndexOf(QLatin1Char('/'));
+            const QString pluginNamespace = configModule.left(idx);
+            const QString pluginId = configModule.mid(idx + 1);
+            metaDataList = {KPluginMetaData::findPluginById(pluginNamespace, pluginId)}; // Clear the list to avoid old desktop files to appear twice
+        } else {
+            // the KCMs don't need any metadata themselves, just set the name to make sure the KPluginMetaData object
+            // is valid & the internal usage has the data it needs
+            QJsonObject kplugin({{QLatin1String("Name"), pluginInfo.name()}});
+            KPluginMetaData data(QJsonObject{{QLatin1String("KPlugin"), kplugin}}, absoluteKCMPath);
+            metaDataList = {data}; // Clear the list to avoid old desktop files to appear twice
+        }
     }
     for (const KPluginMetaData &data : std::as_const(metaDataList)) {
         if (!data.rawData().value(QStringLiteral("NoDisplay")).toBool()) {
