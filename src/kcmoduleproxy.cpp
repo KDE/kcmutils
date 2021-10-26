@@ -180,7 +180,10 @@ KCModuleProxy::~KCModuleProxy()
 {
     deleteClient();
     if (metaData().isValid()) {
-        QPluginLoader(metaData().fileName()).unload();
+        // Do not try to unload static plugins
+        if (!metaData().isStaticPlugin()) {
+            QPluginLoader(metaData().fileName()).unload();
+        }
     } else {
 #if KCMUTILS_BUILD_DEPRECATED_SINCE(5, 88)
         KCModuleLoader::unloadModule(moduleInfo());
