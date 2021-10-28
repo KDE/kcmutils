@@ -1012,14 +1012,18 @@ void KPluginSelector::Private::PluginDelegate::configure(const QModelIndex &inde
 
         if (configDialog.exec() == QDialog::Accepted) {
             for (KCModuleProxy *moduleProxy : std::as_const(moduleProxyList)) {
+                QStringList parentComponents;
 #if KCMUTILS_BUILD_DEPRECATED_SINCE(5, 88)
-                const QStringList parentComponents = moduleProxy->moduleInfo().property(QStringLiteral("X-KDE-ParentComponents")).toStringList();
+                if (moduleProxy->moduleInfo().isValid()) {
+                    parentComponents = moduleProxy->moduleInfo().property(QStringLiteral("X-KDE-ParentComponents")).toStringList();
+                }
 #else
-                const QStringList parentComponents =
-                    moduleProxy->metaData().rawData().value(QStringLiteral("X-KDE-ParentComponents")).toVariant().toStringList();
+                if (moduleProxy->metaData().isValid()) {
+                    parentComponents = moduleProxy->metaData().rawData().value(QStringLiteral("X-KDE-ParentComponents")).toVariant().toStringList();
+                }
 #endif
                 moduleProxy->save();
-                for (const QString &parentComponent : parentComponents) {
+                for (const QString &parentComponent : std::as_const(parentComponents)) {
                     Q_EMIT configCommitted(parentComponent.toLatin1());
                 }
             }
