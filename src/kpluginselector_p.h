@@ -49,7 +49,7 @@ public:
     };
 
     Private(KPluginSelector *parent);
-    ~Private();
+    ~Private() override;
 
     void updateDependencies(PluginEntry *pluginEntry, bool added);
     int dependantLayoutValue(int value, int width, int totalWidth) const;
@@ -103,7 +103,7 @@ class KPluginSelector::Private::DependenciesWidget : public QWidget
 
 public:
     DependenciesWidget(QWidget *parent = nullptr);
-    ~DependenciesWidget();
+    ~DependenciesWidget() override;
 
     void addDependency(const QString &dependency, const QString &pluginCausant, bool added);
     void userOverrideDependency(const QString &dependency);
@@ -131,7 +131,7 @@ class KPluginSelector::Private::PluginModel : public QAbstractListModel
 {
 public:
     PluginModel(KPluginSelector::Private *pluginSelector_d, QObject *parent = nullptr);
-    ~PluginModel();
+    ~PluginModel() override;
 
     void addPlugins(const QList<KPluginInfo> &pluginList,
                     const QString &categoryName,
@@ -157,7 +157,7 @@ class KPluginSelector::Private::ProxyModel : public KCategorizedSortFilterProxyM
 {
 public:
     ProxyModel(KPluginSelector::Private *pluginSelector_d, QObject *parent = nullptr);
-    ~ProxyModel();
+    ~ProxyModel() override;
 
 protected:
     bool filterAcceptsRow(int sourceRow, const QModelIndex &sourceParent) const override;
@@ -173,7 +173,7 @@ class KPluginSelector::Private::PluginDelegate : public KWidgetItemDelegate
 
 public:
     PluginDelegate(KPluginSelector::Private *pluginSelector_d, QObject *parent = nullptr);
-    ~PluginDelegate();
+    ~PluginDelegate() override;
 
     void paint(QPainter *painter, const QStyleOptionViewItem &option, const QModelIndex &index) const override;
     QSize sizeHint(const QStyleOptionViewItem &option, const QModelIndex &index) const override;

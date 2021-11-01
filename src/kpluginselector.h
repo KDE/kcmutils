@@ -61,7 +61,7 @@ public:
     /**
      * Destructor
      */
-    ~KPluginSelector();
+    ~KPluginSelector() override;
 
     /**
      * Add a list of KParts plugins

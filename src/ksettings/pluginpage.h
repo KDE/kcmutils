@@ -70,7 +70,7 @@ public:
     KCMUTILS_DEPRECATED_VERSION(5, 76, "Use KPluginSelector instead")
     explicit PluginPage(const KAboutData *aboutData, QWidget *parent = nullptr, const QVariantList &args = QVariantList());
 
-    ~PluginPage();
+    ~PluginPage() override;
 
     /**
      * @return a reference to the KPluginSelector.

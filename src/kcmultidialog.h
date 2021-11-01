@@ -225,7 +225,7 @@ public:
         : QScrollArea(w)
     {
     }
-    virtual ~UnboundScrollArea() = default;
+    ~UnboundScrollArea() override = default;
 };
 
 #endif
