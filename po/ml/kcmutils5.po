@@ -1,0 +1,194 @@
+# translation of kdelibs4.po to
+# Malayalam translation of kdelibs4.
+# Copyright (C) 2007-2010 This_file_is_part_of_KDE
+# This file is distributed under the same license as the kdelibs package.
+# Anoop | അനൂപ് Panavalappil | പനവളപ്പില്‍ <gnuanu@gmail.com>, 2008.
+# ANI PETER|അനി പീറ്റര്‍ <peter.ani@gmail.com>, 2008.
+# Maxin B. John <maxinbjohn@gmail.com>, 2007.
+# Manu S Madhav | മനു എസ് മാധവ് <manusmad@gmail.com>, 2008.
+# Praveen Arimbrathodiyil <pravi.a@gmail.com>, 2007, 2008, 2009, 2010.
+msgid ""
+msgstr ""
+"Project-Id-Version: kdelibs4\n"
+"Report-Msgid-Bugs-To: https://bugs.kde.org\n"
+"POT-Creation-Date: 2021-10-28 00:14+0000\n"
+"PO-Revision-Date: 2019-12-12 21:04+0000\n"
+"Last-Translator: Vivek KJ Pazhedath <vivekkj2004@gmail.com>\n"
+"Language-Team: SMC <smc.org.in>\n"
+"Language: ml\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#, kde-format
+msgctxt "NAME OF TRANSLATORS"
+msgid "Your names"
+msgstr "പ്രവീണ്‍ അരിമ്പ്രത്തൊടിയില്‍, അനി പീറ്റര്‍, മാക്സിന്‍ ജോണ്‍, അനൂപ് പനവളപ്പില്‍, മനു എസ് മാധവ്"
+
+#, kde-format
+msgctxt "EMAIL OF TRANSLATORS"
+msgid "Your emails"
+msgstr "shijualexonline@gmail.com,snalledam@dataone.in,vivekkj2004@gmail.com"
+
+#: kcmoduleloader.cpp:57 kcmoduleloader.cpp:142
+#, kde-format
+msgid "The module %1 is disabled."
+msgstr "ഘടകം %1 പ്രവര്‍ത്തന രഹിതമാണു്."
+
+#: kcmoduleloader.cpp:58
+#, fuzzy, kde-format
+#| msgid "Please contact your system administrator."
+msgid "The module has been disabled by the system administrator."
+msgstr "ദയവായി നിങ്ങളുടെ സിസ്റ്റം ഭരണാധികാരിയുമായി ബന്ധപ്പെടുക."
+
+#: kcmoduleloader.cpp:85 kcmoduleloader.cpp:166
+#, fuzzy, kde-format
+#| msgid "Error loading '%1'.\n"
+msgid "Error loading QML file."
+msgstr "'%1' ലഭ്യമാക്കുന്നതില്‍ പിശകു്.\n"
+
+#: kcmoduleloader.cpp:104
+#, kde-format
+msgid ""
+"<qt><p>Possible reasons:<ul><li>An error occurred during your last system "
+"upgrade, leaving an orphaned control module behind</li><li>You have old "
+"third party modules lying around.</li></ul></p><p>Check these points "
+"carefully and try to remove the module mentioned in the error message. If "
+"this fails, consider contacting your distributor or packager.</p></qt>"
+msgstr ""
+
+#: kcmoduleloader.cpp:135
+#, kde-format
+msgid "The module %1 could not be found."
+msgstr "ഘടകം %1 ലഭ്യമല്ല."
+
+#: kcmoduleloader.cpp:136
+#, kde-format
+msgid ""
+"<qt><p>The diagnosis is:<br />The desktop file %1 could not be found.</p></"
+"qt>"
+msgstr ""
+
+#: kcmoduleloader.cpp:143
+#, kde-format
+msgid ""
+"<qt><p>Either the hardware/software the module configures is not available "
+"or the module has been disabled by the administrator.</p></qt>"
+msgstr ""
+
+#: kcmoduleloader.cpp:174
+#, fuzzy, kde-format
+#| msgid "Error loading '%1'.\n"
+msgid "Error loading config module"
+msgstr "'%1' ലഭ്യമാക്കുന്നതില്‍ പിശകു്.\n"
+
+#: kcmoduleloader.cpp:221
+#, kde-format
+msgid "The module %1 is not a valid configuration module."
+msgstr "ഘടകം %1 ശരിയായ ഒരു ക്രമീകരണ ഘടകമല്ല."
+
+#: kcmoduleloader.cpp:222
+#, kde-format
+msgid ""
+"<qt>The diagnosis is:<br />The desktop file %1 does not specify a library.</"
+"qt>"
+msgstr ""
+
+#: kcmoduleproxy.cpp:105
+#, kde-format
+msgctxt "Argument is application name"
+msgid "This configuration section is already opened in %1"
+msgstr "ക്രമീകരണഭാഗം നിലവില്‍ %1-ല്‍ തുറന്നിരിക്കുന്നു."
+
+#: kcmultidialog.cpp:52
+#, kde-format
+msgid ""
+"The settings of the current module have changed.\n"
+"Do you want to apply the changes or discard them?"
+msgstr ""
+"ഇപ്പോഴുള്ള രേഖയുടെ സജ്ജീകരണങ്ങളില്‍ മാറ്റങ്ങള്‍ വരുത്തിയിരിക്കുന്നു.\n"
+"നിങ്ങള്‍ക്കവ സൂക്ഷിക്കണമോ വേണ്ടന്നു് വയ്ക്കണമോ?"
+
+#: kcmultidialog.cpp:54
+#, kde-format
+msgid "Apply Settings"
+msgstr "സജ്ജീകരണങ്ങള്‍ പ്രാഭല്യത്തിലാക്കുക"
+
+#: kcmultidialog.cpp:259 kpluginselector.cpp:802
+#, kde-format
+msgid "Configure"
+msgstr "ക്രമീകരിയ്ക്കുക"
+
+#: kpluginselector.cpp:129
+#, kde-format
+msgid ""
+"Automatic changes have been performed due to plugin dependencies. Click here "
+"for further information"
+msgstr ""
+
+#: kpluginselector.cpp:197
+#, kde-format
+msgid ""
+"Automatic changes have been performed in order to satisfy plugin "
+"dependencies:\n"
+msgstr ""
+
+#: kpluginselector.cpp:203
+#, kde-format
+msgid ""
+"\n"
+"    %1 plugin has been automatically checked because of the dependency of %2 "
+"plugin"
+msgstr ""
+"\n"
+"    %2 പ്ലഗിന്റെ ആശ്രയത്വം മൂലം %1 പ്ലഗിന്‍ തനിയെ ചെക്ക് ചെയ്യപ്പെട്ടു"
+
+#: kpluginselector.cpp:205
+#, kde-format
+msgid ""
+"\n"
+"    %1 plugin has been automatically unchecked because of its dependency on "
+"%2 plugin"
+msgstr ""
+"\n"
+"    %2 പ്ലഗിന്റെ ആശ്രയത്വം മൂലം %1 പ്ലഗിന്‍ തനിയെ അണ്‍ചെക്ക് ചെയ്യപ്പെട്ടു"
+
+#: kpluginselector.cpp:209
+#, kde-format
+msgid "Dependency Check"
+msgstr "ഡിപന്‍ഡന്‍സി ചെക്കു്"
+
+#: kpluginselector.cpp:227
+#, kde-format
+msgid "%1 plugin automatically added due to plugin dependencies"
+msgid_plural "%1 plugins automatically added due to plugin dependencies"
+msgstr[0] "പ്ലഗിന്‍ ആശ്രയത്വം മൂലം %1 പ്ലഗിന്‍ തനിയെ കൂട്ടിച്ചേര്‍ത്തു"
+msgstr[1] "പ്ലഗിന്‍ ആശ്രയത്വം മൂലം %1 പ്ലഗിനുകള്‍ തനിയെ കൂട്ടിച്ചേര്‍ത്തു"
+
+#: kpluginselector.cpp:231
+#, kde-format
+msgid ", "
+msgstr ", "
+
+#: kpluginselector.cpp:235
+#, kde-format
+msgid "%1 plugin automatically removed due to plugin dependencies"
+msgid_plural "%1 plugins automatically removed due to plugin dependencies"
+msgstr[0] "പ്ലഗിന്‍ ആശ്രയത്വം മൂലം %1 പ്ലഗിന്‍ തനിയെ നീക്കം ചെയ്തു"
+msgstr[1] "പ്ലഗിന്‍ ആശ്രയത്വം മൂലം %1 പ്ലഗിനുകള്‍ തനിയെ നീക്കം ചെയ്തു"
+
+#: kpluginselector.cpp:257
+#, kde-format
+msgid "Search..."
+msgstr "തിരയുക..."
+
+#: kpluginselector.cpp:797
+#, fuzzy, kde-format
+msgid "About"
+msgstr "&സംബന്ധിച്ചു്"
+
+#: ksettings/dialog.cpp:222
+#, kde-format
+msgid "Enable component"
+msgstr "ഘടകം സജ്ജമാക്കുക"

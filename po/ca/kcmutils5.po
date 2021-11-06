@@ -1,0 +1,218 @@
+# Translation of kcmutils5.po to Catalan
+# Copyright (C) 1998-2021 This_file_is_part_of_KDE
+# This file is distributed under the license LGPL version 2.1 or
+# version 3 or later versions approved by the membership of KDE e.V.
+#
+# Sebastià Pla i Sanz <sps@sastia.com>, 1998, 1999, 2000, 2001, 2002, 2003, 2004, 2005, 2006, 2007.
+# Antoni Bella Pérez <antonibella5@yahoo.com>, 2003, 2006, 2011, 2012, 2013, 2014, 2020, 2021.
+# Albert Astals Cid <aacid@kde.org>, 2004, 2005, 2007.
+# Josep M. Ferrer <txemaq@gmail.com>, 2007, 2008, 2009, 2010, 2011, 2012, 2013, 2014, 2015, 2016, 2017, 2018, 2019, 2020.
+# Robert Millan <rmh@aybabtu.com>, 2009.
+# Orestes Mas <orestes@tsc.upc.edu>, 2010.
+msgid ""
+msgstr ""
+"Project-Id-Version: kcmutils\n"
+"Report-Msgid-Bugs-To: https://bugs.kde.org\n"
+"POT-Creation-Date: 2021-10-28 00:14+0000\n"
+"PO-Revision-Date: 2021-08-22 16:20+0200\n"
+"Last-Translator: Antoni Bella Pérez <antonibella5@yahoo.com>\n"
+"Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
+"Language: ca\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Lokalize 21.07.90\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Accelerator-Marker: &\n"
+
+#, kde-format
+msgctxt "NAME OF TRANSLATORS"
+msgid "Your names"
+msgstr "Sebastià Pla,Antoni Bella,Albert Astals,Josep M. Ferrer"
+
+#, kde-format
+msgctxt "EMAIL OF TRANSLATORS"
+msgid "Your emails"
+msgstr "sps@sastia.com,antonibella5@yahoo.com,aacid@kde.org,txemaq@gmail.com"
+
+#: kcmoduleloader.cpp:57 kcmoduleloader.cpp:142
+#, kde-format
+msgid "The module %1 is disabled."
+msgstr "El mòdul %1 s'ha desactivat."
+
+#: kcmoduleloader.cpp:58
+#, kde-format
+msgid "The module has been disabled by the system administrator."
+msgstr "El mòdul ha estat desactivat per l'administrador del sistema."
+
+#: kcmoduleloader.cpp:85 kcmoduleloader.cpp:166
+#, kde-format
+msgid "Error loading QML file."
+msgstr "Error en carregar el fitxer QML."
+
+#: kcmoduleloader.cpp:104
+#, kde-format
+msgid ""
+"<qt><p>Possible reasons:<ul><li>An error occurred during your last system "
+"upgrade, leaving an orphaned control module behind</li><li>You have old "
+"third party modules lying around.</li></ul></p><p>Check these points "
+"carefully and try to remove the module mentioned in the error message. If "
+"this fails, consider contacting your distributor or packager.</p></qt>"
+msgstr ""
+"<qt><p>Motius possibles:<ul> <li>Va haver-hi un error durant la darrera "
+"actualització del sistema, deixant orfe un mòdul de control.</li><li>Teniu "
+"escampats mòduls antics de terceres parts.</li> </ul></p><p>Comproveu amb "
+"cura aquests punts i proveu d'eliminar el mòdul mencionat al missatge "
+"d'error. Si això falla, contacteu amb el vostre distribuïdor o empaquetador."
+"</p></qt>"
+
+#: kcmoduleloader.cpp:135
+#, kde-format
+msgid "The module %1 could not be found."
+msgstr "El mòdul %1 no s'ha pogut trobar."
+
+#: kcmoduleloader.cpp:136
+#, kde-format
+msgid ""
+"<qt><p>The diagnosis is:<br />The desktop file %1 could not be found.</p></"
+"qt>"
+msgstr ""
+"<qt><p>El diagnòstic és:<br />No s'ha pogut trobar el fitxer «desktop» %1.</"
+"p></qt>"
+
+#: kcmoduleloader.cpp:143
+#, kde-format
+msgid ""
+"<qt><p>Either the hardware/software the module configures is not available "
+"or the module has been disabled by the administrator.</p></qt>"
+msgstr ""
+"<qt><p>Aquest mòdul configura un maquinari o un programari que ara no estan "
+"disponibles, o l'administrador ha desactivat el mòdul.</p></qt>"
+
+#: kcmoduleloader.cpp:174
+#, kde-format
+msgid "Error loading config module"
+msgstr "Error en carregar el mòdul de configuració"
+
+#: kcmoduleloader.cpp:221
+#, kde-format
+msgid "The module %1 is not a valid configuration module."
+msgstr "El mòdul %1 no és un mòdul de configuració vàlid."
+
+#: kcmoduleloader.cpp:222
+#, kde-format
+msgid ""
+"<qt>The diagnosis is:<br />The desktop file %1 does not specify a library.</"
+"qt>"
+msgstr ""
+"<qt>El diagnòstic és:<br />El fitxer «desktop» %1 no especifica cap "
+"biblioteca.</qt>"
+
+#: kcmoduleproxy.cpp:105
+#, kde-format
+msgctxt "Argument is application name"
+msgid "This configuration section is already opened in %1"
+msgstr "Aquesta secció de configuració ja està oberta a %1"
+
+#: kcmultidialog.cpp:52
+#, kde-format
+msgid ""
+"The settings of the current module have changed.\n"
+"Do you want to apply the changes or discard them?"
+msgstr ""
+"L'arranjament del mòdul actual ha canviat.\n"
+"Voleu aplicar els canvis o descartar-los?"
+
+#: kcmultidialog.cpp:54
+#, kde-format
+msgid "Apply Settings"
+msgstr "Aplica l'arranjament"
+
+#: kcmultidialog.cpp:259 kpluginselector.cpp:802
+#, kde-format
+msgid "Configure"
+msgstr "Configura"
+
+#: kpluginselector.cpp:129
+#, kde-format
+msgid ""
+"Automatic changes have been performed due to plugin dependencies. Click here "
+"for further information"
+msgstr ""
+"Per a les dependències del connector, s'han executat canvis automàtics. "
+"Cliqueu aquí per a més informació"
+
+#: kpluginselector.cpp:197
+#, kde-format
+msgid ""
+"Automatic changes have been performed in order to satisfy plugin "
+"dependencies:\n"
+msgstr ""
+"S'han executat canvis automàtics per tal de solucionar les dependències dels "
+"connectors:\n"
+
+#: kpluginselector.cpp:203
+#, kde-format
+msgid ""
+"\n"
+"    %1 plugin has been automatically checked because of the dependency of %2 "
+"plugin"
+msgstr ""
+"\n"
+"    el connector %1 s'ha marcat automàticament degut a la dependència del "
+"connector %2"
+
+#: kpluginselector.cpp:205
+#, kde-format
+msgid ""
+"\n"
+"    %1 plugin has been automatically unchecked because of its dependency on "
+"%2 plugin"
+msgstr ""
+"\n"
+"    el connector %1 s'ha desmarcat automàticament degut a la dependència del "
+"connector %2"
+
+#: kpluginselector.cpp:209
+#, kde-format
+msgid "Dependency Check"
+msgstr "Comprovació de les dependències"
+
+#: kpluginselector.cpp:227
+#, kde-format
+msgid "%1 plugin automatically added due to plugin dependencies"
+msgid_plural "%1 plugins automatically added due to plugin dependencies"
+msgstr[0] ""
+"S'ha afegit automàticament %1 connector per les dependències del connector"
+msgstr[1] ""
+"S'han afegit automàticament %1 connectors per les dependències del connector"
+
+#: kpluginselector.cpp:231
+#, kde-format
+msgid ", "
+msgstr ", "
+
+#: kpluginselector.cpp:235
+#, kde-format
+msgid "%1 plugin automatically removed due to plugin dependencies"
+msgid_plural "%1 plugins automatically removed due to plugin dependencies"
+msgstr[0] ""
+"S'ha eliminat automàticament %1 connector per les dependències del connector"
+msgstr[1] ""
+"S'han eliminat automàticament %1 connectors per les dependències del "
+"connector"
+
+#: kpluginselector.cpp:257
+#, kde-format
+msgid "Search..."
+msgstr "Cerca..."
+
+#: kpluginselector.cpp:797
+#, kde-format
+msgid "About"
+msgstr "Quant a"
+
+#: ksettings/dialog.cpp:222
+#, kde-format
+msgid "Enable component"
+msgstr "Activa el component"

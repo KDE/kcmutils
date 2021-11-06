@@ -1,0 +1,205 @@
+# translation of kdelibs4.po to Khmer
+# Khoem Sokhem <khoemsokhem@khmeros.info>, 2008, 2009, 2010, 2011, 2012.
+msgid ""
+msgstr ""
+"Project-Id-Version: kdelibs4\n"
+"Report-Msgid-Bugs-To: https://bugs.kde.org\n"
+"POT-Creation-Date: 2021-10-28 00:14+0000\n"
+"PO-Revision-Date: 2012-06-27 10:04+0700\n"
+"Last-Translator: Khoem Sokhem <khoemsokhem@khmeros.info>\n"
+"Language-Team: Khmer\n"
+"Language: km\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"X-Generator: KBabel 1.11.4\n"
+"X-Language: km-KH\n"
+
+#, kde-format
+msgctxt "NAME OF TRANSLATORS"
+msgid "Your names"
+msgstr " ខឹម សុខែម, ម៉ន ម៉េត, សេង សុត្ថា​​, ចាន់ សម្បត្តិរតនៈ, សុខ សុភា"
+
+#, kde-format
+msgctxt "EMAIL OF TRANSLATORS"
+msgid "Your emails"
+msgstr ""
+"khoemsokhem@khmeros.info,​​mornmet@khmeros.info,sutha@khmeros.info,"
+"ratanak@khmeros.info,sophea@khmeros.info"
+
+#: kcmoduleloader.cpp:57 kcmoduleloader.cpp:142
+#, kde-format
+msgid "The module %1 is disabled."
+msgstr "ម៉ឺឌុល %1 ត្រូវបាន​បិទ ។"
+
+#: kcmoduleloader.cpp:58
+#, fuzzy, kde-format
+#| msgid "Please contact your system administrator."
+msgid "The module has been disabled by the system administrator."
+msgstr "សូម​ទាក់ទង​អ្នក​គ្រប់គ្រង​ប្រព័ន្ធ​របស់​អ្នក ។"
+
+#: kcmoduleloader.cpp:85 kcmoduleloader.cpp:166
+#, fuzzy, kde-format
+#| msgid "Error loading '%1'.\n"
+msgid "Error loading QML file."
+msgstr "កំហុស​ក្នុង​ការ​ផ្ទុក '%1' ។\n"
+
+#: kcmoduleloader.cpp:104
+#, fuzzy, kde-format
+#| msgid ""
+#| "<qt><p>Possible reasons:<ul><li>An error occurred during your last KDE "
+#| "upgrade leaving an orphaned control module</li><li>You have old third "
+#| "party modules lying around.</li></ul></p><p>Check these points carefully "
+#| "and try to remove the module mentioned in the error message. If this "
+#| "fails, consider contacting your distributor or packager.</p></qt>"
+msgid ""
+"<qt><p>Possible reasons:<ul><li>An error occurred during your last system "
+"upgrade, leaving an orphaned control module behind</li><li>You have old "
+"third party modules lying around.</li></ul></p><p>Check these points "
+"carefully and try to remove the module mentioned in the error message. If "
+"this fails, consider contacting your distributor or packager.</p></qt>"
+msgstr ""
+"<qt><p>ហេតុផល​ដែលអាច ៖<ul><li>កំហុស​មួយ​បាន​កើតឡើង​នៅពេល​ដែលការ​ធ្វើ​ឲ្យ KDE ទាន់សម័យ​បន្សល់​ទុក​នៅ​"
+"ម៉ូឌុល​ត្រួតពិនិត្យ​កំព្រា</li><li>អ្នក​មាន​ម៉ូឌុល​ភាគីទីបី​ចាស់​ដែល​​នៅ​ក្បែរៗ​នេះ ។</li></ul></p><p>ពិនិត្យ​"
+"ចំណុច​ទាំងនេះ​ដោយ​ប្រុងប្រយ័ត្ន ហើយ​ព្យាយាម​យក​ម៉ូឌុល​ដែល​រៀបរាប់​នៅ​ក្នុង​សារ​កំហុស​ចេញ ។ ប្រសិន​បើ​បរាជ័យ អាច​"
+"ចាត់ទុក​ថា​ទាក់ទង​អ្នក​ចូលរួម​ ឬ​កម្មវិធី​បង្កើត​កញ្ចប់​របស់​អ្នក ។</p></qt>"
+
+#: kcmoduleloader.cpp:135
+#, kde-format
+msgid "The module %1 could not be found."
+msgstr "មិន​អាច​រក​ឃើញម៉ូឌុល %1 ឡើយ ។"
+
+#: kcmoduleloader.cpp:136
+#, kde-format
+msgid ""
+"<qt><p>The diagnosis is:<br />The desktop file %1 could not be found.</p></"
+"qt>"
+msgstr "<qt><p>ការ​វិនិច្ឆ័យ​គឺ ៖<br />រក​មិនឃើញ​​ឯកសារ​ផ្ទៃតុ %1 ។</p></qt>"
+
+#: kcmoduleloader.cpp:143
+#, kde-format
+msgid ""
+"<qt><p>Either the hardware/software the module configures is not available "
+"or the module has been disabled by the administrator.</p></qt>"
+msgstr ""
+"<qt><p>ផ្នែករឹង/កម្មវិធី​ដែល​ម៉ូឌុល​កំណត់រចនា​សម្ព័ន្ធគឺ​មិនមាន​ទេ ឬម៉ូឌុល​គឺ​ត្រូវបាន​បិទ​ដោយ​អ្នកគ្រប់គ្រង ។</"
+"p></qt>"
+
+#: kcmoduleloader.cpp:174
+#, fuzzy, kde-format
+#| msgid "Error loading '%1'.\n"
+msgid "Error loading config module"
+msgstr "កំហុស​ក្នុង​ការ​ផ្ទុក '%1' ។\n"
+
+#: kcmoduleloader.cpp:221
+#, kde-format
+msgid "The module %1 is not a valid configuration module."
+msgstr "​ម៉ូឌុល %1 មិន​មែន​ជា​​ម៉ូឌុល​កំណត់​រចនាសម្ព័ន្ធ​ត្រឹម​ត្រូវ​ទេ ។"
+
+#: kcmoduleloader.cpp:222
+#, kde-format
+msgid ""
+"<qt>The diagnosis is:<br />The desktop file %1 does not specify a library.</"
+"qt>"
+msgstr "<qt>ការវិនិច្ឆ័យ​គឺ ៖<br />ឯកសារ​ផ្ទៃតុ %1 មិន​បញ្ជាក់​បណ្ណាល័យទេ ។</qt>"
+
+#: kcmoduleproxy.cpp:105
+#, kde-format
+msgctxt "Argument is application name"
+msgid "This configuration section is already opened in %1"
+msgstr "ផ្នែក​កំណត់រចនា​សម្ព័ន្ធ​​នេះ​គឺ​ត្រូវបាន​បើក​នៅ​ក្នុង %1 រួចហើយ"
+
+#: kcmultidialog.cpp:52
+#, kde-format
+msgid ""
+"The settings of the current module have changed.\n"
+"Do you want to apply the changes or discard them?"
+msgstr ""
+"ការ​កំណត់​​ម៉ូឌុល​បច្ចុប្បន្ន​​បានផ្លាស់ប្ដូរ ។\n"
+"តើ​អ្នក​ចង់​អនុវត្ត​ការ​ផ្លាស់ប្ដូរ ឬ​បោះបង់​ពួកវា ?"
+
+#: kcmultidialog.cpp:54
+#, kde-format
+msgid "Apply Settings"
+msgstr "អនុវត្ត​ការ​កំណត់"
+
+#: kcmultidialog.cpp:259 kpluginselector.cpp:802
+#, kde-format
+msgid "Configure"
+msgstr "កំណត់​រចនាសម្ព័ន្ធ"
+
+#: kpluginselector.cpp:129
+#, kde-format
+msgid ""
+"Automatic changes have been performed due to plugin dependencies. Click here "
+"for further information"
+msgstr ""
+"ការ​ផ្លាស់ប្ដូរ​ដោយ​ស្វ័យ​ប្រវត្តិ​ត្រូវ​បាន​អនុវត្ត ដោយសារ​តែ​មាន​ភាព​អាស្រ័យ​របស់​កម្មវិធី​ជំនួយ ។ ចុច​នៅ​ទីនេះ​"
+"សម្រាប់​ព័ត៌មានបន្ថែម"
+
+#: kpluginselector.cpp:197
+#, kde-format
+msgid ""
+"Automatic changes have been performed in order to satisfy plugin "
+"dependencies:\n"
+msgstr "ការ​ផ្លាស់ប្ដូរ​ស្វ័យប្រវត្តិ​ត្រូវបាន​ធ្វើ ដើម្បី​តម្រូវតាម​ភាពអាស្រ័យ​កម្មវិធី​ជំនួយ ៖\n"
+
+#: kpluginselector.cpp:203
+#, kde-format
+msgid ""
+"\n"
+"    %1 plugin has been automatically checked because of the dependency of %2 "
+"plugin"
+msgstr ""
+"\n"
+"    កម្មវិធី​ជំនួយ %1 ត្រូវបាន​ធីក​ដោយ​ស្វ័យប្រវត្តិ ដោយសារ​ភាពអាស្រ័យ​នៃ​កម្មវិធី​ជំនួយ %2"
+
+#: kpluginselector.cpp:205
+#, kde-format
+msgid ""
+"\n"
+"    %1 plugin has been automatically unchecked because of its dependency on "
+"%2 plugin"
+msgstr ""
+"\n"
+"    កម្មវិធី​ជំនួយ %1 មិន​បានដោះ​ធីក​ដោយ​ស្វ័យ​ប្រវត្តិ​ទេ ពីព្រោះ​ភាព​អាស្រ័យ​របស់​វា​នៅ​លើ​កម្មវិធី​ជំនួយ %2"
+
+#: kpluginselector.cpp:209
+#, kde-format
+msgid "Dependency Check"
+msgstr "ពិនិត្យ​ភាព​អាស្រ័យ"
+
+#: kpluginselector.cpp:227
+#, kde-format
+msgid "%1 plugin automatically added due to plugin dependencies"
+msgid_plural "%1 plugins automatically added due to plugin dependencies"
+msgstr[0] "កម្មវិធី​ជំនួយ %1 បាន​បន្ថែម​ដោយ​ស្វ័យ​ប្រវត្តិ​ដោយ​សារ​តែ​មាន​ភាព​អាស្រ័យ​កម្មវិធី​ជំនួយ"
+
+#: kpluginselector.cpp:231
+#, kde-format
+msgid ", "
+msgstr ", "
+
+#: kpluginselector.cpp:235
+#, kde-format
+msgid "%1 plugin automatically removed due to plugin dependencies"
+msgid_plural "%1 plugins automatically removed due to plugin dependencies"
+msgstr[0] "កម្មវិធី​ជំនួយ %1 បាន​យក​ចេញ​ដោយ​ស្វ័យ​ប្រវត្តិ ដោយ​សារ​តែ​មាន​ភាព​អាស្រ័យ​របស់​កម្មវិធី​ជំនួយ"
+
+#: kpluginselector.cpp:257
+#, fuzzy, kde-format
+#| msgid "Search"
+msgid "Search..."
+msgstr "ស្វែង​រក"
+
+#: kpluginselector.cpp:797
+#, fuzzy, kde-format
+#| msgid "&About"
+msgid "About"
+msgstr "អំពី "
+
+#: ksettings/dialog.cpp:222
+#, kde-format
+msgid "Enable component"
+msgstr "បើក​សមាសភាគ"

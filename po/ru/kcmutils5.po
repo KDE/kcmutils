@@ -1,0 +1,225 @@
+# KDE - kdelibs/kdelibs4.po Russian translation.
+# Copyright (C) 2005, KDE Russian translation team.
+#
+# Denis Perchine <dyp@perchine.com>, 2000.
+# Gregory Mokhin <mok@kde.ru>, 2000, 2004, 2005.
+# Albert R. Valiev <darkstar@altlinux.ru>, 2002, 2008.
+# Leonid Kanter <leon@asplinux.ru>, 2002-2004, 2005, 2008.
+# Andrey Cherepanov <skull@kde.ru>, 2005-2007, 2008, 2009, 2011.
+# Nick Shaforostoff <shaforostoff@kde.ru>, 2004, 2006, 2007, 2008, 2009.
+# Nick Shaforostoff <shafff@ukr.net>, 2009.
+# Alexander Potashev <aspotashev@gmail.com>, 2009, 2010, 2011, 2014, 2018, 2019.
+# Yury G. Kudryashov <urkud.urkud@gmail.com>, 2011.
+# Yuri Efremov <yur.arh@gmail.com>, 2012.
+# Inga Barinova <ingabarinova@gmail.com>, 2012.
+# Julia Dronova <juliette.tux@gmail.com>, 2012.
+# Alexander Lakhin <exclusion@gmail.com>, 2013.
+# Alexander Yavorsky <kekcuha@gmail.com>, 2019, 2021.
+msgid ""
+msgstr ""
+"Project-Id-Version: kdelibs4\n"
+"Report-Msgid-Bugs-To: https://bugs.kde.org\n"
+"POT-Creation-Date: 2021-10-28 00:14+0000\n"
+"PO-Revision-Date: 2021-08-28 15:14+0300\n"
+"Last-Translator: Alexander Yavorsky <kekcuha@gmail.com>\n"
+"Language-Team: Russian <kde-russian@lists.kde.ru>\n"
+"Language: ru\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Lokalize 21.08.0\n"
+"Plural-Forms: nplurals=4; plural=n==1 ? 3 : n%10==1 && n%100!=11 ? 0 : n"
+"%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
+"X-Environment: kde\n"
+"X-Accelerator-Marker: &\n"
+"X-Text-Markup: kde4\n"
+
+#, kde-format
+msgctxt "NAME OF TRANSLATORS"
+msgid "Your names"
+msgstr ""
+"Григорий Мохин,Николай Шафоростов,Андрей Черепанов,Леонид Кантер,Альберт "
+"Валиев"
+
+#, kde-format
+msgctxt "EMAIL OF TRANSLATORS"
+msgid "Your emails"
+msgstr ""
+"mok@kde.ru,shaforostoff@kde.ru,skull@kde.ru,leon@asplinux.ru,"
+"darkstar@altlinux.ru"
+
+#: kcmoduleloader.cpp:57 kcmoduleloader.cpp:142
+#, kde-format
+msgid "The module %1 is disabled."
+msgstr "Модуль %1 отключен."
+
+#: kcmoduleloader.cpp:58
+#, kde-format
+msgid "The module has been disabled by the system administrator."
+msgstr "Модуль был отключён вашим системным администратором."
+
+#: kcmoduleloader.cpp:85 kcmoduleloader.cpp:166
+#, kde-format
+msgid "Error loading QML file."
+msgstr "Ошибка загрузки файла QML."
+
+#: kcmoduleloader.cpp:104
+#, kde-format
+msgid ""
+"<qt><p>Possible reasons:<ul><li>An error occurred during your last system "
+"upgrade, leaving an orphaned control module behind</li><li>You have old "
+"third party modules lying around.</li></ul></p><p>Check these points "
+"carefully and try to remove the module mentioned in the error message. If "
+"this fails, consider contacting your distributor or packager.</p></qt>"
+msgstr ""
+"<qt><p>Возможные причины:<ul><li>Ошибка при последнем обновлении системы, в "
+"результате которой остался модуль настройки от предыдущей версии,</li><li>У "
+"вас установлены сторонние модули настройки.</li></ul></p><p>Внимательно "
+"проверьте эти пункты и удалите перечисленные выше модули. Если ошибка "
+"повторяется, обратитесь к поставщику пакетов.</p></qt>"
+
+#: kcmoduleloader.cpp:135
+#, kde-format
+msgid "The module %1 could not be found."
+msgstr "Модуль %1 не найден."
+
+#: kcmoduleloader.cpp:136
+#, kde-format
+msgid ""
+"<qt><p>The diagnosis is:<br />The desktop file %1 could not be found.</p></"
+"qt>"
+msgstr "<qt><p>Проблема:<br />не удалось найти файл %1.</p></qt>"
+
+#: kcmoduleloader.cpp:143
+#, kde-format
+msgid ""
+"<qt><p>Either the hardware/software the module configures is not available "
+"or the module has been disabled by the administrator.</p></qt>"
+msgstr ""
+"<qt><p>Не найдено оборудование или программное обеспечение для работы модуля "
+"или использование модуля отключено администратором.</p></qt>"
+
+#: kcmoduleloader.cpp:174
+#, kde-format
+msgid "Error loading config module"
+msgstr "Ошибка загрузки модуля конфигурации"
+
+#: kcmoduleloader.cpp:221
+#, kde-format
+msgid "The module %1 is not a valid configuration module."
+msgstr "Модуль %1 не является правильным модулем настройки KDE."
+
+#: kcmoduleloader.cpp:222
+#, kde-format
+msgid ""
+"<qt>The diagnosis is:<br />The desktop file %1 does not specify a library.</"
+"qt>"
+msgstr "<qt>Проблема:<br />файл %1 не содержит имя библиотеки.</qt>"
+
+#: kcmoduleproxy.cpp:105
+#, kde-format
+msgctxt "Argument is application name"
+msgid "This configuration section is already opened in %1"
+msgstr "Этот модуль настройки уже открыт в %1"
+
+#: kcmultidialog.cpp:52
+#, kde-format
+msgid ""
+"The settings of the current module have changed.\n"
+"Do you want to apply the changes or discard them?"
+msgstr ""
+"В текущем модуле имеются несохранённые изменения.\n"
+"Применить их?"
+
+#: kcmultidialog.cpp:54
+#, kde-format
+msgid "Apply Settings"
+msgstr "Сохранение параметров"
+
+#: kcmultidialog.cpp:259 kpluginselector.cpp:802
+#, kde-format
+msgid "Configure"
+msgstr "Настройка"
+
+#: kpluginselector.cpp:129
+#, kde-format
+msgid ""
+"Automatic changes have been performed due to plugin dependencies. Click here "
+"for further information"
+msgstr ""
+"Для удовлетворения зависимости расширения будут предприняты некоторые "
+"автоматические изменения. Нажмите здесь для получения дополнительной "
+"информации"
+
+#: kpluginselector.cpp:197
+#, kde-format
+msgid ""
+"Automatic changes have been performed in order to satisfy plugin "
+"dependencies:\n"
+msgstr ""
+"Для удовлетворения зависимости расширения будут предприняты следующие "
+"автоматические изменения:\n"
+
+#: kpluginselector.cpp:203
+#, kde-format
+msgid ""
+"\n"
+"    %1 plugin has been automatically checked because of the dependency of %2 "
+"plugin"
+msgstr ""
+"\n"
+"    Расширение %1 будет выбрано, так как от него зависит расширение %2"
+
+#: kpluginselector.cpp:205
+#, kde-format
+msgid ""
+"\n"
+"    %1 plugin has been automatically unchecked because of its dependency on "
+"%2 plugin"
+msgstr ""
+"\n"
+"    Расширение %1 не будет выбрано, так как зависит от расширения %2"
+
+#: kpluginselector.cpp:209
+#, kde-format
+msgid "Dependency Check"
+msgstr "Проверка зависимостей"
+
+#: kpluginselector.cpp:227
+#, kde-format
+msgid "%1 plugin automatically added due to plugin dependencies"
+msgid_plural "%1 plugins automatically added due to plugin dependencies"
+msgstr[0] "%1 расширение автоматически добавлено при проверке зависимостей"
+msgstr[1] "%1 расширения автоматически добавлены при проверке зависимостей"
+msgstr[2] "%1 расширений автоматически добавлены при проверке зависимостей"
+msgstr[3] "%1 расширение автоматически добавлено при проверке зависимостей"
+
+#: kpluginselector.cpp:231
+#, kde-format
+msgid ", "
+msgstr ", "
+
+#: kpluginselector.cpp:235
+#, kde-format
+msgid "%1 plugin automatically removed due to plugin dependencies"
+msgid_plural "%1 plugins automatically removed due to plugin dependencies"
+msgstr[0] "%1 расширение автоматически удалено при проверке зависимостей"
+msgstr[1] "%1 расширения автоматически удалены при проверке зависимостей"
+msgstr[2] "%1 расширений автоматически удалены при проверке зависимостей"
+msgstr[3] "%1 расширение автоматически удалено при проверке зависимостей"
+
+#: kpluginselector.cpp:257
+#, kde-format
+msgid "Search..."
+msgstr "Поиск..."
+
+# BUGME: please check in the UI if it's about a module --aspotashev
+#: kpluginselector.cpp:797
+#, kde-format
+msgid "About"
+msgstr "О расширении"
+
+#: ksettings/dialog.cpp:222
+#, kde-format
+msgid "Enable component"
+msgstr "Включить компонент"
