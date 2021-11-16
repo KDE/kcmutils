@@ -1,3 +1,5 @@
+add_subdirectory(core)
+
 ########### kcmutils ###############
 set(kcmutils_LIB_SRCS
     kcmodulecontainer.cpp
@@ -19,6 +21,7 @@ set(kcmutils_LIB_SRCS
     kpluginselector.cpp
     kpluginselector.h
     kpluginselector_p.h
+    kpluginwidget.cpp
     ksettings/dialog.cpp
     ksettings/dialog.h
     ksettings/dialog_p.h
@@ -29,14 +32,6 @@ set(kcmutils_LIB_SRCS
     ksettings/pluginpage.h
     ksettingswidgetadaptor.cpp
     ksettingswidgetadaptor.h
-)
-
-ecm_qt_declare_logging_category(kcmutils_LIB_SRCS
-    HEADER kcmutils_debug.h
-    IDENTIFIER KCMUTILS_LOG
-    CATEGORY_NAME kf.kcmutils
-    DESCRIPTION "KCMUtils"
-    EXPORT KCMUTILS
 )
 
 add_library(KF5KCMUtils ${kcmutils_LIB_SRCS})
@@ -56,6 +51,7 @@ target_link_libraries(KF5KCMUtils
     KF5::ConfigWidgets  # KCModule
     KF5::Service        # KService
   PRIVATE
+    KF5KCMUtilsCore
     Qt5::DBus       # dbus usage in kcmoduleproxy.cpp
     Qt5::Qml
     Qt5::Quick
@@ -82,6 +78,7 @@ ecm_generate_headers(KCMUtils_HEADERS
   KPluginSelector
   KCModuleContainer
   KCModuleData
+  KPluginWidget
 
   REQUIRED_HEADERS KCMUtils_HEADERS
 )
