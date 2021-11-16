@@ -1,3 +1,5 @@
+add_subdirectory(core)
+
 ########### kcmutils ###############
 set(kcmutils_LIB_SRCS
     kcmodulecontainer.cpp
@@ -19,6 +21,7 @@ set(kcmutils_LIB_SRCS
     kpluginselector.cpp
     kpluginselector.h
     kpluginselector_p.h
+    kpluginwidget.cpp
     ksettings/dialog.cpp
     ksettings/dialog.h
     ksettings/dialog_p.h
@@ -56,6 +59,7 @@ target_link_libraries(KF5KCMUtils
     KF5::ConfigWidgets  # KCModule
     KF5::Service        # KService
   PRIVATE
+    KF5KCMUtilsCore
     Qt5::DBus       # dbus usage in kcmoduleproxy.cpp
     Qt5::Qml
     Qt5::Quick
@@ -82,6 +86,7 @@ ecm_generate_headers(KCMUtils_HEADERS
   KPluginSelector
   KCModuleContainer
   KCModuleData
+  KPluginWidget
 
   REQUIRED_HEADERS KCMUtils_HEADERS
 )
