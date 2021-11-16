@@ -1,17 +1,34 @@
 ########### kcmutils ###############
 set(kcmutils_LIB_SRCS
-    kcmoduleinfo.cpp
-    kcmoduledata.cpp
-    kcmoduleloader.cpp
-    kcmoduleqml.cpp
-    kcmultidialog.cpp
-    kcmoduleproxy.cpp
-    kpluginselector.cpp
     kcmodulecontainer.cpp
-    ksettingswidgetadaptor.cpp
-    ksettings/dispatcher.cpp
+    kcmodulecontainer.h
+    kcmoduledata.cpp
+    kcmoduledata.h
+    kcmoduleinfo.cpp
+    kcmoduleinfo.h
+    kcmoduleloader.cpp
+    kcmoduleloader.h
+    kcmoduleproxy.cpp
+    kcmoduleproxy.h
+    kcmoduleproxy_p.h
+    kcmoduleqml.cpp
+    kcmoduleqml_p.h
+    kcmultidialog.cpp
+    kcmultidialog.h
+    kcmultidialog_p.h
+    kpluginselector.cpp
+    kpluginselector.h
+    kpluginselector_p.h
     ksettings/dialog.cpp
+    ksettings/dialog.h
+    ksettings/dialog_p.h
+    ksettings/dispatcher.cpp
+    ksettings/dispatcher.h
+    ksettings/dispatcher_p.h
     ksettings/pluginpage.cpp
+    ksettings/pluginpage.h
+    ksettingswidgetadaptor.cpp
+    ksettingswidgetadaptor.h
 )
 
 ecm_qt_declare_logging_category(kcmutils_LIB_SRCS
