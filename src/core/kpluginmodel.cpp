@@ -50,10 +50,6 @@ bool KPluginModel::isPluginEnabled(const KPluginMetaData &plugin) const
         return m_pendingStates[plugin.pluginId()];
     }
 
-    if (m_pendingDefaults.contains(plugin.pluginId())) {
-        return plugin.isEnabledByDefault();
-    }
-
     if (m_config.isValid()) {
         return m_config.readEntry(plugin.pluginId() + QLatin1String("Enabled"), plugin.isEnabledByDefault());
     }
@@ -75,6 +71,7 @@ bool KPluginModel::setData(const QModelIndex &index, const QVariant &value, int 
         }
 
         Q_EMIT dataChanged(index, index, {Roles::EnabledRole});
+        Q_EMIT defaulted(m_pendingStates.isEmpty());
 
         return true;
     }
@@ -126,14 +123,9 @@ void KPluginModel::save()
             m_config.writeEntry(it.key() + QLatin1String("Enabled"), it.value());
         }
 
-        for (const QString &pluginId : std::as_const(m_pendingDefaults)) {
-            m_config.deleteEntry(pluginId + QLatin1String("Enabled"));
-        }
-
         m_config.sync();
     }
     m_pendingStates.clear();
-    m_pendingDefaults.clear();
 }
 
 void KPluginModel::defaults()
@@ -143,13 +135,13 @@ void KPluginModel::defaults()
 
         if (changed) {
             const int pluginIndex = m_plugins.indexOf(plugin);
-            m_pendingDefaults.insert(plugin.pluginId());
-            m_pendingStates.remove(plugin.pluginId());
+            m_pendingStates.insert(plugin.pluginId(), plugin.isEnabledByDefault());
             Q_EMIT dataChanged(index(pluginIndex, 0), index(pluginIndex, 0), {Roles::EnabledRole});
         }
     }
 
     m_pendingStates.clear();
+    Q_EMIT defaulted(true);
 }
 
 KPluginMetaData KPluginModel::findConfig(const KPluginMetaData &plugin) const
@@ -169,5 +161,5 @@ KPluginMetaData KPluginModel::findConfig(const KPluginMetaData &plugin) const
 
 bool KPluginModel::isSaveNeeded()
 {
-    return !m_pendingStates.isEmpty() || !m_pendingDefaults.isEmpty();
+    return !m_pendingStates.isEmpty();
 }

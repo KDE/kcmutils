@@ -36,6 +36,8 @@ public:
     void defaults();
     bool isSaveNeeded();
 
+    Q_SIGNAL void defaulted(bool isDefaulted);
+
 private:
     bool isPluginEnabled(const KPluginMetaData &plugin) const;
     KPluginMetaData findConfig(const KPluginMetaData &plugin) const;
@@ -44,5 +46,4 @@ private:
     KConfigGroup m_config;
     QHash<QString, QString> m_categoryLabels;
     QHash<QString, bool> m_pendingStates;
-    QSet<QString> m_pendingDefaults;
 };

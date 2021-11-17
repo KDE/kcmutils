@@ -67,6 +67,7 @@ KPluginWidget::KPluginWidget(QWidget *parent)
 
     d->pluginModel = new KPluginModel(this);
 
+    connect(d->pluginModel, &KPluginModel::defaulted, this, &KPluginWidget::defaulted);
     connect(d->pluginModel,
             &QAbstractItemModel::dataChanged,
             this,
