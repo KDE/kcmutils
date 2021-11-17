@@ -16,8 +16,6 @@
 #include <QDialog>
 #include <QDialogButtonBox>
 #include <QDir>
-#include <QDirIterator>
-#include <QLabel>
 #include <QLineEdit>
 #include <QPainter>
 #include <QPushButton>
@@ -31,12 +29,11 @@
 #include <KCategorizedView>
 #include <KCategoryDrawer>
 #include <KLocalizedString>
-#include <KMessageBox>
 #include <KPluginMetaData>
 #include <KStandardGuiItem>
-#include <KUrlLabel>
 #include <kcmoduleinfo.h>
 #include <kcmoduleproxy.h>
+#include <utility>
 
 #define MARGIN 5
 
@@ -188,7 +185,8 @@ void KPluginWidget::setDefaultsIndicatorsVisible(bool isVisible)
 
 void KPluginWidget::setAdditionalButtonHandler(std::function<QPushButton *(const KPluginMetaData &)> handler)
 {
-    d->handler = handler;
+    auto delegate = static_cast<PluginDelegate *>(d->listView->itemDelegate());
+    delegate->handler = std::move(handler);
 }
 
 KPluginWidgetProxyModel::KPluginWidgetProxyModel(KPluginWidgetPrivate *pluginSelector_d, QObject *parent)

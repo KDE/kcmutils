@@ -45,7 +45,6 @@ public:
     KPluginModel *pluginModel;
     KPluginWidgetProxyModel *proxyModel;
     QStringList kcmArguments;
-    std::function<QPushButton *(const KPluginMetaData &)> handler;
     bool showDefaultIndicator = false;
 };
 
@@ -94,9 +93,11 @@ private:
 
     QCheckBox *checkBox;
     QPushButton *pushButton;
-    std::function<QPushButton *(const KPluginMetaData &)> handler;
 
     KPluginWidgetPrivate *pluginSelector_d;
+
+public:
+    std::function<QPushButton *(const KPluginMetaData &)> handler;
 };
 
 #endif // KPLUGINSELECTOR_P_H
