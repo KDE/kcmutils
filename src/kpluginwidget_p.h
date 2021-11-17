@@ -39,11 +39,11 @@ public:
     int dependantLayoutValue(int value, int width, int totalWidth) const;
 
 public:
-    QLineEdit *lineEdit;
-    KCategorizedView *listView;
-    KCategoryDrawer *categoryDrawer;
-    KPluginModel *pluginModel;
-    KPluginWidgetProxyModel *proxyModel;
+    QLineEdit *lineEdit = nullptr;
+    KCategorizedView *listView = nullptr;
+    KCategoryDrawer *categoryDrawer = nullptr;
+    KPluginModel *pluginModel = nullptr;
+    KPluginWidgetProxyModel *proxyModel = nullptr;
     QStringList kcmArguments;
     bool showDefaultIndicator = false;
 };
@@ -51,8 +51,8 @@ public:
 class KPluginWidgetProxyModel : public KCategorizedSortFilterProxyModel
 {
 public:
-    KPluginWidgetProxyModel(KPluginWidgetPrivate *pluginSelector_d, QObject *parent = nullptr);
-    ~KPluginWidgetProxyModel();
+    explicit KPluginWidgetProxyModel(KPluginWidgetPrivate *pluginSelector_d, QObject *parent = nullptr);
+    ~KPluginWidgetProxyModel() override;
 
 protected:
     bool filterAcceptsRow(int sourceRow, const QModelIndex &sourceParent) const override;

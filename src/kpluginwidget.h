@@ -16,6 +16,8 @@
 #include <KSharedConfig>
 #include <kcmutils_export.h>
 
+#include <memory>
+
 class QPushButton;
 class KPluginWidgetPrivate;
 
@@ -94,7 +96,7 @@ Q_SIGNALS:
     void defaulted(bool isDefault);
 
 private:
-    KPluginWidgetPrivate *const d;
+    std::unique_ptr<KPluginWidgetPrivate> const d;
 };
 
 #endif

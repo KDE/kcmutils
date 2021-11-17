@@ -50,7 +50,7 @@ KPluginWidget::KPluginWidget(QWidget *parent)
     : QWidget(parent)
     , d(new KPluginWidgetPrivate)
 {
-    QVBoxLayout *layout = new QVBoxLayout(this);
+    auto layout = new QVBoxLayout(this);
     layout->setContentsMargins(0, 0, 0, 0);
 
     d->lineEdit = new QLineEdit(this);
@@ -74,13 +74,13 @@ KPluginWidget::KPluginWidget(QWidget *parent)
                 }
             });
 
-    d->proxyModel = new KPluginWidgetProxyModel(d, this);
+    d->proxyModel = new KPluginWidgetProxyModel(d.get(), this);
     d->proxyModel->setCategorizedModel(true);
     d->proxyModel->setSourceModel(d->pluginModel);
     d->listView->setModel(d->proxyModel /*d->pluginModel*/);
     d->listView->setAlternatingRowColors(true);
 
-    PluginDelegate *pluginDelegate = new PluginDelegate(d, this);
+    auto pluginDelegate = new PluginDelegate(d.get(), this);
     d->listView->setItemDelegate(pluginDelegate);
 
     d->listView->setMouseTracking(true);
@@ -102,7 +102,6 @@ KPluginWidget::~KPluginWidget()
 {
     delete d->listView->itemDelegate();
     delete d->listView; // depends on some other things in d, make sure this dies first.
-    delete d;
 }
 
 void KPluginWidget::addPlugins(const QVector<KPluginMetaData> &plugins, const QString &categoryLabel)
@@ -346,15 +345,15 @@ QList<QWidget *> PluginDelegate::createItemWidgets(const QModelIndex &index) con
     Q_UNUSED(index);
     QList<QWidget *> widgetList;
 
-    QCheckBox *enabledCheckBox = new QCheckBox;
+    auto enabledCheckBox = new QCheckBox;
     connect(enabledCheckBox, &QAbstractButton::clicked, this, &PluginDelegate::slotStateChanged);
 
-    QPushButton *aboutPushButton = new QPushButton;
+    auto aboutPushButton = new QPushButton;
     aboutPushButton->setIcon(QIcon::fromTheme(QStringLiteral("dialog-information")));
     aboutPushButton->setToolTip(i18n("About"));
     connect(aboutPushButton, &QAbstractButton::clicked, this, &PluginDelegate::slotAboutClicked);
 
-    QPushButton *configurePushButton = new QPushButton;
+    auto configurePushButton = new QPushButton;
     configurePushButton->setIcon(QIcon::fromTheme(QStringLiteral("configure")));
     configurePushButton->setToolTip(i18n("Configure"));
     connect(configurePushButton, &QAbstractButton::clicked, this, &PluginDelegate::slotConfigureClicked);
@@ -390,12 +389,12 @@ void PluginDelegate::updateItemWidgets(const QList<QWidget *> widgets, const QSt
         extraButton = static_cast<QPushButton *>(widgets[3]);
         extraButtonWidth = extraButton->sizeHint().width() + MARGIN;
     }
-    QCheckBox *checkBox = static_cast<QCheckBox *>(widgets[0]);
+    auto checkBox = static_cast<QCheckBox *>(widgets[0]);
     checkBox->resize(checkBox->sizeHint());
     checkBox->move(pluginSelector_d->dependantLayoutValue(MARGIN, checkBox->sizeHint().width(), option.rect.width()),
                    option.rect.height() / 2 - checkBox->sizeHint().height() / 2);
 
-    QPushButton *aboutPushButton = static_cast<QPushButton *>(widgets[2]);
+    auto aboutPushButton = static_cast<QPushButton *>(widgets[2]);
     QSize aboutPushButtonSizeHint = aboutPushButton->sizeHint();
     aboutPushButton->resize(aboutPushButtonSizeHint);
     aboutPushButton->move(pluginSelector_d->dependantLayoutValue(option.rect.width() - MARGIN - aboutPushButtonSizeHint.width() - extraButtonWidth,
@@ -403,7 +402,7 @@ void PluginDelegate::updateItemWidgets(const QList<QWidget *> widgets, const QSt
                                                                  option.rect.width()),
                           option.rect.height() / 2 - aboutPushButtonSizeHint.height() / 2);
 
-    QPushButton *configurePushButton = static_cast<QPushButton *>(widgets[1]);
+    auto configurePushButton = static_cast<QPushButton *>(widgets[1]);
     QSize configurePushButtonSizeHint = configurePushButton->sizeHint();
     configurePushButton->resize(configurePushButtonSizeHint);
     configurePushButton->move(pluginSelector_d->dependantLayoutValue(option.rect.width() - MARGIN * 2 - configurePushButtonSizeHint.width()
@@ -451,7 +450,7 @@ void PluginDelegate::slotAboutClicked()
 {
     const QModelIndex index = focusedIndex();
 
-    KPluginMetaData pluginMetaData = index.data(KPluginModel::MetaDataRole).value<KPluginMetaData>();
+    auto pluginMetaData = index.data(KPluginModel::MetaDataRole).value<KPluginMetaData>();
 
     auto *aboutPlugin = new KAboutPluginDialog(pluginMetaData, itemView());
     aboutPlugin->setAttribute(Qt::WA_DeleteOnClose);
@@ -466,22 +465,22 @@ void PluginDelegate::slotConfigureClicked()
 void PluginDelegate::configure(const QModelIndex &index)
 {
     const QAbstractItemModel *model = index.model();
-    const KPluginMetaData kcm = model->data(index, KPluginModel::ConfigRole).value<KPluginMetaData>();
+    const auto kcm = model->data(index, KPluginModel::ConfigRole).value<KPluginMetaData>();
 
     QDialog configDialog(itemView());
     configDialog.setWindowTitle(model->data(index, KPluginModel::NameRole).toString());
 
-    KCModuleProxy *moduleProxy = new KCModuleProxy(kcm, &configDialog, pluginSelector_d->kcmArguments);
+    auto moduleProxy = new KCModuleProxy(kcm, &configDialog, pluginSelector_d->kcmArguments);
 
     if (!moduleProxy->realModule()) {
         delete moduleProxy;
         return;
     }
 
-    QVBoxLayout *layout = new QVBoxLayout(&configDialog);
+    auto layout = new QVBoxLayout(&configDialog);
     layout->addWidget(moduleProxy);
 
-    QDialogButtonBox *buttonBox = new QDialogButtonBox(&configDialog);
+    auto buttonBox = new QDialogButtonBox(&configDialog);
     buttonBox->setStandardButtons(QDialogButtonBox::Ok | QDialogButtonBox::Cancel | QDialogButtonBox::RestoreDefaults);
     KGuiItem::assign(buttonBox->button(QDialogButtonBox::Ok), KStandardGuiItem::ok());
     KGuiItem::assign(buttonBox->button(QDialogButtonBox::Cancel), KStandardGuiItem::cancel());
