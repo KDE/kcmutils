@@ -98,6 +98,8 @@ void KPluginModel::addPlugins(const QVector<KPluginMetaData> &newPlugins, const 
     }
 
     endInsertRows();
+
+    Q_EMIT defaulted(isDefaulted());
 }
 
 void KPluginModel::setConfig(const KConfigGroup &config)
@@ -162,4 +164,11 @@ KPluginMetaData KPluginModel::findConfig(const KPluginMetaData &plugin) const
 bool KPluginModel::isSaveNeeded()
 {
     return !m_pendingStates.isEmpty();
+}
+
+bool KPluginModel::isDefaulted()
+{
+    return std::all_of(m_plugins.cbegin(), m_plugins.cend(), [this](const KPluginMetaData &data) {
+        return isPluginEnabled(data) == data.isEnabledByDefault();
+    });
 }

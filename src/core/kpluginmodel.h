@@ -39,6 +39,7 @@ public:
     Q_SIGNAL void defaulted(bool isDefaulted);
 
 private:
+    bool isDefaulted();
     bool isPluginEnabled(const KPluginMetaData &plugin) const;
     KPluginMetaData findConfig(const KPluginMetaData &plugin) const;
 
