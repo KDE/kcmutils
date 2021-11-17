@@ -115,6 +115,9 @@ void KPluginModel::clear()
 {
     beginRemoveRows({}, 0, m_plugins.size() - 1);
     m_plugins.clear();
+    // In case of the "Reset"-button of the KCMs load is called again with the goal
+    // of discarding all local changes. Consequently, the pending states have to be cleared here.
+    m_pendingStates.clear();
     endRemoveRows();
 }
 
@@ -137,12 +140,17 @@ void KPluginModel::defaults()
 
         if (changed) {
             const int pluginIndex = m_plugins.indexOf(plugin);
-            m_pendingStates.insert(plugin.pluginId(), plugin.isEnabledByDefault());
+            if (m_pendingStates.contains(plugin.pluginId())) {
+                // If the entry was marked as changed, but we flip the value it is unchanged again
+                m_pendingStates.remove(plugin.pluginId());
+            } else {
+                // If the entry was not changed before, we have to mark it as changed
+                m_pendingStates.insert(plugin.pluginId(), plugin.isEnabledByDefault());
+            }
             Q_EMIT dataChanged(index(pluginIndex, 0), index(pluginIndex, 0), {Roles::EnabledRole});
         }
     }
 
-    m_pendingStates.clear();
     Q_EMIT defaulted(true);
 }
 
