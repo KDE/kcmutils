@@ -179,11 +179,7 @@ Kirigami.ApplicationItem {
 
     d->pageRow = d->rootPlaceHolder->property("pageStack").value<QQuickItem *>();
     if (d->pageRow) {
-        QMetaObject::invokeMethod(d->pageRow,
-                                  "push",
-                                  Qt::DirectConnection,
-                                  Q_ARG(QVariant, QVariant::fromValue(d->configModule->mainUi())),
-                                  Q_ARG(QVariant, QVariant()));
+        d->pageRow->setProperty("initialPage", QVariant::fromValue(d->configModule->mainUi()));
 
         for (int i = 0; i < d->configModule->depth() - 1; i++) {
             QMetaObject::invokeMethod(d->pageRow,
