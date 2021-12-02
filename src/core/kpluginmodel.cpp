@@ -120,6 +120,9 @@ void KPluginModel::setConfig(const KConfigGroup &config)
 
 void KPluginModel::clear()
 {
+    if (m_plugins.isEmpty()) {
+        return;
+    }
     beginRemoveRows({}, 0, m_plugins.size() - 1);
     m_plugins.clear();
     m_pluginKcms.clear();
