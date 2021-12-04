@@ -1,0 +1,216 @@
+# translation of kdelibs4.po to Lithuanian
+# Ričardas Čepas <rch@richard.eu.org>, 2002-2004.
+# Donatas Glodenis <dgvirtual@akl.lt>, 2004-2009.
+# Gintautas Miselis <gintautas@miselis.lt>, 2008.
+# Andrius Štikonas <andrius@stikonas.eu>, 2009.
+# Tomas Straupis <tomasstraupis@gmail.com>, 2011.
+# Remigijus Jarmalavičius <remigijus@jarmalavicius.lt>, 2011.
+# Liudas Ališauskas <liudas.alisauskas@gmail.com>, 2011, 2012, 2013, 2014.
+# Liudas Alisauskas <liudas@akmc.lt>, 2013, 2015.
+# Mindaugas Baranauskas <opensuse.lietuviu.kalba@gmail.com>, 2015.
+msgid ""
+msgstr ""
+"Project-Id-Version: kdelibs4\n"
+"Report-Msgid-Bugs-To: https://bugs.kde.org\n"
+"POT-Creation-Date: 2021-12-02 00:40+0000\n"
+"PO-Revision-Date: 2021-08-25 14:22+0300\n"
+"Last-Translator: Moo\n"
+"Language-Team: lt <kde-i18n-lt@kde.org>\n"
+"Language: lt\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=4; plural=(n==1 ? 0 : n%10>=2 && (n%100<10 || n"
+"%100>=20) ? 1 : n%10==0 || (n%100>10 && n%100<20) ? 2 : 3);\n"
+"X-Generator: Poedit 2.3\n"
+
+#, kde-format
+msgctxt "NAME OF TRANSLATORS"
+msgid "Your names"
+msgstr ""
+"Ričardas Čepas, Donatas Glodenis, Gintautas Miselis, Andrius Štikonas, "
+"Liudas Ališauskas, Moo"
+
+#, kde-format
+msgctxt "EMAIL OF TRANSLATORS"
+msgid "Your emails"
+msgstr ""
+"rch@richard.eu.org, dgvirtual@akl.lt, gintautas@miselis.lt, stikonas@gmail."
+"com, liudas@akmc.lt, <>"
+
+#: kcmoduleloader.cpp:57 kcmoduleloader.cpp:142
+#, kde-format
+msgid "The module %1 is disabled."
+msgstr "Modulis %1 yra išjungtas."
+
+#: kcmoduleloader.cpp:58
+#, kde-format
+msgid "The module has been disabled by the system administrator."
+msgstr "Sistemos administratorius išjungė šį modulį."
+
+#: kcmoduleloader.cpp:85 kcmoduleloader.cpp:166
+#, kde-format
+msgid "Error loading QML file."
+msgstr "Klaida įkeliant QML failą."
+
+#: kcmoduleloader.cpp:104
+#, kde-format
+msgid ""
+"<qt><p>Possible reasons:<ul><li>An error occurred during your last system "
+"upgrade, leaving an orphaned control module behind</li><li>You have old "
+"third party modules lying around.</li></ul></p><p>Check these points "
+"carefully and try to remove the module mentioned in the error message. If "
+"this fails, consider contacting your distributor or packager.</p></qt>"
+msgstr ""
+"<qt><p>Galimos priežastys:<ul><li>Per paskutinį sistemos atnaujinimą įvyko "
+"klaida, kurios pasekoje liko nenaudojamas valdymo modulis</li><li>Jūs turite "
+"liekamųjų trečiųjų šalių modulių.</li></ul></p><p>Atidžiai patikrinkite "
+"šiuos variantus ir pasistenkite pašalinti klaidos pranešime paminėtus "
+"modulius. Jei tai nepavyks, susisiekite su savo platinamuoju paketu ar "
+"pakuotoju.</p></qt>"
+
+#: kcmoduleloader.cpp:135
+#, kde-format
+msgid "The module %1 could not be found."
+msgstr "Modulis %1 nerastas."
+
+#: kcmoduleloader.cpp:136
+#, kde-format
+msgid ""
+"<qt><p>The diagnosis is:<br />The desktop file %1 could not be found.</p></"
+"qt>"
+msgstr "<qt><p>Diagnozė:<br />Darbalaukio failas %1 nerastas.</p></qt>"
+
+#: kcmoduleloader.cpp:143
+#, kde-format
+msgid ""
+"<qt><p>Either the hardware/software the module configures is not available "
+"or the module has been disabled by the administrator.</p></qt>"
+msgstr ""
+"<qt><p>Arba yra neprieinama modulio konfigūruojama aparatinė/programinė "
+"įranga, arba administratorius išjungė šį modulį.</p></qt>"
+
+#: kcmoduleloader.cpp:174
+#, kde-format
+msgid "Error loading config module"
+msgstr "Klaida įkeliant konfigūracijos modulį"
+
+#: kcmoduleloader.cpp:221
+#, kde-format
+msgid "The module %1 is not a valid configuration module."
+msgstr "Modulis %1 nėra tikamas konfigūravimo modulis."
+
+#: kcmoduleloader.cpp:222
+#, kde-format
+msgid ""
+"<qt>The diagnosis is:<br />The desktop file %1 does not specify a library.</"
+"qt>"
+msgstr "<qt>Diagnozė:<br />Darbalaukio failas %1 nenurodo bibliotekos.</qt>"
+
+#: kcmoduleproxy.cpp:105
+#, kde-format
+msgctxt "Argument is application name"
+msgid "This configuration section is already opened in %1"
+msgstr "Ši konfigūravimo sekcija jau atverta ties %1"
+
+#: kcmultidialog.cpp:52
+#, kde-format
+msgid ""
+"The settings of the current module have changed.\n"
+"Do you want to apply the changes or discard them?"
+msgstr ""
+"Esamo modulio nuostatos buvo pakeistos.\n"
+"Ar norite taikyti pakeitimus ar juos atmesti?"
+
+#: kcmultidialog.cpp:54
+#, kde-format
+msgid "Apply Settings"
+msgstr "Taikyti nuostatas"
+
+#: kcmultidialog.cpp:259 kpluginselector.cpp:802 kpluginwidget.cpp:360
+#, kde-format
+msgid "Configure"
+msgstr "Konfigūruoti"
+
+#: kpluginselector.cpp:129
+#, kde-format
+msgid ""
+"Automatic changes have been performed due to plugin dependencies. Click here "
+"for further information"
+msgstr ""
+"Dėl papildinių priklausomybių buvo atlikti automatiniai pakeitimai. "
+"Išsamesnei informacijai, spustelėkite čia"
+
+#: kpluginselector.cpp:197
+#, kde-format
+msgid ""
+"Automatic changes have been performed in order to satisfy plugin "
+"dependencies:\n"
+msgstr ""
+"Tam, kad būtų patenkintos papildinių priklausomybės, buvo atlikti "
+"automatiniai pakeitimai:\n"
+
+#: kpluginselector.cpp:203
+#, kde-format
+msgid ""
+"\n"
+"    %1 plugin has been automatically checked because of the dependency of %2 "
+"plugin"
+msgstr ""
+"\n"
+"    Papildinys %1 buvo automatiškai pažymėtas dėl %2 papildinio "
+"priklausomybės"
+
+#: kpluginselector.cpp:205
+#, kde-format
+msgid ""
+"\n"
+"    %1 plugin has been automatically unchecked because of its dependency on "
+"%2 plugin"
+msgstr ""
+"\n"
+"    Nuo papildinio %1 buvo automatiškai nuimtas žymėjimas dėl jo "
+"priklausomybės nuo %2 papildinio"
+
+#: kpluginselector.cpp:209
+#, kde-format
+msgid "Dependency Check"
+msgstr "Priklausomybių patikrinimas"
+
+#: kpluginselector.cpp:227
+#, kde-format
+msgid "%1 plugin automatically added due to plugin dependencies"
+msgid_plural "%1 plugins automatically added due to plugin dependencies"
+msgstr[0] "%1 papildinys automatiškai pridėtas dėl papildinių priklausomybių"
+msgstr[1] "%1 papildiniai automatiškai pridėti dėl papildinių priklausomybių"
+msgstr[2] "%1 papildinių automatiškai pridėta dėl papildinių priklausomybių"
+msgstr[3] "%1 papildinys automatiškai pridėtas dėl papildinių priklausomybių"
+
+#: kpluginselector.cpp:231
+#, kde-format
+msgid ", "
+msgstr ", "
+
+#: kpluginselector.cpp:235
+#, kde-format
+msgid "%1 plugin automatically removed due to plugin dependencies"
+msgid_plural "%1 plugins automatically removed due to plugin dependencies"
+msgstr[0] "%1 papildinys automatiškai pašalintas dėl papildinių priklausomybių"
+msgstr[1] "%1 papildiniai automatiškai pašalinti dėl papildinių priklausomybių"
+msgstr[2] "%1 papildinių automatiškai pašalinta dėl papildinių priklausomybių"
+msgstr[3] "%1 papildinys automatiškai pašalintas dėl papildinių priklausomybių"
+
+#: kpluginselector.cpp:257 kpluginwidget.cpp:57
+#, kde-format
+msgid "Search..."
+msgstr "Ieškoti..."
+
+#: kpluginselector.cpp:797 kpluginwidget.cpp:355
+#, kde-format
+msgid "About"
+msgstr "Apie"
+
+#: ksettings/dialog.cpp:222
+#, kde-format
+msgid "Enable component"
+msgstr "Įjungti komponentą"
