@@ -150,7 +150,7 @@ Kirigami.ApplicationItem {
     pageStack.globalToolBar.style: pageStack.wideMode && pageStack.columnView.columnResizeMode !== Kirigami.ColumnView.SingleColumn
         ? Kirigami.ApplicationHeaderStyle.Titles
         : Kirigami.ApplicationHeaderStyle.Breadcrumb
-    pageStack.globalToolBar.showNavigationButtons: true
+    pageStack.globalToolBar.showNavigationButtons: Kirigami.ApplicationHeaderStyle.ShowBackButton | Kirigami.ApplicationHeaderStyle.ShowForwardButton
 
     pageStack.columnView.columnResizeMode: pageStack.items.length > 0 && pageStack.items[0].Kirigami.ColumnView.fillWidth
         ? Kirigami.ColumnView.SingleColumn
