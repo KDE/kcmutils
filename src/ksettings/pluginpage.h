@@ -56,7 +56,7 @@ class PluginPagePrivate;
    \endverbatim
  *
  * @author Matthias Kretz <kretz@kde.org>
- * @deprecated since 5.76, use KPluginSelector instead.
+ * @deprecated since 5.76, use KPluginWidget instead.
  */
 class KCMUTILS_EXPORT PluginPage : public KCModule
 {
@@ -67,7 +67,7 @@ public:
      * Standard KCModule constructor.
      * Automatically creates the KPluginSelector widget.
      */
-    KCMUTILS_DEPRECATED_VERSION(5, 76, "Use KPluginSelector instead")
+    KCMUTILS_DEPRECATED_VERSION(5, 76, "Use KPluginWidget instead")
     explicit PluginPage(const KAboutData *aboutData, QWidget *parent = nullptr, const QVariantList &args = QVariantList());
 
     ~PluginPage() override;
