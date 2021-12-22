@@ -12,6 +12,10 @@
 #include <QObject>
 #include <QTest>
 
+QT_WARNING_PUSH
+QT_WARNING_DISABLE_CLANG("-Wdeprecated-declarations")
+QT_WARNING_DISABLE_GCC("-Wdeprecated-declarations")
+
 class KCModuleInfoTest : public QObject
 {
     Q_OBJECT
