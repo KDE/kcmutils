@@ -9,12 +9,15 @@
 #ifndef KPLUGINSELECTOR_H
 #define KPLUGINSELECTOR_H
 
+#include <kcmutils_export.h>
+
+#if KCMUTILS_ENABLE_DEPRECATED_SINCE(5, 90)
+
 #include <QWidget>
 
 #include <QList>
 
 #include <KSharedConfig>
-#include <kcmutils_export.h>
 
 class KPluginInfo;
 class QPushButton;
@@ -41,6 +44,7 @@ class QPushButton;
  *
  * @author Matthias Kretz <kretz@kde.org>
  * @author Rafael Fernández López <ereslibre@kde.org>
+ * @deprecated Since 5.90, use KPluginWidget instead
  */
 class KCMUTILS_EXPORT KPluginSelector : public QWidget
 {
@@ -56,6 +60,7 @@ public:
     /**
      * Create a new KPluginSelector
      */
+    KCMUTILS_DEPRECATED_VERSION(5, 90, "Use KPluginWidget instead")
     KPluginSelector(QWidget *parent = nullptr);
 
     /**
@@ -264,4 +269,5 @@ private:
     Private *const d;
 };
 
+#endif
 #endif

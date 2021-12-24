@@ -7,6 +7,9 @@
 */
 
 #include "kpluginselector.h"
+
+#if KCMUTILS_BUILD_DEPRECATED_SINCE(5, 90)
+
 #include "kpluginselector_p.h"
 
 #include <kcmutils_debug.h>
@@ -1077,3 +1080,4 @@ void KPluginSelector::Private::PluginDelegate::setHandler(std::function<QPushBut
 
 #include "moc_kpluginselector.cpp"
 #include "moc_kpluginselector_p.cpp"
+#endif
