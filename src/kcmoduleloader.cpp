@@ -76,7 +76,15 @@ KCModule *KCModuleLoader::loadModule(const KPluginMetaData &metaData, QWidget *p
     }
 
     KPluginFactory *factory = factoryResult.plugin;
+    QT_WARNING_PUSH
+    QT_WARNING_DISABLE_CLANG("-Wdeprecated-declarations")
+    QT_WARNING_DISABLE_GCC("-Wdeprecated-declarations")
+
+#if KCMUTILS_BUILD_DEPRECATED_SINCE(5, 90)
     const auto qmlKCMResult = factory->create<KQuickAddons::ConfigModule>(pluginKeyword, parent, args2);
+#else
+    const auto qmlKCMResult = factory->create<KQuickAddons::ConfigModule>(parent, args2);
+#endif
 
     if (qmlKCMResult) {
         std::unique_ptr<KQuickAddons::ConfigModule> kcm(qmlKCMResult);
@@ -87,7 +95,12 @@ KCModule *KCModuleLoader::loadModule(const KPluginMetaData &metaData, QWidget *p
         return new KCModuleQml(std::move(kcm), parent, args2);
     }
 
+#if KCMUTILS_BUILD_DEPRECATED_SINCE(5, 90)
     const auto kcmoduleResult = factory->create<KCModule>(pluginKeyword, parent, args2);
+#else
+    const auto kcmoduleResult = factory->create<KCModule>(parent, args2);
+#endif
+    QT_WARNING_POP
 
     if (kcmoduleResult) {
         return kcmoduleResult;
@@ -117,6 +130,9 @@ KCModule *KCModuleLoader::reportError(ErrorReporting report, const QString &text
 }
 
 #if KCMUTILS_BUILD_DEPRECATED_SINCE(5, 88)
+QT_WARNING_PUSH
+QT_WARNING_DISABLE_CLANG("-Wdeprecated-declarations")
+QT_WARNING_DISABLE_GCC("-Wdeprecated-declarations")
 KCModule *KCModuleLoader::loadModule(const QString &module, ErrorReporting report, QWidget *parent, const QStringList &args)
 {
     return loadModule(KCModuleInfo(module), report, parent, args);
@@ -173,13 +189,11 @@ KCModule *KCModuleLoader::loadModule(const KCModuleInfo &mod, ErrorReporting rep
             if (result.errorReason != KPluginFactory::INVALID_PLUGIN) {
                 return reportError(report, i18n("Error loading config module"), result.errorString, parent);
             } else {
-                // KF6 TODO: make this an error
                 qCDebug(KCMUTILS_LOG) << "Couldn't find plugin" << QLatin1String("kcms/") + mod.library()
                                       << "-- falling back to old-style loading from desktop file";
             }
         }
 
-        // KF6 TODO: remove this compat block
         if (mod.service()) {
             module = mod.service()->createInstance<KCModule>(parent, args2, &error);
         }
@@ -188,7 +202,6 @@ KCModule *KCModuleLoader::loadModule(const KCModuleInfo &mod, ErrorReporting rep
         } else
 #if KCMUTILS_BUILD_DEPRECATED_SINCE(5, 85)
         {
-            // KF6 TODO: remove this old compat block
             // get the create_ function
             QLibrary lib(QPluginLoader(mod.library()).fileName());
             if (lib.load()) {
