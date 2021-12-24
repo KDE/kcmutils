@@ -97,8 +97,14 @@ KCModuleQml::KCModuleQml(std::unique_ptr<KQuickAddons::ConfigModule> configModul
 #endif
 
     connect(this, &KCModule::defaultsIndicatorsVisibleChanged, d->configModule.get(), &KQuickAddons::ConfigModule::setDefaultsIndicatorsVisible);
+#if KDECLARATIVE_BUILD_DEPRECATED_SINCE(5, 90)
     // KCModule takes ownership of the kabout data so we need to force a copy
+    QT_WARNING_PUSH
+    QT_WARNING_DISABLE_CLANG("-Wdeprecated-declarations")
+    QT_WARNING_DISABLE_GCC("-Wdeprecated-declarations")
     setAboutData(new KAboutData(*d->configModule->aboutData()));
+    QT_WARNING_POP
+#endif
     setFocusPolicy(Qt::StrongFocus);
 
     // Build the UI
@@ -270,10 +276,16 @@ QString KCModuleQml::quickHelp() const
     return d->configModule->quickHelp();
 }
 
+#if KDECLARATIVE_BUILD_DEPRECATED_SINCE(5, 90)
 const KAboutData *KCModuleQml::aboutData() const
 {
+    QT_WARNING_PUSH
+    QT_WARNING_DISABLE_CLANG("-Wdeprecated-declarations")
+    QT_WARNING_DISABLE_GCC("-Wdeprecated-declarations")
     return d->configModule->aboutData();
+    QT_WARNING_POP
 }
+#endif
 
 void KCModuleQml::load()
 {

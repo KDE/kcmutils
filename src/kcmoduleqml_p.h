@@ -7,6 +7,8 @@
 #ifndef KCMODULEQML_H
 #define KCMODULEQML_H
 
+#include <kdeclarative/kdeclarative_export.h>
+
 #include <KCModule>
 #include <memory>
 
@@ -27,7 +29,9 @@ public:
     ~KCModuleQml() override;
 
     QString quickHelp() const override;
+#if KDECLARATIVE_BUILD_DEPRECATED_SINCE(5, 90)
     const KAboutData *aboutData() const override;
+#endif
 
 public Q_SLOTS:
     void load() override;

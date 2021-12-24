@@ -299,7 +299,11 @@ QString KCModuleProxy::quickHelp() const
 #if KCMUTILS_BUILD_DEPRECATED_SINCE(5, 85)
 const KAboutData *KCModuleProxy::aboutData() const
 {
+    QT_WARNING_PUSH
+    QT_WARNING_DISABLE_CLANG("-Wdeprecated-declarations")
+    QT_WARNING_DISABLE_GCC("-Wdeprecated-declarations")
     return realModule() ? realModule()->aboutData() : nullptr;
+    QT_WARNING_POP
 }
 #endif
 
