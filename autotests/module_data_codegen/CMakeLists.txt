@@ -18,5 +18,5 @@ kconfig_add_kcfg_files(module_data_test_SRCS cursorthemesettings.kcfgc GENERATE_
 
 ecm_add_test(${module_data_test_SRCS}
         TEST_NAME module_data_test
-        LINK_LIBRARIES KF5KCMUtils Qt5::Test
+        LINK_LIBRARIES KF5KCMUtils Qt${QT_MAJOR_VERSION}::Test
 )

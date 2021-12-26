@@ -5,7 +5,7 @@ if(NOT EXCLUDE_DEPRECATED_BEFORE_AND_AT STREQUAL "CURRENT" AND
 ecm_add_tests(
  kcmoduleinfotest.cpp
 
- LINK_LIBRARIES KF5KCMUtils Qt5::Test
+ LINK_LIBRARIES KF5KCMUtils Qt${QT_MAJOR_VERSION}::Test
 )
 endif()
 

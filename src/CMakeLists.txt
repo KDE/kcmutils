@@ -47,15 +47,15 @@ target_include_directories(KF5KCMUtils INTERFACE "$<INSTALL_INTERFACE:${KDE_INST
 
 target_link_libraries(KF5KCMUtils
   PUBLIC
-    Qt5::Widgets
+    Qt${QT_MAJOR_VERSION}::Widgets
     KF5::ConfigWidgets  # KCModule
     KF5::Service        # KService
   PRIVATE
     KF5KCMUtilsCore
-    Qt5::DBus       # dbus usage in kcmoduleproxy.cpp
-    Qt5::Qml
-    Qt5::Quick
-    Qt5::QuickWidgets
+    Qt${QT_MAJOR_VERSION}::DBus       # dbus usage in kcmoduleproxy.cpp
+    Qt${QT_MAJOR_VERSION}::Qml
+    Qt${QT_MAJOR_VERSION}::Quick
+    Qt${QT_MAJOR_VERSION}::QuickWidgets
     KF5::CoreAddons
     KF5::GuiAddons # KIconUtils
     KF5::I18n
@@ -107,7 +107,7 @@ install(TARGETS KF5KCMUtils EXPORT KF5KCMUtilsTargets ${KF5_INSTALL_TARGETS_DEFA
 install(FILES
  kcmodule.desktop
  kcmoduleinit.desktop
-DESTINATION  ${KDE_INSTALL_KSERVICETYPES5DIR} )
+DESTINATION  ${KDE_INSTALL_KSERVICETYPESDIR} )
 
 if(BUILD_QCH)
     ecm_add_qch(
