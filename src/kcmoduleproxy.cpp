@@ -66,7 +66,10 @@ void KCModuleProxyPrivate::loadModule()
 {
     if (!topLayout) {
         topLayout = new QVBoxLayout(parent);
-        QString name = metaData.pluginId();
+        QString name;
+        if (metaData) {
+            name = metaData.value().pluginId();
+        }
 #if KCMUTILS_BUILD_DEPRECATED_SINCE(5, 85)
         if (name.isEmpty()) {
             name = modInfo.handle();
@@ -112,8 +115,8 @@ void KCModuleProxyPrivate::loadModule()
     }
 
     // qDebug() << "Module not already loaded, loading module " << modInfo.moduleName() << " from library " << modInfo.library() << " using symbol " << modInfo.handle();
-    if (metaData.isValid()) {
-        kcm = KCModuleLoader::loadModule(metaData, parent, QVariantList(args.cbegin(), args.cend()));
+    if (metaData) {
+        kcm = KCModuleLoader::loadModule(metaData.value(), parent, QVariantList(args.cbegin(), args.cend()));
     } else {
 #if KCMUTILS_BUILD_DEPRECATED_SINCE(5, 88)
         kcm = KCModuleLoader::loadModule(modInfo, KCModuleLoader::Inline, parent, args);
@@ -236,12 +239,7 @@ void KCModuleProxyPrivate::_k_moduleDestroyed()
 
 KCModuleProxy::KCModuleProxy(const KPluginMetaData &metaData, QWidget *parent, const QStringList &args)
     : QWidget(parent)
-    , d_ptr(new KCModuleProxyPrivate(this,
-#if KCMUTILS_BUILD_DEPRECATED_SINCE(5, 88)
-                                     KCModuleInfo(),
-#endif
-                                     args,
-                                     metaData))
+    , d_ptr(new KCModuleProxyPrivate(this, metaData, args))
 {
 }
 
@@ -347,7 +345,7 @@ KCModuleInfo KCModuleProxy::moduleInfo() const
 KPluginMetaData KCModuleProxy::metaData() const
 {
     Q_D(const KCModuleProxy);
-    return d->metaData;
+    return d->metaData.has_value() ? d->metaData.value() : KPluginMetaData();
 }
 
 QString KCModuleProxy::dbusService() const

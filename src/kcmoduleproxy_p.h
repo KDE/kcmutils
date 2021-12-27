@@ -14,6 +14,8 @@
 #include <QLabel>
 class QVBoxLayout;
 
+#include <optional>
+
 class KCModuleProxyPrivate
 {
     Q_DECLARE_PUBLIC(KCModuleProxy)
@@ -22,17 +24,19 @@ protected:
 #if KCMUTILS_BUILD_DEPRECATED_SINCE(5, 88)
                          const KCModuleInfo &info,
 #endif
-                         const QStringList &_args,
-                         const KPluginMetaData &metaData = KPluginMetaData())
+                         const QStringList &_args)
         : args(_args)
-        , kcm(nullptr)
-        , topLayout(nullptr)
-        , rootInfo(nullptr)
 #if KCMUTILS_BUILD_DEPRECATED_SINCE(5, 88)
         , modInfo(info)
 #endif
-        , changed(false)
-        , defaulted(false)
+        , parent(_parent)
+        , q_ptr(_parent)
+
+    {
+    }
+
+    KCModuleProxyPrivate(KCModuleProxy *_parent, const KPluginMetaData &metaData, const QStringList &_args)
+        : args(_args)
         , parent(_parent)
         , q_ptr(_parent)
         , metaData(metaData)
@@ -83,7 +87,7 @@ protected:
     bool defaulted = false;
     KCModuleProxy *parent = nullptr;
     KCModuleProxy *q_ptr = nullptr;
-    KPluginMetaData metaData;
+    std::optional<KPluginMetaData> metaData;
 };
 
 #endif // KCMUTILS_KCMODULEPROXY_P_H
