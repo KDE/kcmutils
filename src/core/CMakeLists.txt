@@ -17,6 +17,8 @@ target_link_libraries(KF5KCMUtilsCore
     KF5::Service # KServiceTypeTrader compat code path
     KF5::ItemViews
 )
+# Needed to link this static lib to shared libs
+set_property(TARGET KF5KCMUtilsCore PROPERTY POSITION_INDEPENDENT_CODE ON)
 
 # install this lib only in case of static builds, it is internal only
 if (NOT BUILD_SHARED_LIBS)
