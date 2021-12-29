@@ -18,7 +18,6 @@
 
 #include <QApplication>
 #include <QDesktopServices>
-#include <QDesktopWidget>
 #include <QJsonArray>
 #include <QLayout>
 #include <QProcess>
@@ -322,11 +321,9 @@ void KCMultiDialog::showEvent(QShowEvent *ev)
      * We adjust the size after passing the show event
      * because otherwise window pos is set to (0,0)
      */
-    QScreen *screen = QApplication::screenAt(pos());
-    if (screen) {
-        const QSize maxSize = screen->availableGeometry().size();
-        resize(qMin(sizeHint().width(), maxSize.width()), qMin(sizeHint().height(), maxSize.height()));
-    }
+
+    const QSize maxSize = screen()->availableGeometry().size();
+    resize(qMin(sizeHint().width(), maxSize.width()), qMin(sizeHint().height(), maxSize.height()));
 }
 
 void KCMultiDialog::slotDefaultClicked()
