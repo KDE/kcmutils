@@ -75,10 +75,6 @@ public:
     QSize sizeHint(const QStyleOptionViewItem &option, const QModelIndex &index) const override;
     void configure(const QModelIndex &idx);
 
-#if KCMUTILS_ENABLE_DEPRECATED_SINCE(5, 90)
-    void setHandler(std::function<QPushButton *(const KPluginInfo &)> handler);
-#endif
-
 Q_SIGNALS:
     void changed(const QString &pluginId, bool enabled);
     void configCommitted(const QString &pluginId);
