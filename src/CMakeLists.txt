@@ -43,7 +43,7 @@ ecm_generate_export_header(KF5KCMUtils
     DEPRECATION_VERSIONS 5.66 5.76 5.82 5.85 5.87 5.88 5.90
     EXCLUDE_DEPRECATED_BEFORE_AND_AT ${EXCLUDE_DEPRECATED_BEFORE_AND_AT}
 )
-target_include_directories(KF5KCMUtils INTERFACE "$<INSTALL_INTERFACE:${KDE_INSTALL_INCLUDEDIR_KF5}/KCMUtils>")
+target_include_directories(KF5KCMUtils INTERFACE "$<INSTALL_INTERFACE:${KDE_INSTALL_INCLUDEDIR_KF}/KCMUtils>")
 
 target_link_libraries(KF5KCMUtils
   PUBLIC
@@ -85,7 +85,7 @@ ecm_generate_headers(KCMUtils_HEADERS
 install(FILES
   ${CMAKE_CURRENT_BINARY_DIR}/kcmutils_export.h
   ${KCMUtils_HEADERS}
-  DESTINATION ${KDE_INSTALL_INCLUDEDIR_KF5}/KCMUtils COMPONENT Devel
+  DESTINATION ${KDE_INSTALL_INCLUDEDIR_KF}/KCMUtils COMPONENT Devel
 )
 
 ecm_generate_headers(KSettings_HEADERS
@@ -99,7 +99,7 @@ ecm_generate_headers(KSettings_HEADERS
 )
 install(FILES
   ${KSettings_HEADERS}
-  DESTINATION ${KDE_INSTALL_INCLUDEDIR_KF5}/KCMUtils/ksettings COMPONENT Devel
+  DESTINATION ${KDE_INSTALL_INCLUDEDIR_KF}/KCMUtils/ksettings COMPONENT Devel
 )
 
 install(TARGETS KF5KCMUtils EXPORT KF5KCMUtilsTargets ${KF5_INSTALL_TARGETS_DEFAULT_ARGS})
@@ -138,7 +138,7 @@ if(BUILD_QCH)
 endif()
 
 include(ECMGeneratePriFile)
-ecm_generate_pri_file(BASE_NAME KCMUtils LIB_NAME KF5KCMUtils DEPS "widgets KConfigWidgets KService" FILENAME_VAR PRI_FILENAME INCLUDE_INSTALL_DIR ${KDE_INSTALL_INCLUDEDIR_KF5}/KCMUtils)
+ecm_generate_pri_file(BASE_NAME KCMUtils LIB_NAME KF5KCMUtils DEPS "widgets KConfigWidgets KService" FILENAME_VAR PRI_FILENAME INCLUDE_INSTALL_DIR ${KDE_INSTALL_INCLUDEDIR_KF}/KCMUtils)
 install(FILES ${PRI_FILENAME} DESTINATION ${ECM_MKSPECS_INSTALL_DIR})
 
 ecm_qt_install_logging_categories(
