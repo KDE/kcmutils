@@ -1,0 +1,205 @@
+# translation of kdelibs4.po to British English
+# Malcolm Hunter <malcolm.hunter@gmx.co.uk>, 2002,2003,2004, 2005, 2006, 2007, 2008, 2009.
+# Jonathan Riddell <kde-en-gb@jriddell.org>, 2003.
+# Andrew Coles <andrew_coles@yahoo.co.uk>, 2004, 2005, 2009, 2010.
+# Steve Allewell <steve.allewell@gmail.com>, 2014, 2018, 2019, 2021.
+msgid ""
+msgstr ""
+"Project-Id-Version: kdelibs4\n"
+"Report-Msgid-Bugs-To: https://bugs.kde.org\n"
+"POT-Creation-Date: 2021-12-30 00:40+0000\n"
+"PO-Revision-Date: 2021-09-10 13:27+0100\n"
+"Last-Translator: Steve Allewell <steve.allewell@gmail.com>\n"
+"Language-Team: British English <kde-l10n-en_gb@kde.org>\n"
+"Language: en_GB\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Lokalize 21.08.1\n"
+
+#, kde-format
+msgctxt "NAME OF TRANSLATORS"
+msgid "Your names"
+msgstr "Andrew Cole, Steve Allewell"
+
+#, kde-format
+msgctxt "EMAIL OF TRANSLATORS"
+msgid "Your emails"
+msgstr "andrew_coles@yahoo.co.uk, steve.allewell@gmail.com"
+
+#: kcmoduleloader.cpp:57 kcmoduleloader.cpp:158
+#, kde-format
+msgid "The module %1 is disabled."
+msgstr "The module %1 is disabled."
+
+#: kcmoduleloader.cpp:58
+#, kde-format
+msgid "The module has been disabled by the system administrator."
+msgstr "The module has been disabled by the system administrator."
+
+#: kcmoduleloader.cpp:93 kcmoduleloader.cpp:182
+#, kde-format
+msgid "Error loading QML file."
+msgstr "Error loading QML file."
+
+#: kcmoduleloader.cpp:117
+#, kde-format
+msgid ""
+"<qt><p>Possible reasons:<ul><li>An error occurred during your last system "
+"upgrade, leaving an orphaned control module behind</li><li>You have old "
+"third party modules lying around.</li></ul></p><p>Check these points "
+"carefully and try to remove the module mentioned in the error message. If "
+"this fails, consider contacting your distributor or packager.</p></qt>"
+msgstr ""
+"<qt><p>Possible reasons:<ul><li>An error occurred during your last system "
+"upgrade, leaving an orphaned control module behind</li><li>You have old "
+"third party modules lying around.</li></ul></p><p>Check these points "
+"carefully and try to remove the module mentioned in the error message. If "
+"this fails, consider contacting your distributor or packager.</p></qt>"
+
+#: kcmoduleloader.cpp:151
+#, kde-format
+msgid "The module %1 could not be found."
+msgstr "The module %1 could not be found."
+
+#: kcmoduleloader.cpp:152
+#, kde-format
+msgid ""
+"<qt><p>The diagnosis is:<br />The desktop file %1 could not be found.</p></"
+"qt>"
+msgstr ""
+"<qt><p>The diagnosis is:<br />The desktop file %1 could not be found.</p></"
+"qt>"
+
+#: kcmoduleloader.cpp:159
+#, kde-format
+msgid ""
+"<qt><p>Either the hardware/software the module configures is not available "
+"or the module has been disabled by the administrator.</p></qt>"
+msgstr ""
+"<qt><p>Either the hardware/software the module configures is not available "
+"or the module has been disabled by the administrator.</p></qt>"
+
+#: kcmoduleloader.cpp:190
+#, kde-format
+msgid "Error loading config module"
+msgstr "Error loading config module"
+
+#: kcmoduleloader.cpp:234
+#, kde-format
+msgid "The module %1 is not a valid configuration module."
+msgstr "The module %1 is not a valid configuration module."
+
+#: kcmoduleloader.cpp:235
+#, kde-format
+msgid ""
+"<qt>The diagnosis is:<br />The desktop file %1 does not specify a library.</"
+"qt>"
+msgstr ""
+"<qt>The diagnosis is:<br />The desktop file %1 does not specify a library.</"
+"qt>"
+
+#: kcmoduleproxy.cpp:105
+#, kde-format
+msgctxt "Argument is application name"
+msgid "This configuration section is already opened in %1"
+msgstr "This configuration section is already opened in %1"
+
+#: kcmultidialog.cpp:51
+#, kde-format
+msgid ""
+"The settings of the current module have changed.\n"
+"Do you want to apply the changes or discard them?"
+msgstr ""
+"The settings of the current module have changed.\n"
+"Do you want to apply the changes or discard them?"
+
+#: kcmultidialog.cpp:53
+#, kde-format
+msgid "Apply Settings"
+msgstr "Apply Settings"
+
+#: kcmultidialog.cpp:258 kpluginselector.cpp:809 kpluginwidget.cpp:360
+#, kde-format
+msgid "Configure"
+msgstr "Configure"
+
+#: kpluginselector.cpp:136
+#, kde-format
+msgid ""
+"Automatic changes have been performed due to plugin dependencies. Click here "
+"for further information"
+msgstr ""
+"Automatic changes have been performed due to plugin dependencies. Click here "
+"for further information"
+
+#: kpluginselector.cpp:204
+#, kde-format
+msgid ""
+"Automatic changes have been performed in order to satisfy plugin "
+"dependencies:\n"
+msgstr ""
+"Automatic changes have been performed in order to satisfy plugin "
+"dependencies:\n"
+
+#: kpluginselector.cpp:210
+#, kde-format
+msgid ""
+"\n"
+"    %1 plugin has been automatically checked because of the dependency of %2 "
+"plugin"
+msgstr ""
+"\n"
+"    %1 plugin has been automatically ticked because of the dependency of %2 "
+"plugin"
+
+#: kpluginselector.cpp:212
+#, kde-format
+msgid ""
+"\n"
+"    %1 plugin has been automatically unchecked because of its dependency on "
+"%2 plugin"
+msgstr ""
+"\n"
+"    %1 plugin has been automatically unticked because of its dependency on "
+"%2 plugin"
+
+#: kpluginselector.cpp:216
+#, kde-format
+msgid "Dependency Check"
+msgstr "Dependency Check"
+
+#: kpluginselector.cpp:234
+#, kde-format
+msgid "%1 plugin automatically added due to plugin dependencies"
+msgid_plural "%1 plugins automatically added due to plugin dependencies"
+msgstr[0] "%1 plugin automatically added due to plugin dependencies"
+msgstr[1] "%1 plugins automatically added due to plugin dependencies"
+
+#: kpluginselector.cpp:238
+#, kde-format
+msgid ", "
+msgstr ", "
+
+#: kpluginselector.cpp:242
+#, kde-format
+msgid "%1 plugin automatically removed due to plugin dependencies"
+msgid_plural "%1 plugins automatically removed due to plugin dependencies"
+msgstr[0] "%1 plugin automatically removed due to plugin dependencies"
+msgstr[1] "%1 plugins automatically removed due to plugin dependencies"
+
+#: kpluginselector.cpp:264 kpluginwidget.cpp:57
+#, kde-format
+msgid "Search..."
+msgstr "Search..."
+
+#: kpluginselector.cpp:804 kpluginwidget.cpp:355
+#, kde-format
+msgid "About"
+msgstr "About"
+
+#: ksettings/dialog.cpp:222
+#, kde-format
+msgid "Enable component"
+msgstr "Enable component"

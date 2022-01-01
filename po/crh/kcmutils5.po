@@ -1,0 +1,215 @@
+# translation of kdelibs4.po to Qırımtatarca (Qırım Türkçesi)
+# Copyright (C) 2008 This_file_is_part_of_KDE
+# This file is distributed under the same license as the kdelibs package.
+#
+# Reşat SABIQ <tilde.birlik@gmail.com>, 2008, 2009.
+msgid ""
+msgstr ""
+"Project-Id-Version: kdelibs4\n"
+"Report-Msgid-Bugs-To: https://bugs.kde.org\n"
+"POT-Creation-Date: 2021-12-30 00:40+0000\n"
+"PO-Revision-Date: 2009-02-12 23:29-0600\n"
+"Last-Translator: Reşat SABIQ <tilde.birlik@gmail.com>\n"
+"Language-Team: Qırımtatarca (Qırım Türkçesi)\n"
+"Language: crh\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: KBabel 1.11.4\n"
+
+#, kde-format
+msgctxt "NAME OF TRANSLATORS"
+msgid "Your names"
+msgstr "Reşat SABIQ"
+
+#, kde-format
+msgctxt "EMAIL OF TRANSLATORS"
+msgid "Your emails"
+msgstr "tilde.birlik@gmail.com"
+
+#: kcmoduleloader.cpp:57 kcmoduleloader.cpp:158
+#, kde-format
+msgid "The module %1 is disabled."
+msgstr "%1 modüli ğayrı qabilleştirilgen."
+
+#: kcmoduleloader.cpp:58
+#, fuzzy, kde-format
+#| msgid "Please contact your system administrator."
+msgid "The module has been disabled by the system administrator."
+msgstr "Lütfen sistem müdiriñizge müracaat etiñiz."
+
+#: kcmoduleloader.cpp:93 kcmoduleloader.cpp:182
+#, fuzzy, kde-format
+#| msgid "Error loading '%1'.\n"
+msgid "Error loading QML file."
+msgstr "'%1' yüklenüvinde hata.\n"
+
+#: kcmoduleloader.cpp:117
+#, kde-format
+msgid ""
+"<qt><p>Possible reasons:<ul><li>An error occurred during your last system "
+"upgrade, leaving an orphaned control module behind</li><li>You have old "
+"third party modules lying around.</li></ul></p><p>Check these points "
+"carefully and try to remove the module mentioned in the error message. If "
+"this fails, consider contacting your distributor or packager.</p></qt>"
+msgstr ""
+
+#: kcmoduleloader.cpp:151
+#, kde-format
+msgid "The module %1 could not be found."
+msgstr "%1 modüli tapılamadı."
+
+#: kcmoduleloader.cpp:152
+#, fuzzy, kde-format
+#| msgid ""
+#| "<qt><p>The diagnostics is:<br />The desktop file %1 could not be found.</"
+#| "p></qt>"
+msgid ""
+"<qt><p>The diagnosis is:<br />The desktop file %1 could not be found.</p></"
+"qt>"
+msgstr "<qt><p>Teşhisleme şöyle:<br />Masaüstü dosyesi %1 tapılamadı.</p></qt>"
+
+#: kcmoduleloader.cpp:159
+#, kde-format
+msgid ""
+"<qt><p>Either the hardware/software the module configures is not available "
+"or the module has been disabled by the administrator.</p></qt>"
+msgstr ""
+"<qt><p>Ya modülniñ ayarlağanı donanım/yazılım namevcut ya da modül müdir "
+"tarafından ğayrı qabilleştirildi.</p></qt>"
+
+#: kcmoduleloader.cpp:190
+#, fuzzy, kde-format
+#| msgid "Error loading '%1'.\n"
+msgid "Error loading config module"
+msgstr "'%1' yüklenüvinde hata.\n"
+
+#: kcmoduleloader.cpp:234
+#, kde-format
+msgid "The module %1 is not a valid configuration module."
+msgstr "%1 modüli keçerli bir ayarlama modüli degil."
+
+#: kcmoduleloader.cpp:235
+#, fuzzy, kde-format
+#| msgid ""
+#| "<qt>The diagnostics is:<br />The desktop file %1 does not specify a "
+#| "library.</qt>"
+msgid ""
+"<qt>The diagnosis is:<br />The desktop file %1 does not specify a library.</"
+"qt>"
+msgstr ""
+"<qt><p>Teşhisleme şöyle:<br />Masaüstü dosyesi %1 kitaphaneni belirtmey.</"
+"p></qt>"
+
+#: kcmoduleproxy.cpp:105
+#, kde-format
+msgctxt "Argument is application name"
+msgid "This configuration section is already opened in %1"
+msgstr "Bu ayarlama kesiti artıq %1 içinde açıqtır."
+
+#: kcmultidialog.cpp:51
+#, fuzzy, kde-format
+#| msgid ""
+#| "The document \"%1\" has been modified.\n"
+#| "Do you want to save your changes or discard them?"
+msgid ""
+"The settings of the current module have changed.\n"
+"Do you want to apply the changes or discard them?"
+msgstr ""
+"\"%1\" vesiqası deñiştirilgen ola.\n"
+"Deñişiklikleriñiz saqlansınmı yoqsa terk etilsinmi?"
+
+#: kcmultidialog.cpp:53
+#, fuzzy, kde-format
+#| msgid "Settings"
+msgid "Apply Settings"
+msgstr "Tesbitler"
+
+#: kcmultidialog.cpp:258 kpluginselector.cpp:809 kpluginwidget.cpp:360
+#, kde-format
+msgid "Configure"
+msgstr "Ayarla"
+
+#: kpluginselector.cpp:136
+#, kde-format
+msgid ""
+"Automatic changes have been performed due to plugin dependencies. Click here "
+"for further information"
+msgstr ""
+"Plagin bağlılıqları sebebinden avtomatik deñiştirmeler icra etilgen ola. Daa "
+"çoq malümat içün mında çertiñiz."
+
+#: kpluginselector.cpp:204
+#, kde-format
+msgid ""
+"Automatic changes have been performed in order to satisfy plugin "
+"dependencies:\n"
+msgstr ""
+"Plagin bağlılıqlarını qanaatlandırmaq içün avtomatik deñiştirmeler eda "
+"etildi:\n"
+
+#: kpluginselector.cpp:210
+#, kde-format
+msgid ""
+"\n"
+"    %1 plugin has been automatically checked because of the dependency of %2 "
+"plugin"
+msgstr ""
+"\n"
+"    %2 plagini bağlılığı sebebinden %1 plagini avtomatik olaraq çavkelengen "
+"ola"
+
+#: kpluginselector.cpp:212
+#, kde-format
+msgid ""
+"\n"
+"    %1 plugin has been automatically unchecked because of its dependency on "
+"%2 plugin"
+msgstr ""
+"\n"
+"    %2 plagini bağlılığı sebebinden %1 plagini avtomatik olaraq "
+"çavkelenmegen ola"
+
+#: kpluginselector.cpp:216
+#, kde-format
+msgid "Dependency Check"
+msgstr "Bağlılıq Teşkermesi"
+
+#: kpluginselector.cpp:234
+#, kde-format
+msgid "%1 plugin automatically added due to plugin dependencies"
+msgid_plural "%1 plugins automatically added due to plugin dependencies"
+msgstr[0] "Plagin bağlılıqları sebebinden %1 plagin avtomatik olaraq eklendi"
+msgstr[1] "Plagin bağlılıqları sebebinden %1 plagin avtomatik olaraq eklendi"
+
+#: kpluginselector.cpp:238
+#, kde-format
+msgid ", "
+msgstr ", "
+
+#: kpluginselector.cpp:242
+#, kde-format
+msgid "%1 plugin automatically removed due to plugin dependencies"
+msgid_plural "%1 plugins automatically removed due to plugin dependencies"
+msgstr[0] ""
+"Plagin bağlılıqları sebebinden %1 plagin avtomatik olaraq çetleştirildi"
+msgstr[1] ""
+"Plagin bağlılıqları sebebinden %1 plagin avtomatik olaraq çetleştirildi"
+
+#: kpluginselector.cpp:264 kpluginwidget.cpp:57
+#, fuzzy, kde-format
+#| msgid "&Search"
+msgid "Search..."
+msgstr "&Qıdır"
+
+#: kpluginselector.cpp:804 kpluginwidget.cpp:355
+#, fuzzy, kde-format
+#| msgid "&About"
+msgid "About"
+msgstr "A&qqında"
+
+#: ksettings/dialog.cpp:222
+#, kde-format
+msgid "Enable component"
+msgstr "Komponentni qabilleştir"
