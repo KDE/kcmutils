@@ -70,7 +70,8 @@ KCMUTILS_EXPORT KCModule *loadModule(const KCModuleInfo &module, ErrorReporting 
 
 /**
  * Loads a @ref KCModule. If loading fails a KCM which displays an error message is returned.
-
+ * Starting from 5.91, the validity of the @p metaData parameter does not need to be checked when calling this function.
+ *
  * @param metaData KPluginMetaData for loading the plugin
  * @return a pointer to the loaded @ref KCModule
  * @since 5.84

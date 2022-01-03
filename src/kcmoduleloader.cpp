@@ -51,7 +51,6 @@ public:
 
 KCModule *KCModuleLoader::loadModule(const KPluginMetaData &metaData, QWidget *parent, const QVariantList &args)
 {
-    Q_ASSERT(!metaData.fileName().isEmpty());
     if (!KAuthorized::authorizeControlModule(metaData.pluginId())) {
         return reportError(ErrorReporting::Inline,
                            i18n("The module %1 is disabled.", metaData.pluginId()),
