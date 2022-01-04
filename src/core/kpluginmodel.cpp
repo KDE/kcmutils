@@ -193,7 +193,12 @@ KPluginMetaData KPluginModel::findConfig(const KPluginMetaData &plugin) const
         qCWarning(KCMUTILS_LOG) << service->entryPath() << "Querying the KCMs associated to a plugin using the X-KDE-ParentComponents is deprecated."
                                 << "Instead define the X-KDE-ConfigModule with the namespace and plugin filen name.";
         QJsonObject obj;
-        obj.insert(QLatin1String("KPlugin"), QJsonObject({{QLatin1String("Name"), service->name()}}));
+        QJsonObject kplugin{{QLatin1String("Name"), service->name()}};
+        QString pluginInfoName = service->property(QStringLiteral("X-KDE-PluginInfo-Name")).toString();
+        if (!pluginInfoName.isEmpty()) {
+            kplugin.insert(QLatin1String("Id"), pluginInfoName);
+        }
+        obj.insert(QLatin1String("KPlugin"), kplugin);
         obj.insert(QLatin1String("X-KDE-PluginKeyword"), service->pluginKeyword());
         return KPluginMetaData(obj, service->library());
     }
