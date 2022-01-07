@@ -153,10 +153,8 @@ Kirigami.ApplicationItem {
 
     pageStack.separatorVisible: false
     pageStack.globalToolBar.preferredHeight: toolButton.implicitHeight + Kirigami.Units.smallSpacing * 2
-    pageStack.globalToolBar.style: pageStack.wideMode && pageStack.columnView.columnResizeMode !== Kirigami.ColumnView.SingleColumn
-        ? Kirigami.ApplicationHeaderStyle.Titles
-        : Kirigami.ApplicationHeaderStyle.Breadcrumb
-    pageStack.globalToolBar.showNavigationButtons: Kirigami.ApplicationHeaderStyle.ShowBackButton | Kirigami.ApplicationHeaderStyle.ShowForwardButton
+    pageStack.globalToolBar.style: Kirigami.ApplicationHeaderStyle.ToolBar
+    pageStack.globalToolBar.showNavigationButtons: pageStack.currentIndex > 0 ? Kirigami.ApplicationHeaderStyle.ShowBackButton : Kirigami.ApplicationHeaderStyle.NoNavigationButtons
 
     pageStack.columnView.columnResizeMode: pageStack.items.length > 0 && pageStack.items[0].Kirigami.ColumnView.fillWidth
         ? Kirigami.ColumnView.SingleColumn
