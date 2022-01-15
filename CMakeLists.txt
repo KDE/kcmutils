@@ -26,6 +26,7 @@ include(CMakePackageConfigHelpers)
 include(ECMAddQch)
 include(ECMQtDeclareLoggingCategory)
 include(ECMSetupQtPluginMacroNames)
+include(ECMDeprecationSettings)
 include(KDEGitCommitHooks)
 
 option(BUILD_QCH "Build API documentation in QCH format (for e.g. Qt Assistant, Qt Creator & KDevelop)" OFF)
@@ -52,10 +53,15 @@ ecm_setup_qtplugin_macro_names(
         PACKAGE_SETUP_AUTOMOC_VARIABLES
 )
 
-add_definitions(-DQT_DISABLE_DEPRECATED_BEFORE=0x050f02)
-add_definitions(-DKF_DISABLE_DEPRECATED_BEFORE_AND_AT=0x055100)
-add_definitions(-DKSERVICE_DISABLE_DEPRECATED_BEFORE_AND_AT=0x054E00) # for KPluginInfo::dependencies
-add_definitions(-DKCOREADDONS_DISABLE_DEPRECATED_BEFORE_AND_AT=0x054E00) # for KPluginInfo::dependencies
+ecm_set_disabled_deprecation_versions(
+    QT 5.15.2
+    KF 5.90.0
+    KSERVICE 5.78 # for KPluginInfo::dependencies
+    KCOREADDONS 5.78 # for KPluginInfo::dependencies
+    QUICKADDONS 5.87 # for ConfigModule::aboutData
+    KCONFIGWIDGETS 5.84 # for KCModule::aboutData and corresponding constructor
+)
+
 add_definitions(-DTRANSLATION_DOMAIN=\"kcmutils5\")
 ki18n_install(po)
 add_subdirectory(src)
