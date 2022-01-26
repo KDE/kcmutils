@@ -16,6 +16,7 @@
 #include <QDialogButtonBox>
 #include <QDir>
 #include <QLineEdit>
+#include <QLocale>
 #include <QPainter>
 #include <QPushButton>
 #include <QStandardPaths>
@@ -30,6 +31,7 @@
 #include <KLocalizedString>
 #include <KPluginMetaData>
 #include <KStandardGuiItem>
+#include <algorithm>
 #include <kcmoduleinfo.h>
 #include <kcmoduleproxy.h>
 #include <utility>
@@ -204,7 +206,8 @@ KPluginWidgetProxyModel::~KPluginWidgetProxyModel()
 
 bool KPluginWidgetProxyModel::filterAcceptsRow(int sourceRow, const QModelIndex & /*sourceParent*/) const
 {
-    if (pluginSelector_d->lineEdit->text().isEmpty()) {
+    const QString filterText = pluginSelector_d->lineEdit->text();
+    if (filterText.isEmpty()) {
         return true;
     }
 
@@ -212,14 +215,34 @@ bool KPluginWidgetProxyModel::filterAcceptsRow(int sourceRow, const QModelIndex 
 
     const QString name = index.data(KPluginModel::NameRole).toString();
 
-    if (name.contains(pluginSelector_d->lineEdit->text(), Qt::CaseInsensitive)) {
+    if (name.contains(filterText, Qt::CaseInsensitive)) {
         return true;
     }
 
     const QString description = index.data(KPluginModel::DescriptionRole).toString();
 
-    if (description.contains(pluginSelector_d->lineEdit->text(), Qt::CaseInsensitive)) {
+    if (description.contains(filterText, Qt::CaseInsensitive)) {
         return true;
+    }
+
+    auto startsWithKeyword = [&filterText](const QString &keyword) {
+        return keyword.startsWith(filterText, Qt::CaseInsensitive);
+    };
+
+    const QStringList keywords = index.data(KPluginModel::KeywordsRole).toStringList();
+
+    if (std::any_of(keywords.begin(), keywords.end(), startsWithKeyword)) {
+        return true;
+    }
+
+    if (!QLocale().name().startsWith(QLatin1String("en_"))) {
+        // Use also American English keywords so e.g. users in other languages won't have to switch IME when searching
+        // or can use the info received from English speaking support
+        const QStringList untranslatedKeywords = index.data(KPluginModel::UntranslatedKeywordsRole).toStringList();
+
+        if (std::any_of(untranslatedKeywords.begin(), untranslatedKeywords.end(), startsWithKeyword)) {
+            return true;
+        }
     }
 
     return false;

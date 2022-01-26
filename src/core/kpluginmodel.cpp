@@ -27,6 +27,10 @@ QVariant KPluginModel::data(const QModelIndex &index, int role) const
         return plugin.name();
     case Roles::DescriptionRole:
         return plugin.description();
+    case Roles::UntranslatedKeywordsRole:
+        return plugin.untranslatedKeywords();
+    case Roles::KeywordsRole:
+        return plugin.keywords();
     case Roles::IconRole:
         return plugin.iconName();
     case Roles::EnabledRole:
@@ -142,6 +146,16 @@ void KPluginModel::save()
         m_config.sync();
     }
     m_pendingStates.clear();
+}
+
+void KPluginModel::load()
+{
+    if (!m_config.isValid()) {
+        return;
+    }
+
+    m_pendingStates.clear();
+    Q_EMIT dataChanged(index(0, 0), index(m_plugins.size() - 1, 0), {Roles::EnabledRole});
 }
 
 void KPluginModel::defaults()

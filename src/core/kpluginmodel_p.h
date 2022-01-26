@@ -24,6 +24,8 @@ public:
         IconRole = Qt::DecorationRole,
         EnabledRole = Qt::CheckStateRole,
         DescriptionRole = Qt::UserRole + 1,
+        UntranslatedKeywordsRole,
+        KeywordsRole,
         IsChangeableRole,
         MetaDataRole,
         ConfigRole,
@@ -41,6 +43,7 @@ public:
     void clear();
     void setConfig(const KConfigGroup &config);
     void save();
+    void load();
     void defaults();
     bool isSaveNeeded();
 
