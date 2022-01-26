@@ -125,6 +125,11 @@ void KPluginWidget::save()
     d->pluginModel->save();
 }
 
+void KPluginWidget::load()
+{
+    d->pluginModel->load();
+}
+
 void KPluginWidget::defaults()
 {
     d->pluginModel->defaults();

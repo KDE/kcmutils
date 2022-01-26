@@ -66,6 +66,13 @@ public:
     void save();
 
     /**
+     * Loads the enabled state of the plugins from the config set by setConfig()
+     * and clears any changes by the user.
+     * @since 5.91
+     */
+    void load();
+
+    /**
      * Resets the enabled state of the plugins to their defaults
      * @see KPluginMetaData::isEnabledByDefault
      */

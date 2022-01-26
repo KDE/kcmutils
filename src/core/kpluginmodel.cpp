@@ -144,6 +144,16 @@ void KPluginModel::save()
     m_pendingStates.clear();
 }
 
+void KPluginModel::load()
+{
+    if (!m_config.isValid()) {
+        return;
+    }
+
+    m_pendingStates.clear();
+    Q_EMIT dataChanged(index(0, 0), index(m_plugins.size() - 1, 0), {Roles::EnabledRole});
+}
+
 void KPluginModel::defaults()
 {
     for (int pluginIndex = 0, count = m_plugins.count(); pluginIndex < count; ++pluginIndex) {

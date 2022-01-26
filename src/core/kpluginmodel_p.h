@@ -41,6 +41,7 @@ public:
     void clear();
     void setConfig(const KConfigGroup &config);
     void save();
+    void load();
     void defaults();
     bool isSaveNeeded();
 
