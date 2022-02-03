@@ -23,6 +23,7 @@
 #include <QProcess>
 #include <QPushButton>
 #include <QScreen>
+#include <QStandardPaths>
 #include <QStringList>
 #include <QStyle>
 #include <QUrl>
@@ -445,8 +446,13 @@ void KCMultiDialog::slotHelpClicked()
 
     const QUrl docUrl = QUrl(QStringLiteral("help:/")).resolved(QUrl(docPath)); // same code as in KHelpClient::invokeHelp
     const QString docUrlScheme = docUrl.scheme();
-    if (docUrlScheme == QLatin1String("man") || docUrlScheme == QLatin1String("info")) {
-        QProcess::startDetached(QStringLiteral("khelpcenter"), QStringList() << docUrl.toString());
+    const QString helpExec = QStandardPaths::findExecutable(QStringLiteral("khelpcenter"));
+    const bool foundExec = !helpExec.isEmpty();
+    if (!foundExec) {
+        qCDebug(KCMUTILS_LOG) << "Couldn't find khelpcenter executable in PATH.";
+    }
+    if (foundExec && (docUrlScheme == QLatin1String("man") || docUrlScheme == QLatin1String("info"))) {
+        QProcess::startDetached(helpExec, QStringList() << docUrl.toString());
     } else {
         QDesktopServices::openUrl(docUrl);
     }
