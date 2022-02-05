@@ -1,0 +1,218 @@
+# translation of kdelibs4.po to Karakh
+#
+# Sairan Kikkarin <sairan@computer.org>, 2005, 2006, 2007, 2008, 2009.
+# Sairan Kikkarin <sairan@computer.org>, 2010, 2011, 2012.
+# Sairan Kikkarin <sairan(at)computer.org>, 2010, 2013.
+msgid ""
+msgstr ""
+"Project-Id-Version: kdelibs4\n"
+"Report-Msgid-Bugs-To: https://bugs.kde.org\n"
+"POT-Creation-Date: 2022-01-30 00:41+0000\n"
+"PO-Revision-Date: 2013-11-08 01:24+0600\n"
+"Last-Translator: Sairan Kikkarin <sairan@computer.org>\n"
+"Language-Team: Kazakh <kde-i18n-doc@kde.org>\n"
+"Language: kk\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Lokalize 1.2\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"\n"
+"\n"
+"\n"
+"\n"
+"\n"
+
+#
+#, kde-format
+msgctxt "NAME OF TRANSLATORS"
+msgid "Your names"
+msgstr "Сайран Киккарин"
+
+#
+#, kde-format
+msgctxt "EMAIL OF TRANSLATORS"
+msgid "Your emails"
+msgstr "sairan@computer.org"
+
+#: kcmoduleloader.cpp:56 kcmoduleloader.cpp:157
+#, kde-format
+msgid "The module %1 is disabled."
+msgstr "%1 модулі бұғатталған."
+
+#: kcmoduleloader.cpp:57
+#, fuzzy, kde-format
+#| msgid "Please contact your system administrator."
+msgid "The module has been disabled by the system administrator."
+msgstr "Жүйеңіздің әкімшісімен қатынаңыз."
+
+#: kcmoduleloader.cpp:92 kcmoduleloader.cpp:181
+#, fuzzy, kde-format
+#| msgid "Error loading '%1'.\n"
+msgid "Error loading QML file."
+msgstr "'%1' дегеннің жүктеу қатесі.\n"
+
+#: kcmoduleloader.cpp:116
+#, fuzzy, kde-format
+#| msgid ""
+#| "<qt><p>Possible reasons:<ul><li>An error occurred during your last KDE "
+#| "upgrade leaving an orphaned control module</li><li>You have old third "
+#| "party modules lying around.</li></ul></p><p>Check these points carefully "
+#| "and try to remove the module mentioned in the error message. If this "
+#| "fails, consider contacting your distributor or packager.</p></qt>"
+msgid ""
+"<qt><p>Possible reasons:<ul><li>An error occurred during your last system "
+"upgrade, leaving an orphaned control module behind</li><li>You have old "
+"third party modules lying around.</li></ul></p><p>Check these points "
+"carefully and try to remove the module mentioned in the error message. If "
+"this fails, consider contacting your distributor or packager.</p></qt>"
+msgstr ""
+"<qt><p>Мүмкін себептері:<ul> <li>KDE жүйесін соңғы жаңартқандағы қате - "
+"алдыңғы нұсқасының басқару модулі қалып қойған</li><li>Ескі бөтен басқару "
+"модулі орнатылған.</li></ul></p><p>Бұл жағдайларды мұқият тексеріп қатеге "
+"сеп болған модульді жойып көріңіз. Болмаса - жабдықтаушыңызбен байланысыңыз."
+"</p></qt>"
+
+#: kcmoduleloader.cpp:150
+#, kde-format
+msgid "The module %1 could not be found."
+msgstr "%1 модулі табылмады."
+
+#: kcmoduleloader.cpp:151
+#, kde-format
+msgid ""
+"<qt><p>The diagnosis is:<br />The desktop file %1 could not be found.</p></"
+"qt>"
+msgstr "<qt><p>Диагностика:<br />%1 desktop файлы табылмады.</p></qt>"
+
+#: kcmoduleloader.cpp:158
+#, kde-format
+msgid ""
+"<qt><p>Either the hardware/software the module configures is not available "
+"or the module has been disabled by the administrator.</p></qt>"
+msgstr ""
+"<qt><p>Немесе модуль баптайтын жабдық/бағдарламасы қол жектізбеуде, немесе "
+"бұл модульді әкімші бұғаттап тастаған.</p></qt>"
+
+#: kcmoduleloader.cpp:189
+#, fuzzy, kde-format
+#| msgid "Error loading '%1'.\n"
+msgid "Error loading config module"
+msgstr "'%1' дегеннің жүктеу қатесі.\n"
+
+#: kcmoduleloader.cpp:233
+#, kde-format
+msgid "The module %1 is not a valid configuration module."
+msgstr "%1 модулі дұрыс баптау модулі емес."
+
+#: kcmoduleloader.cpp:234
+#, kde-format
+msgid ""
+"<qt>The diagnosis is:<br />The desktop file %1 does not specify a library.</"
+"qt>"
+msgstr ""
+"<qt>Диагностика:<br />%1 desctop файлында жиын файлы келтірілмеген.</qt>"
+
+#: kcmoduleproxy.cpp:109
+#, kde-format
+msgctxt "Argument is application name"
+msgid "This configuration section is already opened in %1"
+msgstr "Бұл баптау модулі әлден %1 дегенде ашылған"
+
+#: kcmultidialog.cpp:51
+#, kde-format
+msgid ""
+"The settings of the current module have changed.\n"
+"Do you want to apply the changes or discard them?"
+msgstr ""
+"Осы модулінің параметрлері өзгертілген.\n"
+"Өзгерістер іске асырылсын ба, әлде ысырып тасталсын ба?"
+
+#: kcmultidialog.cpp:53
+#, kde-format
+msgid "Apply Settings"
+msgstr "Іске асыру"
+
+#: kcmultidialog.cpp:258 kpluginselector.cpp:809 kpluginwidget.cpp:365
+#, kde-format
+msgid "Configure"
+msgstr "Баптау"
+
+#: kpluginselector.cpp:136
+#, kde-format
+msgid ""
+"Automatic changes have been performed due to plugin dependencies. Click here "
+"for further information"
+msgstr ""
+"Плагиннің тәуелдіктеріне қарай автоматты түрде өзгерістер енгізілген. "
+"Қосымша мәлімет үшін осында түртіңіз."
+
+#: kpluginselector.cpp:204
+#, kde-format
+msgid ""
+"Automatic changes have been performed in order to satisfy plugin "
+"dependencies:\n"
+msgstr ""
+"Плагиннің тәуелдіктеріне қарай автоматты түрде өзгерістер енгізілген:\n"
+
+#: kpluginselector.cpp:210
+#, kde-format
+msgid ""
+"\n"
+"    %1 plugin has been automatically checked because of the dependency of %2 "
+"plugin"
+msgstr ""
+"\n"
+"    %1 плагиннің белгісі автоматты түрде қойылды, өйткені ол %2 плагин "
+"модуліне тәуелді"
+
+#: kpluginselector.cpp:212
+#, kde-format
+msgid ""
+"\n"
+"    %1 plugin has been automatically unchecked because of its dependency on "
+"%2 plugin"
+msgstr ""
+"\n"
+"    %1 плагин модулінің белгісі автоматты түрде алынып тасталған, өйткені ол "
+"%2 плагин модуліне тәуелді"
+
+#: kpluginselector.cpp:216
+#, kde-format
+msgid "Dependency Check"
+msgstr "Тәуелділігін тексеру"
+
+#: kpluginselector.cpp:234
+#, kde-format
+msgid "%1 plugin automatically added due to plugin dependencies"
+msgid_plural "%1 plugins automatically added due to plugin dependencies"
+msgstr[0] "Плагиннің тәуелдіктеріне қарай %1 плагин автоматты түрде қосылды"
+
+#: kpluginselector.cpp:238
+#, kde-format
+msgid ", "
+msgstr ", "
+
+#: kpluginselector.cpp:242
+#, kde-format
+msgid "%1 plugin automatically removed due to plugin dependencies"
+msgid_plural "%1 plugins automatically removed due to plugin dependencies"
+msgstr[0] ""
+"Плагиннің тәуелдіктеріне қарай %1 плагин автоматты түрде алынып тасталды"
+
+#: kpluginselector.cpp:264 kpluginwidget.cpp:57
+#, fuzzy, kde-format
+#| msgid "Search"
+msgid "Search..."
+msgstr "Іздеу"
+
+#: kpluginselector.cpp:804 kpluginwidget.cpp:360
+#, fuzzy, kde-format
+#| msgid "&About"
+msgid "About"
+msgstr "Осы &туралы"
+
+#: ksettings/dialog.cpp:222
+#, kde-format
+msgid "Enable component"
+msgstr "Компоненті рұқсат ету"
