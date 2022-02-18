@@ -185,7 +185,7 @@ KCModule *KCModuleLoader::loadModule(const KCModuleInfo &mod, ErrorReporting rep
         } else {
             // If the error is that the plugin was not found fall through to the compat code
             // Otherwise abort and show the error to the user
-            if (result.errorReason != KPluginFactory::INVALID_PLUGIN) {
+            if (result.errorReason != KPluginFactory::INVALID_PLUGIN && result.errorReason != KPluginFactory::INVALID_KPLUGINFACTORY_INSTANTIATION) {
                 return reportError(report, i18n("Error loading config module"), result.errorString, parent);
             } else {
                 qCDebug(KCMUTILS_LOG) << "Couldn't find plugin" << QLatin1String("kcms/") + mod.library()
