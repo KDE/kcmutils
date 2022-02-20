@@ -28,8 +28,8 @@
 #include <QUrl>
 
 #ifndef KCONFIGWIDGETS_NO_KAUTH
-#include <KAuthAction>
-#include <KAuthObjectDecorator>
+#include <KAuth/Action>
+#include <KAuth/ObjectDecorator>
 #endif
 #include <KGuiItem>
 #include <KIconUtils>
