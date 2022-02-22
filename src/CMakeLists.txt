@@ -64,6 +64,16 @@ target_link_libraries(KF5KCMUtils
     KF5::QuickAddons
     KF5::Declarative
 )
+
+if (QT_MAJOR_VERSION STREQUAL "6")
+    # TODO: instead of relying on KF5ConfigWidgetsConfig.cmake optionally getting KAuth dependency,
+    # have KF5ConfigWidgetsConfig.cmake provide a proper flag/property about using the KAuth feature
+    if (TARGET KF5::AuthWidgets)
+        # KF5::ConfigWidgets has only KF5::AuthCore in public interface in KF6
+        target_link_libraries(KF5KCMUtils PRIVATE KF5::AuthWidgets) # KAuth::ObjectDecorator
+    endif()
+endif()
+
 set_target_properties(KF5KCMUtils PROPERTIES
                       VERSION ${KCMUTILS_VERSION}
                       SOVERSION ${KCMUTILS_SOVERSION}
