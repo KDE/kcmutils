@@ -8,13 +8,18 @@
 #ifndef KPLUGINMODEL_H
 #define KPLUGINMODEL_H
 
+#include "kcmutilscore_export.h"
+
 #include <QAbstractListModel>
 #include <QVector>
 
 #include <KConfigGroup>
 #include <KPluginMetaData>
+#include <memory>
 
-class KPluginModel : public QAbstractListModel
+class KPluginModelPrivate;
+
+class KCMUTILSCORE_EXPORT KPluginModel : public QAbstractListModel
 {
     Q_OBJECT
 
@@ -32,10 +37,12 @@ public:
     };
 
     explicit KPluginModel(QObject *parent = nullptr);
+    ~KPluginModel() override;
 
     QVariant data(const QModelIndex &index, int role = Qt::DisplayRole) const override;
     bool setData(const QModelIndex &index, const QVariant &value, int role = Qt::EditRole) override;
     int rowCount(const QModelIndex &parent = QModelIndex()) const override;
+    QHash<int, QByteArray> roleNames() const override;
 
     void addPlugins(const QVector<KPluginMetaData> &plugins, const QString &categoryLabel);
     void clear();
@@ -48,14 +55,6 @@ public:
     Q_SIGNAL void defaulted(bool isDefaulted);
 
 private:
-    bool isDefaulted();
-    bool isPluginEnabled(const KPluginMetaData &plugin) const;
-    KPluginMetaData findConfig(const KPluginMetaData &plugin) const;
-
-    QVector<KPluginMetaData> m_plugins;
-    QHash<QString, KPluginMetaData> m_pluginKcms;
-    KConfigGroup m_config;
-    QHash<QString, QString> m_categoryLabels;
-    QHash<QString, bool> m_pendingStates;
+    const std::unique_ptr<KPluginModelPrivate> d;
 };
 #endif

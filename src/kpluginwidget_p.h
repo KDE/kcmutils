@@ -18,7 +18,7 @@
 
 #include <kcmutils_export.h>
 
-#include "kpluginmodel_p.h"
+#include "kpluginmodel.h"
 
 class QAbstractItemView;
 class QCheckBox;
