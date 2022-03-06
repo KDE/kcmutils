@@ -969,10 +969,9 @@ void KPluginSelector::Private::PluginDelegate::configure(const QModelIndex &inde
             const QString pluginId = configModule.mid(idx + 1);
             metaDataList = {KPluginMetaData::findPluginById(pluginNamespace, pluginId)}; // Clear the list to avoid old desktop files to appear twice
         } else {
-            // the KCMs don't need any metadata themselves, just set the name to make sure the KPluginMetaData object
-            // is valid & the internal usage has the data it needs
-            QJsonObject kplugin({{QLatin1String("Name"), pluginInfo.name()}});
-            KPluginMetaData data(QJsonObject{{QLatin1String("KPlugin"), kplugin}}, absoluteKCMPath);
+            // the KCMs don't need any metadata themselves, just use the one from the KPluginInfo object
+            // this way for example a KPackage plugin can specify plugin keyword
+            KPluginMetaData data(pluginInfo.toMetaData().rawData(), absoluteKCMPath);
             metaDataList = {data}; // Clear the list to avoid old desktop files to appear twice
         }
     }
