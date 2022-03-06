@@ -35,6 +35,15 @@ set(kcmutils_LIB_SRCS
 )
 
 add_library(KF5KCMUtils ${kcmutils_LIB_SRCS})
+
+ecm_qt_declare_logging_category(KF5KCMUtils
+    HEADER kcmutils_debug.h
+    IDENTIFIER KCMUTILS_LOG
+    CATEGORY_NAME kf.kcmutils
+    DESCRIPTION "KCMUtils"
+    EXPORT KCMUTILS
+)
+
 ecm_generate_export_header(KF5KCMUtils
     BASE_NAME KCMUtils
     GROUP_BASE_NAME KF
