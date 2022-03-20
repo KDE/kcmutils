@@ -6,6 +6,7 @@
 */
 
 #include "kpluginwidget.h"
+#include "kpluginproxymodel.h"
 #include "kpluginwidget_p.h"
 
 #include <kcmutils_debug.h>
@@ -18,6 +19,7 @@
 #include <QLineEdit>
 #include <QPainter>
 #include <QPushButton>
+#include <QSortFilterProxyModel>
 #include <QStandardPaths>
 #include <QStyle>
 #include <QStyleOptionViewItem>
@@ -74,10 +76,8 @@ KPluginWidget::KPluginWidget(QWidget *parent)
                 }
             });
 
-    d->proxyModel = new KPluginWidgetProxyModel(d.get(), this);
-    d->proxyModel->setCategorizedModel(true);
-    d->proxyModel->setSourceModel(d->pluginModel);
-    d->listView->setModel(d->proxyModel /*d->pluginModel*/);
+    d->proxyModel = d->pluginModel->sortModel();
+    d->listView->setModel(d->proxyModel);
     d->listView->setAlternatingRowColors(true);
 
     auto pluginDelegate = new PluginDelegate(d.get(), this);
@@ -194,45 +194,6 @@ void KPluginWidget::setAdditionalButtonHandler(const std::function<QPushButton *
 {
     auto delegate = static_cast<PluginDelegate *>(d->listView->itemDelegate());
     delegate->handler = handler;
-}
-
-KPluginWidgetProxyModel::KPluginWidgetProxyModel(KPluginWidgetPrivate *pluginSelector_d_ptr, QObject *parent)
-    : KCategorizedSortFilterProxyModel(parent)
-    , pluginSelector_d(pluginSelector_d_ptr)
-{
-    sort(0);
-}
-
-KPluginWidgetProxyModel::~KPluginWidgetProxyModel()
-{
-}
-
-bool KPluginWidgetProxyModel::filterAcceptsRow(int sourceRow, const QModelIndex & /*sourceParent*/) const
-{
-    if (pluginSelector_d->lineEdit->text().isEmpty()) {
-        return true;
-    }
-
-    const QModelIndex index = sourceModel()->index(sourceRow, 0);
-
-    const QString name = index.data(KPluginModel::NameRole).toString();
-
-    if (name.contains(pluginSelector_d->lineEdit->text(), Qt::CaseInsensitive)) {
-        return true;
-    }
-
-    const QString description = index.data(KPluginModel::DescriptionRole).toString();
-
-    if (description.contains(pluginSelector_d->lineEdit->text(), Qt::CaseInsensitive)) {
-        return true;
-    }
-
-    return false;
-}
-
-bool KPluginWidgetProxyModel::subSortLessThan(const QModelIndex &left, const QModelIndex &right) const
-{
-    return left.data(KPluginModel::NameRole).toString().compare(right.data(KPluginModel::NameRole).toString(), Qt::CaseInsensitive) < 0;
 }
 
 PluginDelegate::PluginDelegate(KPluginWidgetPrivate *pluginSelector_d_ptr, QObject *parent)
