@@ -51,5 +51,3 @@ bool KPluginProxyModel::subSortLessThan(const QModelIndex &left, const QModelInd
 {
     return left.data(KPluginModel::NameRole).toString().compare(right.data(KPluginModel::NameRole).toString(), Qt::CaseInsensitive) < 0;
 }
-
-#include "kpluginproxymodel.moc"

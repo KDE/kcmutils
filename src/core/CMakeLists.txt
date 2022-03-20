@@ -15,11 +15,12 @@ ecm_generate_export_header(KF5KCMUtilsCore
 )
 target_include_directories(KF5KCMUtilsCore INTERFACE "$<INSTALL_INTERFACE:${KDE_INSTALL_INCLUDEDIR_KF}/KCMUtilsCore>")
 
-target_sources(KF5KCMUtilsCore PRIVATE kpluginmodel.cpp kpluginproxymodel.cpp)
+target_sources(KF5KCMUtilsCore PRIVATE kpluginmodel.cpp)
 target_link_libraries(KF5KCMUtilsCore
   PUBLIC
     KF5::CoreAddons
   PRIVATE
+    KF5::ConfigCore
     KF5::Service # KServiceTypeTrader compat code path
     KF5::ItemViews
 )
@@ -41,3 +42,8 @@ install(FILES
 )
 
 install(TARGETS KF5KCMUtilsCore EXPORT KF5KCMUtilsTargets ${KF5_INSTALL_TARGETS_DEFAULT_ARGS})
+
+add_library(kcmutils_proxy_model STATIC kpluginproxymodel.cpp)
+# Needed to link this static lib to shared libs
+set_property(TARGET kcmutils_proxy_model PROPERTY POSITION_INDEPENDENT_CODE ON)
+target_link_libraries(kcmutils_proxy_model PUBLIC KF5KCMUtilsCore KF5::ItemViews)

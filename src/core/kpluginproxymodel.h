@@ -6,12 +6,17 @@ class Q_DECL_HIDDEN KPluginProxyModel : public KCategorizedSortFilterProxyModel
 {
     Q_OBJECT
     Q_PROPERTY(QString query READ query WRITE setQuery NOTIFY queryChanged)
+    Q_PROPERTY(QAbstractListModel *model WRITE setModel)
 public:
     explicit KPluginProxyModel(QObject *parent = nullptr);
     ~KPluginProxyModel() override;
 
     QString query() const;
     void setQuery(const QString &query);
+    void setModel(QAbstractListModel *model)
+    {
+        setSourceModel(model);
+    }
 
 Q_SIGNALS:
     void queryChanged();
