@@ -1,4 +1,5 @@
 add_subdirectory(core)
+add_subdirectory(qml)
 
 ########### kcmutils ###############
 set(kcmutils_LIB_SRCS
