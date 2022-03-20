@@ -6,6 +6,7 @@
 */
 
 #include "kpluginmodel.h"
+#include "kpluginproxymodel.h"
 
 #include <KCategorizedSortFilterProxyModel>
 #include <KServiceTypeTrader>
@@ -93,6 +94,13 @@ KPluginModel::KPluginModel(QObject *parent)
 
 KPluginModel::~KPluginModel() = default;
 
+QSortFilterProxyModel *KPluginModel::sortModel()
+{
+    auto model = new KPluginProxyModel(this);
+    model->setSourceModel(this);
+    return model;
+}
+
 QVariant KPluginModel::data(const QModelIndex &index, int role) const
 {
     const KPluginMetaData &plugin = d->m_plugins[index.row()];
@@ -167,6 +175,7 @@ QHash<int, QByteArray> KPluginModel::roleNames() const
         {Roles::IsChangeableRole, "changable"},
         {Roles::EnabledByDefaultRole, "enabledByDefault"},
         {Roles::MetaDataRole, "metaData"},
+        {Roles::ConfigRole, "config"},
     };
 };
 

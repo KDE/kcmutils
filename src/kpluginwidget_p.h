@@ -30,7 +30,7 @@ class KCategorizedView;
 class KCategoryDrawer;
 class KCModuleProxy;
 
-class KPluginWidgetProxyModel;
+class KPluginProxyModel;
 class PluginDelegate;
 class PluginEntry;
 
@@ -44,23 +44,9 @@ public:
     KCategorizedView *listView = nullptr;
     KCategoryDrawer *categoryDrawer = nullptr;
     KPluginModel *pluginModel = nullptr;
-    KPluginWidgetProxyModel *proxyModel = nullptr;
+    QSortFilterProxyModel *proxyModel = nullptr;
     QStringList kcmArguments;
     bool showDefaultIndicator = false;
-};
-
-class KPluginWidgetProxyModel : public KCategorizedSortFilterProxyModel
-{
-public:
-    explicit KPluginWidgetProxyModel(KPluginWidgetPrivate *pluginSelector_d, QObject *parent = nullptr);
-    ~KPluginWidgetProxyModel() override;
-
-protected:
-    bool filterAcceptsRow(int sourceRow, const QModelIndex &sourceParent) const override;
-    bool subSortLessThan(const QModelIndex &left, const QModelIndex &right) const override;
-
-private:
-    KPluginWidgetPrivate *pluginSelector_d;
 };
 
 class PluginDelegate : public KWidgetItemDelegate

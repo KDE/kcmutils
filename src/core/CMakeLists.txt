@@ -15,7 +15,7 @@ ecm_generate_export_header(KF5KCMUtilsCore
 )
 target_include_directories(KF5KCMUtilsCore INTERFACE "$<INSTALL_INTERFACE:${KDE_INSTALL_INCLUDEDIR_KF}/KCMUtilsCore>")
 
-target_sources(KF5KCMUtilsCore PRIVATE kpluginmodel.cpp)
+target_sources(KF5KCMUtilsCore PRIVATE kpluginmodel.cpp kpluginproxymodel.cpp)
 target_link_libraries(KF5KCMUtilsCore
   PUBLIC
     KF5::CoreAddons
