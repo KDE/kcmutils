@@ -62,6 +62,7 @@ target_link_libraries(KF5KCMUtils
     KF5::Service        # KService
   PRIVATE
     KF5KCMUtilsCore
+    kcmutils_proxy_model
     Qt${QT_MAJOR_VERSION}::DBus       # dbus usage in kcmoduleproxy.cpp
     Qt${QT_MAJOR_VERSION}::Qml
     Qt${QT_MAJOR_VERSION}::Quick

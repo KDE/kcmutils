@@ -10,6 +10,7 @@ import QtQuick.Layouts 1.1
 import org.kde.kcm 1.2
 import org.kde.kirigami 2.10 as Kirigami
 
+import org.kde.kcmutils.private 1.0 as KCMUtilsPrivate
 import "private" as Private
 
 ScrollViewKCM {
@@ -20,7 +21,7 @@ ScrollViewKCM {
         id: searchField
         Layout.fillWidth: true
         onTextChanged: function (text) {
-            pluginSelector.model.query = searchField.text;
+            proxyModel.query = searchField.text;
         }
     }
 
@@ -29,7 +30,10 @@ ScrollViewKCM {
 
         clip: true
 
-        model: pluginSelector.model
+        model: KCMUtilsPrivate.ProxyModel {
+            id: proxyModel
+            model: pluginSelector.model
+        }
 
         delegate: Private.KPluginDelegate {
             width: pluginSelectorListView.width

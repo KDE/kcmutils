@@ -9,6 +9,7 @@
 #include "kpluginproxymodel.h"
 
 #include <KCategorizedSortFilterProxyModel>
+#include <KConfigGroup>
 #include <KServiceTypeTrader>
 #include <utility>
 
@@ -93,13 +94,6 @@ KPluginModel::KPluginModel(QObject *parent)
 }
 
 KPluginModel::~KPluginModel() = default;
-
-QSortFilterProxyModel *KPluginModel::sortModel()
-{
-    auto model = new KPluginProxyModel(this);
-    model->setSourceModel(this);
-    return model;
-}
 
 QVariant KPluginModel::data(const QModelIndex &index, int role) const
 {
