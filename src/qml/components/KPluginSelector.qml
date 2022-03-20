@@ -10,6 +10,7 @@ import QtQuick.Layouts 1.1
 import org.kde.kcm 1.2
 import org.kde.kirigami 2.10 as Kirigami
 
+import org.kde.kcmutils.private as KCMUtilsPrivate
 import "private" as Private
 
 ScrollViewKCM {
@@ -29,7 +30,9 @@ ScrollViewKCM {
 
         clip: true
 
-        model: pluginSelector.model
+        model: KCMUtilsPrivate {
+            model: pluginSelector.model
+        }
 
         delegate: Private.KPluginDelegate {
             width: pluginSelectorListView.width

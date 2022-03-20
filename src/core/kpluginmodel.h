@@ -13,12 +13,11 @@
 #include <QAbstractListModel>
 #include <QVector>
 
-#include <KConfigGroup>
 #include <KPluginMetaData>
 #include <memory>
 
+class KConfigGroup;
 class KPluginModelPrivate;
-class QSortFilterProxyModel;
 
 class KCMUTILSCORE_EXPORT KPluginModel : public QAbstractListModel
 {
@@ -39,14 +38,6 @@ public:
 
     explicit KPluginModel(QObject *parent = nullptr);
     ~KPluginModel() override;
-
-    /**
-     * Constructs a categorized sort model for the current instane.
-     * This can be exposed as a constant property to QML.
-     * The returned class has the "query" property.
-     * @since 5.93
-     */
-    QSortFilterProxyModel *sortModel();
 
     QVariant data(const QModelIndex &index, int role = Qt::DisplayRole) const override;
     bool setData(const QModelIndex &index, const QVariant &value, int role = Qt::EditRole) override;
