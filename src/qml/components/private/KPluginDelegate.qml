@@ -34,6 +34,13 @@ Kirigami.SwipeListItem {
                 highlight: parent.checked !== model.enabledByDefault
             }
         }
+        Kirigami.Icon {
+            Layout.preferredHeight: Kirigami.Units.iconSizes.medium
+            Layout.preferredWidth: height
+            Layout.rightMargin: Kirigami.Units.largeSpacing
+            source: model.icon
+        }
+
 
         ColumnLayout {
             Layout.topMargin: Kirigami.Units.smallSpacing
