@@ -55,20 +55,17 @@ Kirigami.SwipeListItem {
                 opacity: listItem.hovered ? 0.8 : 0.6
                 wrapMode: Text.Wrap
             }
-
-            QQC2.Label {
-                id: aboutItem
-
-                Layout.fillWidth: true
-
-                text: i18n("Author: %1\nLicense: %2", "dummy author", "dummy license")
-                opacity: listItem.hovered ? 0.8 : 0.6
-                visible: view.currentIndex === index
-                wrapMode: Text.Wrap
-            }
         }
     }
     actions: [
+        Kirigami.Action {
+            icon.name: "dialog-information"
+            tooltip: i18nc("@info:tooltip", "About")
+            onTriggered: {
+                aboutDialog.metaDataInfo = model.metaData
+                aboutDialog.open()
+            }
+        },
         Kirigami.Action {
             visible: model.config.isValid
             enabled: model.enabled

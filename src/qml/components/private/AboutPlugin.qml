@@ -17,6 +17,7 @@ import org.kde.kirigami 2.6 as Kirigami
 Kirigami.ScrollablePage {
     id: page
     title: i18n("About")
+    property var metaData
 
     Component {
         id: personDelegate
@@ -42,7 +43,7 @@ Kirigami.ScrollablePage {
                     icon.name: "mail-sent"
                     QQC2.ToolTip.delay: Kirigami.Units.toolTipDelay
                     QQC2.ToolTip.visible: hovered
-                    QQC2.ToolTip.text: i18nd("plasma_shell_org.kde.plasma.desktop", "Send an email to %1", modelData.emailAddress)
+                    QQC2.ToolTip.text: i18nd("org.kde.kcmutils", "Send an email to %1", modelData.emailAddress)
                     onClicked: Qt.openUrlExternally("mailto:%1".arg(modelData.emailAddress))
                 }
                 QQC2.ToolButton {
@@ -70,18 +71,18 @@ Kirigami.ScrollablePage {
                 Layout.preferredWidth: height
                 Layout.maximumWidth: page.width / 3;
                 Layout.rightMargin: Kirigami.Units.largeSpacing
-                source: plasmoid.metaData.iconName || plasmoid.metaData.pluginId
+                source: metaData.iconName
                 fallback: "application-x-plasma"
             }
             Kirigami.Heading {
                 Layout.fillWidth: true
-                text: plasmoid.metaData.name + " " + plasmoid.metaData.version
+                text: metaData.name + " " + metaData.version
             }
             Kirigami.Heading {
                 Layout.fillWidth: true
                 level: 2
                 wrapMode: Text.WordWrap
-                text: plasmoid.metaData.description
+                text: metaData.description
             }
         }
 
@@ -91,32 +92,27 @@ Kirigami.ScrollablePage {
 
         Kirigami.Heading {
             Kirigami.FormData.isSection: true
-            text: i18nd("plasma_shell_org.kde.plasma.desktop", "Copyright")
+            text: i18nd("org.kde.kcmutils", "Copyright")
         }
         QQC2.Label {
             Layout.leftMargin: Kirigami.Units.gridUnit
-            text: plasmoid.metaData.extraInformation
-            visible: text.length > 0
-        }
-        QQC2.Label {
-            Layout.leftMargin: Kirigami.Units.gridUnit
-            text: plasmoid.metaData.copyrightText
+            text: metaData.copyrightText
             visible: text.length > 0
         }
         Kirigami.UrlButton {
             Layout.leftMargin: Kirigami.Units.gridUnit
-            url: plasmoid.metaData.website
+            url: metaData.website
             visible: url.length > 0
         }
 
         RowLayout {
             Layout.leftMargin: Kirigami.Units.smallSpacing
-            QQC2.Label { text: i18nd("plasma_shell_org.kde.plasma.desktop", "License:") }
+            QQC2.Label { text: i18nd("org.kde.kcmutils", "License:") }
             Kirigami.LinkButton {
-                text: plasmoid.metaData.license
+                text: metaData.license
                 onClicked: {
-                    licenseSheet.text = plasmoid.metaData.licenseText
-                    licenseSheet.title = plasmoid.metaData.license
+                    licenseSheet.text = metaData.licenseText
+                    licenseSheet.title = metaData.license
                     licenseSheet.open()
                 }
             }
@@ -124,33 +120,33 @@ Kirigami.ScrollablePage {
         Kirigami.Heading {
             Layout.fillWidth: true
             Kirigami.FormData.isSection: visible
-            text: i18nd("plasma_shell_org.kde.plasma.desktop", "Authors")
-            visible: plasmoid.metaData.authors.length > 0
+            text: i18nd("org.kde.kcmutils", "Authors")
+            visible: metaData.authors.length > 0
         }
         Repeater {
-            model: plasmoid.metaData.authors
+            model: metaData.authors
             delegate: personDelegate
         }
         Kirigami.Heading {
             height: visible ? implicitHeight : 0
             Kirigami.FormData.isSection: visible
-            text: i18nd("plasma_shell_org.kde.plasma.desktop", "Credits")
+            text: i18nd("org.kde.kcmutils", "Credits")
             visible: repCredits.count > 0
         }
         Repeater {
             id: repCredits
-            model: plasmoid.metaData.otherContributors
+            model: metaData.otherContributors
             delegate: personDelegate
         }
         Kirigami.Heading {
             height: visible ? implicitHeight : 0
             Kirigami.FormData.isSection: visible
-            text: i18nd("plasma_shell_org.kde.plasma.desktop", "Translators")
+            text: i18nd("org.kde.kcmutils", "Translators")
             visible: repTranslators.count > 0
         }
         Repeater {
             id: repTranslators
-            model: plasmoid.metaData.translators
+            model: metaData.translators
             delegate: personDelegate
         }
     }
