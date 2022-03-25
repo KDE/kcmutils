@@ -48,11 +48,13 @@ ScrollViewKCM {
 
     Kirigami.OverlaySheet {
         id: aboutDialog
-        // Initialize this to make sure we have an empty KPluginMetaData object instead of an undefined one
-        property var metaDataInfo: proxyModel.dummyMetaData
+        property var metaDataInfo
 
-        contentItem: Private.AboutPlugin {
-            metaData: aboutDialog.metaDataInfo
+        contentItem: Loader {
+            active: aboutDialog.metaDataInfo !== undefined
+            sourceComponent: Private.AboutPlugin {
+                metaData: aboutDialog.metaDataInfo
+            }
         }
     }
 

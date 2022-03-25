@@ -1,14 +1,12 @@
 #include "kcmutilscore_export.h"
 
 #include <KCategorizedSortFilterProxyModel>
-#include <KPluginMetaData>
 
 class Q_DECL_HIDDEN KPluginProxyModel : public KCategorizedSortFilterProxyModel
 {
     Q_OBJECT
     Q_PROPERTY(QString query READ query WRITE setQuery NOTIFY queryChanged)
     Q_PROPERTY(QAbstractListModel *model WRITE setModel)
-    Q_PROPERTY(KPluginMetaData dummyMetaData READ dummyMetaData CONSTANT)
 public:
     explicit KPluginProxyModel(QObject *parent = nullptr);
     ~KPluginProxyModel() override;
@@ -18,11 +16,6 @@ public:
     void setModel(QAbstractListModel *model)
     {
         setSourceModel(model);
-    }
-
-    KPluginMetaData dummyMetaData()
-    {
-        return KPluginMetaData{};
     }
 
 Q_SIGNALS:
