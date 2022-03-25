@@ -1,6 +1,7 @@
 /*
     SPDX-FileCopyrightText: 2018 Aleix Pol Gonzalez <aleixpol@blue-systems.com>
     SPDX-FileCopyrightText: 2020 David Redondo <kde@david-redondo.de>
+    SPDX-FileCopyrightText: 2022 Alexander Lohnau <alexander.lohnau@gmx.de>
 
     SPDX-License-Identifier: LGPL-2.0-or-later
 */
