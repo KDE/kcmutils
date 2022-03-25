@@ -105,16 +105,13 @@ Kirigami.ScrollablePage {
             visible: url.length > 0
         }
 
-        RowLayout {
-            Layout.leftMargin: Kirigami.Units.smallSpacing
-            QQC2.Label { text: i18nd("org.kde.kcmutils", "License:") }
-            Kirigami.LinkButton {
-                text: metaData.license
-                onClicked: {
-                    licenseSheet.text = metaData.licenseText
-                    licenseSheet.title = metaData.license
-                    licenseSheet.open()
-                }
+        QQC2.Label { text: i18nd("org.kde.kcmutils", "License:") }
+        Kirigami.LinkButton {
+            text: metaData.license
+            onClicked: {
+                licenseSheet.text = metaData.licenseText
+                licenseSheet.title = metaData.license
+                licenseSheet.open()
             }
         }
         Kirigami.Heading {
