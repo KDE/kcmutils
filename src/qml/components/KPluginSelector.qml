@@ -50,6 +50,11 @@ ScrollViewKCM {
         id: aboutDialog
         property var metaDataInfo
 
+        topPadding: 0
+        rightPadding: 0
+        bottomPadding: 0
+        leftPadding: 0
+
         contentItem: Loader {
             active: aboutDialog.metaDataInfo !== undefined
             sourceComponent: Private.AboutPlugin {
