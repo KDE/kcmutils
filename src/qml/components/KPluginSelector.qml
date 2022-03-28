@@ -49,11 +49,7 @@ ScrollViewKCM {
     Kirigami.OverlaySheet {
         id: aboutDialog
         property var metaDataInfo
-
-        topPadding: 0
-        rightPadding: 0
-        bottomPadding: 0
-        leftPadding: 0
+        Kirigami.Theme.inherit: true
 
         contentItem: Loader {
             active: aboutDialog.metaDataInfo !== undefined
