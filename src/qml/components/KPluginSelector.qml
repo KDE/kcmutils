@@ -16,6 +16,7 @@ import "private" as Private
 ScrollViewKCM {
     id: pluginSelector;
     property QtObject model;
+    property Component delegate;
 
     header: Kirigami.SearchField {
         id: searchField
@@ -35,9 +36,7 @@ ScrollViewKCM {
             model: pluginSelector.model
         }
 
-        delegate: Private.KPluginDelegate {
-            width: pluginSelectorListView.width
-        }
+        delegate: pluginSelector.delegate
 
         section.property: "category"
         section.delegate: Kirigami.ListSectionHeader {

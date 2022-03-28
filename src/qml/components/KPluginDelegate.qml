@@ -5,6 +5,8 @@
 
 import QtQuick 2.5
 import QtQuick.Controls 2.5 as QQC2
+import QtQuick.Controls 2.4 as Controls
+
 import QtQuick.Layouts 1.1
 
 import org.kde.kirigami 2.5 as Kirigami
@@ -12,6 +14,9 @@ import org.kde.kcm 1.5 as KCM
 
 Kirigami.SwipeListItem {
     id: listItem
+
+    property list<QQC2.Action> additionalActions
+
     hoverEnabled: true
     onClicked: {
         if (view.currentIndex == index) {
@@ -64,21 +69,32 @@ Kirigami.SwipeListItem {
             }
         }
     }
-    actions: [
-        Kirigami.Action {
-            icon.name: "dialog-information"
-            tooltip: i18nc("@info:tooltip", "About")
-            onTriggered: {
-                aboutDialog.metaDataInfo = model.metaData
-                aboutDialog.open()
-            }
-        },
-        Kirigami.Action {
-            visible: model.config.isValid
-            enabled: model.enabled
-            icon.name: "configure"
-            tooltip: i18nc("@info:tooltip", "Configure...")
-            onTriggered: kcm.configure(model.config, this)
+    property var infoAction: Kirigami.Action {
+        icon.name: "dialog-information"
+        tooltip: i18nc("@info:tooltip", "About")
+        onTriggered: {
+            aboutDialog.metaDataInfo = model.metaData
+            aboutDialog.open()
         }
-    ]
+    }
+    property var configureAction: Kirigami.Action {
+        visible: model.config.isValid
+        enabled: model.enabled
+        icon.name: "configure"
+        tooltip: i18nc("@info:tooltip", "Configure...")
+        onTriggered: kcm.configure(model.config, this)
+    }
+
+    // Put this in an intermediary property so that we can append to the list
+    property var __allActions: []
+    Component.onCompleted:  {
+        const tmp = [];
+        tmp.push(infoAction)
+        tmp.push(configureAction)
+        for (let i = 0; i < additionalActions.length; i++) {
+            tmp.push(additionalActions[i])
+        }
+        __allActions = tmp
+    }
+    actions: __allActions
 }

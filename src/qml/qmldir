@@ -3,3 +3,4 @@
 module org.kde.kcmutils
 plugin kcmutilsqmlplugin
 KPluginSelector 1.0 components/KPluginSelector.qml
+KPluginDelegate 1.0 components/KPluginDelegate.qml
