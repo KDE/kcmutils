@@ -16,6 +16,7 @@ Kirigami.SwipeListItem {
     id: listItem
 
     property list<QQC2.Action> additionalActions
+    property var aboutDialog
 
     hoverEnabled: true
     onClicked: {

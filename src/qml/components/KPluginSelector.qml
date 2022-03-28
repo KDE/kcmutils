@@ -44,9 +44,8 @@ ScrollViewKCM {
             text: section
         }
     }
-
     Kirigami.OverlaySheet {
-        id: aboutDialog
+        id: internalAboutDialog
         property var metaDataInfo
         Kirigami.Theme.inherit: true
 
@@ -57,5 +56,6 @@ ScrollViewKCM {
             }
         }
     }
+    property var aboutDialog: internalAboutDialog
 
 }
