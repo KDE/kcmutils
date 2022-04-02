@@ -16,15 +16,19 @@ ListView {
     id: pluginSelector;
     property QtObject sourceModel;
 
-    header: Kirigami.SearchField {
-        id: searchField
+    header: QQC2.ToolBar {
         width: pluginSelector.width
-        onTextChanged: function (text) {
-            proxyModel.query = searchField.text;
+
+        Kirigami.SearchField {
+            id: searchField
+            anchors.fill: parent
+
+            onTextChanged: function (text) {
+                proxyModel.query = searchField.text;
                 searchField.forceActiveFocus();
+            }
         }
     }
-
 
     clip: true
 
