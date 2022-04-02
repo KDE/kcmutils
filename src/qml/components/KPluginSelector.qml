@@ -7,43 +7,42 @@ import QtQuick 2.5
 import QtQuick.Controls 2.5 as QQC2
 import QtQuick.Layouts 1.1
 
-import org.kde.kcm 1.2
 import org.kde.kirigami 2.10 as Kirigami
 
 import org.kde.kcmutils.private 1.0 as KCMUtilsPrivate
 import "private" as Private
 
-ScrollViewKCM {
+ListView {
     id: pluginSelector;
-    property QtObject model;
-    property Component delegate;
+    property QtObject sourceModel;
 
     header: Kirigami.SearchField {
         id: searchField
         Layout.fillWidth: true
         onTextChanged: function (text) {
             proxyModel.query = searchField.text;
+                searchField.forceActiveFocus();
         }
     }
 
-    view: ListView {
-        id: pluginSelectorListView
 
-        clip: true
+    clip: true
 
-        model: KCMUtilsPrivate.ProxyModel {
-            id: proxyModel
-            model: pluginSelector.model
-        }
-
-        delegate: pluginSelector.delegate
-
-        section.property: "category"
-        section.delegate: Kirigami.ListSectionHeader {
-            width: pluginSelectorListView.width
-            text: section
-        }
+    model: KCMUtilsPrivate.ProxyModel {
+        id: proxyModel
+        model: pluginSelector.sourceModel
     }
+
+    delegate: KPluginDelegate {
+        aboutDialog: pluginSelector.aboutDialog
+    }
+
+    section.property: "category"
+    section.delegate: Kirigami.ListSectionHeader {
+        width: pluginSelector.width
+        text: section
+    }
+
     Kirigami.OverlaySheet {
         id: internalAboutDialog
         property var metaDataInfo
