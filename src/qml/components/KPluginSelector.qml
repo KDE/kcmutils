@@ -18,7 +18,7 @@ ListView {
 
     header: Kirigami.SearchField {
         id: searchField
-        Layout.fillWidth: true
+        width: pluginSelector.width
         onTextChanged: function (text) {
             proxyModel.query = searchField.text;
                 searchField.forceActiveFocus();
