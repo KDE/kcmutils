@@ -49,8 +49,13 @@ ListView {
 
     Kirigami.OverlaySheet {
         id: internalAboutDialog
+        parent: pluginSelector.parent
         property var metaDataInfo
-        Kirigami.Theme.inherit: true
+        background: Rectangle {
+            Kirigami.Theme.inherit: false
+            Kirigami.Theme.colorSet: Kirigami.Theme.Window
+            color: Kirigami.Theme.backgroundColor
+        }
 
         contentItem: Loader {
             active: aboutDialog.metaDataInfo !== undefined
