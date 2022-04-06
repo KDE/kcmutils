@@ -7,7 +7,7 @@ import QtQuick 2.5
 import QtQuick.Controls 2.5 as QQC2
 import QtQuick.Layouts 1.1
 
-import org.kde.kirigami 2.10 as Kirigami
+import org.kde.kirigami 2.19 as Kirigami
 
 import org.kde.kcmutils.private 1.0 as KCMUtilsPrivate
 import "private" as Private
@@ -54,4 +54,11 @@ ListView {
     }
     property var aboutDialog: internalAboutDialog
 
+    Kirigami.PlaceholderMessage {
+        anchors.centerIn: parent
+        width: parent.width - (Kirigami.Units.gridUnit * 8)
+        icon.name: "edit-none"
+        text: pluginSelector.searchField && pluginSelector.searchField.text.length > 0 ? i18n("No matches") : i18n("No plugins found")
+        visible: pluginSelector.count === 0
+    }
 }
