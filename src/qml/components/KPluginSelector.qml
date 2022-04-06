@@ -15,26 +15,14 @@ import "private" as Private
 ListView {
     id: pluginSelector;
     property QtObject sourceModel;
-
-    header: QQC2.ToolBar {
-        width: pluginSelector.width
-
-        Kirigami.SearchField {
-            id: searchField
-            anchors.fill: parent
-
-            onTextChanged: function (text) {
-                proxyModel.query = searchField.text;
-                searchField.forceActiveFocus();
-            }
-        }
-    }
+    property Kirigami.SearchField searchField;
 
     clip: true
 
     model: KCMUtilsPrivate.ProxyModel {
         id: proxyModel
         model: pluginSelector.sourceModel
+        query: searchField.text
     }
 
     delegate: KPluginDelegate {
