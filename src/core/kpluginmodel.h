@@ -53,6 +53,7 @@ public:
     bool isSaveNeeded();
 
     Q_SIGNAL void defaulted(bool isDefaulted);
+    Q_SIGNAL void isSaveNeededChanged();
 
 private:
     const std::unique_ptr<KPluginModelPrivate> d;

@@ -146,6 +146,7 @@ bool KPluginModel::setData(const QModelIndex &index, const QVariant &value, int 
 
         Q_EMIT dataChanged(index, index, {Roles::EnabledRole});
         Q_EMIT defaulted(d->isDefaulted());
+        Q_EMIT isSaveNeededChanged();
 
         return true;
     }
