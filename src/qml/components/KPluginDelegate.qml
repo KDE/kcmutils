@@ -12,6 +12,7 @@ import QtQuick.Layouts 1.1
 import org.kde.kirigami 2.5 as Kirigami
 import org.kde.kcm 1.5 as KCM
 
+/// @since 5.94
 // Not using Kirigami.CheckableListItem despite having a checkbox because we
 // need the checkbox to be highlighted by KCM.SettingHighlighter, and
 // CheckableListItem doesn't have that built in.

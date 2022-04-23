@@ -12,10 +12,17 @@ import org.kde.kirigami 2.19 as Kirigami
 import org.kde.kcmutils.private 1.0 as KCMUtilsPrivate
 import "private" as Private
 
+/**
+ * ListView for showing plugins with their info and configuration.
+ * If extra butons should be added, a custom KPluginDelegate with the additionalActions
+ * property should be defined.
+ * 
+ * @since 5.94
+ */
 ListView {
     id: pluginSelector
     // KPluginModel which contains the plugins that should be displayed
-    property QtObject sourceModel
+    required property QtObject sourceModel
     // Query that is typed into the search field. Ideally, this is part of the KCM header
     property var query
 
