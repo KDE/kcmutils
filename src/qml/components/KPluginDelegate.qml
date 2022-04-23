@@ -19,6 +19,7 @@ Kirigami.BasicListItem {
     id: listItem
 
     property list<QQC2.Action> additionalActions
+    signal configTriggered()
 
     leading: QQC2.CheckBox {
         checkState: model.enabled ? Qt.Checked : Qt.Unchecked;
@@ -52,7 +53,7 @@ Kirigami.BasicListItem {
         enabled: model.enabled
         icon.name: "configure"
         tooltip: i18nc("@info:tooltip", "Configure...")
-        onTriggered: kcm.configure(model.config, this)
+        onTriggered: listItem.configTriggered()
     }
 
     // Put this in an intermediary property so that we can append to the list
