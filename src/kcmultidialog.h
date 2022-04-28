@@ -14,6 +14,7 @@
 #include <QScrollBar>
 
 #include <KPageDialog>
+#include <KPluginMetaData>
 #include <kcmoduleinfo.h>
 
 class KCMultiDialogPrivate;

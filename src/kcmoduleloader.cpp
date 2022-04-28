@@ -20,8 +20,10 @@
 
 #include <KAboutData>
 #include <KAuthorized>
+#include <KCModule>
 #include <KLocalizedString>
 #include <KMessageBox>
+#include <KPluginFactory>
 #include <KPluginInfo>
 
 #include <KQuickAddons/ConfigModule>

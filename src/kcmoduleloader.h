@@ -12,6 +12,8 @@
 #define KCMODULELOADER_H
 
 #include <KCModule>
+#include <KPluginMetaData>
+
 #include <kcmoduledata.h>
 #include <kcmoduleinfo.h>
 

@@ -18,6 +18,7 @@
 #include <QDBusInterface>
 #include <QDBusReply>
 #include <QDBusServiceWatcher>
+#include <QPluginLoader>
 
 #include <KAboutData>
 #include <kcmoduleinfo.h>

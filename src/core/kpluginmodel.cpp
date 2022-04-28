@@ -8,9 +8,12 @@
 #include "kpluginmodel.h"
 #include "kpluginproxymodel.h"
 
+#include <QPluginLoader>
+
 #include <KCategorizedSortFilterProxyModel>
 #include <KConfigGroup>
 #include <KServiceTypeTrader>
+
 #include <utility>
 
 #include "kcmutilscore_debug.h"
