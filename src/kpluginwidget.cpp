@@ -87,7 +87,10 @@ KPluginWidget::KPluginWidget(QWidget *parent)
     d->listView->setMouseTracking(true);
     d->listView->viewport()->setAttribute(Qt::WA_Hover);
 
-    connect(d->lineEdit, &QLineEdit::textChanged, d->proxyModel, &QSortFilterProxyModel::invalidate);
+    connect(d->lineEdit, &QLineEdit::textChanged, d->proxyModel, [this](const QString &query) {
+        d->proxyModel->setProperty("query", query);
+        d->proxyModel->invalidate();
+    });
     connect(pluginDelegate, &PluginDelegate::configCommitted, this, &KPluginWidget::pluginConfigSaved);
     connect(pluginDelegate, &PluginDelegate::changed, this, &KPluginWidget::pluginEnabledChanged);
 
