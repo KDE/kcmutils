@@ -227,6 +227,16 @@ void KPluginModel::save()
     d->m_pendingStates.clear();
 }
 
+KPluginMetaData KPluginModel::findConfigForPluginId(const QString &pluginId) const
+{
+    for (const KPluginMetaData &plugin : std::as_const(d->m_plugins)) {
+        if (plugin.pluginId() == pluginId) {
+            return d->findConfig(plugin);
+        }
+    }
+    return KPluginMetaData();
+}
+
 void KPluginModel::load()
 {
     if (!d->m_config.isValid()) {

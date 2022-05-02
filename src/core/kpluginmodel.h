@@ -52,6 +52,13 @@ public:
     void defaults();
     bool isSaveNeeded();
 
+    /**
+     * Returns the KPluginMetaData object of the plugin's config module. If no plugin is found or the plugin does not have a config, the resulting
+     * KPluginMetaData object will be invalid.
+     * @since 5.94
+     */
+    KPluginMetaData findConfigForPluginId(const QString &pluginId) const;
+
     Q_SIGNAL void defaulted(bool isDefaulted);
     Q_SIGNAL void isSaveNeededChanged();
 
