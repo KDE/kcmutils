@@ -1,0 +1,267 @@
+# translation of kdelibs4.po to Hindi
+# Copyright (C) YEAR This_file_is_part_of_KDE
+# This file is distributed under the same license as the PACKAGE package.
+#
+# Ravishankar Shrivastava <raviratlami@yahoo.com>, 2007.
+# Ravishankar Shrivastava <raviratlami@aol.in>, 2008.
+# G Karunakar <karunakar@indlinux.org>, 2009, 2010, 2012.
+# Raghavendra Kamath <raghu@raghukamath.com>, 2021.
+msgid ""
+msgstr ""
+"Project-Id-Version: kdelibs4\n"
+"Report-Msgid-Bugs-To: https://bugs.kde.org\n"
+"POT-Creation-Date: 2022-05-05 00:41+0000\n"
+"PO-Revision-Date: 2021-08-22 13:04+0530\n"
+"Last-Translator: Raghavendra Kamath <raghu@raghukamath.com>\n"
+"Language-Team: kde-hindi\n"
+"Language: hi\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n!=1);\n"
+"X-Generator: Lokalize 21.08.0\n"
+
+#, kde-format
+msgctxt "NAME OF TRANSLATORS"
+msgid "Your names"
+msgstr "करुणाकर गुंटुपल्ली, राघवेंद्र कामत"
+
+#, kde-format
+msgctxt "EMAIL OF TRANSLATORS"
+msgid "Your emails"
+msgstr "karunakar@indlinux.org, raghu@raghukamath.com"
+
+#: kcmoduleloader.cpp:58 kcmoduleloader.cpp:159
+#, kde-format
+msgid "The module %1 is disabled."
+msgstr "मॉड्यूल %1 अक्षम है।"
+
+#: kcmoduleloader.cpp:59
+#, kde-format
+msgid "The module has been disabled by the system administrator."
+msgstr "मॉड्यूल को तंत्र व्यवस्थापक द्वारा निष्क्रियम कर दिया गया है।"
+
+#: kcmoduleloader.cpp:94 kcmoduleloader.cpp:183
+#, kde-format
+msgid "Error loading QML file."
+msgstr "क्यूएमएल फाइल लोड करने में त्रुटि।"
+
+#: kcmoduleloader.cpp:118
+#, kde-format
+msgid ""
+"<qt><p>Possible reasons:<ul><li>An error occurred during your last system "
+"upgrade, leaving an orphaned control module behind</li><li>You have old "
+"third party modules lying around.</li></ul></p><p>Check these points "
+"carefully and try to remove the module mentioned in the error message. If "
+"this fails, consider contacting your distributor or packager.</p></qt>"
+msgstr ""
+"<qt><p>संभावित कारण:<ul><li>आपके पिछले तंत्र अपग्रेड के दौरान एक त्रुटि हुई, जिससे एक "
+"अनाथ नियंत्रण मॉड्यूल पीछे छूट गया</li><li>आपके पास पुराने तृतीय पक्ष मॉड्यूल पड़े हैं।</li> "
+"</ul></p><p>इन बिंदुओं को ध्यान से जांचें और त्रुटि संदेश में उल्लिखित मॉड्यूल को निकालने का "
+"प्रयास करें। यदि यह विफल रहता है, तो अपने वितरक या पैकेजर से संपर्क करने पर विचार करें।</"
+"p></qt>"
+
+#: kcmoduleloader.cpp:152
+#, kde-format
+msgid "The module %1 could not be found."
+msgstr "मॉड्यूल %1 नहीं मिला।"
+
+#: kcmoduleloader.cpp:153
+#, kde-format
+msgid ""
+"<qt><p>The diagnosis is:<br />The desktop file %1 could not be found.</p></"
+"qt>"
+msgstr "<qt><p>डायग्नोस्टिक्स है:<br /> डेस्कटॉप फ़ाइल %1 नहीं मिला।</p></qt>"
+
+#: kcmoduleloader.cpp:160
+#, kde-format
+msgid ""
+"<qt><p>Either the hardware/software the module configures is not available "
+"or the module has been disabled by the administrator.</p></qt>"
+msgstr ""
+"<qt><p>या तो हार्डवेयर / सॉफ़्टवेयर मॉड्यूल कॉन्फिगर उपलब्ध नहीं हैं या मॉड्यूल को प्रशासक "
+"द्वारा अक्षम किया गया है।</p></qt>"
+
+#: kcmoduleloader.cpp:191
+#, kde-format
+msgid "Error loading config module"
+msgstr "विन्यास मोड्यूल लोड करने में त्रुटि।"
+
+#: kcmoduleloader.cpp:235
+#, kde-format
+msgid "The module %1 is not a valid configuration module."
+msgstr "मॉड्यूल %1 वैध कॉन्फ़िगरेशन मॉड्यूल नहीं है।"
+
+#: kcmoduleloader.cpp:236
+#, kde-format
+msgid ""
+"<qt>The diagnosis is:<br />The desktop file %1 does not specify a library.</"
+"qt>"
+msgstr ""
+"<qt>निदान है:<br />डेस्कटॉप फ़ाइल %1 किसी लाइब्रेरी को निर्दिष्ट नहीं करता।</qt>"
+
+#: kcmoduleproxy.cpp:110
+#, kde-format
+msgctxt "Argument is application name"
+msgid "This configuration section is already opened in %1"
+msgstr "%1 में कॉन्फ़िगरेशन खण्ड पहले ही खोला गया है"
+
+#: kcmultidialog.cpp:52
+#, kde-format
+msgid ""
+"The settings of the current module have changed.\n"
+"Do you want to apply the changes or discard them?"
+msgstr ""
+"वर्तमान मोड्यूल के सेटिंग परिवर्तित हो गए है।\n"
+"क्या आप इसे सहेजना चाहेंगे या परिवर्तनों को फेंक दें?"
+
+#: kcmultidialog.cpp:54
+#, kde-format
+msgid "Apply Settings"
+msgstr "विन्यास लगाएँ"
+
+#: kcmultidialog.cpp:259 kpluginselector.cpp:809 kpluginwidget.cpp:330
+#, kde-format
+msgid "Configure"
+msgstr "कॉन्फ़िगर"
+
+#: kpluginselector.cpp:136
+#, kde-format
+msgid ""
+"Automatic changes have been performed due to plugin dependencies. Click here "
+"for further information"
+msgstr ""
+"प्लगइन डिपेंडेंसीज़ के कारण स्वचालित परिवर्तन किए गए हैं। अधिक जानकारी के लिए यहाँ क्लिक करें"
+
+#: kpluginselector.cpp:204
+#, kde-format
+msgid ""
+"Automatic changes have been performed in order to satisfy plugin "
+"dependencies:\n"
+msgstr "प्लगइन डिपेंडेंसीज़ संतुष्ट करने के लिए स्वचालित परिवर्तन किए गए हैं:\n"
+
+#: kpluginselector.cpp:210
+#, kde-format
+msgid ""
+"\n"
+"    %1 plugin has been automatically checked because of the dependency of %2 "
+"plugin"
+msgstr ""
+"\n"
+"    %2 प्लगइन डिपेंडेसी के कारण %1 प्लगइनों को पहले ही चेक कर लिया गया है"
+
+#: kpluginselector.cpp:212
+#, kde-format
+msgid ""
+"\n"
+"    %1 plugin has been automatically unchecked because of its dependency on "
+"%2 plugin"
+msgstr ""
+"\n"
+"    %2 प्लगइन डिपेंडेसी के कारण %1 प्लगइनों को पहले ही अनचेक कर लिया गया है"
+
+#: kpluginselector.cpp:216
+#, kde-format
+msgid "Dependency Check"
+msgstr "डिपेंडेंसी जाँच"
+
+#: kpluginselector.cpp:234
+#, kde-format
+msgid "%1 plugin automatically added due to plugin dependencies"
+msgid_plural "%1 plugins automatically added due to plugin dependencies"
+msgstr[0] "प्लगइन डिपेंडेंसीज़ के कारण %1 प्लगइन स्वचालित जोड़े गए हैं"
+msgstr[1] "प्लगइन डिपेंडेंसीज़ के कारण %1 प्लगइनों को स्वचालित जोड़े गए हैं"
+
+#: kpluginselector.cpp:238
+#, kde-format
+msgid ", "
+msgstr ", "
+
+#: kpluginselector.cpp:242
+#, kde-format
+msgid "%1 plugin automatically removed due to plugin dependencies"
+msgid_plural "%1 plugins automatically removed due to plugin dependencies"
+msgstr[0] "प्लगइन डिपेंडेंसीज़ के कारण %1 प्लगइन स्वचालित मिटाए गए हैं"
+msgstr[1] "प्लगइन डिपेंडेंसीज़ के कारण %1 प्लगइनों को स्वचालित स्वचालित मिटा दिए गए हैं"
+
+#: kpluginselector.cpp:264 kpluginwidget.cpp:59
+#, kde-format
+msgid "Search..."
+msgstr "खोजें..."
+
+#: kpluginselector.cpp:804 kpluginwidget.cpp:325
+#, kde-format
+msgid "About"
+msgstr "परिचय"
+
+#: ksettings/dialog.cpp:222
+#, kde-format
+msgid "Enable component"
+msgstr "अवयव सक्षम करें"
+
+#: qml/components/KPluginDelegate.qml:45
+#, fuzzy, kde-format
+#| msgid "About"
+msgctxt "@info:tooltip"
+msgid "About"
+msgstr "परिचय"
+
+#: qml/components/KPluginDelegate.qml:56
+#, fuzzy, kde-format
+#| msgid "Confi&gure..."
+msgctxt "@info:tooltip"
+msgid "Configure..."
+msgstr "कॉन्फ़िगर... (&g)"
+
+#: qml/components/KPluginSelector.qml:78
+#, kde-format
+msgid "No matches"
+msgstr ""
+
+#: qml/components/KPluginSelector.qml:78
+#, fuzzy, kde-format
+#| msgid "Not found"
+msgid "No plugins found"
+msgstr "नहीं मिला"
+
+#: qml/components/private/AboutPlugin.qml:42
+#, fuzzy, kde-format
+#| msgctxt "concatenation of dates and time"
+#| msgid "%1 %2"
+msgctxt "Plugin name and plugin version"
+msgid "%1 %2"
+msgstr "%1 %2"
+
+#: qml/components/private/AboutPlugin.qml:64
+#, fuzzy, kde-format
+#| msgid "Copy"
+msgid "Copyright"
+msgstr "नक़ल"
+
+#: qml/components/private/AboutPlugin.qml:81
+#, kde-format
+msgid "License:"
+msgstr "लाइसेंस:"
+
+#: qml/components/private/AboutPlugin.qml:100
+#, fuzzy, kde-format
+#| msgid "A&uthors"
+msgid "Authors"
+msgstr "लेखक गण (&u)"
+
+#: qml/components/private/AboutPlugin.qml:117
+#, kde-format
+msgid "Credits"
+msgstr ""
+
+#: qml/components/private/AboutPlugin.qml:134
+#, fuzzy, kde-format
+#| msgid "Translation"
+msgid "Translators"
+msgstr "अनुवाद "
+
+#: qml/components/private/AboutPlugin.qml:161
+#, fuzzy, kde-format
+#| msgid "&Send Email"
+msgid "Send an email to %1"
+msgstr "ईमेल भेजें (&S)"

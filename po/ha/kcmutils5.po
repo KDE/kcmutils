@@ -1,0 +1,246 @@
+# Hausa translation for kdelibs strings.
+# Copyright 2009 Adriaan de Groot, Mustapha Abubakar, Ibrahim Dasuna
+# This file is distributed under the same license as the kdelibs package.
+#
+# Adriaan de Groot <groot@kde.org>, 2009.
+msgid ""
+msgstr ""
+"Project-Id-Version: kdelibs4\n"
+"Report-Msgid-Bugs-To: https://bugs.kde.org\n"
+"POT-Creation-Date: 2022-05-05 00:41+0000\n"
+"PO-Revision-Date: 2009-03-17 11:22+0100\n"
+"Last-Translator: Adriaan de Groot <groot@kde.org>\n"
+"Language-Team: Hausa <kde-i18n-doc@lists.kde.org>\n"
+"Language: ha\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: Lokalize 0.2\n"
+
+#, kde-format
+msgctxt "NAME OF TRANSLATORS"
+msgid "Your names"
+msgstr "Mustapha Abubakar,Adriaan de Groot,Ibrahim Dasuna"
+
+#, kde-format
+msgctxt "EMAIL OF TRANSLATORS"
+msgid "Your emails"
+msgstr ",groot@kde.org,"
+
+#: kcmoduleloader.cpp:58 kcmoduleloader.cpp:159
+#, kde-format
+msgid "The module %1 is disabled."
+msgstr ""
+
+#: kcmoduleloader.cpp:59
+#, kde-format
+msgid "The module has been disabled by the system administrator."
+msgstr ""
+
+#: kcmoduleloader.cpp:94 kcmoduleloader.cpp:183
+#, kde-format
+msgid "Error loading QML file."
+msgstr ""
+
+#: kcmoduleloader.cpp:118
+#, kde-format
+msgid ""
+"<qt><p>Possible reasons:<ul><li>An error occurred during your last system "
+"upgrade, leaving an orphaned control module behind</li><li>You have old "
+"third party modules lying around.</li></ul></p><p>Check these points "
+"carefully and try to remove the module mentioned in the error message. If "
+"this fails, consider contacting your distributor or packager.</p></qt>"
+msgstr ""
+
+#: kcmoduleloader.cpp:152
+#, kde-format
+msgid "The module %1 could not be found."
+msgstr ""
+
+#: kcmoduleloader.cpp:153
+#, kde-format
+msgid ""
+"<qt><p>The diagnosis is:<br />The desktop file %1 could not be found.</p></"
+"qt>"
+msgstr ""
+
+#: kcmoduleloader.cpp:160
+#, kde-format
+msgid ""
+"<qt><p>Either the hardware/software the module configures is not available "
+"or the module has been disabled by the administrator.</p></qt>"
+msgstr ""
+
+#: kcmoduleloader.cpp:191
+#, kde-format
+msgid "Error loading config module"
+msgstr ""
+
+#: kcmoduleloader.cpp:235
+#, kde-format
+msgid "The module %1 is not a valid configuration module."
+msgstr ""
+
+#: kcmoduleloader.cpp:236
+#, kde-format
+msgid ""
+"<qt>The diagnosis is:<br />The desktop file %1 does not specify a library.</"
+"qt>"
+msgstr ""
+
+#: kcmoduleproxy.cpp:110
+#, kde-format
+msgctxt "Argument is application name"
+msgid "This configuration section is already opened in %1"
+msgstr ""
+
+#: kcmultidialog.cpp:52
+#, kde-format
+msgid ""
+"The settings of the current module have changed.\n"
+"Do you want to apply the changes or discard them?"
+msgstr ""
+
+#: kcmultidialog.cpp:54
+#, fuzzy, kde-format
+#| msgid "Settings"
+msgid "Apply Settings"
+msgstr "Tsarawa"
+
+#: kcmultidialog.cpp:259 kpluginselector.cpp:809 kpluginwidget.cpp:330
+#, kde-format
+msgid "Configure"
+msgstr "Haɗawa"
+
+#: kpluginselector.cpp:136
+#, kde-format
+msgid ""
+"Automatic changes have been performed due to plugin dependencies. Click here "
+"for further information"
+msgstr ""
+
+#: kpluginselector.cpp:204
+#, kde-format
+msgid ""
+"Automatic changes have been performed in order to satisfy plugin "
+"dependencies:\n"
+msgstr ""
+
+#: kpluginselector.cpp:210
+#, kde-format
+msgid ""
+"\n"
+"    %1 plugin has been automatically checked because of the dependency of %2 "
+"plugin"
+msgstr ""
+
+#: kpluginselector.cpp:212
+#, kde-format
+msgid ""
+"\n"
+"    %1 plugin has been automatically unchecked because of its dependency on "
+"%2 plugin"
+msgstr ""
+
+#: kpluginselector.cpp:216
+#, kde-format
+msgid "Dependency Check"
+msgstr ""
+
+#: kpluginselector.cpp:234
+#, kde-format
+msgid "%1 plugin automatically added due to plugin dependencies"
+msgid_plural "%1 plugins automatically added due to plugin dependencies"
+msgstr[0] ""
+msgstr[1] ""
+
+#: kpluginselector.cpp:238
+#, kde-format
+msgid ", "
+msgstr ""
+
+#: kpluginselector.cpp:242
+#, kde-format
+msgid "%1 plugin automatically removed due to plugin dependencies"
+msgid_plural "%1 plugins automatically removed due to plugin dependencies"
+msgstr[0] ""
+msgstr[1] ""
+
+#: kpluginselector.cpp:264 kpluginwidget.cpp:59
+#, kde-format
+msgid "Search..."
+msgstr ""
+
+#: kpluginselector.cpp:804 kpluginwidget.cpp:325
+#, fuzzy, kde-format
+#| msgid "&About"
+msgid "About"
+msgstr "&Game da"
+
+#: ksettings/dialog.cpp:222
+#, kde-format
+msgid "Enable component"
+msgstr ""
+
+#: qml/components/KPluginDelegate.qml:45
+#, fuzzy, kde-format
+#| msgid "&About"
+msgctxt "@info:tooltip"
+msgid "About"
+msgstr "&Game da"
+
+#: qml/components/KPluginDelegate.qml:56
+#, fuzzy, kde-format
+#| msgid "Configure"
+msgctxt "@info:tooltip"
+msgid "Configure..."
+msgstr "Haɗawa"
+
+#: qml/components/KPluginSelector.qml:78
+#, kde-format
+msgid "No matches"
+msgstr ""
+
+#: qml/components/KPluginSelector.qml:78
+#, kde-format
+msgid "No plugins found"
+msgstr ""
+
+#: qml/components/private/AboutPlugin.qml:42
+#, kde-format
+msgctxt "Plugin name and plugin version"
+msgid "%1 %2"
+msgstr ""
+
+#: qml/components/private/AboutPlugin.qml:64
+#, kde-format
+msgid "Copyright"
+msgstr ""
+
+#: qml/components/private/AboutPlugin.qml:81
+#, kde-format
+msgid "License:"
+msgstr ""
+
+#: qml/components/private/AboutPlugin.qml:100
+#, fuzzy, kde-format
+#| msgid "A&uthors"
+msgid "Authors"
+msgstr "&Mawallafa"
+
+#: qml/components/private/AboutPlugin.qml:117
+#, kde-format
+msgid "Credits"
+msgstr ""
+
+#: qml/components/private/AboutPlugin.qml:134
+#, fuzzy, kde-format
+#| msgid "Translation"
+msgid "Translators"
+msgstr "Fassara"
+
+#: qml/components/private/AboutPlugin.qml:161
+#, kde-format
+msgid "Send an email to %1"
+msgstr ""
