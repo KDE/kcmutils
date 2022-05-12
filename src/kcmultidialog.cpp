@@ -680,7 +680,6 @@ void KCMultiDialog::clear()
 
     for (int i = 0; i < d->modules.count(); ++i) {
         removePage(d->modules[i].item);
-        delete d->modules[i].kcm;
     }
 
     d->modules.clear();
