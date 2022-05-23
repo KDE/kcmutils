@@ -93,6 +93,7 @@ KCModule *KCModuleLoader::loadModule(const KPluginMetaData &metaData, QWidget *p
         if (!kcm->mainUi()) {
             return reportError(ErrorReporting::Inline, i18n("Error loading QML file."), kcm->errorString(), parent);
         }
+        qCDebug(KCMUTILS_LOG) << "loaded KCM" << factory->metaData().pluginId() << "from path" << factory->metaData().fileName();
         return new KCModuleQml(std::move(kcm), parent, args2);
     }
 
@@ -104,6 +105,7 @@ KCModule *KCModuleLoader::loadModule(const KPluginMetaData &metaData, QWidget *p
     QT_WARNING_POP
 
     if (kcmoduleResult) {
+        qCDebug(KCMUTILS_LOG) << "loaded KCM" << factory->metaData().pluginId() << "from path" << factory->metaData().fileName();
         return kcmoduleResult;
     }
 
