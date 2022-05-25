@@ -70,10 +70,10 @@ ListView {
     property var __aboutDialog: internalAboutDialog
 
     Loader {
+        anchors.centerIn: parent
+        width: parent.width - (Kirigami.Units.gridUnit * 8)
         active: pluginSelector.count === 0
         sourceComponent: Kirigami.PlaceholderMessage {
-            anchors.centerIn: parent
-            width: parent.width - (Kirigami.Units.gridUnit * 8)
             icon.name: "edit-none"
             text: pluginSelector.query && pluginSelector.query.length > 0 ? i18n("No matches") : i18n("No plugins found")
             visible: pluginSelector.count === 0
