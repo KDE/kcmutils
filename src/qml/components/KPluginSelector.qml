@@ -72,11 +72,24 @@ ListView {
     Loader {
         anchors.centerIn: parent
         width: parent.width - (Kirigami.Units.gridUnit * 8)
-        active: pluginSelector.count === 0
+        active: pluginSelector.count === 0 && !startupTimer.running
         sourceComponent: Kirigami.PlaceholderMessage {
             icon.name: "edit-none"
             text: pluginSelector.query && pluginSelector.query.length > 0 ? i18n("No matches") : i18n("No plugins found")
             visible: pluginSelector.count === 0
         }
+    }
+
+    // The view can take a bit of time to initialize itself when the KCM first
+    // loads, during which time count is 0, which would cause the placeholder
+    // message to appear for a moment and then disappear. To prevent this, let's
+    // suppress it appearing for a moment after the KCM loads.
+    Timer {
+        id: startupTimer
+        interval: Kirigami.Units.humanMoment
+        running: false
+    }
+    Component.onCompleted: {
+        startupTimer.start()
     }
 }
