@@ -73,10 +73,17 @@ ListView {
         anchors.centerIn: parent
         width: parent.width - (Kirigami.Units.gridUnit * 8)
         active: pluginSelector.count === 0 && !startupTimer.running
+        opacity: active && status === Loader.Ready ? 1 : 0
+        visible: opacity > 0
+        Behavior on opacity {
+            OpacityAnimator {
+                duration: Kirigami.Units.longDuration
+                easing.type: Easing.InOutQuad
+            }
+        }
         sourceComponent: Kirigami.PlaceholderMessage {
             icon.name: "edit-none"
             text: pluginSelector.query && pluginSelector.query.length > 0 ? i18n("No matches") : i18n("No plugins found")
-            visible: pluginSelector.count === 0
         }
     }
 
