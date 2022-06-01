@@ -39,6 +39,9 @@ Kirigami.BasicListItem {
     // Don't need highlight or hover effects; there is no concept of selection here
     hoverEnabled: false
 
+    // Some items don't have subtitles and we want everything to have a consistent height
+    reserveSpaceForSubtitle: true
+
     // Take care of displaying the actions
     property var infoAction: Kirigami.Action {
         icon.name: "dialog-information"
