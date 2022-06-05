@@ -134,3 +134,16 @@ Type=QStringList
 # the path of the KCModule's documentation
 [PropertyDef::X-DocPath]
 Type=QString
+
+# The name of the parent application that is hosting the KCM (e.g. kcontrol, systemsettings ...etc)
+[PropertyDef::X-KDE-ParentApp]
+Type=QString
+
+# A list of Keywords that can be used to find this KCModule when searching in systemsettings
+[PropertyDef::X-KDE-Keywords]
+Type=QString
+
+# A semicolon ';' separated list of Categories (e.g. Qt, KDE, X-KDE-settings-components) where
+# this module should be shown in the applications menu (e.g. the one on the Plasma panel)
+[PropertyDef::Categories]
+Type=QString
