@@ -313,7 +313,7 @@ void KPluginSelector::addPlugins(const QString &componentName, const QString &ca
     const QStringList dirs =
         QStandardPaths::locateAll(QStandardPaths::GenericDataLocation, componentName + QStringLiteral("/kpartplugins"), QStandardPaths::LocateDirectory);
     for (const QString &dir : dirs) {
-        QDirIterator it(dir, QStringList() << QStringLiteral("*.desktop"), QDir::NoFilter, QDirIterator::Subdirectories);
+        QDirIterator it(dir, QStringList() << QStringLiteral("*.desktop"), QDir::NoFilter, QDirIterator::Subdirectories | QDirIterator::FollowSymlinks);
         while (it.hasNext()) {
             desktopFileNames.append(it.next());
         }
