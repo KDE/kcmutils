@@ -1,0 +1,257 @@
+# translation of kdelibs4.po to Uzbek
+# translation of kdelibs4.po to
+# Copyright (C) 2003, 2004, 2005, 2006, 2008 Free Software Foundation, Inc.
+# Mashrab Kuvatov <kmashrab@uni-bremen.de>, 2003, 2004, 2005, 2006, 2008, 2009.
+msgid ""
+msgstr ""
+"Project-Id-Version: kdelibs4\n"
+"Report-Msgid-Bugs-To: https://bugs.kde.org\n"
+"POT-Creation-Date: 2022-06-02 00:41+0000\n"
+"PO-Revision-Date: 2009-10-17 00:34+0200\n"
+"Last-Translator: Mashrab Kuvatov <kmashrab@uni-bremen.de>\n"
+"Language-Team: Uzbek <floss-uz-l10n@googlegroups.com>\n"
+"Language: uz@cyrillic\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Lokalize 1.0\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+
+#, kde-format
+msgctxt "NAME OF TRANSLATORS"
+msgid "Your names"
+msgstr "Машраб Қуватов"
+
+#, kde-format
+msgctxt "EMAIL OF TRANSLATORS"
+msgid "Your emails"
+msgstr "kmashrab@uni-bremen.de"
+
+#: kcmoduleloader.cpp:58 kcmoduleloader.cpp:161
+#, fuzzy, kde-format
+msgid "The module %1 is disabled."
+msgstr "Модулни %1 юклаб бўлмади."
+
+#: kcmoduleloader.cpp:59
+#, fuzzy, kde-format
+#| msgid "Please contact your system administrator."
+msgid "The module has been disabled by the system administrator."
+msgstr "Илтимос тизим бошқарувчисига мурожаат қилинг."
+
+#: kcmoduleloader.cpp:94 kcmoduleloader.cpp:185
+#, fuzzy, kde-format
+#| msgid "Error opening file."
+msgid "Error loading QML file."
+msgstr "Файлни очишда хато рўй берди."
+
+#: kcmoduleloader.cpp:120
+#, kde-format
+msgid ""
+"<qt><p>Possible reasons:<ul><li>An error occurred during your last system "
+"upgrade, leaving an orphaned control module behind</li><li>You have old "
+"third party modules lying around.</li></ul></p><p>Check these points "
+"carefully and try to remove the module mentioned in the error message. If "
+"this fails, consider contacting your distributor or packager.</p></qt>"
+msgstr ""
+
+#: kcmoduleloader.cpp:154
+#, kde-format
+msgid "The module %1 could not be found."
+msgstr "Модул %1 топилмади."
+
+#: kcmoduleloader.cpp:155
+#, fuzzy, kde-format
+msgid ""
+"<qt><p>The diagnosis is:<br />The desktop file %1 could not be found.</p></"
+"qt>"
+msgstr "<qt><p>Сабаб:<br>Desktop-файли %1 топилмади.</qt>"
+
+#: kcmoduleloader.cpp:162
+#, kde-format
+msgid ""
+"<qt><p>Either the hardware/software the module configures is not available "
+"or the module has been disabled by the administrator.</p></qt>"
+msgstr ""
+
+#: kcmoduleloader.cpp:193
+#, fuzzy, kde-format
+#| msgid "Error opening file."
+msgid "Error loading config module"
+msgstr "Файлни очишда хато рўй берди."
+
+#: kcmoduleloader.cpp:237
+#, kde-format
+msgid "The module %1 is not a valid configuration module."
+msgstr ""
+
+#: kcmoduleloader.cpp:238
+#, fuzzy, kde-format
+msgid ""
+"<qt>The diagnosis is:<br />The desktop file %1 does not specify a library.</"
+"qt>"
+msgstr "<qt><p>Сабаб:<br>Кутубхона desktop-файлида %1 кўрсатилмаган.</qt>"
+
+#: kcmoduleproxy.cpp:110
+#, kde-format
+msgctxt "Argument is application name"
+msgid "This configuration section is already opened in %1"
+msgstr "Мосламанинг ушбу қисми %1 дастурида аллақачон очилган"
+
+#: kcmultidialog.cpp:52
+#, fuzzy, kde-format
+#| msgid ""
+#| "The document \"%1\" has been modified.\n"
+#| "Do you want to save your changes or discard them?"
+msgid ""
+"The settings of the current module have changed.\n"
+"Do you want to apply the changes or discard them?"
+msgstr ""
+"'%1' ҳужжатига ўзгариш киритилди.\n"
+"Уни сақлашни истайсизми?"
+
+#: kcmultidialog.cpp:54
+#, fuzzy, kde-format
+#| msgid "Apply settings"
+msgid "Apply Settings"
+msgstr "Мосламаларни қўллаш"
+
+#: kcmultidialog.cpp:259 kpluginselector.cpp:809 kpluginwidget.cpp:330
+#, kde-format
+msgid "Configure"
+msgstr "Мослаш"
+
+#: kpluginselector.cpp:136
+#, kde-format
+msgid ""
+"Automatic changes have been performed due to plugin dependencies. Click here "
+"for further information"
+msgstr ""
+
+#: kpluginselector.cpp:204
+#, kde-format
+msgid ""
+"Automatic changes have been performed in order to satisfy plugin "
+"dependencies:\n"
+msgstr ""
+
+#: kpluginselector.cpp:210
+#, kde-format
+msgid ""
+"\n"
+"    %1 plugin has been automatically checked because of the dependency of %2 "
+"plugin"
+msgstr ""
+
+#: kpluginselector.cpp:212
+#, kde-format
+msgid ""
+"\n"
+"    %1 plugin has been automatically unchecked because of its dependency on "
+"%2 plugin"
+msgstr ""
+
+#: kpluginselector.cpp:216
+#, kde-format
+msgid "Dependency Check"
+msgstr ""
+
+#: kpluginselector.cpp:234
+#, kde-format
+msgid "%1 plugin automatically added due to plugin dependencies"
+msgid_plural "%1 plugins automatically added due to plugin dependencies"
+msgstr[0] ""
+
+#: kpluginselector.cpp:238
+#, kde-format
+msgid ", "
+msgstr ""
+
+#: kpluginselector.cpp:242
+#, kde-format
+msgid "%1 plugin automatically removed due to plugin dependencies"
+msgid_plural "%1 plugins automatically removed due to plugin dependencies"
+msgstr[0] ""
+
+#: kpluginselector.cpp:264 kpluginwidget.cpp:59
+#, fuzzy, kde-format
+#| msgid "Search"
+msgid "Search..."
+msgstr "Қидириш"
+
+#: kpluginselector.cpp:804 kpluginwidget.cpp:325
+#, fuzzy, kde-format
+#| msgid "&About"
+msgid "About"
+msgstr "&Ҳақида"
+
+#: ksettings/dialog.cpp:222
+#, fuzzy, kde-format
+msgid "Enable component"
+msgstr "Ичига ўрнатиб бўладиган HTML компонент"
+
+#: qml/components/KPluginDelegate.qml:48
+#, fuzzy, kde-format
+#| msgid "&About"
+msgctxt "@info:tooltip"
+msgid "About"
+msgstr "&Ҳақида"
+
+#: qml/components/KPluginDelegate.qml:59
+#, fuzzy, kde-format
+#| msgid "Confi&gure..."
+msgctxt "@info:tooltip"
+msgid "Configure..."
+msgstr "&Мослаш..."
+
+#: qml/components/KPluginSelector.qml:86
+#, kde-format
+msgid "No matches"
+msgstr ""
+
+#: qml/components/KPluginSelector.qml:86
+#, fuzzy, kde-format
+#| msgid "Not found"
+msgid "No plugins found"
+msgstr "Топилмади"
+
+#: qml/components/private/AboutPlugin.qml:42
+#, fuzzy, kde-format
+#| msgctxt "concatenation of dates and time"
+#| msgid "%1 %2"
+msgctxt "Plugin name and plugin version"
+msgid "%1 %2"
+msgstr "%1 %2"
+
+#: qml/components/private/AboutPlugin.qml:64
+#, fuzzy, kde-format
+#| msgid "Copy"
+msgid "Copyright"
+msgstr "Нусха олиш"
+
+#: qml/components/private/AboutPlugin.qml:81
+#, kde-format
+msgid "License:"
+msgstr "Лицензия:"
+
+#: qml/components/private/AboutPlugin.qml:100
+#, fuzzy, kde-format
+#| msgid "A&uthors"
+msgid "Authors"
+msgstr "&Муаллифлар"
+
+#: qml/components/private/AboutPlugin.qml:117
+#, kde-format
+msgid "Credits"
+msgstr ""
+
+#: qml/components/private/AboutPlugin.qml:134
+#, fuzzy, kde-format
+#| msgid "Translation"
+msgid "Translators"
+msgstr "Таржима"
+
+#: qml/components/private/AboutPlugin.qml:161
+#, fuzzy, kde-format
+#| msgid "&Send Email"
+msgid "Send an email to %1"
+msgstr "Хат &жўнатиш"

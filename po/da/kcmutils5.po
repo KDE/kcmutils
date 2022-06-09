@@ -1,0 +1,269 @@
+# translation of kdelibs4.po to
+# Copyright (C) YEAR This_file_is_part_of_KDE
+# This file is distributed under the same license as the PACKAGE package.
+#
+# Martin Schlander <mschlander@opensuse.org>, 2008, 2009, 2010, 2011, 2012, 2013, 2018, 2019, 2021.
+# Keld Simonsen <keld@keldix.com>, 2010.
+msgid ""
+msgstr ""
+"Project-Id-Version: kdelibs4\n"
+"Report-Msgid-Bugs-To: https://bugs.kde.org\n"
+"POT-Creation-Date: 2022-06-02 00:41+0000\n"
+"PO-Revision-Date: 2021-09-05 20:25+0200\n"
+"Last-Translator: Martin Schlander <mschlander@opensuse.org>\n"
+"Language-Team: Danish <kde-i18n-doc@kde.org>\n"
+"Language: da\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Lokalize 20.04.2\n"
+
+#, kde-format
+msgctxt "NAME OF TRANSLATORS"
+msgid "Your names"
+msgstr "Erik Kjær Pedersen,Martin Schlander,Keld Simonsen"
+
+#, kde-format
+msgctxt "EMAIL OF TRANSLATORS"
+msgid "Your emails"
+msgstr "erik@binghamton.edu,mschlander@opensuse.org,keld@keldix.com"
+
+#: kcmoduleloader.cpp:58 kcmoduleloader.cpp:161
+#, kde-format
+msgid "The module %1 is disabled."
+msgstr "Modulet %1 er deaktiveret."
+
+#: kcmoduleloader.cpp:59
+#, kde-format
+msgid "The module has been disabled by the system administrator."
+msgstr "Modulet er blevet deaktiveret af systemadministratoren."
+
+#: kcmoduleloader.cpp:94 kcmoduleloader.cpp:185
+#, kde-format
+msgid "Error loading QML file."
+msgstr "Fejl ved indlæsning af QML-fil."
+
+#: kcmoduleloader.cpp:120
+#, kde-format
+msgid ""
+"<qt><p>Possible reasons:<ul><li>An error occurred during your last system "
+"upgrade, leaving an orphaned control module behind</li><li>You have old "
+"third party modules lying around.</li></ul></p><p>Check these points "
+"carefully and try to remove the module mentioned in the error message. If "
+"this fails, consider contacting your distributor or packager.</p></qt>"
+msgstr ""
+"<qt><p>Mulige grunde:<ul><li>Der opstod en fejl under din sidste opgradering "
+"af systemet, der efterlod et forældreløst kontrolmodul</li><li>Du har gamle "
+"tredjepartsmoduler liggende.</li></ul></p><p>Tjek disse punkter omhyggeligt "
+"og forsøg at fjerne modulet nævnt i fejlbeskeden. Hvis dette mislykkes, så "
+"overvej at kontakte din distributør eller den pakkeansvarlige.</p></qt>"
+
+#: kcmoduleloader.cpp:154
+#, kde-format
+msgid "The module %1 could not be found."
+msgstr "Modulet %1 blev ikke fundet."
+
+#: kcmoduleloader.cpp:155
+#, kde-format
+msgid ""
+"<qt><p>The diagnosis is:<br />The desktop file %1 could not be found.</p></"
+"qt>"
+msgstr "<qt><p>Diagnosen er:<br />Desktop-filen %1 kunne ikke findes.</p></qt>"
+
+#: kcmoduleloader.cpp:162
+#, kde-format
+msgid ""
+"<qt><p>Either the hardware/software the module configures is not available "
+"or the module has been disabled by the administrator.</p></qt>"
+msgstr ""
+"<qt><p>Enten er hardwaren/softwaren som modulet konfigurerer ikke "
+"tilgængelig ellers er modulet blevet deaktiveret af administratoren.</p></qt>"
+
+#: kcmoduleloader.cpp:193
+#, kde-format
+msgid "Error loading config module"
+msgstr "Fejl ved indlæsning af konfigurationsmodul"
+
+#: kcmoduleloader.cpp:237
+#, kde-format
+msgid "The module %1 is not a valid configuration module."
+msgstr "Modulet %1 er ikke et gyldigt indstillingsmodul."
+
+#: kcmoduleloader.cpp:238
+#, kde-format
+msgid ""
+"<qt>The diagnosis is:<br />The desktop file %1 does not specify a library.</"
+"qt>"
+msgstr ""
+"<qt>Diagnosen er:<br />Desktop-filen %1 angiver ikke et bibliotek.</qt>"
+
+#: kcmoduleproxy.cpp:110
+#, kde-format
+msgctxt "Argument is application name"
+msgid "This configuration section is already opened in %1"
+msgstr "Dette indstillingsafsnit er allerede åbent i %1"
+
+#: kcmultidialog.cpp:52
+#, kde-format
+msgid ""
+"The settings of the current module have changed.\n"
+"Do you want to apply the changes or discard them?"
+msgstr ""
+"Indstillingerne i det nuværende modul er blevet ændret.\n"
+"Vil du anvende ændringerne eller kassere dem?"
+
+#: kcmultidialog.cpp:54
+#, kde-format
+msgid "Apply Settings"
+msgstr "Anvend indstillinger"
+
+#: kcmultidialog.cpp:259 kpluginselector.cpp:809 kpluginwidget.cpp:330
+#, kde-format
+msgid "Configure"
+msgstr "Indstil"
+
+#: kpluginselector.cpp:136
+#, kde-format
+msgid ""
+"Automatic changes have been performed due to plugin dependencies. Click here "
+"for further information"
+msgstr ""
+"Automatiske ændringer er blevet udført pga. plugin-afhængigheder. Tryk her "
+"for yderligere information"
+
+#: kpluginselector.cpp:204
+#, kde-format
+msgid ""
+"Automatic changes have been performed in order to satisfy plugin "
+"dependencies:\n"
+msgstr ""
+"Automatiske ændringer er blevet udført for at dække plugin-afhængigheder:\n"
+
+#: kpluginselector.cpp:210
+#, kde-format
+msgid ""
+"\n"
+"    %1 plugin has been automatically checked because of the dependency of %2 "
+"plugin"
+msgstr ""
+"\n"
+"    %1-plugin er automatisk blevet afkrydset pga. afhængigheden af pluginet "
+"%2"
+
+#: kpluginselector.cpp:212
+#, kde-format
+msgid ""
+"\n"
+"    %1 plugin has been automatically unchecked because of its dependency on "
+"%2 plugin"
+msgstr ""
+"\n"
+"    %1-plugin er automatisk blevet fravalgt pga. dets afhængighed af "
+"pluginet %2"
+
+#: kpluginselector.cpp:216
+#, kde-format
+msgid "Dependency Check"
+msgstr "Afhængighedstjek"
+
+#: kpluginselector.cpp:234
+#, kde-format
+msgid "%1 plugin automatically added due to plugin dependencies"
+msgid_plural "%1 plugins automatically added due to plugin dependencies"
+msgstr[0] "%1 plugin automatisk tilføjet pga. plugin-afhængigheder"
+msgstr[1] "%1 plugins automatisk tilføjet pga. plugin-afhængigheder"
+
+#: kpluginselector.cpp:238
+#, kde-format
+msgid ", "
+msgstr ", "
+
+#: kpluginselector.cpp:242
+#, kde-format
+msgid "%1 plugin automatically removed due to plugin dependencies"
+msgid_plural "%1 plugins automatically removed due to plugin dependencies"
+msgstr[0] "%1 plugin automatiske fjernet pga. plugin-afhængigheder"
+msgstr[1] "%1 plugins automatisk fjernet pga. plugin-afhængigheder"
+
+#: kpluginselector.cpp:264 kpluginwidget.cpp:59
+#, kde-format
+msgid "Search..."
+msgstr "Søg..."
+
+#: kpluginselector.cpp:804 kpluginwidget.cpp:325
+#, kde-format
+msgid "About"
+msgstr "Om"
+
+#: ksettings/dialog.cpp:222
+#, kde-format
+msgid "Enable component"
+msgstr "Aktivér komponent"
+
+#: qml/components/KPluginDelegate.qml:48
+#, fuzzy, kde-format
+#| msgid "About"
+msgctxt "@info:tooltip"
+msgid "About"
+msgstr "Om"
+
+#: qml/components/KPluginDelegate.qml:59
+#, fuzzy, kde-format
+#| msgid "Confi&gure..."
+msgctxt "@info:tooltip"
+msgid "Configure..."
+msgstr "&Indstil..."
+
+#: qml/components/KPluginSelector.qml:86
+#, kde-format
+msgid "No matches"
+msgstr ""
+
+#: qml/components/KPluginSelector.qml:86
+#, fuzzy, kde-format
+#| msgid "Not found"
+msgid "No plugins found"
+msgstr "Ikke fundet"
+
+#: qml/components/private/AboutPlugin.qml:42
+#, fuzzy, kde-format
+#| msgctxt "concatenation of dates and time"
+#| msgid "%1 %2"
+msgctxt "Plugin name and plugin version"
+msgid "%1 %2"
+msgstr "%1 %2"
+
+#: qml/components/private/AboutPlugin.qml:64
+#, fuzzy, kde-format
+#| msgid "Copy"
+msgid "Copyright"
+msgstr "Kopiér"
+
+#: qml/components/private/AboutPlugin.qml:81
+#, kde-format
+msgid "License:"
+msgstr "Licens:"
+
+#: qml/components/private/AboutPlugin.qml:100
+#, fuzzy, kde-format
+#| msgid "A&uthors"
+msgid "Authors"
+msgstr "&Udviklere"
+
+#: qml/components/private/AboutPlugin.qml:117
+#, kde-format
+msgid "Credits"
+msgstr ""
+
+#: qml/components/private/AboutPlugin.qml:134
+#, fuzzy, kde-format
+#| msgid "Translation"
+msgid "Translators"
+msgstr "Oversættelse"
+
+#: qml/components/private/AboutPlugin.qml:161
+#, fuzzy, kde-format
+#| msgid "&Send Email"
+msgid "Send an email to %1"
+msgstr "&Send e-mail"
