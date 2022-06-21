@@ -38,7 +38,6 @@
 #include <KMessageBox>
 #include <KPageWidgetModel>
 #include <KPluginInfo>
-#include <KPluginMetaData>
 
 bool KCMultiDialogPrivate::resolveChanges(KCModuleProxy *currentProxy)
 {
