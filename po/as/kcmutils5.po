@@ -1,0 +1,283 @@
+# Copyright (C) YEAR This_file_is_part_of_KDE
+# This file is distributed under the same license as the PACKAGE package.
+#
+# Amitakhya Phukan <aphukan@fedoraproject.org>, 2008.
+# Amitakhya Phukan <অমিতাক্ষ ফুকন>, 2008.
+msgid ""
+msgstr ""
+"Project-Id-Version: kdelibs4_as\n"
+"Report-Msgid-Bugs-To: https://bugs.kde.org\n"
+"POT-Creation-Date: 2022-06-22 00:41+0000\n"
+"PO-Revision-Date: 2008-12-26 15:19+0530\n"
+"Last-Translator: Amitakhya Phukan <অমিতাক্ষ ফুকন>\n"
+"Language-Team: Assamese <fedora-trans-as@redhat.com>\n"
+"Language: as\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Lokalize 0.2\n"
+
+#, kde-format
+msgctxt "NAME OF TRANSLATORS"
+msgid "Your names"
+msgstr "অমিতাক্ষ ফুকন"
+
+#, kde-format
+msgctxt "EMAIL OF TRANSLATORS"
+msgid "Your emails"
+msgstr "aphukan@fedoraproject.org"
+
+#: kcmoduleloader.cpp:58 kcmoduleloader.cpp:161
+#, kde-format
+msgid "The module %1 is disabled."
+msgstr "%1 অংশ নিষ্ক্ৰিয় কৰা হৈছে ।"
+
+#: kcmoduleloader.cpp:59
+#, fuzzy, kde-format
+#| msgid "Please contact your system administrator."
+msgid "The module has been disabled by the system administrator."
+msgstr "অনুগ্ৰহ কৰি ব্যৱস্থাপ্ৰণালী প্ৰশাসকৰ সৈতে যোগাযোগ কৰক ।"
+
+#: kcmoduleloader.cpp:94 kcmoduleloader.cpp:185
+#, fuzzy, kde-format
+#| msgid "Error loading '%1'.\n"
+msgid "Error loading QML file."
+msgstr "'%1' লোড কৰিবলৈ সমস্যা ।\n"
+
+#: kcmoduleloader.cpp:120
+#, kde-format
+msgid ""
+"<qt><p>Possible reasons:<ul><li>An error occurred during your last system "
+"upgrade, leaving an orphaned control module behind</li><li>You have old "
+"third party modules lying around.</li></ul></p><p>Check these points "
+"carefully and try to remove the module mentioned in the error message. If "
+"this fails, consider contacting your distributor or packager.</p></qt>"
+msgstr ""
+
+#: kcmoduleloader.cpp:154
+#, kde-format
+msgid "The module %1 could not be found."
+msgstr "অংশ %1 পোৱা নাযায় ।"
+
+#: kcmoduleloader.cpp:155
+#, fuzzy, kde-format
+#| msgid ""
+#| "<qt><p>The diagnostics is:<br />The desktop file %1 could not be found.</"
+#| "p></qt>"
+msgid ""
+"<qt><p>The diagnosis is:<br />The desktop file %1 could not be found.</p></"
+"qt>"
+msgstr "<qt><p>কাৰণ নিৰ্ণয়:<br />ডেস্কট'প নথিপত্ৰ %1 পোৱা নাযায় ।</p></qt>"
+
+#: kcmoduleloader.cpp:162
+#, kde-format
+msgid ""
+"<qt><p>Either the hardware/software the module configures is not available "
+"or the module has been disabled by the administrator.</p></qt>"
+msgstr ""
+"<qt><p>সম্ভৱতঃ অংশ দ্বাৰা বিন্যাস হোৱা যান্ত্ৰিক সামগ্ৰী/চালনাজ্ঞান উপলব্ধ নহয় বা "
+"প্ৰশাসক দ্বাৰা অংশ নিষ্ক্ৰিয় কৰা হৈছে ।</p></qt>"
+
+#: kcmoduleloader.cpp:193
+#, fuzzy, kde-format
+#| msgid "Error loading '%1'.\n"
+msgid "Error loading config module"
+msgstr "'%1' লোড কৰিবলৈ সমস্যা ।\n"
+
+#: kcmoduleloader.cpp:237
+#, kde-format
+msgid "The module %1 is not a valid configuration module."
+msgstr "%1 অংশ বৈধ বিন্যাসৰ অংশ নহয় ।"
+
+#: kcmoduleloader.cpp:238
+#, fuzzy, kde-format
+#| msgid ""
+#| "<qt>The diagnostics is:<br />The desktop file %1 does not specify a "
+#| "library.</qt>"
+msgid ""
+"<qt>The diagnosis is:<br />The desktop file %1 does not specify a library.</"
+"qt>"
+msgstr ""
+"<qt>কাৰণ নিৰ্ণয়:<br />ডেস্কট'প নথিপত্ৰ %1 দ্বাৰা কোনো লাইব্ৰেৰি নিৰ্দেশিত নহয় ।</"
+"qt>"
+
+#: kcmoduleproxy.cpp:110
+#, kde-format
+msgctxt "Argument is application name"
+msgid "This configuration section is already opened in %1"
+msgstr "বিন্যাসৰ এই বিভাগ বৰ্তমানে %1 ত খোলা আছে"
+
+#: kcmultidialog.cpp:51
+#, fuzzy, kde-format
+#| msgid ""
+#| "The document \"%1\" has been modified.\n"
+#| "Do you want to save your changes or discard them?"
+msgid ""
+"The settings of the current module have changed.\n"
+"Do you want to apply the changes or discard them?"
+msgstr ""
+"\"%1\" আলেখ্যনত কিছু পৰিবৰ্তন কৰা হৈছে ।\n"
+"পৰিবৰ্তনসমূহ সংৰক্ষণ কৰা হ'ব নে বৰ্জন কৰা হ'ব?"
+
+#: kcmultidialog.cpp:53
+#, fuzzy, kde-format
+#| msgid "Settings"
+msgid "Apply Settings"
+msgstr "বৈশিষ্ট্য"
+
+#: kcmultidialog.cpp:258 kpluginselector.cpp:809 kpluginwidget.cpp:330
+#, kde-format
+msgid "Configure"
+msgstr "বিন্যাস কৰক"
+
+#: kpluginselector.cpp:136
+#, kde-format
+msgid ""
+"Automatic changes have been performed due to plugin dependencies. Click here "
+"for further information"
+msgstr ""
+"প্লাগ-ইন সংক্ৰান্ত নিৰ্ভৰতা পূৰ্ণ কৰাৰ উদ্দেশ্যে স্বয়ংক্ৰিয় পৰিবৰ্তন সম্পন্ন কৰা হৈছে । "
+"অধিক বিৱৰণৰ বাবে চিহ্নিত স্থানত টিপক"
+
+#: kpluginselector.cpp:204
+#, kde-format
+msgid ""
+"Automatic changes have been performed in order to satisfy plugin "
+"dependencies:\n"
+msgstr ""
+"প্লাগ-ইন সংক্ৰান্ত নিৰ্ভৰতা পূৰ্ণ কৰাৰ উদ্দেশ্যে স্বয়ংক্ৰিয়ৰূপে পৰিবৰ্তন সম্পন্ন কৰা "
+"হৈছে:\n"
+
+#: kpluginselector.cpp:210
+#, kde-format
+msgid ""
+"\n"
+"    %1 plugin has been automatically checked because of the dependency of %2 "
+"plugin"
+msgstr ""
+"\n"
+"    %1 প্লাগ-ইন %2 প্লাগ-ইনৰ ওপৰ নিৰ্ভৰতাৰ ফলত স্বয়ংক্ৰিয়ৰূপে নিৰ্ব্বাচন কৰা হৈছে"
+
+#: kpluginselector.cpp:212
+#, kde-format
+msgid ""
+"\n"
+"    %1 plugin has been automatically unchecked because of its dependency on "
+"%2 plugin"
+msgstr ""
+"\n"
+"    %1 প্লাগ-ইন %2 প্লাগ-ইনৰ ওপৰত নিৰ্ভৰতাৰ ফলত স্বয়ংক্ৰিয়ৰূপে নিৰ্ব্বাচনৰ পৰা আঁতৰুৱা "
+"হৈছে"
+
+#: kpluginselector.cpp:216
+#, kde-format
+msgid "Dependency Check"
+msgstr "নিৰ্ভৰতা পৰীক্ষণ"
+
+#: kpluginselector.cpp:234
+#, kde-format
+msgid "%1 plugin automatically added due to plugin dependencies"
+msgid_plural "%1 plugins automatically added due to plugin dependencies"
+msgstr[0] ""
+"প্লাগ-ইন সংক্ৰান্ত নিৰ্ভৰতা পূৰ্ণ কৰাৰ উদ্দেশ্যে %1 প্লাগ-ইন স্বয়ংক্ৰিয়ৰূপে যোগ কৰা হৈছে"
+msgstr[1] ""
+"প্লাগ-ইন সংক্ৰান্ত নিৰ্ভৰতা পূৰ্ণ কৰাৰ উদ্দেশ্যে %1 প্লাগ-ইন স্বয়ংক্ৰিয়ৰূপে যোগ কৰা হৈছে"
+
+#: kpluginselector.cpp:238
+#, kde-format
+msgid ", "
+msgstr ", "
+
+#: kpluginselector.cpp:242
+#, kde-format
+msgid "%1 plugin automatically removed due to plugin dependencies"
+msgid_plural "%1 plugins automatically removed due to plugin dependencies"
+msgstr[0] ""
+"প্লাগ-ইন সংক্ৰান্ত নিৰ্ভৰতা পূৰ্ণ কৰাৰ উদ্দেশ্যে %1 প্লাগ-ইন স্বয়ংক্ৰিয়ৰূপে আঁতৰুৱাহৈছে"
+msgstr[1] ""
+"প্লাগ-ইন সংক্ৰান্ত নিৰ্ভৰতা পূৰ্ণ কৰাৰ উদ্দেশ্যে %1 প্লাগ-ইন স্বয়ংক্ৰিয়ৰূপে আঁতৰুৱাহৈছে"
+
+#: kpluginselector.cpp:264 kpluginwidget.cpp:59
+#, fuzzy, kde-format
+#| msgid "&Search"
+msgid "Search..."
+msgstr "অনুসন্ধান (&S)"
+
+#: kpluginselector.cpp:804 kpluginwidget.cpp:325
+#, fuzzy, kde-format
+#| msgid "&About"
+msgid "About"
+msgstr "বিষয়ে (&A)"
+
+#: ksettings/dialog.cpp:222
+#, kde-format
+msgid "Enable component"
+msgstr "অংশ সক্ৰিয়া কৰক"
+
+#: qml/components/KPluginDelegate.qml:48
+#, fuzzy, kde-format
+#| msgid "&About"
+msgctxt "@info:tooltip"
+msgid "About"
+msgstr "বিষয়ে (&A)"
+
+#: qml/components/KPluginDelegate.qml:59
+#, fuzzy, kde-format
+#| msgid "Confi&gure..."
+msgctxt "@info:tooltip"
+msgid "Configure..."
+msgstr "বিন্যাস কৰক...(&g)"
+
+#: qml/components/KPluginSelector.qml:86
+#, kde-format
+msgid "No matches"
+msgstr ""
+
+#: qml/components/KPluginSelector.qml:86
+#, fuzzy, kde-format
+#| msgid "Not found"
+msgid "No plugins found"
+msgstr "পোৱা ন'গ'ল"
+
+#: qml/components/private/AboutPlugin.qml:42
+#, fuzzy, kde-format
+#| msgctxt "concatenation of dates and time"
+#| msgid "%1 %2"
+msgctxt "Plugin name and plugin version"
+msgid "%1 %2"
+msgstr "%1 %2"
+
+#: qml/components/private/AboutPlugin.qml:64
+#, fuzzy, kde-format
+#| msgid "Copy"
+msgid "Copyright"
+msgstr "Copy"
+
+#: qml/components/private/AboutPlugin.qml:81
+#, kde-format
+msgid "License:"
+msgstr "প্ৰমাণপত্ৰ:"
+
+#: qml/components/private/AboutPlugin.qml:100
+#, fuzzy, kde-format
+#| msgid "A&uthors"
+msgid "Authors"
+msgstr "লেখকবৃন্দ (&u)"
+
+#: qml/components/private/AboutPlugin.qml:117
+#, kde-format
+msgid "Credits"
+msgstr ""
+
+#: qml/components/private/AboutPlugin.qml:134
+#, fuzzy, kde-format
+#| msgid "Translation"
+msgid "Translators"
+msgstr "অনুবাদ"
+
+#: qml/components/private/AboutPlugin.qml:161
+#, fuzzy, kde-format
+#| msgid "&Send Email"
+msgid "Send an email to %1"
+msgstr "ঈ-মেইল কৰক (&S)"
