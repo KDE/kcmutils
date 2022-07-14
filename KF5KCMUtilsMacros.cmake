@@ -1,3 +1,6 @@
+# SPDX-FileCopyrightText: 2022 Alexander Lohnau <alexander.lohnau@gmx.de>
+# SPDX-License-Identifier: BSD-3-Clause
+
 #.rst:
 # KF5KCMUtilsGenerateModuleData
 # ---------------------------
@@ -106,4 +109,43 @@ function(kcmutils_generate_module_data sources_var)
     set(sources "${${sources_var}}")
     list(APPEND sources "${cpp_filename}")
     set(${sources_var} "${sources}" PARENT_SCOPE)
+endfunction()
+
+
+# kcmutils_generate_desktop_file(kcm_target_nam)
+#
+# This macro generates a desktop file for the given KCM.
+# This desktop file has the following attributes:
+# Type=Application
+# NoDisplay=true
+# Icon=icon from the .json file
+# Name=name from the .json file
+# Name[foo]=translated name from the .json file
+# and an Exec launching it in systemsettings
+# The .json file must have the same basename as the kcm_target parameter.
+# Since 5.97
+
+function(kcmutils_generate_desktop_file kcm_target)
+    set(OUT_FILE ${CMAKE_CURRENT_BINARY_DIR}/${kcm_target}.desktop)
+    set(IN_FILE ${CMAKE_CURRENT_SOURCE_DIR}/${kcm_target}.json)
+    if (NOT EXISTS ${IN_FILE})
+        message(FATAL_ERROR "Could not find metadata file for ${kcm_target}, expected path was ${IN_FILE}")
+    endif()
+
+    set(IN_SOURCE_DESKTOP_FILE ${CMAKE_CURRENT_SOURCE_DIR}/${kcm_target}.desktop)
+    if (EXISTS ${IN_SOURCE_DESKTOP_FILE})
+        message(FATAL_ERROR "A metadata desktop file for the KCM already exists in ${IN_SOURCE_DESKTOP_FILE} Remove this file or remove the method call to generate_kcm_desktop_file")
+    endif()
+
+    if(NOT KDE_INSTALL_APPDIR)
+        include(KDEInstallDirs)
+    endif()
+
+    add_custom_target(${kcm_target}-kcm-desktop-gen
+                    COMMAND KF5::kcmdesktopfilegenerator ${IN_FILE} ${OUT_FILE}
+                    DEPENDS ${IN_FILE})
+    add_dependencies(${kcm_target} ${kcm_target}-kcm-desktop-gen)
+    if (NOT KCMUTILS_INTERNAL_TEST_MODE)
+        install(FILES ${OUT_FILE} DESTINATION ${KDE_INSTALL_APPDIR})
+    endif()
 endfunction()

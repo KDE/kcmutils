@@ -16,9 +16,6 @@ include(KDEInstallDirs)
 include(KDEFrameworkCompilerSettings NO_POLICY_SCOPE)
 include(KDECMakeSettings)
 
-set(REQUIRED_QT_VERSION 5.15.2)
-find_package(Qt${QT_MAJOR_VERSION} ${REQUIRED_QT_VERSION} NO_MODULE REQUIRED Widgets DBus Qml Quick QuickWidgets Test)
-
 include(ECMGenerateExportHeader)
 include(ECMSetupVersion)
 include(ECMGenerateHeaders)
@@ -28,6 +25,18 @@ include(ECMQtDeclareLoggingCategory)
 include(ECMSetupQtPluginMacroNames)
 include(ECMDeprecationSettings)
 include(KDEGitCommitHooks)
+
+
+include(CMakeDependentOption)
+cmake_dependent_option(TOOLS_ONLY "Only build the tools and not the rest of KCMUtils" OFF "NOT CMAKE_CROSSCOMPILING" ON)
+if (TOOLS_ONLY)
+    find_package(Qt${QT_MAJOR_VERSION} ${REQUIRED_QT_VERSION} NO_MODULE REQUIRED Core)
+    add_subdirectory(tools)
+    return()
+endif()
+
+set(REQUIRED_QT_VERSION 5.15.2)
+find_package(Qt${QT_MAJOR_VERSION} ${REQUIRED_QT_VERSION} NO_MODULE REQUIRED Widgets DBus Qml Quick QuickWidgets Test)
 
 option(BUILD_QCH "Build API documentation in QCH format (for e.g. Qt Assistant, Qt Creator & KDevelop)" OFF)
 add_feature_info(QCH ${BUILD_QCH} "API documentation in QCH format (for e.g. Qt Assistant, Qt Creator & KDevelop)")
@@ -64,6 +73,7 @@ ecm_set_disabled_deprecation_versions(
 
 add_definitions(-DTRANSLATION_DOMAIN=\"kcmutils5\")
 ki18n_install(po)
+add_subdirectory(tools)
 add_subdirectory(src)
 if(BUILD_TESTING)
 add_subdirectory(autotests)

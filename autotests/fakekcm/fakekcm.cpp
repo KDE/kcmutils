@@ -7,11 +7,17 @@
 
 #include <KCModule>
 #include <KPluginFactory>
+#include <KPluginMetaData>
 
 class FakeKcm : public KCModule
 {
+public:
+    FakeKcm(QObject *obj, const QVariantList &)
+        : KCModule()
+    {
+    }
 };
 
-K_PLUGIN_FACTORY(KCModuleFactory, registerPlugin<KCModule>();)
+K_PLUGIN_CLASS_WITH_JSON(FakeKcm, "fakekcm.json")
 
 #include "fakekcm.moc"
