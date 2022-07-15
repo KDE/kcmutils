@@ -16,7 +16,10 @@ int main(int argc, char **argv)
 
     QFile file(fileName);
     bool isOpen = file.open(QIODevice::ReadOnly);
-    Q_ASSERT(isOpen);
+    if (!isOpen) {
+        qCritical() << "Could not open file" << fileName;
+        exit(1);
+    }
     QJsonDocument doc = QJsonDocument::fromJson(file.readAll());
     Q_ASSERT(doc.isObject());
 
