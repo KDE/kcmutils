@@ -1,0 +1,259 @@
+# translation of kdelibs4.po to தமிழ்
+# Copyright (C) 2000,2002, 2004, 2007, 2008 Free Software Foundation, Inc.
+#
+# Sivakumar Shanmugasundaram <sshanmu@yahoo.com>, 2000.
+# Thuraiappah Vaseeharan <t_vasee@yahoo.com>, 2000-2001.
+# ம. ஸ்ரீ ராமதாஸ் | Sri Ramadoss M <amachu@yavarkkum.org>, 2007-2012.
+# Kishore G <kishore96@gmail.com>, 2022.
+msgid ""
+msgstr ""
+"Project-Id-Version: kdelibs4\n"
+"Report-Msgid-Bugs-To: https://bugs.kde.org\n"
+"POT-Creation-Date: 2022-06-22 00:41+0000\n"
+"PO-Revision-Date: 2022-05-24 21:21+0530\n"
+"Last-Translator: Kishore G <kishore96@gmail.com>\n"
+"Language-Team: Tamil <kde-i18n-doc@kde.org>\n"
+"Language: ta\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Lokalize 22.04.1\n"
+
+#, kde-format
+msgctxt "NAME OF TRANSLATORS"
+msgid "Your names"
+msgstr "ம. ஸ்ரீ ராமதாஸ், கோ. கிஷோர்"
+
+#, kde-format
+msgctxt "EMAIL OF TRANSLATORS"
+msgid "Your emails"
+msgstr "amachu@yavarkkum.org, Kde-l10n-ta@kde.org"
+
+#: kcmoduleloader.cpp:58 kcmoduleloader.cpp:161
+#, kde-format
+msgid "The module %1 is disabled."
+msgstr "%1 என்ற கூறு முடக்கப்பட்டுள்ளது."
+
+#: kcmoduleloader.cpp:59
+#, kde-format
+msgid "The module has been disabled by the system administrator."
+msgstr "இக்கூறு, கணினியின் நிர்வாகியால் முடக்கப்பட்டுள்ளது."
+
+#: kcmoduleloader.cpp:94 kcmoduleloader.cpp:185
+#, kde-format
+msgid "Error loading QML file."
+msgstr "QML கோப்பை ஏற்றுவதில் சிக்கல்."
+
+#: kcmoduleloader.cpp:120
+#, kde-format
+msgid ""
+"<qt><p>Possible reasons:<ul><li>An error occurred during your last system "
+"upgrade, leaving an orphaned control module behind</li><li>You have old "
+"third party modules lying around.</li></ul></p><p>Check these points "
+"carefully and try to remove the module mentioned in the error message. If "
+"this fails, consider contacting your distributor or packager.</p></qt>"
+msgstr ""
+"<qt><p>சாத்தியமான காரணங்கள்:<ul> <li>கடைசியான கணினிப்புதுப்பிப்பின் போது சிக்கல் "
+"ஏற்பட்டதால் ஓர் அமைப்புக்கூறு நீக்கப்படாமல் இருந்திருக்கலாம்</li> <li>மூன்றாம் தரப்பினர் "
+"வழங்கும் பழைய அமைப்புக்கூறை நீங்கள் சரியாக நீக்காமல் இருந்திருக்கலாம்.</li></ul></"
+"p><p>இவற்றை சரிபார்த்து, சிக்கலறிக்கையில் குறுப்பிடப்பட்டுள்ள கூறை நீக்க முயற்சியுங்கள். "
+"அதுவும் தோல்வியடைந்தால், உங்கள் நிரல் விநியோகிப்பாளரை அணுகுங்கள்.</p></qt>"
+
+#: kcmoduleloader.cpp:154
+#, kde-format
+msgid "The module %1 could not be found."
+msgstr "%1 என்ற கூறை கண்டுபிடிக்க முடியவில்லை."
+
+#: kcmoduleloader.cpp:155
+#, kde-format
+msgid ""
+"<qt><p>The diagnosis is:<br />The desktop file %1 could not be found.</p></"
+"qt>"
+msgstr ""
+"<qt><p>காரணம்:<br />%1 என்ற desktop கோப்பை கண்டுபிடிக்க முடியவில்லை.</p></qt>"
+
+#: kcmoduleloader.cpp:162
+#, kde-format
+msgid ""
+"<qt><p>Either the hardware/software the module configures is not available "
+"or the module has been disabled by the administrator.</p></qt>"
+msgstr ""
+"<qt><p>இக்கூறு கட்டுப்படுத்தும் நிரல்/வன்பொருள் இல்லை அல்லது கணினியின் நிர்வாகியால் "
+"இக்கூறு முடக்கப்பட்டுள்ளது.</p></qt>"
+
+#: kcmoduleloader.cpp:193
+#, kde-format
+msgid "Error loading config module"
+msgstr "அமைப்புக்கூறை ஏற்றுவதில் சிக்கல்"
+
+#: kcmoduleloader.cpp:237
+#, kde-format
+msgid "The module %1 is not a valid configuration module."
+msgstr "%1 என்பது ஓர் முறையான அமைப்புக்கூறு அல்ல."
+
+#: kcmoduleloader.cpp:238
+#, kde-format
+msgid ""
+"<qt>The diagnosis is:<br />The desktop file %1 does not specify a library.</"
+"qt>"
+msgstr "<qt>காரணம்:<br />%1 என்ற desktop கோப்பு, நிரலகத்தை குறிப்பிடவில்லை.</qt>"
+
+#: kcmoduleproxy.cpp:110
+#, kde-format
+msgctxt "Argument is application name"
+msgid "This configuration section is already opened in %1"
+msgstr "%1 தனில் இவ்வடிவமைப்புக் கோப்பு ஏற்கனவே திறக்கப்பட்டுள்ளது"
+
+#: kcmultidialog.cpp:51
+#, kde-format
+msgid ""
+"The settings of the current module have changed.\n"
+"Do you want to apply the changes or discard them?"
+msgstr ""
+"தற்போதைய பாகத்தின் அமைப்புகள் மாற்றப்பட்டுள்ளன.\n"
+"காக்க விரும்புகிறீர்களா அல்லது தவிர்க்க விரும்புகிறீர்களா?"
+
+#: kcmultidialog.cpp:53
+#, kde-format
+msgid "Apply Settings"
+msgstr "அமைப்புகளை செயல்படுத்தவும்"
+
+#: kcmultidialog.cpp:258 kpluginselector.cpp:809 kpluginwidget.cpp:330
+#, kde-format
+msgid "Configure"
+msgstr "வடிவமை"
+
+#: kpluginselector.cpp:136
+#, kde-format
+msgid ""
+"Automatic changes have been performed due to plugin dependencies. Click here "
+"for further information"
+msgstr ""
+"செருகு சார்புடைமைகளின் காரணமாக தானாகவே மாற்றங்கள் செய்யப்பட்டுள்ளன. மேற்கொண்டு விவரமறிய "
+"அங்கே சொடுக்கவும்."
+
+#: kpluginselector.cpp:204
+#, kde-format
+msgid ""
+"Automatic changes have been performed in order to satisfy plugin "
+"dependencies:\n"
+msgstr ""
+"செருகு சார்புடைமைகளைத் திருப்தி படுத்திட வேண்டி தானான மாற்றங்கள் செய்யப்பட்டுள்ளன:\n"
+
+#: kpluginselector.cpp:210
+#, kde-format
+msgid ""
+"\n"
+"    %1 plugin has been automatically checked because of the dependency of %2 "
+"plugin"
+msgstr ""
+"\n"
+"    %2 செருகின் மீதான சார்புடைமையின் காரணமாக %1 செருகு தானாகவே சரிசெய்யப்பட்டது"
+
+#: kpluginselector.cpp:212
+#, kde-format
+msgid ""
+"\n"
+"    %1 plugin has been automatically unchecked because of its dependency on "
+"%2 plugin"
+msgstr ""
+"\n"
+"    %2 செருகின் மீதான சார்புடைமையின் காரணமாக %1 செருகு தானாகவே கழட்டிவிடப்பட்டது"
+
+#: kpluginselector.cpp:216
+#, kde-format
+msgid "Dependency Check"
+msgstr "சார்புடைமை கோதனை"
+
+#: kpluginselector.cpp:234
+#, kde-format
+msgid "%1 plugin automatically added due to plugin dependencies"
+msgid_plural "%1 plugins automatically added due to plugin dependencies"
+msgstr[0] "செருகு சார்புடைமைகளின் காரணமாக தானாகவே %1 செருகி சேர்க்கப்பட்டது"
+msgstr[1] "%1 செருகிகள் சார்புடைமைகளின் காரணமாக தானாகவே சேர்க்கப்பட்டன"
+
+#: kpluginselector.cpp:238
+#, kde-format
+msgid ", "
+msgstr ", "
+
+#: kpluginselector.cpp:242
+#, kde-format
+msgid "%1 plugin automatically removed due to plugin dependencies"
+msgid_plural "%1 plugins automatically removed due to plugin dependencies"
+msgstr[0] "%1 செருகு சார்புடைமைகளின் காரணமாக தானாகவே அகற்றப்பட்டது"
+msgstr[1] "%1 செருகிகள் சார்புடைமைகளின் காரணமாக தானாகவே அகற்றப்பட்டன"
+
+#: kpluginselector.cpp:264 kpluginwidget.cpp:59
+#, kde-format
+msgid "Search..."
+msgstr "தேடு..."
+
+#: kpluginselector.cpp:804 kpluginwidget.cpp:325
+#, kde-format
+msgid "About"
+msgstr "பற்றி"
+
+#: ksettings/dialog.cpp:222
+#, kde-format
+msgid "Enable component"
+msgstr "கூறை செயல்படுத்து"
+
+#: qml/components/KPluginDelegate.qml:48
+#, kde-format
+msgctxt "@info:tooltip"
+msgid "About"
+msgstr "பற்றி"
+
+#: qml/components/KPluginDelegate.qml:59
+#, kde-format
+msgctxt "@info:tooltip"
+msgid "Configure..."
+msgstr "அமை…"
+
+#: qml/components/KPluginSelector.qml:86
+#, kde-format
+msgid "No matches"
+msgstr "பொருத்தங்கள் இல்லை"
+
+#: qml/components/KPluginSelector.qml:86
+#, kde-format
+msgid "No plugins found"
+msgstr "செருகுநிரல்கள் கண்டுபிடிக்கப்படவில்லை"
+
+#: qml/components/private/AboutPlugin.qml:42
+#, kde-format
+msgctxt "Plugin name and plugin version"
+msgid "%1 %2"
+msgstr "%1 %2"
+
+#: qml/components/private/AboutPlugin.qml:64
+#, kde-format
+msgid "Copyright"
+msgstr "பதிப்புரிமை"
+
+#: qml/components/private/AboutPlugin.qml:81
+#, kde-format
+msgid "License:"
+msgstr "உரிமம்:"
+
+#: qml/components/private/AboutPlugin.qml:100
+#, kde-format
+msgid "Authors"
+msgstr "இயற்றியவர்கள்"
+
+#: qml/components/private/AboutPlugin.qml:117
+#, kde-format
+msgid "Credits"
+msgstr "நன்றி"
+
+#: qml/components/private/AboutPlugin.qml:134
+#, kde-format
+msgid "Translators"
+msgstr "மொழிபெயர்ப்பாளர்கள்"
+
+#: qml/components/private/AboutPlugin.qml:161
+#, kde-format
+msgid "Send an email to %1"
+msgstr "%1 என்பவருக்கு மின்னஞ்சல் அனுப்பு"

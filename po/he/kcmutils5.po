@@ -1,0 +1,279 @@
+# translation of kdelibs4.po to hebrew
+# Translation of kdelibs4.po to Hebrew
+# translation of kdelibs4.po to
+# KDE Hebrew Localization Project
+#
+# In addition to the copyright owners of the program
+# which this translation accompanies, this translation is
+# Copyright (C) 1998 Erez Nir <erez-n@actcom.co.il>
+# Copyright (C) 1999-2003 Meni Livne <livne@kde.org>
+#
+# This translation is subject to the same Open Source
+# license as the program which it accompanies.
+#
+# Diego Iastrubni <elcuco@kde.org>, 2003.
+# Diego Iastrubni <elcuco@kde.org>, 2003, 2004.
+# Diego Iastrubni <elcuco@kde.org>, 2005, 2006, 2007, 2008, 2009, 2012, 2014.
+# Meni Livne <livne@kde.org>, 2007.
+# tahmar1900 <tahmar1900@gmail.com>, 2008, 2009.
+# Elkana Bardugo <ttv200@gmail.com>, 2017. #zanata
+msgid ""
+msgstr ""
+"Project-Id-Version: kcmutils5\n"
+"Report-Msgid-Bugs-To: https://bugs.kde.org\n"
+"POT-Creation-Date: 2022-06-22 00:41+0000\n"
+"PO-Revision-Date: 2017-05-16 06:49-0400\n"
+"Last-Translator: Copied by Zanata <copied-by-zanata@zanata.org>\n"
+"Language-Team: Hebrew <kde-i18n-doc@kde.org>\n"
+"Language: he\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Zanata 3.9.6\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+
+#, kde-format
+msgctxt "NAME OF TRANSLATORS"
+msgid "Your names"
+msgstr "צוות התרגום של KDE ישראל"
+
+#, kde-format
+msgctxt "EMAIL OF TRANSLATORS"
+msgid "Your emails"
+msgstr "kde-l10n-he@kde.org"
+
+#: kcmoduleloader.cpp:58 kcmoduleloader.cpp:161
+#, kde-format
+msgid "The module %1 is disabled."
+msgstr "המודול %1 מבוטל."
+
+#: kcmoduleloader.cpp:59
+#, kde-format
+msgid "The module has been disabled by the system administrator."
+msgstr ""
+
+#: kcmoduleloader.cpp:94 kcmoduleloader.cpp:185
+#, kde-format
+msgid "Error loading QML file."
+msgstr ""
+
+#: kcmoduleloader.cpp:120
+#, fuzzy, kde-format
+#| msgid ""
+#| "<qt><p>Possible reasons:<ul><li>An error occurred during your last KDE "
+#| "upgrade leaving an orphaned control module</li><li>You have old third "
+#| "party modules lying around.</li></ul></p><p>Check these points carefully "
+#| "and try to remove the module mentioned in the error message. If this "
+#| "fails, consider contacting your distributor or packager.</p></qt>"
+msgid ""
+"<qt><p>Possible reasons:<ul><li>An error occurred during your last system "
+"upgrade, leaving an orphaned control module behind</li><li>You have old "
+"third party modules lying around.</li></ul></p><p>Check these points "
+"carefully and try to remove the module mentioned in the error message. If "
+"this fails, consider contacting your distributor or packager.</p></qt>"
+msgstr ""
+"<qt><p>סיבות אפשריות: <ul> <li>  ארעה שגיאה בעת השדרוג האחרון של ל־KDE "
+"שהשאיר מודול מרכז בקרה יתום.</li> <li> יש לך מודול צד שלישי מותקן . </li> </"
+"ul> </p><p> בדוק את האפשרויות הללו ביסודיות ונסה להסיר את המודול המוצג "
+"בהודעה השגיאה. אם זה נכשל, נסה להתלונן על הבעיה הזאת אצל ההפצה שלך, או האורז "
+"של החבילה.  </p></qt>"
+
+#: kcmoduleloader.cpp:154
+#, kde-format
+msgid "The module %1 could not be found."
+msgstr "אין אפשרות למצוא את המודול %1."
+
+#: kcmoduleloader.cpp:155
+#, kde-format
+msgid ""
+"<qt><p>The diagnosis is:<br />The desktop file %1 could not be found.</p></"
+"qt>"
+msgstr ""
+"<qt> <p> האבחנה היא:<br />אין אפשרות למצוא את קובץ השולחן עבודה %1. </p></qt>"
+
+#: kcmoduleloader.cpp:162
+#, kde-format
+msgid ""
+"<qt><p>Either the hardware/software the module configures is not available "
+"or the module has been disabled by the administrator.</p></qt>"
+msgstr ""
+"<qt><p>החומרה או התוכנה שהמודול קובע את הגדרותיו אינם זמינים או שהמודול בוטל "
+"על ידי המנהל.</p></qt>"
+
+#: kcmoduleloader.cpp:193
+#, kde-format
+msgid "Error loading config module"
+msgstr ""
+
+#: kcmoduleloader.cpp:237
+#, kde-format
+msgid "The module %1 is not a valid configuration module."
+msgstr "המודול %1 אינו מודול הגדרות תקף."
+
+#: kcmoduleloader.cpp:238
+#, kde-format
+msgid ""
+"<qt>The diagnosis is:<br />The desktop file %1 does not specify a library.</"
+"qt>"
+msgstr "<qt> האבחנה היא:<br />קיצור הדרך %1 לא מציין ספריה</qt>"
+
+#: kcmoduleproxy.cpp:110
+#, kde-format
+msgctxt "Argument is application name"
+msgid "This configuration section is already opened in %1"
+msgstr "סעיף הגדרות זה כבר פתוח בתוכנית %1"
+
+#: kcmultidialog.cpp:51
+#, kde-format
+msgid ""
+"The settings of the current module have changed.\n"
+"Do you want to apply the changes or discard them?"
+msgstr ""
+"ההגדרות של המודול הנוכחי שונו.\n"
+"האם ברצונך להחיל את השינויים או לשכוח מהם?"
+
+#: kcmultidialog.cpp:53
+#, kde-format
+msgid "Apply Settings"
+msgstr "החל הגדרות"
+
+#: kcmultidialog.cpp:258 kpluginselector.cpp:809 kpluginwidget.cpp:330
+#, kde-format
+msgid "Configure"
+msgstr "הגדרות"
+
+#: kpluginselector.cpp:136
+#, kde-format
+msgid ""
+"Automatic changes have been performed due to plugin dependencies. Click here "
+"for further information"
+msgstr "בוצעו שינויים אוטומטיים בעקבות תלויות בין תוספים. לחץ כאן למידע נוסף."
+
+#: kpluginselector.cpp:204
+#, kde-format
+msgid ""
+"Automatic changes have been performed in order to satisfy plugin "
+"dependencies:\n"
+msgstr "בוצעו שינויים אוטומטיים כדי לספק תלויות של תוספים:\n"
+
+#: kpluginselector.cpp:210
+#, kde-format
+msgid ""
+"\n"
+"    %1 plugin has been automatically checked because of the dependency of %2 "
+"plugin"
+msgstr ""
+"\n"
+"    התוסף %1 סומן באופן אוטומטי בעקבות התלות של התוסף %2"
+
+#: kpluginselector.cpp:212
+#, kde-format
+msgid ""
+"\n"
+"    %1 plugin has been automatically unchecked because of its dependency on "
+"%2 plugin"
+msgstr ""
+"\n"
+"    סימון התוסף %1 בוטל באופן אוטומטי בעקבות העובדה שהוא תלוי בתוסף %2"
+
+#: kpluginselector.cpp:216
+#, kde-format
+msgid "Dependency Check"
+msgstr "בדיקת תלויות"
+
+#: kpluginselector.cpp:234
+#, kde-format
+msgid "%1 plugin automatically added due to plugin dependencies"
+msgid_plural "%1 plugins automatically added due to plugin dependencies"
+msgstr[0] "התוסף %1 הוסף באופן אוטומטי בגלל תלויות של תוספים"
+msgstr[1] "%1 תוספים התווספו באופן אוטומטי בגלל תלויות של תוספים"
+
+#: kpluginselector.cpp:238
+#, kde-format
+msgid ", "
+msgstr ", "
+
+#: kpluginselector.cpp:242
+#, kde-format
+msgid "%1 plugin automatically removed due to plugin dependencies"
+msgid_plural "%1 plugins automatically removed due to plugin dependencies"
+msgstr[0] "התוסף %1 הוסר באופן אוטומטי בגלל תלויות של תוספים"
+msgstr[1] "%1 תוספים הוסרו באופן אוטומטי בגלל תלויות של תוספים"
+
+#: kpluginselector.cpp:264 kpluginwidget.cpp:59
+#, kde-format
+msgid "Search..."
+msgstr ""
+
+#: kpluginselector.cpp:804 kpluginwidget.cpp:325
+#, fuzzy, kde-format
+#| msgctxt "Used only for plugins"
+#| msgid "About %1"
+msgid "About"
+msgstr "אודות %1"
+
+#: ksettings/dialog.cpp:222
+#, kde-format
+msgid "Enable component"
+msgstr "אפשר רכיב"
+
+#: qml/components/KPluginDelegate.qml:48
+#, fuzzy, kde-format
+#| msgctxt "Used only for plugins"
+#| msgid "About %1"
+msgctxt "@info:tooltip"
+msgid "About"
+msgstr "אודות %1"
+
+#: qml/components/KPluginDelegate.qml:59
+#, fuzzy, kde-format
+#| msgid "Configure"
+msgctxt "@info:tooltip"
+msgid "Configure..."
+msgstr "הגדרות"
+
+#: qml/components/KPluginSelector.qml:86
+#, kde-format
+msgid "No matches"
+msgstr ""
+
+#: qml/components/KPluginSelector.qml:86
+#, kde-format
+msgid "No plugins found"
+msgstr ""
+
+#: qml/components/private/AboutPlugin.qml:42
+#, kde-format
+msgctxt "Plugin name and plugin version"
+msgid "%1 %2"
+msgstr ""
+
+#: qml/components/private/AboutPlugin.qml:64
+#, kde-format
+msgid "Copyright"
+msgstr ""
+
+#: qml/components/private/AboutPlugin.qml:81
+#, kde-format
+msgid "License:"
+msgstr ""
+
+#: qml/components/private/AboutPlugin.qml:100
+#, kde-format
+msgid "Authors"
+msgstr ""
+
+#: qml/components/private/AboutPlugin.qml:117
+#, kde-format
+msgid "Credits"
+msgstr ""
+
+#: qml/components/private/AboutPlugin.qml:134
+#, kde-format
+msgid "Translators"
+msgstr ""
+
+#: qml/components/private/AboutPlugin.qml:161
+#, kde-format
+msgid "Send an email to %1"
+msgstr ""
