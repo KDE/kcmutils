@@ -218,7 +218,6 @@ Kirigami.ApplicationItem {
     }
 
     layout->addWidget(d->quickWidget);
-    layout->setContentsMargins(0, 0, 0, 0);
 }
 
 KCModuleQml::~KCModuleQml()
