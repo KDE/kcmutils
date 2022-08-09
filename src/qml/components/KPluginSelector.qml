@@ -50,11 +50,6 @@ ListView {
         id: internalAboutDialog
         parent: pluginSelector.parent
         property var metaDataInfo
-        background: Rectangle {
-            Kirigami.Theme.inherit: false
-            Kirigami.Theme.colorSet: Kirigami.Theme.Window
-            color: Kirigami.Theme.backgroundColor
-        }
 
         contentItem: Loader {
             active: internalAboutDialog.metaDataInfo !== undefined
