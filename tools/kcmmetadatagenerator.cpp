@@ -29,6 +29,7 @@ int main(int argc, char **argv)
     QFile out(QString::fromLatin1(argv[2]));
     out.open(QIODevice::WriteOnly);
     out.write("[Desktop Entry]\n");
+    out.write("Type=Application\n");
     out.write("NoDisplay=true\n");
 
     const QString exec = QLatin1String("Exec=systemsettings ") + QFileInfo(fileName).baseName() + QLatin1Char('\n');
