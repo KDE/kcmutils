@@ -28,7 +28,7 @@ include(KDEGitCommitHooks)
 
 
 include(CMakeDependentOption)
-cmake_dependent_option(TOOLS_ONLY "Only build the tools and not the rest of KCMUtils" OFF "NOT CMAKE_CROSSCOMPILING" ON)
+option(TOOLS_ONLY "Only build the tools and not the rest of KCMUtils" OFF)
 if (TOOLS_ONLY)
     find_package(Qt${QT_MAJOR_VERSION} ${REQUIRED_QT_VERSION} NO_MODULE REQUIRED Core)
     add_subdirectory(tools)
