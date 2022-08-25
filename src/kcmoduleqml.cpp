@@ -87,7 +87,7 @@ KCModuleQml::KCModuleQml(std::unique_ptr<KQuickAddons::ConfigModule> configModul
         setUseRootOnlyMessage(d->configModule->useRootOnlyMessage());
     });
 
-#ifndef KCONFIGWIDGETS_NO_KAUTH
+#if KCONFIGWIDGETS_WITH_KAUTH
     if (!d->configModule->authActionName().isEmpty()) {
         setAuthAction(KAuth::Action(d->configModule->authActionName()));
     }
