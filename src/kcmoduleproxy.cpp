@@ -28,8 +28,6 @@
 #include <kcmoduleloader.h>
 #include <kcmoduleqml_p.h>
 
-#include <KColorScheme>
-
 #if KCMUTILS_BUILD_DEPRECATED_SINCE(5, 82)
 #include "ksettingswidgetadaptor.h"
 #endif
