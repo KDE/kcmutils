@@ -7,9 +7,10 @@
 #ifndef KCMODULEQML_H
 #define KCMODULEQML_H
 
-#include <kdeclarative/kdeclarative_export.h>
+#include <kconfigwidgets_export.h>
 
 #include <KCModule>
+
 #include <memory>
 
 class QQuickItem;
@@ -29,7 +30,7 @@ public:
     ~KCModuleQml() override;
 
     QString quickHelp() const override;
-#if KDECLARATIVE_BUILD_DEPRECATED_SINCE(5, 90)
+#if KCONFIGWIDGETS_BUILD_DEPRECATED_SINCE(5, 90)
     const KAboutData *aboutData() const override;
 #endif
 
