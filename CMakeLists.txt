@@ -26,12 +26,39 @@ include(ECMSetupQtPluginMacroNames)
 include(ECMDeprecationSettings)
 include(KDEGitCommitHooks)
 
+# create a Config.cmake and a ConfigVersion.cmake file and install them
+set(CMAKECONFIG_INSTALL_DIR "${KDE_INSTALL_CMAKEPACKAGEDIR}/KF5KCMUtils")
+
+
+function(install_cmake_config_files)
+    configure_package_config_file(
+        "${CMAKE_CURRENT_SOURCE_DIR}/KF5KCMUtilsConfig.cmake.in"
+        "${CMAKE_CURRENT_BINARY_DIR}/KF5KCMUtilsConfig.cmake"
+        INSTALL_DESTINATION  ${CMAKECONFIG_INSTALL_DIR}
+    )
+
+    install(FILES
+        "${CMAKE_CURRENT_BINARY_DIR}/KF5KCMUtilsConfig.cmake"
+        "${CMAKE_CURRENT_BINARY_DIR}/KF5KCMUtilsConfigVersion.cmake"
+        DESTINATION "${CMAKECONFIG_INSTALL_DIR}"
+        COMPONENT Devel
+    )
+
+    install(
+        FILES
+        ${CMAKE_CURRENT_SOURCE_DIR}/KF5KCMUtilsMacros.cmake
+        ${CMAKE_CURRENT_SOURCE_DIR}/src/kcmutilsgeneratemoduledata.cpp.in
+        ${CMAKE_CURRENT_SOURCE_DIR}/src/kcmutilsgeneratemoduledata.h.in
+        DESTINATION ${CMAKECONFIG_INSTALL_DIR}
+    )
+endfunction()
 
 include(CMakeDependentOption)
 option(TOOLS_ONLY "Only build the tools and not the rest of KCMUtils" OFF)
 if (TOOLS_ONLY)
     find_package(Qt${QT_MAJOR_VERSION} ${REQUIRED_QT_VERSION} NO_MODULE REQUIRED Core)
     add_subdirectory(tools)
+    install_cmake_config_files()
     return()
 endif()
 
@@ -80,9 +107,6 @@ add_subdirectory(autotests)
 endif()
 
 
-# create a Config.cmake and a ConfigVersion.cmake file and install them
-set(CMAKECONFIG_INSTALL_DIR "${KDE_INSTALL_CMAKEPACKAGEDIR}/KF5KCMUtils")
-
 if (BUILD_QCH)
     ecm_install_qch_export(
         TARGETS KF5KCMUtils_QCH
@@ -93,26 +117,7 @@ if (BUILD_QCH)
     set(PACKAGE_INCLUDE_QCHTARGETS "include(\"\${CMAKE_CURRENT_LIST_DIR}/KF5KCMUtilsQchTargets.cmake\")")
 endif()
 
-configure_package_config_file(
-  "${CMAKE_CURRENT_SOURCE_DIR}/KF5KCMUtilsConfig.cmake.in"
-  "${CMAKE_CURRENT_BINARY_DIR}/KF5KCMUtilsConfig.cmake"
-  INSTALL_DESTINATION  ${CMAKECONFIG_INSTALL_DIR}
-)
-
-install(FILES
-  "${CMAKE_CURRENT_BINARY_DIR}/KF5KCMUtilsConfig.cmake"
-  "${CMAKE_CURRENT_BINARY_DIR}/KF5KCMUtilsConfigVersion.cmake"
-  DESTINATION "${CMAKECONFIG_INSTALL_DIR}"
-  COMPONENT Devel
-)
-
-install(
-    FILES
-    ${CMAKE_CURRENT_SOURCE_DIR}/KF5KCMUtilsMacros.cmake
-    ${CMAKE_CURRENT_SOURCE_DIR}/src/kcmutilsgeneratemoduledata.cpp.in
-    ${CMAKE_CURRENT_SOURCE_DIR}/src/kcmutilsgeneratemoduledata.h.in
-    DESTINATION ${CMAKECONFIG_INSTALL_DIR}
-)
+install_cmake_config_files()
 
 install(EXPORT KF5KCMUtilsTargets DESTINATION "${CMAKECONFIG_INSTALL_DIR}" FILE KF5KCMUtilsTargets.cmake NAMESPACE KF5:: )
 
