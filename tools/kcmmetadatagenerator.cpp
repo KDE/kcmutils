@@ -32,7 +32,12 @@ int main(int argc, char **argv)
     out.write("Type=Application\n");
     out.write("NoDisplay=true\n");
 
-    const QString exec = QLatin1String("Exec=systemsettings ") + QFileInfo(fileName).baseName() + QLatin1Char('\n');
+    QString executableProgram = QStringLiteral("systemsettings ");
+    if (!doc.object().contains(QLatin1String("X-KDE-System-Settings-Parent-Category"))) {
+        executableProgram = QStringLiteral("kcmshell5 ");
+    }
+
+    const QString exec = QLatin1String("Exec=") + executableProgram + QFileInfo(fileName).baseName() + QLatin1Char('\n');
     out.write(exec.toLatin1());
     const QString icon = QLatin1String("Icon=") + kplugin.value(QLatin1String("Icon")).toString() + QLatin1Char('\n');
     out.write(icon.toLatin1());
