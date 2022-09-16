@@ -41,7 +41,7 @@ install(FILES
   DESTINATION ${KDE_INSTALL_INCLUDEDIR_KF}/KCMUtilsCore COMPONENT Devel
 )
 
-install(TARGETS KF5KCMUtilsCore EXPORT KF5KCMUtilsTargets ${KF5_INSTALL_TARGETS_DEFAULT_ARGS})
+install(TARGETS KF5KCMUtilsCore EXPORT KF5KCMUtilsTargets ${KF_INSTALL_TARGETS_DEFAULT_ARGS})
 
 add_library(kcmutils_proxy_model STATIC kpluginproxymodel.cpp)
 # Needed to link this static lib to shared libs
