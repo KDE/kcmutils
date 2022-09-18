@@ -35,6 +35,8 @@ int main(int argc, char **argv)
     QString executableProgram = QStringLiteral("systemsettings ");
     if (!doc.object().contains(QLatin1String("X-KDE-System-Settings-Parent-Category"))) {
         executableProgram = QStringLiteral("kcmshell5 ");
+    } else {
+        out.write("X-KDE-AliasFor=systemsettings.desktop\n");
     }
 
     const QString exec = QLatin1String("Exec=") + executableProgram + QFileInfo(fileName).baseName() + QLatin1Char('\n');
