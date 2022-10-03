@@ -263,7 +263,7 @@ void KCModuleQml::focusInEvent(QFocusEvent *event)
 
 QSize KCModuleQml::sizeHint() const
 {
-    if (!d->configModule->mainUi()) {
+    if (!d->rootPlaceHolder) {
         return QSize();
     }
 
