@@ -12,7 +12,7 @@ Dependencies:
     'frameworks/kdeclarative' : '@same'
 
 - 'on': ['Linux', 'FreeBSD']
-   'require':
+  'require':
     'frameworks/kauth' : '@same'
 
 Options:
