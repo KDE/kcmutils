@@ -10,6 +10,8 @@ Dependencies:
     'frameworks/kservice' : '@same'
     'frameworks/kxmlgui' : '@same'
     'frameworks/kdeclarative' : '@same'
+
+- 'on': ['Linux', 'FreeBSD']      
     'frameworks/kauth' : '@same'
 
 Options:
