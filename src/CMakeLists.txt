@@ -63,6 +63,7 @@ target_link_libraries(KF5KCMUtils
     Qt${QT_MAJOR_VERSION}::Widgets
     KF5::ConfigWidgets  # KCModule
     KF5::Service        # KService
+    KF5::CoreAddons
   PRIVATE
     KF5KCMUtilsCore
     kcmutils_proxy_model
@@ -70,7 +71,6 @@ target_link_libraries(KF5KCMUtils
     Qt${QT_MAJOR_VERSION}::Qml
     Qt${QT_MAJOR_VERSION}::Quick
     Qt${QT_MAJOR_VERSION}::QuickWidgets
-    KF5::CoreAddons
     KF5::GuiAddons # KIconUtils
     KF5::I18n
     KF5::ItemViews       # KWidgetItemDelegate
