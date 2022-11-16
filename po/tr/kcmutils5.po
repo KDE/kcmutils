@@ -23,7 +23,7 @@ msgstr ""
 "Project-Id-Version: kdelibs4\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2022-08-28 00:42+0000\n"
-"PO-Revision-Date: 2022-04-24 11:44+0300\n"
+"PO-Revision-Date: 2022-11-15 05:05+0300\n"
 "Last-Translator: Emir SARI <emir_sari@icloud.com>\n"
 "Language-Team: Turkish <kde-l10n-tr@kde.org>\n"
 "Language: tr\n"
@@ -31,7 +31,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
-"X-Generator: Lokalize 21.12.3\n"
+"X-Generator: Lokalize 22.08.3\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
@@ -95,8 +95,8 @@ msgid ""
 "<qt><p>Either the hardware/software the module configures is not available "
 "or the module has been disabled by the administrator.</p></qt>"
 msgstr ""
-"<qt><p>Ya modülün yapılandırdığı donanım/yazılım mevcut değil ya da modül "
-"sistem yöneticisi tarafından devreden çıkartılmış.</p></qt>"
+"<qt><p>Ya modülün yapılandırdığı donanım/yazılım yok ya da modül sistem "
+"yöneticisi tarafından devreden çıkarılmış.</p></qt>"
 
 #: kcmoduleloader.cpp:193
 #, kde-format
