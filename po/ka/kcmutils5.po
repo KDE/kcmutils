@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: kcmutils\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2022-08-28 00:42+0000\n"
-"PO-Revision-Date: 2022-09-12 20:21+0200\n"
+"PO-Revision-Date: 2022-11-27 06:53+0100\n"
 "Last-Translator: Temuri Doghonadze <temuri.doghonadze@gmail.com>\n"
 "Language-Team: Georgian <kde-i18n-doc@kde.org>\n"
 "Language: ka\n"
@@ -16,7 +16,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Poedit 3.1.1\n"
+"X-Generator: Poedit 3.2\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
@@ -52,6 +52,12 @@ msgid ""
 "carefully and try to remove the module mentioned in the error message. If "
 "this fails, consider contacting your distributor or packager.</p></qt>"
 msgstr ""
+"<qt><p>შესაძლო მიზეზები:<ul><li> შეცდომა უკანასკნელი სისტემის განახლებისას, "
+"რომელმაც კონტროლის მოდული უყურადღებოდ მიატოვა</li><li> გაქვთ მესამე პირების "
+"მიერ დაწერილი მოდულები.</li></ul></p><p> ფრთხილად შეამოწმეთ ეს წერტილები და "
+"წაშალეთ მოდული, რომელიც შეცდომის შეტყობინებაშია მოხსენიებული. თუ ამით "
+"წარმატებას ვერ მიაღწიეთ, თქვენი დისტრიბუტივის მომწოდებელს დაუკავშირდით.</p></"
+"qt>"
 
 #: kcmoduleloader.cpp:154
 #, kde-format
@@ -140,6 +146,8 @@ msgid ""
 "    %1 plugin has been automatically checked because of the dependency of %2 "
 "plugin"
 msgstr ""
+"\n"
+"   %1 დამატება ავტომატურად ჩაირთო მასზე %2 დამატების დამოკიდებულების გამო"
 
 #: kpluginselector.cpp:212
 #, kde-format
@@ -148,6 +156,8 @@ msgid ""
 "    %1 plugin has been automatically unchecked because of its dependency on "
 "%2 plugin"
 msgstr ""
+"\n"
+"    %1 დამატება ავტომატურად ამოირთო, მისი %2 დამატებაზე დამოკიდებულების გამო"
 
 #: kpluginselector.cpp:216
 #, kde-format
