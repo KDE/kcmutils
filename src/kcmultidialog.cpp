@@ -37,7 +37,6 @@
 #include <KLocalizedString>
 #include <KMessageBox>
 #include <KPageWidgetModel>
-#include <KPluginInfo>
 
 bool KCMultiDialogPrivate::resolveChanges(KCModuleProxy *currentProxy)
 {
