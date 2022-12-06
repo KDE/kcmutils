@@ -13,7 +13,6 @@
 
 #include <KCategorizedSortFilterProxyModel>
 #include <KConfigGroup>
-#include <KPluginInfo>
 #include <kwidgetitemdelegate.h>
 
 #include <kcmutils_export.h>
