@@ -13,7 +13,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdelibs4\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2022-08-28 00:42+0000\n"
+"POT-Creation-Date: 2022-12-07 00:43+0000\n"
 "PO-Revision-Date: 2018-11-08 23:01-0800\n"
 "Last-Translator: A S Alam <alam.yellow@gmail.com>\n"
 "Language-Team: Punjabi <punjabi-users@lists.sf.net>\n"
@@ -34,24 +34,24 @@ msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
 msgstr "alam.yellow@gmail.com"
 
-#: kcmoduleloader.cpp:58 kcmoduleloader.cpp:161
+#: kcmoduleloader.cpp:57 kcmoduleloader.cpp:160
 #, kde-format
 msgid "The module %1 is disabled."
 msgstr "ਮੋਡੀਊਲ %1 ਅਸਮਰੱਥ ਹੈ।"
 
-#: kcmoduleloader.cpp:59
+#: kcmoduleloader.cpp:58
 #, fuzzy, kde-format
 #| msgid "Please contact your system administrator."
 msgid "The module has been disabled by the system administrator."
 msgstr "ਆਪਣੇ ਸਿਸਟਮ ਪਰਸ਼ਾਸਕ ਨਾਲ ਸੰਪਰਕ ਕਰੋ ਜੀ।"
 
-#: kcmoduleloader.cpp:94 kcmoduleloader.cpp:185
+#: kcmoduleloader.cpp:93 kcmoduleloader.cpp:184
 #, fuzzy, kde-format
 #| msgid "Error loading '%1'.\n"
 msgid "Error loading QML file."
 msgstr "'%1' ਦੀ ਲੋਡਿੰਗ ਦੌਰਾਨ ਗਲਤੀ ਹੈ।\n"
 
-#: kcmoduleloader.cpp:120
+#: kcmoduleloader.cpp:119
 #, fuzzy, kde-format
 #| msgid ""
 #| "<qt><p>Possible reasons:<ul><li>An error occurred during your last KDE "
@@ -71,19 +71,19 @@ msgstr ""
 "ਗਲਤੀ ਸੁਨੇਹੇ ਵਿੱਚ ਦਿੱਤਾ ਮੇਡੀਊਲ ਹਟਾ ਦਿਉ, ਜੇਕਰ ਇਹ ਵੀ ਅਸਫਲ ਰਿਹਾ ਤਾਂ ਆਪਣੇ ਡਿਸਟਰੀਬਿਊਟਰ ਜਾਂ "
 "ਪੈਕੇਜਰ ਨਾਲ ਸੰਪਰਕ ਕਰੋ।</p></qt>"
 
-#: kcmoduleloader.cpp:154
+#: kcmoduleloader.cpp:153
 #, kde-format
 msgid "The module %1 could not be found."
 msgstr "ਮੋਡੀਊਲ %1 ਨਹੀਂ ਲੱਭਾ ਹੈ।"
 
-#: kcmoduleloader.cpp:155
+#: kcmoduleloader.cpp:154
 #, kde-format
 msgid ""
 "<qt><p>The diagnosis is:<br />The desktop file %1 could not be found.</p></"
 "qt>"
 msgstr "<qt><p>ਜਾਂਚ ਨਤੀਜਾ ਹੈ:<br />ਡੈਸਕਟਾਪ ਫਾਈਲ %1 ਲੱਭੀ ਨਹੀਂ ਜਾ ਸਕੀ ਹੈ।</p></qt>"
 
-#: kcmoduleloader.cpp:162
+#: kcmoduleloader.cpp:161
 #, kde-format
 msgid ""
 "<qt><p>Either the hardware/software the module configures is not available "
@@ -92,18 +92,18 @@ msgstr ""
 "<qt><p>ਜਾਂ ਤਾਂ ਹਾਰਡਵੇਅਰ/ਸਾਫਟਵੇਅਰ ਮੋਡੀਊਲ ਸੰਰਚਨਾ ਉਪਲੱਬਧ ਨਹੀਂ ਹੈ ਜਾਂ ਮੋਡੀਊਲ ਨੂੰ ਪਰਸ਼ਾਸ਼ਕ ਨੇ ਬੰਦ "
 "ਕੀਤਾ ਹੋਇਆ ਹੈ।</p></qt>"
 
-#: kcmoduleloader.cpp:193
+#: kcmoduleloader.cpp:192
 #, fuzzy, kde-format
 #| msgid "Error loading '%1'.\n"
 msgid "Error loading config module"
 msgstr "'%1' ਦੀ ਲੋਡਿੰਗ ਦੌਰਾਨ ਗਲਤੀ ਹੈ।\n"
 
-#: kcmoduleloader.cpp:237
+#: kcmoduleloader.cpp:236
 #, kde-format
 msgid "The module %1 is not a valid configuration module."
 msgstr "ਮੋਡੀਊਲ %1 ਇੱਕ ਠੀਕ ਸੰਰਚਿਤ ਮੋਡੀਊਲ ਨਹੀਂ ਹੈ।"
 
-#: kcmoduleloader.cpp:238
+#: kcmoduleloader.cpp:237
 #, kde-format
 msgid ""
 "<qt>The diagnosis is:<br />The desktop file %1 does not specify a library.</"
@@ -116,7 +116,7 @@ msgctxt "Argument is application name"
 msgid "This configuration section is already opened in %1"
 msgstr "ਇਹ ਸੰਰਚਨਾ ਭਾਗ ਪਹਿਲਾਂ ਹੀ %1 ਵਿੱਚ ਖੋਲਿਆ ਜਾ ਚੁੱਕਿਆ ਹੈ"
 
-#: kcmultidialog.cpp:51
+#: kcmultidialog.cpp:50
 #, kde-format
 msgid ""
 "The settings of the current module have changed.\n"
@@ -125,12 +125,12 @@ msgstr ""
 "ਮੌਜੂਦਾ ਮੋਡੀਊਲ ਦੀ ਸੈਟਿੰਗ ਬਦਲੀ ਗਈ ਹੈ।\n"
 "ਕੀ ਤੁਸੀਂ ਬਦਲਾਅ ਲਾਗੂ ਕਰਨੇ ਚਾਹੁੰਦੇ ਹੋ ਜਾਂ ਅਣਡਿੱਠੇ?"
 
-#: kcmultidialog.cpp:53
+#: kcmultidialog.cpp:52
 #, kde-format
 msgid "Apply Settings"
 msgstr "ਸੈਟਿੰਗ ਲਾਗੂ ਕਰੋ"
 
-#: kcmultidialog.cpp:258 kpluginselector.cpp:809 kpluginwidget.cpp:330
+#: kcmultidialog.cpp:257 kpluginselector.cpp:809 kpluginwidget.cpp:330
 #, kde-format
 msgid "Configure"
 msgstr "ਸੰਰਚਨਾ"

@@ -15,7 +15,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdelibs4\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2022-08-28 00:42+0000\n"
+"POT-Creation-Date: 2022-12-07 00:43+0000\n"
 "PO-Revision-Date: 2020-01-05 18:42+0100\n"
 "Last-Translator: Adrián Chaves (Gallaecio) <adrian@chaves.io>\n"
 "Language-Team: Galician <proxecto@trasno.gal>\n"
@@ -36,23 +36,23 @@ msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
 msgstr "xosecalvo@gmail.com, mvillarino@gmail.com, proxecto@trasno.gal"
 
-#: kcmoduleloader.cpp:58 kcmoduleloader.cpp:161
+#: kcmoduleloader.cpp:57 kcmoduleloader.cpp:160
 #, kde-format
 msgid "The module %1 is disabled."
 msgstr "O módulo %1 está desactivado."
 
-#: kcmoduleloader.cpp:59
+#: kcmoduleloader.cpp:58
 #, fuzzy, kde-format
 #| msgid "Please contact your system administrator."
 msgid "The module has been disabled by the system administrator."
 msgstr "Por favor, contacte co seu administrador do sistema."
 
-#: kcmoduleloader.cpp:94 kcmoduleloader.cpp:185
+#: kcmoduleloader.cpp:93 kcmoduleloader.cpp:184
 #, kde-format
 msgid "Error loading QML file."
 msgstr "Produciuse un erro ao cargar o ficheiro QML."
 
-#: kcmoduleloader.cpp:120
+#: kcmoduleloader.cpp:119
 #, kde-format
 msgid ""
 "<qt><p>Possible reasons:<ul><li>An error occurred during your last system "
@@ -67,12 +67,12 @@ msgstr ""
 "coidado e intente retirar o módulo mencionado na mensaxe de erro. Se isto "
 "falla, considere contactar co seu distribuidor de paquetes.</p></qt>"
 
-#: kcmoduleloader.cpp:154
+#: kcmoduleloader.cpp:153
 #, kde-format
 msgid "The module %1 could not be found."
 msgstr "Non se puido atopar o módulo %1."
 
-#: kcmoduleloader.cpp:155
+#: kcmoduleloader.cpp:154
 #, kde-format
 msgid ""
 "<qt><p>The diagnosis is:<br />The desktop file %1 could not be found.</p></"
@@ -81,7 +81,7 @@ msgstr ""
 "<qt><p>O diagnóstico é:<br/>Non se puido atopar o ficheiro desktop %1.</p></"
 "qt>"
 
-#: kcmoduleloader.cpp:162
+#: kcmoduleloader.cpp:161
 #, kde-format
 msgid ""
 "<qt><p>Either the hardware/software the module configures is not available "
@@ -90,18 +90,18 @@ msgstr ""
 "<qt><p>Ou non está dispoñíbel o soporte físico ou o soporte lóxico que "
 "configura o módulo ou o administrador desactivou o módulo.</p></qt>"
 
-#: kcmoduleloader.cpp:193
+#: kcmoduleloader.cpp:192
 #, fuzzy, kde-format
 #| msgid "Error loading QML file."
 msgid "Error loading config module"
 msgstr "Produciuse un erro ao cargar o ficheiro QML."
 
-#: kcmoduleloader.cpp:237
+#: kcmoduleloader.cpp:236
 #, kde-format
 msgid "The module %1 is not a valid configuration module."
 msgstr "O módulo %1 non é un módulo de configuración correcto."
 
-#: kcmoduleloader.cpp:238
+#: kcmoduleloader.cpp:237
 #, kde-format
 msgid ""
 "<qt>The diagnosis is:<br />The desktop file %1 does not specify a library.</"
@@ -116,7 +116,7 @@ msgctxt "Argument is application name"
 msgid "This configuration section is already opened in %1"
 msgstr "Esta sección de configuración xa está aberta en %1"
 
-#: kcmultidialog.cpp:51
+#: kcmultidialog.cpp:50
 #, kde-format
 msgid ""
 "The settings of the current module have changed.\n"
@@ -125,12 +125,12 @@ msgstr ""
 "Cambiáronse as opcións deste módulo.\n"
 "Quere aplicar os cambios ou descartalos?"
 
-#: kcmultidialog.cpp:53
+#: kcmultidialog.cpp:52
 #, kde-format
 msgid "Apply Settings"
 msgstr "Aplicar as opcións"
 
-#: kcmultidialog.cpp:258 kpluginselector.cpp:809 kpluginwidget.cpp:330
+#: kcmultidialog.cpp:257 kpluginselector.cpp:809 kpluginwidget.cpp:330
 #, kde-format
 msgid "Configure"
 msgstr "Configurar"

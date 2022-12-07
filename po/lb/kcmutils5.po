@@ -5,7 +5,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdelibs4\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2022-08-28 00:42+0000\n"
+"POT-Creation-Date: 2022-12-07 00:43+0000\n"
 "PO-Revision-Date: 2006-06-22 16:29+0200\n"
 "Last-Translator: Michel Ludwig <michel.ludwig@kdemail.net>\n"
 "Language-Team: Luxembourgish <kde-i18n-lb@kde.org>\n"
@@ -26,24 +26,24 @@ msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
 msgstr "kevin@math.uni-sb.de,miclud@studcs.uni-sb.de"
 
-#: kcmoduleloader.cpp:58 kcmoduleloader.cpp:161
+#: kcmoduleloader.cpp:57 kcmoduleloader.cpp:160
 #, fuzzy, kde-format
 msgid "The module %1 is disabled."
 msgstr "De Modul %1 konnt net geluede ginn."
 
-#: kcmoduleloader.cpp:59
+#: kcmoduleloader.cpp:58
 #, fuzzy, kde-format
 #| msgid "Please contact your system administrator."
 msgid "The module has been disabled by the system administrator."
 msgstr "Mellt iech w.e.g. bei ärer Systemverwaltung."
 
-#: kcmoduleloader.cpp:94 kcmoduleloader.cpp:185
+#: kcmoduleloader.cpp:93 kcmoduleloader.cpp:184
 #, fuzzy, kde-format
 #| msgid "Error opening file."
 msgid "Error loading QML file."
 msgstr "Feeler beim Opmaache vun der Datei."
 
-#: kcmoduleloader.cpp:120
+#: kcmoduleloader.cpp:119
 #, fuzzy, kde-format
 #| msgid ""
 #| "<qt><p>The diagnostics is:<br>%1<p>Possible reasons:</p><ul><li>An error "
@@ -65,12 +65,12 @@ msgstr ""
 "</ul><p>Kuckt dëss Punkten opmierksam duerch a probéiert, dee Modul ze "
 "läschen. Wann dat net klappt, frot bei ärem Verdeler no.</p></qt>"
 
-#: kcmoduleloader.cpp:154
+#: kcmoduleloader.cpp:153
 #, kde-format
 msgid "The module %1 could not be found."
 msgstr "De Modul %1 ass net fonnt ginn."
 
-#: kcmoduleloader.cpp:155
+#: kcmoduleloader.cpp:154
 #, fuzzy, kde-format
 #| msgid ""
 #| "<qt><p>The diagnostics is:<br>The desktop file %1 could not be found.</qt>"
@@ -79,25 +79,25 @@ msgid ""
 "qt>"
 msgstr "<qt><p>D'Diagnos ass:<br>D'Bürosdatei %1 konnt net fonnt ginn.</qt>"
 
-#: kcmoduleloader.cpp:162
+#: kcmoduleloader.cpp:161
 #, kde-format
 msgid ""
 "<qt><p>Either the hardware/software the module configures is not available "
 "or the module has been disabled by the administrator.</p></qt>"
 msgstr ""
 
-#: kcmoduleloader.cpp:193
+#: kcmoduleloader.cpp:192
 #, fuzzy, kde-format
 #| msgid "Error opening file."
 msgid "Error loading config module"
 msgstr "Feeler beim Opmaache vun der Datei."
 
-#: kcmoduleloader.cpp:237
+#: kcmoduleloader.cpp:236
 #, kde-format
 msgid "The module %1 is not a valid configuration module."
 msgstr "De Modul %1 ass kee gültege Configuratiounsmodul."
 
-#: kcmoduleloader.cpp:238
+#: kcmoduleloader.cpp:237
 #, fuzzy, kde-format
 #| msgid ""
 #| "<qt><p>The diagnostics is:<br>The desktop file %1 does not specify a "
@@ -114,7 +114,7 @@ msgctxt "Argument is application name"
 msgid "This configuration section is already opened in %1"
 msgstr "Dëss Configuratioun ass schonn am %1 opgemaach"
 
-#: kcmultidialog.cpp:51
+#: kcmultidialog.cpp:50
 #, fuzzy, kde-format
 #| msgid ""
 #| "The document \"%1\" has been modified.\n"
@@ -126,13 +126,13 @@ msgstr ""
 "Den Dokument \"%1\" ass verännert ginn.\n"
 "Wëllt dir e späicheren oder sou si loosse, wéi e war?"
 
-#: kcmultidialog.cpp:53
+#: kcmultidialog.cpp:52
 #, fuzzy, kde-format
 #| msgid "Apply settings"
 msgid "Apply Settings"
 msgstr "Astellungen uwenden"
 
-#: kcmultidialog.cpp:258 kpluginselector.cpp:809 kpluginwidget.cpp:330
+#: kcmultidialog.cpp:257 kpluginselector.cpp:809 kpluginwidget.cpp:330
 #, kde-format
 msgid "Configure"
 msgstr "Configuréieren"

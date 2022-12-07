@@ -13,7 +13,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kcmutils\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2022-08-28 00:42+0000\n"
+"POT-Creation-Date: 2022-12-07 00:43+0000\n"
 "PO-Revision-Date: 2022-04-24 10:10+0200\n"
 "Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
@@ -35,22 +35,22 @@ msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
 msgstr "sps@sastia.com,antonibella5@yahoo.com,aacid@kde.org,txemaq@gmail.com"
 
-#: kcmoduleloader.cpp:58 kcmoduleloader.cpp:161
+#: kcmoduleloader.cpp:57 kcmoduleloader.cpp:160
 #, kde-format
 msgid "The module %1 is disabled."
 msgstr "El mòdul %1 s'ha desactivat."
 
-#: kcmoduleloader.cpp:59
+#: kcmoduleloader.cpp:58
 #, kde-format
 msgid "The module has been disabled by the system administrator."
 msgstr "El mòdul ha estat desactivat per l'administrador del sistema."
 
-#: kcmoduleloader.cpp:94 kcmoduleloader.cpp:185
+#: kcmoduleloader.cpp:93 kcmoduleloader.cpp:184
 #, kde-format
 msgid "Error loading QML file."
 msgstr "Error en carregar el fitxer QML."
 
-#: kcmoduleloader.cpp:120
+#: kcmoduleloader.cpp:119
 #, kde-format
 msgid ""
 "<qt><p>Possible reasons:<ul><li>An error occurred during your last system "
@@ -66,12 +66,12 @@ msgstr ""
 "d'error. Si això falla, contacteu amb el vostre distribuïdor o empaquetador."
 "</p></qt>"
 
-#: kcmoduleloader.cpp:154
+#: kcmoduleloader.cpp:153
 #, kde-format
 msgid "The module %1 could not be found."
 msgstr "El mòdul %1 no s'ha pogut trobar."
 
-#: kcmoduleloader.cpp:155
+#: kcmoduleloader.cpp:154
 #, kde-format
 msgid ""
 "<qt><p>The diagnosis is:<br />The desktop file %1 could not be found.</p></"
@@ -80,7 +80,7 @@ msgstr ""
 "<qt><p>El diagnòstic és:<br />No s'ha pogut trobar el fitxer «desktop» %1.</"
 "p></qt>"
 
-#: kcmoduleloader.cpp:162
+#: kcmoduleloader.cpp:161
 #, kde-format
 msgid ""
 "<qt><p>Either the hardware/software the module configures is not available "
@@ -89,17 +89,17 @@ msgstr ""
 "<qt><p>Aquest mòdul configura un maquinari o un programari que ara no estan "
 "disponibles, o l'administrador ha desactivat el mòdul.</p></qt>"
 
-#: kcmoduleloader.cpp:193
+#: kcmoduleloader.cpp:192
 #, kde-format
 msgid "Error loading config module"
 msgstr "Error en carregar el mòdul de configuració"
 
-#: kcmoduleloader.cpp:237
+#: kcmoduleloader.cpp:236
 #, kde-format
 msgid "The module %1 is not a valid configuration module."
 msgstr "El mòdul %1 no és un mòdul de configuració vàlid."
 
-#: kcmoduleloader.cpp:238
+#: kcmoduleloader.cpp:237
 #, kde-format
 msgid ""
 "<qt>The diagnosis is:<br />The desktop file %1 does not specify a library.</"
@@ -114,7 +114,7 @@ msgctxt "Argument is application name"
 msgid "This configuration section is already opened in %1"
 msgstr "Aquesta secció de configuració ja està oberta a %1"
 
-#: kcmultidialog.cpp:51
+#: kcmultidialog.cpp:50
 #, kde-format
 msgid ""
 "The settings of the current module have changed.\n"
@@ -123,12 +123,12 @@ msgstr ""
 "L'arranjament del mòdul actual ha canviat.\n"
 "Voleu aplicar els canvis o descartar-los?"
 
-#: kcmultidialog.cpp:53
+#: kcmultidialog.cpp:52
 #, kde-format
 msgid "Apply Settings"
 msgstr "Aplica l'arranjament"
 
-#: kcmultidialog.cpp:258 kpluginselector.cpp:809 kpluginwidget.cpp:330
+#: kcmultidialog.cpp:257 kpluginselector.cpp:809 kpluginwidget.cpp:330
 #, kde-format
 msgid "Configure"
 msgstr "Configura"

@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdelibs4\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2022-08-28 00:42+0000\n"
+"POT-Creation-Date: 2022-12-07 00:43+0000\n"
 "PO-Revision-Date: 2021-08-22 13:04+0530\n"
 "Last-Translator: Raghavendra Kamath <raghu@raghukamath.com>\n"
 "Language-Team: kde-hindi\n"
@@ -31,22 +31,22 @@ msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
 msgstr "karunakar@indlinux.org, raghu@raghukamath.com"
 
-#: kcmoduleloader.cpp:58 kcmoduleloader.cpp:161
+#: kcmoduleloader.cpp:57 kcmoduleloader.cpp:160
 #, kde-format
 msgid "The module %1 is disabled."
 msgstr "मॉड्यूल %1 अक्षम है।"
 
-#: kcmoduleloader.cpp:59
+#: kcmoduleloader.cpp:58
 #, kde-format
 msgid "The module has been disabled by the system administrator."
 msgstr "मॉड्यूल को तंत्र व्यवस्थापक द्वारा निष्क्रियम कर दिया गया है।"
 
-#: kcmoduleloader.cpp:94 kcmoduleloader.cpp:185
+#: kcmoduleloader.cpp:93 kcmoduleloader.cpp:184
 #, kde-format
 msgid "Error loading QML file."
 msgstr "क्यूएमएल फाइल लोड करने में त्रुटि।"
 
-#: kcmoduleloader.cpp:120
+#: kcmoduleloader.cpp:119
 #, kde-format
 msgid ""
 "<qt><p>Possible reasons:<ul><li>An error occurred during your last system "
@@ -61,19 +61,19 @@ msgstr ""
 "प्रयास करें। यदि यह विफल रहता है, तो अपने वितरक या पैकेजर से संपर्क करने पर विचार करें।</"
 "p></qt>"
 
-#: kcmoduleloader.cpp:154
+#: kcmoduleloader.cpp:153
 #, kde-format
 msgid "The module %1 could not be found."
 msgstr "मॉड्यूल %1 नहीं मिला।"
 
-#: kcmoduleloader.cpp:155
+#: kcmoduleloader.cpp:154
 #, kde-format
 msgid ""
 "<qt><p>The diagnosis is:<br />The desktop file %1 could not be found.</p></"
 "qt>"
 msgstr "<qt><p>डायग्नोस्टिक्स है:<br /> डेस्कटॉप फ़ाइल %1 नहीं मिला।</p></qt>"
 
-#: kcmoduleloader.cpp:162
+#: kcmoduleloader.cpp:161
 #, kde-format
 msgid ""
 "<qt><p>Either the hardware/software the module configures is not available "
@@ -82,17 +82,17 @@ msgstr ""
 "<qt><p>या तो हार्डवेयर / सॉफ़्टवेयर मॉड्यूल कॉन्फिगर उपलब्ध नहीं हैं या मॉड्यूल को प्रशासक "
 "द्वारा अक्षम किया गया है।</p></qt>"
 
-#: kcmoduleloader.cpp:193
+#: kcmoduleloader.cpp:192
 #, kde-format
 msgid "Error loading config module"
 msgstr "विन्यास मोड्यूल लोड करने में त्रुटि।"
 
-#: kcmoduleloader.cpp:237
+#: kcmoduleloader.cpp:236
 #, kde-format
 msgid "The module %1 is not a valid configuration module."
 msgstr "मॉड्यूल %1 वैध कॉन्फ़िगरेशन मॉड्यूल नहीं है।"
 
-#: kcmoduleloader.cpp:238
+#: kcmoduleloader.cpp:237
 #, kde-format
 msgid ""
 "<qt>The diagnosis is:<br />The desktop file %1 does not specify a library.</"
@@ -106,7 +106,7 @@ msgctxt "Argument is application name"
 msgid "This configuration section is already opened in %1"
 msgstr "%1 में कॉन्फ़िगरेशन खण्ड पहले ही खोला गया है"
 
-#: kcmultidialog.cpp:51
+#: kcmultidialog.cpp:50
 #, kde-format
 msgid ""
 "The settings of the current module have changed.\n"
@@ -115,12 +115,12 @@ msgstr ""
 "वर्तमान मोड्यूल के सेटिंग परिवर्तित हो गए है।\n"
 "क्या आप इसे सहेजना चाहेंगे या परिवर्तनों को फेंक दें?"
 
-#: kcmultidialog.cpp:53
+#: kcmultidialog.cpp:52
 #, kde-format
 msgid "Apply Settings"
 msgstr "विन्यास लगाएँ"
 
-#: kcmultidialog.cpp:258 kpluginselector.cpp:809 kpluginwidget.cpp:330
+#: kcmultidialog.cpp:257 kpluginselector.cpp:809 kpluginwidget.cpp:330
 #, kde-format
 msgid "Configure"
 msgstr "कॉन्फ़िगर"

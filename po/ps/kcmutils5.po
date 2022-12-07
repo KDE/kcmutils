@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdelibs4\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2022-08-28 00:42+0000\n"
+"POT-Creation-Date: 2022-12-07 00:43+0000\n"
 "PO-Revision-Date: 2008-08-16 16:01-0800\n"
 "Last-Translator: Zabeeh Khan <zabeehkhan@gmail.com>\n"
 "Language-Team: Pashto <pathanisation@googlegroups.com>\n"
@@ -29,24 +29,24 @@ msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
 msgstr "zabeehkhan@gmail.com"
 
-#: kcmoduleloader.cpp:58 kcmoduleloader.cpp:161
+#: kcmoduleloader.cpp:57 kcmoduleloader.cpp:160
 #, kde-format
 msgid "The module %1 is disabled."
 msgstr ".رغبېلګه ناتوانول شوې ده %1"
 
-#: kcmoduleloader.cpp:59
+#: kcmoduleloader.cpp:58
 #, fuzzy, kde-format
 #| msgid "Please contact your system administrator."
 msgid "The module has been disabled by the system administrator."
 msgstr ".لورينه وکړﺉ خپل د غونډال پازوال سره اړيکه نيسﺉ"
 
-#: kcmoduleloader.cpp:94 kcmoduleloader.cpp:185
+#: kcmoduleloader.cpp:93 kcmoduleloader.cpp:184
 #, fuzzy, kde-format
 #| msgid "Error opening file."
 msgid "Error loading QML file."
 msgstr "دوتنې پرانيستلو کې ستونز"
 
-#: kcmoduleloader.cpp:120
+#: kcmoduleloader.cpp:119
 #, kde-format
 msgid ""
 "<qt><p>Possible reasons:<ul><li>An error occurred during your last system "
@@ -56,37 +56,37 @@ msgid ""
 "this fails, consider contacting your distributor or packager.</p></qt>"
 msgstr ""
 
-#: kcmoduleloader.cpp:154
+#: kcmoduleloader.cpp:153
 #, kde-format
 msgid "The module %1 could not be found."
 msgstr ".رغبېلګه ونه موندل شوه %1"
 
-#: kcmoduleloader.cpp:155
+#: kcmoduleloader.cpp:154
 #, kde-format
 msgid ""
 "<qt><p>The diagnosis is:<br />The desktop file %1 could not be found.</p></"
 "qt>"
 msgstr ""
 
-#: kcmoduleloader.cpp:162
+#: kcmoduleloader.cpp:161
 #, kde-format
 msgid ""
 "<qt><p>Either the hardware/software the module configures is not available "
 "or the module has been disabled by the administrator.</p></qt>"
 msgstr ""
 
-#: kcmoduleloader.cpp:193
+#: kcmoduleloader.cpp:192
 #, fuzzy, kde-format
 #| msgid "Error opening file."
 msgid "Error loading config module"
 msgstr "دوتنې پرانيستلو کې ستونز"
 
-#: kcmoduleloader.cpp:237
+#: kcmoduleloader.cpp:236
 #, kde-format
 msgid "The module %1 is not a valid configuration module."
 msgstr ".رغبېلګه سمه سازون رغبېلګه نه ده %1"
 
-#: kcmoduleloader.cpp:238
+#: kcmoduleloader.cpp:237
 #, kde-format
 msgid ""
 "<qt>The diagnosis is:<br />The desktop file %1 does not specify a library.</"
@@ -99,7 +99,7 @@ msgctxt "Argument is application name"
 msgid "This configuration section is already opened in %1"
 msgstr "کې پرانيستل شوې %1 دا سازونې برخه د مخکې نه په"
 
-#: kcmultidialog.cpp:51
+#: kcmultidialog.cpp:50
 #, fuzzy, kde-format
 #| msgid ""
 #| "The document \"%1\" has been modified.\n"
@@ -111,13 +111,13 @@ msgstr ""
 "لاسوند بدل شوی دی. \"%1\"\n"
 "تاسو خپل بدلونونه ساتل غواړﺉ يا پرېښودل يې غواړﺉ؟"
 
-#: kcmultidialog.cpp:53
+#: kcmultidialog.cpp:52
 #, fuzzy, kde-format
 #| msgid "Settings"
 msgid "Apply Settings"
 msgstr "امستنې"
 
-#: kcmultidialog.cpp:258 kpluginselector.cpp:809 kpluginwidget.cpp:330
+#: kcmultidialog.cpp:257 kpluginselector.cpp:809 kpluginwidget.cpp:330
 #, kde-format
 msgid "Configure"
 msgstr "سازول"

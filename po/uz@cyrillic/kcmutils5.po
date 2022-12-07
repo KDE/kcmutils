@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdelibs4\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2022-08-28 00:42+0000\n"
+"POT-Creation-Date: 2022-12-07 00:43+0000\n"
 "PO-Revision-Date: 2009-10-17 00:34+0200\n"
 "Last-Translator: Mashrab Kuvatov <kmashrab@uni-bremen.de>\n"
 "Language-Team: Uzbek <floss-uz-l10n@googlegroups.com>\n"
@@ -27,24 +27,24 @@ msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
 msgstr "kmashrab@uni-bremen.de"
 
-#: kcmoduleloader.cpp:58 kcmoduleloader.cpp:161
+#: kcmoduleloader.cpp:57 kcmoduleloader.cpp:160
 #, fuzzy, kde-format
 msgid "The module %1 is disabled."
 msgstr "Модулни %1 юклаб бўлмади."
 
-#: kcmoduleloader.cpp:59
+#: kcmoduleloader.cpp:58
 #, fuzzy, kde-format
 #| msgid "Please contact your system administrator."
 msgid "The module has been disabled by the system administrator."
 msgstr "Илтимос тизим бошқарувчисига мурожаат қилинг."
 
-#: kcmoduleloader.cpp:94 kcmoduleloader.cpp:185
+#: kcmoduleloader.cpp:93 kcmoduleloader.cpp:184
 #, fuzzy, kde-format
 #| msgid "Error opening file."
 msgid "Error loading QML file."
 msgstr "Файлни очишда хато рўй берди."
 
-#: kcmoduleloader.cpp:120
+#: kcmoduleloader.cpp:119
 #, kde-format
 msgid ""
 "<qt><p>Possible reasons:<ul><li>An error occurred during your last system "
@@ -54,37 +54,37 @@ msgid ""
 "this fails, consider contacting your distributor or packager.</p></qt>"
 msgstr ""
 
-#: kcmoduleloader.cpp:154
+#: kcmoduleloader.cpp:153
 #, kde-format
 msgid "The module %1 could not be found."
 msgstr "Модул %1 топилмади."
 
-#: kcmoduleloader.cpp:155
+#: kcmoduleloader.cpp:154
 #, fuzzy, kde-format
 msgid ""
 "<qt><p>The diagnosis is:<br />The desktop file %1 could not be found.</p></"
 "qt>"
 msgstr "<qt><p>Сабаб:<br>Desktop-файли %1 топилмади.</qt>"
 
-#: kcmoduleloader.cpp:162
+#: kcmoduleloader.cpp:161
 #, kde-format
 msgid ""
 "<qt><p>Either the hardware/software the module configures is not available "
 "or the module has been disabled by the administrator.</p></qt>"
 msgstr ""
 
-#: kcmoduleloader.cpp:193
+#: kcmoduleloader.cpp:192
 #, fuzzy, kde-format
 #| msgid "Error opening file."
 msgid "Error loading config module"
 msgstr "Файлни очишда хато рўй берди."
 
-#: kcmoduleloader.cpp:237
+#: kcmoduleloader.cpp:236
 #, kde-format
 msgid "The module %1 is not a valid configuration module."
 msgstr ""
 
-#: kcmoduleloader.cpp:238
+#: kcmoduleloader.cpp:237
 #, fuzzy, kde-format
 msgid ""
 "<qt>The diagnosis is:<br />The desktop file %1 does not specify a library.</"
@@ -97,7 +97,7 @@ msgctxt "Argument is application name"
 msgid "This configuration section is already opened in %1"
 msgstr "Мосламанинг ушбу қисми %1 дастурида аллақачон очилган"
 
-#: kcmultidialog.cpp:51
+#: kcmultidialog.cpp:50
 #, fuzzy, kde-format
 #| msgid ""
 #| "The document \"%1\" has been modified.\n"
@@ -109,13 +109,13 @@ msgstr ""
 "'%1' ҳужжатига ўзгариш киритилди.\n"
 "Уни сақлашни истайсизми?"
 
-#: kcmultidialog.cpp:53
+#: kcmultidialog.cpp:52
 #, fuzzy, kde-format
 #| msgid "Apply settings"
 msgid "Apply Settings"
 msgstr "Мосламаларни қўллаш"
 
-#: kcmultidialog.cpp:258 kpluginselector.cpp:809 kpluginwidget.cpp:330
+#: kcmultidialog.cpp:257 kpluginselector.cpp:809 kpluginwidget.cpp:330
 #, kde-format
 msgid "Configure"
 msgstr "Мослаш"

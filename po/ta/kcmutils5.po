@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdelibs4\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2022-08-28 00:42+0000\n"
+"POT-Creation-Date: 2022-12-07 00:43+0000\n"
 "PO-Revision-Date: 2022-05-24 21:21+0530\n"
 "Last-Translator: Kishore G <kishore96@gmail.com>\n"
 "Language-Team: Tamil <kde-i18n-doc@kde.org>\n"
@@ -30,22 +30,22 @@ msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
 msgstr "amachu@yavarkkum.org, Kde-l10n-ta@kde.org"
 
-#: kcmoduleloader.cpp:58 kcmoduleloader.cpp:161
+#: kcmoduleloader.cpp:57 kcmoduleloader.cpp:160
 #, kde-format
 msgid "The module %1 is disabled."
 msgstr "%1 என்ற கூறு முடக்கப்பட்டுள்ளது."
 
-#: kcmoduleloader.cpp:59
+#: kcmoduleloader.cpp:58
 #, kde-format
 msgid "The module has been disabled by the system administrator."
 msgstr "இக்கூறு, கணினியின் நிர்வாகியால் முடக்கப்பட்டுள்ளது."
 
-#: kcmoduleloader.cpp:94 kcmoduleloader.cpp:185
+#: kcmoduleloader.cpp:93 kcmoduleloader.cpp:184
 #, kde-format
 msgid "Error loading QML file."
 msgstr "QML கோப்பை ஏற்றுவதில் சிக்கல்."
 
-#: kcmoduleloader.cpp:120
+#: kcmoduleloader.cpp:119
 #, kde-format
 msgid ""
 "<qt><p>Possible reasons:<ul><li>An error occurred during your last system "
@@ -60,12 +60,12 @@ msgstr ""
 "p><p>இவற்றை சரிபார்த்து, சிக்கலறிக்கையில் குறுப்பிடப்பட்டுள்ள கூறை நீக்க முயற்சியுங்கள். "
 "அதுவும் தோல்வியடைந்தால், உங்கள் நிரல் விநியோகிப்பாளரை அணுகுங்கள்.</p></qt>"
 
-#: kcmoduleloader.cpp:154
+#: kcmoduleloader.cpp:153
 #, kde-format
 msgid "The module %1 could not be found."
 msgstr "%1 என்ற கூறை கண்டுபிடிக்க முடியவில்லை."
 
-#: kcmoduleloader.cpp:155
+#: kcmoduleloader.cpp:154
 #, kde-format
 msgid ""
 "<qt><p>The diagnosis is:<br />The desktop file %1 could not be found.</p></"
@@ -73,7 +73,7 @@ msgid ""
 msgstr ""
 "<qt><p>காரணம்:<br />%1 என்ற desktop கோப்பை கண்டுபிடிக்க முடியவில்லை.</p></qt>"
 
-#: kcmoduleloader.cpp:162
+#: kcmoduleloader.cpp:161
 #, kde-format
 msgid ""
 "<qt><p>Either the hardware/software the module configures is not available "
@@ -82,17 +82,17 @@ msgstr ""
 "<qt><p>இக்கூறு கட்டுப்படுத்தும் நிரல்/வன்பொருள் இல்லை அல்லது கணினியின் நிர்வாகியால் "
 "இக்கூறு முடக்கப்பட்டுள்ளது.</p></qt>"
 
-#: kcmoduleloader.cpp:193
+#: kcmoduleloader.cpp:192
 #, kde-format
 msgid "Error loading config module"
 msgstr "அமைப்புக்கூறை ஏற்றுவதில் சிக்கல்"
 
-#: kcmoduleloader.cpp:237
+#: kcmoduleloader.cpp:236
 #, kde-format
 msgid "The module %1 is not a valid configuration module."
 msgstr "%1 என்பது ஓர் முறையான அமைப்புக்கூறு அல்ல."
 
-#: kcmoduleloader.cpp:238
+#: kcmoduleloader.cpp:237
 #, kde-format
 msgid ""
 "<qt>The diagnosis is:<br />The desktop file %1 does not specify a library.</"
@@ -105,7 +105,7 @@ msgctxt "Argument is application name"
 msgid "This configuration section is already opened in %1"
 msgstr "%1 தனில் இவ்வடிவமைப்புக் கோப்பு ஏற்கனவே திறக்கப்பட்டுள்ளது"
 
-#: kcmultidialog.cpp:51
+#: kcmultidialog.cpp:50
 #, kde-format
 msgid ""
 "The settings of the current module have changed.\n"
@@ -114,12 +114,12 @@ msgstr ""
 "தற்போதைய பாகத்தின் அமைப்புகள் மாற்றப்பட்டுள்ளன.\n"
 "காக்க விரும்புகிறீர்களா அல்லது தவிர்க்க விரும்புகிறீர்களா?"
 
-#: kcmultidialog.cpp:53
+#: kcmultidialog.cpp:52
 #, kde-format
 msgid "Apply Settings"
 msgstr "அமைப்புகளை செயல்படுத்தவும்"
 
-#: kcmultidialog.cpp:258 kpluginselector.cpp:809 kpluginwidget.cpp:330
+#: kcmultidialog.cpp:257 kpluginselector.cpp:809 kpluginwidget.cpp:330
 #, kde-format
 msgid "Configure"
 msgstr "வடிவமை"
