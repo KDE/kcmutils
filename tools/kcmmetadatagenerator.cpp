@@ -31,6 +31,7 @@ int main(int argc, char **argv)
     out.write("[Desktop Entry]\n");
     out.write("Type=Application\n");
     out.write("NoDisplay=true\n");
+    out.write("X-KDE-AliasFor=systemsettings\n");
 
     QString executableProgram = QStringLiteral("systemsettings ");
     if (!doc.object().contains(QLatin1String("X-KDE-System-Settings-Parent-Category"))) {
