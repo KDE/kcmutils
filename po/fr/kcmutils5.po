@@ -18,20 +18,21 @@
 # Sebastien Renard <renard@kde.org>, 2013, 2014.
 # Simon Depiets <sdepiets@gmail.com>, 2019.
 # Xavier Besnard <xavier.besnard@neuf.fr>, 2021, 2022.
+# Xavier BESNARD <xavier.besnard]neuf.fr>, 2023.
 msgid ""
 msgstr ""
 "Project-Id-Version: kdelibs4\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2022-12-07 00:43+0000\n"
-"PO-Revision-Date: 2022-04-24 19:48+0200\n"
-"Last-Translator: Xavier Besnard <xavier.besnard@neuf.fr>\n"
-"Language-Team: French <kde-francophone@kde.org>\n"
+"PO-Revision-Date: 2023-01-05 15:00+0100\n"
+"Last-Translator: Xavier BESNARD <xavier.besnard]neuf.fr>\n"
+"Language-Team: fr\n"
 "Language: fr\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
-"X-Generator: Lokalize 21.12.3\n"
+"X-Generator: Lokalize 22.12.0\n"
 "X-Environment: kde\n"
 "X-Accelerator-Marker: &\n"
 "X-Text-Markup: kde4\n"
@@ -93,8 +94,8 @@ msgid ""
 "<qt><p>The diagnosis is:<br />The desktop file %1 could not be found.</p></"
 "qt>"
 msgstr ""
-"<qt><p>Le diagnostic est :<br />Il est impossible de trouver le fichier "
-"« desktop » %1.</p></qt>"
+"<qt><p>Le diagnostic est :<br />Il est impossible de trouver le fichier de "
+"bureau %1.</p></qt>"
 
 #: kcmoduleloader.cpp:161
 #, kde-format
@@ -121,7 +122,7 @@ msgid ""
 "<qt>The diagnosis is:<br />The desktop file %1 does not specify a library.</"
 "qt>"
 msgstr ""
-"<qt>Le diagnostic est :<br />Le fichier « desktop » %1 ne spécifie pas de "
+"<qt>Le diagnostic est :<br />Le fichier de bureau %1 ne spécifie pas de "
 "bibliothèque.</qt>"
 
 #: kcmoduleproxy.cpp:108
