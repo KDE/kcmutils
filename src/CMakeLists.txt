@@ -128,11 +128,6 @@ install(FILES
 
 install(TARGETS KF6KCMUtils EXPORT KF6KCMUtilsTargets ${KF_INSTALL_TARGETS_DEFAULT_ARGS})
 
-install(FILES
- kcmodule.desktop
- kcmoduleinit.desktop
-DESTINATION  ${KDE_INSTALL_KSERVICETYPESDIR} )
-
 if(BUILD_QCH)
     ecm_add_qch(
         KF6KCMUtils_QCH
