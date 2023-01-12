@@ -13,7 +13,7 @@
 #ifndef CONFIGMODULE_H
 #define CONFIGMODULE_H
 
-#include "quickaddons_export.h"
+#include "kcmutilsqml_export.h"
 
 #include <QObject>
 #include <QStringList>
@@ -21,6 +21,8 @@
 #include <QtQml>
 
 #include <KPluginMetaData>
+
+#include <memory>
 
 class KAboutData;
 class QQuickItem;
@@ -115,7 +117,7 @@ class ConfigModulePrivate;
  * for more detailed documentation.
  *
  */
-class QUICKADDONS_EXPORT ConfigModule : public QObject
+class KCMUTILSQML_EXPORT ConfigModule : public QObject
 {
     Q_OBJECT
 
@@ -202,7 +204,7 @@ public:
     /**
      * @return the qml engine that built the main config UI
      */
-    QQmlEngine *engine() const;
+    std::shared_ptr<QQmlEngine> engine() const;
 
     /**
      * The status of the mainUi component.

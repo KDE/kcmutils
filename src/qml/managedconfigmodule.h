@@ -8,7 +8,7 @@
 #ifndef MANAGEDCONFIGMODULE_H
 #define MANAGEDCONFIGMODULE_H
 
-#include <KQuickAddons/ConfigModule>
+#include "configmodule.h"
 
 class KCoreConfigSkeleton;
 
@@ -105,7 +105,7 @@ class ManagedConfigModulePrivate;
  *
  * @since 5.65
  */
-class QUICKADDONS_EXPORT ManagedConfigModule : public ConfigModule
+class KCMUTILSQML_EXPORT ManagedConfigModule : public ConfigModule
 {
     Q_OBJECT
 public:

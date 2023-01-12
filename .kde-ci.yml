@@ -10,6 +10,7 @@ Dependencies:
     'frameworks/kdeclarative' : '@same'
     'frameworks/kactivities' : '@same'
     'frameworks/kwindowsystem' : '@same'
+    'frameworks/kirigami' : '@same'
 
 - 'on': ['Linux', 'FreeBSD']
   'require':

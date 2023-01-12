@@ -20,12 +20,11 @@
 #include <QUrl>
 
 #include <KAboutData>
+#include <KLocalizedContext>
 #include <KLocalizedString>
-#include <kdeclarative/qmlobject.h>
-#include <kdeclarative/qmlobjectsharedengine.h>
-
 #include <KPackage/Package>
 #include <KPackage/PackageLoader>
+#include <Kirigami/SharedQmlEngine>
 
 #include <memory>
 
@@ -36,7 +35,6 @@ class ConfigModulePrivate
 public:
     ConfigModulePrivate(ConfigModule *module)
         : _q(module)
-        , _qmlObject(nullptr)
         , _buttons(ConfigModule::Help | ConfigModule::Default | ConfigModule::Apply)
         , _useRootOnlyMessage(false)
         , _needsAuthorization(false)
@@ -50,7 +48,7 @@ public:
     QString componentName() const;
 
     ConfigModule *_q;
-    KDeclarative::QmlObject *_qmlObject;
+    Kirigami::SharedQmlEngine *_engine = nullptr;
     ConfigModule::Buttons _buttons;
     std::unique_ptr<const KAboutData> _about;
     KPluginMetaData _metaData;
@@ -98,11 +96,11 @@ ConfigModule::ConfigModule(QObject *parent, const KPluginMetaData &metaData, con
 ConfigModule::~ConfigModule()
 {
     // in case mainUi was never called
-    if (d->_qmlObject) {
-        ConfigModulePrivate::s_rootObjects.remove(d->_qmlObject->rootContext());
+    if (d->_engine) {
+        ConfigModulePrivate::s_rootObjects.remove(d->_engine->rootContext());
     }
 
-    delete d->_qmlObject;
+    delete d->_engine;
     delete d;
 }
 
@@ -130,8 +128,8 @@ ConfigModule *ConfigModule::qmlAttachedProperties(QObject *object)
 
 QQuickItem *ConfigModule::mainUi()
 {
-    if (d->_qmlObject) {
-        return qobject_cast<QQuickItem *>(d->_qmlObject->rootObject());
+    if (d->_engine) {
+        return qobject_cast<QQuickItem *>(d->_engine->rootObject());
     }
 
     d->_errorString.clear();
@@ -144,14 +142,14 @@ QQuickItem *ConfigModule::mainUi()
     QQmlContext *ctx = QQmlEngine::contextForObject(this);
 
     if (ctx && ctx->engine()) {
-        d->_qmlObject = new KDeclarative::QmlObject(std::shared_ptr<QQmlEngine>(ctx->engine()), ctx, this);
+        // d->_qmlObject = new KDeclarative::QmlObject(std::shared_ptr<QQmlEngine>(ctx->engine()), ctx, this);
     } else {
-        d->_qmlObject = new KDeclarative::QmlObjectSharedEngine(this);
+        d->_engine = Kirigami::SharedQmlEngine::create(nullptr, this);
     }
 
-    ConfigModulePrivate::s_rootObjects[d->_qmlObject->rootContext()] = this;
-    d->_qmlObject->setTranslationDomain(d->componentName());
-    d->_qmlObject->setInitializationDelayed(true);
+    ConfigModulePrivate::s_rootObjects[d->_engine->rootContext()] = this;
+    d->_engine->setTranslationDomain(d->componentName());
+    d->_engine->setInitializationDelayed(true);
 
     KPackage::Package package = KPackage::PackageLoader::self()->loadPackage(QStringLiteral("KPackage/GenericQML"));
     package.setDefaultPackageRoot(QStringLiteral("kpackage/kcms"));
@@ -172,17 +170,17 @@ QQuickItem *ConfigModule::mainUi()
         return nullptr;
     }
 
-    new QQmlFileSelector(d->_qmlObject->engine(), d->_qmlObject->engine());
-    d->_qmlObject->setSource(package.fileUrl("mainscript"));
-    d->_qmlObject->rootContext()->setContextProperty(QStringLiteral("kcm"), this);
-    d->_qmlObject->completeInitialization();
+    new QQmlFileSelector(d->_engine->engine().get(), this);
+    d->_engine->setSource(package.fileUrl("mainscript"));
+    d->_engine->rootContext()->setContextProperty(QStringLiteral("kcm"), this);
+    d->_engine->completeInitialization();
 
-    if (d->_qmlObject->status() != QQmlComponent::Ready) {
-        d->_errorString = d->_qmlObject->mainComponent()->errorString();
+    if (d->_engine->status() != QQmlComponent::Ready) {
+        d->_errorString = d->_engine->mainComponent()->errorString();
         return nullptr;
     }
 
-    return qobject_cast<QQuickItem *>(d->_qmlObject->rootObject());
+    return qobject_cast<QQuickItem *>(d->_engine->rootObject());
 }
 
 void ConfigModule::push(const QString &fileName, const QVariantMap &propertyMap)
@@ -202,7 +200,7 @@ void ConfigModule::push(const QString &fileName, const QVariantMap &propertyMap)
         propertyHash.insert(it.key(), it.value());
     }
 
-    QObject *object = d->_qmlObject->createObjectFromSource(QUrl::fromLocalFile(package.filePath("ui", fileName)), d->_qmlObject->rootContext(), propertyHash);
+    QObject *object = d->_engine->createObjectFromSource(QUrl::fromLocalFile(package.filePath("ui", fileName)), d->_engine->rootContext(), propertyHash);
 
     QQuickItem *item = qobject_cast<QQuickItem *>(object);
     if (!item) {
@@ -362,18 +360,18 @@ QString ConfigModule::authActionName() const
     return d->_authActionName;
 }
 
-QQmlEngine *ConfigModule::engine() const
+std::shared_ptr<QQmlEngine> ConfigModule::engine() const
 {
-    return d->_qmlObject->engine();
+    return d->_engine->engine();
 }
 
 QQmlComponent::Status ConfigModule::status() const
 {
-    if (!d->_qmlObject) {
+    if (!d->_engine) {
         return QQmlComponent::Null;
     }
 
-    return d->_qmlObject->status();
+    return d->_engine->status();
 }
 
 QString ConfigModule::errorString() const
