@@ -82,31 +82,6 @@ QString ConfigModulePrivate::componentName() const
     }
 }
 
-#if QUICKADDONS_BUILD_DEPRECATED_SINCE(5, 88)
-ConfigModule::ConfigModule(const KAboutData *aboutData, QObject *parent, const QVariantList &)
-    : QObject(parent)
-    , d(new ConfigModulePrivate(this))
-{
-    setAboutData(aboutData);
-}
-#endif
-
-#if QUICKADDONS_BUILD_DEPRECATED_SINCE(5, 88)
-ConfigModule::ConfigModule(const KPluginMetaData &metaData, QObject *parent, const QVariantList &)
-    : QObject(parent)
-    , d(new ConfigModulePrivate(this))
-{
-    KAboutData *aboutData =
-        new KAboutData(metaData.pluginId(), metaData.name(), metaData.version(), metaData.description(), KAboutLicense::byKeyword(metaData.license()).key());
-
-    const auto authors = metaData.authors();
-    for (auto &author : authors) {
-        aboutData->addAuthor(author.name(), author.task(), author.emailAddress(), author.webAddress(), author.ocsUsername());
-    }
-    setAboutData(aboutData);
-}
-#endif
-
 ConfigModule::ConfigModule(QObject *parent, const QVariantList &)
     : QObject(parent)
     , d(new ConfigModulePrivate(this))
@@ -420,29 +395,6 @@ void ConfigModule::defaults()
 {
 }
 
-#if QUICKADDONS_BUILD_DEPRECATED_SINCE(5, 88)
-const KAboutData *ConfigModule::aboutData() const
-{
-    // If the ConfigModule was created from a KPluginMetaData lazily create a KAboutData from it
-    if (d->_metaData.isValid() && !d->_about) {
-        KAboutData *aboutData = new KAboutData(d->_metaData.pluginId(),
-                                               d->_metaData.name(),
-                                               d->_metaData.version(),
-                                               d->_metaData.description(),
-                                               KAboutLicense::byKeyword(d->_metaData.license()).key());
-
-        const auto authors = d->_metaData.authors();
-        for (auto &author : authors) {
-            aboutData->addAuthor(author.name(), author.task(), author.emailAddress(), author.webAddress(), author.ocsUsername());
-        }
-
-        d->_about.reset(aboutData);
-    }
-
-    return d->_about.get();
-}
-#endif
-
 void ConfigModule::setAboutData(const KAboutData *about)
 {
     d->_about.reset(about);
@@ -510,11 +462,7 @@ void ConfigModule::setNeedsSave(bool needs)
     Q_EMIT needsSaveChanged();
 }
 
-#if QT_VERSION >= QT_VERSION_CHECK(6, 0, 0)
 bool ConfigModule::needsSave() const
-#else
-bool ConfigModule::needsSave()
-#endif
 {
     return d->_needsSave;
 }
@@ -529,11 +477,7 @@ void ConfigModule::setRepresentsDefaults(bool defaults)
     Q_EMIT representsDefaultsChanged();
 }
 
-#if QT_VERSION >= QT_VERSION_CHECK(6, 0, 0)
 bool ConfigModule::representsDefaults() const
-#else
-bool ConfigModule::representsDefaults()
-#endif
 {
     return d->_representsDefaults;
 }
