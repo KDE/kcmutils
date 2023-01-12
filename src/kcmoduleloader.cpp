@@ -25,7 +25,7 @@
 #include <KMessageBox>
 #include <KPluginFactory>
 
-#include <KQuickAddons/ConfigModule>
+#include "qml/configmodule.h"
 
 using namespace KCModuleLoader;
 

@@ -7,8 +7,6 @@
 #ifndef KCMODULEQML_H
 #define KCMODULEQML_H
 
-#include <kconfigwidgets_export.h>
-
 #include <KCModule>
 
 #include <memory>

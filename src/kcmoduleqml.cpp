@@ -1,24 +1,27 @@
 /*
     This file is part of the KDE Project
     SPDX-FileCopyrightText: 2014 Marco Martin <mart@kde.org>
+    SPDX-FileCopyrightText: 2023 Alexander Lohnau <alexander.lohnau@gmx.de>
 
     SPDX-License-Identifier: LGPL-2.0-only
 */
 
 #include "kcmoduleqml_p.h"
 
-#include <kcmutils_debug.h>
-
+#include <Kirigami2/kirigami/sharedqmlengine.h>
 #include <QQuickItem>
 #include <QQuickWidget>
 #include <QQuickWindow>
 #include <QVBoxLayout>
 
 #include <KAboutData>
+#include <KLocalizedContext>
 #include <KPageWidget>
-#include <kdeclarative/kdeclarative_export.h>
-#include <kdeclarative/qmlobjectsharedengine.h>
-#include <kquickaddons/configmodule.h>
+#include <Kirigami/SharedQmlEngine>
+
+#include "qml/configmodule.h"
+
+#include <kcmutils_debug.h>
 
 class KCModuleQmlPrivate
 {
@@ -48,7 +51,7 @@ public:
     QQuickItem *rootPlaceHolder = nullptr;
     QQuickItem *pageRow = nullptr;
     std::unique_ptr<KQuickAddons::ConfigModule> configModule;
-    KDeclarative::QmlObjectSharedEngine *qmlObject = nullptr;
+    Kirigami::SharedQmlEngine *engine = nullptr;
 };
 
 KCModuleQml::KCModuleQml(std::unique_ptr<KQuickAddons::ConfigModule> configModule, QWidget *parent, const QVariantList &args)
@@ -104,16 +107,16 @@ KCModuleQml::KCModuleQml(std::unique_ptr<KQuickAddons::ConfigModule> configModul
     QVBoxLayout *layout = new QVBoxLayout(this);
     layout->setContentsMargins(0, 0, 0, 0);
 
-    d->qmlObject = new KDeclarative::QmlObjectSharedEngine(this);
-    d->quickWidget = new QQuickWidget(d->qmlObject->engine(), this);
+    d->engine = Kirigami::SharedQmlEngine::create(nullptr, this);
+    d->quickWidget = new QQuickWidget(d->engine->engine().get(), this);
     d->quickWidget->setResizeMode(QQuickWidget::SizeRootObjectToView);
     d->quickWidget->setFocusPolicy(Qt::StrongFocus);
     d->quickWidget->setAttribute(Qt::WA_AlwaysStackOnTop, true);
     d->quickWindow = d->quickWidget->quickWindow();
     d->quickWindow->setColor(Qt::transparent);
 
-    QQmlComponent *component = new QQmlComponent(d->qmlObject->engine(), this);
-    // This has activeFocusOnTab to notice when the navigation wraps
+    QQmlComponent *component = new QQmlComponent(d->engine->engine().get(), this);
+    // this has activeFocusOnTab to notice when the navigation wraps
     // around, so when we need to go outside and inside
     // pushPage/popPage are needed as push of StackView can't be directly invoked from c++
     // because its parameters are QQmlV4Function which is not public.
