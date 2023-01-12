@@ -7,7 +7,7 @@
 #ifndef KCMODULEQML_H
 #define KCMODULEQML_H
 
-#include <KCModule>
+#include "kcmodule.h"
 
 #include <memory>
 

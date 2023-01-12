@@ -8,9 +8,9 @@
 #ifndef KCMODULE_H
 #define KCMODULE_H
 
-#include <kconfigwidgets_export.h>
+#include "kcmutils_export.h"
 
-#if KCONFIGWIDGETS_WITH_KAUTH
+#if KCMUTILS_WITH_KAUTH
 #include <KAuth/Action>
 #endif
 
@@ -79,7 +79,7 @@ class KCModulePrivate;
  *
  * @author Matthias Hoelzer-Kluepfel <hoelzer@kde.org>
  */
-class KCONFIGWIDGETS_EXPORT KCModule : public QWidget
+class KCMUTILS_EXPORT KCModule : public QWidget
 {
     Q_OBJECT
 
@@ -205,7 +205,7 @@ public:
      */
     bool defaultsIndicatorsVisible() const;
 
-#if KCONFIGWIDGETS_WITH_KAUTH
+#if KCMUTILS_WITH_KAUTH
     /**
      * @brief Set if the module's save() method requires authorization to be executed
      *
@@ -367,7 +367,7 @@ protected Q_SLOTS:
      */
     void widgetChanged();
 
-#if KCONFIGWIDGETS_WITH_KAUTH
+#if KCMUTILS_WITH_KAUTH
     /**
      * The status of the auth action, if one, has changed
      */

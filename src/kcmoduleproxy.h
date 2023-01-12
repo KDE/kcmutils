@@ -12,7 +12,7 @@
 
 #include <QStringList>
 
-#include <KCModule>
+#include <kcmodule.h>
 #include <kcmutils_export.h>
 
 class KAboutData;

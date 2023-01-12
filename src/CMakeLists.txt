@@ -19,9 +19,18 @@ set(kcmutils_LIB_SRCS
     kcmultidialog.h
     kcmultidialog_p.h
     kpluginwidget.cpp
+    kcmodule.cpp
+    kcmodule.h
 )
 
 add_library(KF6KCMUtils ${kcmutils_LIB_SRCS})
+
+if (WITH_KAUTH)
+    set(WITH_KAUTH_DEFINE_VALUE 1)
+else()
+    set(WITH_KAUTH_DEFINE_VALUE 0)
+endif()
+set(define_with_kauth_code "#define KCMUTILS_WITH_KAUTH ${WITH_KAUTH_DEFINE_VALUE}\n")
 
 ecm_qt_declare_logging_category(KF6KCMUtils
     HEADER kcmutils_debug.h
@@ -38,6 +47,7 @@ ecm_generate_export_header(KF6KCMUtils
     DEPRECATED_BASE_VERSION 0
     DEPRECATION_VERSIONS
     EXCLUDE_DEPRECATED_BEFORE_AND_AT ${EXCLUDE_DEPRECATED_BEFORE_AND_AT}
+    CUSTOM_CONTENT_FROM_VARIABLE define_with_kauth_code
 )
 target_include_directories(KF6KCMUtils INTERFACE "$<INSTALL_INTERFACE:${KDE_INSTALL_INCLUDEDIR_KF}/KCMUtils>")
 
@@ -47,6 +57,7 @@ target_link_libraries(KF6KCMUtils
     KF6::CoreAddons # KPluginMetaData
     KF6::ConfigWidgets  # KCModule
   PRIVATE
+    KF6::ConfigWidgets
     KF6KCMUtilsCore
     kcmutils_proxy_model
     Qt6::DBus       # dbus usage in kcmoduleproxy.cpp
@@ -77,6 +88,7 @@ ecm_generate_headers(KCMUtils_HEADERS
   KCModuleProxy
   KCModuleData
   KPluginWidget
+  KCModule
 
   REQUIRED_HEADERS KCMUtils_HEADERS
 )

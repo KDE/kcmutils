@@ -9,13 +9,13 @@
 */
 
 #include "kcmodule.h"
-#include "kconfigwidgets_debug.h"
+#include "kcmutils_debug.h"
 
 #include <KAboutData>
+#include <KConfigDialogManager>
 #include <KConfigSkeleton>
 #include <KLocalizedString>
-#include <kconfigdialogmanager.h>
-#if KCONFIGWIDGETS_WITH_KAUTH
+#if KCMUTILS_WITH_KAUTH
 #include <KAuth/ExecuteJob>
 #endif
 
@@ -46,7 +46,7 @@ public:
     bool _firstshow : 1;
 
     bool _needsAuthorization : 1;
-#if KCONFIGWIDGETS_WITH_KAUTH
+#if KCMUTILS_WITH_KAUTH
     KAuth::Action _authAction;
 #endif
 
@@ -106,7 +106,7 @@ KConfigDialogManager *KCModule::addConfig(KCoreConfigSkeleton *config, QWidget *
 void KCModule::setNeedsAuthorization(bool needsAuth)
 {
     d->_needsAuthorization = needsAuth;
-#if KCONFIGWIDGETS_WITH_KAUTH
+#if KCMUTILS_WITH_KAUTH
     if (needsAuth && d->_about) {
         d->_authAction = KAuth::Action(QLatin1String("org.kde.kcontrol.") + d->_about->componentName() + QLatin1String(".save"));
         d->_needsAuthorization = d->_authAction.isValid();
@@ -142,11 +142,11 @@ bool KCModule::defaultsIndicatorsVisible() const
     return d->_defaultsIndicatorsVisible;
 }
 
-#if KCONFIGWIDGETS_WITH_KAUTH
+#if KCMUTILS_WITH_KAUTH
 void KCModule::setAuthAction(const KAuth::Action &action)
 {
     if (!action.isValid()) {
-        qCWarning(KCONFIG_WIDGETS_LOG) << "Auth action" << action.name() << "is invalid";
+        qCWarning(KCMUTILS_LOG) << "Auth action" << action.name() << "is invalid";
         d->_needsAuthorization = false;
         return;
     }
@@ -177,7 +177,7 @@ void KCModule::authStatusChanged(KAuth::Action::AuthStatus status)
         break;
     }
 
-    qCDebug(KCONFIG_WIDGETS_LOG) << useRootOnlyMessage();
+    qCDebug(KCMUTILS_LOG) << useRootOnlyMessage();
 }
 #endif
 

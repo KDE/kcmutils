@@ -28,7 +28,7 @@
 #include <QStyle>
 #include <QUrl>
 
-#if KCONFIGWIDGETS_WITH_KAUTH
+#if KCMUTILS_WITH_KAUTH
 #include <KAuth/Action>
 #include <KAuth/ObjectDecorator>
 #endif
@@ -132,7 +132,7 @@ void KCMultiDialogPrivate::_k_clientChanged()
         QPushButton *applyButton = q->buttonBox()->button(QDialogButtonBox::Apply);
         if (applyButton) {
             q->disconnect(applyButton, &QAbstractButton::clicked, q, &KCMultiDialog::slotApplyClicked);
-#if KCONFIGWIDGETS_WITH_KAUTH
+#if KCMUTILS_WITH_KAUTH
             delete applyButton->findChild<KAuth::ObjectDecorator *>();
 #endif
         }
@@ -140,12 +140,12 @@ void KCMultiDialogPrivate::_k_clientChanged()
         QPushButton *okButton = q->buttonBox()->button(QDialogButtonBox::Ok);
         if (okButton) {
             q->disconnect(okButton, &QAbstractButton::clicked, q, &KCMultiDialog::slotOkClicked);
-#if KCONFIGWIDGETS_WITH_KAUTH
+#if KCMUTILS_WITH_KAUTH
             delete okButton->findChild<KAuth::ObjectDecorator *>();
 #endif
         }
 
-#if KCONFIGWIDGETS_WITH_KAUTH
+#if KCMUTILS_WITH_KAUTH
         if (activeModule->realModule()->needsAuthorization()) {
             if (applyButton) {
                 KAuth::ObjectDecorator *decorator = new KAuth::ObjectDecorator(applyButton);
