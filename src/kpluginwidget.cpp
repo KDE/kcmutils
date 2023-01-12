@@ -32,7 +32,6 @@
 #include <KLocalizedString>
 #include <KPluginMetaData>
 #include <KStandardGuiItem>
-#include <kcmoduleinfo.h>
 #include <kcmoduleproxy.h>
 #include <utility>
 

@@ -30,10 +30,6 @@ public:
     ~KCModuleQml() override;
 
     QString quickHelp() const override;
-#if KCONFIGWIDGETS_BUILD_DEPRECATED_SINCE(5, 90)
-    const KAboutData *aboutData() const override;
-#endif
-
 public Q_SLOTS:
     void load() override;
     void save() override;

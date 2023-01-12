@@ -15,7 +15,8 @@
 
 #include <KPageDialog>
 #include <KPluginMetaData>
-#include <kcmoduleinfo.h>
+
+#include "kcmutils_export.h"
 
 class KCMultiDialogPrivate;
 
@@ -43,25 +44,6 @@ public:
      **/
     ~KCMultiDialog() override;
 
-#if KCMUTILS_ENABLE_DEPRECATED_SINCE(5, 85)
-    /**
-     * Add a module.
-     *
-     * The module is added according to its KCModuleInfo::weight(). The weight determines where in the list
-     * the module will appear. Lighter modules on top, heavier modules at the bottom.
-     *
-     * @param module Specify the name of the module that is to be added
-     *               to the list of modules the dialog will show.
-     *
-     * @param args The arguments that should be given to the KCModule when it is created
-     *
-     * @returns The @see KPageWidgetItem associated with the new dialog page.
-     * @deprecated Since 5.85, use @p addModule(const KPluginMetaData &metaData) instead
-     **/
-    KCMUTILS_DEPRECATED_VERSION(5, 85, "use addModule(const KPluginMetaData &metaData) instead")
-    KPageWidgetItem *addModule(const QString &module, const QStringList &args = QStringList());
-#endif
-
     /**
      * @since 5.84
      * @overload
@@ -75,27 +57,6 @@ public:
      * @since 5.85
      */
     KPageWidgetItem *addModule(const KPluginMetaData &metaData, const QStringList &args); // TODO KF6 merge with overload
-
-#if KCMUTILS_ENABLE_DEPRECATED_SINCE(5, 85)
-    /**
-     * Add a module.
-     *
-     * The module is added according to its KCModuleInfo::weight(). The weight determines where in the list
-     * the module will appear. Lighter modules on top, heavier modules at the bottom.
-     *
-     * @param moduleinfo Pass a KCModuleInfo object which will be
-     *                   used for creating the module. It will be added
-     *                   to the list of modules the dialog will show.
-     *
-     * @param parent The @see KPageWidgetItem that should appear as parents
-     *               in the tree view or a 0 pointer if there is no parent.
-     *
-     * @param args The arguments that should be given to the KCModule when it is created
-     * @deprecated Since 5.85, use @p addModule(const KPluginMetaData &metaData) instead
-     **/
-    KCMUTILS_DEPRECATED_VERSION(5, 85, "use addModule(const KPluginMetaData &metaData) instead")
-    KPageWidgetItem *addModule(const KCModuleInfo &moduleinfo, KPageWidgetItem *parent = nullptr, const QStringList &args = QStringList());
-#endif
 
     /**
      * Removes all modules from the dialog.
@@ -117,27 +78,6 @@ Q_SIGNALS:
      * configuration is saved.
      */
     void configCommitted();
-
-#if KCMUTILS_ENABLE_DEPRECATED_SINCE(5, 85)
-    /**
-     * Emitted after the KCModules have been told to save their configuration.
-     * It is emitted once for every instance the KCMs that were changed belong
-     * to.
-     *
-     * You can make use of this if you have more than one component in your
-     * application. componentName tells you the instance that has to reload its
-     * configuration.
-     *
-     * The applyClicked and okClicked signals are emitted before the
-     * configuration is saved.
-     *
-     * @param componentName The name of the instance that needs to reload its
-     *                     configuration.
-     * @deprecated Since 5.85, use @p KCMultiDialog::configCommitted() instead
-     */
-    KCMUTILS_DEPRECATED_VERSION(5, 85, "use KCMultiDialog::configCommitted() instead")
-    void configCommitted(const QByteArray &componentName);
-#endif
 
 protected:
     /**

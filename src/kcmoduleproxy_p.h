@@ -8,7 +8,6 @@
 #ifndef KCMUTILS_KCMODULEPROXY_P_H
 #define KCMUTILS_KCMODULEPROXY_P_H
 
-#include "kcmoduleinfo.h"
 #include "kcmoduleproxy.h"
 #include <KPluginMetaData>
 #include <QLabel>
@@ -21,14 +20,8 @@ class KCModuleProxyPrivate
     Q_DECLARE_PUBLIC(KCModuleProxy)
 protected:
     KCModuleProxyPrivate(KCModuleProxy *_parent,
-#if KCMUTILS_BUILD_DEPRECATED_SINCE(5, 88)
-                         const KCModuleInfo &info,
-#endif
                          const QStringList &_args)
         : args(_args)
-#if KCMUTILS_BUILD_DEPRECATED_SINCE(5, 88)
-        , modInfo(info)
-#endif
         , parent(_parent)
         , q_ptr(_parent)
 
@@ -80,9 +73,6 @@ protected:
     QLabel *rootInfo = nullptr;
     QString dbusService;
     QString dbusPath;
-#if KCMUTILS_BUILD_DEPRECATED_SINCE(5, 88)
-    KCModuleInfo modInfo;
-#endif
     bool changed = false;
     bool defaulted = false;
     KCModuleProxy *parent = nullptr;

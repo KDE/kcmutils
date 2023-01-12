@@ -234,13 +234,6 @@ void KCMultiDialogPrivate::_k_updateHeader(bool use, const QString &message)
         icon = kcm->metaData().iconName();
     }
 
-#if KCMUTILS_BUILD_DEPRECATED_SINCE(5, 88)
-    if (kcm->moduleInfo().isValid()) {
-        moduleName = kcm->moduleInfo().moduleName();
-        icon = kcm->moduleInfo().icon();
-    }
-#endif
-
     if (use) {
         item->setHeader(QStringLiteral("<b>") + moduleName + QStringLiteral("</b><br><i>") + message + QStringLiteral("</i>"));
         item->setIcon(KIconUtils::addOverlay(QIcon::fromTheme(icon), QIcon::fromTheme(QStringLiteral("dialog-warning")), Qt::BottomRightCorner));
@@ -379,27 +372,8 @@ void KCMultiDialogPrivate::apply()
 
         if (proxy->isChanged()) {
             proxy->save();
-#if KCMUTILS_BUILD_DEPRECATED_SINCE(5, 85)
-            /**
-             * Add name of the components the kcm belongs to the list
-             * of updated components.
-             */
-            const QStringList componentNames = module.componentNames;
-            for (const QString &componentName : componentNames) {
-                if (!updatedComponents.contains(componentName)) {
-                    updatedComponents.append(componentName);
-                }
-            }
-#endif
         }
     }
-
-#if KCMUTILS_BUILD_DEPRECATED_SINCE(5, 85)
-    // Send the configCommitted signal for every updated component.
-    for (const QString &name : std::as_const(updatedComponents)) {
-        Q_EMIT q->configCommitted(name.toLatin1());
-    }
-#endif
 
     Q_EMIT q->configCommitted();
 }
@@ -432,9 +406,6 @@ void KCMultiDialog::slotHelpClicked()
     QString docPath;
     for (int i = 0; i < d->modules.count(); ++i) {
         if (d->modules[i].item == item) {
-#if KCMUTILS_BUILD_DEPRECATED_SINCE(5, 88)
-            docPath = d->modules[i].kcm->moduleInfo().docPath();
-#endif
             if (docPath.isEmpty()) {
                 docPath = d->modules[i].kcm->metaData().value(QStringLiteral("X-DocPath"));
             }
@@ -548,128 +519,6 @@ KPageWidgetItem *KCMultiDialog::addModule(const KPluginMetaData &metaData, const
     }
     return item;
 }
-
-#if KCMUTILS_BUILD_DEPRECATED_SINCE(5, 85)
-KPageWidgetItem *KCMultiDialog::addModule(const QString &path, const QStringList &args)
-{
-    QString complete = path;
-
-    if (!path.endsWith(QLatin1String(".desktop"))) {
-        complete += QStringLiteral(".desktop");
-    }
-
-    KService::Ptr service = KService::serviceByStorageId(complete);
-
-    return addModule(KCModuleInfo(service), nullptr, args);
-}
-#endif
-
-#if KCMUTILS_BUILD_DEPRECATED_SINCE(5, 85)
-KPageWidgetItem *KCMultiDialog::addModule(const KCModuleInfo &moduleInfo, KPageWidgetItem *parentItem, const QStringList &args)
-{
-    Q_D(KCMultiDialog);
-    if (!moduleInfo.isValid()) {
-        return nullptr;
-    }
-
-    // KAuthorized::authorizeControlModule( moduleInfo.service()->menuId() ) is
-    // checked in noDisplay already
-    if (moduleInfo.service() && moduleInfo.service()->noDisplay()) {
-        return nullptr;
-    }
-
-    // Create the scroller
-    auto *moduleScroll = new UnboundScrollArea(this);
-    // Prepare the scroll area
-    moduleScroll->setWidgetResizable(true);
-    moduleScroll->setFrameStyle(QFrame::NoFrame);
-    moduleScroll->viewport()->setAutoFillBackground(false);
-
-    KCModuleProxy *kcm = new KCModuleProxy(moduleInfo, moduleScroll, args);
-    moduleScroll->setWidget(kcm);
-
-    // qDebug() << moduleInfo.moduleName();
-    KPageWidgetItem *item = new KPageWidgetItem(moduleScroll, moduleInfo.moduleName());
-
-    KCMultiDialogPrivate::CreatedModule cm;
-    cm.kcm = kcm;
-    cm.item = item;
-    cm.componentNames = moduleInfo.property(QStringLiteral("X-KDE-ParentComponents")).toStringList();
-    d->modules.append(cm);
-
-    if (qobject_cast<KCModuleQml *>(kcm->realModule())) {
-        item->setHeaderVisible(false);
-    }
-
-    if (kcm->realModule() && kcm->realModule()->useRootOnlyMessage()) {
-        item->setHeader(QStringLiteral("<b>") + moduleInfo.moduleName() + QStringLiteral("</b><br><i>") + kcm->realModule()->rootOnlyMessage()
-                        + QStringLiteral("</i>"));
-        item->setIcon(KIconUtils::addOverlay(QIcon::fromTheme(moduleInfo.icon()), QIcon::fromTheme(QStringLiteral("dialog-warning")), Qt::BottomRightCorner));
-    } else {
-        item->setHeader(moduleInfo.moduleName());
-        item->setIcon(QIcon::fromTheme(moduleInfo.icon()));
-    }
-    item->setProperty("_k_weight", moduleInfo.weight());
-
-    bool updateCurrentPage = false;
-    const KPageWidgetModel *model = qobject_cast<const KPageWidgetModel *>(pageWidget()->model());
-    Q_ASSERT(model);
-    if (parentItem) {
-        const QModelIndex parentIndex = model->index(parentItem);
-        const int siblingCount = model->rowCount(parentIndex);
-        int row = 0;
-        for (; row < siblingCount; ++row) {
-            KPageWidgetItem *siblingItem = model->item(model->index(row, 0, parentIndex));
-            if (siblingItem->property("_k_weight").toInt() > moduleInfo.weight()) {
-                // the item we found is heavier than the new module
-                // qDebug() << "adding KCM " << item->name() << " before " << siblingItem->name();
-                insertPage(siblingItem, item);
-                break;
-            }
-        }
-        if (row >= siblingCount) {
-            // the new module is either the first or the heaviest item
-            // qDebug() << "adding KCM " << item->name() << " with parent " << parentItem->name();
-            addSubPage(parentItem, item);
-        }
-    } else {
-        const int siblingCount = model->rowCount();
-        int row = 0;
-        for (; row < siblingCount; ++row) {
-            KPageWidgetItem *siblingItem = model->item(model->index(row, 0));
-            if (siblingItem->property("_k_weight").toInt() > moduleInfo.weight()) {
-                // the item we found is heavier than the new module
-                // qDebug() << "adding KCM " << item->name() << " before " << siblingItem->name();
-                insertPage(siblingItem, item);
-                if (siblingItem == currentPage()) {
-                    updateCurrentPage = true;
-                }
-
-                break;
-            }
-        }
-        if (row == siblingCount) {
-            // the new module is either the first or the heaviest item
-            // qDebug() << "adding KCM " << item->name() << " at the top level";
-            addPage(item);
-        }
-    }
-
-    QObject::connect(kcm, qOverload<bool>(&KCModuleProxy::changed), this, [d]() {
-        d->_k_clientChanged();
-    });
-
-    QObject::connect(kcm->realModule(), &KCModule::rootOnlyMessageChanged, this, [d](bool use, QString message) {
-        d->_k_updateHeader(use, message);
-    });
-
-    if (d->modules.count() == 1 || updateCurrentPage) {
-        setCurrentPage(item);
-        d->_k_clientChanged();
-    }
-    return item;
-}
-#endif
 
 void KCMultiDialog::clear()
 {

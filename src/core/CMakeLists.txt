@@ -21,7 +21,6 @@ target_link_libraries(KF6KCMUtilsCore
     KF6::CoreAddons
   PRIVATE
     KF6::ConfigCore
-    KF6::Service # KServiceTypeTrader compat code path
     KF6::ItemViews
 )
 

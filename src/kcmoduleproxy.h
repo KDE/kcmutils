@@ -13,11 +13,9 @@
 #include <QStringList>
 
 #include <KCModule>
-#include <KService>
 #include <kcmutils_export.h>
 
 class KAboutData;
-class KCModuleInfo;
 class KCModuleProxyPrivate;
 class KPluginMetaData;
 
@@ -57,50 +55,6 @@ class KCMUTILS_EXPORT KCModuleProxy : public QWidget
     Q_DECLARE_PRIVATE(KCModuleProxy)
     Q_OBJECT
 public:
-#if KCMUTILS_ENABLE_DEPRECATED_SINCE(5, 88)
-    /**
-     * Constructs a KCModuleProxy from a KCModuleInfo class.
-     *
-     * @param info The KCModuleInfo to construct the module from.
-     * @param parent the parent QWidget.
-     * @param args This is used in the implementation and is internal.
-     * Use the default.
-     * @deprecated Since 5.88, use KCModuleProxy(KPluginMetaData, QWidget *, QStringList) instead
-     */
-    KCMUTILS_DEPRECATED_VERSION(5, 88, "Use KCModuleProxy(KPluginMetaData, QWidget *, QStringList) instead")
-    explicit KCModuleProxy(const KCModuleInfo &info, QWidget *parent = nullptr, const QStringList &args = QStringList());
-#endif
-
-#if KCMUTILS_ENABLE_DEPRECATED_SINCE(5, 88)
-    /**
-     * Constructs a KCModuleProxy from a module's service name, which is
-     * equivalent to the desktop file for the kcm without the ".desktop" part.
-     * Otherwise equal to the one above.
-     *
-     * @param serviceName The module's service name to construct from.
-     * @param parent the parent QWidget.
-     * @param args This is used in the implementation and is internal.
-     * Use the default.
-     * @deprecated Since 5.88, use KCModuleProxy(KPluginMetaData, QWidget *, QStringList) instead
-     */
-    KCMUTILS_DEPRECATED_VERSION(5, 88, "Use KCModuleProxy(KPluginMetaData, QWidget *, QStringList) instead")
-    explicit KCModuleProxy(const QString &serviceName, QWidget *parent = nullptr, const QStringList &args = QStringList());
-#endif
-
-#if KCMUTILS_ENABLE_DEPRECATED_SINCE(5, 88)
-    /**
-     * Constructs a KCModuleProxy from KService. Otherwise equal to the one above.
-     *
-     * @param service The KService to construct from.
-     * @param parent the parent QWidget.
-     * @param args This is used in the implementation and is internal.
-     * Use the default.
-     * @deprecated Since 5.88, use KCModuleProxy(KPluginMetaData, QWidget *, QStringList) instead
-     */
-    KCMUTILS_DEPRECATED_VERSION(5, 88, "Use KCModuleProxy(KPluginMetaData, QWidget *, QStringList) instead")
-    explicit KCModuleProxy(const KService::Ptr &service, QWidget *parent = nullptr, const QStringList &args = QStringList());
-#endif
-
     /**
      * Constructs a KCModuleProxy from KPluginMetaData
      * @since 5.84
@@ -132,30 +86,12 @@ public:
      */
     QString quickHelp() const;
 
-#if KCMUTILS_ENABLE_DEPRECATED_SINCE(5, 85)
-    /**
-     * @return the module's aboutData()
-     * @deprecated since 5.85, use metaData() instead.
-     */
-    KCMUTILS_DEPRECATED_VERSION(5, 85, "Use metaData() instead")
-    const KAboutData *aboutData() const;
-#endif
-
     /**
      * @return what buttons the module
      * needs
      */
     KCModule::Buttons buttons() const;
 
-#if KCMUTILS_ENABLE_DEPRECATED_SINCE(5, 87)
-    /**
-     * @return true if the module is modified
-     * and needs to be saved.
-     * @deprecated Since 5.87, use isChanged instead
-     */
-    KCMUTILS_DEPRECATED_VERSION(5, 87, "use isChanged instead")
-    bool changed() const;
-#endif
     /**
      * @return true if the module is modified
      * and needs to be saved.
@@ -177,16 +113,6 @@ public:
      * @return the encapsulated module.
      */
     KCModule *realModule() const;
-
-#if KCMUTILS_ENABLE_DEPRECATED_SINCE(5, 88)
-    /**
-     * @return a KCModuleInfo for the encapsulated
-     * module
-     * @deprecated Since 5.87 method is obsolete with deprecation of KCModuleInfo constructor, use metaData() instead
-     */
-    KCMUTILS_DEPRECATED_VERSION(5, 88, "method is obsolete with deprecation of KCModuleInfo constructor, use metaData() instead")
-    KCModuleInfo moduleInfo() const;
-#endif
 
     /**
      * Returns the KPluginMetaData used to load the KCM. If the KCM is not loaded using KPluginMetaData the returned object is invalid.
@@ -236,16 +162,6 @@ Q_SIGNALS:
      * This signal is emitted when the contained module is changed.
      */
     void changed(bool state);
-
-#if KCMUTILS_ENABLE_DEPRECATED_SINCE(5, 87)
-    /**
-     * This is emitted in the same situations as in the one above. Practical
-     * when several KCModuleProxys are loaded.
-     * @deprecated Since 5.87, use changed(bool) instead
-     */
-    KCMUTILS_DEPRECATED_VERSION(5, 87, "use changed(bool) instead")
-    void changed(KCModuleProxy *mod);
-#endif
 
     /**
      * When a module running with root privileges and exits, returns to normal mode, the

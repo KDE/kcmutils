@@ -12,7 +12,6 @@
 
 #include <KCategorizedSortFilterProxyModel>
 #include <KConfigGroup>
-#include <KServiceTypeTrader>
 
 #include <utility>
 
@@ -57,29 +56,6 @@ public:
             }
         }
 
-#if KSERVICE_BUILD_DEPRECATED_SINCE(5, 89)
-        QT_WARNING_PUSH
-        QT_WARNING_DISABLE_CLANG("-Wdeprecated-declarations")
-        QT_WARNING_DISABLE_GCC("-Wdeprecated-declarations")
-
-        const QString constraint = QLatin1Char('\'') + plugin.pluginId() + QLatin1String("' in [X-KDE-ParentComponents]");
-        const auto services = KServiceTypeTrader::self()->query(QStringLiteral("KCModule"), constraint);
-        if (!services.isEmpty()) {
-            const KService::Ptr service = services.constFirst();
-            qCWarning(KCMUTILS_CORE_LOG) << service->entryPath() << "Querying the KCMs associated to a plugin using the X-KDE-ParentComponents is deprecated."
-                                         << "Instead define the X-KDE-ConfigModule with the namespace and plugin filen name.";
-            QJsonObject obj;
-            QJsonObject kplugin{{QLatin1String("Name"), service->name()}};
-            QString pluginInfoName = service->property(QStringLiteral("X-KDE-PluginInfo-Name")).toString();
-            if (!pluginInfoName.isEmpty()) {
-                kplugin.insert(QLatin1String("Id"), pluginInfoName);
-            }
-            obj.insert(QLatin1String("KPlugin"), kplugin);
-            obj.insert(QLatin1String("X-KDE-PluginKeyword"), service->pluginKeyword());
-            return KPluginMetaData(obj, service->library());
-        }
-        QT_WARNING_POP
-#endif
         return KPluginMetaData();
     }
 

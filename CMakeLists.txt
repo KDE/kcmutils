@@ -22,7 +22,6 @@ include(ECMGenerateHeaders)
 include(CMakePackageConfigHelpers)
 include(ECMAddQch)
 include(ECMQtDeclareLoggingCategory)
-include(ECMSetupQtPluginMacroNames)
 include(ECMDeprecationSettings)
 include(KDEGitCommitHooks)
 
@@ -51,24 +50,12 @@ find_package(KF6ConfigWidgets ${KF_DEP_VERSION} REQUIRED)
 find_package(KF6CoreAddons ${KF_DEP_VERSION} REQUIRED)
 find_package(KF6GuiAddons ${KF_DEP_VERSION} REQUIRED)
 find_package(KF6I18n ${KF_DEP_VERSION} REQUIRED)
-find_package(KF6Service ${KF_DEP_VERSION} REQUIRED)
 find_package(KF6XmlGui ${KF_DEP_VERSION} REQUIRED)
 find_package(KF6Declarative ${KF_DEP_VERSION} REQUIRED)
-
-ecm_setup_qtplugin_macro_names(
-    JSON_NONE
-        "KCMODULECONTAINER"
-    CONFIG_CODE_VARIABLE
-        PACKAGE_SETUP_AUTOMOC_VARIABLES
-)
 
 ecm_set_disabled_deprecation_versions(
     QT 5.15.2
     KF 5.90.0
-    KSERVICE 5.78 # for KPluginInfo::dependencies
-    KCOREADDONS 5.78 # for KPluginInfo::dependencies
-    QUICKADDONS 5.87 # for ConfigModule::aboutData
-    KCONFIGWIDGETS 5.84 # for KCModule::aboutData and corresponding constructor
 )
 
 add_definitions(-DTRANSLATION_DOMAIN=\"kcmutils5\")

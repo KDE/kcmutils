@@ -6,12 +6,8 @@ add_subdirectory(qml)
 
 ########### kcmutils ###############
 set(kcmutils_LIB_SRCS
-    kcmodulecontainer.cpp
-    kcmodulecontainer.h
     kcmoduledata.cpp
     kcmoduledata.h
-    kcmoduleinfo.cpp
-    kcmoduleinfo.h
     kcmoduleloader.cpp
     kcmoduleloader.h
     kcmoduleproxy.cpp
@@ -22,20 +18,7 @@ set(kcmutils_LIB_SRCS
     kcmultidialog.cpp
     kcmultidialog.h
     kcmultidialog_p.h
-    kpluginselector.cpp
-    kpluginselector.h
-    kpluginselector_p.h
     kpluginwidget.cpp
-    ksettings/dialog.cpp
-    ksettings/dialog.h
-    ksettings/dialog_p.h
-    ksettings/dispatcher.cpp
-    ksettings/dispatcher.h
-    ksettings/dispatcher_p.h
-    ksettings/pluginpage.cpp
-    ksettings/pluginpage.h
-    ksettingswidgetadaptor.cpp
-    ksettingswidgetadaptor.h
 )
 
 add_library(KF6KCMUtils ${kcmutils_LIB_SRCS})
@@ -53,7 +36,7 @@ ecm_generate_export_header(KF6KCMUtils
     GROUP_BASE_NAME KF
     VERSION ${KF_VERSION}
     DEPRECATED_BASE_VERSION 0
-    DEPRECATION_VERSIONS 5.66 5.76 5.82 5.85 5.87 5.88 5.90
+    DEPRECATION_VERSIONS
     EXCLUDE_DEPRECATED_BEFORE_AND_AT ${EXCLUDE_DEPRECATED_BEFORE_AND_AT}
 )
 target_include_directories(KF6KCMUtils INTERFACE "$<INSTALL_INTERFACE:${KDE_INSTALL_INCLUDEDIR_KF}/KCMUtils>")
@@ -62,7 +45,6 @@ target_link_libraries(KF6KCMUtils
   PUBLIC
     Qt${QT_MAJOR_VERSION}::Widgets
     KF6::ConfigWidgets  # KCModule
-    KF6::Service        # KService
   PRIVATE
     KF6KCMUtilsCore
     kcmutils_proxy_model
@@ -78,14 +60,9 @@ target_link_libraries(KF6KCMUtils
     KF6::QuickAddons
     KF6::Declarative
 )
-
-if (QT_MAJOR_VERSION STREQUAL "6")
-    # TODO: instead of relying on KF6ConfigWidgetsConfig.cmake optionally getting KAuth dependency,
-    # have KF6ConfigWidgetsConfig.cmake provide a proper flag/property about using the KAuth feature
-    if (TARGET KF6::AuthWidgets)
-        # KF6::ConfigWidgets has only KF6::AuthCore in public interface in KF6
-        target_link_libraries(KF6KCMUtils PRIVATE KF6::AuthWidgets) # KAuth::ObjectDecorator
-    endif()
+# On Windows, this target does not exist
+if (TARGET KF6::AuthWidgets)
+    target_link_libraries(KF6KCMUtils PRIVATE KF6::AuthWidgets) # KAuth::ObjectDecorator
 endif()
 
 set_target_properties(KF6KCMUtils PROPERTIES
@@ -95,12 +72,9 @@ set_target_properties(KF6KCMUtils PROPERTIES
 
 ecm_generate_headers(KCMUtils_HEADERS
   HEADER_NAMES
-  KCModuleInfo
   KCModuleLoader
   KCMultiDialog
   KCModuleProxy
-  KPluginSelector
-  KCModuleContainer
   KCModuleData
   KPluginWidget
 
@@ -110,20 +84,6 @@ install(FILES
   ${CMAKE_CURRENT_BINARY_DIR}/kcmutils_export.h
   ${KCMUtils_HEADERS}
   DESTINATION ${KDE_INSTALL_INCLUDEDIR_KF}/KCMUtils COMPONENT Devel
-)
-
-ecm_generate_headers(KSettings_HEADERS
-  HEADER_NAMES
-  Dispatcher
-  Dialog
-  PluginPage
-
-  RELATIVE ksettings
-  REQUIRED_HEADERS KSettings_HEADERS
-)
-install(FILES
-  ${KSettings_HEADERS}
-  DESTINATION ${KDE_INSTALL_INCLUDEDIR_KF}/KCMUtils/ksettings COMPONENT Devel
 )
 
 install(TARGETS KF6KCMUtils EXPORT KF6KCMUtilsTargets ${KF_INSTALL_TARGETS_DEFAULT_ARGS})
@@ -137,13 +97,11 @@ if(BUILD_QCH)
         ORG_DOMAIN org.kde
         SOURCES # using only public headers, to cover only public API
             ${KCMUtils_HEADERS}
-            ${KSettings_HEADERS}
             ksettings/README.dox
         MD_MAINPAGE "${CMAKE_SOURCE_DIR}/README.md"
         LINK_QCHS
             Qt5Widgets_QCH
             KF6ConfigWidgets_QCH
-            KF6Service_QCH
         INCLUDE_DIRS
             ${CMAKE_CURRENT_BINARY_DIR}
         BLANK_MACROS
@@ -157,7 +115,7 @@ if(BUILD_QCH)
 endif()
 
 include(ECMGeneratePriFile)
-ecm_generate_pri_file(BASE_NAME KCMUtils LIB_NAME KF6KCMUtils DEPS "widgets KConfigWidgets KService" FILENAME_VAR PRI_FILENAME INCLUDE_INSTALL_DIR ${KDE_INSTALL_INCLUDEDIR_KF}/KCMUtils)
+ecm_generate_pri_file(BASE_NAME KCMUtils LIB_NAME KF6KCMUtils DEPS "widgets KConfigWidgets" FILENAME_VAR PRI_FILENAME INCLUDE_INSTALL_DIR ${KDE_INSTALL_INCLUDEDIR_KF}/KCMUtils)
 install(FILES ${PRI_FILENAME} DESTINATION ${ECM_MKSPECS_INSTALL_DIR})
 
 ecm_qt_install_logging_categories(

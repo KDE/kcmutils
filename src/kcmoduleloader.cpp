@@ -76,15 +76,8 @@ KCModule *KCModuleLoader::loadModule(const KPluginMetaData &metaData, QWidget *p
     }
 
     KPluginFactory *factory = factoryResult.plugin;
-    QT_WARNING_PUSH
-    QT_WARNING_DISABLE_CLANG("-Wdeprecated-declarations")
-    QT_WARNING_DISABLE_GCC("-Wdeprecated-declarations")
 
-#if KCMUTILS_BUILD_DEPRECATED_SINCE(5, 90)
-    const auto qmlKCMResult = factory->create<KQuickAddons::ConfigModule>(pluginKeyword, parent, args2);
-#else
     const auto qmlKCMResult = factory->create<KQuickAddons::ConfigModule>(parent, args2);
-#endif
 
     if (qmlKCMResult) {
         std::unique_ptr<KQuickAddons::ConfigModule> kcm(qmlKCMResult);
@@ -96,12 +89,7 @@ KCModule *KCModuleLoader::loadModule(const KPluginMetaData &metaData, QWidget *p
         return new KCModuleQml(std::move(kcm), parent, args2);
     }
 
-#if KCMUTILS_BUILD_DEPRECATED_SINCE(5, 90)
-    const auto kcmoduleResult = factory->create<KCModule>(pluginKeyword, parent, args2);
-#else
     const auto kcmoduleResult = factory->create<KCModule>(parent, args2);
-#endif
-    QT_WARNING_POP
 
     if (kcmoduleResult) {
         qCDebug(KCMUTILS_LOG) << "loaded KCM" << factory->metaData().pluginId() << "from path" << factory->metaData().fileName();
@@ -131,149 +119,3 @@ KCModule *KCModuleLoader::reportError(ErrorReporting report, const QString &text
     return nullptr;
 }
 
-#if KCMUTILS_BUILD_DEPRECATED_SINCE(5, 88)
-QT_WARNING_PUSH
-QT_WARNING_DISABLE_CLANG("-Wdeprecated-declarations")
-QT_WARNING_DISABLE_GCC("-Wdeprecated-declarations")
-KCModule *KCModuleLoader::loadModule(const QString &module, ErrorReporting report, QWidget *parent, const QStringList &args)
-{
-    return loadModule(KCModuleInfo(module), report, parent, args);
-}
-
-KCModule *KCModuleLoader::loadModule(const KCModuleInfo &mod, ErrorReporting report, QWidget *parent, const QStringList &args)
-{
-    /*
-     * Simple libraries as modules are the easiest case:
-     *  We just have to load the library and get the module
-     *  from the factory.
-     */
-
-    if (!mod.isValid()) {
-        return reportError(report,
-                           i18n("The module %1 could not be found.", mod.moduleName()),
-                           i18n("<qt><p>The diagnosis is:<br />The desktop file %1 could not be found.</p></qt>", mod.fileName()),
-                           parent);
-    }
-    if (mod.service() && mod.service()->noDisplay()) {
-        return reportError(
-            report,
-            i18n("The module %1 is disabled.", mod.moduleName()),
-            i18n("<qt><p>Either the hardware/software the module configures is not available or the module has been disabled by the administrator.</p></qt>"),
-            parent);
-    }
-
-    if (!mod.library().isEmpty()) {
-        QString error;
-        QVariantList args2;
-        const QVariantList additionalArgs = mod.property(QStringLiteral("X-KDE-KCM-Args")).toList();
-        args2.reserve(args.count() + additionalArgs.count());
-        for (const QString &arg : args) {
-            args2 << arg;
-        }
-        args2 << additionalArgs;
-
-        KCModule *module = nullptr;
-
-        const auto result =
-            KPluginFactory::instantiatePlugin<KQuickAddons::ConfigModule>(KPluginMetaData(QLatin1String("kcms/") + mod.library()), nullptr, args2);
-
-        if (result) {
-            std::unique_ptr<KQuickAddons::ConfigModule> cm(result.plugin);
-
-            if (!cm->mainUi()) {
-                return reportError(report, i18n("Error loading QML file."), cm->errorString(), parent);
-            }
-            module = new KCModuleQml(std::move(cm), parent, args2);
-            return module;
-        } else {
-            // If the error is that the plugin was not found fall through to the compat code
-            // Otherwise abort and show the error to the user
-            if (result.errorReason != KPluginFactory::INVALID_PLUGIN) {
-                return reportError(report, i18n("Error loading config module"), result.errorString, parent);
-            } else {
-                qCDebug(KCMUTILS_LOG) << "Couldn't find plugin" << QLatin1String("kcms/") + mod.library()
-                                      << "-- falling back to old-style loading from desktop file";
-            }
-        }
-
-        if (mod.service()) {
-            module = mod.service()->createInstance<KCModule>(parent, args2, &error);
-        }
-        if (module) {
-            return module;
-        } else
-#if KCMUTILS_BUILD_DEPRECATED_SINCE(5, 85)
-        {
-            // get the create_ function
-            QLibrary lib(QPluginLoader(mod.library()).fileName());
-            if (lib.load()) {
-                KCModule *(*create)(QWidget *, const char *);
-                QByteArray factorymethod("create_");
-                factorymethod += mod.handle().toLatin1();
-                create = reinterpret_cast<KCModule *(*)(QWidget *, const char *)>(lib.resolve(factorymethod.constData()));
-                if (create) {
-                    return create(parent, mod.handle().toLatin1().constData());
-                } else {
-                    qCWarning(KCMUTILS_LOG) << "This module has no valid entry symbol at all. The reason could be that it's still using "
-                                               "K_EXPORT_COMPONENT_FACTORY with a custom X-KDE-FactoryName which is not supported anymore";
-                }
-                lib.unload();
-            }
-        }
-#endif
-        return reportError(report, error, QString(), parent);
-    }
-
-    /*
-     * Ok, we could not load the library.
-     * Try to run it as an executable.
-     * This must not be done when calling from kcmshell, or you'll
-     * have infinite recursion
-     * (startService calls kcmshell which calls modloader which calls startService...)
-     *
-     */
-    return reportError(report,
-                       i18n("The module %1 is not a valid configuration module.", mod.moduleName()),
-                       i18n("<qt>The diagnosis is:<br />The desktop file %1 does not specify a library.</qt>", mod.fileName()),
-                       parent);
-}
-
-void KCModuleLoader::unloadModule(const KCModuleInfo &mod)
-{
-    // get the library loader instance
-    QPluginLoader loader(mod.library());
-    loader.unload();
-}
-
-bool KCModuleLoader::isDefaults(const KCModuleInfo &mod, const QStringList &args)
-{
-    std::unique_ptr<KCModuleData> moduleData(loadModuleData(mod, args));
-    if (moduleData) {
-        return moduleData->isDefaults();
-    }
-
-    return true;
-}
-
-KCModuleData *KCModuleLoader::loadModuleData(const KCModuleInfo &mod, const QStringList &args)
-{
-    if (!mod.service() || mod.service()->noDisplay() || mod.library().isEmpty()) {
-        return nullptr;
-    }
-
-    QVariantList args2(args.cbegin(), args.cend());
-
-    const auto result = KPluginFactory::instantiatePlugin<KCModuleData>(KPluginMetaData(QLatin1String("kcms/") + mod.service()->library()), nullptr, args2);
-
-    if (result) {
-        return result.plugin;
-    }
-
-    KCModuleData *probe(mod.service()->createInstance<KCModuleData>(nullptr, args2));
-    if (probe) {
-        return probe;
-    }
-
-    return nullptr;
-}
-#endif
