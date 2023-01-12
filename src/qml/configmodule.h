@@ -24,7 +24,6 @@
 
 #include <memory>
 
-class KAboutData;
 class QQuickItem;
 class QQmlEngine;
 
@@ -175,12 +174,6 @@ public:
      * Destroys the module.
      */
     ~ConfigModule() override;
-
-    /**
-     * This sets the KAboutData returned by aboutData()
-     * The about data is now owned by ConfigModule.
-     */
-    void setAboutData(const KAboutData *about);
 
     /**
      * @brief Set if the module's save() method requires authorization to be executed

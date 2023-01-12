@@ -19,7 +19,6 @@
 #include <QQuickItem>
 #include <QUrl>
 
-#include <KAboutData>
 #include <KLocalizedContext>
 #include <KLocalizedString>
 #include <KPackage/Package>
@@ -45,12 +44,14 @@ public:
     }
 
     void authStatusChanged(int status);
-    QString componentName() const;
+    QString componentName() const
+    {
+        return _metaData.pluginId();
+    };
 
     ConfigModule *_q;
     Kirigami::SharedQmlEngine *_engine = nullptr;
     ConfigModule::Buttons _buttons;
-    std::unique_ptr<const KAboutData> _about;
     KPluginMetaData _metaData;
     QString _rootOnlyMessage;
     QString _quickHelp;
@@ -70,15 +71,6 @@ public:
 };
 
 QHash<QObject *, ConfigModule *> ConfigModulePrivate::s_rootObjects = QHash<QObject *, ConfigModule *>();
-
-QString ConfigModulePrivate::componentName() const
-{
-    if (_about) {
-        return _about->componentName();
-    } else {
-        return _metaData.pluginId();
-    }
-}
 
 ConfigModule::ConfigModule(QObject *parent, const QVariantList &)
     : QObject(parent)
@@ -280,18 +272,12 @@ bool ConfigModule::needsAuthorization() const
 
 QString ConfigModule::name() const
 {
-    if (d->_metaData.isValid()) {
-        return d->_metaData.name();
-    }
-    return d->_about->displayName();
+    return d->_metaData.name();
 }
 
 QString ConfigModule::description() const
 {
-    if (d->_metaData.isValid()) {
-        return d->_metaData.description();
-    }
-    return d->_about->shortDescription();
+    return d->_metaData.description();
 }
 
 int ConfigModule::columnWidth() const
@@ -379,11 +365,6 @@ void ConfigModule::save()
 
 void ConfigModule::defaults()
 {
-}
-
-void ConfigModule::setAboutData(const KAboutData *about)
-{
-    d->_about.reset(about);
 }
 
 void ConfigModule::setRootOnlyMessage(const QString &message)
