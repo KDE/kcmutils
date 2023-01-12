@@ -16,9 +16,9 @@
 #include "kcmutilsqml_export.h"
 
 #include <QObject>
+#include <QQmlComponent>
 #include <QStringList>
 #include <QVariant>
-#include <QtQml>
 
 #include <KPluginMetaData>
 

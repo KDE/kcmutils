@@ -14,6 +14,7 @@
 #include "kcmoduleqml_p.h"
 #include <kcmutils_debug.h>
 
+#include <QJsonArray>
 #include <QLabel>
 #include <QLibrary>
 #include <QVBoxLayout>
