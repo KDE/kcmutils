@@ -133,19 +133,7 @@ QQuickItem *ConfigModule::mainUi()
     }
 
     d->_errorString.clear();
-
-    // if we have a qml context, hook up to it and use its engine
-    // this ensure that in e.g. Plasma config dialogs that use a different engine
-    // so they can have different QtQuick Controls styles, we don't end up using
-    // the shared engine that is used by the rest of plasma
-
-    QQmlContext *ctx = QQmlEngine::contextForObject(this);
-
-    if (ctx && ctx->engine()) {
-        // d->_qmlObject = new KDeclarative::QmlObject(std::shared_ptr<QQmlEngine>(ctx->engine()), ctx, this);
-    } else {
-        d->_engine = Kirigami::SharedQmlEngine::create(nullptr, this);
-    }
+    d->_engine = Kirigami::SharedQmlEngine::create(nullptr, this);
 
     ConfigModulePrivate::s_rootObjects[d->_engine->rootContext()] = this;
     d->_engine->setTranslationDomain(d->componentName());
