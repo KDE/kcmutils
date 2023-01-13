@@ -128,12 +128,6 @@ public:
     virtual QString quickHelp() const;
 
     /**
-     * This sets the KAboutData returned by aboutData()
-     * The about data is now owned by KCModule.
-     */
-    void setAboutData(const KAboutData *about);
-
-    /**
      * Indicate which buttons will be used.
      *
      * The return value is a value or'ed together from

@@ -11,7 +11,6 @@
 #include "kcmodule.h"
 #include "kcmutils_debug.h"
 
-#include <KAboutData>
 #include <KConfigDialogManager>
 #include <KConfigSkeleton>
 #include <KLocalizedString>
@@ -24,7 +23,6 @@ class KCModulePrivate
 public:
     KCModulePrivate()
         : _buttons(KCModule::Help | KCModule::Default | KCModule::Apply)
-        , _about(nullptr)
         , _useRootOnlyMessage(false)
         , _firstshow(true)
         , _needsAuthorization(false)
@@ -38,7 +36,6 @@ public:
     void authStatusChanged(int status);
 
     KCModule::Buttons _buttons;
-    const KAboutData *_about;
     QString _rootOnlyMessage;
     QList<KConfigDialogManager *> managers;
     QString _quickHelp;
@@ -185,7 +182,6 @@ KCModule::~KCModule()
 {
     qDeleteAll(d->managers);
     d->managers.clear();
-    delete d->_about;
 }
 
 void KCModule::load()
@@ -254,14 +250,6 @@ void KCModule::unmanagedWidgetDefaultState(bool defaulted)
     d->_unmanagedWidgetDefaultStateCalled = true;
     d->_unmanagedWidgetDefaultState = defaulted;
     widgetChanged();
-}
-
-void KCModule::setAboutData(const KAboutData *about)
-{
-    if (about != d->_about) {
-        delete d->_about;
-        d->_about = about;
-    }
 }
 
 void KCModule::setRootOnlyMessage(const QString &message)
