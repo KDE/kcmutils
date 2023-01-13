@@ -13,7 +13,8 @@
 
 #include <KConfigDialogManager>
 #include <KConfigSkeleton>
-#include <KLocalizedString>
+#include <KLocalizedContext>
+#include <KPluginMetaData>
 #if KCMUTILS_WITH_KAUTH
 #include <KAuth/ExecuteJob>
 #endif
@@ -23,23 +24,18 @@ class KCModulePrivate
 public:
     KCModulePrivate()
         : _buttons(KCModule::Help | KCModule::Default | KCModule::Apply)
-        , _useRootOnlyMessage(false)
         , _firstshow(true)
         , _needsAuthorization(false)
         , _unmanagedWidgetChangeState(false)
         , _unmanagedWidgetDefaultState(false)
         , _unmanagedWidgetDefaultStateCalled(false)
-        , _defaultsIndicatorsVisible(false)
     {
     }
 
     void authStatusChanged(int status);
 
     KCModule::Buttons _buttons;
-    QString _rootOnlyMessage;
     QList<KConfigDialogManager *> managers;
-    QString _quickHelp;
-    bool _useRootOnlyMessage : 1;
     bool _firstshow : 1;
 
     bool _needsAuthorization : 1;
@@ -54,11 +50,9 @@ public:
     bool _unmanagedWidgetChangeState : 1;
     bool _unmanagedWidgetDefaultState : 1;
     bool _unmanagedWidgetDefaultStateCalled : 1;
-
-    bool _defaultsIndicatorsVisible : 1;
 };
 
-KCModule::KCModule(QWidget *parent, const QVariantList &)
+KCModule::KCModule(QWidget *parent, const KPluginMetaData &data, const QVariantList &)
     : QWidget(parent)
     , d(new KCModulePrivate)
 {
@@ -78,15 +72,6 @@ void KCModule::showEvent(QShowEvent *ev)
     QWidget::showEvent(ev);
 }
 
-KCModule::Buttons KCModule::buttons() const
-{
-    return d->_buttons;
-}
-
-void KCModule::setButtons(Buttons buttons)
-{
-    d->_buttons = buttons;
-}
 
 KConfigDialogManager *KCModule::addConfig(KCoreConfigSkeleton *config, QWidget *widget)
 {
@@ -98,45 +83,6 @@ KConfigDialogManager *KCModule::addConfig(KCoreConfigSkeleton *config, QWidget *
     });
     d->managers.append(manager);
     return manager;
-}
-
-void KCModule::setNeedsAuthorization(bool needsAuth)
-{
-    d->_needsAuthorization = needsAuth;
-#if KCMUTILS_WITH_KAUTH
-    if (needsAuth && d->_about) {
-        d->_authAction = KAuth::Action(QLatin1String("org.kde.kcontrol.") + d->_about->componentName() + QLatin1String(".save"));
-        d->_needsAuthorization = d->_authAction.isValid();
-        d->_authAction.setHelperId(QStringLiteral("org.kde.kcontrol.") + d->_about->componentName());
-        d->_authAction.setParentWidget(this);
-        authStatusChanged(d->_authAction.status());
-    } else {
-        d->_authAction = KAuth::Action();
-    }
-#endif
-}
-
-bool KCModule::needsAuthorization() const
-{
-    return d->_needsAuthorization;
-}
-
-void KCModule::setDefaultsIndicatorsVisible(bool show)
-{
-    if (d->_defaultsIndicatorsVisible == show) {
-        return;
-    }
-
-    d->_defaultsIndicatorsVisible = show;
-    for (KConfigDialogManager *manager : std::as_const(d->managers)) {
-        manager->setDefaultsIndicatorsVisible(show);
-    }
-    Q_EMIT defaultsIndicatorsVisibleChanged(show);
-}
-
-bool KCModule::defaultsIndicatorsVisible() const
-{
-    return d->_defaultsIndicatorsVisible;
 }
 
 #if KCMUTILS_WITH_KAUTH
@@ -197,7 +143,7 @@ void KCModule::save()
     for (KConfigDialogManager *manager : std::as_const(d->managers)) {
         manager->updateSettings();
     }
-    Q_EMIT changed(false);
+    setNeedsSave(false);
 }
 
 void KCModule::defaults()

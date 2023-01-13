@@ -48,6 +48,7 @@ public:
         Help = 1,
         Default = 2,
         Apply = 4,
+        Export = 8,
     };
     Q_ENUM(Button)
     Q_DECLARE_FLAGS(Buttons, Button)
