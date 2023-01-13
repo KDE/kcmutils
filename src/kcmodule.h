@@ -1,6 +1,7 @@
 /*
     This file is part of the KDE libraries
     SPDX-FileCopyrightText: 1999 Matthias Hoelzer-Kluepfel <hoelzer@kde.org>
+    SPDX-FileCopyrightText: 2023 Alexander Lohnau <alexander.lohnau@gmx.de>
 
     SPDX-License-Identifier: LGPL-2.0-or-later
 */
@@ -78,6 +79,7 @@ class KCModulePrivate;
  * for more detailed documentation.
  *
  * @author Matthias Hoelzer-Kluepfel <hoelzer@kde.org>
+ * @since 6.0
  */
 class KCMUTILS_EXPORT KCModule : public QWidget
 {
@@ -200,8 +202,6 @@ public:
 
     /**
      * Returns whether an indicator is shown when a setting differs from default.
-     *
-     * @since 5.73
      */
     bool defaultsIndicatorsVisible() const;
 
@@ -278,8 +278,6 @@ public Q_SLOTS:
 
     /**
      * Show an indicator when settings value differ from default
-     *
-     * @since 5.73
      */
     void setDefaultsIndicatorsVisible(bool show);
 
@@ -322,8 +320,6 @@ Q_SIGNALS:
      * This signal is emitted whenever the state of the configuration
      * shown in the module changes. It allows the module container to
      * keep track of defaults.
-     *
-     * @since 5.65
      */
     void defaulted(bool state);
 
@@ -342,14 +338,11 @@ Q_SIGNALS:
      *
      * Emits this signal whenever the module's root message changes.
      *
-     * @since 4.4
-     *
      */
     void rootOnlyMessageChanged(bool use, QString message);
 
     /**
      * Emitted when show defaults indicators changed
-     * @since 5.73
      */
     void defaultsIndicatorsVisibleChanged(bool show);
 
@@ -357,7 +350,6 @@ protected Q_SLOTS:
 
     /**
      * Calling this slot is equivalent to emitting changed(true).
-     * @since 5.64
      */
     void markAsChanged();
 
@@ -419,7 +411,6 @@ protected:
     /**
      * Returns the defaulted state of automatically managed widgets in this dialog
      *
-     * @since 5.65
      */
     bool managedWidgetDefaultState() const;
 
@@ -432,8 +423,6 @@ protected:
     /**
      * Call this method when your manually managed widgets change state between
      * defaulted and not defaulted
-     *
-     * @since 5.65
      */
     void unmanagedWidgetDefaultState(bool);
 

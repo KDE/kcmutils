@@ -11,6 +11,7 @@
 */
 
 #include "configmodule.h"
+#include "kabstractconfigmodule.h"
 
 #include <QDebug>
 #include <QQmlContext>
@@ -34,55 +35,33 @@ class ConfigModulePrivate
 public:
     ConfigModulePrivate(ConfigModule *module)
         : _q(module)
-        , _buttons(ConfigModule::Help | ConfigModule::Default | ConfigModule::Apply)
-        , _useRootOnlyMessage(false)
-        , _needsAuthorization(false)
-        , _needsSave(false)
-        , _representsDefaults(false)
-        , _defaultsIndicatorVisible(false)
     {
     }
 
     void authStatusChanged(int status);
-    QString componentName() const
-    {
-        return _metaData.pluginId();
-    };
 
     ConfigModule *_q;
     Kirigami::SharedQmlEngine *_engine = nullptr;
-    ConfigModule::Buttons _buttons;
-    KPluginMetaData _metaData;
-    QString _rootOnlyMessage;
-    QString _quickHelp;
-    QString _errorString;
     QList<QQuickItem *> subPages;
     int _columnWidth = -1;
     int currentIndex = 0;
-    bool _useRootOnlyMessage : 1;
-
-    bool _needsAuthorization : 1;
-    bool _needsSave : 1;
-    bool _representsDefaults : 1;
-    bool _defaultsIndicatorVisible : 1;
-    QString _authActionName;
+    QString _errorString;
 
     static QHash<QObject *, ConfigModule *> s_rootObjects;
 };
 
 QHash<QObject *, ConfigModule *> ConfigModulePrivate::s_rootObjects = QHash<QObject *, ConfigModule *>();
 
-ConfigModule::ConfigModule(QObject *parent, const QVariantList &)
-    : QObject(parent)
+ConfigModule::ConfigModule(QObject *parent, const QVariantList &args)
+    : KAbstractConfigModule(parent, KPluginMetaData(), args)
     , d(new ConfigModulePrivate(this))
 {
 }
 
-ConfigModule::ConfigModule(QObject *parent, const KPluginMetaData &metaData, const QVariantList &)
-    : QObject(parent)
+ConfigModule::ConfigModule(QObject *parent, const KPluginMetaData &metaData, const QVariantList &args)
+    : KAbstractConfigModule(parent, metaData, args)
     , d(new ConfigModulePrivate(this))
 {
-    d->_metaData = metaData;
 }
 
 ConfigModule::~ConfigModule()
@@ -127,26 +106,27 @@ QQuickItem *ConfigModule::mainUi()
     d->_errorString.clear();
     d->_engine = Kirigami::SharedQmlEngine::create(nullptr, this);
 
+    const QString componentName = metaData().pluginId();
     ConfigModulePrivate::s_rootObjects[d->_engine->rootContext()] = this;
-    d->_engine->setTranslationDomain(d->componentName());
+    d->_engine->setTranslationDomain(componentName);
     d->_engine->setInitializationDelayed(true);
 
     KPackage::Package package = KPackage::PackageLoader::self()->loadPackage(QStringLiteral("KPackage/GenericQML"));
     package.setDefaultPackageRoot(QStringLiteral("kpackage/kcms"));
-    package.setPath(d->componentName());
-    if (d->_metaData.isValid() && !package.metadata().isValid()) {
-        package.setMetadata(d->_metaData);
+    package.setPath(metaData().pluginId());
+    if (metaData().isValid()) {
+        package.setMetadata(metaData());
     }
 
     if (!package.isValid()) {
-        d->_errorString = i18n("Invalid KPackage '%1'", d->componentName());
-        qWarning() << "Error loading the module" << d->componentName() << ": invalid KPackage";
+        d->_errorString = i18n("Invalid KPackage '%1'", componentName);
+        qWarning() << "Error loading the module" << componentName << ": invalid KPackage";
         return nullptr;
     }
 
     if (package.filePath("mainscript").isEmpty()) {
         d->_errorString = i18n("No QML file provided");
-        qWarning() << "Error loading the module" << d->componentName() << ": no QML file provided";
+        qWarning() << "Error loading the module" << componentName << ": no QML file provided";
         return nullptr;
     }
 
@@ -173,7 +153,7 @@ void ConfigModule::push(const QString &fileName, const QVariantMap &propertyMap)
     // TODO: package as member
     KPackage::Package package = KPackage::PackageLoader::self()->loadPackage(QStringLiteral("KPackage/GenericQML"));
     package.setDefaultPackageRoot(QStringLiteral("kpackage/kcms"));
-    package.setPath(d->componentName());
+    package.setPath(metaData().pluginId());
 
     QVariantHash propertyHash;
     for (auto it = propertyMap.begin(), end = propertyMap.end(); it != end; ++it) {
@@ -231,55 +211,6 @@ void ConfigModule::showPassiveNotification(const QString &message, const QVarian
     Q_EMIT passiveNotificationRequested(message, timeout, actionText, callBack);
 }
 
-ConfigModule::Buttons ConfigModule::buttons() const
-{
-    return d->_buttons;
-}
-
-void ConfigModule::setButtons(const KQuickAddons::ConfigModule::Buttons buttons)
-{
-    if (d->_buttons == buttons) {
-        return;
-    }
-
-    d->_buttons = buttons;
-    Q_EMIT buttonsChanged();
-}
-
-void ConfigModule::setNeedsAuthorization(bool needsAuth)
-{
-    if (d->_needsAuthorization == needsAuth) {
-        return;
-    }
-
-    d->_needsAuthorization = needsAuth;
-    if (needsAuth) {
-        d->_authActionName = QLatin1String("org.kde.kcontrol.") + d->componentName() + QLatin1String(".save");
-        d->_needsAuthorization = true;
-
-    } else {
-        d->_authActionName = QString();
-    }
-
-    Q_EMIT needsAuthorizationChanged();
-    Q_EMIT authActionNameChanged();
-}
-
-bool ConfigModule::needsAuthorization() const
-{
-    return d->_needsAuthorization;
-}
-
-QString ConfigModule::name() const
-{
-    return d->_metaData.name();
-}
-
-QString ConfigModule::description() const
-{
-    return d->_metaData.description();
-}
-
 int ConfigModule::columnWidth() const
 {
     return d->_columnWidth;
@@ -316,24 +247,6 @@ int ConfigModule::currentIndex() const
     return d->currentIndex;
 }
 
-void ConfigModule::setAuthActionName(const QString &name)
-{
-    if (d->_authActionName == name) {
-        return;
-    }
-
-    d->_authActionName = name;
-    d->_needsAuthorization = true;
-
-    Q_EMIT needsAuthorizationChanged();
-    Q_EMIT authActionNameChanged();
-}
-
-QString ConfigModule::authActionName() const
-{
-    return d->_authActionName;
-}
-
 std::shared_ptr<QQmlEngine> ConfigModule::engine() const
 {
     return d->_engine->engine();
@@ -353,115 +266,11 @@ QString ConfigModule::errorString() const
     return d->_errorString;
 }
 
-void ConfigModule::load()
-{
-    setNeedsSave(false);
-}
-
-void ConfigModule::save()
-{
-    setNeedsSave(false);
-}
-
-void ConfigModule::defaults()
-{
-}
-
-void ConfigModule::setRootOnlyMessage(const QString &message)
-{
-    if (d->_rootOnlyMessage == message) {
-        return;
-    }
-
-    d->_rootOnlyMessage = message;
-    Q_EMIT rootOnlyMessageChanged();
-}
-
-QString ConfigModule::rootOnlyMessage() const
-{
-    return d->_rootOnlyMessage;
-}
-
-void ConfigModule::setUseRootOnlyMessage(bool on)
-{
-    if (d->_useRootOnlyMessage == on) {
-        return;
-    }
-
-    d->_useRootOnlyMessage = on;
-
-    Q_EMIT useRootOnlyMessageChanged();
-}
-
-bool ConfigModule::useRootOnlyMessage() const
-{
-    return d->_useRootOnlyMessage;
-}
-
 QQuickItem *ConfigModule::subPage(int index) const
 {
     return d->subPages[index];
 }
 
-void ConfigModule::setQuickHelp(const QString &help)
-{
-    if (d->_quickHelp == help) {
-        return;
-    }
-
-    d->_quickHelp = help;
-
-    Q_EMIT quickHelpChanged();
-}
-
-QString ConfigModule::quickHelp() const
-{
-    return d->_quickHelp;
-}
-
-void ConfigModule::setNeedsSave(bool needs)
-{
-    if (needs == d->_needsSave) {
-        return;
-    }
-
-    d->_needsSave = needs;
-    Q_EMIT needsSaveChanged();
-}
-
-bool ConfigModule::needsSave() const
-{
-    return d->_needsSave;
-}
-
-void ConfigModule::setRepresentsDefaults(bool defaults)
-{
-    if (defaults == d->_representsDefaults) {
-        return;
-    }
-
-    d->_representsDefaults = defaults;
-    Q_EMIT representsDefaultsChanged();
-}
-
-bool ConfigModule::representsDefaults() const
-{
-    return d->_representsDefaults;
-}
-
-bool ConfigModule::defaultsIndicatorsVisible() const
-{
-    return d->_defaultsIndicatorVisible;
-}
-
-void ConfigModule::setDefaultsIndicatorsVisible(bool visible)
-{
-    if (d->_defaultsIndicatorVisible == visible) {
-        return;
-    }
-    d->_defaultsIndicatorVisible = visible;
-    Q_EMIT defaultsIndicatorsVisibleChanged();
-}
 }
 
 #include "moc_configmodule.cpp"

@@ -103,7 +103,7 @@ class ManagedConfigModulePrivate;
  * See https://techbase.kde.org/Development/Tutorials/KCM_HowTo
  * for more detailed documentation.
  *
- * @since 5.65
+ * @since 6.0
  */
 class KCMUTILSQML_EXPORT ManagedConfigModule : public ConfigModule
 {
@@ -114,7 +114,6 @@ public:
      *
      * @note do not emit changed signals here, since they are not yet connected
      *       to any slot.
-     * @since 5.88
      */
     explicit ManagedConfigModule(QObject *parent, const KPluginMetaData &metaData, const QVariantList &args = QVariantList());
 
@@ -183,8 +182,6 @@ protected Q_SLOTS:
      * Allow to register manually settings class generated from a kcfg file.
      * Used by derived class when automatic discovery is not possible.
      * After skeleton is registered it will automatically call settingsChanged().
-     *
-     * @since 5.67
      */
     void registerSettings(KCoreConfigSkeleton *skeleton);
 
