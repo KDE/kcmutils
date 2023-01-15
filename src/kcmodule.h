@@ -9,8 +9,8 @@
 #ifndef KCMODULE_H
 #define KCMODULE_H
 
-#include "kabstractconfigmodule.h"
 #include "kcmutils_export.h"
+#include <kabstractconfigmodule.h>
 
 #include <KPluginMetaData>
 #if KCMUTILS_WITH_KAUTH
@@ -82,7 +82,7 @@ class KCModulePrivate;
  * @author Matthias Hoelzer-Kluepfel <hoelzer@kde.org>
  * @since 6.0
  */
-class KCMUTILS_EXPORT KCModule : public KAbstractConfigModule, public QWidget
+class KCMUTILS_EXPORT KCModule : public KAbstractConfigModule
 {
     Q_OBJECT
 
@@ -130,6 +130,12 @@ public:
     void save() override;
     void defaults() override;
 
+    /**
+     * Get the associated widget that can be embedded
+     *
+     */
+    QWidget *widget() const;
+
 protected:
     /**
      * Adds a KCoreConfigskeleton @p config to watch the widget @p widget
@@ -141,8 +147,6 @@ protected:
      * @param widget the widget to watch
      */
     KConfigDialogManager *addConfig(KCoreConfigSkeleton *config, QWidget *widget);
-
-    void showEvent(QShowEvent *ev) override;
 
     friend class KCModuleProxy;
 

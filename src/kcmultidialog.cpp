@@ -10,9 +10,9 @@
 */
 
 #include "kcmultidialog.h"
+#include "kcmoduleloader.h"
 #include "kcmultidialog_p.h"
 
-#include "kcmoduleproxy.h"
 #include "kcmoduleqml_p.h"
 #include <kcmutils_debug.h>
 
@@ -38,9 +38,9 @@
 #include <KMessageBox>
 #include <KPageWidgetModel>
 
-bool KCMultiDialogPrivate::resolveChanges(KCModuleProxy *currentProxy)
+bool KCMultiDialogPrivate::resolveChanges(KCModule *module)
 {
-    if (!currentProxy || !currentProxy->isChanged()) {
+    if (!module || !module->needsSave()) {
         return true;
     }
 
@@ -55,10 +55,10 @@ bool KCMultiDialogPrivate::resolveChanges(KCModuleProxy *currentProxy)
 
     switch (queryUser) {
     case KMessageBox::PrimaryAction:
-        return moduleSave(currentProxy);
+        return moduleSave(module);
 
     case KMessageBox::SecondaryAction:
-        currentProxy->load();
+        module->load();
         return true;
 
     case KMessageBox::Cancel:
@@ -72,7 +72,7 @@ bool KCMultiDialogPrivate::resolveChanges(KCModuleProxy *currentProxy)
 
 void KCMultiDialogPrivate::_k_slotCurrentPageChanged(KPageWidgetItem *current, KPageWidgetItem *previous)
 {
-    KCModuleProxy *previousModule = nullptr;
+    KCModule *previousModule = nullptr;
     for (int i = 0; i < modules.count(); ++i) {
         if (modules[i].item == previous) {
             previousModule = modules[i].kcm;
@@ -115,7 +115,7 @@ void KCMultiDialogPrivate::_k_slotCurrentPageChanged(KPageWidgetItem *current, K
 void KCMultiDialogPrivate::_k_clientChanged()
 {
     // Get the current module
-    KCModuleProxy *activeModule = nullptr;
+    KCModule *activeModule = nullptr;
     for (int i = 0; i < modules.count(); ++i) {
         if (modules[i].item == q->currentPage()) {
             activeModule = modules[i].kcm;
@@ -123,11 +123,13 @@ void KCMultiDialogPrivate::_k_clientChanged()
         }
     }
 
+    qWarning() << Q_FUNC_INFO << activeModule;
+
     bool change = false;
     bool defaulted = false;
     if (activeModule) {
-        change = activeModule->isChanged();
-        defaulted = activeModule->defaulted();
+        change = activeModule->needsSave();
+        defaulted = activeModule->representsDefaults();
 
         QPushButton *applyButton = q->buttonBox()->button(QDialogButtonBox::Apply);
         if (applyButton) {
@@ -146,18 +148,18 @@ void KCMultiDialogPrivate::_k_clientChanged()
         }
 
 #if KCMUTILS_WITH_KAUTH
-        if (activeModule->realModule()->needsAuthorization()) {
+        if (activeModule->needsAuthorization()) {
             if (applyButton) {
                 KAuth::ObjectDecorator *decorator = new KAuth::ObjectDecorator(applyButton);
-                decorator->setAuthAction(activeModule->realModule()->authAction());
-                activeModule->realModule()->authAction().setParentWidget(activeModule->realModule());
+                decorator->setAuthAction(activeModule->authAction());
+                activeModule->authAction().setParentWidget(activeModule->widget());
                 q->connect(decorator, &KAuth::ObjectDecorator::authorized, q, &KCMultiDialog::slotApplyClicked);
             }
 
             if (okButton) {
                 KAuth::ObjectDecorator *decorator = new KAuth::ObjectDecorator(okButton);
-                decorator->setAuthAction(activeModule->realModule()->authAction());
-                activeModule->realModule()->authAction().setParentWidget(activeModule->realModule());
+                decorator->setAuthAction(activeModule->authAction());
+                activeModule->authAction().setParentWidget(activeModule->widget());
                 q->connect(decorator, &KAuth::ObjectDecorator::authorized, q, &KCMultiDialog::slotOkClicked);
             }
         } else {
@@ -218,7 +220,12 @@ void KCMultiDialogPrivate::_k_clientChanged()
 void KCMultiDialogPrivate::_k_updateHeader(bool use, const QString &message)
 {
     KPageWidgetItem *item = q->currentPage();
-    KCModuleProxy *kcm = qobject_cast<KCModuleProxy *>(item->widget());
+    const auto findIt = std::find_if(modules.cbegin(), modules.cend(), [item](const CreatedModule &module) {
+        return module.item == item;
+    });
+    Q_ASSERT(findIt != modules.cend());
+
+    KCModule *kcm = findIt->kcm;
 
     QString moduleName;
     QString icon;
@@ -326,7 +333,7 @@ void KCMultiDialog::slotUser1Clicked()
     }
 }
 
-bool KCMultiDialogPrivate::moduleSave(KCModuleProxy *module)
+bool KCMultiDialogPrivate::moduleSave(KCModule *module)
 {
     if (!module) {
         return false;
@@ -339,10 +346,10 @@ bool KCMultiDialogPrivate::moduleSave(KCModuleProxy *module)
 void KCMultiDialogPrivate::apply()
 {
     for (const CreatedModule &module : std::as_const(modules)) {
-        KCModuleProxy *proxy = module.kcm;
+        KCModule *kcm = module.kcm;
 
-        if (proxy->isChanged()) {
-            proxy->save();
+        if (kcm->needsSave()) {
+            kcm->save();
         }
     }
 
@@ -406,12 +413,13 @@ void KCMultiDialog::closeEvent(QCloseEvent *event)
      * in other situations will lead to "module already loaded in Foo," while to the user
      * doesn't appear so(the dialog is hidden)
      */
-    for (auto &proxy : std::as_const(d->modules)) {
-        proxy.kcm->deleteClient();
+    for (auto &module : d->modules) {
+        delete module.kcm;
+        module.kcm = nullptr;
     }
 }
 
-KPageWidgetItem *KCMultiDialog::addModule(const KPluginMetaData &metaData, const QStringList &args)
+KPageWidgetItem *KCMultiDialog::addModule(const KPluginMetaData &metaData, const QVariantList &args)
 {
     // Create the scroller
     auto *moduleScroll = new UnboundScrollArea(this);
@@ -420,8 +428,8 @@ KPageWidgetItem *KCMultiDialog::addModule(const KPluginMetaData &metaData, const
     moduleScroll->setFrameStyle(QFrame::NoFrame);
     moduleScroll->viewport()->setAutoFillBackground(false);
 
-    KCModuleProxy *kcm = new KCModuleProxy(metaData, moduleScroll, args);
-    moduleScroll->setWidget(kcm);
+    KCModule *kcm = KCModuleLoader::loadModule(metaData, moduleScroll, args);
+    moduleScroll->setWidget(kcm->widget());
 
     KPageWidgetItem *item = new KPageWidgetItem(moduleScroll, metaData.name());
 
@@ -430,12 +438,12 @@ KPageWidgetItem *KCMultiDialog::addModule(const KPluginMetaData &metaData, const
     createdModule.item = item;
     d->modules.append(createdModule);
 
-    if (qobject_cast<KCModuleQml *>(kcm->realModule())) {
+    if (qobject_cast<KCModuleQml *>(kcm)) {
         item->setHeaderVisible(false);
     }
 
-    if (kcm->realModule() && kcm->realModule()->useRootOnlyMessage()) {
-        item->setHeader(QStringLiteral("<b>%1</b><br><i>%2</i>").arg(metaData.name(), kcm->realModule()->rootOnlyMessage()));
+    if (kcm->useRootOnlyMessage()) {
+        item->setHeader(QStringLiteral("<b>%1</b><br><i>%2</i>").arg(metaData.name(), kcm->rootOnlyMessage()));
         item->setIcon(KIconUtils::addOverlay(QIcon::fromTheme(metaData.iconName()), QIcon::fromTheme(QStringLiteral("dialog-warning")), Qt::BottomRightCorner));
     } else {
         item->setHeader(metaData.name());
@@ -465,15 +473,16 @@ KPageWidgetItem *KCMultiDialog::addModule(const KPluginMetaData &metaData, const
     if (row == siblingCount) {
         // the new module is either the first or the heaviest item
         // qDebug() << "adding KCM " << item->name() << " at the top level";
+        qWarning() << Q_FUNC_INFO << item;
         addPage(item);
     }
 
-    QObject::connect(kcm, qOverload<bool>(&KCModuleProxy::changed), this, [this]() {
+    QObject::connect(kcm, &KCModule::needsSaveChanged, this, [this]() {
         d->_k_clientChanged();
     });
 
-    QObject::connect(kcm->realModule(), &KCModule::rootOnlyMessageChanged, this, [this](bool use, const QString &message) {
-        d->_k_updateHeader(use, message);
+    QObject::connect(kcm, &KCModule::rootOnlyMessageChanged, this, [kcm, this]() {
+        d->_k_updateHeader(kcm->useRootOnlyMessage(), kcm->rootOnlyMessage());
     });
 
     if (d->modules.count() == 1 || updateCurrentPage) {

@@ -10,9 +10,6 @@ set(kcmutils_LIB_SRCS
     kcmoduledata.h
     kcmoduleloader.cpp
     kcmoduleloader.h
-    kcmoduleproxy.cpp
-    kcmoduleproxy.h
-    kcmoduleproxy_p.h
     kcmoduleqml.cpp
     kcmoduleqml_p.h
     kcmultidialog.cpp
@@ -56,9 +53,9 @@ target_link_libraries(KF6KCMUtils
     Qt6::Widgets
     KF6::CoreAddons # KPluginMetaData
     KF6::ConfigWidgets  # KCModule
+    KF6KCMUtilsQml      # QML KCM class
   PRIVATE
     KF6::ConfigWidgets
-    KF6KCMUtilsCore
     kcmutils_proxy_model
     Qt6::DBus       # dbus usage in kcmoduleproxy.cpp
     Qt6::Qml
@@ -85,7 +82,6 @@ ecm_generate_headers(KCMUtils_HEADERS
   HEADER_NAMES
   KCModuleLoader
   KCMultiDialog
-  KCModuleProxy
   KCModuleData
   KPluginWidget
   KCModule

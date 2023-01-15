@@ -54,8 +54,63 @@ public:
     Kirigami::SharedQmlEngine *engine = nullptr;
 };
 
+class QmlConfigModuleWidget : public QWidget
+{
+public:
+    QmlConfigModuleWidget(KCModuleQml *module, QWidget *parent)
+        : QWidget(parent)
+        , m_module(module)
+    {
+        setFocusPolicy(Qt::StrongFocus);
+    }
+
+    void focusInEvent(QFocusEvent *event) override
+    {
+        if (event->reason() == Qt::TabFocusReason) {
+            m_module->d->rootPlaceHolder->nextItemInFocusChain(true)->forceActiveFocus(Qt::TabFocusReason);
+        } else if (event->reason() == Qt::BacktabFocusReason) {
+            m_module->d->rootPlaceHolder->nextItemInFocusChain(false)->forceActiveFocus(Qt::BacktabFocusReason);
+        }
+    }
+
+    QSize sizeHint() const override
+    {
+        if (!m_module->d->rootPlaceHolder) {
+            return QSize();
+        }
+
+        return QSize(m_module->d->rootPlaceHolder->implicitWidth(), m_module->d->rootPlaceHolder->implicitHeight());
+    }
+
+    bool eventFilter(QObject *watched, QEvent *event) override
+    {
+        if (watched == m_module->d->rootPlaceHolder && event->type() == QEvent::FocusIn) {
+            auto focusEvent = static_cast<QFocusEvent *>(event);
+            if (focusEvent->reason() == Qt::TabFocusReason) {
+                QWidget *w = m_module->d->quickWidget->nextInFocusChain();
+                while (!w->isEnabled() || !(w->focusPolicy() & Qt::TabFocus)) {
+                    w = w->nextInFocusChain();
+                }
+                w->setFocus(Qt::TabFocusReason); // allow tab navigation inside the qquickwidget
+                return true;
+            } else if (focusEvent->reason() == Qt::BacktabFocusReason) {
+                QWidget *w = m_module->d->quickWidget->previousInFocusChain();
+                while (!w->isEnabled() || !(w->focusPolicy() & Qt::TabFocus)) {
+                    w = w->previousInFocusChain();
+                }
+                w->setFocus(Qt::BacktabFocusReason);
+                return true;
+            }
+        }
+        return QWidget::eventFilter(watched, event);
+    }
+
+private:
+    KCModuleQml *m_module;
+};
+
 KCModuleQml::KCModuleQml(std::unique_ptr<KQuickAddons::ConfigModule> configModule, QWidget *parent, const QVariantList &args)
-    : KCModule(parent, args)
+    : KCModule(new QmlConfigModuleWidget(this, parent), {}, args)
     , d(new KCModuleQmlPrivate(std::move(configModule), this))
 {
     connect(d->configModule.get(), &KQuickAddons::ConfigModule::quickHelpChanged, this, &KCModuleQml::quickHelpChanged);
@@ -66,14 +121,12 @@ KCModuleQml::KCModuleQml(std::unique_ptr<KQuickAddons::ConfigModule> configModul
         setButtons((KCModule::Buttons)(int)d->configModule->buttons());
     });
 
-    if (d->configModule->needsSave()) {
-        Q_EMIT changed(true);
-    }
+    setNeedsSave(d->configModule->needsSave());
     connect(d->configModule.get(), &KQuickAddons::ConfigModule::needsSaveChanged, this, [=] {
-        Q_EMIT changed(d->configModule->needsSave());
+        setNeedsSave(d->configModule->needsSave());
     });
     connect(d->configModule.get(), &KQuickAddons::ConfigModule::representsDefaultsChanged, this, [=] {
-        Q_EMIT defaulted(d->configModule->representsDefaults());
+        setRepresentsDefaults(d->configModule->representsDefaults());
     });
 
     setNeedsAuthorization(d->configModule->needsAuthorization());
@@ -99,16 +152,14 @@ KCModuleQml::KCModuleQml(std::unique_ptr<KQuickAddons::ConfigModule> configModul
     });
 #endif
 
-    connect(this, &KCModule::defaultsIndicatorsVisibleChanged, d->configModule.get(), &KQuickAddons::ConfigModule::setDefaultsIndicatorsVisible);
-
-    setFocusPolicy(Qt::StrongFocus);
+    connect(this, &KCModule::defaultsIndicatorsVisibleChanged, d->configModule.get(), &KQuickAddons::ConfigModule::defaultsIndicatorsVisibleChanged);
 
     // Build the UI
-    QVBoxLayout *layout = new QVBoxLayout(this);
+    QVBoxLayout *layout = new QVBoxLayout(widget());
     layout->setContentsMargins(0, 0, 0, 0);
 
     d->engine = Kirigami::SharedQmlEngine::create(nullptr, this);
-    d->quickWidget = new QQuickWidget(d->engine->engine().get(), this);
+    d->quickWidget = new QQuickWidget(d->engine->engine().get(), widget());
     d->quickWidget->setResizeMode(QQuickWidget::SizeRootObjectToView);
     d->quickWidget->setFocusPolicy(Qt::StrongFocus);
     d->quickWidget->setAttribute(Qt::WA_AlwaysStackOnTop, true);
@@ -221,58 +272,10 @@ KCModuleQml::~KCModuleQml()
     delete d;
 }
 
-bool KCModuleQml::eventFilter(QObject *watched, QEvent *event)
-{
-    if (watched == d->rootPlaceHolder && event->type() == QEvent::FocusIn) {
-        auto focusEvent = static_cast<QFocusEvent *>(event);
-        if (focusEvent->reason() == Qt::TabFocusReason) {
-            QWidget *w = d->quickWidget->nextInFocusChain();
-            while (!w->isEnabled() || !(w->focusPolicy() & Qt::TabFocus)) {
-                w = w->nextInFocusChain();
-            }
-            w->setFocus(Qt::TabFocusReason); // allow tab navigation inside the qquickwidget
-            return true;
-        } else if (focusEvent->reason() == Qt::BacktabFocusReason) {
-            QWidget *w = d->quickWidget->previousInFocusChain();
-            while (!w->isEnabled() || !(w->focusPolicy() & Qt::TabFocus)) {
-                w = w->previousInFocusChain();
-            }
-            w->setFocus(Qt::BacktabFocusReason);
-            return true;
-        }
-    }
-    return KCModule::eventFilter(watched, event);
-}
-
-void KCModuleQml::focusInEvent(QFocusEvent *event)
-{
-    Q_UNUSED(event)
-
-    if (event->reason() == Qt::TabFocusReason) {
-        d->rootPlaceHolder->nextItemInFocusChain(true)->forceActiveFocus(Qt::TabFocusReason);
-    } else if (event->reason() == Qt::BacktabFocusReason) {
-        d->rootPlaceHolder->nextItemInFocusChain(false)->forceActiveFocus(Qt::BacktabFocusReason);
-    }
-}
-
-QSize KCModuleQml::sizeHint() const
-{
-    if (!d->rootPlaceHolder) {
-        return QSize();
-    }
-
-    return QSize(d->rootPlaceHolder->implicitWidth(), d->rootPlaceHolder->implicitHeight());
-}
-
-QString KCModuleQml::quickHelp() const
-{
-    return d->configModule->quickHelp();
-}
-
 void KCModuleQml::load()
 {
     d->configModule->load();
-    Q_EMIT defaulted(d->configModule->representsDefaults());
+    setNeedsSave(d->configModule->representsDefaults());
 }
 
 void KCModuleQml::save()

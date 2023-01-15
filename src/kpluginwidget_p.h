@@ -44,7 +44,7 @@ public:
     KCategoryDrawer *categoryDrawer = nullptr;
     KPluginModel *pluginModel = nullptr;
     QSortFilterProxyModel *proxyModel = nullptr;
-    QStringList kcmArguments;
+    QVariantList kcmArguments;
     bool showDefaultIndicator = false;
 };
 

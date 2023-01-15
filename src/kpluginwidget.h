@@ -92,12 +92,12 @@ public:
     /**
      * Sets the @p arguments with which the configuration modules will be initialized
      */
-    void setConfigurationArguments(const QStringList &arguments);
+    void setConfigurationArguments(const QVariantList &arguments);
 
     /**
      * Returns the configuration arguments that will be used
      */
-    QStringList configurationArguments() const;
+    QVariantList configurationArguments() const;
 
     /**
      * Shows the configuration dialog for the plugin @p pluginId if it's available

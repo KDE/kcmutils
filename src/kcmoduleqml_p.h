@@ -27,18 +27,13 @@ public:
     KCModuleQml(std::unique_ptr<KQuickAddons::ConfigModule> configModule, QWidget *parent, const QVariantList &args);
     ~KCModuleQml() override;
 
-    QString quickHelp() const override;
 public Q_SLOTS:
     void load() override;
     void save() override;
     void defaults() override;
 
-protected:
-    void focusInEvent(QFocusEvent *event) override;
-    QSize sizeHint() const override;
-    bool eventFilter(QObject *watched, QEvent *event) override;
-
 private:
+    friend class QmlConfigModuleWidget;
     KCModuleQmlPrivate *const d;
 
     Q_PRIVATE_SLOT(d, void syncCurrentIndex())

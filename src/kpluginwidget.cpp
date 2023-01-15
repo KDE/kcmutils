@@ -6,6 +6,7 @@
 */
 
 #include "kpluginwidget.h"
+#include "kcmoduleloader.h"
 #include "kpluginproxymodel.h"
 #include "kpluginwidget_p.h"
 
@@ -32,7 +33,7 @@
 #include <KLocalizedString>
 #include <KPluginMetaData>
 #include <KStandardGuiItem>
-#include <kcmoduleproxy.h>
+#include <kpluginmetadata.h>
 #include <utility>
 
 static constexpr int s_margin = 5;
@@ -155,12 +156,12 @@ bool KPluginWidget::isSaveNeeded() const
     return d->pluginModel->isSaveNeeded();
 }
 
-void KPluginWidget::setConfigurationArguments(const QStringList &arguments)
+void KPluginWidget::setConfigurationArguments(const QVariantList &arguments)
 {
     d->kcmArguments = arguments;
 }
 
-QStringList KPluginWidget::configurationArguments() const
+QVariantList KPluginWidget::configurationArguments() const
 {
     return d->kcmArguments;
 }
@@ -445,15 +446,10 @@ void PluginDelegate::configure(const QModelIndex &index)
     configDialog->setModal(true);
     configDialog->setWindowTitle(model->data(index, KPluginModel::NameRole).toString());
 
-    auto moduleProxy = new KCModuleProxy(kcm, configDialog, pluginSelector_d->kcmArguments);
-
-    if (!moduleProxy->realModule()) {
-        delete moduleProxy;
-        return;
-    }
+    auto kcmInstance = KCModuleLoader::loadModule(kcm, configDialog, pluginSelector_d->kcmArguments);
 
     auto layout = new QVBoxLayout(configDialog);
-    layout->addWidget(moduleProxy);
+    layout->addWidget(kcmInstance->widget());
 
     auto buttonBox = new QDialogButtonBox(configDialog);
     buttonBox->setStandardButtons(QDialogButtonBox::Ok | QDialogButtonBox::Cancel | QDialogButtonBox::RestoreDefaults);
@@ -462,16 +458,16 @@ void PluginDelegate::configure(const QModelIndex &index)
     KGuiItem::assign(buttonBox->button(QDialogButtonBox::RestoreDefaults), KStandardGuiItem::defaults());
     connect(buttonBox, &QDialogButtonBox::accepted, configDialog, &QDialog::accept);
     connect(buttonBox, &QDialogButtonBox::rejected, configDialog, &QDialog::reject);
-    connect(configDialog, &QDialog::accepted, this, [moduleProxy, this, model, index]() {
+    connect(configDialog, &QDialog::accepted, this, [kcmInstance, this, model, index]() {
         Q_EMIT configCommitted(model->data(index, KPluginModel::IdRole).toString());
-        moduleProxy->save();
+        kcmInstance->save();
     });
-    connect(configDialog, &QDialog::rejected, this, [moduleProxy]() {
-        moduleProxy->load();
+    connect(configDialog, &QDialog::rejected, this, [kcmInstance]() {
+        kcmInstance->load();
     });
 
-    connect(buttonBox->button(QDialogButtonBox::RestoreDefaults), &QAbstractButton::clicked, this, [moduleProxy] {
-        moduleProxy->defaults();
+    connect(buttonBox->button(QDialogButtonBox::RestoreDefaults), &QAbstractButton::clicked, this, [kcmInstance] {
+        kcmInstance->defaults();
     });
     layout->addWidget(buttonBox);
 

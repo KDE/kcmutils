@@ -40,11 +40,11 @@ public:
     KCMError(const QString &msg, const QString &details, QWidget *parent)
         : KCModule(parent)
     {
-        QVBoxLayout *topLayout = new QVBoxLayout(this);
-        QLabel *lab = new QLabel(msg, this);
+        QVBoxLayout *topLayout = new QVBoxLayout(widget());
+        QLabel *lab = new QLabel(msg, widget());
         lab->setWordWrap(true);
         topLayout->addWidget(lab);
-        lab = new QLabel(details, this);
+        lab = new QLabel(details, widget());
         lab->setWordWrap(true);
         topLayout->addWidget(lab);
     }

@@ -9,22 +9,55 @@
 */
 
 #include "kcmodule.h"
+#include "kabstractconfigmodule.h"
 #include "kcmutils_debug.h"
+
+#include <QVBoxLayout>
 
 #include <KConfigDialogManager>
 #include <KConfigSkeleton>
-#include <KLocalizedContext>
+#include <KLocalizedString>
 #include <KPluginMetaData>
 #if KCMUTILS_WITH_KAUTH
 #include <KAuth/ExecuteJob>
 #endif
 
+class KCModuleProxyInternal : public QWidget
+{
+public:
+    KCModuleProxyInternal(KCModule *parentModule, QWidget *parent)
+        : QWidget(parent)
+        , m_parentModule(parentModule)
+    {
+    }
+
+protected:
+    void showEvent(QShowEvent *ev) override
+    {
+        if (m_firstShow) {
+            m_firstShow = false;
+            QMetaObject::invokeMethod(m_parentModule, &KCModule::load, Qt::QueuedConnection);
+            QMetaObject::invokeMethod(
+                this,
+                [this]() {
+                    m_parentModule->setNeedsSave(false);
+                },
+                Qt::QueuedConnection);
+        }
+
+        QWidget::showEvent(ev);
+    }
+
+private:
+    bool m_firstShow = true;
+    KCModule *m_parentModule;
+};
+
 class KCModulePrivate
 {
 public:
     KCModulePrivate()
-        : _buttons(KCModule::Help | KCModule::Default | KCModule::Apply)
-        , _firstshow(true)
+        : _firstshow(true)
         , _needsAuthorization(false)
         , _unmanagedWidgetChangeState(false)
         , _unmanagedWidgetDefaultState(false)
@@ -34,7 +67,6 @@ public:
 
     void authStatusChanged(int status);
 
-    KCModule::Buttons _buttons;
     QList<KConfigDialogManager *> managers;
     bool _firstshow : 1;
 
@@ -50,28 +82,18 @@ public:
     bool _unmanagedWidgetChangeState : 1;
     bool _unmanagedWidgetDefaultState : 1;
     bool _unmanagedWidgetDefaultStateCalled : 1;
+    QVBoxLayout *m_topLayout = nullptr; /* Contains QScrollView view, and root stuff */
+    KCModuleProxyInternal *m_proxyInternal;
 };
 
 KCModule::KCModule(QWidget *parent, const KPluginMetaData &data, const QVariantList &)
-    : QWidget(parent)
+    : KAbstractConfigModule(parent, data, {})
     , d(new KCModulePrivate)
 {
+    d->m_topLayout = new QVBoxLayout(parent);
+    d->m_proxyInternal = new KCModuleProxyInternal(this, parent);
+    d->m_topLayout->addWidget(d->m_proxyInternal);
 }
-
-void KCModule::showEvent(QShowEvent *ev)
-{
-    if (d->_firstshow) {
-        d->_firstshow = false;
-        QMetaObject::invokeMethod(this, &KCModule::load, Qt::QueuedConnection);
-        auto changedFunc = [this]() {
-            changed(false);
-        };
-        QMetaObject::invokeMethod(this, changedFunc, Qt::QueuedConnection);
-    }
-
-    QWidget::showEvent(ev);
-}
-
 
 KConfigDialogManager *KCModule::addConfig(KCoreConfigSkeleton *config, QWidget *widget)
 {
@@ -95,7 +117,7 @@ void KCModule::setAuthAction(const KAuth::Action &action)
     }
     d->_authAction = action;
     d->_needsAuthorization = true;
-    d->_authAction.setParentWidget(this);
+    d->_authAction.setParentWidget(widget());
     authStatusChanged(d->_authAction.status());
 }
 
@@ -153,13 +175,18 @@ void KCModule::defaults()
     }
 }
 
+QWidget *KCModule::widget() const
+{
+    return d->m_proxyInternal;
+}
+
 void KCModule::widgetChanged()
 {
-    Q_EMIT changed(d->_unmanagedWidgetChangeState || managedWidgetChangeState());
+    setNeedsSave(d->_unmanagedWidgetChangeState || managedWidgetChangeState());
     if (d->_unmanagedWidgetDefaultStateCalled) {
-        Q_EMIT defaulted(d->_unmanagedWidgetDefaultState && managedWidgetDefaultState());
+        setRepresentsDefaults(d->_unmanagedWidgetDefaultState && managedWidgetDefaultState());
     } else {
-        Q_EMIT defaulted(!d->managers.isEmpty() && managedWidgetDefaultState());
+        setRepresentsDefaults(!d->managers.isEmpty() && managedWidgetDefaultState());
     }
 }
 
@@ -196,44 +223,6 @@ void KCModule::unmanagedWidgetDefaultState(bool defaulted)
     d->_unmanagedWidgetDefaultStateCalled = true;
     d->_unmanagedWidgetDefaultState = defaulted;
     widgetChanged();
-}
-
-void KCModule::setRootOnlyMessage(const QString &message)
-{
-    d->_rootOnlyMessage = message;
-    Q_EMIT rootOnlyMessageChanged(d->_useRootOnlyMessage, d->_rootOnlyMessage);
-}
-
-QString KCModule::rootOnlyMessage() const
-{
-    return d->_rootOnlyMessage;
-}
-
-void KCModule::setUseRootOnlyMessage(bool on)
-{
-    d->_useRootOnlyMessage = on;
-    Q_EMIT rootOnlyMessageChanged(d->_useRootOnlyMessage, d->_rootOnlyMessage);
-}
-
-bool KCModule::useRootOnlyMessage() const
-{
-    return d->_useRootOnlyMessage;
-}
-
-void KCModule::markAsChanged()
-{
-    Q_EMIT changed(true);
-}
-
-void KCModule::setQuickHelp(const QString &help)
-{
-    d->_quickHelp = help;
-    Q_EMIT quickHelpChanged();
-}
-
-QString KCModule::quickHelp() const
-{
-    return d->_quickHelp;
 }
 
 QList<KConfigDialogManager *> KCModule::configs() const

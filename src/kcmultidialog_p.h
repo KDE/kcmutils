@@ -8,6 +8,7 @@
 #ifndef KCMULTIDIALOG_P_H
 #define KCMULTIDIALOG_P_H
 
+#include "kcmodule.h"
 #include "kcmultidialog.h"
 #include <QList>
 #include <QStringList>
@@ -25,10 +26,10 @@ public:
     }
 
 
-    KCModuleProxy *currentModule;
+    KCModule *currentModule;
 
     struct CreatedModule {
-        KCModuleProxy *kcm;
+        KCModule *kcm;
         KPageWidgetItem *item;
         QStringList componentNames;
     };
@@ -45,8 +46,8 @@ public:
 
     void init();
     void apply();
-    bool resolveChanges(KCModuleProxy *currentProxy);
-    bool moduleSave(KCModuleProxy *module);
+    bool resolveChanges(KCModule *currentProxy);
+    bool moduleSave(KCModule *module);
 };
 
 #endif // KCMULTIDIALOG_P_H

@@ -9,12 +9,16 @@
 #include <KPluginMetaData>
 #include <kcmodule.h>
 
+#include <QLabel>
+
 class FakeKcm : public KCModule
 {
 public:
     FakeKcm(QObject *obj, const QVariantList &)
         : KCModule()
     {
+        auto label = new QLabel(widget());
+        label->setText(QStringLiteral("Demo Text"));
     }
 };
 
