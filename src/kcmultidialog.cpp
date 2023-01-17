@@ -685,4 +685,12 @@ void KCMultiDialog::clear()
     d->_k_clientChanged();
 }
 
+void KCMultiDialog::setDefaultsIndicatorsVisible(bool show)
+{
+    Q_D(KCMultiDialog);
+    for (const auto &module : std::as_const(d->modules)) {
+        module.kcm->setDefaultsIndicatorsVisible(show);
+    }
+}
+
 #include "moc_kcmultidialog.cpp"

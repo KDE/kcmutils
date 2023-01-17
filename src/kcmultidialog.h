@@ -102,6 +102,13 @@ public:
      */
     void clear();
 
+    /**
+     * Show or hide an indicator when settings have changed from their default value
+     *
+     * @since 6.0
+     */
+    void setDefaultsIndicatorsVisible(bool show);
+
 Q_SIGNALS:
     /**
      * Emitted after all KCModules have been told to save their configuration.
