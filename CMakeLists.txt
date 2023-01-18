@@ -35,7 +35,7 @@ if (TOOLS_ONLY)
     return()
 endif()
 
-set(REQUIRED_QT_VERSION 5.15.2)
+set(REQUIRED_QT_VERSION 6.4.0)
 find_package(Qt${QT_MAJOR_VERSION} ${REQUIRED_QT_VERSION} NO_MODULE REQUIRED Widgets DBus Qml Quick QuickWidgets Test)
 
 option(BUILD_QCH "Build API documentation in QCH format (for e.g. Qt Assistant, Qt Creator & KDevelop)" OFF)
