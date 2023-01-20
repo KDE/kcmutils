@@ -12,8 +12,8 @@ deprecated: false
 release: true
 libraries:
  - qmake: KCMUtils
-   cmake: "KF5::KCMUtils"
-cmakename: KF5KCMUtils
+   cmake: "KF6::KCMUtils"
+cmakename: KF6KCMUtils
 
 public_lib: true
 group: Frameworks

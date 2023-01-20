@@ -2,7 +2,7 @@
 # SPDX-License-Identifier: BSD-3-Clause
 
 #.rst:
-# KF5KCMUtilsGenerateModuleData
+# KF6KCMUtilsGenerateModuleData
 # ---------------------------
 #
 # This module provides the ``kcmutils_generate_module_data`` function for
@@ -142,7 +142,7 @@ function(kcmutils_generate_desktop_file kcm_target)
     endif()
 
     add_custom_target(${kcm_target}-kcm-desktop-gen
-                    COMMAND KF5::kcmdesktopfilegenerator ${IN_FILE} ${OUT_FILE}
+                    COMMAND KF6::kcmdesktopfilegenerator ${IN_FILE} ${OUT_FILE}
                     DEPENDS ${IN_FILE})
     add_dependencies(${kcm_target} ${kcm_target}-kcm-desktop-gen)
     if (NOT KCMUTILS_INTERNAL_TEST_MODE)

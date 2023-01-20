@@ -1,7 +1,7 @@
 # SPDX-FileCopyrightText: 2021 Alexander Lohnau <alexander.lohnau@gmx.de>
 # SPDX-License-Identifier: BSD-2-Clause
 
-include(../../KF5KCMUtilsMacros.cmake)
+include(../../KF6KCMUtilsMacros.cmake)
 
 set(_KCMODULE_DATA_TEMPLATE_CPP "../../src/kcmutilsgeneratemoduledata.cpp.in")
 set(_KCMODULE_DATA_TEMPLATE_H   "../../src/kcmutilsgeneratemoduledata.h.in")
@@ -18,5 +18,5 @@ kconfig_add_kcfg_files(module_data_test_SRCS cursorthemesettings.kcfgc GENERATE_
 
 ecm_add_test(${module_data_test_SRCS}
         TEST_NAME module_data_test
-        LINK_LIBRARIES KF5KCMUtils Qt${QT_MAJOR_VERSION}::Test
+        LINK_LIBRARIES KF6KCMUtils Qt${QT_MAJOR_VERSION}::Test
 )

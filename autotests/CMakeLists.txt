@@ -6,7 +6,7 @@ ecm_add_tests(
  kcmoduleinfotest.cpp
  kcmultidialogtest.cpp
 
- LINK_LIBRARIES KF5KCMUtils Qt${QT_MAJOR_VERSION}::Test
+ LINK_LIBRARIES KF6KCMUtils Qt${QT_MAJOR_VERSION}::Test
 )
 endif()
 
