@@ -24,6 +24,7 @@ target_include_directories(KF5KCMUtilsQml INTERFACE "$<INSTALL_INTERFACE:${KDE_I
 target_link_libraries(KF5KCMUtilsQml
   PUBLIC
     KF5::CoreAddons
+    KF5::ConfigGui
   PRIVATE
     KF5KCMUtilsCore
     KF5::I18n

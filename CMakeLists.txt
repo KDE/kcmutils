@@ -66,7 +66,7 @@ endif()
 
 set(HAVE_KAUTH FALSE)
 if (WITH_KAUTH)
-  find_package(KF5Auth ${KF_DEP_VERSION} REQUIRED)
+  find_package(KF6Auth ${KF_DEP_VERSION} REQUIRED)
   set(HAVE_KAUTH TRUE)
 endif()
 
