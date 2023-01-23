@@ -100,7 +100,7 @@ if(BUILD_QCH)
             ksettings/README.dox
         MD_MAINPAGE "${CMAKE_SOURCE_DIR}/README.md"
         LINK_QCHS
-            Qt5Widgets_QCH
+            Qt6Widgets_QCH
             KF6ConfigWidgets_QCH
         INCLUDE_DIRS
             ${CMAKE_CURRENT_BINARY_DIR}
