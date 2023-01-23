@@ -162,7 +162,7 @@ Kirigami.ApplicationItem {
         event.accepted = true
     }
 }
-    )"), QUrl());
+    )"), QUrl(QStringLiteral("kcmutils/kcmmoduleqml.cpp")));
     // clang-format on
 
     d->rootPlaceHolder = qobject_cast<QQuickItem *>(component->create());
