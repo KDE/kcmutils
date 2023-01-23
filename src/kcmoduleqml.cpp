@@ -16,7 +16,6 @@
 
 #include <KAboutData>
 #include <KPageWidget>
-#include <kdeclarative/kdeclarative.h>
 #include <kdeclarative/kdeclarative_export.h>
 #include <kdeclarative/qmlobjectsharedengine.h>
 #include <kquickaddons/configmodule.h>
