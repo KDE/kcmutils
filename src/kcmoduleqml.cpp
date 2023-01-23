@@ -113,11 +113,11 @@ KCModuleQml::KCModuleQml(std::unique_ptr<KQuickAddons::ConfigModule> configModul
     d->quickWindow->setColor(Qt::transparent);
 
     QQmlComponent *component = new QQmlComponent(d->qmlObject->engine(), this);
-    // this has activeFocusOnTab to notice when the navigation wraps
+    // This has activeFocusOnTab to notice when the navigation wraps
     // around, so when we need to go outside and inside
     // pushPage/popPage are needed as push of StackView can't be directly invoked from c++
-    // because its parameters are QQmlV4Function which is not public
-    // the managers of onEnter/ReturnPressed are a workaround of
+    // because its parameters are QQmlV4Function which is not public.
+    // The managers of onEnter/ReturnPressed are a workaround of
     // Qt bug https://bugreports.qt.io/browse/QTBUG-70934
     // clang-format off
     component->setData(QByteArrayLiteral(R"(
