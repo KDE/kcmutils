@@ -365,8 +365,6 @@ bool KCMultiDialogPrivate::moduleSave(KCModuleProxy *module)
 void KCMultiDialogPrivate::apply()
 {
     Q_Q(KCMultiDialog);
-    QStringList updatedComponents;
-
     for (const CreatedModule &module : std::as_const(modules)) {
         KCModuleProxy *proxy = module.kcm;
 
