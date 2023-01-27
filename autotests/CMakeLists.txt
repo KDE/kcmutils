@@ -7,5 +7,5 @@ add_subdirectory(fakekcm)
 
 ecm_add_tests(
     kcmultidialogtest.cpp
-    LINK_LIBRARIES KF6KCMUtils Qt${QT_MAJOR_VERSION}::Test
+    LINK_LIBRARIES KF6KCMUtils Qt6::Test
 )

@@ -43,15 +43,15 @@ target_include_directories(KF6KCMUtils INTERFACE "$<INSTALL_INTERFACE:${KDE_INST
 
 target_link_libraries(KF6KCMUtils
   PUBLIC
-    Qt${QT_MAJOR_VERSION}::Widgets
+    Qt6::Widgets
     KF6::ConfigWidgets  # KCModule
   PRIVATE
     KF6KCMUtilsCore
     kcmutils_proxy_model
-    Qt${QT_MAJOR_VERSION}::DBus       # dbus usage in kcmoduleproxy.cpp
-    Qt${QT_MAJOR_VERSION}::Qml
-    Qt${QT_MAJOR_VERSION}::Quick
-    Qt${QT_MAJOR_VERSION}::QuickWidgets
+    Qt6::DBus       # dbus usage in kcmoduleproxy.cpp
+    Qt6::Qml
+    Qt6::Quick
+    Qt6::QuickWidgets
     KF6::CoreAddons
     KF6::GuiAddons # KIconUtils
     KF6::I18n

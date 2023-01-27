@@ -29,13 +29,13 @@ include(KDEGitCommitHooks)
 include(CMakeDependentOption)
 option(TOOLS_ONLY "Only build the tools and not the rest of KCMUtils" OFF)
 if (TOOLS_ONLY)
-    find_package(Qt${QT_MAJOR_VERSION} ${REQUIRED_QT_VERSION} NO_MODULE REQUIRED Core)
+    find_package(Qt6 ${REQUIRED_QT_VERSION} NO_MODULE REQUIRED Core)
     add_subdirectory(tools)
     return()
 endif()
 
 set(REQUIRED_QT_VERSION 6.4.0)
-find_package(Qt${QT_MAJOR_VERSION} ${REQUIRED_QT_VERSION} NO_MODULE REQUIRED Widgets DBus Qml Quick QuickWidgets Test)
+find_package(Qt6 ${REQUIRED_QT_VERSION} NO_MODULE REQUIRED Widgets DBus Qml Quick QuickWidgets Test)
 
 option(BUILD_QCH "Build API documentation in QCH format (for e.g. Qt Assistant, Qt Creator & KDevelop)" OFF)
 add_feature_info(QCH ${BUILD_QCH} "API documentation in QCH format (for e.g. Qt Assistant, Qt Creator & KDevelop)")
@@ -54,8 +54,8 @@ find_package(KF6XmlGui ${KF_DEP_VERSION} REQUIRED)
 find_package(KF6Declarative ${KF_DEP_VERSION} REQUIRED)
 
 ecm_set_disabled_deprecation_versions(
-    QT 5.15.2
-    KF 5.90.0
+    QT 6.4.0
+    KF 5.102.0
 )
 
 add_definitions(-DTRANSLATION_DOMAIN=\"kcmutils5\")
