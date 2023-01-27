@@ -44,6 +44,7 @@ target_include_directories(KF6KCMUtils INTERFACE "$<INSTALL_INTERFACE:${KDE_INST
 target_link_libraries(KF6KCMUtils
   PUBLIC
     Qt6::Widgets
+    KF6::CoreAddons # KPluginMetaData
     KF6::ConfigWidgets  # KCModule
   PRIVATE
     KF6KCMUtilsCore
@@ -52,7 +53,6 @@ target_link_libraries(KF6KCMUtils
     Qt6::Qml
     Qt6::Quick
     Qt6::QuickWidgets
-    KF6::CoreAddons
     KF6::GuiAddons # KIconUtils
     KF6::I18n
     KF6::ItemViews       # KWidgetItemDelegate
