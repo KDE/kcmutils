@@ -61,13 +61,11 @@ KCModule *KCModuleLoader::loadModule(const KPluginMetaData &metaData, QWidget *p
     const QVariantList args2 = QVariantList(args) << metaData.rawData().value(QStringLiteral("X-KDE-KCM-Args")).toArray();
 
     auto factoryResult = KPluginFactory::loadFactory(metaData);
-    QString pluginKeyword = metaData.value(QStringLiteral("X-KDE-PluginKeyword"));
     if (!factoryResult) {
         // This is where QML KCMs used to be before the namespaces were changed based on https://phabricator.kde.org/T14517
         // But the X-KDE-Library did not reflect this change, instead the "kcms" namespace was prepended
         if (KPluginMetaData data(QLatin1String("kcms/") + metaData.fileName()); data.isValid()) {
             factoryResult = KPluginFactory::loadFactory(data);
-            pluginKeyword.clear();
         }
     }
 
