@@ -353,7 +353,7 @@ QList<QWidget *> PluginDelegate::createItemWidgets(const QModelIndex &index) con
     return widgetList;
 }
 
-void PluginDelegate::updateItemWidgets(const QList<QWidget *> widgets, const QStyleOptionViewItem &option, const QPersistentModelIndex &index) const
+void PluginDelegate::updateItemWidgets(const QList<QWidget *> &widgets, const QStyleOptionViewItem &option, const QPersistentModelIndex &index) const
 {
     int extraButtonWidth = 0;
     QPushButton *extraButton = nullptr;
