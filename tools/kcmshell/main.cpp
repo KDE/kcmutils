@@ -9,8 +9,6 @@
 
 #include "main.h"
 
-#include <config-kde-cli-tools.h>
-
 #include <QCommandLineOption>
 #include <QCommandLineParser>
 #include <QDBusConnection>
@@ -28,11 +26,8 @@
 #include <KCModuleProxy>
 #include <KLocalizedString>
 #include <KPluginMetaData>
-#if KCOREADDONS_BUILD_DEPRECATED_SINCE(5, 92)
-#include <KServiceTypeTrader>
-#endif
-#include <KStartupInfo>
-#include <kworkspace.h>
+
+#include <private/qtx11extras_p.h>
 
 #include <algorithm>
 #include <iostream>
@@ -45,54 +40,6 @@ inline QVector<KPluginMetaData> findKCMsMetaData()
     metaDataList << KPluginMetaData::findPlugins(QStringLiteral("plasma/kcms/kinfocenter"));
     return metaDataList;
 }
-#if KCOREADDONS_BUILD_DEPRECATED_SINCE(5, 92)
-static KService::List listModules()
-{
-    // First condition is what systemsettings does, second what kinfocenter does, make sure this is kept in sync
-    // We need the exist calls because otherwise the trader language aborts if the property doesn't exist and the second part of the or is not evaluated
-    KService::List services =
-        KServiceTypeTrader::self()->query(QStringLiteral("KCModule"),
-                                          QStringLiteral("(exist [X-KDE-System-Settings-Parent-Category] and [X-KDE-System-Settings-Parent-Category] != '') or "
-                                                         "(exist [X-KDE-ParentApp] and [X-KDE-ParentApp] == 'kinfocenter')"));
-
-    auto it = std::remove_if(services.begin(), services.end(), [](const KService::Ptr &service) {
-        return !KAuthorized::authorizeControlModule(service->menuId());
-    });
-    services.erase(it, services.end());
-
-    std::stable_sort(services.begin(), services.end(), [](const KService::Ptr s1, const KService::Ptr s2) {
-        return QString::compare(s1->desktopEntryName(), s2->desktopEntryName(), Qt::CaseInsensitive) < 0;
-    });
-
-    return services;
-}
-
-static KService::Ptr locateModule(const QString &module)
-{
-    QString path = module;
-
-    if (!path.endsWith(QLatin1String(".desktop"))) {
-        path += QStringLiteral(".desktop");
-    }
-
-    KService::Ptr service = KService::serviceByStorageId(path);
-    if (!service) {
-        return KService::Ptr();
-    }
-
-    if (!service->hasServiceType(QStringLiteral("KCModule"))) {
-        // Not a KCModule. E.g. "kcmshell5 akonadi" finds services/kresources/kabc/akonadi.desktop, unrelated.
-        return KService::Ptr();
-    }
-
-    if (service->noDisplay()) {
-        qDebug() << module << "should not be loaded.";
-        return KService::Ptr();
-    }
-
-    return service;
-}
-#endif
 
 bool KCMShell::isRunning()
 {
@@ -101,10 +48,10 @@ bool KCMShell::isRunning()
         return false; // We are the one and only.
     }
 
-    qDebug() << "kcmshell5 with modules" << m_serviceName << "is already running.";
+    qDebug() << "kcmshell6 with modules" << m_serviceName << "is already running.";
 
     QDBusInterface iface(m_serviceName, QStringLiteral("/KCModule/dialog"), QStringLiteral("org.kde.KCMShellMultiDialog"));
-    QDBusReply<void> reply = iface.call(QStringLiteral("activate"), KStartupInfo::startupId());
+    QDBusReply<void> reply = iface.call(QStringLiteral("activate"), QX11Info::nextStartupId());
     if (!reply.isValid()) {
         qDebug() << "Calling D-Bus function dialog::activate() failed.";
         return false; // Error, we have to do it ourselves.
@@ -169,17 +116,13 @@ void KCMShell::appExit(const QString &appId, const QString &oldName, const QStri
 int main(int _argc, char *_argv[])
 {
     const bool qpaVariable = qEnvironmentVariableIsSet("QT_QPA_PLATFORM");
-    KWorkSpace::detectPlatform(_argc, _argv);
     KCMShell app(_argc, _argv);
     if (!qpaVariable) {
         // don't leak the env variable to processes we start
         qunsetenv("QT_QPA_PLATFORM");
     }
-    KLocalizedString::setApplicationDomain("kcmshell5");
-#if QT_VERSION < QT_VERSION_CHECK(6, 0, 0)
-    app.setAttribute(Qt::AA_UseHighDpiPixmaps, true);
-#endif
-    KAboutData aboutData(QStringLiteral("kcmshell5"), //
+    KLocalizedString::setApplicationDomain("kcmshell6");
+    KAboutData aboutData(QStringLiteral("kcmshell6"), //
                          i18n("System Settings Module"),
                          QLatin1String(PROJECT_VERSION),
                          i18n("A tool to start single system settings modules"),
@@ -219,13 +162,6 @@ int main(int _argc, char *_argv[])
         std::cout << i18n("The following modules are available:").toLocal8Bit().constData() << '\n';
 
         QVector<KPluginMetaData> plugins = findKCMsMetaData();
-#if KCOREADDONS_BUILD_DEPRECATED_SINCE(5, 92)
-        const KService::List services = listModules();
-        for (const auto &service : services) {
-            const QString file = QStandardPaths::locate(QStandardPaths::GenericDataLocation, QLatin1String("/kservices5/") + service->entryPath());
-            plugins << KPluginMetaData::fromDesktopFile(file);
-        }
-#endif
         int maxLen = 0;
 
         for (const auto &plugin : plugins) {
@@ -281,28 +217,6 @@ int main(int _argc, char *_argv[])
             if (foundKCM) {
                 continue;
             }
-#if KCOREADDONS_BUILD_DEPRECATED_SINCE(5, 92)
-            KService::Ptr service = locateModule(arg);
-            if (!service) {
-                service = locateModule(QStringLiteral("kcm_") + arg);
-            }
-            if (!service) {
-                service = locateModule(QStringLiteral("kcm") + arg);
-            }
-
-            if (service) {
-                if (!serviceName.isEmpty()) {
-                    serviceName += QLatin1Char('_');
-                }
-                serviceName += arg;
-
-                const QString file = QStandardPaths::locate(QStandardPaths::GenericDataLocation, QLatin1String("/kservices5/") + service->entryPath());
-                auto data = KPluginMetaData::fromDesktopFile(file);
-                metaDataList << data;
-            } else {
-                std::cerr << i18n("Could not find module '%1'. See kcmshell5 --list for the full list of modules.", arg).toLocal8Bit().constData() << std::endl;
-            }
-#endif
         }
     }
 
@@ -344,8 +258,8 @@ int main(int _argc, char *_argv[])
         dlg->setWindowIcon(QIcon::fromTheme(metaDataList.constFirst().iconName()));
     }
 
-    if (app.desktopFileName() == QLatin1String("org.kde.kcmshell5")) {
-        const QString path = metaDataList.constFirst().metaDataFileName();
+    if (app.desktopFileName() == QLatin1String("org.kde.kcmshell6")) {
+        const QString path = metaDataList.constFirst().fileName();
 
         if (path.endsWith(QLatin1String(".desktop"))) {
             app.setDesktopFileName(path);

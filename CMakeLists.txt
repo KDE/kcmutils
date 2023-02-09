@@ -23,6 +23,7 @@ include(CMakePackageConfigHelpers)
 include(ECMAddQch)
 include(ECMQtDeclareLoggingCategory)
 include(ECMDeprecationSettings)
+include(ECMMarkNonGuiExecutable)
 include(KDEGitCommitHooks)
 
 
@@ -45,6 +46,7 @@ ecm_setup_version(PROJECT VARIABLE_PREFIX KCMUTILS
                         PACKAGE_VERSION_FILE "${CMAKE_CURRENT_BINARY_DIR}/KF6KCMUtilsConfigVersion.cmake"
                         SOVERSION 6)
 
+find_package(KF6Activities ${KF_DEP_VERSION} REQUIRED)
 find_package(KF6ItemViews ${KF_DEP_VERSION} REQUIRED)
 find_package(KF6ConfigWidgets ${KF_DEP_VERSION} REQUIRED)
 find_package(KF6CoreAddons ${KF_DEP_VERSION} REQUIRED)
@@ -60,8 +62,8 @@ ecm_set_disabled_deprecation_versions(
 
 add_definitions(-DTRANSLATION_DOMAIN=\"kcmutils5\")
 ki18n_install(po)
-add_subdirectory(tools)
 add_subdirectory(src)
+add_subdirectory(tools)
 if(BUILD_TESTING)
 add_subdirectory(autotests)
 endif()

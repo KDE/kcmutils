@@ -1,17 +1,13 @@
+add_executable(kcmshell6 main.cpp)
+target_compile_definitions(kcmshell6 PRIVATE -DPROJECT_VERSION="${KF_VERSION}")
+ecm_mark_nongui_executable(kcmshell6)
 
-set(kcmshell_KDEINIT_SRCS main.cpp )
-
-add_executable(kcmshell5 ${kcmshell_KDEINIT_SRCS})
-target_compile_definitions(kcmshell5 PRIVATE -DPROJECT_VERSION="${PROJECT_VERSION}")
-ecm_mark_nongui_executable(kcmshell5)
-
-target_link_libraries(kcmshell5
-   Qt::DBus
-   KF5::KCMUtils
-   KF5::I18n
-   KF5::WindowSystem
-   KF5::Activities
-   PW::KWorkspace
+target_link_libraries(kcmshell6
+   Qt6::DBus
+   KF6KCMUtils
+   KF6::I18n
+   KF6::Activities
+   Qt6::GuiPrivate
 )
 
-install(TARGETS kcmshell5          ${KDE_INSTALL_TARGETS_DEFAULT_ARGS})
+install(TARGETS kcmshell6 ${KDE_INSTALL_TARGETS_DEFAULT_ARGS})

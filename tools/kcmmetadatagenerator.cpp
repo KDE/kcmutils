@@ -35,7 +35,7 @@ int main(int argc, char **argv)
 
     QString executableProgram = QStringLiteral("systemsettings ");
     if (!doc.object().contains(QLatin1String("X-KDE-System-Settings-Parent-Category"))) {
-        executableProgram = QStringLiteral("kcmshell5 ");
+        executableProgram = QStringLiteral("kcmshell6 ");
     }
 
     const QString exec = QLatin1String("Exec=") + executableProgram + QFileInfo(fileName).baseName() + QLatin1Char('\n');
