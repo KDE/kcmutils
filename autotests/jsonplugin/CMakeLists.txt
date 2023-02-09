@@ -1,7 +1,4 @@
-
 add_library(jsonplugin MODULE jsonplugin.cpp)
-
-kcoreaddons_desktop_to_json(jsonplugin jsonplugin.desktop)
 
 target_link_libraries(jsonplugin KF6::CoreAddons)
 
