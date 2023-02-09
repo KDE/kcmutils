@@ -123,3 +123,4 @@ ecm_qt_install_logging_categories(
     DESTINATION "${KDE_INSTALL_LOGGINGCATEGORIESDIR}"
 )
 
+add_subdirectory(kcmshell)

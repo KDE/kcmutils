@@ -1,8 +1,6 @@
 # SPDX-FileCopyrightText: 2022 Alexander Lohnau <alexander.lohnau@gmx.de>
 # SPDX-License-Identifier: BSD-3-Clause
 
-add_subdirectory(kcmshell)
-
 add_executable(kcmdesktopfilegenerator kcmmetadatagenerator.cpp)
 add_executable(KF6::kcmdesktopfilegenerator ALIAS kcmdesktopfilegenerator )
 target_link_libraries(kcmdesktopfilegenerator Qt::Core)

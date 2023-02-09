@@ -10,4 +10,4 @@ fi
 # Extract strings from all source files.
 # If your framework depends on KI18n, use $XGETTEXT. If it uses Qt translation
 # system, use $EXTRACT_TR_STRINGS.
-$XGETTEXT `find . -name \*.cpp -o -name \*.h -o -name \*.qml` -o $podir/kcmutils5.pot
+$XGETTEXT ` find -not -path "./kcmshell/*" -name \*.cpp -o  -not -path "./kcmshell/*" -name \*.h -o -name \*.qml` -o $podir/kcmutils5.pot
