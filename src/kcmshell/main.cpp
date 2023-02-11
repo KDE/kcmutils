@@ -27,7 +27,13 @@
 #include <KLocalizedString>
 #include <KPluginMetaData>
 
+#if __has_include(<private/qtx11extras_p.h>)
+#include <KStartupInfo>
 #include <private/qtx11extras_p.h>
+#define HAVE_X11 1
+#else
+#define HAVE_X11 0
+#endif
 
 #include <algorithm>
 #include <iostream>
@@ -50,12 +56,14 @@ bool KCMShell::isRunning()
 
     qDebug() << "kcmshell6 with modules" << m_serviceName << "is already running.";
 
+#ifdef HAVE_X11
     QDBusInterface iface(m_serviceName, QStringLiteral("/KCModule/dialog"), QStringLiteral("org.kde.KCMShellMultiDialog"));
     QDBusReply<void> reply = iface.call(QStringLiteral("activate"), QX11Info::nextStartupId());
     if (!reply.isValid()) {
         qDebug() << "Calling D-Bus function dialog::activate() failed.";
         return false; // Error, we have to do it ourselves.
     }
+#endif
 
     return true;
 }

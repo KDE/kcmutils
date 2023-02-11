@@ -9,6 +9,7 @@ Dependencies:
     'frameworks/kxmlgui' : '@same'
     'frameworks/kdeclarative' : '@same'
     'frameworks/kactivities' : '@same'
+    'frameworks/kwindowsystem' : '@same'
 
 - 'on': ['Linux', 'FreeBSD']
   'require':

@@ -46,6 +46,7 @@ ecm_setup_version(PROJECT VARIABLE_PREFIX KCMUTILS
                         PACKAGE_VERSION_FILE "${CMAKE_CURRENT_BINARY_DIR}/KF6KCMUtilsConfigVersion.cmake"
                         SOVERSION 6)
 
+find_package(KF6WindowSystem ${KF_DEP_VERSION} REQUIRED)
 find_package(KF6Activities ${KF_DEP_VERSION} REQUIRED)
 find_package(KF6ItemViews ${KF_DEP_VERSION} REQUIRED)
 find_package(KF6ConfigWidgets ${KF_DEP_VERSION} REQUIRED)

@@ -8,6 +8,7 @@ target_link_libraries(kcmshell6
    KF6::I18n
    KF6::Activities
    Qt6::GuiPrivate
+   KF6::WindowSystem
 )
 
 install(TARGETS kcmshell6 ${KDE_INSTALL_TARGETS_DEFAULT_ARGS})
