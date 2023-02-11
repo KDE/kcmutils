@@ -207,18 +207,22 @@ int main(int _argc, char *_argv[])
         KPluginMetaData data(arg);
         if (data.isValid()) {
             metaDataList << data;
+            if (!serviceName.isEmpty()) {
+                serviceName += QLatin1Char('_');
+            }
+            serviceName += data.pluginId();
         } else {
             // Look in the namespaces for systemsettings/kinfocenter
             const static auto knownKCMs = findKCMsMetaData();
             const QStringList possibleIds{arg, QStringLiteral("kcm_") + arg, QStringLiteral("kcm") + arg};
-            bool foundKCM = std::any_of(knownKCMs.begin(), knownKCMs.end(), [&possibleIds, &metaDataList, &arg, &serviceName](const KPluginMetaData &data) {
+            bool foundKCM = std::any_of(knownKCMs.begin(), knownKCMs.end(), [&possibleIds, &metaDataList, &serviceName](const KPluginMetaData &data) {
                 bool idMatches = possibleIds.contains(data.pluginId());
                 if (idMatches) {
                     metaDataList << data;
                     if (!serviceName.isEmpty()) {
                         serviceName += QLatin1Char('_');
                     }
-                    serviceName += arg;
+                    serviceName += data.pluginId();
                 }
                 return idMatches;
             });
