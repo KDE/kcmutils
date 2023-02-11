@@ -8,6 +8,7 @@ Dependencies:
     'frameworks/kiconthemes' : '@same'
     'frameworks/kxmlgui' : '@same'
     'frameworks/kdeclarative' : '@same'
+    'frameworks/kactivities' : '@same'
 
 - 'on': ['Linux', 'FreeBSD']
   'require':
