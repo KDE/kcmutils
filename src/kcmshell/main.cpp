@@ -27,12 +27,10 @@
 #include <KLocalizedString>
 #include <KPluginMetaData>
 
-#if __has_include(<private/qtx11extras_p.h>)
+#if __has_include(<KStartupInfo>)
 #include <KStartupInfo>
 #include <private/qtx11extras_p.h>
 #define HAVE_X11 1
-#else
-#define HAVE_X11 0
 #endif
 
 #include <algorithm>
