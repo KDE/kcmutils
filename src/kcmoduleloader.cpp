@@ -24,6 +24,8 @@
 #include <KLocalizedString>
 #include <KMessageBox>
 #include <KPluginFactory>
+#include <memory>
+#include <qqmlengine.h>
 
 #include "qml/configmodule.h"
 
@@ -50,8 +52,14 @@ public:
     }
 };
 
-KCModule *KCModuleLoader::loadModule(const KPluginMetaData &metaData, QWidget *parent, const QVariantList &args, const std::shared_ptr<QQmlEngine> &engine)
+KCModule *KCModuleLoader::loadModule(const KPluginMetaData &metaData, QWidget *parent, const QVariantList &args, const std::shared_ptr<QQmlEngine> &eng)
 {
+    static std::weak_ptr<QQmlEngine> createdEngine;
+    std::shared_ptr<QQmlEngine> engine = eng ? eng : (createdEngine.expired() ? std::make_shared<QQmlEngine>() : createdEngine.lock());
+    if (!eng && createdEngine.expired()) {
+        createdEngine = engine;
+    }
+
     if (!KAuthorized::authorizeControlModule(metaData.pluginId())) {
         return reportError(ErrorReporting::Inline,
                            i18n("The module %1 is disabled.", metaData.pluginId()),

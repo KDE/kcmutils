@@ -107,7 +107,7 @@ QQuickItem *ConfigModule::mainUi()
     }
 
     d->_errorString.clear();
-    d->_engine = new SharedQmlEngine(nullptr, this);
+    d->_engine = new SharedQmlEngine(d->passedInEngine, this);
 
     const QString componentName = metaData().pluginId();
     ConfigModulePrivate::s_rootObjects[d->_engine->rootContext()] = this;
