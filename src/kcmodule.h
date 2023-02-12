@@ -10,7 +10,7 @@
 #define KCMODULE_H
 
 #include "kcmutils_export.h"
-#include <kabstractconfigmodule.h>
+#include <KAbstractConfigModule>
 
 #include <KPluginMetaData>
 #if KCMUTILS_WITH_KAUTH

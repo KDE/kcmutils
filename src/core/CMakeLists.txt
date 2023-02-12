@@ -31,6 +31,7 @@ set_target_properties(KF6KCMUtilsCore PROPERTIES
 ecm_generate_headers(KCMUtilsCore_HEADERS
   HEADER_NAMES
   KPluginModel
+  KAbstractConfigModule
 
   REQUIRED_HEADERS KCMUtilsCore_HEADERS
 )

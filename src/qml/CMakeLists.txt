@@ -25,8 +25,8 @@ target_link_libraries(KF6KCMUtilsQml
   PUBLIC
     KF6::CoreAddons
     KF6::ConfigGui
-  PRIVATE
     KF6KCMUtilsCore
+  PRIVATE
     KF6::I18n
     KF6::Package
     KF6::ConfigGui

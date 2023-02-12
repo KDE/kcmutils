@@ -23,7 +23,7 @@
 #include <KAboutData>
 #include <KActivities/ResourceInstance>
 #include <KAuthorized>
-#include <KCModuleProxy>
+#include <KCModule>
 #include <KLocalizedString>
 #include <KPluginMetaData>
 
@@ -76,7 +76,7 @@ KCMShellMultiDialog::KCMShellMultiDialog(KPageDialog::FaceType dialogFace, QWidg
 
     connect(this, &KCMShellMultiDialog::currentPageChanged, this, [](KPageWidgetItem *newPage, KPageWidgetItem *oldPage) {
         Q_UNUSED(oldPage);
-        KCModuleProxy *activeModule = newPage->widget()->findChild<KCModuleProxy *>();
+        KCModule *activeModule = newPage->widget()->findChild<KCModule *>();
         if (activeModule) {
             KActivities::ResourceInstance::notifyAccessed(QUrl(QLatin1String("kcm:") + activeModule->metaData().pluginId()),
                                                           QStringLiteral("org.kde.systemsettings"));
@@ -259,7 +259,11 @@ int main(int _argc, char *_argv[])
 
     const QStringList moduleArgs = parser.value(QStringLiteral("args")).split(QRegularExpression(QStringLiteral(" +")));
     for (const KPluginMetaData &m : std::as_const(metaDataList)) {
-        dlg->addModule(m, moduleArgs);
+        QVariantList list;
+        for (const auto &arg : moduleArgs) {
+            list << QVariant::fromValue(arg);
+        }
+        dlg->addModule(m, list);
     }
 
     if (parser.isSet(QStringLiteral("icon"))) {
