@@ -83,16 +83,14 @@ KCModule *KCModuleLoader::loadModule(const KPluginMetaData &metaData, QWidget *p
 
     KPluginFactory *factory = factoryResult.plugin;
 
-    const auto qmlKCMResult = factory->create<KQuickAddons::ConfigModule>(parent, args2);
+    const auto kcm = factory->create<KQuickAddons::ConfigModule>(parent, args2);
 
-    if (qmlKCMResult) {
-        std::unique_ptr<KQuickAddons::ConfigModule> kcm(qmlKCMResult);
-
+    if (kcm) {
         if (!kcm->mainUi()) {
             return reportError(ErrorReporting::Inline, i18n("Error loading QML file."), kcm->errorString(), parent);
         }
         qCDebug(KCMUTILS_LOG) << "loaded KCM" << factory->metaData().pluginId() << "from path" << factory->metaData().fileName();
-        return new KCModuleQml(engine, std::move(kcm), parent, args2);
+        return new KCModuleQml(engine, kcm, parent, args2);
     }
 
     const auto kcmoduleResult = factory->create<KCModule>(parent, args2);

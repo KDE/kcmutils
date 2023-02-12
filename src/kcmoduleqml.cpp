@@ -25,7 +25,7 @@
 class KCModuleQmlPrivate
 {
 public:
-    KCModuleQmlPrivate(std::shared_ptr<QQmlEngine> en, std::unique_ptr<KQuickAddons::ConfigModule> cm, KCModuleQml *qq)
+    KCModuleQmlPrivate(std::shared_ptr<QQmlEngine> en, KQuickAddons::ConfigModule *cm, KCModuleQml *qq)
         : q(qq)
         , configModule(std::move(cm))
         , engine(en)
@@ -50,7 +50,7 @@ public:
     QQuickWidget *quickWidget = nullptr;
     QQuickItem *rootPlaceHolder = nullptr;
     QQuickItem *pageRow = nullptr;
-    std::unique_ptr<KQuickAddons::ConfigModule> configModule;
+    KQuickAddons::ConfigModule *configModule;
     std::shared_ptr<QQmlEngine> engine = nullptr;
 };
 
@@ -109,40 +109,37 @@ private:
     KCModuleQml *m_module;
 };
 
-KCModuleQml::KCModuleQml(std::shared_ptr<QQmlEngine> engine,
-                         std::unique_ptr<KQuickAddons::ConfigModule> configModule,
-                         QWidget *parent,
-                         const QVariantList &args)
+KCModuleQml::KCModuleQml(std::shared_ptr<QQmlEngine> engine, KQuickAddons::ConfigModule *configModule, QWidget *parent, const QVariantList &args)
     : KCModule(new QmlConfigModuleWidget(this, parent), {}, args)
     , d(new KCModuleQmlPrivate(engine, std::move(configModule), this))
 {
-    connect(d->configModule.get(), &KQuickAddons::ConfigModule::quickHelpChanged, this, &KCModuleQml::quickHelpChanged);
+    connect(d->configModule, &KQuickAddons::ConfigModule::quickHelpChanged, this, &KCModuleQml::quickHelpChanged);
     // HACK:Here is important those two enums keep having the exact same values
     // but the kdeclarative one can't use the KCModule's enum
     setButtons((KCModule::Buttons)(int)d->configModule->buttons());
-    connect(d->configModule.get(), &KQuickAddons::ConfigModule::buttonsChanged, this, [=] {
+    connect(d->configModule, &KQuickAddons::ConfigModule::buttonsChanged, this, [=] {
         setButtons((KCModule::Buttons)(int)d->configModule->buttons());
     });
 
     setNeedsSave(d->configModule->needsSave());
-    connect(d->configModule.get(), &KQuickAddons::ConfigModule::needsSaveChanged, this, [=] {
+    connect(d->configModule, &KQuickAddons::ConfigModule::needsSaveChanged, this, [=] {
         setNeedsSave(d->configModule->needsSave());
     });
-    connect(d->configModule.get(), &KQuickAddons::ConfigModule::representsDefaultsChanged, this, [=] {
+    connect(d->configModule, &KQuickAddons::ConfigModule::representsDefaultsChanged, this, [=] {
         setRepresentsDefaults(d->configModule->representsDefaults());
     });
 
     setNeedsAuthorization(d->configModule->needsAuthorization());
-    connect(d->configModule.get(), &KQuickAddons::ConfigModule::needsAuthorizationChanged, this, [=] {
+    connect(d->configModule, &KQuickAddons::ConfigModule::needsAuthorizationChanged, this, [=] {
         setNeedsAuthorization(d->configModule->needsAuthorization());
     });
 
     setRootOnlyMessage(d->configModule->rootOnlyMessage());
     setUseRootOnlyMessage(d->configModule->useRootOnlyMessage());
-    connect(d->configModule.get(), &KQuickAddons::ConfigModule::rootOnlyMessageChanged, this, [=] {
+    connect(d->configModule, &KQuickAddons::ConfigModule::rootOnlyMessageChanged, this, [=] {
         setRootOnlyMessage(d->configModule->rootOnlyMessage());
     });
-    connect(d->configModule.get(), &KQuickAddons::ConfigModule::useRootOnlyMessageChanged, this, [=] {
+    connect(d->configModule, &KQuickAddons::ConfigModule::useRootOnlyMessageChanged, this, [=] {
         setUseRootOnlyMessage(d->configModule->useRootOnlyMessage());
     });
 
@@ -150,12 +147,12 @@ KCModuleQml::KCModuleQml(std::shared_ptr<QQmlEngine> engine,
     if (!d->configModule->authActionName().isEmpty()) {
         setAuthAction(KAuth::Action(d->configModule->authActionName()));
     }
-    connect(d->configModule.get(), &KQuickAddons::ConfigModule::authActionNameChanged, this, [=] {
+    connect(d->configModule, &KQuickAddons::ConfigModule::authActionNameChanged, this, [=] {
         setAuthAction(d->configModule->authActionName());
     });
 #endif
 
-    connect(this, &KCModule::defaultsIndicatorsVisibleChanged, d->configModule.get(), &KQuickAddons::ConfigModule::defaultsIndicatorsVisibleChanged);
+    connect(this, &KCModule::defaultsIndicatorsVisibleChanged, d->configModule, &KQuickAddons::ConfigModule::defaultsIndicatorsVisibleChanged);
 
     // Build the UI
     QVBoxLayout *layout = new QVBoxLayout(widget());
@@ -226,7 +223,7 @@ Kirigami.ApplicationItem {
         qCCritical(KCMUTILS_LOG) << component->errors();
         qFatal("Failed to initialize KCModuleQML");
     }
-    d->rootPlaceHolder->setProperty("kcm", QVariant::fromValue(d->configModule.get()));
+    d->rootPlaceHolder->setProperty("kcm", QVariant::fromValue(d->configModule));
     d->rootPlaceHolder->installEventFilter(this);
     d->quickWidget->setContent(QUrl(), component, d->rootPlaceHolder);
 
@@ -242,16 +239,16 @@ Kirigami.ApplicationItem {
                                       Q_ARG(QVariant, QVariant()));
         }
 
-        connect(d->configModule.get(), &KQuickAddons::ConfigModule::pagePushed, this, [this](QQuickItem *page) {
+        connect(d->configModule, &KQuickAddons::ConfigModule::pagePushed, this, [this](QQuickItem *page) {
             QMetaObject::invokeMethod(d->pageRow, "push", Qt::DirectConnection, Q_ARG(QVariant, QVariant::fromValue(page)), Q_ARG(QVariant, QVariant()));
         });
-        connect(d->configModule.get(), &KQuickAddons::ConfigModule::pageRemoved, this, [this]() {
+        connect(d->configModule, &KQuickAddons::ConfigModule::pageRemoved, this, [this]() {
             QMetaObject::invokeMethod(d->pageRow, "pop", Qt::DirectConnection, Q_ARG(QVariant, QVariant()));
         });
-        connect(d->configModule.get(), &KQuickAddons::ConfigModule::currentIndexChanged, this, [this]() {
+        connect(d->configModule, &KQuickAddons::ConfigModule::currentIndexChanged, this, [this]() {
             d->pageRow->setProperty("currentIndex", d->configModule->currentIndex());
         });
-        connect(d->configModule.get(),
+        connect(d->configModule,
                 &KQuickAddons::ConfigModule::passiveNotificationRequested,
                 this,
                 [this](const QString &message, const QVariant &timeout, const QString &actionText, const QJSValue &callBack) {

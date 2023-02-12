@@ -25,7 +25,7 @@ class KCModuleQml : public KCModule
     Q_OBJECT
 
 public:
-    KCModuleQml(std::shared_ptr<QQmlEngine> engine, std::unique_ptr<KQuickAddons::ConfigModule> configModule, QWidget *parent, const QVariantList &args);
+    KCModuleQml(std::shared_ptr<QQmlEngine> engine, KQuickAddons::ConfigModule *configModule, QWidget *parent, const QVariantList &args);
     ~KCModuleQml() override;
 
 public Q_SLOTS:
