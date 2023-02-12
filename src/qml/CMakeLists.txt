@@ -11,30 +11,29 @@ install (DIRECTORY components DESTINATION ${KDE_INSTALL_QMLDIR}/org/kde/kcmutils
 install (FILES qmldir DESTINATION ${KDE_INSTALL_QMLDIR}/org/kde/kcmutils)
 
 # Library
-add_library(KF5KCMUtilsQml configmodule.cpp managedconfigmodule.cpp)
+add_library(KF6KCMUtilsQml configmodule.cpp managedconfigmodule.cpp sharedqmlengine.cpp)
 
-ecm_generate_export_header(KF5KCMUtilsQml
+ecm_generate_export_header(KF6KCMUtilsQml
     BASE_NAME KCMUtilsQml
     GROUP_BASE_NAME KF
     VERSION ${KF_VERSION}
     DEPRECATED_BASE_VERSION 0
 )
-target_include_directories(KF5KCMUtilsQml INTERFACE "$<INSTALL_INTERFACE:${KDE_INSTALL_INCLUDEDIR_KF}/KCMUtilsQml>")
+target_include_directories(KF6KCMUtilsQml INTERFACE "$<INSTALL_INTERFACE:${KDE_INSTALL_INCLUDEDIR_KF}/KCMUtilsQml>")
 
-target_link_libraries(KF5KCMUtilsQml
+target_link_libraries(KF6KCMUtilsQml
   PUBLIC
-    KF5::CoreAddons
-    KF5::ConfigGui
+    KF6::CoreAddons
+    KF6::ConfigGui
   PRIVATE
-    KF5KCMUtilsCore
-    KF5::I18n
-    KF5::Package
-    KF5::Kirigami2
-    KF5::ConfigGui
-    Qt${QT_MAJOR_VERSION}::Quick
+    KF6KCMUtilsCore
+    KF6::I18n
+    KF6::Package
+    KF6::ConfigGui
+    Qt6::Quick
 )
 
-set_target_properties(KF5KCMUtilsQml PROPERTIES
+set_target_properties(KF6KCMUtilsQml PROPERTIES
                       VERSION ${KCMUTILS_VERSION}
                       SOVERSION ${KCMUTILS_SOVERSION}
                       EXPORT_NAME KCMUtilsQml)
@@ -51,4 +50,4 @@ install(FILES
   DESTINATION ${KDE_INSTALL_INCLUDEDIR_KF}/KCMUtilsQml COMPONENT Devel
 )
 
-install(TARGETS KF5KCMUtilsQml EXPORT KF5KCMUtilsTargets ${KF_INSTALL_TARGETS_DEFAULT_ARGS})
+install(TARGETS KF6KCMUtilsQml EXPORT KF6KCMUtilsTargets ${KF_INSTALL_TARGETS_DEFAULT_ARGS})

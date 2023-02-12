@@ -66,7 +66,6 @@ target_link_libraries(KF6KCMUtils
     KF6::ItemViews       # KWidgetItemDelegate
     KF6::XmlGui          # KAboutApplicationDialog
     KF6::QuickAddons
-    KF6::Kirigami2
 )
 # On Windows, this target does not exist
 if (TARGET KF6::AuthWidgets)

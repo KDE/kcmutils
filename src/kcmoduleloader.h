@@ -15,8 +15,10 @@
 #include <kcmodule.h>
 
 #include <kcmoduledata.h>
+#include <memory>
 
 class QWidget;
+class QQmlEngine;
 
 /**
  * @short Loads a KControl Module.
@@ -64,7 +66,8 @@ enum ErrorReporting {
  * @return a pointer to the loaded @ref KCModule
  * @since 5.84
  */
-KCMUTILS_EXPORT KCModule *loadModule(const KPluginMetaData &metaData, QWidget *parent = nullptr, const QVariantList &args = {});
+KCMUTILS_EXPORT KCModule *
+loadModule(const KPluginMetaData &metaData, QWidget *parent = nullptr, const QVariantList &args = {}, const std::shared_ptr<QQmlEngine> &engine = {});
 
 /**
  * Returns a KCModule containing the messages @p report and @p text.

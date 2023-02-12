@@ -50,7 +50,7 @@ public:
     }
 };
 
-KCModule *KCModuleLoader::loadModule(const KPluginMetaData &metaData, QWidget *parent, const QVariantList &args)
+KCModule *KCModuleLoader::loadModule(const KPluginMetaData &metaData, QWidget *parent, const QVariantList &args, const std::shared_ptr<QQmlEngine> &engine)
 {
     if (!KAuthorized::authorizeControlModule(metaData.pluginId())) {
         return reportError(ErrorReporting::Inline,
@@ -58,7 +58,7 @@ KCModule *KCModuleLoader::loadModule(const KPluginMetaData &metaData, QWidget *p
                            i18n("The module has been disabled by the system administrator."),
                            parent);
     }
-    const QVariantList args2 = QVariantList(args) << metaData.rawData().value(QStringLiteral("X-KDE-KCM-Args")).toArray();
+    const QVariantList args2 = QVariantList(args) << metaData.rawData().value(QStringLiteral("X-KDE-KCM-Args")).toArray() << QVariant::fromValue(engine);
 
     auto factoryResult = KPluginFactory::loadFactory(metaData);
     if (!factoryResult) {
@@ -84,7 +84,7 @@ KCModule *KCModuleLoader::loadModule(const KPluginMetaData &metaData, QWidget *p
             return reportError(ErrorReporting::Inline, i18n("Error loading QML file."), kcm->errorString(), parent);
         }
         qCDebug(KCMUTILS_LOG) << "loaded KCM" << factory->metaData().pluginId() << "from path" << factory->metaData().fileName();
-        return new KCModuleQml(std::move(kcm), parent, args2);
+        return new KCModuleQml(engine, std::move(kcm), parent, args2);
     }
 
     const auto kcmoduleResult = factory->create<KCModule>(parent, args2);

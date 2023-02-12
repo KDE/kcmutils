@@ -8,7 +8,6 @@
 
 #include "kcmoduleqml_p.h"
 
-#include <Kirigami2/kirigami/sharedqmlengine.h>
 #include <QQuickItem>
 #include <QQuickWidget>
 #include <QQuickWindow>
@@ -17,7 +16,7 @@
 #include <KAboutData>
 #include <KLocalizedContext>
 #include <KPageWidget>
-#include <Kirigami/SharedQmlEngine>
+#include <QQmlEngine>
 
 #include "qml/configmodule.h"
 
@@ -26,9 +25,10 @@
 class KCModuleQmlPrivate
 {
 public:
-    KCModuleQmlPrivate(std::unique_ptr<KQuickAddons::ConfigModule> cm, KCModuleQml *qq)
+    KCModuleQmlPrivate(std::shared_ptr<QQmlEngine> en, std::unique_ptr<KQuickAddons::ConfigModule> cm, KCModuleQml *qq)
         : q(qq)
         , configModule(std::move(cm))
+        , engine(en)
     {
     }
 
@@ -51,7 +51,7 @@ public:
     QQuickItem *rootPlaceHolder = nullptr;
     QQuickItem *pageRow = nullptr;
     std::unique_ptr<KQuickAddons::ConfigModule> configModule;
-    Kirigami::SharedQmlEngine *engine = nullptr;
+    std::shared_ptr<QQmlEngine> engine = nullptr;
 };
 
 class QmlConfigModuleWidget : public QWidget
@@ -109,9 +109,12 @@ private:
     KCModuleQml *m_module;
 };
 
-KCModuleQml::KCModuleQml(std::unique_ptr<KQuickAddons::ConfigModule> configModule, QWidget *parent, const QVariantList &args)
+KCModuleQml::KCModuleQml(std::shared_ptr<QQmlEngine> engine,
+                         std::unique_ptr<KQuickAddons::ConfigModule> configModule,
+                         QWidget *parent,
+                         const QVariantList &args)
     : KCModule(new QmlConfigModuleWidget(this, parent), {}, args)
-    , d(new KCModuleQmlPrivate(std::move(configModule), this))
+    , d(new KCModuleQmlPrivate(engine, std::move(configModule), this))
 {
     connect(d->configModule.get(), &KQuickAddons::ConfigModule::quickHelpChanged, this, &KCModuleQml::quickHelpChanged);
     // HACK:Here is important those two enums keep having the exact same values
@@ -158,15 +161,14 @@ KCModuleQml::KCModuleQml(std::unique_ptr<KQuickAddons::ConfigModule> configModul
     QVBoxLayout *layout = new QVBoxLayout(widget());
     layout->setContentsMargins(0, 0, 0, 0);
 
-    d->engine = Kirigami::SharedQmlEngine::create(nullptr, this);
-    d->quickWidget = new QQuickWidget(d->engine->engine().get(), widget());
+    d->quickWidget = new QQuickWidget(d->engine.get(), widget());
     d->quickWidget->setResizeMode(QQuickWidget::SizeRootObjectToView);
     d->quickWidget->setFocusPolicy(Qt::StrongFocus);
     d->quickWidget->setAttribute(Qt::WA_AlwaysStackOnTop, true);
     d->quickWindow = d->quickWidget->quickWindow();
     d->quickWindow->setColor(Qt::transparent);
 
-    QQmlComponent *component = new QQmlComponent(d->engine->engine().get(), this);
+    QQmlComponent *component = new QQmlComponent(d->engine.get(), this);
     // this has activeFocusOnTab to notice when the navigation wraps
     // around, so when we need to go outside and inside
     // pushPage/popPage are needed as push of StackView can't be directly invoked from c++

@@ -12,6 +12,7 @@
 
 #include "configmodule.h"
 #include "kabstractconfigmodule.h"
+#include "sharedqmlengine_p.h"
 
 #include <QDebug>
 #include <QQmlContext>
@@ -24,7 +25,6 @@
 #include <KLocalizedString>
 #include <KPackage/Package>
 #include <KPackage/PackageLoader>
-#include <Kirigami/SharedQmlEngine>
 
 #include <memory>
 
@@ -41,7 +41,8 @@ public:
     void authStatusChanged(int status);
 
     ConfigModule *_q;
-    Kirigami::SharedQmlEngine *_engine = nullptr;
+    SharedQmlEngine *_engine;
+    std::shared_ptr<QQmlEngine> passedInEngine;
     QList<QQuickItem *> subPages;
     int _columnWidth = -1;
     int currentIndex = 0;
@@ -62,6 +63,8 @@ ConfigModule::ConfigModule(QObject *parent, const KPluginMetaData &metaData, con
     : KAbstractConfigModule(parent, metaData, args)
     , d(new ConfigModulePrivate(this))
 {
+    d->passedInEngine = args.last().value<std::shared_ptr<QQmlEngine>>();
+    qWarning() << args.last().value<std::shared_ptr<QQmlEngine>>().get();
 }
 
 ConfigModule::~ConfigModule()
@@ -71,7 +74,6 @@ ConfigModule::~ConfigModule()
         ConfigModulePrivate::s_rootObjects.remove(d->_engine->rootContext());
     }
 
-    delete d->_engine;
     delete d;
 }
 
@@ -99,12 +101,13 @@ ConfigModule *ConfigModule::qmlAttachedProperties(QObject *object)
 
 QQuickItem *ConfigModule::mainUi()
 {
+    Q_ASSERT(d->passedInEngine);
     if (d->_engine) {
         return qobject_cast<QQuickItem *>(d->_engine->rootObject());
     }
 
     d->_errorString.clear();
-    d->_engine = Kirigami::SharedQmlEngine::create(nullptr, this);
+    d->_engine = new SharedQmlEngine(nullptr, this);
 
     const QString componentName = metaData().pluginId();
     ConfigModulePrivate::s_rootObjects[d->_engine->rootContext()] = this;
@@ -270,7 +273,6 @@ QQuickItem *ConfigModule::subPage(int index) const
 {
     return d->subPages[index];
 }
-
 }
 
 #include "moc_configmodule.cpp"
