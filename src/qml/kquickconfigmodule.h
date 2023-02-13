@@ -29,12 +29,10 @@
 class QQuickItem;
 class QQmlEngine;
 
-namespace KQuickAddons
-{
-class ConfigModulePrivate;
+class KQuickConfigModulePrivate;
 
 /**
- * @class KQuickAddons::ConfigModule configmodule.h KQuickAddons/ConfigModule
+ * @class KQuickConfigModule kquickconfigmodule.h KQuickConfigModule
  *
  * The base class for configuration modules.
  *
@@ -118,7 +116,7 @@ class ConfigModulePrivate;
  * for more detailed documentation.
  *
  */
-class KCMUTILSQML_EXPORT ConfigModule : public KAbstractConfigModule
+class KCMUTILSQML_EXPORT KQuickConfigModule : public KAbstractConfigModule
 {
     Q_OBJECT
 
@@ -128,19 +126,18 @@ class KCMUTILSQML_EXPORT ConfigModule : public KAbstractConfigModule
     Q_PROPERTY(int currentIndex READ currentIndex WRITE setCurrentIndex NOTIFY currentIndexChanged)
 
 public:
-
     /**
      * Base class for all KControlModules.
      *
      * @note do not emit changed signals here, since they are not yet connected
      *       to any slot.
      */
-    explicit ConfigModule(QObject *parent, const KPluginMetaData &metaData, const QVariantList &args);
+    explicit KQuickConfigModule(QObject *parent, const KPluginMetaData &metaData, const QVariantList &args);
 
     /**
      * Destroys the module.
      */
-    ~ConfigModule() override;
+    ~KQuickConfigModule() override;
 
     /**
      * @return the qml engine that built the main config UI
@@ -203,8 +200,7 @@ public:
      */
     int currentIndex() const;
 
-    static ConfigModule *qmlAttachedProperties(QObject *object);
-
+    static KQuickConfigModule *qmlAttachedProperties(QObject *object);
 
 public Q_SLOTS:
     /**
@@ -241,14 +237,9 @@ public Q_SLOTS:
                                  const QString &actionText = QString(),
                                  const QJSValue &callBack = QJSValue());
 
-
 Q_SIGNALS:
 
-
     // QML NOTIFY signaling
-
-
-
 
     /**
      * Emitted when a new sub page is pushed
@@ -281,13 +272,10 @@ Q_SIGNALS:
      */
     void passiveNotificationRequested(const QString &message, const QVariant &timeout, const QString &actionText, const QJSValue &callBack);
 
-
 private:
-    ConfigModulePrivate *const d;
+    KQuickConfigModulePrivate *const d;
 };
 
-}
-
-QML_DECLARE_TYPEINFO(KQuickAddons::ConfigModule, QML_HAS_ATTACHED_PROPERTIES)
+QML_DECLARE_TYPEINFO(KQuickConfigModule, QML_HAS_ATTACHED_PROPERTIES)
 
 #endif // ConfigModule_H

@@ -18,7 +18,6 @@ if (NOT @BUILD_SHARED_LIBS@)
     find_dependency(KF6I18n         "@KF_DEP_VERSION@")
     find_dependency(KF6ItemViews    "@KF_DEP_VERSION@")
     find_dependency(KF6XmlGui       "@KF_DEP_VERSION@")
-    find_dependency(KF6Declarative  "@KF_DEP_VERSION@")
 endif()
 
 @PACKAGE_SETUP_AUTOMOC_VARIABLES@

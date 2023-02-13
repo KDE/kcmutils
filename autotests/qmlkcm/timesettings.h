@@ -5,9 +5,9 @@
 
 #pragma once
 
-#include <KQuickAddons/ManagedConfigModule>
+#include <KQuickManagedConfigModule>
 
-class TimeSettings : public KQuickAddons::ManagedConfigModule
+class TimeSettings : public KQuickManagedConfigModule
 {
     Q_OBJECT
 public:

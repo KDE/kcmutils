@@ -10,7 +10,7 @@
     SPDX-License-Identifier: LGPL-2.0-or-later
 */
 
-#include "configmodule.h"
+#include "kquickconfigmodule.h"
 #include "kabstractconfigmodule.h"
 #include "sharedqmlengine_p.h"
 
@@ -28,19 +28,17 @@
 
 #include <memory>
 
-namespace KQuickAddons
-{
-class ConfigModulePrivate
+class KQuickConfigModulePrivate
 {
 public:
-    ConfigModulePrivate(ConfigModule *module)
+    KQuickConfigModulePrivate(KQuickConfigModule *module)
         : _q(module)
     {
     }
 
     void authStatusChanged(int status);
 
-    ConfigModule *_q;
+    KQuickConfigModule *_q;
     SharedQmlEngine *_engine;
     std::shared_ptr<QQmlEngine> passedInEngine;
     QList<QQuickItem *> subPages;
@@ -48,29 +46,29 @@ public:
     int currentIndex = 0;
     QString _errorString;
 
-    static QHash<QObject *, ConfigModule *> s_rootObjects;
+    static QHash<QObject *, KQuickConfigModule *> s_rootObjects;
 };
 
-QHash<QObject *, ConfigModule *> ConfigModulePrivate::s_rootObjects = QHash<QObject *, ConfigModule *>();
+QHash<QObject *, KQuickConfigModule *> KQuickConfigModulePrivate::s_rootObjects = QHash<QObject *, KQuickConfigModule *>();
 
-ConfigModule::ConfigModule(QObject *parent, const KPluginMetaData &metaData, const QVariantList &args)
+KQuickConfigModule::KQuickConfigModule(QObject *parent, const KPluginMetaData &metaData, const QVariantList &args)
     : KAbstractConfigModule(parent, metaData, args)
-    , d(new ConfigModulePrivate(this))
+    , d(new KQuickConfigModulePrivate(this))
 {
     d->passedInEngine = args.last().value<std::shared_ptr<QQmlEngine>>();
 }
 
-ConfigModule::~ConfigModule()
+KQuickConfigModule::~KQuickConfigModule()
 {
     // in case mainUi was never called
     if (d->_engine) {
-        ConfigModulePrivate::s_rootObjects.remove(d->_engine->rootContext());
+        KQuickConfigModulePrivate::s_rootObjects.remove(d->_engine->rootContext());
     }
 
     delete d;
 }
 
-ConfigModule *ConfigModule::qmlAttachedProperties(QObject *object)
+KQuickConfigModule *KQuickConfigModule::qmlAttachedProperties(QObject *object)
 {
     // at the moment of the attached object creation, the root item is the only one that hasn't a parent
     // only way to avoid creation of this attached for everybody but the root item
@@ -85,14 +83,14 @@ ConfigModule *ConfigModule::qmlAttachedProperties(QObject *object)
         cont = cont->parentContext();
     }
 
-    if (!object->parent() && ConfigModulePrivate::s_rootObjects.contains(cont)) {
-        return ConfigModulePrivate::s_rootObjects.value(cont);
+    if (!object->parent() && KQuickConfigModulePrivate::s_rootObjects.contains(cont)) {
+        return KQuickConfigModulePrivate::s_rootObjects.value(cont);
     } else {
         return nullptr;
     }
 }
 
-QQuickItem *ConfigModule::mainUi()
+QQuickItem *KQuickConfigModule::mainUi()
 {
     Q_ASSERT(d->passedInEngine);
     if (d->_engine) {
@@ -103,7 +101,7 @@ QQuickItem *ConfigModule::mainUi()
     d->_engine = new SharedQmlEngine(d->passedInEngine, this);
 
     const QString componentName = metaData().pluginId();
-    ConfigModulePrivate::s_rootObjects[d->_engine->rootContext()] = this;
+    KQuickConfigModulePrivate::s_rootObjects[d->_engine->rootContext()] = this;
     d->_engine->setTranslationDomain(componentName);
     d->_engine->setInitializationDelayed(true);
 
@@ -139,7 +137,7 @@ QQuickItem *ConfigModule::mainUi()
     return qobject_cast<QQuickItem *>(d->_engine->rootObject());
 }
 
-void ConfigModule::push(const QString &fileName, const QVariantMap &propertyMap)
+void KQuickConfigModule::push(const QString &fileName, const QVariantMap &propertyMap)
 {
     // ensure main ui is created
     if (!mainUi()) {
@@ -170,7 +168,7 @@ void ConfigModule::push(const QString &fileName, const QVariantMap &propertyMap)
     setCurrentIndex(d->currentIndex + 1);
 }
 
-void ConfigModule::push(QQuickItem *item)
+void KQuickConfigModule::push(QQuickItem *item)
 {
     // ensure main ui is created
     if (!mainUi()) {
@@ -183,14 +181,14 @@ void ConfigModule::push(QQuickItem *item)
     setCurrentIndex(d->currentIndex + 1);
 }
 
-void ConfigModule::pop()
+void KQuickConfigModule::pop()
 {
     if (QQuickItem *page = takeLast()) {
         page->deleteLater();
     }
 }
 
-QQuickItem *ConfigModule::takeLast()
+QQuickItem *KQuickConfigModule::takeLast()
 {
     if (d->subPages.isEmpty()) {
         return nullptr;
@@ -202,17 +200,17 @@ QQuickItem *ConfigModule::takeLast()
     return page;
 }
 
-void ConfigModule::showPassiveNotification(const QString &message, const QVariant &timeout, const QString &actionText, const QJSValue &callBack)
+void KQuickConfigModule::showPassiveNotification(const QString &message, const QVariant &timeout, const QString &actionText, const QJSValue &callBack)
 {
     Q_EMIT passiveNotificationRequested(message, timeout, actionText, callBack);
 }
 
-int ConfigModule::columnWidth() const
+int KQuickConfigModule::columnWidth() const
 {
     return d->_columnWidth;
 }
 
-void ConfigModule::setColumnWidth(int width)
+void KQuickConfigModule::setColumnWidth(int width)
 {
     if (d->_columnWidth == width) {
         return;
@@ -222,12 +220,12 @@ void ConfigModule::setColumnWidth(int width)
     Q_EMIT columnWidthChanged(width);
 }
 
-int ConfigModule::depth() const
+int KQuickConfigModule::depth() const
 {
     return d->subPages.count() + 1;
 }
 
-void ConfigModule::setCurrentIndex(int index)
+void KQuickConfigModule::setCurrentIndex(int index)
 {
     if (index < 0 || index > d->subPages.count() || index == d->currentIndex) {
         return;
@@ -238,17 +236,17 @@ void ConfigModule::setCurrentIndex(int index)
     Q_EMIT currentIndexChanged(index);
 }
 
-int ConfigModule::currentIndex() const
+int KQuickConfigModule::currentIndex() const
 {
     return d->currentIndex;
 }
 
-std::shared_ptr<QQmlEngine> ConfigModule::engine() const
+std::shared_ptr<QQmlEngine> KQuickConfigModule::engine() const
 {
     return d->_engine->engine();
 }
 
-QQmlComponent::Status ConfigModule::status() const
+QQmlComponent::Status KQuickConfigModule::status() const
 {
     if (!d->_engine) {
         return QQmlComponent::Null;
@@ -257,15 +255,14 @@ QQmlComponent::Status ConfigModule::status() const
     return d->_engine->status();
 }
 
-QString ConfigModule::errorString() const
+QString KQuickConfigModule::errorString() const
 {
     return d->_errorString;
 }
 
-QQuickItem *ConfigModule::subPage(int index) const
+QQuickItem *KQuickConfigModule::subPage(int index) const
 {
     return d->subPages[index];
 }
-}
 
-#include "moc_configmodule.cpp"
+#include "moc_kquickconfigmodule.cpp"

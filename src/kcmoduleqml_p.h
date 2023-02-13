@@ -14,18 +14,14 @@
 class QQuickItem;
 class QQmlEngine;
 class KCModuleQmlPrivate;
-
-namespace KQuickAddons
-{
-class ConfigModule;
-}
+class KQuickConfigModule;
 
 class KCModuleQml : public KCModule
 {
     Q_OBJECT
 
 public:
-    KCModuleQml(KQuickAddons::ConfigModule *configModule, QWidget *parent, const QVariantList &args);
+    KCModuleQml(KQuickConfigModule *configModule, QWidget *parent, const QVariantList &args);
     ~KCModuleQml() override;
 
 public Q_SLOTS:

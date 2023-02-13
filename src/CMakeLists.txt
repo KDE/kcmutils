@@ -68,7 +68,6 @@ target_link_libraries(KF6KCMUtils
     KF6::I18n
     KF6::ItemViews       # KWidgetItemDelegate
     KF6::XmlGui          # KAboutApplicationDialog
-    KF6::QuickAddons
     kcmutils_logging_STATIC
 )
 # On Windows, this target does not exist

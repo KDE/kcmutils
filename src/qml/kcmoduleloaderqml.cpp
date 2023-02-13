@@ -13,11 +13,11 @@
 
 std::weak_ptr<QQmlEngine> s_kcmutilsCreatedEngine;
 
-KPluginFactory::Result<KQuickAddons::ConfigModule>
+KPluginFactory::Result<KQuickConfigModule>
 KCModuleLoaderQml::loadModule(const KPluginMetaData &metaData, QObject *parent, const QVariantList &args, const std::shared_ptr<QQmlEngine> &engineArg)
 {
     const auto factoryResult = KPluginFactory::loadFactory(metaData);
-    KPluginFactory::Result<KQuickAddons::ConfigModule> result;
+    KPluginFactory::Result<KQuickConfigModule> result;
     if (!factoryResult) {
         result.errorReason = factoryResult.errorReason;
         result.errorString = factoryResult.errorString;
@@ -36,7 +36,7 @@ KCModuleLoaderQml::loadModule(const KPluginMetaData &metaData, QObject *parent, 
     const QVariantList args2 = QVariantList(args) << metaData.rawData().value(QStringLiteral("X-KDE-KCM-Args")).toArray() << QVariant::fromValue(engine);
     factory->setMetaData(KPluginMetaData(metaData));
 
-    const auto kcm = factory->create<KQuickAddons::ConfigModule>(parent, args2);
+    const auto kcm = factory->create<KQuickConfigModule>(parent, args2);
     if (kcm) {
         result.plugin = kcm;
         qCDebug(KCMUTILS_LOG) << "loaded QML KCM" << metaData.fileName();

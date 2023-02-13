@@ -8,16 +8,14 @@
 #ifndef MANAGEDCONFIGMODULE_H
 #define MANAGEDCONFIGMODULE_H
 
-#include "configmodule.h"
+#include "kquickconfigmodule.h"
 
 class KCoreConfigSkeleton;
 
-namespace KQuickAddons
-{
-class ManagedConfigModulePrivate;
+class KQuickManagedConfigModulePrivate;
 
 /**
- * @class KQuickAddons::ManagedConfigModule managedconfigmodule.h KQuickAddons/ManagedConfigModule
+ * @class KQuickManagedConfigModule managedconfigmodule.h KQuickAddons/ManagedConfigModule
  *
  * The base class for configuration modules using KConfigXT settings.
  *
@@ -105,7 +103,7 @@ class ManagedConfigModulePrivate;
  *
  * @since 6.0
  */
-class KCMUTILSQML_EXPORT ManagedConfigModule : public ConfigModule
+class KCMUTILSQML_EXPORT KQuickManagedConfigModule : public KQuickConfigModule
 {
     Q_OBJECT
 public:
@@ -115,12 +113,12 @@ public:
      * @note do not emit changed signals here, since they are not yet connected
      *       to any slot.
      */
-    explicit ManagedConfigModule(QObject *parent, const KPluginMetaData &metaData, const QVariantList &args = QVariantList());
+    explicit KQuickManagedConfigModule(QObject *parent, const KPluginMetaData &metaData, const QVariantList &args = QVariantList());
 
     /**
      * Destroys the module.
      */
-    ~ManagedConfigModule() override;
+    ~KQuickManagedConfigModule() override;
 
 public Q_SLOTS:
     /**
@@ -197,10 +195,8 @@ private:
     virtual bool isDefaults() const;
 
     Q_PRIVATE_SLOT(d, void _k_registerSettings())
-    ManagedConfigModulePrivate *const d;
-    friend class ManagedConfigModulePrivate;
+    KQuickManagedConfigModulePrivate *const d;
+    friend class KQuickManagedConfigModulePrivate;
 };
-
-}
 
 #endif // MANAGEDCONFIGMODULE_H

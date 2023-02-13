@@ -5,18 +5,16 @@
     SPDX-License-Identifier: LGPL-2.0-or-later
 */
 
-#include "managedconfigmodule.h"
+#include "kquickmanagedconfigmodule.h"
 
 #include <QPointer>
 
 #include <KConfigCore/KCoreConfigSkeleton>
 
-namespace KQuickAddons
-{
-class ManagedConfigModulePrivate
+class KQuickManagedConfigModulePrivate
 {
 public:
-    ManagedConfigModulePrivate(ManagedConfigModule *module)
+    KQuickManagedConfigModulePrivate(KQuickManagedConfigModule *module)
         : _q(module)
     {
         QMetaObject::invokeMethod(_q, "_k_registerSettings", Qt::QueuedConnection);
@@ -24,22 +22,22 @@ public:
 
     void _k_registerSettings();
 
-    ManagedConfigModule *_q;
+    KQuickManagedConfigModule *_q;
     QList<QPointer<KCoreConfigSkeleton>> _skeletons;
 };
 
-ManagedConfigModule::ManagedConfigModule(QObject *parent, const KPluginMetaData &metaData, const QVariantList &args)
-    : ConfigModule(parent, metaData, args)
-    , d(new ManagedConfigModulePrivate(this))
+KQuickManagedConfigModule::KQuickManagedConfigModule(QObject *parent, const KPluginMetaData &metaData, const QVariantList &args)
+    : KQuickConfigModule(parent, metaData, args)
+    , d(new KQuickManagedConfigModulePrivate(this))
 {
 }
 
-ManagedConfigModule::~ManagedConfigModule()
+KQuickManagedConfigModule::~KQuickManagedConfigModule()
 {
     delete d;
 }
 
-void ManagedConfigModule::load()
+void KQuickManagedConfigModule::load()
 {
     for (const auto &skeleton : std::as_const(d->_skeletons)) {
         if (skeleton) {
@@ -48,7 +46,7 @@ void ManagedConfigModule::load()
     }
 }
 
-void ManagedConfigModule::save()
+void KQuickManagedConfigModule::save()
 {
     for (const auto &skeleton : std::as_const(d->_skeletons)) {
         if (skeleton) {
@@ -57,7 +55,7 @@ void ManagedConfigModule::save()
     }
 }
 
-void ManagedConfigModule::defaults()
+void KQuickManagedConfigModule::defaults()
 {
     for (const auto &skeleton : std::as_const(d->_skeletons)) {
         if (skeleton) {
@@ -66,17 +64,17 @@ void ManagedConfigModule::defaults()
     }
 }
 
-bool ManagedConfigModule::isSaveNeeded() const
+bool KQuickManagedConfigModule::isSaveNeeded() const
 {
     return false;
 }
 
-bool ManagedConfigModule::isDefaults() const
+bool KQuickManagedConfigModule::isDefaults() const
 {
     return true;
 }
 
-void ManagedConfigModulePrivate::_k_registerSettings()
+void KQuickManagedConfigModulePrivate::_k_registerSettings()
 {
     const auto skeletons = _q->findChildren<KCoreConfigSkeleton *>();
     for (auto *skeleton : skeletons) {
@@ -84,7 +82,7 @@ void ManagedConfigModulePrivate::_k_registerSettings()
     }
 }
 
-void ManagedConfigModule::settingsChanged()
+void KQuickManagedConfigModule::settingsChanged()
 {
     bool needsSave = false;
     bool representsDefaults = true;
@@ -107,7 +105,7 @@ void ManagedConfigModule::settingsChanged()
     setNeedsSave(needsSave);
 }
 
-void ManagedConfigModule::registerSettings(KCoreConfigSkeleton *skeleton)
+void KQuickManagedConfigModule::registerSettings(KCoreConfigSkeleton *skeleton)
 {
     if (!skeleton || d->_skeletons.contains(skeleton)) {
         return;
@@ -118,7 +116,7 @@ void ManagedConfigModule::registerSettings(KCoreConfigSkeleton *skeleton)
     auto settingsChangedSlotIndex = metaObject()->indexOfMethod("settingsChanged()");
     auto settingsChangedSlot = metaObject()->method(settingsChangedSlotIndex);
 
-    QObject::connect(skeleton, &KCoreConfigSkeleton::configChanged, this, &ManagedConfigModule::settingsChanged);
+    QObject::connect(skeleton, &KCoreConfigSkeleton::configChanged, this, &KQuickManagedConfigModule::settingsChanged);
 
     const auto items = skeleton->items();
     for (auto item : items) {
@@ -151,6 +149,4 @@ void ManagedConfigModule::registerSettings(KCoreConfigSkeleton *skeleton)
     QMetaObject::invokeMethod(this, "settingsChanged", Qt::QueuedConnection);
 }
 
-}
-
-#include "moc_managedconfigmodule.cpp"
+#include "moc_kquickmanagedconfigmodule.cpp"

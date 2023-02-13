@@ -18,14 +18,14 @@
 #include <KPageWidget>
 #include <QQmlEngine>
 
-#include "qml/configmodule.h"
+#include "qml/kquickconfigmodule.h"
 
 #include <kcmutils_debug.h>
 
 class KCModuleQmlPrivate
 {
 public:
-    KCModuleQmlPrivate(KQuickAddons::ConfigModule *cm, KCModuleQml *qq)
+    KCModuleQmlPrivate(KQuickConfigModule *cm, KCModuleQml *qq)
         : q(qq)
         , configModule(std::move(cm))
     {
@@ -49,7 +49,7 @@ public:
     QQuickWidget *quickWidget = nullptr;
     QQuickItem *rootPlaceHolder = nullptr;
     QQuickItem *pageRow = nullptr;
-    KQuickAddons::ConfigModule *configModule;
+    KQuickConfigModule *configModule;
 };
 
 class QmlConfigModuleWidget : public QWidget
@@ -107,37 +107,37 @@ private:
     KCModuleQml *m_module;
 };
 
-KCModuleQml::KCModuleQml(KQuickAddons::ConfigModule *configModule, QWidget *parent, const QVariantList &args)
+KCModuleQml::KCModuleQml(KQuickConfigModule *configModule, QWidget *parent, const QVariantList &args)
     : KCModule(new QmlConfigModuleWidget(this, parent), {}, args)
     , d(new KCModuleQmlPrivate(configModule, this))
 {
-    connect(d->configModule, &KQuickAddons::ConfigModule::quickHelpChanged, this, &KCModuleQml::quickHelpChanged);
+    connect(d->configModule, &KQuickConfigModule::quickHelpChanged, this, &KCModuleQml::quickHelpChanged);
     // HACK:Here is important those two enums keep having the exact same values
     // but the kdeclarative one can't use the KCModule's enum
     setButtons((KCModule::Buttons)(int)d->configModule->buttons());
-    connect(d->configModule, &KQuickAddons::ConfigModule::buttonsChanged, this, [=] {
+    connect(d->configModule, &KQuickConfigModule::buttonsChanged, this, [=] {
         setButtons((KCModule::Buttons)(int)d->configModule->buttons());
     });
 
     setNeedsSave(d->configModule->needsSave());
-    connect(d->configModule, &KQuickAddons::ConfigModule::needsSaveChanged, this, [=] {
+    connect(d->configModule, &KQuickConfigModule::needsSaveChanged, this, [=] {
         setNeedsSave(d->configModule->needsSave());
     });
-    connect(d->configModule, &KQuickAddons::ConfigModule::representsDefaultsChanged, this, [=] {
+    connect(d->configModule, &KQuickConfigModule::representsDefaultsChanged, this, [=] {
         setRepresentsDefaults(d->configModule->representsDefaults());
     });
 
     setNeedsAuthorization(d->configModule->needsAuthorization());
-    connect(d->configModule, &KQuickAddons::ConfigModule::needsAuthorizationChanged, this, [=] {
+    connect(d->configModule, &KQuickConfigModule::needsAuthorizationChanged, this, [=] {
         setNeedsAuthorization(d->configModule->needsAuthorization());
     });
 
     setRootOnlyMessage(d->configModule->rootOnlyMessage());
     setUseRootOnlyMessage(d->configModule->useRootOnlyMessage());
-    connect(d->configModule, &KQuickAddons::ConfigModule::rootOnlyMessageChanged, this, [=] {
+    connect(d->configModule, &KQuickConfigModule::rootOnlyMessageChanged, this, [=] {
         setRootOnlyMessage(d->configModule->rootOnlyMessage());
     });
-    connect(d->configModule, &KQuickAddons::ConfigModule::useRootOnlyMessageChanged, this, [=] {
+    connect(d->configModule, &KQuickConfigModule::useRootOnlyMessageChanged, this, [=] {
         setUseRootOnlyMessage(d->configModule->useRootOnlyMessage());
     });
 
@@ -145,12 +145,12 @@ KCModuleQml::KCModuleQml(KQuickAddons::ConfigModule *configModule, QWidget *pare
     if (!d->configModule->authActionName().isEmpty()) {
         setAuthAction(KAuth::Action(d->configModule->authActionName()));
     }
-    connect(d->configModule, &KQuickAddons::ConfigModule::authActionNameChanged, this, [=] {
+    connect(d->configModule, &KQuickConfigModule::authActionNameChanged, this, [=] {
         setAuthAction(d->configModule->authActionName());
     });
 #endif
 
-    connect(this, &KCModule::defaultsIndicatorsVisibleChanged, d->configModule, &KQuickAddons::ConfigModule::defaultsIndicatorsVisibleChanged);
+    connect(this, &KCModule::defaultsIndicatorsVisibleChanged, d->configModule, &KQuickConfigModule::defaultsIndicatorsVisibleChanged);
 
     // Build the UI
     QVBoxLayout *layout = new QVBoxLayout(widget());
@@ -237,17 +237,17 @@ Kirigami.ApplicationItem {
                                       Q_ARG(QVariant, QVariant()));
         }
 
-        connect(d->configModule, &KQuickAddons::ConfigModule::pagePushed, this, [this](QQuickItem *page) {
+        connect(d->configModule, &KQuickConfigModule::pagePushed, this, [this](QQuickItem *page) {
             QMetaObject::invokeMethod(d->pageRow, "push", Qt::DirectConnection, Q_ARG(QVariant, QVariant::fromValue(page)), Q_ARG(QVariant, QVariant()));
         });
-        connect(d->configModule, &KQuickAddons::ConfigModule::pageRemoved, this, [this]() {
+        connect(d->configModule, &KQuickConfigModule::pageRemoved, this, [this]() {
             QMetaObject::invokeMethod(d->pageRow, "pop", Qt::DirectConnection, Q_ARG(QVariant, QVariant()));
         });
-        connect(d->configModule, &KQuickAddons::ConfigModule::currentIndexChanged, this, [this]() {
+        connect(d->configModule, &KQuickConfigModule::currentIndexChanged, this, [this]() {
             d->pageRow->setProperty("currentIndex", d->configModule->currentIndex());
         });
         connect(d->configModule,
-                &KQuickAddons::ConfigModule::passiveNotificationRequested,
+                &KQuickConfigModule::passiveNotificationRequested,
                 this,
                 [this](const QString &message, const QVariant &timeout, const QString &actionText, const QJSValue &callBack) {
                     d->rootPlaceHolder->metaObject()->invokeMethod(d->rootPlaceHolder,
