@@ -43,11 +43,21 @@ public:
     KCMError(const QString &msg, const QString &details, QWidget *parent)
         : KCModule(parent)
     {
+        QString realDetails = details;
+        if (realDetails.isNull()) {
+            realDetails = i18n(
+                "<qt><p>Possible reasons:<ul><li>An error occurred during your last "
+                "system upgrade, leaving an orphaned control module behind</li><li>You have old third party "
+                "modules lying around.</li></ul></p><p>Check these points carefully and try to remove "
+                "the module mentioned in the error message. If this fails, consider contacting "
+                "your distributor or packager.</p></qt>");
+        }
+
         QVBoxLayout *topLayout = new QVBoxLayout(widget());
         QLabel *lab = new QLabel(msg, widget());
         lab->setWordWrap(true);
         topLayout->addWidget(lab);
-        lab = new QLabel(details, widget());
+        lab = new QLabel(realDetails, widget());
         lab->setWordWrap(true);
         topLayout->addWidget(lab);
     }
@@ -56,16 +66,13 @@ public:
 KCModule *KCModuleLoader::loadModule(const KPluginMetaData &metaData, QWidget *parent, const QVariantList &args, const std::shared_ptr<QQmlEngine> &eng)
 {
     if (!KAuthorized::authorizeControlModule(metaData.pluginId())) {
-        return reportError(ErrorReporting::Inline,
-                           i18n("The module %1 is disabled.", metaData.pluginId()),
-                           i18n("The module has been disabled by the system administrator."),
-                           parent);
+        return new KCMError(i18n("The module %1 is disabled.", metaData.pluginId()), i18n("The module has been disabled by the system administrator."), parent);
     }
 
     const auto qmlKcm = KCModuleLoaderQml::loadModule(metaData, parent, args, eng).plugin;
     if (qmlKcm) {
         if (!qmlKcm->mainUi()) {
-            return reportError(ErrorReporting::Inline, i18n("Error loading QML file."), qmlKcm->errorString(), parent);
+            return new KCMError(i18n("Error loading QML file."), qmlKcm->errorString(), parent);
         }
         qCDebug(KCMUTILS_LOG) << "loaded KCM" << metaData.fileName();
         return new KCModuleQml(qmlKcm, parent, args);
@@ -81,26 +88,5 @@ KCModule *KCModuleLoader::loadModule(const KPluginMetaData &metaData, QWidget *p
         return kcmoduleResult.plugin;
     }
 
-    return reportError(ErrorReporting::Inline, QString(), kcmoduleResult.errorString, parent);
+    return new KCMError(QString(), kcmoduleResult.errorString, parent);
 }
-
-KCModule *KCModuleLoader::reportError(ErrorReporting report, const QString &text, const QString &details, QWidget *parent)
-{
-    QString realDetails = details;
-    if (realDetails.isNull()) {
-        realDetails = i18n(
-            "<qt><p>Possible reasons:<ul><li>An error occurred during your last "
-            "system upgrade, leaving an orphaned control module behind</li><li>You have old third party "
-            "modules lying around.</li></ul></p><p>Check these points carefully and try to remove "
-            "the module mentioned in the error message. If this fails, consider contacting "
-            "your distributor or packager.</p></qt>");
-    }
-    if (report & KCModuleLoader::Dialog) {
-        KMessageBox::detailedError(parent, text, realDetails);
-    }
-    if (report & KCModuleLoader::Inline) {
-        return new KCMError(text, realDetails, parent);
-    }
-    return nullptr;
-}
-
