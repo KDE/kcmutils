@@ -53,18 +53,11 @@ public:
 
 QHash<QObject *, ConfigModule *> ConfigModulePrivate::s_rootObjects = QHash<QObject *, ConfigModule *>();
 
-ConfigModule::ConfigModule(QObject *parent, const QVariantList &args)
-    : KAbstractConfigModule(parent, KPluginMetaData(), args)
-    , d(new ConfigModulePrivate(this))
-{
-}
-
 ConfigModule::ConfigModule(QObject *parent, const KPluginMetaData &metaData, const QVariantList &args)
     : KAbstractConfigModule(parent, metaData, args)
     , d(new ConfigModulePrivate(this))
 {
     d->passedInEngine = args.last().value<std::shared_ptr<QQmlEngine>>();
-    qWarning() << args.last().value<std::shared_ptr<QQmlEngine>>().get();
 }
 
 ConfigModule::~ConfigModule()

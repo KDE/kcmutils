@@ -25,10 +25,9 @@
 class KCModuleQmlPrivate
 {
 public:
-    KCModuleQmlPrivate(std::shared_ptr<QQmlEngine> en, KQuickAddons::ConfigModule *cm, KCModuleQml *qq)
+    KCModuleQmlPrivate(KQuickAddons::ConfigModule *cm, KCModuleQml *qq)
         : q(qq)
         , configModule(std::move(cm))
-        , engine(en)
     {
     }
 
@@ -51,7 +50,6 @@ public:
     QQuickItem *rootPlaceHolder = nullptr;
     QQuickItem *pageRow = nullptr;
     KQuickAddons::ConfigModule *configModule;
-    std::shared_ptr<QQmlEngine> engine = nullptr;
 };
 
 class QmlConfigModuleWidget : public QWidget
@@ -109,9 +107,9 @@ private:
     KCModuleQml *m_module;
 };
 
-KCModuleQml::KCModuleQml(std::shared_ptr<QQmlEngine> engine, KQuickAddons::ConfigModule *configModule, QWidget *parent, const QVariantList &args)
+KCModuleQml::KCModuleQml(KQuickAddons::ConfigModule *configModule, QWidget *parent, const QVariantList &args)
     : KCModule(new QmlConfigModuleWidget(this, parent), {}, args)
-    , d(new KCModuleQmlPrivate(engine, std::move(configModule), this))
+    , d(new KCModuleQmlPrivate(configModule, this))
 {
     connect(d->configModule, &KQuickAddons::ConfigModule::quickHelpChanged, this, &KCModuleQml::quickHelpChanged);
     // HACK:Here is important those two enums keep having the exact same values
@@ -158,14 +156,14 @@ KCModuleQml::KCModuleQml(std::shared_ptr<QQmlEngine> engine, KQuickAddons::Confi
     QVBoxLayout *layout = new QVBoxLayout(widget());
     layout->setContentsMargins(0, 0, 0, 0);
 
-    d->quickWidget = new QQuickWidget(d->engine.get(), widget());
+    d->quickWidget = new QQuickWidget(d->configModule->engine().get(), widget());
     d->quickWidget->setResizeMode(QQuickWidget::SizeRootObjectToView);
     d->quickWidget->setFocusPolicy(Qt::StrongFocus);
     d->quickWidget->setAttribute(Qt::WA_AlwaysStackOnTop, true);
     d->quickWindow = d->quickWidget->quickWindow();
     d->quickWindow->setColor(Qt::transparent);
 
-    QQmlComponent *component = new QQmlComponent(d->engine.get(), this);
+    QQmlComponent *component = new QQmlComponent(d->configModule->engine().get(), this);
     // this has activeFocusOnTab to notice when the navigation wraps
     // around, so when we need to go outside and inside
     // pushPage/popPage are needed as push of StackView can't be directly invoked from c++

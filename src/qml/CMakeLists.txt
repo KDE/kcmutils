@@ -11,7 +11,7 @@ install (DIRECTORY components DESTINATION ${KDE_INSTALL_QMLDIR}/org/kde/kcmutils
 install (FILES qmldir DESTINATION ${KDE_INSTALL_QMLDIR}/org/kde/kcmutils)
 
 # Library
-add_library(KF6KCMUtilsQml configmodule.cpp managedconfigmodule.cpp sharedqmlengine.cpp)
+add_library(KF6KCMUtilsQml configmodule.cpp managedconfigmodule.cpp sharedqmlengine.cpp kcmoduleloaderqml.cpp)
 
 ecm_generate_export_header(KF6KCMUtilsQml
     BASE_NAME KCMUtilsQml
@@ -31,6 +31,7 @@ target_link_libraries(KF6KCMUtilsQml
     KF6::Package
     KF6::ConfigGui
     Qt6::Quick
+    kcmutils_logging_STATIC
 )
 
 set_target_properties(KF6KCMUtilsQml PROPERTIES
@@ -41,6 +42,7 @@ ecm_generate_headers(KCMUtilsQml_HEADERS
   HEADER_NAMES
   ConfigModule
   ManagedConfigModule
+  KCModuleLoaderQml
 
   REQUIRED_HEADERS KCMUtilsQml_HEADERS
 )

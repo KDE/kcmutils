@@ -11,6 +11,7 @@
 
 #include "kcmoduleloader.h"
 #include "kcmoduledata.h"
+#include "kcmoduleloaderqml.h"
 #include "kcmoduleqml_p.h"
 #include <kcmutils_debug.h>
 
@@ -54,53 +55,33 @@ public:
 
 KCModule *KCModuleLoader::loadModule(const KPluginMetaData &metaData, QWidget *parent, const QVariantList &args, const std::shared_ptr<QQmlEngine> &eng)
 {
-    static std::weak_ptr<QQmlEngine> createdEngine;
-    std::shared_ptr<QQmlEngine> engine = eng ? eng : (createdEngine.expired() ? std::make_shared<QQmlEngine>() : createdEngine.lock());
-    if (!eng && createdEngine.expired()) {
-        createdEngine = engine;
-    }
-
     if (!KAuthorized::authorizeControlModule(metaData.pluginId())) {
         return reportError(ErrorReporting::Inline,
                            i18n("The module %1 is disabled.", metaData.pluginId()),
                            i18n("The module has been disabled by the system administrator."),
                            parent);
     }
-    const QVariantList args2 = QVariantList(args) << metaData.rawData().value(QStringLiteral("X-KDE-KCM-Args")).toArray() << QVariant::fromValue(engine);
 
-    auto factoryResult = KPluginFactory::loadFactory(metaData);
-    if (!factoryResult) {
-        // This is where QML KCMs used to be before the namespaces were changed based on https://phabricator.kde.org/T14517
-        // But the X-KDE-Library did not reflect this change, instead the "kcms" namespace was prepended
-        if (KPluginMetaData data(QLatin1String("kcms/") + metaData.fileName()); data.isValid()) {
-            factoryResult = KPluginFactory::loadFactory(data);
+    const auto qmlKcm = KCModuleLoaderQml::loadModule(metaData, parent, args, eng).plugin;
+    if (qmlKcm) {
+        if (!qmlKcm->mainUi()) {
+            return reportError(ErrorReporting::Inline, i18n("Error loading QML file."), qmlKcm->errorString(), parent);
         }
+        qCDebug(KCMUTILS_LOG) << "loaded KCM" << metaData.fileName();
+        return new KCModuleQml(qmlKcm, parent, args);
     }
 
-    if (!factoryResult) {
-        return reportError(ErrorReporting::Inline, factoryResult.errorString, QString(), parent);
-    }
-
-    KPluginFactory *factory = factoryResult.plugin;
-
-    const auto kcm = factory->create<KQuickAddons::ConfigModule>(parent, args2);
-
-    if (kcm) {
-        if (!kcm->mainUi()) {
-            return reportError(ErrorReporting::Inline, i18n("Error loading QML file."), kcm->errorString(), parent);
-        }
-        qCDebug(KCMUTILS_LOG) << "loaded KCM" << factory->metaData().pluginId() << "from path" << factory->metaData().fileName();
-        return new KCModuleQml(engine, kcm, parent, args2);
-    }
-
-    const auto kcmoduleResult = factory->create<KCModule>(parent, args2);
+    const auto kcmoduleResult =
+        KPluginFactory::instantiatePlugin<KCModule>(metaData,
+                                                    parent,
+                                                    QVariantList(args) << metaData.rawData().value(QStringLiteral("X-KDE-KCM-Args")).toArray());
 
     if (kcmoduleResult) {
-        qCDebug(KCMUTILS_LOG) << "loaded KCM" << factory->metaData().pluginId() << "from path" << factory->metaData().fileName();
-        return kcmoduleResult;
+        qCDebug(KCMUTILS_LOG) << "loaded KCM" << metaData.fileName();
+        return kcmoduleResult.plugin;
     }
 
-    return reportError(ErrorReporting::Inline, QString(), QString(), parent);
+    return reportError(ErrorReporting::Inline, QString(), kcmoduleResult.errorString, parent);
 }
 
 KCModule *KCModuleLoader::reportError(ErrorReporting report, const QString &text, const QString &details, QWidget *parent)

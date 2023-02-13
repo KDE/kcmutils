@@ -135,15 +135,7 @@ public:
      * @note do not emit changed signals here, since they are not yet connected
      *       to any slot.
      */
-    explicit ConfigModule(QObject *parent, const KPluginMetaData &metaData, const QVariantList &args = QVariantList());
-
-    /**
-     * Base class for all KControlModules.
-     *
-     * @note do not emit changed signals here, since they are not yet connected
-     *       to any slot.
-     */
-    explicit ConfigModule(QObject *parent = nullptr, const QVariantList &args = QVariantList());
+    explicit ConfigModule(QObject *parent, const KPluginMetaData &metaData, const QVariantList &args);
 
     /**
      * Destroys the module.

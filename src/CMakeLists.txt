@@ -1,6 +1,17 @@
 # SPDX-FileCopyrightText: 2022 Alexander Lohnau <alexander.lohnau@gmx.de>
 # SPDX-License-Identifier: BSD-3-Clause
 
+add_library(kcmutils_logging_STATIC STATIC)
+target_link_libraries(kcmutils_logging_STATIC PRIVATE Qt6::Core)
+ecm_qt_declare_logging_category(kcmutils_logging_STATIC
+    HEADER kcmutils_debug.h
+    IDENTIFIER KCMUTILS_LOG
+    CATEGORY_NAME kf.kcmutils
+    DESCRIPTION "KCMUtils"
+    EXPORT KCMUTILS
+)
+
+
 add_subdirectory(core)
 add_subdirectory(qml)
 
@@ -28,14 +39,6 @@ else()
     set(WITH_KAUTH_DEFINE_VALUE 0)
 endif()
 set(define_with_kauth_code "#define KCMUTILS_WITH_KAUTH ${WITH_KAUTH_DEFINE_VALUE}\n")
-
-ecm_qt_declare_logging_category(KF6KCMUtils
-    HEADER kcmutils_debug.h
-    IDENTIFIER KCMUTILS_LOG
-    CATEGORY_NAME kf.kcmutils
-    DESCRIPTION "KCMUtils"
-    EXPORT KCMUTILS
-)
 
 ecm_generate_export_header(KF6KCMUtils
     BASE_NAME KCMUtils
@@ -66,6 +69,7 @@ target_link_libraries(KF6KCMUtils
     KF6::ItemViews       # KWidgetItemDelegate
     KF6::XmlGui          # KAboutApplicationDialog
     KF6::QuickAddons
+    kcmutils_logging_STATIC
 )
 # On Windows, this target does not exist
 if (TARGET KF6::AuthWidgets)
