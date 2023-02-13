@@ -11,17 +11,17 @@ install (DIRECTORY components DESTINATION ${KDE_INSTALL_QMLDIR}/org/kde/kcmutils
 install (FILES qmldir DESTINATION ${KDE_INSTALL_QMLDIR}/org/kde/kcmutils)
 
 # Library
-add_library(KF6KCMUtilsQml kquickconfigmodule.cpp kquickmanagedconfigmodule.cpp sharedqmlengine.cpp kcmoduleloaderqml.cpp)
+add_library(KF6KCMUtilsQuick kquickconfigmodule.cpp kquickmanagedconfigmodule.cpp sharedqmlengine.cpp kquickconfigmoduleloader.cpp)
 
-ecm_generate_export_header(KF6KCMUtilsQml
-    BASE_NAME KCMUtilsQml
+ecm_generate_export_header(KF6KCMUtilsQuick
+    BASE_NAME KCMUtilsQuick
     GROUP_BASE_NAME KF
     VERSION ${KF_VERSION}
     DEPRECATED_BASE_VERSION 0
 )
-target_include_directories(KF6KCMUtilsQml INTERFACE "$<INSTALL_INTERFACE:${KDE_INSTALL_INCLUDEDIR_KF}/KCMUtilsQml>")
+target_include_directories(KF6KCMUtilsQuick INTERFACE "$<INSTALL_INTERFACE:${KDE_INSTALL_INCLUDEDIR_KF}/KCMUtilsQuick>")
 
-target_link_libraries(KF6KCMUtilsQml
+target_link_libraries(KF6KCMUtilsQuick
   PUBLIC
     KF6::CoreAddons
     KF6::ConfigGui
@@ -35,7 +35,7 @@ target_link_libraries(KF6KCMUtilsQml
     kcmutils_logging_STATIC
 )
 
-set_target_properties(KF6KCMUtilsQml PROPERTIES
+set_target_properties(KF6KCMUtilsQuick PROPERTIES
                       VERSION ${KCMUTILS_VERSION}
                       SOVERSION ${KCMUTILS_SOVERSION}
                       EXPORT_NAME KCMUtilsQml)
@@ -43,14 +43,14 @@ ecm_generate_headers(KCMUtilsQml_HEADERS
   HEADER_NAMES
   KQuickConfigModule
   KQuickManagedConfigModule
-  KCModuleLoaderQml
+  KQuickConfigModuleLoader
 
   REQUIRED_HEADERS KCMUtilsQml_HEADERS
 )
 install(FILES
-  ${CMAKE_CURRENT_BINARY_DIR}/kcmutilsqml_export.h
+  ${CMAKE_CURRENT_BINARY_DIR}/kcmutilsquick_export.h
   ${KCMUtilsQml_HEADERS}
-  DESTINATION ${KDE_INSTALL_INCLUDEDIR_KF}/KCMUtilsQml COMPONENT Devel
+  DESTINATION ${KDE_INSTALL_INCLUDEDIR_KF}/KCMUtilsQuick COMPONENT Devel
 )
 
-install(TARGETS KF6KCMUtilsQml EXPORT KF6KCMUtilsTargets ${KF_INSTALL_TARGETS_DEFAULT_ARGS})
+install(TARGETS KF6KCMUtilsQuick EXPORT KF6KCMUtilsTargets ${KF_INSTALL_TARGETS_DEFAULT_ARGS})

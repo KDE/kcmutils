@@ -103,7 +103,7 @@ class KQuickManagedConfigModulePrivate;
  *
  * @since 6.0
  */
-class KCMUTILSQML_EXPORT KQuickManagedConfigModule : public KQuickConfigModule
+class KCMUTILSQUICK_EXPORT KQuickManagedConfigModule : public KQuickConfigModule
 {
     Q_OBJECT
 public:

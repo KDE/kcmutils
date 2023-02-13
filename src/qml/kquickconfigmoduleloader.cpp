@@ -3,7 +3,7 @@
     SPDX-License-Identifier: LGPL-2.0-or-later
 */
 
-#include "kcmoduleloaderqml.h"
+#include "kquickconfigmoduleloader.h"
 
 #include "kcmutils_debug.h"
 
@@ -14,7 +14,7 @@
 std::weak_ptr<QQmlEngine> s_kcmutilsCreatedEngine;
 
 KPluginFactory::Result<KQuickConfigModule>
-KCModuleLoaderQml::loadModule(const KPluginMetaData &metaData, QObject *parent, const QVariantList &args, const std::shared_ptr<QQmlEngine> &engineArg)
+KQuickConfigModuleLoader::loadModule(const KPluginMetaData &metaData, QObject *parent, const QVariantList &args, const std::shared_ptr<QQmlEngine> &engineArg)
 {
     const auto factoryResult = KPluginFactory::loadFactory(metaData);
     KPluginFactory::Result<KQuickConfigModule> result;

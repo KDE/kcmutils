@@ -10,7 +10,7 @@ target_link_libraries(kcm_time
     Qt6::Core
     KF6::CoreAddons
     KF6::I18n
-    KF6KCMUtilsQml
+    KF6KCMUtilsQuick
 )
 
 kpackage_install_package(package kcm_time kcms)

@@ -13,7 +13,7 @@
 #ifndef CONFIGMODULE_H
 #define CONFIGMODULE_H
 
-#include "kcmutilsqml_export.h"
+#include "kcmutilsquick_export.h"
 
 #include <QObject>
 #include <QQmlComponent>
@@ -116,7 +116,7 @@ class KQuickConfigModulePrivate;
  * for more detailed documentation.
  *
  */
-class KCMUTILSQML_EXPORT KQuickConfigModule : public KAbstractConfigModule
+class KCMUTILSQUICK_EXPORT KQuickConfigModule : public KAbstractConfigModule
 {
     Q_OBJECT
 

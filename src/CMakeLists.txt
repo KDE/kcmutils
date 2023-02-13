@@ -56,7 +56,7 @@ target_link_libraries(KF6KCMUtils
     Qt6::Widgets
     KF6::CoreAddons # KPluginMetaData
     KF6::ConfigWidgets  # KCModule
-    KF6KCMUtilsQml      # QML KCM class
+    KF6KCMUtilsQuick      # QML KCM class
   PRIVATE
     KF6::ConfigWidgets
     kcmutils_proxy_model

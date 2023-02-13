@@ -11,8 +11,8 @@
 
 #include "kcmoduleloader.h"
 #include "kcmoduledata.h"
-#include "kcmoduleloaderqml.h"
 #include "kcmoduleqml_p.h"
+#include "kquickconfigmoduleloader.h"
 #include <kcmutils_debug.h>
 
 #include <QJsonArray>
@@ -69,7 +69,7 @@ KCModule *KCModuleLoader::loadModule(const KPluginMetaData &metaData, QWidget *p
         return new KCMError(i18n("The module %1 is disabled.", metaData.pluginId()), i18n("The module has been disabled by the system administrator."), parent);
     }
 
-    const auto qmlKcm = KCModuleLoaderQml::loadModule(metaData, parent, args, eng).plugin;
+    const auto qmlKcm = KQuickConfigModuleLoader::loadModule(metaData, parent, args, eng).plugin;
     if (qmlKcm) {
         if (!qmlKcm->mainUi()) {
             return new KCMError(i18n("Error loading QML file."), qmlKcm->errorString(), parent);
