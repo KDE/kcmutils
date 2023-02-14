@@ -37,10 +37,10 @@ public:
     typedef QList<CreatedModule> ModuleList;
     ModuleList modules;
 
-    void _k_slotCurrentPageChanged(KPageWidgetItem *current, KPageWidgetItem *previous);
-    void _k_clientChanged();
-    void _k_dialogClosed();
-    void _k_updateHeader(bool use, const QString &message);
+    void slotCurrentPageChanged(KPageWidgetItem *current, KPageWidgetItem *previous);
+    void clientChanged();
+    void dialogClosed();
+    void updateHeader(bool use, const QString &message);
 
     KCMultiDialog *q;
 

@@ -70,7 +70,7 @@ bool KCMultiDialogPrivate::resolveChanges(KCModule *module)
     }
 }
 
-void KCMultiDialogPrivate::_k_slotCurrentPageChanged(KPageWidgetItem *current, KPageWidgetItem *previous)
+void KCMultiDialogPrivate::slotCurrentPageChanged(KPageWidgetItem *current, KPageWidgetItem *previous)
 {
     KCModule *previousModule = nullptr;
     for (int i = 0; i < modules.count(); ++i) {
@@ -109,10 +109,10 @@ void KCMultiDialogPrivate::_k_slotCurrentPageChanged(KPageWidgetItem *current, K
     q->blockSignals(false);
 
     // We need to get the state of the now active module
-    _k_clientChanged();
+    clientChanged();
 }
 
-void KCMultiDialogPrivate::_k_clientChanged()
+void KCMultiDialogPrivate::clientChanged()
 {
     // Get the current module
     KCModule *activeModule = nullptr;
@@ -122,8 +122,6 @@ void KCMultiDialogPrivate::_k_clientChanged()
             break;
         }
     }
-
-    qWarning() << Q_FUNC_INFO << activeModule;
 
     bool change = false;
     bool defaulted = false;
@@ -217,7 +215,7 @@ void KCMultiDialogPrivate::_k_clientChanged()
     }
 }
 
-void KCMultiDialogPrivate::_k_updateHeader(bool use, const QString &message)
+void KCMultiDialogPrivate::updateHeader(bool use, const QString &message)
 {
     KPageWidgetItem *item = q->currentPage();
     const auto findIt = std::find_if(modules.cbegin(), modules.cend(), [item](const CreatedModule &module) {
@@ -226,14 +224,8 @@ void KCMultiDialogPrivate::_k_updateHeader(bool use, const QString &message)
     Q_ASSERT(findIt != modules.cend());
 
     KCModule *kcm = findIt->kcm;
-
-    QString moduleName;
-    QString icon;
-
-    if (kcm->metaData().isValid()) {
-        moduleName = kcm->metaData().name();
-        icon = kcm->metaData().iconName();
-    }
+    const QString moduleName = kcm->metaData().name();
+    const QString icon = kcm->metaData().iconName();
 
     if (use) {
         item->setHeader(QStringLiteral("<b>") + moduleName + QStringLiteral("</b><br><i>") + message + QStringLiteral("</i>"));
@@ -272,7 +264,7 @@ void KCMultiDialogPrivate::init()
 
     q->setButtonBox(buttonBox);
     q->connect(q, &KPageDialog::currentPageChanged, q, [this](KPageWidgetItem *current, KPageWidgetItem *before) {
-        _k_slotCurrentPageChanged(current, before);
+        slotCurrentPageChanged(current, before);
     });
 }
 
@@ -311,7 +303,7 @@ void KCMultiDialog::slotDefaultClicked()
     for (int i = 0; i < d->modules.count(); ++i) {
         if (d->modules[i].item == item) {
             d->modules[i].kcm->defaults();
-            d->_k_clientChanged();
+            d->clientChanged();
             return;
         }
     }
@@ -327,7 +319,7 @@ void KCMultiDialog::slotUser1Clicked()
     for (int i = 0; i < d->modules.count(); ++i) {
         if (d->modules[i].item == item) {
             d->modules[i].kcm->load();
-            d->_k_clientChanged();
+            d->clientChanged();
             return;
         }
     }
@@ -473,21 +465,20 @@ KPageWidgetItem *KCMultiDialog::addModule(const KPluginMetaData &metaData, const
     if (row == siblingCount) {
         // the new module is either the first or the heaviest item
         // qDebug() << "adding KCM " << item->name() << " at the top level";
-        qWarning() << Q_FUNC_INFO << item;
         addPage(item);
     }
 
-    QObject::connect(kcm, &KCModule::needsSaveChanged, this, [this]() {
-        d->_k_clientChanged();
+    connect(kcm, &KCModule::needsSaveChanged, this, [this]() {
+        d->clientChanged();
     });
 
-    QObject::connect(kcm, &KCModule::rootOnlyMessageChanged, this, [kcm, this]() {
-        d->_k_updateHeader(kcm->useRootOnlyMessage(), kcm->rootOnlyMessage());
+    connect(kcm, &KCModule::rootOnlyMessageChanged, this, [kcm, this]() {
+        d->updateHeader(kcm->useRootOnlyMessage(), kcm->rootOnlyMessage());
     });
 
     if (d->modules.count() == 1 || updateCurrentPage) {
         setCurrentPage(item);
-        d->_k_clientChanged();
+        d->clientChanged();
     }
     return item;
 }
@@ -500,7 +491,7 @@ void KCMultiDialog::clear()
 
     d->modules.clear();
 
-    d->_k_clientChanged();
+    d->clientChanged();
 }
 
 void KCMultiDialog::setDefaultsIndicatorsVisible(bool show)
