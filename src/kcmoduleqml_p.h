@@ -31,7 +31,7 @@ public Q_SLOTS:
 
 private:
     friend class QmlConfigModuleWidget;
-    KCModuleQmlPrivate *const d;
+    const std::unique_ptr<KCModuleQmlPrivate> d;
 
     Q_PRIVATE_SLOT(d, void syncCurrentIndex())
 };

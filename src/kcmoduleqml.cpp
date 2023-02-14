@@ -108,36 +108,34 @@ private:
 };
 
 KCModuleQml::KCModuleQml(KQuickConfigModule *configModule, QWidget *parent, const QVariantList &args)
-    : KCModule(new QmlConfigModuleWidget(this, parent), {}, args)
+    : KCModule(new QmlConfigModuleWidget(this, parent), configModule->metaData(), args)
     , d(new KCModuleQmlPrivate(configModule, this))
 {
     connect(d->configModule, &KQuickConfigModule::quickHelpChanged, this, &KCModuleQml::quickHelpChanged);
-    // HACK:Here is important those two enums keep having the exact same values
-    // but the kdeclarative one can't use the KCModule's enum
-    setButtons((KCModule::Buttons)(int)d->configModule->buttons());
-    connect(d->configModule, &KQuickConfigModule::buttonsChanged, this, [=] {
-        setButtons((KCModule::Buttons)(int)d->configModule->buttons());
+    setButtons(d->configModule->buttons());
+    connect(d->configModule, &KQuickConfigModule::buttonsChanged, d->configModule, [this] {
+        setButtons(d->configModule->buttons());
     });
 
     setNeedsSave(d->configModule->needsSave());
-    connect(d->configModule, &KQuickConfigModule::needsSaveChanged, this, [=] {
+    connect(d->configModule, &KQuickConfigModule::needsSaveChanged, this, [this] {
         setNeedsSave(d->configModule->needsSave());
     });
-    connect(d->configModule, &KQuickConfigModule::representsDefaultsChanged, this, [=] {
+    connect(d->configModule, &KQuickConfigModule::representsDefaultsChanged, this, [this] {
         setRepresentsDefaults(d->configModule->representsDefaults());
     });
 
     setNeedsAuthorization(d->configModule->needsAuthorization());
-    connect(d->configModule, &KQuickConfigModule::needsAuthorizationChanged, this, [=] {
+    connect(d->configModule, &KQuickConfigModule::needsAuthorizationChanged, this, [this] {
         setNeedsAuthorization(d->configModule->needsAuthorization());
     });
 
     setRootOnlyMessage(d->configModule->rootOnlyMessage());
     setUseRootOnlyMessage(d->configModule->useRootOnlyMessage());
-    connect(d->configModule, &KQuickConfigModule::rootOnlyMessageChanged, this, [=] {
+    connect(d->configModule, &KQuickConfigModule::rootOnlyMessageChanged, this, [this] {
         setRootOnlyMessage(d->configModule->rootOnlyMessage());
     });
-    connect(d->configModule, &KQuickConfigModule::useRootOnlyMessageChanged, this, [=] {
+    connect(d->configModule, &KQuickConfigModule::useRootOnlyMessageChanged, this, [this] {
         setUseRootOnlyMessage(d->configModule->useRootOnlyMessage());
     });
 
@@ -264,10 +262,7 @@ Kirigami.ApplicationItem {
     layout->addWidget(d->quickWidget);
 }
 
-KCModuleQml::~KCModuleQml()
-{
-    delete d;
-}
+KCModuleQml::~KCModuleQml() = default;
 
 void KCModuleQml::load()
 {
