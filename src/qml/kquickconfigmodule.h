@@ -34,60 +34,44 @@ class KQuickConfigModulePrivate;
 /**
  * @class KQuickConfigModule kquickconfigmodule.h KQuickConfigModule
  *
- * The base class for configuration modules.
- *
- * Configuration modules are realized as plugins that are loaded only when
- * needed.
- *
- * The module in principle is a simple widget displaying the
- * item to be changed. The module has a very small interface.
+ * The base class for QtQuick configuration modules.
+ * Configuration modules are realized as plugins that are dynamically loaded.
  *
  * All the necessary glue logic and the GUI bells and whistles
  * are provided by the control center and must not concern
  * the module author.
  *
- * To write a config module, you have to create a C++ library
+ * To write a config module, you have to create a C++ plugin
  * and an accompaning QML user interface.
- * The library must contain a factory function like the following:
+ *
+ * To allow KCMUtils to load your ConfigModule subclass, you must create a KPluginFactory implementation.
  *
  * \code
  * #include <KPluginFactory>
  *
- * K_PLUGIN_FACTORY(MyConfigModuleFactory, registerPlugin<MyConfigModule>() )
+ * K_PLUGIN_CLASS_WITH_JSON(MyConfigModule, "yourmetadata.json")
  * \endcode
  *
  * The constructor of the ConfigModule then looks like this:
  * \code
- * YourConfigModule::YourConfigModule( QObject* parent )
- *   : ConfigModule( parent )
+ * YourConfigModule::YourConfigModule(QObject *parent, const KPluginMetaData &metaData, const QVariantList &args)
+ *   : ConfigModule(parent, metaData, args)
  * {
- *   KAboutData *about = new KAboutData(
- *     <kcm name>, i18n( "..." ),
- *     KDE_VERSION_STRING, QString(), KAboutLicense::GPL,
- *     i18n( "Copyright 2006 ..." ) );
- *   about->addAuthor( i18n(...) );
- *   setAboutData( about );
- *   .
- *   .
- *   .
  * }
  * \endcode
  *
  * The QML part must be in the KPackage format, installed under share/kpackage/kcms.
  * @see KPackage::Package
  *
- * The package must have the same name as the KAboutData componentName, to be installed
+ * The package must have the same name as the plugin filename, to be installed
  * by CMake with the command:
  * \code
- * kpackage_install_package(packagedir kcm_componentName kcms)
+ * kpackage_install_package(packagedir kcm_yourconfigmodule kcms)
  * \endcode
  * The "packagedir" is the subdirectory in the source tree where the package sources are
- * located, and "kcm_componentName" is the componentname passed to the KAboutData in the
- * C++ part. Finally "kcms" is the literal string "kcms", so that the package is
+ * located, and "kcm_yourconfigmodule" is id of the plugin.
+ * Finally "kcms" is the literal string "kcms", so that the package is
  * installed as a configuration module (and not some other kind of package).
- * The main config dialog UI will be the file
- * ui/main.qml from the package (or what X-KPackage-MainScript value is in the
- * package metadata desktop file).
  *
  * The QML part can access all the properties of ConfigModule (together with the properties
  * defined in its subclass) by accessing to the global object "kcm", or with the
@@ -97,7 +81,6 @@ class KQuickConfigModulePrivate;
  * import QtQuick 2.1
  * import QtQuick.Controls 1.0 as QtControls
  * import org.kde.kcm 1.0
- * import org.kde.plasma.core 2.0 as PlasmaCore
  *
  * Item {
  *     //implicitWidth and implicitHeight will be used as initial size
@@ -112,9 +95,8 @@ class KQuickConfigModulePrivate;
  * }
  * \endcode
  *
- * See https://techbase.kde.org/Development/Tutorials/KCM_HowTo
- * for more detailed documentation.
- *
+ * See https://develop.kde.org/docs/extend/kcm/ for more detailed documentation.
+ * @since 6.0
  */
 class KCMUTILSQUICK_EXPORT KQuickConfigModule : public KAbstractConfigModule
 {
@@ -127,7 +109,7 @@ class KCMUTILSQUICK_EXPORT KQuickConfigModule : public KAbstractConfigModule
 
 public:
     /**
-     * Base class for all KControlModules.
+     * Base class for all QtQuick config modules.
      *
      * @note do not emit changed signals here, since they are not yet connected
      *       to any slot.
@@ -151,7 +133,6 @@ public:
 
     /**
      * The error string in case the mainUi failed to load.
-     * @return 5.64
      */
     QString errorString() const;
 
