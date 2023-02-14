@@ -17,17 +17,13 @@ class KPageWidgetItem;
 
 class KCMultiDialogPrivate
 {
-    Q_DECLARE_PUBLIC(KCMultiDialog)
-protected:
+public:
     KCMultiDialogPrivate(KCMultiDialog *parent)
         : currentModule(nullptr)
-        , q_ptr(parent)
+        , q(parent)
     {
     }
 
-    virtual ~KCMultiDialogPrivate()
-    {
-    }
 
     KCModuleProxy *currentModule;
 
@@ -41,13 +37,12 @@ protected:
     ModuleList modules;
 
     void _k_slotCurrentPageChanged(KPageWidgetItem *current, KPageWidgetItem *previous);
-    virtual void _k_clientChanged();
+    void _k_clientChanged();
     void _k_dialogClosed();
     void _k_updateHeader(bool use, const QString &message);
 
-    KCMultiDialog *q_ptr;
+    KCMultiDialog *q;
 
-private:
     void init();
     void apply();
     bool resolveChanges(KCModuleProxy *currentProxy);

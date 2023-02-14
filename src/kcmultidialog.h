@@ -29,7 +29,6 @@ class KCMultiDialogPrivate;
 class KCMUTILS_EXPORT KCMultiDialog : public KPageDialog
 {
     Q_OBJECT
-    Q_DECLARE_PRIVATE(KCMultiDialog)
 
 public:
     /**
@@ -48,15 +47,7 @@ public:
      * @since 5.84
      * @overload
      */
-    KPageWidgetItem *addModule(const KPluginMetaData &metaData);
-
-    /**
-     * Add a module to the dialog. Its position will be determined based on the @c X-KDE-Weight value.
-     * @param metaData KPluginMetaData that will be used to load the plugin
-     * @param args The arguments that should be given to the KCModule when it is created
-     * @since 5.85
-     */
-    KPageWidgetItem *addModule(const KPluginMetaData &metaData, const QStringList &args); // TODO KF6 merge with overload
+    KPageWidgetItem *addModule(const KPluginMetaData &metaData, const QStringList &args = {});
 
     /**
      * Removes all modules from the dialog.
@@ -80,14 +71,6 @@ Q_SIGNALS:
     void configCommitted();
 
 protected:
-    /**
-     * This constructor can be used by subclasses to provide a custom KPageWidget.
-     */
-    KCMultiDialog(KPageWidget *pageWidget, QWidget *parent, Qt::WindowFlags flags = Qt::WindowFlags());
-    KCMultiDialog(KCMultiDialogPrivate &dd, KPageWidget *pageWidget, QWidget *parent, Qt::WindowFlags flags = Qt::WindowFlags());
-
-    KCMultiDialogPrivate *const d_ptr;
-
     void closeEvent(QCloseEvent *event) override;
     void showEvent(QShowEvent *event) override;
 
@@ -137,9 +120,8 @@ protected Q_SLOTS:
     void slotHelpClicked();
 
 private:
-    Q_PRIVATE_SLOT(d_func(), void _k_slotCurrentPageChanged(KPageWidgetItem *, KPageWidgetItem *))
-    Q_PRIVATE_SLOT(d_func(), void _k_clientChanged())
-    Q_PRIVATE_SLOT(d_func(), void _k_updateHeader(bool use, const QString &message))
+    friend KCMultiDialogPrivate;
+    const std::unique_ptr<KCMultiDialogPrivate> d;
 };
 
 /**
