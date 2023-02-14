@@ -139,14 +139,9 @@ KCModuleQml::KCModuleQml(KQuickConfigModule *configModule, QWidget *parent, cons
         setUseRootOnlyMessage(d->configModule->useRootOnlyMessage());
     });
 
-#if KCMUTILS_WITH_KAUTH
-    if (!d->configModule->authActionName().isEmpty()) {
-        setAuthAction(KAuth::Action(d->configModule->authActionName()));
-    }
     connect(d->configModule, &KQuickConfigModule::authActionNameChanged, this, [=] {
-        setAuthAction(d->configModule->authActionName());
+        setAuthActionName(d->configModule->authActionName());
     });
-#endif
 
     connect(this, &KCModule::defaultsIndicatorsVisibleChanged, d->configModule, &KQuickConfigModule::defaultsIndicatorsVisibleChanged);
 

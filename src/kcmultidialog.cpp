@@ -12,7 +12,6 @@
 #include "kcmultidialog.h"
 #include "kcmoduleloader.h"
 #include "kcmultidialog_p.h"
-
 #include "kcmoduleqml_p.h"
 #include <kcmutils_debug.h>
 
@@ -28,10 +27,6 @@
 #include <QStyle>
 #include <QUrl>
 
-#if KCMUTILS_WITH_KAUTH
-#include <KAuth/Action>
-#include <KAuth/ObjectDecorator>
-#endif
 #include <KGuiItem>
 #include <KIconUtils>
 #include <KLocalizedString>
@@ -132,46 +127,12 @@ void KCMultiDialogPrivate::clientChanged()
         QPushButton *applyButton = q->buttonBox()->button(QDialogButtonBox::Apply);
         if (applyButton) {
             q->disconnect(applyButton, &QAbstractButton::clicked, q, &KCMultiDialog::slotApplyClicked);
-#if KCMUTILS_WITH_KAUTH
-            delete applyButton->findChild<KAuth::ObjectDecorator *>();
-#endif
         }
 
         QPushButton *okButton = q->buttonBox()->button(QDialogButtonBox::Ok);
         if (okButton) {
             q->disconnect(okButton, &QAbstractButton::clicked, q, &KCMultiDialog::slotOkClicked);
-#if KCMUTILS_WITH_KAUTH
-            delete okButton->findChild<KAuth::ObjectDecorator *>();
-#endif
         }
-
-#if KCMUTILS_WITH_KAUTH
-        if (activeModule->needsAuthorization()) {
-            if (applyButton) {
-                KAuth::ObjectDecorator *decorator = new KAuth::ObjectDecorator(applyButton);
-                decorator->setAuthAction(activeModule->authAction());
-                activeModule->authAction().setParentWidget(activeModule->widget());
-                q->connect(decorator, &KAuth::ObjectDecorator::authorized, q, &KCMultiDialog::slotApplyClicked);
-            }
-
-            if (okButton) {
-                KAuth::ObjectDecorator *decorator = new KAuth::ObjectDecorator(okButton);
-                decorator->setAuthAction(activeModule->authAction());
-                activeModule->authAction().setParentWidget(activeModule->widget());
-                q->connect(decorator, &KAuth::ObjectDecorator::authorized, q, &KCMultiDialog::slotOkClicked);
-            }
-        } else {
-            if (applyButton) {
-                q->connect(applyButton, &QAbstractButton::clicked, q, &KCMultiDialog::slotApplyClicked);
-                delete applyButton->findChild<KAuth::ObjectDecorator *>();
-            }
-
-            if (okButton) {
-                q->connect(okButton, &QAbstractButton::clicked, q, &KCMultiDialog::slotOkClicked);
-                delete okButton->findChild<KAuth::ObjectDecorator *>();
-            }
-        }
-#endif
     }
 
     auto buttons = activeModule ? activeModule->buttons() : KCModule::NoAdditionalButton;

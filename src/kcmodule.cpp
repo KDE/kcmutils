@@ -18,9 +18,6 @@
 #include <KConfigSkeleton>
 #include <KLocalizedString>
 #include <KPluginMetaData>
-#if KCMUTILS_WITH_KAUTH
-#include <KAuth/ExecuteJob>
-#endif
 
 class KCModuleProxyInternal : public QWidget
 {
@@ -71,9 +68,6 @@ public:
     bool _firstshow : 1;
 
     bool _needsAuthorization : 1;
-#if KCMUTILS_WITH_KAUTH
-    KAuth::Action _authAction;
-#endif
 
     // this member is used to record the state on non-automatically
     // managed widgets, allowing for mixed KConfigXT-drive and manual
@@ -106,45 +100,6 @@ KConfigDialogManager *KCModule::addConfig(KCoreConfigSkeleton *config, QWidget *
     d->managers.append(manager);
     return manager;
 }
-
-#if KCMUTILS_WITH_KAUTH
-void KCModule::setAuthAction(const KAuth::Action &action)
-{
-    if (!action.isValid()) {
-        qCWarning(KCMUTILS_LOG) << "Auth action" << action.name() << "is invalid";
-        d->_needsAuthorization = false;
-        return;
-    }
-    d->_authAction = action;
-    d->_needsAuthorization = true;
-    d->_authAction.setParentWidget(widget());
-    authStatusChanged(d->_authAction.status());
-}
-
-KAuth::Action KCModule::authAction() const
-{
-    return d->_authAction;
-}
-
-void KCModule::authStatusChanged(KAuth::Action::AuthStatus status)
-{
-    switch (status) {
-    case KAuth::Action::AuthorizedStatus:
-        setUseRootOnlyMessage(false);
-        break;
-    case KAuth::Action::AuthRequiredStatus:
-        setUseRootOnlyMessage(true);
-        setRootOnlyMessage(i18n("You will be asked to authenticate before saving"));
-        break;
-    default:
-        setUseRootOnlyMessage(true);
-        setRootOnlyMessage(i18n("You are not allowed to save the configuration"));
-        break;
-    }
-
-    qCDebug(KCMUTILS_LOG) << useRootOnlyMessage();
-}
-#endif
 
 KCModule::~KCModule()
 {

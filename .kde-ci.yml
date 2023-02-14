@@ -11,10 +11,6 @@ Dependencies:
     'frameworks/kwindowsystem' : '@same'
     'frameworks/kirigami' : '@same'
 
-- 'on': ['Linux', 'FreeBSD']
-  'require':
-    'frameworks/kauth' : '@same'
-
 Options:
   test-before-installing: True
   require-passing-tests-on: [ 'Linux', 'FreeBSD', 'Windows' ]

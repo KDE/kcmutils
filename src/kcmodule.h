@@ -11,11 +11,7 @@
 
 #include "kcmutils_export.h"
 #include <KAbstractConfigModule>
-
 #include <KPluginMetaData>
-#if KCMUTILS_WITH_KAUTH
-#include <KAuth/Action>
-#endif
 
 #include <QVariant>
 #include <QWidget>
@@ -105,27 +101,6 @@ public:
      */
     QList<KConfigDialogManager *> configs() const;
 
-#if KCMUTILS_WITH_KAUTH
-    /**
-     * @brief Set if the module's save() method requires authorization to be executed
-     *
-     * It will still have to execute the action itself using the KAuth library, so
-     * this method is not technically needed to perform the action, but
-     * using this method will ensure that hosting
-     * applications like System Settings or kcmshell behave correctly.
-     *
-     * @param action the action that will be used by this KCModule
-     */
-    void setAuthAction(const KAuth::Action &action);
-
-    /**
-     * Returns the action previously set with setAuthAction(). By default its an invalid action.
-     *
-     * @return The action that has to be authorized to execute the save() method.
-     */
-    KAuth::Action authAction() const;
-#endif
-
     void load() override;
     void save() override;
     void defaults() override;
@@ -156,13 +131,6 @@ protected Q_SLOTS:
      * settings are compared and a corresponding changed() signal is emitted
      */
     void widgetChanged();
-
-#if KCMUTILS_WITH_KAUTH
-    /**
-     * The status of the auth action, if one, has changed
-     */
-    void authStatusChanged(KAuth::Action::AuthStatus status);
-#endif
 
 protected:
     /**

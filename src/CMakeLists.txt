@@ -70,10 +70,6 @@ target_link_libraries(KF6KCMUtils
     KF6::XmlGui          # KAboutApplicationDialog
     kcmutils_logging_STATIC
 )
-# On Windows, this target does not exist
-if (TARGET KF6::AuthWidgets)
-    target_link_libraries(KF6KCMUtils PRIVATE KF6::AuthWidgets) # KAuth::ObjectDecorator
-endif()
 
 set_target_properties(KF6KCMUtils PROPERTIES
                       VERSION ${KCMUTILS_VERSION}
