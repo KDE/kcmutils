@@ -10,6 +10,7 @@ Dependencies:
     'frameworks/kactivities' : '@same'
     'frameworks/kwindowsystem' : '@same'
     'frameworks/kirigami' : '@same'
+    'frameworks/kpackage' : '@same'
 
 Options:
   test-before-installing: True
