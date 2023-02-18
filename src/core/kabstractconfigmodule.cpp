@@ -11,7 +11,6 @@ public:
     const KPluginMetaData m_data;
 
     QString m_rootOnlyMessage;
-    QString m_quickHelp;
     QString m_errorString;
 
     bool m_useRootOnlyMessage = false;
@@ -87,53 +86,6 @@ void KAbstractConfigModule::save()
 
 void KAbstractConfigModule::defaults()
 {
-}
-
-void KAbstractConfigModule::setRootOnlyMessage(const QString &message)
-{
-    if (d->m_rootOnlyMessage == message) {
-        return;
-    }
-
-    d->m_rootOnlyMessage = message;
-    Q_EMIT rootOnlyMessageChanged();
-}
-
-QString KAbstractConfigModule::rootOnlyMessage() const
-{
-    return d->m_rootOnlyMessage;
-}
-
-void KAbstractConfigModule::setUseRootOnlyMessage(bool on)
-{
-    if (d->m_useRootOnlyMessage == on) {
-        return;
-    }
-
-    d->m_useRootOnlyMessage = on;
-
-    Q_EMIT useRootOnlyMessageChanged();
-}
-
-bool KAbstractConfigModule::useRootOnlyMessage() const
-{
-    return d->m_useRootOnlyMessage;
-}
-
-void KAbstractConfigModule::setQuickHelp(const QString &help)
-{
-    if (d->m_quickHelp == help) {
-        return;
-    }
-
-    d->m_quickHelp = help;
-
-    Q_EMIT quickHelpChanged();
-}
-
-QString KAbstractConfigModule::quickHelp() const
-{
-    return d->m_quickHelp;
 }
 
 void KAbstractConfigModule::setNeedsSave(bool needs)

@@ -111,7 +111,6 @@ KCModuleQml::KCModuleQml(KQuickConfigModule *configModule, QWidget *parent, cons
     : KCModule(new QmlConfigModuleWidget(this, parent), configModule->metaData(), args)
     , d(new KCModuleQmlPrivate(configModule, this))
 {
-    connect(d->configModule, &KQuickConfigModule::quickHelpChanged, this, &KCModuleQml::quickHelpChanged);
     setButtons(d->configModule->buttons());
     connect(d->configModule, &KQuickConfigModule::buttonsChanged, d->configModule, [this] {
         setButtons(d->configModule->buttons());
@@ -123,15 +122,6 @@ KCModuleQml::KCModuleQml(KQuickConfigModule *configModule, QWidget *parent, cons
     });
     connect(d->configModule, &KQuickConfigModule::representsDefaultsChanged, this, [this] {
         setRepresentsDefaults(d->configModule->representsDefaults());
-    });
-
-    setRootOnlyMessage(d->configModule->rootOnlyMessage());
-    setUseRootOnlyMessage(d->configModule->useRootOnlyMessage());
-    connect(d->configModule, &KQuickConfigModule::rootOnlyMessageChanged, this, [this] {
-        setRootOnlyMessage(d->configModule->rootOnlyMessage());
-    });
-    connect(d->configModule, &KQuickConfigModule::useRootOnlyMessageChanged, this, [this] {
-        setUseRootOnlyMessage(d->configModule->useRootOnlyMessage());
     });
 
     connect(d->configModule, &KQuickConfigModule::authActionNameChanged, this, [=] {
@@ -234,17 +224,6 @@ Kirigami.ApplicationItem {
         connect(d->configModule, &KQuickConfigModule::currentIndexChanged, this, [this]() {
             d->pageRow->setProperty("currentIndex", d->configModule->currentIndex());
         });
-        connect(d->configModule,
-                &KQuickConfigModule::passiveNotificationRequested,
-                this,
-                [this](const QString &message, const QVariant &timeout, const QString &actionText, const QJSValue &callBack) {
-                    d->rootPlaceHolder->metaObject()->invokeMethod(d->rootPlaceHolder,
-                                                                   "showPassiveNotification",
-                                                                   Q_ARG(QVariant, message),
-                                                                   Q_ARG(QVariant, timeout),
-                                                                   Q_ARG(QVariant, actionText),
-                                                                   Q_ARG(QVariant, QVariant::fromValue(callBack)));
-                });
         // New syntax cannot be used to connect to QML types
         connect(d->pageRow, SIGNAL(currentIndexChanged()), this, SLOT(syncCurrentIndex()));
     }

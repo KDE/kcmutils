@@ -11,8 +11,8 @@
 
 #include "kcmultidialog.h"
 #include "kcmoduleloader.h"
-#include "kcmultidialog_p.h"
 #include "kcmoduleqml_p.h"
+#include "kcmultidialog_p.h"
 #include <kcmutils_debug.h>
 
 #include <QApplication>
@@ -395,13 +395,8 @@ KPageWidgetItem *KCMultiDialog::addModule(const KPluginMetaData &metaData, const
         item->setHeaderVisible(false);
     }
 
-    if (kcm->useRootOnlyMessage()) {
-        item->setHeader(QStringLiteral("<b>%1</b><br><i>%2</i>").arg(metaData.name(), kcm->rootOnlyMessage()));
-        item->setIcon(KIconUtils::addOverlay(QIcon::fromTheme(metaData.iconName()), QIcon::fromTheme(QStringLiteral("dialog-warning")), Qt::BottomRightCorner));
-    } else {
-        item->setHeader(metaData.name());
-        item->setIcon(QIcon::fromTheme(metaData.iconName()));
-    }
+    item->setHeader(metaData.name());
+    item->setIcon(QIcon::fromTheme(metaData.iconName()));
     const int weight = metaData.rawData().value(QStringLiteral("X-KDE-Weight")).toInt();
     item->setProperty("_k_weight", weight);
 
@@ -431,10 +426,6 @@ KPageWidgetItem *KCMultiDialog::addModule(const KPluginMetaData &metaData, const
 
     connect(kcm, &KCModule::needsSaveChanged, this, [this]() {
         d->clientChanged();
-    });
-
-    connect(kcm, &KCModule::rootOnlyMessageChanged, this, [kcm, this]() {
-        d->updateHeader(kcm->useRootOnlyMessage(), kcm->rootOnlyMessage());
     });
 
     if (d->modules.count() == 1 || updateCurrentPage) {

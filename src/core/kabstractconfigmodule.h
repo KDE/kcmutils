@@ -9,6 +9,7 @@
 #include "kcmutilscore_export.h"
 
 #include <QObject>
+#include <QtQmlIntegration/QtQmlIntegration>
 
 #include <memory>
 
@@ -32,9 +33,6 @@ class KCMUTILSCORE_EXPORT KAbstractConfigModule : public QObject
     Q_PROPERTY(bool needsSave READ needsSave WRITE setNeedsSave NOTIFY needsSaveChanged)
     Q_PROPERTY(QString name READ name CONSTANT)
     Q_PROPERTY(QString description READ description CONSTANT)
-    Q_PROPERTY(QString quickHelp READ quickHelp WRITE setQuickHelp NOTIFY quickHelpChanged)
-    Q_PROPERTY(QString rootOnlyMessage READ rootOnlyMessage WRITE setRootOnlyMessage NOTIFY rootOnlyMessageChanged)
-    Q_PROPERTY(bool useRootOnlyMessage READ useRootOnlyMessage WRITE setUseRootOnlyMessage NOTIFY useRootOnlyMessageChanged)
 public:
     /**
      * An enumeration type for the buttons used by this module.
@@ -81,32 +79,6 @@ public:
      * The auth action name has changed: this signal will relay it to the actual KCM
      */
     Q_SIGNAL void authActionNameChanged();
-
-    /**
-     * Sets the quick help.
-     */
-    void setQuickHelp(const QString &help);
-
-    /**
-     * Return a quick-help text.
-     *
-     * This method is called when the module is docked.
-     * The quick-help text should contain a short description of the module and
-     * links to the module's help files. You can use HTML formatting tags in the text.
-     *
-     * @note make sure the quick help text gets translated (use i18n()).
-     */
-    QString quickHelp() const;
-
-    /**
-     * Indicate that the module's quickhelp has changed.
-     *
-     * Emit this signal whenever the module's quickhelp changes.
-     * Modules implemented as tabbed dialogs might want to implement
-     * per-tab quickhelp for example.
-     *
-     */
-    Q_SIGNAL void quickHelpChanged();
 
     /**
      * Set this property to true when the user changes something in the module,
@@ -176,65 +148,6 @@ public:
      * Buttons to display changed.
      */
     Q_SIGNAL void buttonsChanged();
-
-    /**
-     * Sets the RootOnly message.
-     *
-     * This message will be shown at the top of the module if useRootOnlyMessage is
-     * set. If no message is set, a default one will be used.
-     *
-     * @see ConfigModule::rootOnlyMessage
-     */
-    void setRootOnlyMessage(const QString &message);
-
-    /**
-     * Get the RootOnly message for this module.
-     *
-     * When the module must be run as root, or acts differently
-     * for root and a normal user, it is sometimes useful to
-     * customize the message that appears at the top of the module
-     * when used as a normal user. This function returns this
-     * customized message. If none has been set, a default message
-     * will be used.
-     *
-     * @see ConfigModule::setRootOnlyMessage
-     */
-    QString rootOnlyMessage() const;
-
-    /**
-     * Indicate that the module's root message has changed.
-     *
-     * Emits this signal whenever the module's root message changes.
-     *
-     */
-    Q_SIGNAL void rootOnlyMessageChanged();
-
-    /**
-     * Change whether or not the RootOnly message should be shown.
-     *
-     * Following the value of @p on, the RootOnly message will be
-     * shown or not.
-     *
-     * @see ConfigModule::useRootOnlyMessage
-     */
-    void setUseRootOnlyMessage(bool on);
-
-    /**
-     * Tell if KControl should show a RootOnly message when run as
-     * a normal user.
-     *
-     * In some cases, the module don't want a RootOnly message to
-     * appear (for example if it has already one). This function
-     * tells KControl if a RootOnly message should be shown
-     *
-     * @see ConfigModule::setUseRootOnlyMessage
-     */
-    bool useRootOnlyMessage() const;
-
-    /**
-     * Emits this signal whenever the root only message gets used or discarded.
-     */
-    Q_SIGNAL void useRootOnlyMessageChanged();
 
     /**
      * @return true, if the authActionName is not empty

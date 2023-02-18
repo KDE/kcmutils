@@ -138,11 +138,6 @@ public:
     std::shared_ptr<QQmlEngine> engine() const;
 
     /**
-     * The status of the mainUi component.
-     */
-    QQmlComponent::Status status() const;
-
-    /**
      * The error string in case the mainUi failed to load.
      */
     QString errorString() const;
@@ -217,18 +212,6 @@ public Q_SLOTS:
      */
     QQuickItem *takeLast();
 
-    /**
-     * Ask the shell to show a passive notification
-     * @param message The message text to display
-     * @param timeout (optional) the timeout, either in milliseconds or the strings "short" and "long"
-     * @param actionText (optional) The notification can have a button with this text
-     * @param callBack (optional) If actionText is set and callBack is a JavaScript function, it will be called when the use clicks the button.
-     */
-    void showPassiveNotification(const QString &message,
-                                 const QVariant &timeout = QVariant(),
-                                 const QString &actionText = QString(),
-                                 const QJSValue &callBack = QJSValue());
-
 Q_SIGNALS:
 
     // QML NOTIFY signaling
@@ -258,11 +241,6 @@ Q_SIGNALS:
      * Emitted when the number of pages changed
      */
     void depthChanged(int index);
-
-    /**
-     * Emitted when the kcm wants the shell to display a passive notification
-     */
-    void passiveNotificationRequested(const QString &message, const QVariant &timeout, const QString &actionText, const QJSValue &callBack);
 
 private:
     void setInternalEngine(const std::shared_ptr<QQmlEngine> &engine);

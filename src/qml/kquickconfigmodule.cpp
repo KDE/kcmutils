@@ -36,8 +36,6 @@ public:
     {
     }
 
-    void authStatusChanged(int status);
-
     KQuickConfigModule *_q;
     SharedQmlEngine *_engine = nullptr;
     std::shared_ptr<QQmlEngine> passedInEngine;
@@ -204,11 +202,6 @@ QQuickItem *KQuickConfigModule::takeLast()
     return page;
 }
 
-void KQuickConfigModule::showPassiveNotification(const QString &message, const QVariant &timeout, const QString &actionText, const QJSValue &callBack)
-{
-    Q_EMIT passiveNotificationRequested(message, timeout, actionText, callBack);
-}
-
 int KQuickConfigModule::columnWidth() const
 {
     return d->_columnWidth;
@@ -248,15 +241,6 @@ int KQuickConfigModule::currentIndex() const
 std::shared_ptr<QQmlEngine> KQuickConfigModule::engine() const
 {
     return d->_engine->engine();
-}
-
-QQmlComponent::Status KQuickConfigModule::status() const
-{
-    if (!d->_engine) {
-        return QQmlComponent::Null;
-    }
-
-    return d->_engine->status();
 }
 
 QString KQuickConfigModule::errorString() const
