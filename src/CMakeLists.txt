@@ -3,6 +3,7 @@
 
 add_library(kcmutils_logging_STATIC STATIC)
 target_link_libraries(kcmutils_logging_STATIC PRIVATE Qt6::Core)
+set_target_properties(kcmutils_logging_STATIC PROPERTIES POSITION_INDEPENDENT_CODE ON)
 ecm_qt_declare_logging_category(kcmutils_logging_STATIC
     HEADER kcmutils_debug.h
     IDENTIFIER KCMUTILS_LOG
