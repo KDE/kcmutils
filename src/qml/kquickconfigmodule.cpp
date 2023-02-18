@@ -39,7 +39,7 @@ public:
     void authStatusChanged(int status);
 
     KQuickConfigModule *_q;
-    SharedQmlEngine *_engine;
+    SharedQmlEngine *_engine = nullptr;
     std::shared_ptr<QQmlEngine> passedInEngine;
     QList<QQuickItem *> subPages;
     int _columnWidth = -1;
