@@ -23,6 +23,7 @@
 #include <KPluginMetaData>
 
 #include <memory>
+#include <qqmlintegration.h>
 
 #include "kabstractconfigmodule.h"
 
@@ -106,6 +107,8 @@ class KCMUTILSQUICK_EXPORT KQuickConfigModule : public KAbstractConfigModule
     Q_PROPERTY(int columnWidth READ columnWidth WRITE setColumnWidth NOTIFY columnWidthChanged)
     Q_PROPERTY(int depth READ depth NOTIFY depthChanged)
     Q_PROPERTY(int currentIndex READ currentIndex WRITE setCurrentIndex NOTIFY currentIndexChanged)
+
+    QML_NAMED_ELEMENT(ConfigModule)
 
 public:
     /**

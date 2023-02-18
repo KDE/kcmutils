@@ -1,15 +1,6 @@
 # SPDX-FileCopyrightText: 2022 Alexander Lohnau <alexander.lohnau@gmx.de>
 # SPDX-License-Identifier: BSD-3-Clause
 
-# QML plugin
-add_library(kcmutilsqmlplugin qmlplugin.cpp)
-target_link_libraries(kcmutilsqmlplugin PRIVATE Qt6::Qml kcmutils_proxy_model)
-install (TARGETS kcmutilsqmlplugin DESTINATION ${KDE_INSTALL_QMLDIR}/org/kde/kcmutils)
-
-
-install (DIRECTORY components DESTINATION ${KDE_INSTALL_QMLDIR}/org/kde/kcmutils)
-install (FILES qmldir DESTINATION ${KDE_INSTALL_QMLDIR}/org/kde/kcmutils)
-
 # Library
 add_library(KF6KCMUtilsQuick kquickconfigmodule.cpp kquickmanagedconfigmodule.cpp sharedqmlengine.cpp kquickconfigmoduleloader.cpp)
 
@@ -54,3 +45,13 @@ install(FILES
 )
 
 install(TARGETS KF6KCMUtilsQuick EXPORT KF6KCMUtilsTargets ${KF_INSTALL_TARGETS_DEFAULT_ARGS})
+
+# QML plugin
+add_library(kcmutilsqmlplugin qmlplugin.cpp)
+target_link_libraries(kcmutilsqmlplugin PRIVATE Qt6::Qml kcmutils_proxy_model KF6KCMUtilsQuick)
+install (TARGETS kcmutilsqmlplugin DESTINATION ${KDE_INSTALL_QMLDIR}/org/kde/kcmutils)
+
+
+install (DIRECTORY components DESTINATION ${KDE_INSTALL_QMLDIR}/org/kde/kcmutils)
+install (FILES qmldir DESTINATION ${KDE_INSTALL_QMLDIR}/org/kde/kcmutils)
+
