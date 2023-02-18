@@ -27,7 +27,7 @@ class KCMUTILSCORE_EXPORT KAbstractConfigModule : public QObject
 
     Q_PROPERTY(KAbstractConfigModule::Buttons buttons READ buttons WRITE setButtons NOTIFY buttonsChanged)
     Q_PROPERTY(int defaultsIndicatorsVisible READ defaultsIndicatorsVisible WRITE setDefaultsIndicatorsVisible NOTIFY defaultsIndicatorsVisibleChanged)
-    Q_PROPERTY(bool needsAuthorization READ needsAuthorization WRITE setNeedsAuthorization NOTIFY needsAuthorizationChanged)
+    Q_PROPERTY(bool needsAuthorization READ needsAuthorization NOTIFY authActionNameChanged)
     Q_PROPERTY(bool representsDefaults READ representsDefaults WRITE setRepresentsDefaults NOTIFY representsDefaultsChanged)
     Q_PROPERTY(bool needsSave READ needsSave WRITE setNeedsSave NOTIFY needsSaveChanged)
     Q_PROPERTY(QString name READ name CONSTANT)
@@ -237,35 +237,10 @@ public:
     Q_SIGNAL void useRootOnlyMessageChanged();
 
     /**
-     * @brief Set if the module's save() method requires authorization to be executed.
-     *
-     * The module can set this property to @c true if it requires authorization.
-     * It will still have to execute the action itself using the KAuth library, so
-     * this method is not technically needed to perform the action, but
-     * using this and/or the setAuthActionName() method will ensure that hosting
-     * applications like System Settings or kcmshell behave correctly.
-     *
-     * Called with @c true, this method will set the action to  "org.kde.kcontrol.name.save" where
-     * "name" is aboutData()->appName() return value. This default action won't be set if
-     * the aboutData() object is not valid.
-     *
-     * Note that called with @c false, this method will reset the action name set with setAuthActionName().
-     *
-     * @param needsAuth Tells if the module's save() method requires authorization to be executed.
-     */
-    void setNeedsAuthorization(bool needsAuth);
-
-    /**
-     * Returns the value previously set with setNeedsAuthorization() or setAuthActionName(). By default it's @c false.
-     *
-     * @return @c true if the module's save() method requires authorization, @c false otherwise
+     * @return true, if the authActionName is not empty
+     * @sa setAuthActionName
      */
     bool needsAuthorization() const;
-
-    /**
-     * Emits this signal whenever the need for root authorization to save changes.
-     */
-    Q_SIGNAL void needsAuthorizationChanged();
 
     /**
      * @returns the name of the config module

@@ -125,11 +125,6 @@ KCModuleQml::KCModuleQml(KQuickConfigModule *configModule, QWidget *parent, cons
         setRepresentsDefaults(d->configModule->representsDefaults());
     });
 
-    setNeedsAuthorization(d->configModule->needsAuthorization());
-    connect(d->configModule, &KQuickConfigModule::needsAuthorizationChanged, this, [this] {
-        setNeedsAuthorization(d->configModule->needsAuthorization());
-    });
-
     setRootOnlyMessage(d->configModule->rootOnlyMessage());
     setUseRootOnlyMessage(d->configModule->useRootOnlyMessage());
     connect(d->configModule, &KQuickConfigModule::rootOnlyMessageChanged, this, [this] {

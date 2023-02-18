@@ -15,7 +15,6 @@ public:
     QString m_errorString;
 
     bool m_useRootOnlyMessage = false;
-    bool m_needsAuthorization = false;
     bool m_needsSave = false;
     bool m_representsDefaults = false;
     bool m_defaultsIndicatorVisible = false;
@@ -46,28 +45,9 @@ void KAbstractConfigModule::setButtons(const KAbstractConfigModule::Buttons butt
     Q_EMIT buttonsChanged();
 }
 
-void KAbstractConfigModule::setNeedsAuthorization(bool needsAuth)
-{
-    if (d->m_needsAuthorization == needsAuth) {
-        return;
-    }
-
-    d->m_needsAuthorization = needsAuth;
-    if (needsAuth) {
-        d->m_authActionName = QLatin1String("org.kde.kcontrol.") + d->m_data.pluginId() + QLatin1String(".save");
-        d->m_needsAuthorization = true;
-
-    } else {
-        d->m_authActionName = QString();
-    }
-
-    Q_EMIT needsAuthorizationChanged();
-    Q_EMIT authActionNameChanged();
-}
-
 bool KAbstractConfigModule::needsAuthorization() const
 {
-    return d->m_needsAuthorization;
+    return !d->m_authActionName.isEmpty();
 }
 
 QString KAbstractConfigModule::name() const
@@ -87,9 +67,6 @@ void KAbstractConfigModule::setAuthActionName(const QString &name)
     }
 
     d->m_authActionName = name;
-    d->m_needsAuthorization = true;
-
-    Q_EMIT needsAuthorizationChanged();
     Q_EMIT authActionNameChanged();
 }
 
