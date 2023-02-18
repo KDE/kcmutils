@@ -26,18 +26,19 @@ KQuickConfigModuleLoader::loadModule(const KPluginMetaData &metaData, QObject *p
     }
     KPluginFactory *factory = factoryResult.plugin;
 
-    const std::shared_ptr<QQmlEngine> engine =
-        engineArg ? engineArg : (s_kcmutilsCreatedEngine.expired() ? std::make_shared<QQmlEngine>() : s_kcmutilsCreatedEngine.lock());
-
-    if (!engineArg && s_kcmutilsCreatedEngine.expired()) {
-        s_kcmutilsCreatedEngine = engine;
-    }
-
-    const QVariantList args2 = QVariantList(args) << metaData.rawData().value(QStringLiteral("X-KDE-KCM-Args")).toArray() << QVariant::fromValue(engine);
+    const QVariantList args2 = QVariantList(args) << metaData.rawData().value(QStringLiteral("X-KDE-KCM-Args")).toArray();
     factory->setMetaData(KPluginMetaData(metaData));
 
     const auto kcm = factory->create<KQuickConfigModule>(parent, args2);
     if (kcm) {
+        const std::shared_ptr<QQmlEngine> engine =
+            engineArg ? engineArg : (s_kcmutilsCreatedEngine.expired() ? std::make_shared<QQmlEngine>() : s_kcmutilsCreatedEngine.lock());
+
+        if (!engineArg && s_kcmutilsCreatedEngine.expired()) {
+            s_kcmutilsCreatedEngine = engine;
+        }
+        kcm->setInternalEngine(engine);
+
         result.plugin = kcm;
         qCDebug(KCMUTILS_LOG) << "loaded QML KCM" << metaData.fileName();
     } else {

@@ -55,7 +55,11 @@ KQuickConfigModule::KQuickConfigModule(QObject *parent, const KPluginMetaData &m
     : KAbstractConfigModule(parent, metaData, args)
     , d(new KQuickConfigModulePrivate(this))
 {
-    d->passedInEngine = args.last().value<std::shared_ptr<QQmlEngine>>();
+}
+
+void KQuickConfigModule::setInternalEngine(const std::shared_ptr<QQmlEngine> &engine)
+{
+    d->passedInEngine = engine;
 }
 
 KQuickConfigModule::~KQuickConfigModule()

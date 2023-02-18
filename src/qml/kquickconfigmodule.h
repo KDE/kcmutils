@@ -20,6 +20,7 @@
 #include <QStringList>
 #include <QVariant>
 
+#include <KPluginFactory>
 #include <KPluginMetaData>
 
 #include <memory>
@@ -29,6 +30,13 @@
 
 class QQuickItem;
 class QQmlEngine;
+class KQuickConfigModule;
+namespace KQuickConfigModuleLoader
+{
+KPluginFactory::Result<KQuickConfigModule>
+loadModule(const KPluginMetaData &metaData, QObject *parent, const QVariantList &args, const std::shared_ptr<QQmlEngine> &engine);
+
+} // namespace KQuickConfigModuleLoader
 
 class KQuickConfigModulePrivate;
 
@@ -257,6 +265,9 @@ Q_SIGNALS:
     void passiveNotificationRequested(const QString &message, const QVariant &timeout, const QString &actionText, const QJSValue &callBack);
 
 private:
+    void setInternalEngine(const std::shared_ptr<QQmlEngine> &engine);
+    friend KPluginFactory::Result<KQuickConfigModule>
+    KQuickConfigModuleLoader::loadModule(const KPluginMetaData &metaData, QObject *parent, const QVariantList &args, const std::shared_ptr<QQmlEngine> &engine);
     KQuickConfigModulePrivate *const d;
 };
 
