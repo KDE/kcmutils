@@ -26,17 +26,10 @@
 #include <qqmlintegration.h>
 
 #include "kabstractconfigmodule.h"
+#include "kquickconfigmoduleloader.h"
 
 class QQuickItem;
 class QQmlEngine;
-class KQuickConfigModule;
-namespace KQuickConfigModuleLoader
-{
-KPluginFactory::Result<KQuickConfigModule>
-loadModule(const KPluginMetaData &metaData, QObject *parent, const QVariantList &args, const std::shared_ptr<QQmlEngine> &engine);
-
-} // namespace KQuickConfigModuleLoader
-
 class KQuickConfigModulePrivate;
 
 /**
@@ -87,7 +80,6 @@ class KQuickConfigModulePrivate;
  *
  * \code
  * import QtQuick 2.1
- * import QtQuick.Controls 1.0 as QtControls
  * import org.kde.kcm 1.0
  *
  * Item {

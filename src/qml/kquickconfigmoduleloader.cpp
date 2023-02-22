@@ -11,6 +11,8 @@
 #include <QJsonArray>
 #include <QQmlEngine>
 
+#include "kquickconfigmodule.h"
+
 std::weak_ptr<QQmlEngine> s_kcmutilsCreatedEngine;
 
 KPluginFactory::Result<KQuickConfigModule>

@@ -3,12 +3,16 @@
     SPDX-License-Identifier: LGPL-2.0-or-later
 */
 
+#ifndef KQUICKCONFIGMODULELOADER_H
+#define KQUICKCONFIGMODULELOADER_H
+
 #include "kcmutilsquick_export.h"
-#include "kquickconfigmodule.h"
+
 #include <KPluginFactory>
 #include <memory>
 
 class QQmlEngine;
+class KQuickConfigModule;
 
 namespace KQuickConfigModuleLoader
 {
@@ -19,3 +23,4 @@ namespace KQuickConfigModuleLoader
 KCMUTILSQUICK_EXPORT KPluginFactory::Result<KQuickConfigModule>
 loadModule(const KPluginMetaData &metaData, QObject *parent = nullptr, const QVariantList &args = {}, const std::shared_ptr<QQmlEngine> &engine = {});
 }
+#endif
