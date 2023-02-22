@@ -127,7 +127,6 @@ private:
      */
     virtual bool isDefaults() const;
 
-    Q_PRIVATE_SLOT(d, void _k_registerSettings())
     KQuickManagedConfigModulePrivate *const d;
     friend class KQuickManagedConfigModulePrivate;
 };

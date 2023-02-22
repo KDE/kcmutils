@@ -5,22 +5,23 @@
 
 #include "kquickmanagedconfigmodule.h"
 
-#include <QPointer>
-
 #include <KConfigCore/KCoreConfigSkeleton>
+#include <QPointer>
+#include <QTimer>
 
 class KQuickManagedConfigModulePrivate
 {
 public:
-    KQuickManagedConfigModulePrivate(KQuickManagedConfigModule *module)
-        : _q(module)
+    KQuickManagedConfigModulePrivate(KQuickManagedConfigModule *mod)
     {
-        QMetaObject::invokeMethod(_q, "_k_registerSettings", Qt::QueuedConnection);
+        QTimer::singleShot(0, [mod]() {
+            const auto skeletons = mod->findChildren<KCoreConfigSkeleton *>();
+            for (auto *skeleton : skeletons) {
+                mod->registerSettings(skeleton);
+            }
+        });
     }
 
-    void _k_registerSettings();
-
-    KQuickManagedConfigModule *_q;
     QList<QPointer<KCoreConfigSkeleton>> _skeletons;
 };
 
@@ -70,14 +71,6 @@ bool KQuickManagedConfigModule::isSaveNeeded() const
 bool KQuickManagedConfigModule::isDefaults() const
 {
     return true;
-}
-
-void KQuickManagedConfigModulePrivate::_k_registerSettings()
-{
-    const auto skeletons = _q->findChildren<KCoreConfigSkeleton *>();
-    for (auto *skeleton : skeletons) {
-        _q->registerSettings(skeleton);
-    }
 }
 
 void KQuickManagedConfigModule::settingsChanged()
