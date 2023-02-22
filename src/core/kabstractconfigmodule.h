@@ -69,14 +69,14 @@ public:
     void setAuthActionName(const QString &action);
 
     /**
-     * Returns the action previously set with setAuthActionName(). By default its an invalid action.
+     * Returns the action previously set with setAuthActionName(). By default this will be a empty string.
      *
      * @return The action that has to be authorized to execute the save() method.
      */
     QString authActionName() const;
 
     /**
-     * The auth action name has changed: this signal will relay it to the actual KCM
+     * The auth action name has changed
      */
     Q_SIGNAL void authActionNameChanged();
 
@@ -125,8 +125,7 @@ public:
      *
      * Default: shows a "Use Defaults" button.
      *
-     * Apply: in kcontrol this will show an "Apply" and "Reset" button,
-     *        in kcmshell this will show an "Ok", "Apply" and "Cancel" button.
+     * Apply: shows an "Ok", "Apply" and "Cancel" button.
      *
      * If Apply is not specified, kcmshell will show a "Close" button.
      *
@@ -202,26 +201,19 @@ public:
     virtual void load();
 
     /**
-     * Save the configuration data.
-     *
      * The save method stores the config information as shown
      * in the user interface in the config files.
      *
-     * If necessary, this method also updates the running system,
-     * e.g. by restarting applications. This normally does not apply for
-     * KSettings::Dialog modules where the updating is taken care of by
-     * KSettings::Dispatcher.
-     *
-     * save is called when the user clicks "Apply" or "Ok".
+     * This method is called when the user clicks "Apply" or "Ok".
      *
      */
     virtual void save();
 
     /**
-     * Sets the configuration to sensible default values.
+     * Sets the configuration to default values.
      *
      * This method is called when the user clicks the "Default"
-     * button. It should set the display to useful values.
+     * button.
      */
     virtual void defaults();
 

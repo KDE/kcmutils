@@ -1,7 +1,5 @@
 /*
-    This file is part of the KDE libraries
     SPDX-FileCopyrightText: 2019 Kevin Ottens <kevin.ottens@enioka.com>
-
     SPDX-License-Identifier: LGPL-2.0-or-later
 */
 

@@ -1,11 +1,10 @@
 /*
-    This file is part of the KDE libraries
-
     SPDX-FileCopyrightText: 1999 Matthias Hoelzer-Kluepfel <hoelzer@kde.org>
     SPDX-FileCopyrightText: 2001 Michael Goffioul <kdeprint@swing.be>
     SPDX-FileCopyrightText: 2004 Frans Englich <frans.englich@telia.com>
     SPDX-FileCopyrightText: 2009 Dario Freddi <drf@kde.org>
     SPDX-FileCopyrightText: 2015 Marco Martin <mart@kde.org>
+    SPDX-FileCopyrightText: 2023 Alexander Lohnau <alexander.lohnau@gmx.de>
 
     SPDX-License-Identifier: LGPL-2.0-or-later
 */

@@ -1,17 +1,16 @@
 /*
-    This file is part of the KDE libraries
-
     SPDX-FileCopyrightText: 1999 Matthias Hoelzer-Kluepfel <hoelzer@kde.org>
     SPDX-FileCopyrightText: 2001 Michael Goffioul <kdeprint@swing.be>
     SPDX-FileCopyrightText: 2004 Frans Englich <frans.englich@telia.com>
     SPDX-FileCopyrightText: 2009 Dario Freddi <drf@kde.org>
     SPDX-FileCopyrightText: 2015 Marco Martin <mart@kde.org>
+    SPDX-FileCopyrightText: 2023 Alexander Lohnau <alexander.lohnau@gmx.de>
 
     SPDX-License-Identifier: LGPL-2.0-or-later
 */
 
-#ifndef CONFIGMODULE_H
-#define CONFIGMODULE_H
+#ifndef KQUICKCONFIGMODULE_H
+#define KQUICKCONFIGMODULE_H
 
 #include "kcmutilsquick_export.h"
 
@@ -64,7 +63,7 @@ class KQuickConfigModulePrivate;
  * The constructor of the ConfigModule then looks like this:
  * \code
  * YourConfigModule::YourConfigModule(QObject *parent, const KPluginMetaData &metaData, const QVariantList &args)
- *   : ConfigModule(parent, metaData, args)
+ *   : KQuickConfigModule(parent, metaData, args)
  * {
  * }
  * \endcode
@@ -92,8 +91,7 @@ class KQuickConfigModulePrivate;
  * import org.kde.kcm 1.0
  *
  * Item {
- *     //implicitWidth and implicitHeight will be used as initial size
- *     //when loaded in kcmshell5
+ *     //implicitWidth and implicitHeight will be used as initial size when loaded in kcmshell6
  *     implicitWidth: units.gridUnit * 20
  *     implicitHeight: units.gridUnit * 20
  *
@@ -251,4 +249,4 @@ private:
 
 QML_DECLARE_TYPEINFO(KQuickConfigModule, QML_HAS_ATTACHED_PROPERTIES)
 
-#endif // ConfigModule_H
+#endif // KQUICKCONFIGMODULE_H
