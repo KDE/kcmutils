@@ -42,6 +42,7 @@ public:
     int _columnWidth = -1;
     int currentIndex = 0;
     QString _errorString;
+    KPackage::Package package;
 
     static QHash<QObject *, KQuickConfigModule *> s_rootObjects;
 };
@@ -106,27 +107,25 @@ QQuickItem *KQuickConfigModule::mainUi()
     d->_engine->setTranslationDomain(componentName);
     d->_engine->setInitializationDelayed(true);
 
-    KPackage::Package package = KPackage::PackageLoader::self()->loadPackage(QStringLiteral("KPackage/GenericQML"));
-    package.setDefaultPackageRoot(QStringLiteral("kpackage/kcms"));
-    package.setPath(metaData().pluginId());
-    if (metaData().isValid()) {
-        package.setMetadata(metaData());
-    }
+    d->package = KPackage::PackageLoader::self()->loadPackage(QStringLiteral("KPackage/GenericQML"));
+    d->package.setDefaultPackageRoot(QStringLiteral("kpackage/kcms"));
+    d->package.setPath(metaData().pluginId());
+    d->package.setMetadata(metaData());
 
-    if (!package.isValid()) {
+    if (!d->package.isValid()) {
         d->_errorString = i18n("Invalid KPackage '%1'", componentName);
         qWarning() << "Error loading the module" << componentName << ": invalid KPackage";
         return nullptr;
     }
 
-    if (package.filePath("mainscript").isEmpty()) {
+    if (d->package.filePath("mainscript").isEmpty()) {
         d->_errorString = i18n("No QML file provided");
         qWarning() << "Error loading the module" << componentName << ": no QML file provided";
         return nullptr;
     }
 
     new QQmlFileSelector(d->_engine->engine().get(), this);
-    d->_engine->setSource(package.fileUrl("mainscript"));
+    d->_engine->setSource(d->package.fileUrl("mainscript"));
     d->_engine->rootContext()->setContextProperty(QStringLiteral("kcm"), this);
     d->_engine->completeInitialization();
 
@@ -145,17 +144,12 @@ void KQuickConfigModule::push(const QString &fileName, const QVariantMap &proper
         return;
     }
 
-    // TODO: package as member
-    KPackage::Package package = KPackage::PackageLoader::self()->loadPackage(QStringLiteral("KPackage/GenericQML"));
-    package.setDefaultPackageRoot(QStringLiteral("kpackage/kcms"));
-    package.setPath(metaData().pluginId());
-
     QVariantHash propertyHash;
     for (auto it = propertyMap.begin(), end = propertyMap.end(); it != end; ++it) {
         propertyHash.insert(it.key(), it.value());
     }
 
-    QObject *object = d->_engine->createObjectFromSource(QUrl::fromLocalFile(package.filePath("ui", fileName)), d->_engine->rootContext(), propertyHash);
+    QObject *object = d->_engine->createObjectFromSource(QUrl::fromLocalFile(d->package.filePath("ui", fileName)), d->_engine->rootContext(), propertyHash);
 
     QQuickItem *item = qobject_cast<QQuickItem *>(object);
     if (!item) {
