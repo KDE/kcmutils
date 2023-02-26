@@ -21,8 +21,7 @@
 class KCMultiDialogPrivate;
 
 /**
- * @short A class that offers a KPageDialog containing arbitrary
- *        KControl Modules.
+ * @short A class that offers a KPageDialog containing config modules
  *
  * @author Matthias Elter <elter@kde.org>, Daniel Molkentin <molkentin@kde.org>
  */
@@ -47,7 +46,6 @@ public:
      * Add a module to the dialog. Its position will be determined based on the @c X-KDE-Weight value.
      * @param metaData KPluginMetaData that will be used to load the plugin
      * @param args The arguments that should be given to the KCModule when it is created
-     * @since 5.85
      */
     KPageWidgetItem *addModule(const KPluginMetaData &metaData, const QVariantList &args = {});
 

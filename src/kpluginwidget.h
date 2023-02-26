@@ -21,14 +21,13 @@ class QPushButton;
 class KPluginWidgetPrivate;
 
 /**
+ * @class KPluginWidget kpluginwidget.h KPluginWidget
  * A widget that shows a list of available plugins and allows to disable/enable them and open their configuration UI.
  *
- * For compatibility the KServiceTypeTrader querying of the associated KCMs for the plugins is still supported.
- * However it is recommended to define the "X-KDE-ConfigModule" property in the plugins that
- * get added to the KPluginWidget. The value for this property is the namespace and file name of the
- * KCM for the plugin. An example value is "kf5/krunner/kcms/kcm_krunner_charrunner", "kf5/krunner/kcms" is the namespace
- * and "kcm_krunner_charrunner" the file name. The loaded KCMs don't need any embedded json metadata and the old desktop files
- * that were used for querying can be removed.
+ * Plugins that get added to the KPluginWidget need to define the @c X-KDE-ConfigModule property.
+ * The value for this property is the namespace and file name of the KCM for the plugin.
+ * An example value is "kf6/krunner/kcms/kcm_krunner_charrunner", "kf6/krunner/kcms" is the namespace
+ * and "kcm_krunner_charrunner" the file name. The loaded KCMs don't need any embedded json metadata.
  * @since 5.89
  */
 class KCMUTILS_EXPORT KPluginWidget : public QWidget

@@ -25,57 +25,35 @@ class KCModulePrivate;
 /**
  * @class KCModule kcmodule.h KCModule
  *
- * The base class for configuration modules.
- *
- * Configuration modules are realized as plugins that are loaded only when
- * needed.
+ * The base class for QWidgets configuration modules.
+ * Configuration modules are loaded as plugins.
  *
  * The module in principle is a simple widget displaying the
  * item to be changed. The module has a very small interface.
  *
- * All the necessary glue logic and the GUI bells and whistles
- * are provided by the control center and must not concern
- * the module author.
- *
  * To write a config module, you have to create a library
- * that contains a factory function like the following:
+ * that contains a factory class like the following:
  *
  * \code
  * #include <KPluginFactory>
  *
- * K_PLUGIN_FACTORY(MyKCModuleFactory, registerPlugin<MyKCModule>() )
+ * K_PLUGIN_CLASS_WITH_JSON(MyKCModule, "mykcmodule.json")
  * \endcode
  *
  * The constructor of the KCModule then looks like this:
  * \code
- * YourKCModule::YourKCModule( QWidget* parent )
- *   : KCModule( parent )
+ * YourKCModule::YourKCModule(QWidget *parent, const KPluginMetaData &data, const QVariantList &args)
+ *   : KCModule(parent, data, args)
  * {
- *   KAboutData *about = new KAboutData(
- *     <kcm name>, i18n( "..." ),
- *     KDE_VERSION_STRING, QString(), KAboutLicense::GPL,
- *     i18n( "Copyright 2006 ..." ) );
- *   about->addAuthor( i18n(...) );
- *   setAboutData( about );
- *   .
- *   .
- *   .
+ * // KCModule does not directly extend QWidget due to ambiguity with KAbstractConfigModule
+ * // Because of this, you need to call widget() to get the parent widget
+ * auto label = new QLabel(widget());
+ * label->setText(QStringLiteral("Demo Text"));
  * }
  * \endcode
  *
- * If you want to make the KCModule available only conditionally (i.e. show in
- * the list of available modules only if some test succeeds) then you can use
- * Hidden in the .desktop file. An example:
- * \code
- * Hidden[$e]=$(if test -e /dev/js*; then echo "false"; else echo "true"; fi)
- * \endcode
- * The example executes the given code in a shell and uses the stdout output for
- * the Hidden value (so it's either Hidden=true or Hidden=false).
+ * This KCM can be loaded in a KCMultiDialog of kcmshell6
  *
- * See http://techbase.kde.org/Development/Tutorials/KCM_HowTo
- * for more detailed documentation.
- *
- * @author Matthias Hoelzer-Kluepfel <hoelzer@kde.org>
  * @since 6.0
  */
 class KCMUTILS_EXPORT KCModule : public KAbstractConfigModule
@@ -84,7 +62,7 @@ class KCMUTILS_EXPORT KCModule : public KAbstractConfigModule
 
 public:
     /**
-     * Base class for all KControlModules.
+     * Base class for all QWidgets configuration modules.
      *
      * @note do not emit changed signals here, since they are not yet connected
      *       to any slot.
@@ -107,7 +85,7 @@ public:
 
     /**
      * Get the associated widget that can be embedded
-     *
+     * The returned widget should be used as a parent for widgets you create
      */
     QWidget *widget() const;
 
@@ -123,12 +101,10 @@ protected:
      */
     KConfigDialogManager *addConfig(KCoreConfigSkeleton *config, QWidget *widget);
 
-    friend class KCModuleProxy;
-
 protected Q_SLOTS:
     /**
      * A managed widget was changed, the widget settings and the current
-     * settings are compared and a corresponding changed() signal is emitted
+     * settings are compared and a corresponding needsSaveChanged() signal is emitted
      */
     void widgetChanged();
 
@@ -140,7 +116,6 @@ protected:
 
     /**
      * Returns the defaulted state of automatically managed widgets in this dialog
-     *
      */
     bool managedWidgetDefaultState() const;
 
