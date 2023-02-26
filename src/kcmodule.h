@@ -67,7 +67,7 @@ public:
      * @note do not emit changed signals here, since they are not yet connected
      *       to any slot.
      */
-    explicit KCModule(QWidget *parent = nullptr, const KPluginMetaData &data = {}, const QVariantList &args = {});
+    explicit KCModule(QWidget *parent, const KPluginMetaData &data, const QVariantList &args);
 
     /**
      * Destroys the module.

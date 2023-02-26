@@ -41,7 +41,7 @@ class KCMError : public KCModule
 {
 public:
     KCMError(const QString &msg, const QString &details, QWidget *parent)
-        : KCModule(parent)
+        : KCModule(parent, KPluginMetaData(), QVariantList())
     {
         QString realDetails = details;
         if (realDetails.isNull()) {
