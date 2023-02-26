@@ -131,6 +131,15 @@ protected:
      */
     void unmanagedWidgetDefaultState(bool);
 
+    /**
+     * Utility overload to avoid having to take both parent and parentWidget
+     * KCModuleLoader::loadModule enforces the parent to be a QWidget anyway
+     */
+    explicit KCModule(QObject *parent, const KPluginMetaData &data, const QVariantList &args)
+        : KCModule(qobject_cast<QWidget *>(parent), data, args)
+    {
+    }
+
 private:
     std::unique_ptr<KCModulePrivate> const d;
 };
