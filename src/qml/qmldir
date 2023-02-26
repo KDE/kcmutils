@@ -1,6 +1,0 @@
-# SPDX-License-Identifier: CC0-1.0
-# SPDX-FileCopyrightText: 2022 Alexander Lohnau <alexander.lohnau@gmx.de>
-module org.kde.kcmutils
-plugin kcmutilsqmlplugin
-KPluginSelector 1.0 components/KPluginSelector.qml
-KPluginDelegate 1.0 components/KPluginDelegate.qml

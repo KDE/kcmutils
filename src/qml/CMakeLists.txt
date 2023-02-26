@@ -47,11 +47,12 @@ install(FILES
 install(TARGETS KF6KCMUtilsQuick EXPORT KF6KCMUtilsTargets ${KF_INSTALL_TARGETS_DEFAULT_ARGS})
 
 # QML plugin
-add_library(kcmutilsqmlplugin qmlplugin.cpp)
+ecm_add_qml_module(kcmutilsqmlplugin URI "org.kde.kcmutils" CLASSNAME KCMUtilsQmlPlugin)
+target_sources(kcmutilsqmlplugin PRIVATE qmlplugin.cpp)
 target_link_libraries(kcmutilsqmlplugin PRIVATE Qt6::Qml kcmutils_proxy_model KF6KCMUtilsQuick)
-install (TARGETS kcmutilsqmlplugin DESTINATION ${KDE_INSTALL_QMLDIR}/org/kde/kcmutils)
 
+ecm_target_qml_sources(kcmutilsqmlplugin SOURCES components/KPluginDelegate.qml components/KPluginSelector.qml)
+ecm_target_qml_sources(kcmutilsqmlplugin SOURCES components/private/AboutPlugin.qml PATH private PRIVATE)
 
-install (DIRECTORY components DESTINATION ${KDE_INSTALL_QMLDIR}/org/kde/kcmutils)
-install (FILES qmldir DESTINATION ${KDE_INSTALL_QMLDIR}/org/kde/kcmutils)
+ecm_finalize_qml_module(kcmutilsqmlplugin DESTINATION ${KDE_INSTALL_QMLDIR})
 

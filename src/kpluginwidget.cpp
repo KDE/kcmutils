@@ -33,7 +33,6 @@
 #include <KLocalizedString>
 #include <KPluginMetaData>
 #include <KStandardGuiItem>
-#include <kpluginmetadata.h>
 #include <utility>
 
 static constexpr int s_margin = 5;
