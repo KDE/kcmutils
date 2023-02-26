@@ -14,8 +14,8 @@
 class FakeKcm : public KCModule
 {
 public:
-    FakeKcm(QObject *obj, const QVariantList &)
-        : KCModule()
+    FakeKcm(QWidget *parent, const KPluginMetaData &data, const QVariantList &args)
+        : KCModule(parent, data, args)
     {
         auto label = new QLabel(widget());
         label->setText(QStringLiteral("Demo Text"));

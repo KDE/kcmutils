@@ -54,8 +54,7 @@ class KCModulePrivate
 {
 public:
     KCModulePrivate()
-        : _firstshow(true)
-        , _needsAuthorization(false)
+        : _needsAuthorization(false)
         , _unmanagedWidgetChangeState(false)
         , _unmanagedWidgetDefaultState(false)
         , _unmanagedWidgetDefaultStateCalled(false)
@@ -65,7 +64,6 @@ public:
     void authStatusChanged(int status);
 
     QList<KConfigDialogManager *> managers;
-    bool _firstshow : 1;
 
     bool _needsAuthorization : 1;
 
