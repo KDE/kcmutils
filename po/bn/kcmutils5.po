@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdelibs4\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2022-12-07 00:43+0000\n"
+"POT-Creation-Date: 2023-03-01 21:29+0000\n"
 "PO-Revision-Date: 2012-07-16 14:27+0530\n"
 "Last-Translator: Deepayan Sarkar <deepayan.sarkar@gmail.com>\n"
 "Language-Team: American English <kde-translation@bengalinux.org>\n"
@@ -31,7 +31,7 @@ msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
 msgstr "deepayan.sarkar@gmail.com"
 
-#: kcmoduleloader.cpp:57 kcmoduleloader.cpp:160
+#: kcmoduleloader.cpp:57
 #, kde-format
 msgid "The module %1 is disabled."
 msgstr "মডিউল %1 নিষ্ক্রিয়।"
@@ -42,13 +42,13 @@ msgstr "মডিউল %1 নিষ্ক্রিয়।"
 msgid "The module has been disabled by the system administrator."
 msgstr "অনুগ্রহ করে আপনার সিস্টেম অ্যাডমিনস্ট্রেটরের সঙ্গে যোগাযোগ করুন।"
 
-#: kcmoduleloader.cpp:93 kcmoduleloader.cpp:184
+#: kcmoduleloader.cpp:84
 #, fuzzy, kde-format
 #| msgid "Error opening file."
 msgid "Error loading QML file."
 msgstr "ফাইল খুলতে সমস্যা।"
 
-#: kcmoduleloader.cpp:119
+#: kcmoduleloader.cpp:105
 #, fuzzy, kde-format
 msgid ""
 "<qt><p>Possible reasons:<ul><li>An error occurred during your last system "
@@ -64,53 +64,13 @@ msgstr ""
 "করেছিলেন। যদি এইটি ব্যর্থ হো, যোগাযোগ করা হচ্ছে আপনার পরিবেশক অথবা প্যাকেজকারক "
 "বিবেচনা করো।</p></qt>"
 
-#: kcmoduleloader.cpp:153
-#, kde-format
-msgid "The module %1 could not be found."
-msgstr "মডিউল %1 পাওয়া যায়নি।"
-
-#: kcmoduleloader.cpp:154
-#, kde-format
-msgid ""
-"<qt><p>The diagnosis is:<br />The desktop file %1 could not be found.</p></"
-"qt>"
-msgstr "<qt><p>সমস্যার নির্ণয়:<br />ডেস্কটপ ফাইল %1 খুঁজে পাওয়া যায়নি।</p></qt>"
-
-#: kcmoduleloader.cpp:161
-#, fuzzy, kde-format
-msgid ""
-"<qt><p>Either the hardware/software the module configures is not available "
-"or the module has been disabled by the administrator.</p></qt>"
-msgstr ""
-"<qt><p>হয় hardware/software মডিউল configures প্রাপ্তিসাধ্য নয় অথবা মডিউল "
-"অ্যাডমিনস্ট্রেটরের দ্বারা নিষ্ক্রিয়।</p></qt>"
-
-#: kcmoduleloader.cpp:192
-#, fuzzy, kde-format
-#| msgid "Error opening file."
-msgid "Error loading config module"
-msgstr "ফাইল খুলতে সমস্যা।"
-
-#: kcmoduleloader.cpp:236
-#, kde-format
-msgid "The module %1 is not a valid configuration module."
-msgstr "%1 একটি বৈধ কনফিগারেশন মডিউল নয়।"
-
-#: kcmoduleloader.cpp:237
-#, kde-format
-msgid ""
-"<qt>The diagnosis is:<br />The desktop file %1 does not specify a library.</"
-"qt>"
-msgstr ""
-"<qt>সমস্যার নির্ণয়:<br />ডেস্কটপ ফাইল %1 কোন লাইব্রেরী নির্ধারণ করে না।</qt>"
-
-#: kcmoduleproxy.cpp:108
+#: kcmoduleproxy.cpp:98
 #, kde-format
 msgctxt "Argument is application name"
 msgid "This configuration section is already opened in %1"
 msgstr "এই কনফিগারেশন বিভাগটি আগে থেকেই %1-তে  খোলা রয়েছে"
 
-#: kcmultidialog.cpp:50
+#: kcmultidialog.cpp:49
 #, fuzzy, kde-format
 #| msgid ""
 #| "The document \"%1\" has been modified.\n"
@@ -122,93 +82,28 @@ msgstr ""
 "\"%1\" নামক নথীটি পরিবর্তিত হয়েছে।\n"
 "আপনি পরিবর্তনগুলি সংরক্ষণ করতে চান না ফেলে দিতে চান?"
 
-#: kcmultidialog.cpp:52
+#: kcmultidialog.cpp:51
 #, fuzzy, kde-format
 #| msgid "Settings"
 msgid "Apply Settings"
 msgstr "পছন্দ"
 
-#: kcmultidialog.cpp:257 kpluginselector.cpp:809 kpluginwidget.cpp:330
+#: kcmultidialog.cpp:243 kpluginwidget.cpp:329
 #, kde-format
 msgid "Configure"
 msgstr "কনফিগার করো"
 
-#: kpluginselector.cpp:136
-#, kde-format
-msgid ""
-"Automatic changes have been performed due to plugin dependencies. Click here "
-"for further information"
-msgstr ""
-"প্লাগিন-এর নির্ভরতাদরুন  কিছু স্বয়ংক্রিয় পরিবর্তন করা হয়েছে। আরও তথ্যের জন্য এখানে "
-"ক্লিক করুন।"
-
-#: kpluginselector.cpp:204
-#, kde-format
-msgid ""
-"Automatic changes have been performed in order to satisfy plugin "
-"dependencies:\n"
-msgstr "প্লাগিন-এর নির্ভরতার দরুন  কিছু স্বয়ংক্রিয় পরিবর্তন করা হয়েছে।\n"
-
-#: kpluginselector.cpp:210
-#, kde-format
-msgid ""
-"\n"
-"    %1 plugin has been automatically checked because of the dependency of %2 "
-"plugin"
-msgstr ""
-"\n"
-"%1 প্লাগিন-টি নির্বাচন করা হয়েছে কারণ  %2 প্লাগিন-টি এর উপর নির্ভর করে।"
-
-#: kpluginselector.cpp:212
-#, kde-format
-msgid ""
-"\n"
-"    %1 plugin has been automatically unchecked because of its dependency on "
-"%2 plugin"
-msgstr ""
-"\n"
-"%1 প্লাগিন-টি নির্বাচন করা হয়নি কারণ এটি %2 প্লাগিন-টির উপর নির্ভর করে।"
-
-#: kpluginselector.cpp:216
-#, kde-format
-msgid "Dependency Check"
-msgstr "নির্ভরতা পরীক্ষা"
-
-#: kpluginselector.cpp:234
-#, kde-format
-msgid "%1 plugin automatically added due to plugin dependencies"
-msgid_plural "%1 plugins automatically added due to plugin dependencies"
-msgstr[0] "প্লাগিন নির্ভরতার দরুন একটি প্লাগিন নিজে থেকে যোগ করা হয়েছে।"
-msgstr[1] "প্লাগিন নির্ভরতার দরুন %1-টি প্লাগিন নিজে থেকে যোগ করা হয়েছে।"
-
-#: kpluginselector.cpp:238
-#, kde-format
-msgid ", "
-msgstr ", "
-
-#: kpluginselector.cpp:242
-#, kde-format
-msgid "%1 plugin automatically removed due to plugin dependencies"
-msgid_plural "%1 plugins automatically removed due to plugin dependencies"
-msgstr[0] "প্লাগিন নির্ভরতার দরুন একটি প্লাগিন নিজে থেকে বাদ দেওয়া হয়েছে।"
-msgstr[1] "প্লাগিন নির্ভরতার দরুন %1-টি প্লাগিন নিজে থেকে বাদ দেওয়া হয়েছে।"
-
-#: kpluginselector.cpp:264 kpluginwidget.cpp:59
+#: kpluginwidget.cpp:58
 #, fuzzy, kde-format
 #| msgid "Search"
 msgid "Search..."
 msgstr "অনুসন্ধান"
 
-#: kpluginselector.cpp:804 kpluginwidget.cpp:325
+#: kpluginwidget.cpp:324
 #, fuzzy, kde-format
 #| msgid "&About"
 msgid "About"
 msgstr "&পরিচিতি"
-
-#: ksettings/dialog.cpp:222
-#, kde-format
-msgid "Enable component"
-msgstr "কম্পোনেন্ট সক্রিয় করো"
 
 #: qml/components/KPluginDelegate.qml:48
 #, fuzzy, kde-format
@@ -276,6 +171,83 @@ msgstr "অনুবাদ"
 #| msgid "&Send Email"
 msgid "Send an email to %1"
 msgstr "&ই-মেইল পাঠাও"
+
+#~ msgid "The module %1 could not be found."
+#~ msgstr "মডিউল %1 পাওয়া যায়নি।"
+
+#~ msgid ""
+#~ "<qt><p>The diagnosis is:<br />The desktop file %1 could not be found.</"
+#~ "p></qt>"
+#~ msgstr "<qt><p>সমস্যার নির্ণয়:<br />ডেস্কটপ ফাইল %1 খুঁজে পাওয়া যায়নি।</p></qt>"
+
+#, fuzzy
+#~ msgid ""
+#~ "<qt><p>Either the hardware/software the module configures is not "
+#~ "available or the module has been disabled by the administrator.</p></qt>"
+#~ msgstr ""
+#~ "<qt><p>হয় hardware/software মডিউল configures প্রাপ্তিসাধ্য নয় অথবা মডিউল "
+#~ "অ্যাডমিনস্ট্রেটরের দ্বারা নিষ্ক্রিয়।</p></qt>"
+
+#, fuzzy
+#~| msgid "Error opening file."
+#~ msgid "Error loading config module"
+#~ msgstr "ফাইল খুলতে সমস্যা।"
+
+#~ msgid "The module %1 is not a valid configuration module."
+#~ msgstr "%1 একটি বৈধ কনফিগারেশন মডিউল নয়।"
+
+#~ msgid ""
+#~ "<qt>The diagnosis is:<br />The desktop file %1 does not specify a library."
+#~ "</qt>"
+#~ msgstr ""
+#~ "<qt>সমস্যার নির্ণয়:<br />ডেস্কটপ ফাইল %1 কোন লাইব্রেরী নির্ধারণ করে না।</qt>"
+
+#~ msgid ""
+#~ "Automatic changes have been performed due to plugin dependencies. Click "
+#~ "here for further information"
+#~ msgstr ""
+#~ "প্লাগিন-এর নির্ভরতাদরুন  কিছু স্বয়ংক্রিয় পরিবর্তন করা হয়েছে। আরও তথ্যের জন্য এখানে "
+#~ "ক্লিক করুন।"
+
+#~ msgid ""
+#~ "Automatic changes have been performed in order to satisfy plugin "
+#~ "dependencies:\n"
+#~ msgstr "প্লাগিন-এর নির্ভরতার দরুন  কিছু স্বয়ংক্রিয় পরিবর্তন করা হয়েছে।\n"
+
+#~ msgid ""
+#~ "\n"
+#~ "    %1 plugin has been automatically checked because of the dependency of "
+#~ "%2 plugin"
+#~ msgstr ""
+#~ "\n"
+#~ "%1 প্লাগিন-টি নির্বাচন করা হয়েছে কারণ  %2 প্লাগিন-টি এর উপর নির্ভর করে।"
+
+#~ msgid ""
+#~ "\n"
+#~ "    %1 plugin has been automatically unchecked because of its dependency "
+#~ "on %2 plugin"
+#~ msgstr ""
+#~ "\n"
+#~ "%1 প্লাগিন-টি নির্বাচন করা হয়নি কারণ এটি %2 প্লাগিন-টির উপর নির্ভর করে।"
+
+#~ msgid "Dependency Check"
+#~ msgstr "নির্ভরতা পরীক্ষা"
+
+#~ msgid "%1 plugin automatically added due to plugin dependencies"
+#~ msgid_plural "%1 plugins automatically added due to plugin dependencies"
+#~ msgstr[0] "প্লাগিন নির্ভরতার দরুন একটি প্লাগিন নিজে থেকে যোগ করা হয়েছে।"
+#~ msgstr[1] "প্লাগিন নির্ভরতার দরুন %1-টি প্লাগিন নিজে থেকে যোগ করা হয়েছে।"
+
+#~ msgid ", "
+#~ msgstr ", "
+
+#~ msgid "%1 plugin automatically removed due to plugin dependencies"
+#~ msgid_plural "%1 plugins automatically removed due to plugin dependencies"
+#~ msgstr[0] "প্লাগিন নির্ভরতার দরুন একটি প্লাগিন নিজে থেকে বাদ দেওয়া হয়েছে।"
+#~ msgstr[1] "প্লাগিন নির্ভরতার দরুন %1-টি প্লাগিন নিজে থেকে বাদ দেওয়া হয়েছে।"
+
+#~ msgid "Enable component"
+#~ msgstr "কম্পোনেন্ট সক্রিয় করো"
 
 #~ msgid "Distance between desktop icons"
 #~ msgstr "ডেস্কটপ আইকনের মধ্যে দূরত্ব"

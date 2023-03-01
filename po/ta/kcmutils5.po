@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdelibs4\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2022-12-07 00:43+0000\n"
+"POT-Creation-Date: 2023-03-01 21:29+0000\n"
 "PO-Revision-Date: 2022-05-24 21:21+0530\n"
 "Last-Translator: Kishore G <kishore96@gmail.com>\n"
 "Language-Team: Tamil <kde-i18n-doc@kde.org>\n"
@@ -30,7 +30,7 @@ msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
 msgstr "amachu@yavarkkum.org, Kde-l10n-ta@kde.org"
 
-#: kcmoduleloader.cpp:57 kcmoduleloader.cpp:160
+#: kcmoduleloader.cpp:57
 #, kde-format
 msgid "The module %1 is disabled."
 msgstr "%1 என்ற கூறு முடக்கப்பட்டுள்ளது."
@@ -40,12 +40,12 @@ msgstr "%1 என்ற கூறு முடக்கப்பட்டுள�
 msgid "The module has been disabled by the system administrator."
 msgstr "இக்கூறு, கணினியின் நிர்வாகியால் முடக்கப்பட்டுள்ளது."
 
-#: kcmoduleloader.cpp:93 kcmoduleloader.cpp:184
+#: kcmoduleloader.cpp:84
 #, kde-format
 msgid "Error loading QML file."
 msgstr "QML கோப்பை ஏற்றுவதில் சிக்கல்."
 
-#: kcmoduleloader.cpp:119
+#: kcmoduleloader.cpp:105
 #, kde-format
 msgid ""
 "<qt><p>Possible reasons:<ul><li>An error occurred during your last system "
@@ -60,52 +60,13 @@ msgstr ""
 "p><p>இவற்றை சரிபார்த்து, சிக்கலறிக்கையில் குறுப்பிடப்பட்டுள்ள கூறை நீக்க முயற்சியுங்கள். "
 "அதுவும் தோல்வியடைந்தால், உங்கள் நிரல் விநியோகிப்பாளரை அணுகுங்கள்.</p></qt>"
 
-#: kcmoduleloader.cpp:153
-#, kde-format
-msgid "The module %1 could not be found."
-msgstr "%1 என்ற கூறை கண்டுபிடிக்க முடியவில்லை."
-
-#: kcmoduleloader.cpp:154
-#, kde-format
-msgid ""
-"<qt><p>The diagnosis is:<br />The desktop file %1 could not be found.</p></"
-"qt>"
-msgstr ""
-"<qt><p>காரணம்:<br />%1 என்ற desktop கோப்பை கண்டுபிடிக்க முடியவில்லை.</p></qt>"
-
-#: kcmoduleloader.cpp:161
-#, kde-format
-msgid ""
-"<qt><p>Either the hardware/software the module configures is not available "
-"or the module has been disabled by the administrator.</p></qt>"
-msgstr ""
-"<qt><p>இக்கூறு கட்டுப்படுத்தும் நிரல்/வன்பொருள் இல்லை அல்லது கணினியின் நிர்வாகியால் "
-"இக்கூறு முடக்கப்பட்டுள்ளது.</p></qt>"
-
-#: kcmoduleloader.cpp:192
-#, kde-format
-msgid "Error loading config module"
-msgstr "அமைப்புக்கூறை ஏற்றுவதில் சிக்கல்"
-
-#: kcmoduleloader.cpp:236
-#, kde-format
-msgid "The module %1 is not a valid configuration module."
-msgstr "%1 என்பது ஓர் முறையான அமைப்புக்கூறு அல்ல."
-
-#: kcmoduleloader.cpp:237
-#, kde-format
-msgid ""
-"<qt>The diagnosis is:<br />The desktop file %1 does not specify a library.</"
-"qt>"
-msgstr "<qt>காரணம்:<br />%1 என்ற desktop கோப்பு, நிரலகத்தை குறிப்பிடவில்லை.</qt>"
-
-#: kcmoduleproxy.cpp:108
+#: kcmoduleproxy.cpp:98
 #, kde-format
 msgctxt "Argument is application name"
 msgid "This configuration section is already opened in %1"
 msgstr "%1 தனில் இவ்வடிவமைப்புக் கோப்பு ஏற்கனவே திறக்கப்பட்டுள்ளது"
 
-#: kcmultidialog.cpp:50
+#: kcmultidialog.cpp:49
 #, kde-format
 msgid ""
 "The settings of the current module have changed.\n"
@@ -114,91 +75,25 @@ msgstr ""
 "தற்போதைய பாகத்தின் அமைப்புகள் மாற்றப்பட்டுள்ளன.\n"
 "காக்க விரும்புகிறீர்களா அல்லது தவிர்க்க விரும்புகிறீர்களா?"
 
-#: kcmultidialog.cpp:52
+#: kcmultidialog.cpp:51
 #, kde-format
 msgid "Apply Settings"
 msgstr "அமைப்புகளை செயல்படுத்தவும்"
 
-#: kcmultidialog.cpp:257 kpluginselector.cpp:809 kpluginwidget.cpp:330
+#: kcmultidialog.cpp:243 kpluginwidget.cpp:329
 #, kde-format
 msgid "Configure"
 msgstr "வடிவமை"
 
-#: kpluginselector.cpp:136
-#, kde-format
-msgid ""
-"Automatic changes have been performed due to plugin dependencies. Click here "
-"for further information"
-msgstr ""
-"செருகு சார்புடைமைகளின் காரணமாக தானாகவே மாற்றங்கள் செய்யப்பட்டுள்ளன. மேற்கொண்டு விவரமறிய "
-"அங்கே சொடுக்கவும்."
-
-#: kpluginselector.cpp:204
-#, kde-format
-msgid ""
-"Automatic changes have been performed in order to satisfy plugin "
-"dependencies:\n"
-msgstr ""
-"செருகு சார்புடைமைகளைத் திருப்தி படுத்திட வேண்டி தானான மாற்றங்கள் செய்யப்பட்டுள்ளன:\n"
-
-#: kpluginselector.cpp:210
-#, kde-format
-msgid ""
-"\n"
-"    %1 plugin has been automatically checked because of the dependency of %2 "
-"plugin"
-msgstr ""
-"\n"
-"    %2 செருகின் மீதான சார்புடைமையின் காரணமாக %1 செருகு தானாகவே சரிசெய்யப்பட்டது"
-
-#: kpluginselector.cpp:212
-#, kde-format
-msgid ""
-"\n"
-"    %1 plugin has been automatically unchecked because of its dependency on "
-"%2 plugin"
-msgstr ""
-"\n"
-"    %2 செருகின் மீதான சார்புடைமையின் காரணமாக %1 செருகு தானாகவே கழட்டிவிடப்பட்டது"
-
-#: kpluginselector.cpp:216
-#, kde-format
-msgid "Dependency Check"
-msgstr "சார்புடைமை கோதனை"
-
-#: kpluginselector.cpp:234
-#, kde-format
-msgid "%1 plugin automatically added due to plugin dependencies"
-msgid_plural "%1 plugins automatically added due to plugin dependencies"
-msgstr[0] "செருகு சார்புடைமைகளின் காரணமாக தானாகவே %1 செருகி சேர்க்கப்பட்டது"
-msgstr[1] "%1 செருகிகள் சார்புடைமைகளின் காரணமாக தானாகவே சேர்க்கப்பட்டன"
-
-#: kpluginselector.cpp:238
-#, kde-format
-msgid ", "
-msgstr ", "
-
-#: kpluginselector.cpp:242
-#, kde-format
-msgid "%1 plugin automatically removed due to plugin dependencies"
-msgid_plural "%1 plugins automatically removed due to plugin dependencies"
-msgstr[0] "%1 செருகு சார்புடைமைகளின் காரணமாக தானாகவே அகற்றப்பட்டது"
-msgstr[1] "%1 செருகிகள் சார்புடைமைகளின் காரணமாக தானாகவே அகற்றப்பட்டன"
-
-#: kpluginselector.cpp:264 kpluginwidget.cpp:59
+#: kpluginwidget.cpp:58
 #, kde-format
 msgid "Search..."
 msgstr "தேடு..."
 
-#: kpluginselector.cpp:804 kpluginwidget.cpp:325
+#: kpluginwidget.cpp:324
 #, kde-format
 msgid "About"
 msgstr "பற்றி"
-
-#: ksettings/dialog.cpp:222
-#, kde-format
-msgid "Enable component"
-msgstr "கூறை செயல்படுத்து"
 
 #: qml/components/KPluginDelegate.qml:48
 #, kde-format
@@ -257,6 +152,81 @@ msgstr "மொழிபெயர்ப்பாளர்கள்"
 #, kde-format
 msgid "Send an email to %1"
 msgstr "%1 என்பவருக்கு மின்னஞ்சல் அனுப்பு"
+
+#~ msgid "The module %1 could not be found."
+#~ msgstr "%1 என்ற கூறை கண்டுபிடிக்க முடியவில்லை."
+
+#~ msgid ""
+#~ "<qt><p>The diagnosis is:<br />The desktop file %1 could not be found.</"
+#~ "p></qt>"
+#~ msgstr ""
+#~ "<qt><p>காரணம்:<br />%1 என்ற desktop கோப்பை கண்டுபிடிக்க முடியவில்லை.</p></qt>"
+
+#~ msgid ""
+#~ "<qt><p>Either the hardware/software the module configures is not "
+#~ "available or the module has been disabled by the administrator.</p></qt>"
+#~ msgstr ""
+#~ "<qt><p>இக்கூறு கட்டுப்படுத்தும் நிரல்/வன்பொருள் இல்லை அல்லது கணினியின் நிர்வாகியால் "
+#~ "இக்கூறு முடக்கப்பட்டுள்ளது.</p></qt>"
+
+#~ msgid "Error loading config module"
+#~ msgstr "அமைப்புக்கூறை ஏற்றுவதில் சிக்கல்"
+
+#~ msgid "The module %1 is not a valid configuration module."
+#~ msgstr "%1 என்பது ஓர் முறையான அமைப்புக்கூறு அல்ல."
+
+#~ msgid ""
+#~ "<qt>The diagnosis is:<br />The desktop file %1 does not specify a library."
+#~ "</qt>"
+#~ msgstr "<qt>காரணம்:<br />%1 என்ற desktop கோப்பு, நிரலகத்தை குறிப்பிடவில்லை.</qt>"
+
+#~ msgid ""
+#~ "Automatic changes have been performed due to plugin dependencies. Click "
+#~ "here for further information"
+#~ msgstr ""
+#~ "செருகு சார்புடைமைகளின் காரணமாக தானாகவே மாற்றங்கள் செய்யப்பட்டுள்ளன. மேற்கொண்டு "
+#~ "விவரமறிய அங்கே சொடுக்கவும்."
+
+#~ msgid ""
+#~ "Automatic changes have been performed in order to satisfy plugin "
+#~ "dependencies:\n"
+#~ msgstr ""
+#~ "செருகு சார்புடைமைகளைத் திருப்தி படுத்திட வேண்டி தானான மாற்றங்கள் செய்யப்பட்டுள்ளன:\n"
+
+#~ msgid ""
+#~ "\n"
+#~ "    %1 plugin has been automatically checked because of the dependency of "
+#~ "%2 plugin"
+#~ msgstr ""
+#~ "\n"
+#~ "    %2 செருகின் மீதான சார்புடைமையின் காரணமாக %1 செருகு தானாகவே சரிசெய்யப்பட்டது"
+
+#~ msgid ""
+#~ "\n"
+#~ "    %1 plugin has been automatically unchecked because of its dependency "
+#~ "on %2 plugin"
+#~ msgstr ""
+#~ "\n"
+#~ "    %2 செருகின் மீதான சார்புடைமையின் காரணமாக %1 செருகு தானாகவே கழட்டிவிடப்பட்டது"
+
+#~ msgid "Dependency Check"
+#~ msgstr "சார்புடைமை கோதனை"
+
+#~ msgid "%1 plugin automatically added due to plugin dependencies"
+#~ msgid_plural "%1 plugins automatically added due to plugin dependencies"
+#~ msgstr[0] "செருகு சார்புடைமைகளின் காரணமாக தானாகவே %1 செருகி சேர்க்கப்பட்டது"
+#~ msgstr[1] "%1 செருகிகள் சார்புடைமைகளின் காரணமாக தானாகவே சேர்க்கப்பட்டன"
+
+#~ msgid ", "
+#~ msgstr ", "
+
+#~ msgid "%1 plugin automatically removed due to plugin dependencies"
+#~ msgid_plural "%1 plugins automatically removed due to plugin dependencies"
+#~ msgstr[0] "%1 செருகு சார்புடைமைகளின் காரணமாக தானாகவே அகற்றப்பட்டது"
+#~ msgstr[1] "%1 செருகிகள் சார்புடைமைகளின் காரணமாக தானாகவே அகற்றப்பட்டன"
+
+#~ msgid "Enable component"
+#~ msgstr "கூறை செயல்படுத்து"
 
 #~ msgid "Distance between desktop icons"
 #~ msgstr "திரையில் முகவுருகளுக்கிடையேயான இடைவெளி"

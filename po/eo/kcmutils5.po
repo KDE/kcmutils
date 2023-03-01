@@ -14,7 +14,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdelibs4\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2022-12-07 00:43+0000\n"
+"POT-Creation-Date: 2023-03-01 21:29+0000\n"
 "PO-Revision-Date: 2023-01-05 10:00+0100\n"
 "Last-Translator: Oliver Kellogg <okellogg@users.sourceforge.net>\n"
 "Language-Team: Esperanto <kde-i18n-doc@kde.org>\n"
@@ -38,7 +38,7 @@ msgstr ""
 "matthias@peick.de, okellogg@users.sourceforge.net, cfmckee@gmail.com, "
 "axel@esperanto-jeunes.org, michael.moroni@mailoo.org"
 
-#: kcmoduleloader.cpp:57 kcmoduleloader.cpp:160
+#: kcmoduleloader.cpp:57
 #, kde-format
 msgid "The module %1 is disabled."
 msgstr "La modulo %1 estas malŝaltita."
@@ -48,12 +48,12 @@ msgstr "La modulo %1 estas malŝaltita."
 msgid "The module has been disabled by the system administrator."
 msgstr "La modulo estis malebligata far le sistemadministranto."
 
-#: kcmoduleloader.cpp:93 kcmoduleloader.cpp:184
+#: kcmoduleloader.cpp:84
 #, kde-format
 msgid "Error loading QML file."
 msgstr "Eraro dum lego de QML-dosiero."
 
-#: kcmoduleloader.cpp:119
+#: kcmoduleloader.cpp:105
 #, kde-format
 msgid ""
 "<qt><p>Possible reasons:<ul><li>An error occurred during your last system "
@@ -68,55 +68,13 @@ msgstr ""
 "kaj provu forigi la modulon nomitan en la erarmesaĝo. Se tio malsukcesas, "
 "konsideru kontakti vian distribuanton aŭ pakaĵanton.</p></qt>"
 
-#: kcmoduleloader.cpp:153
-#, kde-format
-msgid "The module %1 could not be found."
-msgstr "La modulo %1 ne troveblas."
-
-#: kcmoduleloader.cpp:154
-#, kde-format
-msgid ""
-"<qt><p>The diagnosis is:<br />The desktop file %1 could not be found.</p></"
-"qt>"
-msgstr ""
-"<qt><p>La diagnozo estas:<br />La labortabla dosiero %1 ne troveblas.</p></"
-"qt>"
-
-#: kcmoduleloader.cpp:161
-#, kde-format
-msgid ""
-"<qt><p>Either the hardware/software the module configures is not available "
-"or the module has been disabled by the administrator.</p></qt>"
-msgstr ""
-"<qt><p>Aŭ la aparataro/programaro kiun la modulo agordas ne disponeblas aŭ "
-"la administranto malŝaltis la modulon.</p></qt>"
-
-#: kcmoduleloader.cpp:192
-#, kde-format
-msgid "Error loading config module"
-msgstr "Eraro dum lego de agordmodulo"
-
-#: kcmoduleloader.cpp:236
-#, kde-format
-msgid "The module %1 is not a valid configuration module."
-msgstr "La modulo %1 ne estas valida agordmodulo."
-
-#: kcmoduleloader.cpp:237
-#, kde-format
-msgid ""
-"<qt>The diagnosis is:<br />The desktop file %1 does not specify a library.</"
-"qt>"
-msgstr ""
-"<qt>La diagnozo estas:<br />La labortabla dosiero %1 ne specifas bibliotekon."
-"</qt>"
-
-#: kcmoduleproxy.cpp:108
+#: kcmoduleproxy.cpp:98
 #, kde-format
 msgctxt "Argument is application name"
 msgid "This configuration section is already opened in %1"
 msgstr "Ĉi tiu sekcio de agordoj estas jam malfermita en %1"
 
-#: kcmultidialog.cpp:50
+#: kcmultidialog.cpp:49
 #, kde-format
 msgid ""
 "The settings of the current module have changed.\n"
@@ -125,97 +83,25 @@ msgstr ""
 "La dokumento de la aktuala modulo ŝanĝis.\n"
 "Ĉu vi volas apliki la ŝanĝojn aŭ ignori ilin?"
 
-#: kcmultidialog.cpp:52
+#: kcmultidialog.cpp:51
 #, kde-format
 msgid "Apply Settings"
 msgstr "Apliki agordojn"
 
-#: kcmultidialog.cpp:257 kpluginselector.cpp:809 kpluginwidget.cpp:330
+#: kcmultidialog.cpp:243 kpluginwidget.cpp:329
 #, kde-format
 msgid "Configure"
 msgstr "Agordi"
 
-#: kpluginselector.cpp:136
-#, kde-format
-msgid ""
-"Automatic changes have been performed due to plugin dependencies. Click here "
-"for further information"
-msgstr ""
-"Aŭtomataj ŝanĝoj estis faritaj pro dependecoj de kromprogramo. Alklaku ĉi "
-"tie por pliaj informoj"
-
-#: kpluginselector.cpp:204
-#, kde-format
-msgid ""
-"Automatic changes have been performed in order to satisfy plugin "
-"dependencies:\n"
-msgstr ""
-"Aŭtomataj ŝanĝoj estis faritaj por plenumi dependecojn de kromprogramo:\n"
-
-#: kpluginselector.cpp:210
-#, kde-format
-msgid ""
-"\n"
-"    %1 plugin has been automatically checked because of the dependency of %2 "
-"plugin"
-msgstr ""
-"\n"
-"    Kromprogramo %1 estis aŭtomate markita pro ties dependeco de "
-"kromprogrameto %2"
-
-#: kpluginselector.cpp:212
-#, kde-format
-msgid ""
-"\n"
-"    %1 plugin has been automatically unchecked because of its dependency on "
-"%2 plugin"
-msgstr ""
-"\n"
-"    Kromprogramo %1 estis aŭtomate malmarkita pro ties dependeco de "
-"kromprogrameto %2"
-
-#: kpluginselector.cpp:216
-#, kde-format
-msgid "Dependency Check"
-msgstr "Kontrolo de dependecoj"
-
-#: kpluginselector.cpp:234
-#, kde-format
-msgid "%1 plugin automatically added due to plugin dependencies"
-msgid_plural "%1 plugins automatically added due to plugin dependencies"
-msgstr[0] ""
-"Kromprogramo %1 estis aŭtomate aldonita pro dependecoj de kromprogramoj"
-msgstr[1] ""
-"Kromprogramoj %1 estis aŭtomate aldonitaj pro dependecoj de kromprogramoj"
-
-#: kpluginselector.cpp:238
-#, kde-format
-msgid ", "
-msgstr ", "
-
-#: kpluginselector.cpp:242
-#, kde-format
-msgid "%1 plugin automatically removed due to plugin dependencies"
-msgid_plural "%1 plugins automatically removed due to plugin dependencies"
-msgstr[0] ""
-"Kromprogramo %1 estis aŭtomate forigita pro dependecoj de kromprogramoj"
-msgstr[1] ""
-"Kromprogramoj %1 estis aŭtomate forigitaj pro dependecoj de kromprogramoj"
-
-#: kpluginselector.cpp:264 kpluginwidget.cpp:59
+#: kpluginwidget.cpp:58
 #, kde-format
 msgid "Search..."
 msgstr "Serĉi..."
 
-#: kpluginselector.cpp:804 kpluginwidget.cpp:325
+#: kpluginwidget.cpp:324
 #, kde-format
 msgid "About"
 msgstr "Pri"
-
-#: ksettings/dialog.cpp:222
-#, kde-format
-msgid "Enable component"
-msgstr "Enŝalti komponanton"
 
 #: qml/components/KPluginDelegate.qml:48
 #, kde-format
@@ -274,3 +160,87 @@ msgstr "Tradukistoj"
 #, kde-format
 msgid "Send an email to %1"
 msgstr "Sendi retleteron al %1"
+
+#~ msgid "The module %1 could not be found."
+#~ msgstr "La modulo %1 ne troveblas."
+
+#~ msgid ""
+#~ "<qt><p>The diagnosis is:<br />The desktop file %1 could not be found.</"
+#~ "p></qt>"
+#~ msgstr ""
+#~ "<qt><p>La diagnozo estas:<br />La labortabla dosiero %1 ne troveblas.</"
+#~ "p></qt>"
+
+#~ msgid ""
+#~ "<qt><p>Either the hardware/software the module configures is not "
+#~ "available or the module has been disabled by the administrator.</p></qt>"
+#~ msgstr ""
+#~ "<qt><p>Aŭ la aparataro/programaro kiun la modulo agordas ne disponeblas "
+#~ "aŭ la administranto malŝaltis la modulon.</p></qt>"
+
+#~ msgid "Error loading config module"
+#~ msgstr "Eraro dum lego de agordmodulo"
+
+#~ msgid "The module %1 is not a valid configuration module."
+#~ msgstr "La modulo %1 ne estas valida agordmodulo."
+
+#~ msgid ""
+#~ "<qt>The diagnosis is:<br />The desktop file %1 does not specify a library."
+#~ "</qt>"
+#~ msgstr ""
+#~ "<qt>La diagnozo estas:<br />La labortabla dosiero %1 ne specifas "
+#~ "bibliotekon.</qt>"
+
+#~ msgid ""
+#~ "Automatic changes have been performed due to plugin dependencies. Click "
+#~ "here for further information"
+#~ msgstr ""
+#~ "Aŭtomataj ŝanĝoj estis faritaj pro dependecoj de kromprogramo. Alklaku ĉi "
+#~ "tie por pliaj informoj"
+
+#~ msgid ""
+#~ "Automatic changes have been performed in order to satisfy plugin "
+#~ "dependencies:\n"
+#~ msgstr ""
+#~ "Aŭtomataj ŝanĝoj estis faritaj por plenumi dependecojn de kromprogramo:\n"
+
+#~ msgid ""
+#~ "\n"
+#~ "    %1 plugin has been automatically checked because of the dependency of "
+#~ "%2 plugin"
+#~ msgstr ""
+#~ "\n"
+#~ "    Kromprogramo %1 estis aŭtomate markita pro ties dependeco de "
+#~ "kromprogrameto %2"
+
+#~ msgid ""
+#~ "\n"
+#~ "    %1 plugin has been automatically unchecked because of its dependency "
+#~ "on %2 plugin"
+#~ msgstr ""
+#~ "\n"
+#~ "    Kromprogramo %1 estis aŭtomate malmarkita pro ties dependeco de "
+#~ "kromprogrameto %2"
+
+#~ msgid "Dependency Check"
+#~ msgstr "Kontrolo de dependecoj"
+
+#~ msgid "%1 plugin automatically added due to plugin dependencies"
+#~ msgid_plural "%1 plugins automatically added due to plugin dependencies"
+#~ msgstr[0] ""
+#~ "Kromprogramo %1 estis aŭtomate aldonita pro dependecoj de kromprogramoj"
+#~ msgstr[1] ""
+#~ "Kromprogramoj %1 estis aŭtomate aldonitaj pro dependecoj de kromprogramoj"
+
+#~ msgid ", "
+#~ msgstr ", "
+
+#~ msgid "%1 plugin automatically removed due to plugin dependencies"
+#~ msgid_plural "%1 plugins automatically removed due to plugin dependencies"
+#~ msgstr[0] ""
+#~ "Kromprogramo %1 estis aŭtomate forigita pro dependecoj de kromprogramoj"
+#~ msgstr[1] ""
+#~ "Kromprogramoj %1 estis aŭtomate forigitaj pro dependecoj de kromprogramoj"
+
+#~ msgid "Enable component"
+#~ msgstr "Enŝalti komponanton"

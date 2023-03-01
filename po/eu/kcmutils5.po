@@ -14,7 +14,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kcmutils\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2022-12-07 00:43+0000\n"
+"POT-Creation-Date: 2023-03-01 21:29+0000\n"
 "PO-Revision-Date: 2022-07-30 23:12+0200\n"
 "Last-Translator: Iñigo Salvador Azurmendi <xalba@ni.eus>\n"
 "Language-Team: Basque <kde-i18n-eu@kde.org>\n"
@@ -35,7 +35,7 @@ msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
 msgstr "marcos@euskalgnu.org,igaztanaga@gmail.com,xalba@euskalnet.net"
 
-#: kcmoduleloader.cpp:57 kcmoduleloader.cpp:160
+#: kcmoduleloader.cpp:57
 #, kde-format
 msgid "The module %1 is disabled."
 msgstr "%1 modulua desgaituta dago."
@@ -45,12 +45,12 @@ msgstr "%1 modulua desgaituta dago."
 msgid "The module has been disabled by the system administrator."
 msgstr "Modulua ezgaitu du sistema-administratzaileak."
 
-#: kcmoduleloader.cpp:93 kcmoduleloader.cpp:184
+#: kcmoduleloader.cpp:84
 #, kde-format
 msgid "Error loading QML file."
 msgstr "Errorea QML fitxategia zamatzean."
 
-#: kcmoduleloader.cpp:119
+#: kcmoduleloader.cpp:105
 #, kde-format
 msgid ""
 "<qt><p>Possible reasons:<ul><li>An error occurred during your last system "
@@ -66,55 +66,13 @@ msgstr ""
 "modulua kentzen. Honek huts egiten badu, zure banatzailearekin edo "
 "paketegilearekin harremanetan jartzea aintzat hartu.</p></qt>"
 
-#: kcmoduleloader.cpp:153
-#, kde-format
-msgid "The module %1 could not be found."
-msgstr "%1 modulua ezin izan da aurkitu."
-
-#: kcmoduleloader.cpp:154
-#, kde-format
-msgid ""
-"<qt><p>The diagnosis is:<br />The desktop file %1 could not be found.</p></"
-"qt>"
-msgstr ""
-"<qt><p>Diagnostikoa:<br />Ezin izan da mahaigaineko %1 fitxategia aurkitu.</"
-"p></qt>"
-
-#: kcmoduleloader.cpp:161
-#, kde-format
-msgid ""
-"<qt><p>Either the hardware/software the module configures is not available "
-"or the module has been disabled by the administrator.</p></qt>"
-msgstr ""
-"<qt><p>Hardware/softwareko moduloaren konfigurazioa ez dago eskuragarri edo "
-"administratzaileak desgaitu egin du moduloa.</p></qt>"
-
-#: kcmoduleloader.cpp:192
-#, kde-format
-msgid "Error loading config module"
-msgstr "Errorea konfiguratzeko modulua zamatzean"
-
-#: kcmoduleloader.cpp:236
-#, kde-format
-msgid "The module %1 is not a valid configuration module."
-msgstr "%1 modulua konfigurazio modulu baliogabea da."
-
-#: kcmoduleloader.cpp:237
-#, kde-format
-msgid ""
-"<qt>The diagnosis is:<br />The desktop file %1 does not specify a library.</"
-"qt>"
-msgstr ""
-"<qt>Diagnostikoa:<br />Mahaigaineko %1 fitxategiak ez du liburutegi bat "
-"zehazten.</qt>"
-
-#: kcmoduleproxy.cpp:108
+#: kcmoduleproxy.cpp:98
 #, kde-format
 msgctxt "Argument is application name"
 msgid "This configuration section is already opened in %1"
 msgstr "Konfigurazioko atal hau dagoeneko %1(e)n irekita dago"
 
-#: kcmultidialog.cpp:50
+#: kcmultidialog.cpp:49
 #, kde-format
 msgid ""
 "The settings of the current module have changed.\n"
@@ -123,94 +81,25 @@ msgstr ""
 "Uneko moduluaren ezarpenak aldatu egin dira.\n"
 "Aldaketak ezarri edo baztertu nahi dituzu?"
 
-#: kcmultidialog.cpp:52
+#: kcmultidialog.cpp:51
 #, kde-format
 msgid "Apply Settings"
 msgstr "Ezarpenak ezarri"
 
-#: kcmultidialog.cpp:257 kpluginselector.cpp:809 kpluginwidget.cpp:330
+#: kcmultidialog.cpp:243 kpluginwidget.cpp:329
 #, kde-format
 msgid "Configure"
 msgstr "Konfiguratu"
 
-#: kpluginselector.cpp:136
-#, kde-format
-msgid ""
-"Automatic changes have been performed due to plugin dependencies. Click here "
-"for further information"
-msgstr ""
-"Plugin mendekotasunak direla eta aldaketa automatikoak burutu dira. Klik "
-"egin hemen informazio gehiagorako"
-
-#: kpluginselector.cpp:204
-#, kde-format
-msgid ""
-"Automatic changes have been performed in order to satisfy plugin "
-"dependencies:\n"
-msgstr "Plugin mendekotasunak betetzeko aldaketa automatikoak burutu dira:\n"
-
-#: kpluginselector.cpp:210
-#, kde-format
-msgid ""
-"\n"
-"    %1 plugin has been automatically checked because of the dependency of %2 "
-"plugin"
-msgstr ""
-"\n"
-"    %1 plugina hautatu da automatikoki %2 pluginaren mendekotasunak direla "
-"eta"
-
-#: kpluginselector.cpp:212
-#, kde-format
-msgid ""
-"\n"
-"    %1 plugin has been automatically unchecked because of its dependency on "
-"%2 plugin"
-msgstr ""
-"\n"
-"    %1 plugina desautatu da automatikoki %2 pluginaren mendekotasunak direla "
-"eta"
-
-#: kpluginselector.cpp:216
-#, kde-format
-msgid "Dependency Check"
-msgstr "Egiaztatu mendekotasunak"
-
-#: kpluginselector.cpp:234
-#, kde-format
-msgid "%1 plugin automatically added due to plugin dependencies"
-msgid_plural "%1 plugins automatically added due to plugin dependencies"
-msgstr[0] "Plugin mendekotasunak direla eta %1 plugina automatikoki gehitu da"
-msgstr[1] ""
-"Plugin mendekotasunak direla eta %1 pluginak automatikoki gehitu dira"
-
-#: kpluginselector.cpp:238
-#, kde-format
-msgid ", "
-msgstr ", "
-
-#: kpluginselector.cpp:242
-#, kde-format
-msgid "%1 plugin automatically removed due to plugin dependencies"
-msgid_plural "%1 plugins automatically removed due to plugin dependencies"
-msgstr[0] "Plugin mendekotasunak direla eta %1 plugina automatikoki kendu da"
-msgstr[1] ""
-"Plugin mendekotasunak direla eta %1 pluginak automatikoki kendu dira"
-
-#: kpluginselector.cpp:264 kpluginwidget.cpp:59
+#: kpluginwidget.cpp:58
 #, kde-format
 msgid "Search..."
 msgstr "Bilatu..."
 
-#: kpluginselector.cpp:804 kpluginwidget.cpp:325
+#: kpluginwidget.cpp:324
 #, kde-format
 msgid "About"
 msgstr "Honi buruz"
-
-#: ksettings/dialog.cpp:222
-#, kde-format
-msgid "Enable component"
-msgstr "Gaitu osagaia"
 
 #: qml/components/KPluginDelegate.qml:48
 #, kde-format
@@ -269,6 +158,90 @@ msgstr "Itzultzaileak"
 #, kde-format
 msgid "Send an email to %1"
 msgstr "Bidali e-posta %1(e)ri"
+
+#~ msgid "The module %1 could not be found."
+#~ msgstr "%1 modulua ezin izan da aurkitu."
+
+#~ msgid ""
+#~ "<qt><p>The diagnosis is:<br />The desktop file %1 could not be found.</"
+#~ "p></qt>"
+#~ msgstr ""
+#~ "<qt><p>Diagnostikoa:<br />Ezin izan da mahaigaineko %1 fitxategia aurkitu."
+#~ "</p></qt>"
+
+#~ msgid ""
+#~ "<qt><p>Either the hardware/software the module configures is not "
+#~ "available or the module has been disabled by the administrator.</p></qt>"
+#~ msgstr ""
+#~ "<qt><p>Hardware/softwareko moduloaren konfigurazioa ez dago eskuragarri "
+#~ "edo administratzaileak desgaitu egin du moduloa.</p></qt>"
+
+#~ msgid "Error loading config module"
+#~ msgstr "Errorea konfiguratzeko modulua zamatzean"
+
+#~ msgid "The module %1 is not a valid configuration module."
+#~ msgstr "%1 modulua konfigurazio modulu baliogabea da."
+
+#~ msgid ""
+#~ "<qt>The diagnosis is:<br />The desktop file %1 does not specify a library."
+#~ "</qt>"
+#~ msgstr ""
+#~ "<qt>Diagnostikoa:<br />Mahaigaineko %1 fitxategiak ez du liburutegi bat "
+#~ "zehazten.</qt>"
+
+#~ msgid ""
+#~ "Automatic changes have been performed due to plugin dependencies. Click "
+#~ "here for further information"
+#~ msgstr ""
+#~ "Plugin mendekotasunak direla eta aldaketa automatikoak burutu dira. Klik "
+#~ "egin hemen informazio gehiagorako"
+
+#~ msgid ""
+#~ "Automatic changes have been performed in order to satisfy plugin "
+#~ "dependencies:\n"
+#~ msgstr ""
+#~ "Plugin mendekotasunak betetzeko aldaketa automatikoak burutu dira:\n"
+
+#~ msgid ""
+#~ "\n"
+#~ "    %1 plugin has been automatically checked because of the dependency of "
+#~ "%2 plugin"
+#~ msgstr ""
+#~ "\n"
+#~ "    %1 plugina hautatu da automatikoki %2 pluginaren mendekotasunak "
+#~ "direla eta"
+
+#~ msgid ""
+#~ "\n"
+#~ "    %1 plugin has been automatically unchecked because of its dependency "
+#~ "on %2 plugin"
+#~ msgstr ""
+#~ "\n"
+#~ "    %1 plugina desautatu da automatikoki %2 pluginaren mendekotasunak "
+#~ "direla eta"
+
+#~ msgid "Dependency Check"
+#~ msgstr "Egiaztatu mendekotasunak"
+
+#~ msgid "%1 plugin automatically added due to plugin dependencies"
+#~ msgid_plural "%1 plugins automatically added due to plugin dependencies"
+#~ msgstr[0] ""
+#~ "Plugin mendekotasunak direla eta %1 plugina automatikoki gehitu da"
+#~ msgstr[1] ""
+#~ "Plugin mendekotasunak direla eta %1 pluginak automatikoki gehitu dira"
+
+#~ msgid ", "
+#~ msgstr ", "
+
+#~ msgid "%1 plugin automatically removed due to plugin dependencies"
+#~ msgid_plural "%1 plugins automatically removed due to plugin dependencies"
+#~ msgstr[0] ""
+#~ "Plugin mendekotasunak direla eta %1 plugina automatikoki kendu da"
+#~ msgstr[1] ""
+#~ "Plugin mendekotasunak direla eta %1 pluginak automatikoki kendu dira"
+
+#~ msgid "Enable component"
+#~ msgstr "Gaitu osagaia"
 
 #~ msgid "Distance between desktop icons"
 #~ msgstr "Mahaigaineko ikonoen arteko distantzia"

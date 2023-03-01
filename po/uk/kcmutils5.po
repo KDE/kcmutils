@@ -11,7 +11,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kcmutils5\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2022-12-07 00:43+0000\n"
+"POT-Creation-Date: 2023-03-01 21:29+0000\n"
 "PO-Revision-Date: 2022-04-24 08:48+0300\n"
 "Last-Translator: Yuri Chornoivan <yurchor@ukr.net>\n"
 "Language-Team: Ukrainian <kde-i18n-uk@kde.org>\n"
@@ -33,7 +33,7 @@ msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
 msgstr "fr.ivan@ukrainian-orthodox.org,yurchor@ukr.net"
 
-#: kcmoduleloader.cpp:57 kcmoduleloader.cpp:160
+#: kcmoduleloader.cpp:57
 #, kde-format
 msgid "The module %1 is disabled."
 msgstr "Модуль %1 вимкнений."
@@ -43,12 +43,12 @@ msgstr "Модуль %1 вимкнений."
 msgid "The module has been disabled by the system administrator."
 msgstr "Модуль було вимкнено адміністратором системи."
 
-#: kcmoduleloader.cpp:93 kcmoduleloader.cpp:184
+#: kcmoduleloader.cpp:84
 #, kde-format
 msgid "Error loading QML file."
 msgstr "Помилка під час завантаження файла QML."
 
-#: kcmoduleloader.cpp:119
+#: kcmoduleloader.cpp:105
 #, kde-format
 msgid ""
 "<qt><p>Possible reasons:<ul><li>An error occurred during your last system "
@@ -63,51 +63,13 @@ msgstr ""
 "варіанти та спробуйте витерти вказаний модуль. Якщо це не спрацювало, "
 "зверніться до авторів вашого дистрибутива чи пакунків.</p></qt>"
 
-#: kcmoduleloader.cpp:153
-#, kde-format
-msgid "The module %1 could not be found."
-msgstr "Не вдалось знайти модуль %1."
-
-#: kcmoduleloader.cpp:154
-#, kde-format
-msgid ""
-"<qt><p>The diagnosis is:<br />The desktop file %1 could not be found.</p></"
-"qt>"
-msgstr "<qt><p>Діагностика:<br />Не вдалось знайти файл стільниці %1.</p></qt>"
-
-#: kcmoduleloader.cpp:161
-#, kde-format
-msgid ""
-"<qt><p>Either the hardware/software the module configures is not available "
-"or the module has been disabled by the administrator.</p></qt>"
-msgstr ""
-"<qt><p>Модуль недоступний апаратно, або програмно, або його було вимкнено "
-"адміністратором.</p></qt>"
-
-#: kcmoduleloader.cpp:192
-#, kde-format
-msgid "Error loading config module"
-msgstr "Помилка під час завантаження модуля налаштовування"
-
-#: kcmoduleloader.cpp:236
-#, kde-format
-msgid "The module %1 is not a valid configuration module."
-msgstr "Модуль %1 не є коректним модулем налаштування."
-
-#: kcmoduleloader.cpp:237
-#, kde-format
-msgid ""
-"<qt>The diagnosis is:<br />The desktop file %1 does not specify a library.</"
-"qt>"
-msgstr "<qt>Діагностика:<br />Файл стільниці %1 не вказує бібліотеку.</qt>"
-
-#: kcmoduleproxy.cpp:108
+#: kcmoduleproxy.cpp:98
 #, kde-format
 msgctxt "Argument is application name"
 msgid "This configuration section is already opened in %1"
 msgstr "Цей розділ вже відкритий у %1"
 
-#: kcmultidialog.cpp:50
+#: kcmultidialog.cpp:49
 #, kde-format
 msgid ""
 "The settings of the current module have changed.\n"
@@ -116,97 +78,25 @@ msgstr ""
 "Параметри активного модуля було змінено.\n"
 "Застосувати зміни чи відкинути їх?"
 
-#: kcmultidialog.cpp:52
+#: kcmultidialog.cpp:51
 #, kde-format
 msgid "Apply Settings"
 msgstr "Застосувати параметри"
 
-#: kcmultidialog.cpp:257 kpluginselector.cpp:809 kpluginwidget.cpp:330
+#: kcmultidialog.cpp:243 kpluginwidget.cpp:329
 #, kde-format
 msgid "Configure"
 msgstr "Налаштування"
 
-#: kpluginselector.cpp:136
-#, kde-format
-msgid ""
-"Automatic changes have been performed due to plugin dependencies. Click here "
-"for further information"
-msgstr ""
-"Було зроблено автоматичні зміни, щоб задовольнити залежності додатка. "
-"Натисніть тут, щоб дізнатися більше."
-
-#: kpluginselector.cpp:204
-#, kde-format
-msgid ""
-"Automatic changes have been performed in order to satisfy plugin "
-"dependencies:\n"
-msgstr ""
-"Було зроблено автоматичні зміни, щоб задовольнити залежності додатка:\n"
-
-#: kpluginselector.cpp:210
-#, kde-format
-msgid ""
-"\n"
-"    %1 plugin has been automatically checked because of the dependency of %2 "
-"plugin"
-msgstr ""
-"\n"
-"    додаток %1 було позначено автоматично, оскільки від нього залежить "
-"робота додатка %2"
-
-#: kpluginselector.cpp:212
-#, kde-format
-msgid ""
-"\n"
-"    %1 plugin has been automatically unchecked because of its dependency on "
-"%2 plugin"
-msgstr ""
-"\n"
-"    позначку додатка %1 було автоматично знято, оскільки його робота "
-"залежить від додатка %2"
-
-#: kpluginselector.cpp:216
-#, kde-format
-msgid "Dependency Check"
-msgstr "Перевірка залежностей"
-
-#: kpluginselector.cpp:234
-#, kde-format
-msgid "%1 plugin automatically added due to plugin dependencies"
-msgid_plural "%1 plugins automatically added due to plugin dependencies"
-msgstr[0] "%1 додаток автоматично додано, щоб задовольнити залежності"
-msgstr[1] "%1 додатки автоматично додано, щоб задовольнити залежності"
-msgstr[2] "%1 додатків автоматично додано, щоб задовольнити залежності"
-msgstr[3] "%1 додаток автоматично додано, щоб задовольнити залежності"
-
-#: kpluginselector.cpp:238
-#, kde-format
-msgid ", "
-msgstr ", "
-
-#: kpluginselector.cpp:242
-#, kde-format
-msgid "%1 plugin automatically removed due to plugin dependencies"
-msgid_plural "%1 plugins automatically removed due to plugin dependencies"
-msgstr[0] "%1 додаток автоматично вилучено, щоб задовольнити залежності"
-msgstr[1] "%1 додатки автоматично вилучено, щоб задовольнити залежності"
-msgstr[2] "%1 додатків автоматично вилучено, щоб задовольнити залежності"
-msgstr[3] "%1 додаток автоматично вилучено, щоб задовольнити залежності"
-
-#: kpluginselector.cpp:264 kpluginwidget.cpp:59
+#: kpluginwidget.cpp:58
 #, kde-format
 msgid "Search..."
 msgstr "Шукати…"
 
-#: kpluginselector.cpp:804 kpluginwidget.cpp:325
+#: kpluginwidget.cpp:324
 #, kde-format
 msgid "About"
 msgstr "Відомості"
-
-#: ksettings/dialog.cpp:222
-#, kde-format
-msgid "Enable component"
-msgstr "Увімкнути компонент"
 
 #: qml/components/KPluginDelegate.qml:48
 #, kde-format
@@ -265,6 +155,87 @@ msgstr "Перекладачі"
 #, kde-format
 msgid "Send an email to %1"
 msgstr "Надіслати повідомлення ел. пошти до %1"
+
+#~ msgid "The module %1 could not be found."
+#~ msgstr "Не вдалось знайти модуль %1."
+
+#~ msgid ""
+#~ "<qt><p>The diagnosis is:<br />The desktop file %1 could not be found.</"
+#~ "p></qt>"
+#~ msgstr ""
+#~ "<qt><p>Діагностика:<br />Не вдалось знайти файл стільниці %1.</p></qt>"
+
+#~ msgid ""
+#~ "<qt><p>Either the hardware/software the module configures is not "
+#~ "available or the module has been disabled by the administrator.</p></qt>"
+#~ msgstr ""
+#~ "<qt><p>Модуль недоступний апаратно, або програмно, або його було вимкнено "
+#~ "адміністратором.</p></qt>"
+
+#~ msgid "Error loading config module"
+#~ msgstr "Помилка під час завантаження модуля налаштовування"
+
+#~ msgid "The module %1 is not a valid configuration module."
+#~ msgstr "Модуль %1 не є коректним модулем налаштування."
+
+#~ msgid ""
+#~ "<qt>The diagnosis is:<br />The desktop file %1 does not specify a library."
+#~ "</qt>"
+#~ msgstr "<qt>Діагностика:<br />Файл стільниці %1 не вказує бібліотеку.</qt>"
+
+#~ msgid ""
+#~ "Automatic changes have been performed due to plugin dependencies. Click "
+#~ "here for further information"
+#~ msgstr ""
+#~ "Було зроблено автоматичні зміни, щоб задовольнити залежності додатка. "
+#~ "Натисніть тут, щоб дізнатися більше."
+
+#~ msgid ""
+#~ "Automatic changes have been performed in order to satisfy plugin "
+#~ "dependencies:\n"
+#~ msgstr ""
+#~ "Було зроблено автоматичні зміни, щоб задовольнити залежності додатка:\n"
+
+#~ msgid ""
+#~ "\n"
+#~ "    %1 plugin has been automatically checked because of the dependency of "
+#~ "%2 plugin"
+#~ msgstr ""
+#~ "\n"
+#~ "    додаток %1 було позначено автоматично, оскільки від нього залежить "
+#~ "робота додатка %2"
+
+#~ msgid ""
+#~ "\n"
+#~ "    %1 plugin has been automatically unchecked because of its dependency "
+#~ "on %2 plugin"
+#~ msgstr ""
+#~ "\n"
+#~ "    позначку додатка %1 було автоматично знято, оскільки його робота "
+#~ "залежить від додатка %2"
+
+#~ msgid "Dependency Check"
+#~ msgstr "Перевірка залежностей"
+
+#~ msgid "%1 plugin automatically added due to plugin dependencies"
+#~ msgid_plural "%1 plugins automatically added due to plugin dependencies"
+#~ msgstr[0] "%1 додаток автоматично додано, щоб задовольнити залежності"
+#~ msgstr[1] "%1 додатки автоматично додано, щоб задовольнити залежності"
+#~ msgstr[2] "%1 додатків автоматично додано, щоб задовольнити залежності"
+#~ msgstr[3] "%1 додаток автоматично додано, щоб задовольнити залежності"
+
+#~ msgid ", "
+#~ msgstr ", "
+
+#~ msgid "%1 plugin automatically removed due to plugin dependencies"
+#~ msgid_plural "%1 plugins automatically removed due to plugin dependencies"
+#~ msgstr[0] "%1 додаток автоматично вилучено, щоб задовольнити залежності"
+#~ msgstr[1] "%1 додатки автоматично вилучено, щоб задовольнити залежності"
+#~ msgstr[2] "%1 додатків автоматично вилучено, щоб задовольнити залежності"
+#~ msgstr[3] "%1 додаток автоматично вилучено, щоб задовольнити залежності"
+
+#~ msgid "Enable component"
+#~ msgstr "Увімкнути компонент"
 
 #~ msgid "Distance between desktop icons"
 #~ msgstr "Відстань між піктограмами на стільниці"

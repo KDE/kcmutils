@@ -15,7 +15,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdelibs4\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2022-12-07 00:43+0000\n"
+"POT-Creation-Date: 2023-03-01 21:29+0000\n"
 "PO-Revision-Date: 2010-07-22 09:48+0100\n"
 "Last-Translator: Berend Ytsma <berendy@gmail.com>\n"
 "Language-Team: nl <kde-i18n-doc@lists.kde.org>\n"
@@ -36,7 +36,7 @@ msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
 msgstr "Berendy@gmail.com"
 
-#: kcmoduleloader.cpp:57 kcmoduleloader.cpp:160
+#: kcmoduleloader.cpp:57
 #, kde-format
 msgid "The module %1 is disabled."
 msgstr "De module %1 is útskeakele."
@@ -47,13 +47,13 @@ msgstr "De module %1 is útskeakele."
 msgid "The module has been disabled by the system administrator."
 msgstr "Nim kontakt op mei jo systeembehearder."
 
-#: kcmoduleloader.cpp:93 kcmoduleloader.cpp:184
+#: kcmoduleloader.cpp:84
 #, fuzzy, kde-format
 #| msgid "Error loading '%1'.\n"
 msgid "Error loading QML file."
 msgstr "Flater by it laden fan '%1'.\n"
 
-#: kcmoduleloader.cpp:119
+#: kcmoduleloader.cpp:105
 #, fuzzy, kde-format
 #| msgid ""
 #| "<qt><p>Possible reasons:<ul><li>An error occurred during your last KDE "
@@ -75,55 +75,13 @@ msgstr ""
 "joech der út te heljen. As dit net slagget, dan kinne jo kontakt opnimme mei "
 "jo distributeur of pakketbehearder.</p></qt>"
 
-#: kcmoduleloader.cpp:153
-#, kde-format
-msgid "The module %1 could not be found."
-msgstr "De module %1 wie net te finen."
-
-#: kcmoduleloader.cpp:154
-#, kde-format
-msgid ""
-"<qt><p>The diagnosis is:<br />The desktop file %1 could not be found.</p></"
-"qt>"
-msgstr ""
-"<qt><p>De diagnoaze is:<br />de búroblêdtriem %1 koe net fûn wurde.</p></qt>"
-
-#: kcmoduleloader.cpp:161
-#, kde-format
-msgid ""
-"<qt><p>Either the hardware/software the module configures is not available "
-"or the module has been disabled by the administrator.</p></qt>"
-msgstr ""
-"<qt><p>De hardware/software dy dizze module ynsteld is net beskikber of de "
-"module is troch de systeembehearder útskeakele.</p></qt>"
-
-#: kcmoduleloader.cpp:192
-#, fuzzy, kde-format
-#| msgid "Error loading '%1'.\n"
-msgid "Error loading config module"
-msgstr "Flater by it laden fan '%1'.\n"
-
-#: kcmoduleloader.cpp:236
-#, kde-format
-msgid "The module %1 is not a valid configuration module."
-msgstr "De module %1 is gjin jildige ynstellingsmodule."
-
-#: kcmoduleloader.cpp:237
-#, kde-format
-msgid ""
-"<qt>The diagnosis is:<br />The desktop file %1 does not specify a library.</"
-"qt>"
-msgstr ""
-"<qt>De diagnoaze is:<br />De búroblêdtriem %1 spesifisearret gjin bibleteek."
-"</qt>"
-
-#: kcmoduleproxy.cpp:108
+#: kcmoduleproxy.cpp:98
 #, kde-format
 msgctxt "Argument is application name"
 msgid "This configuration section is already opened in %1"
 msgstr "Dizze konfiguraasjeseksje is al iepene yn %1"
 
-#: kcmultidialog.cpp:50
+#: kcmultidialog.cpp:49
 #, fuzzy, kde-format
 #| msgid ""
 #| "The document \"%1\" has been modified.\n"
@@ -135,100 +93,28 @@ msgstr ""
 "It dokumint \"%1\" is feroare.\n"
 "Wolle jo de wizigingen bewarje of negearje?"
 
-#: kcmultidialog.cpp:52
+#: kcmultidialog.cpp:51
 #, fuzzy, kde-format
 #| msgid "Settings"
 msgid "Apply Settings"
 msgstr "Ynstellings"
 
-#: kcmultidialog.cpp:257 kpluginselector.cpp:809 kpluginwidget.cpp:330
+#: kcmultidialog.cpp:243 kpluginwidget.cpp:329
 #, kde-format
 msgid "Configure"
 msgstr "Konfigurearje"
 
-#: kpluginselector.cpp:136
-#, kde-format
-msgid ""
-"Automatic changes have been performed due to plugin dependencies. Click here "
-"for further information"
-msgstr ""
-"Der binne automatyske feroarings tapast om oan de pluginôfhinklikens te "
-"foldwaan. klik hjir foar mear ynformaasje"
-
-#: kpluginselector.cpp:204
-#, kde-format
-msgid ""
-"Automatic changes have been performed in order to satisfy plugin "
-"dependencies:\n"
-msgstr ""
-"Der binne automatyske feroarings tapast om de pluginôfhinklikens tefreden te "
-"stellen:\n"
-
-#: kpluginselector.cpp:210
-#, kde-format
-msgid ""
-"\n"
-"    %1 plugin has been automatically checked because of the dependency of %2 "
-"plugin"
-msgstr ""
-"\n"
-"    plugin %1 is automatysk ynskeakele fanwege de ôfhinklikheid fan plugin %2"
-
-#: kpluginselector.cpp:212
-#, kde-format
-msgid ""
-"\n"
-"    %1 plugin has been automatically unchecked because of its dependency on "
-"%2 plugin"
-msgstr ""
-"\n"
-"    plugin %1 is automatysk útskeakele fanwege de ôfhinklikheid fan plugin %2"
-
-#: kpluginselector.cpp:216
-#, kde-format
-msgid "Dependency Check"
-msgstr "Ofhinklikskontrôle"
-
-#: kpluginselector.cpp:234
-#, kde-format
-msgid "%1 plugin automatically added due to plugin dependencies"
-msgid_plural "%1 plugins automatically added due to plugin dependencies"
-msgstr[0] ""
-"%1 plugin is automatysk taheakke om oan de pluginôfhinklikens te foldwaan"
-msgstr[1] ""
-"%1 plugins binne automatysk taheakke om oan de pluginôfhinklikens te foldwaan"
-
-#: kpluginselector.cpp:238
-#, kde-format
-msgid ", "
-msgstr ", "
-
-#: kpluginselector.cpp:242
-#, kde-format
-msgid "%1 plugin automatically removed due to plugin dependencies"
-msgid_plural "%1 plugins automatically removed due to plugin dependencies"
-msgstr[0] ""
-"%1 plugin is automatysk fuortsmiten om oan de pluginôfhinklikens te foldwaan"
-msgstr[1] ""
-"%1 plugins binne automatysk fuortsmiten om oan de pluginôfhinklikens te "
-"foldwaan"
-
-#: kpluginselector.cpp:264 kpluginwidget.cpp:59
+#: kpluginwidget.cpp:58
 #, fuzzy, kde-format
 #| msgid "Search"
 msgid "Search..."
 msgstr "Sykje"
 
-#: kpluginselector.cpp:804 kpluginwidget.cpp:325
+#: kpluginwidget.cpp:324
 #, fuzzy, kde-format
 #| msgid "&About"
 msgid "About"
 msgstr "&Ynfo oer"
-
-#: ksettings/dialog.cpp:222
-#, kde-format
-msgid "Enable component"
-msgstr "Komponint ynskeakelje"
 
 #: qml/components/KPluginDelegate.qml:48
 #, fuzzy, kde-format
@@ -296,6 +182,96 @@ msgstr "Oersetting"
 #| msgid "&Send Email"
 msgid "Send an email to %1"
 msgstr "&Stjoer E-post"
+
+#~ msgid "The module %1 could not be found."
+#~ msgstr "De module %1 wie net te finen."
+
+#~ msgid ""
+#~ "<qt><p>The diagnosis is:<br />The desktop file %1 could not be found.</"
+#~ "p></qt>"
+#~ msgstr ""
+#~ "<qt><p>De diagnoaze is:<br />de búroblêdtriem %1 koe net fûn wurde.</p></"
+#~ "qt>"
+
+#~ msgid ""
+#~ "<qt><p>Either the hardware/software the module configures is not "
+#~ "available or the module has been disabled by the administrator.</p></qt>"
+#~ msgstr ""
+#~ "<qt><p>De hardware/software dy dizze module ynsteld is net beskikber of "
+#~ "de module is troch de systeembehearder útskeakele.</p></qt>"
+
+#, fuzzy
+#~| msgid "Error loading '%1'.\n"
+#~ msgid "Error loading config module"
+#~ msgstr "Flater by it laden fan '%1'.\n"
+
+#~ msgid "The module %1 is not a valid configuration module."
+#~ msgstr "De module %1 is gjin jildige ynstellingsmodule."
+
+#~ msgid ""
+#~ "<qt>The diagnosis is:<br />The desktop file %1 does not specify a library."
+#~ "</qt>"
+#~ msgstr ""
+#~ "<qt>De diagnoaze is:<br />De búroblêdtriem %1 spesifisearret gjin "
+#~ "bibleteek.</qt>"
+
+#~ msgid ""
+#~ "Automatic changes have been performed due to plugin dependencies. Click "
+#~ "here for further information"
+#~ msgstr ""
+#~ "Der binne automatyske feroarings tapast om oan de pluginôfhinklikens te "
+#~ "foldwaan. klik hjir foar mear ynformaasje"
+
+#~ msgid ""
+#~ "Automatic changes have been performed in order to satisfy plugin "
+#~ "dependencies:\n"
+#~ msgstr ""
+#~ "Der binne automatyske feroarings tapast om de pluginôfhinklikens tefreden "
+#~ "te stellen:\n"
+
+#~ msgid ""
+#~ "\n"
+#~ "    %1 plugin has been automatically checked because of the dependency of "
+#~ "%2 plugin"
+#~ msgstr ""
+#~ "\n"
+#~ "    plugin %1 is automatysk ynskeakele fanwege de ôfhinklikheid fan "
+#~ "plugin %2"
+
+#~ msgid ""
+#~ "\n"
+#~ "    %1 plugin has been automatically unchecked because of its dependency "
+#~ "on %2 plugin"
+#~ msgstr ""
+#~ "\n"
+#~ "    plugin %1 is automatysk útskeakele fanwege de ôfhinklikheid fan "
+#~ "plugin %2"
+
+#~ msgid "Dependency Check"
+#~ msgstr "Ofhinklikskontrôle"
+
+#~ msgid "%1 plugin automatically added due to plugin dependencies"
+#~ msgid_plural "%1 plugins automatically added due to plugin dependencies"
+#~ msgstr[0] ""
+#~ "%1 plugin is automatysk taheakke om oan de pluginôfhinklikens te foldwaan"
+#~ msgstr[1] ""
+#~ "%1 plugins binne automatysk taheakke om oan de pluginôfhinklikens te "
+#~ "foldwaan"
+
+#~ msgid ", "
+#~ msgstr ", "
+
+#~ msgid "%1 plugin automatically removed due to plugin dependencies"
+#~ msgid_plural "%1 plugins automatically removed due to plugin dependencies"
+#~ msgstr[0] ""
+#~ "%1 plugin is automatysk fuortsmiten om oan de pluginôfhinklikens te "
+#~ "foldwaan"
+#~ msgstr[1] ""
+#~ "%1 plugins binne automatysk fuortsmiten om oan de pluginôfhinklikens te "
+#~ "foldwaan"
+
+#~ msgid "Enable component"
+#~ msgstr "Komponint ynskeakelje"
 
 #~ msgid "Distance between desktop icons"
 #~ msgstr "Ofstân tusken buroblêdbyldkaikes"

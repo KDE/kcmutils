@@ -13,7 +13,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdelibs4\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2022-12-07 00:43+0000\n"
+"POT-Creation-Date: 2023-03-01 21:29+0000\n"
 "PO-Revision-Date: 2022-06-10 00:09+0200\n"
 "Last-Translator: Frederik Schwarzer <schwarzer@kde.org>\n"
 "Language-Team: German <kde-i18n-de@kde.org>\n"
@@ -34,7 +34,7 @@ msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
 msgstr "tr@erdfunkstelle.de, hunsum@gmx.de, thd@kde.org"
 
-#: kcmoduleloader.cpp:57 kcmoduleloader.cpp:160
+#: kcmoduleloader.cpp:57
 #, kde-format
 msgid "The module %1 is disabled."
 msgstr "Das Modul %1 ist nicht aktiviert."
@@ -44,12 +44,12 @@ msgstr "Das Modul %1 ist nicht aktiviert."
 msgid "The module has been disabled by the system administrator."
 msgstr "Das Modul ist vom Systemverwalter deaktiviert worden."
 
-#: kcmoduleloader.cpp:93 kcmoduleloader.cpp:184
+#: kcmoduleloader.cpp:84
 #, kde-format
 msgid "Error loading QML file."
 msgstr "Fehler beim Laden der QML-Datei."
 
-#: kcmoduleloader.cpp:119
+#: kcmoduleloader.cpp:105
 #, kde-format
 msgid ""
 "<qt><p>Possible reasons:<ul><li>An error occurred during your last system "
@@ -68,56 +68,13 @@ msgstr ""
 "Unix-)Distributor bzw. dem Ersteller der aktualisierten Pakete aufnehmen.</"
 "p></qt>"
 
-#: kcmoduleloader.cpp:153
-#, kde-format
-msgid "The module %1 could not be found."
-msgstr "Das Modul %1 kann nicht gefunden werden."
-
-#: kcmoduleloader.cpp:154
-#, kde-format
-msgid ""
-"<qt><p>The diagnosis is:<br />The desktop file %1 could not be found.</p></"
-"qt>"
-msgstr ""
-"<qt><p>Die Fehlerdiagnose lautet: <br />Die Desktop-Datei %1 kann nicht "
-"gefunden werden.</p></qt>"
-
-#: kcmoduleloader.cpp:161
-#, kde-format
-msgid ""
-"<qt><p>Either the hardware/software the module configures is not available "
-"or the module has been disabled by the administrator.</p></qt>"
-msgstr ""
-"<qt><p>Entweder ist die Hardware/Software, die mit dem Modul eingerichtet "
-"wird, nicht verfügbar oder der Systemverwalter hat das Modul deaktiviert.</"
-"p></qt>"
-
-#: kcmoduleloader.cpp:192
-#, kde-format
-msgid "Error loading config module"
-msgstr "Fehler beim Laden des Einrichtungsmoduls"
-
-#: kcmoduleloader.cpp:236
-#, kde-format
-msgid "The module %1 is not a valid configuration module."
-msgstr "Das Modul %1 ist kein gültiges Einrichtungsmodul."
-
-#: kcmoduleloader.cpp:237
-#, kde-format
-msgid ""
-"<qt>The diagnosis is:<br />The desktop file %1 does not specify a library.</"
-"qt>"
-msgstr ""
-"<qt>Die Fehlerdiagnose lautet: <br />Die Desktop-Datei %1 enthält keine "
-"Bibliotheksangabe.</qt>"
-
-#: kcmoduleproxy.cpp:108
+#: kcmoduleproxy.cpp:98
 #, kde-format
 msgctxt "Argument is application name"
 msgid "This configuration section is already opened in %1"
 msgstr "Diese Einstellungen sind bereits in der Anwendung „%1“ geöffnet."
 
-#: kcmultidialog.cpp:50
+#: kcmultidialog.cpp:49
 #, kde-format
 msgid ""
 "The settings of the current module have changed.\n"
@@ -126,98 +83,25 @@ msgstr ""
 "Die Einstellungen im aktuellen Modul wurden geändert.\n"
 "Möchten Sie die Änderungen anwenden oder verwerfen?"
 
-#: kcmultidialog.cpp:52
+#: kcmultidialog.cpp:51
 #, kde-format
 msgid "Apply Settings"
 msgstr "Einstellungen anwenden"
 
-#: kcmultidialog.cpp:257 kpluginselector.cpp:809 kpluginwidget.cpp:330
+#: kcmultidialog.cpp:243 kpluginwidget.cpp:329
 #, kde-format
 msgid "Configure"
 msgstr "Einrichten"
 
-#: kpluginselector.cpp:136
-#, kde-format
-msgid ""
-"Automatic changes have been performed due to plugin dependencies. Click here "
-"for further information"
-msgstr ""
-"Es wurden Änderungen durchgeführt, die durch Modul-Abhängigkeiten "
-"erforderlich waren. Klicken Sie hier für weitere Informationen."
-
-#: kpluginselector.cpp:204
-#, kde-format
-msgid ""
-"Automatic changes have been performed in order to satisfy plugin "
-"dependencies:\n"
-msgstr ""
-"Es wurden Änderungen durchgeführt, die zum Auflösen von Modul-Abhängigkeiten "
-"erforderlich waren:\n"
-
-#: kpluginselector.cpp:210
-#, kde-format
-msgid ""
-"\n"
-"    %1 plugin has been automatically checked because of the dependency of %2 "
-"plugin"
-msgstr ""
-"\n"
-"    Das Modul %1 wurde automatisch aktiviert, da eine Abhängigkeit zum Modul "
-"%2 besteht"
-
-#: kpluginselector.cpp:212
-#, kde-format
-msgid ""
-"\n"
-"    %1 plugin has been automatically unchecked because of its dependency on "
-"%2 plugin"
-msgstr ""
-"\n"
-"    Das Modul %1 wurde automatisch deaktiviert, da eine Abhängigkeit zum "
-"Modul %2 besteht"
-
-#: kpluginselector.cpp:216
-#, kde-format
-msgid "Dependency Check"
-msgstr "Abhängigkeitsprüfung"
-
-#: kpluginselector.cpp:234
-#, kde-format
-msgid "%1 plugin automatically added due to plugin dependencies"
-msgid_plural "%1 plugins automatically added due to plugin dependencies"
-msgstr[0] ""
-"%1 Modul wurde aufgrund von Modul-Abhängigkeiten automatisch hinzugefügt."
-msgstr[1] ""
-"%1 Module wurden aufgrund von Modul-Abhängigkeiten automatisch hinzugefügt."
-
-#: kpluginselector.cpp:238
-#, kde-format
-msgid ", "
-msgstr ", "
-
-#: kpluginselector.cpp:242
-#, kde-format
-msgid "%1 plugin automatically removed due to plugin dependencies"
-msgid_plural "%1 plugins automatically removed due to plugin dependencies"
-msgstr[0] ""
-"%1 Modul wurde aufgrund von Modul-Abhängigkeiten automatisch entfernt."
-msgstr[1] ""
-"%1 Module wurden aufgrund von Modul-Abhängigkeiten automatisch entfernt."
-
-#: kpluginselector.cpp:264 kpluginwidget.cpp:59
+#: kpluginwidget.cpp:58
 #, kde-format
 msgid "Search..."
 msgstr "Suchen ..."
 
-#: kpluginselector.cpp:804 kpluginwidget.cpp:325
+#: kpluginwidget.cpp:324
 #, kde-format
 msgid "About"
 msgstr "Über"
-
-#: ksettings/dialog.cpp:222
-#, kde-format
-msgid "Enable component"
-msgstr "Komponente aktivieren"
 
 #: qml/components/KPluginDelegate.qml:48
 #, kde-format
@@ -276,6 +160,93 @@ msgstr "Übersetzer"
 #, kde-format
 msgid "Send an email to %1"
 msgstr "Eine E-Mail an %1 senden"
+
+#~ msgid "The module %1 could not be found."
+#~ msgstr "Das Modul %1 kann nicht gefunden werden."
+
+#~ msgid ""
+#~ "<qt><p>The diagnosis is:<br />The desktop file %1 could not be found.</"
+#~ "p></qt>"
+#~ msgstr ""
+#~ "<qt><p>Die Fehlerdiagnose lautet: <br />Die Desktop-Datei %1 kann nicht "
+#~ "gefunden werden.</p></qt>"
+
+#~ msgid ""
+#~ "<qt><p>Either the hardware/software the module configures is not "
+#~ "available or the module has been disabled by the administrator.</p></qt>"
+#~ msgstr ""
+#~ "<qt><p>Entweder ist die Hardware/Software, die mit dem Modul eingerichtet "
+#~ "wird, nicht verfügbar oder der Systemverwalter hat das Modul deaktiviert."
+#~ "</p></qt>"
+
+#~ msgid "Error loading config module"
+#~ msgstr "Fehler beim Laden des Einrichtungsmoduls"
+
+#~ msgid "The module %1 is not a valid configuration module."
+#~ msgstr "Das Modul %1 ist kein gültiges Einrichtungsmodul."
+
+#~ msgid ""
+#~ "<qt>The diagnosis is:<br />The desktop file %1 does not specify a library."
+#~ "</qt>"
+#~ msgstr ""
+#~ "<qt>Die Fehlerdiagnose lautet: <br />Die Desktop-Datei %1 enthält keine "
+#~ "Bibliotheksangabe.</qt>"
+
+#~ msgid ""
+#~ "Automatic changes have been performed due to plugin dependencies. Click "
+#~ "here for further information"
+#~ msgstr ""
+#~ "Es wurden Änderungen durchgeführt, die durch Modul-Abhängigkeiten "
+#~ "erforderlich waren. Klicken Sie hier für weitere Informationen."
+
+#~ msgid ""
+#~ "Automatic changes have been performed in order to satisfy plugin "
+#~ "dependencies:\n"
+#~ msgstr ""
+#~ "Es wurden Änderungen durchgeführt, die zum Auflösen von Modul-"
+#~ "Abhängigkeiten erforderlich waren:\n"
+
+#~ msgid ""
+#~ "\n"
+#~ "    %1 plugin has been automatically checked because of the dependency of "
+#~ "%2 plugin"
+#~ msgstr ""
+#~ "\n"
+#~ "    Das Modul %1 wurde automatisch aktiviert, da eine Abhängigkeit zum "
+#~ "Modul %2 besteht"
+
+#~ msgid ""
+#~ "\n"
+#~ "    %1 plugin has been automatically unchecked because of its dependency "
+#~ "on %2 plugin"
+#~ msgstr ""
+#~ "\n"
+#~ "    Das Modul %1 wurde automatisch deaktiviert, da eine Abhängigkeit zum "
+#~ "Modul %2 besteht"
+
+#~ msgid "Dependency Check"
+#~ msgstr "Abhängigkeitsprüfung"
+
+#~ msgid "%1 plugin automatically added due to plugin dependencies"
+#~ msgid_plural "%1 plugins automatically added due to plugin dependencies"
+#~ msgstr[0] ""
+#~ "%1 Modul wurde aufgrund von Modul-Abhängigkeiten automatisch hinzugefügt."
+#~ msgstr[1] ""
+#~ "%1 Module wurden aufgrund von Modul-Abhängigkeiten automatisch "
+#~ "hinzugefügt."
+
+#~ msgid ", "
+#~ msgstr ", "
+
+#~ msgid "%1 plugin automatically removed due to plugin dependencies"
+#~ msgid_plural "%1 plugins automatically removed due to plugin dependencies"
+#~ msgstr[0] ""
+#~ "%1 Modul wurde aufgrund von Modul-Abhängigkeiten automatisch entfernt."
+#~ msgstr[1] ""
+#~ "%1 Module wurden aufgrund von Modul-Abhängigkeiten automatisch entfernt."
+
+#~ msgid "Enable component"
+#~ msgstr "Komponente aktivieren"
 
 #~ msgid "Distance between desktop icons"
 #~ msgstr "Abstand zwischen Arbeitsflächensymbolen"

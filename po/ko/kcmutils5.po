@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdelibs4\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2022-12-07 00:43+0000\n"
+"POT-Creation-Date: 2023-03-01 21:29+0000\n"
 "PO-Revision-Date: 2022-05-06 00:21+0200\n"
 "Last-Translator: Shinjo Park <kde@peremen.name>\n"
 "Language-Team: Korean <kde-kr@kde.org>\n"
@@ -28,7 +28,7 @@ msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
 msgstr "cho.sungjae@gmail.com,kde@peremen.name"
 
-#: kcmoduleloader.cpp:57 kcmoduleloader.cpp:160
+#: kcmoduleloader.cpp:57
 #, kde-format
 msgid "The module %1 is disabled."
 msgstr "모듈 %1(이)가 비활성화되었습니다."
@@ -38,12 +38,12 @@ msgstr "모듈 %1(이)가 비활성화되었습니다."
 msgid "The module has been disabled by the system administrator."
 msgstr "시스템 관리자가 이 모듈을 비활성화했습니다."
 
-#: kcmoduleloader.cpp:93 kcmoduleloader.cpp:184
+#: kcmoduleloader.cpp:84
 #, kde-format
 msgid "Error loading QML file."
 msgstr "QML 파일을 불러올 수 없습니다."
 
-#: kcmoduleloader.cpp:119
+#: kcmoduleloader.cpp:105
 #, kde-format
 msgid ""
 "<qt><p>Possible reasons:<ul><li>An error occurred during your last system "
@@ -58,55 +58,13 @@ msgstr ""
 "제해 보십시오. 만약 이것이 실패하면 배포하거나 패키징한 사람에게 연락해 보십"
 "시오.</p></qt>"
 
-#: kcmoduleloader.cpp:153
-#, kde-format
-msgid "The module %1 could not be found."
-msgstr "%1 모듈을 찾을 수 없습니다."
-
-#: kcmoduleloader.cpp:154
-#, kde-format
-msgid ""
-"<qt><p>The diagnosis is:<br />The desktop file %1 could not be found.</p></"
-"qt>"
-msgstr ""
-"<qt><p>진단은 다음과 같습니다.<br />데스크톱 파일 %1(을)를 찾을 수 없습니다."
-"</p></qt>"
-
-#: kcmoduleloader.cpp:161
-#, kde-format
-msgid ""
-"<qt><p>Either the hardware/software the module configures is not available "
-"or the module has been disabled by the administrator.</p></qt>"
-msgstr ""
-"<qt><p>모듈이 설정하는 하드웨어/소프트웨어가 사용 가능하지 않거나 관리자가 모"
-"듈을 비활성화했습니다.</p></qt>"
-
-#: kcmoduleloader.cpp:192
-#, kde-format
-msgid "Error loading config module"
-msgstr "설정 모듈 불러오기 오류"
-
-#: kcmoduleloader.cpp:236
-#, kde-format
-msgid "The module %1 is not a valid configuration module."
-msgstr "%1 모듈은 올바른 설정 모듈이 아닙니다."
-
-#: kcmoduleloader.cpp:237
-#, kde-format
-msgid ""
-"<qt>The diagnosis is:<br />The desktop file %1 does not specify a library.</"
-"qt>"
-msgstr ""
-"<qt>진단은 다음과 같습니다.<br />데스크톱 파일 %1에서 라이브러리를 지정하지 "
-"않았습니다.</qt>"
-
-#: kcmoduleproxy.cpp:108
+#: kcmoduleproxy.cpp:98
 #, kde-format
 msgctxt "Argument is application name"
 msgid "This configuration section is already opened in %1"
 msgstr "%1 프로그램에서 이 설정 섹션을 열었습니다"
 
-#: kcmultidialog.cpp:50
+#: kcmultidialog.cpp:49
 #, kde-format
 msgid ""
 "The settings of the current module have changed.\n"
@@ -115,89 +73,25 @@ msgstr ""
 "현재 모듈의 설정이 수정되었습니다.\n"
 "변경 사항을 적용하거나 무시하시겠습니까?"
 
-#: kcmultidialog.cpp:52
+#: kcmultidialog.cpp:51
 #, kde-format
 msgid "Apply Settings"
 msgstr "설정 적용"
 
-#: kcmultidialog.cpp:257 kpluginselector.cpp:809 kpluginwidget.cpp:330
+#: kcmultidialog.cpp:243 kpluginwidget.cpp:329
 #, kde-format
 msgid "Configure"
 msgstr "설정"
 
-#: kpluginselector.cpp:136
-#, kde-format
-msgid ""
-"Automatic changes have been performed due to plugin dependencies. Click here "
-"for further information"
-msgstr ""
-"플러그인 의존성 때문에 자동 변경이 실행되었습니다. 자세한 정보를 보려면 여기"
-"를 클릭하십시오"
-
-#: kpluginselector.cpp:204
-#, kde-format
-msgid ""
-"Automatic changes have been performed in order to satisfy plugin "
-"dependencies:\n"
-msgstr "플러그인 의존성을 맞추려고 자동으로 변경했습니다:\n"
-
-#: kpluginselector.cpp:210
-#, kde-format
-msgid ""
-"\n"
-"    %1 plugin has been automatically checked because of the dependency of %2 "
-"plugin"
-msgstr ""
-"\n"
-"    %2 플러그인에 의존하기 때문에 %1 플러그인이 자동적으로 선택되었습니다"
-
-#: kpluginselector.cpp:212
-#, kde-format
-msgid ""
-"\n"
-"    %1 plugin has been automatically unchecked because of its dependency on "
-"%2 plugin"
-msgstr ""
-"\n"
-"    %2 플러그인에 의존하기 때문에 %1 플러그인의 선택이 자동적으로 해제되었습"
-"니다"
-
-#: kpluginselector.cpp:216
-#, kde-format
-msgid "Dependency Check"
-msgstr "의존성 검사"
-
-#: kpluginselector.cpp:234
-#, kde-format
-msgid "%1 plugin automatically added due to plugin dependencies"
-msgid_plural "%1 plugins automatically added due to plugin dependencies"
-msgstr[0] "플러그인 의존성 때문에 플러그인 %1개를 자동으로 추가했습니다"
-
-#: kpluginselector.cpp:238
-#, kde-format
-msgid ", "
-msgstr ", "
-
-#: kpluginselector.cpp:242
-#, kde-format
-msgid "%1 plugin automatically removed due to plugin dependencies"
-msgid_plural "%1 plugins automatically removed due to plugin dependencies"
-msgstr[0] "플러그인 의존성 때문에 플러그인 %1개를 자동으로 삭제했습니다"
-
-#: kpluginselector.cpp:264 kpluginwidget.cpp:59
+#: kpluginwidget.cpp:58
 #, kde-format
 msgid "Search..."
 msgstr "찾기..."
 
-#: kpluginselector.cpp:804 kpluginwidget.cpp:325
+#: kpluginwidget.cpp:324
 #, kde-format
 msgid "About"
 msgstr "정보"
-
-#: ksettings/dialog.cpp:222
-#, kde-format
-msgid "Enable component"
-msgstr "구성 요소 활성화"
 
 #: qml/components/KPluginDelegate.qml:48
 #, kde-format
@@ -256,6 +150,82 @@ msgstr "번역자"
 #, kde-format
 msgid "Send an email to %1"
 msgstr "%1(으)로 이메일 보내기"
+
+#~ msgid "The module %1 could not be found."
+#~ msgstr "%1 모듈을 찾을 수 없습니다."
+
+#~ msgid ""
+#~ "<qt><p>The diagnosis is:<br />The desktop file %1 could not be found.</"
+#~ "p></qt>"
+#~ msgstr ""
+#~ "<qt><p>진단은 다음과 같습니다.<br />데스크톱 파일 %1(을)를 찾을 수 없습니"
+#~ "다.</p></qt>"
+
+#~ msgid ""
+#~ "<qt><p>Either the hardware/software the module configures is not "
+#~ "available or the module has been disabled by the administrator.</p></qt>"
+#~ msgstr ""
+#~ "<qt><p>모듈이 설정하는 하드웨어/소프트웨어가 사용 가능하지 않거나 관리자"
+#~ "가 모듈을 비활성화했습니다.</p></qt>"
+
+#~ msgid "Error loading config module"
+#~ msgstr "설정 모듈 불러오기 오류"
+
+#~ msgid "The module %1 is not a valid configuration module."
+#~ msgstr "%1 모듈은 올바른 설정 모듈이 아닙니다."
+
+#~ msgid ""
+#~ "<qt>The diagnosis is:<br />The desktop file %1 does not specify a library."
+#~ "</qt>"
+#~ msgstr ""
+#~ "<qt>진단은 다음과 같습니다.<br />데스크톱 파일 %1에서 라이브러리를 지정하"
+#~ "지 않았습니다.</qt>"
+
+#~ msgid ""
+#~ "Automatic changes have been performed due to plugin dependencies. Click "
+#~ "here for further information"
+#~ msgstr ""
+#~ "플러그인 의존성 때문에 자동 변경이 실행되었습니다. 자세한 정보를 보려면 여"
+#~ "기를 클릭하십시오"
+
+#~ msgid ""
+#~ "Automatic changes have been performed in order to satisfy plugin "
+#~ "dependencies:\n"
+#~ msgstr "플러그인 의존성을 맞추려고 자동으로 변경했습니다:\n"
+
+#~ msgid ""
+#~ "\n"
+#~ "    %1 plugin has been automatically checked because of the dependency of "
+#~ "%2 plugin"
+#~ msgstr ""
+#~ "\n"
+#~ "    %2 플러그인에 의존하기 때문에 %1 플러그인이 자동적으로 선택되었습니다"
+
+#~ msgid ""
+#~ "\n"
+#~ "    %1 plugin has been automatically unchecked because of its dependency "
+#~ "on %2 plugin"
+#~ msgstr ""
+#~ "\n"
+#~ "    %2 플러그인에 의존하기 때문에 %1 플러그인의 선택이 자동적으로 해제되었"
+#~ "습니다"
+
+#~ msgid "Dependency Check"
+#~ msgstr "의존성 검사"
+
+#~ msgid "%1 plugin automatically added due to plugin dependencies"
+#~ msgid_plural "%1 plugins automatically added due to plugin dependencies"
+#~ msgstr[0] "플러그인 의존성 때문에 플러그인 %1개를 자동으로 추가했습니다"
+
+#~ msgid ", "
+#~ msgstr ", "
+
+#~ msgid "%1 plugin automatically removed due to plugin dependencies"
+#~ msgid_plural "%1 plugins automatically removed due to plugin dependencies"
+#~ msgstr[0] "플러그인 의존성 때문에 플러그인 %1개를 자동으로 삭제했습니다"
+
+#~ msgid "Enable component"
+#~ msgstr "구성 요소 활성화"
 
 #~ msgid "Distance between desktop icons"
 #~ msgstr "바탕 화면 아이콘 간의 거리"

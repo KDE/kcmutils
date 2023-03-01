@@ -18,7 +18,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdelibs4\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2022-12-07 00:43+0000\n"
+"POT-Creation-Date: 2023-03-01 21:29+0000\n"
 "PO-Revision-Date: 2005-01-28 17:54+0000\n"
 "Last-Translator: Kevin Donnelly <kevin@dotmon.com>\n"
 "Language-Team: Cymraeg\n"
@@ -40,7 +40,7 @@ msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
 msgstr "kyfieithu@dotmon.com"
 
-#: kcmoduleloader.cpp:57 kcmoduleloader.cpp:160
+#: kcmoduleloader.cpp:57
 #, fuzzy, kde-format
 msgid "The module %1 is disabled."
 msgstr "Methu llwytho'r modiwl %1."
@@ -51,13 +51,13 @@ msgstr "Methu llwytho'r modiwl %1."
 msgid "The module has been disabled by the system administrator."
 msgstr "Cysylltwch a'ch gwasanaethwr cysodau."
 
-#: kcmoduleloader.cpp:93 kcmoduleloader.cpp:184
+#: kcmoduleloader.cpp:84
 #, fuzzy, kde-format
 #| msgid "Error opening file."
 msgid "Error loading QML file."
 msgstr "Gwall tra'n agor y ffeil."
 
-#: kcmoduleloader.cpp:119
+#: kcmoduleloader.cpp:105
 #, fuzzy, kde-format
 #| msgid ""
 #| "<qt><p>The diagnostics is:<br>%1<p>Possible reasons:</p><ul><li>An error "
@@ -80,58 +80,13 @@ msgstr ""
 "modiwl sy'n cael ei enwi yn y neges gwall.  Os nid yw hyn yn gweithio, "
 "ystyriwch cysylltu â'ch dosbarthwr neu pecynnwr.</p></qt>"
 
-#: kcmoduleloader.cpp:153
-#, kde-format
-msgid "The module %1 could not be found."
-msgstr "Methu canfod y modiwl %1."
-
-#: kcmoduleloader.cpp:154
-#, fuzzy, kde-format
-#| msgid ""
-#| "<qt><p>The diagnostics is:<br>The desktop file %1 could not be found.</qt>"
-msgid ""
-"<qt><p>The diagnosis is:<br />The desktop file %1 could not be found.</p></"
-"qt>"
-msgstr ""
-"<qt><p>Y diagnosteg yw:<br>Ni allwyd dod o hyd i'r ffeil benbwrdd %1.</qt>"
-
-#: kcmoduleloader.cpp:161
-#, kde-format
-msgid ""
-"<qt><p>Either the hardware/software the module configures is not available "
-"or the module has been disabled by the administrator.</p></qt>"
-msgstr ""
-
-#: kcmoduleloader.cpp:192
-#, fuzzy, kde-format
-#| msgid "Error opening file."
-msgid "Error loading config module"
-msgstr "Gwall tra'n agor y ffeil."
-
-#: kcmoduleloader.cpp:236
-#, kde-format
-msgid "The module %1 is not a valid configuration module."
-msgstr "Nid modiwl ffurfweddu dilys yw modiwl %1."
-
-#: kcmoduleloader.cpp:237
-#, fuzzy, kde-format
-#| msgid ""
-#| "<qt><p>The diagnostics is:<br>The desktop file %1 does not specify a "
-#| "library.</qt>"
-msgid ""
-"<qt>The diagnosis is:<br />The desktop file %1 does not specify a library.</"
-"qt>"
-msgstr ""
-"<qt> <p>Y diagnosteg yw: <br>Nid yw'r ffeil benbwrdd %1 yn penodi "
-"rhaglengell.</qt>"
-
-#: kcmoduleproxy.cpp:108
+#: kcmoduleproxy.cpp:98
 #, kde-format
 msgctxt "Argument is application name"
 msgid "This configuration section is already opened in %1"
 msgstr ""
 
-#: kcmultidialog.cpp:50
+#: kcmultidialog.cpp:49
 #, fuzzy, kde-format
 #| msgid ""
 #| "The document \"%1\" has been modified.\n"
@@ -143,89 +98,29 @@ msgstr ""
 "Mae'r ddogfen \"%1\" wedi ei newid.\n"
 "Ydych eisiau cadw eich newidiadau, neu eu taflu?"
 
-#: kcmultidialog.cpp:52
+#: kcmultidialog.cpp:51
 #, fuzzy, kde-format
 #| msgid "Apply settings"
 msgid "Apply Settings"
 msgstr "Gweithredu gosodiadau"
 
-#: kcmultidialog.cpp:257 kpluginselector.cpp:809 kpluginwidget.cpp:330
+#: kcmultidialog.cpp:243 kpluginwidget.cpp:329
 #, kde-format
 msgid "Configure"
 msgstr "Ffurfweddu"
 
-#: kpluginselector.cpp:136
-#, kde-format
-msgid ""
-"Automatic changes have been performed due to plugin dependencies. Click here "
-"for further information"
-msgstr ""
-
-#: kpluginselector.cpp:204
-#, kde-format
-msgid ""
-"Automatic changes have been performed in order to satisfy plugin "
-"dependencies:\n"
-msgstr ""
-
-#: kpluginselector.cpp:210
-#, kde-format
-msgid ""
-"\n"
-"    %1 plugin has been automatically checked because of the dependency of %2 "
-"plugin"
-msgstr ""
-
-#: kpluginselector.cpp:212
-#, kde-format
-msgid ""
-"\n"
-"    %1 plugin has been automatically unchecked because of its dependency on "
-"%2 plugin"
-msgstr ""
-
-#: kpluginselector.cpp:216
-#, kde-format
-msgid "Dependency Check"
-msgstr ""
-
-#: kpluginselector.cpp:234
-#, kde-format
-msgid "%1 plugin automatically added due to plugin dependencies"
-msgid_plural "%1 plugins automatically added due to plugin dependencies"
-msgstr[0] ""
-msgstr[1] ""
-
-#: kpluginselector.cpp:238
-#, kde-format
-msgid ", "
-msgstr ""
-
-#: kpluginselector.cpp:242
-#, kde-format
-msgid "%1 plugin automatically removed due to plugin dependencies"
-msgid_plural "%1 plugins automatically removed due to plugin dependencies"
-msgstr[0] ""
-msgstr[1] ""
-
-#: kpluginselector.cpp:264 kpluginwidget.cpp:59
+#: kpluginwidget.cpp:58
 #, fuzzy, kde-format
 #| msgctxt "QAccel"
 #| msgid "Search"
 msgid "Search..."
 msgstr "Chwilio"
 
-#: kpluginselector.cpp:804 kpluginwidget.cpp:325
+#: kpluginwidget.cpp:324
 #, fuzzy, kde-format
 #| msgid "&About"
 msgid "About"
 msgstr "&Ynghylch"
-
-#: ksettings/dialog.cpp:222
-#, fuzzy, kde-format
-#| msgid "Embeddable HTML component"
-msgid "Enable component"
-msgstr "Cydran HTML mewnadeiladedig"
 
 #: qml/components/KPluginDelegate.qml:48
 #, fuzzy, kde-format
@@ -294,6 +189,43 @@ msgstr "Cyfieithiad"
 #| msgid "&Send Email"
 msgid "Send an email to %1"
 msgstr "Anfon E&bost"
+
+#~ msgid "The module %1 could not be found."
+#~ msgstr "Methu canfod y modiwl %1."
+
+#, fuzzy
+#~| msgid ""
+#~| "<qt><p>The diagnostics is:<br>The desktop file %1 could not be found.</"
+#~| "qt>"
+#~ msgid ""
+#~ "<qt><p>The diagnosis is:<br />The desktop file %1 could not be found.</"
+#~ "p></qt>"
+#~ msgstr ""
+#~ "<qt><p>Y diagnosteg yw:<br>Ni allwyd dod o hyd i'r ffeil benbwrdd %1.</qt>"
+
+#, fuzzy
+#~| msgid "Error opening file."
+#~ msgid "Error loading config module"
+#~ msgstr "Gwall tra'n agor y ffeil."
+
+#~ msgid "The module %1 is not a valid configuration module."
+#~ msgstr "Nid modiwl ffurfweddu dilys yw modiwl %1."
+
+#, fuzzy
+#~| msgid ""
+#~| "<qt><p>The diagnostics is:<br>The desktop file %1 does not specify a "
+#~| "library.</qt>"
+#~ msgid ""
+#~ "<qt>The diagnosis is:<br />The desktop file %1 does not specify a library."
+#~ "</qt>"
+#~ msgstr ""
+#~ "<qt> <p>Y diagnosteg yw: <br>Nid yw'r ffeil benbwrdd %1 yn penodi "
+#~ "rhaglengell.</qt>"
+
+#, fuzzy
+#~| msgid "Embeddable HTML component"
+#~ msgid "Enable component"
+#~ msgstr "Cydran HTML mewnadeiladedig"
 
 #, fuzzy
 #~ msgid "Widget style to use"

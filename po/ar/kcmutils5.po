@@ -21,7 +21,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdelibs4\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2022-12-07 00:43+0000\n"
+"POT-Creation-Date: 2023-03-01 21:29+0000\n"
 "PO-Revision-Date: 2022-04-28 12:58+0400\n"
 "Last-Translator: Zayed Al-Saidi <zayed.alsaidi@gmail.com>\n"
 "Language-Team: Arabic <kde-l10n-ar@kde.org>\n"
@@ -44,7 +44,7 @@ msgid "Your emails"
 msgstr ""
 "zayed.alsaidi@gmail.com,hannysabbagh@hotmail.com,safa1996alfulaij@gmail.com"
 
-#: kcmoduleloader.cpp:57 kcmoduleloader.cpp:160
+#: kcmoduleloader.cpp:57
 #, kde-format
 msgid "The module %1 is disabled."
 msgstr "الوحدة %1 معطّلة."
@@ -54,12 +54,12 @@ msgstr "الوحدة %1 معطّلة."
 msgid "The module has been disabled by the system administrator."
 msgstr "عطلت الوحدة من قبل مسؤول النظام."
 
-#: kcmoduleloader.cpp:93 kcmoduleloader.cpp:184
+#: kcmoduleloader.cpp:84
 #, kde-format
 msgid "Error loading QML file."
 msgstr "خطأ في تحميل ملف QML."
 
-#: kcmoduleloader.cpp:119
+#: kcmoduleloader.cpp:105
 #, kde-format
 msgid ""
 "<qt><p>Possible reasons:<ul><li>An error occurred during your last system "
@@ -73,51 +73,13 @@ msgstr ""
 "ul></p><p>تحقّق من هتين النقطتين بدقّة وحاول إزالة الوحدة المذكورة في رسالة "
 "الخطأ. إن لم ينجح هذا فمن الأفضل التواصل مع الموزّع أو المحزّم.</p></qt>"
 
-#: kcmoduleloader.cpp:153
-#, kde-format
-msgid "The module %1 could not be found."
-msgstr "تعذّر العثور على الوحدة %1."
-
-#: kcmoduleloader.cpp:154
-#, kde-format
-msgid ""
-"<qt><p>The diagnosis is:<br />The desktop file %1 could not be found.</p></"
-"qt>"
-msgstr "<qt><p>التشخيص:<br />تعذّر العثور على ملف سطح المكتب %1.</p></qt>"
-
-#: kcmoduleloader.cpp:161
-#, kde-format
-msgid ""
-"<qt><p>Either the hardware/software the module configures is not available "
-"or the module has been disabled by the administrator.</p></qt>"
-msgstr ""
-"<qt><p>إما أن العتاد/البرمجية التي تضبطها الوحدة غير متوفرة، أو أن المدير "
-"عطّل الوحدة.</p></qt>"
-
-#: kcmoduleloader.cpp:192
-#, kde-format
-msgid "Error loading config module"
-msgstr "خطأ في تحميل وحدة الضبط."
-
-#: kcmoduleloader.cpp:236
-#, kde-format
-msgid "The module %1 is not a valid configuration module."
-msgstr "الوحدة %1 ليست وحدة ضبط صالحة."
-
-#: kcmoduleloader.cpp:237
-#, kde-format
-msgid ""
-"<qt>The diagnosis is:<br />The desktop file %1 does not specify a library.</"
-"qt>"
-msgstr "<qt>التشخيص:<br />لا يُحدّد ملف سطح المكتب %1 أيّ مكتبة.</qt>"
-
-#: kcmoduleproxy.cpp:108
+#: kcmoduleproxy.cpp:98
 #, kde-format
 msgctxt "Argument is application name"
 msgid "This configuration section is already opened in %1"
 msgstr "جزء الضبط هذا مفتوح في «%1»"
 
-#: kcmultidialog.cpp:50
+#: kcmultidialog.cpp:49
 #, kde-format
 msgid ""
 "The settings of the current module have changed.\n"
@@ -126,96 +88,25 @@ msgstr ""
 "تغيّرت إعدادات الوحدة الحالية.\n"
 "أتريد تطبيقها أو إهمالها؟"
 
-#: kcmultidialog.cpp:52
+#: kcmultidialog.cpp:51
 #, kde-format
 msgid "Apply Settings"
 msgstr "طبّق الإعدادات"
 
-#: kcmultidialog.cpp:257 kpluginselector.cpp:809 kpluginwidget.cpp:330
+#: kcmultidialog.cpp:243 kpluginwidget.cpp:329
 #, kde-format
 msgid "Configure"
 msgstr "اضبط"
 
-#: kpluginselector.cpp:136
-#, kde-format
-msgid ""
-"Automatic changes have been performed due to plugin dependencies. Click here "
-"for further information"
-msgstr "أُجريت بعض التغييرات آليًا حسب اعتماديّات الملحقة. انقر هنا لمعلومات أكثر"
-
-#: kpluginselector.cpp:204
-#, kde-format
-msgid ""
-"Automatic changes have been performed in order to satisfy plugin "
-"dependencies:\n"
-msgstr "أُجريت بعض التغييرات آليًا لتُستوفى اعتماديّات الملحقة:\n"
-
-#: kpluginselector.cpp:210
-#, kde-format
-msgid ""
-"\n"
-"    %1 plugin has been automatically checked because of the dependency of %2 "
-"plugin"
-msgstr ""
-"\n"
-"    أُشّر على الملحقة %1 آليًا لأنها واحدة من اعتماديّات الملحقة %2"
-
-#: kpluginselector.cpp:212
-#, kde-format
-msgid ""
-"\n"
-"    %1 plugin has been automatically unchecked because of its dependency on "
-"%2 plugin"
-msgstr ""
-"\n"
-"    أُزيل تأشير الملحقة %1 آليًا لأنها تعتمد على الملحقة %2"
-
-#: kpluginselector.cpp:216
-#, kde-format
-msgid "Dependency Check"
-msgstr "فحص الاعتماديّات"
-
-#: kpluginselector.cpp:234
-#, kde-format
-msgid "%1 plugin automatically added due to plugin dependencies"
-msgid_plural "%1 plugins automatically added due to plugin dependencies"
-msgstr[0] "لم تُضف أي ملحقة آليًا إلى اعتماديّات الملحقة"
-msgstr[1] "أُضيفت ملحقة واحدة آليًا إلى اعتماديّات الملحقة"
-msgstr[2] "أُضيفت ملحقتين اثنتين آليًا إلى اعتماديّات الملحقة"
-msgstr[3] "أُضيفت %1 ملحقات آليًا إلى اعتماديّات الملحقة"
-msgstr[4] "أُضيفت %1 ملحقات آليًا إلى اعتماديّات الملحقة"
-msgstr[5] "أُضيفت %1 ملحقات آليًا إلى اعتماديّات الملحقة"
-
-#: kpluginselector.cpp:238
-#, kde-format
-msgid ", "
-msgstr " و"
-
-#: kpluginselector.cpp:242
-#, kde-format
-msgid "%1 plugin automatically removed due to plugin dependencies"
-msgid_plural "%1 plugins automatically removed due to plugin dependencies"
-msgstr[0] "لم تُزل أي ملحقة آليًا ذلك حسب اعتماديّات الملحقة"
-msgstr[1] "أُزيلت ملحقة واحدة آليًا حسب اعتماديّات الملحقة"
-msgstr[2] "أُزيلت ملحقتين اثنتين آليًا حسب اعتماديّات الملحقة"
-msgstr[3] "أُزيلت %1 ملحقات آليًا حسب اعتماديّات الملحقة"
-msgstr[4] "أُزيلت %1 ملحقة آليًا حسب اعتماديّات الملحقة"
-msgstr[5] "أُزيلت %1 ملحقة آليًا حسب اعتماديّات الملحقة"
-
-#: kpluginselector.cpp:264 kpluginwidget.cpp:59
+#: kpluginwidget.cpp:58
 #, kde-format
 msgid "Search..."
 msgstr "ابحث..."
 
-#: kpluginselector.cpp:804 kpluginwidget.cpp:325
+#: kpluginwidget.cpp:324
 #, kde-format
 msgid "About"
 msgstr "عن"
-
-#: ksettings/dialog.cpp:222
-#, kde-format
-msgid "Enable component"
-msgstr "فعّل المكوّن"
 
 #: qml/components/KPluginDelegate.qml:48
 #, kde-format
@@ -274,6 +165,86 @@ msgstr "المترجمون"
 #, kde-format
 msgid "Send an email to %1"
 msgstr "أرسِل بريد الإلكتروني إلى %1"
+
+#~ msgid "The module %1 could not be found."
+#~ msgstr "تعذّر العثور على الوحدة %1."
+
+#~ msgid ""
+#~ "<qt><p>The diagnosis is:<br />The desktop file %1 could not be found.</"
+#~ "p></qt>"
+#~ msgstr "<qt><p>التشخيص:<br />تعذّر العثور على ملف سطح المكتب %1.</p></qt>"
+
+#~ msgid ""
+#~ "<qt><p>Either the hardware/software the module configures is not "
+#~ "available or the module has been disabled by the administrator.</p></qt>"
+#~ msgstr ""
+#~ "<qt><p>إما أن العتاد/البرمجية التي تضبطها الوحدة غير متوفرة، أو أن المدير "
+#~ "عطّل الوحدة.</p></qt>"
+
+#~ msgid "Error loading config module"
+#~ msgstr "خطأ في تحميل وحدة الضبط."
+
+#~ msgid "The module %1 is not a valid configuration module."
+#~ msgstr "الوحدة %1 ليست وحدة ضبط صالحة."
+
+#~ msgid ""
+#~ "<qt>The diagnosis is:<br />The desktop file %1 does not specify a library."
+#~ "</qt>"
+#~ msgstr "<qt>التشخيص:<br />لا يُحدّد ملف سطح المكتب %1 أيّ مكتبة.</qt>"
+
+#~ msgid ""
+#~ "Automatic changes have been performed due to plugin dependencies. Click "
+#~ "here for further information"
+#~ msgstr ""
+#~ "أُجريت بعض التغييرات آليًا حسب اعتماديّات الملحقة. انقر هنا لمعلومات أكثر"
+
+#~ msgid ""
+#~ "Automatic changes have been performed in order to satisfy plugin "
+#~ "dependencies:\n"
+#~ msgstr "أُجريت بعض التغييرات آليًا لتُستوفى اعتماديّات الملحقة:\n"
+
+#~ msgid ""
+#~ "\n"
+#~ "    %1 plugin has been automatically checked because of the dependency of "
+#~ "%2 plugin"
+#~ msgstr ""
+#~ "\n"
+#~ "    أُشّر على الملحقة %1 آليًا لأنها واحدة من اعتماديّات الملحقة %2"
+
+#~ msgid ""
+#~ "\n"
+#~ "    %1 plugin has been automatically unchecked because of its dependency "
+#~ "on %2 plugin"
+#~ msgstr ""
+#~ "\n"
+#~ "    أُزيل تأشير الملحقة %1 آليًا لأنها تعتمد على الملحقة %2"
+
+#~ msgid "Dependency Check"
+#~ msgstr "فحص الاعتماديّات"
+
+#~ msgid "%1 plugin automatically added due to plugin dependencies"
+#~ msgid_plural "%1 plugins automatically added due to plugin dependencies"
+#~ msgstr[0] "لم تُضف أي ملحقة آليًا إلى اعتماديّات الملحقة"
+#~ msgstr[1] "أُضيفت ملحقة واحدة آليًا إلى اعتماديّات الملحقة"
+#~ msgstr[2] "أُضيفت ملحقتين اثنتين آليًا إلى اعتماديّات الملحقة"
+#~ msgstr[3] "أُضيفت %1 ملحقات آليًا إلى اعتماديّات الملحقة"
+#~ msgstr[4] "أُضيفت %1 ملحقات آليًا إلى اعتماديّات الملحقة"
+#~ msgstr[5] "أُضيفت %1 ملحقات آليًا إلى اعتماديّات الملحقة"
+
+#~ msgid ", "
+#~ msgstr " و"
+
+#~ msgid "%1 plugin automatically removed due to plugin dependencies"
+#~ msgid_plural "%1 plugins automatically removed due to plugin dependencies"
+#~ msgstr[0] "لم تُزل أي ملحقة آليًا ذلك حسب اعتماديّات الملحقة"
+#~ msgstr[1] "أُزيلت ملحقة واحدة آليًا حسب اعتماديّات الملحقة"
+#~ msgstr[2] "أُزيلت ملحقتين اثنتين آليًا حسب اعتماديّات الملحقة"
+#~ msgstr[3] "أُزيلت %1 ملحقات آليًا حسب اعتماديّات الملحقة"
+#~ msgstr[4] "أُزيلت %1 ملحقة آليًا حسب اعتماديّات الملحقة"
+#~ msgstr[5] "أُزيلت %1 ملحقة آليًا حسب اعتماديّات الملحقة"
+
+#~ msgid "Enable component"
+#~ msgstr "فعّل المكوّن"
 
 #~ msgid "Distance between desktop icons"
 #~ msgstr "المسافة بين أيقونات سطح المكتب"
