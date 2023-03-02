@@ -155,10 +155,10 @@ Kirigami.ApplicationItem {
 
     pageStack.defaultColumnWidth: kcm && kcm.columnWidth > 0 ? kcm.columnWidth : Kirigami.Units.gridUnit * 20
 
-    Keys.onReturnPressed: {
+    Keys.onReturnPressed: event => {
         event.accepted = true
     }
-    Keys.onEnterPressed: {
+    Keys.onEnterPressed: event => {
         event.accepted = true
     }
 }
