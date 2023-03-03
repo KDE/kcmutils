@@ -1,0 +1,132 @@
+# Copyright (C) YEAR This file is copyright:
+# This file is distributed under the same license as the kcmutils package.
+#
+# Yuri Chornoivan <yurchor@ukr.net>, 2023.
+msgid ""
+msgstr ""
+"Project-Id-Version: kcmutils\n"
+"Report-Msgid-Bugs-To: https://bugs.kde.org\n"
+"POT-Creation-Date: 2023-03-01 21:29+0000\n"
+"PO-Revision-Date: 2023-03-02 20:54+0200\n"
+"Last-Translator: Yuri Chornoivan <yurchor@ukr.net>\n"
+"Language-Team: Ukrainian <kde-i18n-uk@kde.org>\n"
+"Language: uk\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
+"%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
+"X-Generator: Lokalize 20.12.0\n"
+
+#, kde-format
+msgctxt "NAME OF TRANSLATORS"
+msgid "Your names"
+msgstr "Юрій Чорноіван"
+
+#, kde-format
+msgctxt "EMAIL OF TRANSLATORS"
+msgid "Your emails"
+msgstr "yurchor@ukr.net"
+
+#: main.cpp:132
+#, kde-format
+msgid "System Settings Module"
+msgstr "Модуль «Системних параметрів»"
+
+#: main.cpp:134
+#, kde-format
+msgid "A tool to start single system settings modules"
+msgstr "Інструмент для запуску окремих модулів «Системних параметрів»"
+
+#: main.cpp:136
+#, kde-format
+msgid "(c) 1999-2016, The KDE Developers"
+msgstr "© Розробники KDE, 1999–2016"
+
+#: main.cpp:138
+#, kde-format
+msgid "Frans Englich"
+msgstr "Frans Englich"
+
+#: main.cpp:138
+#, kde-format
+msgid "Maintainer"
+msgstr "Супровідник"
+
+#: main.cpp:139
+#, kde-format
+msgid "Daniel Molkentin"
+msgstr "Daniel Molkentin"
+
+#: main.cpp:140
+#, kde-format
+msgid "Matthias Hoelzer-Kluepfel"
+msgstr "Matthias Hoelzer-Kluepfel"
+
+#: main.cpp:141
+#, kde-format
+msgid "Matthias Elter"
+msgstr "Matthias Elter"
+
+#: main.cpp:142
+#, kde-format
+msgid "Matthias Ettrich"
+msgstr "Matthias Ettrich"
+
+#: main.cpp:143
+#, kde-format
+msgid "Waldo Bastian"
+msgstr "Waldo Bastian"
+
+#: main.cpp:149
+#, kde-format
+msgid "List all possible modules"
+msgstr "Вивести перелік усіх можливих модулів"
+
+#: main.cpp:150
+#, kde-format
+msgid "Configuration module to open"
+msgstr "Модуль налаштування, який слід відкрити"
+
+#: main.cpp:151
+#, kde-format
+msgid "Specify a particular language"
+msgstr "Вибір певної мови"
+
+#: main.cpp:152
+#, kde-format
+msgid "Do not display main window"
+msgstr "Не показувати головне вікно"
+
+#: main.cpp:153
+#, kde-format
+msgid "Arguments for the module"
+msgstr "Аргументи для модуля налаштувань"
+
+#: main.cpp:154
+#, kde-format
+msgid "Use a specific icon for the window"
+msgstr "Використовувати для вікна певну піктограму"
+
+#: main.cpp:155
+#, kde-format
+msgid "Use a specific caption for the window"
+msgstr "Використовувати для вікна певний підпис"
+
+#: main.cpp:164
+#, kde-format
+msgid ""
+"--lang is deprecated. Please set the LANGUAGE environment variable instead"
+msgstr ""
+"--lang вважається застарілим. Будь ласка, скористайтеся для встановлення "
+"мови змінною середовища LANGUAGE."
+
+#: main.cpp:168
+#, kde-format
+msgid "The following modules are available:"
+msgstr "Наявні наступні модулі:"
+
+#: main.cpp:181
+#, kde-format
+msgid "No description available"
+msgstr "Немає опису"

@@ -1,0 +1,124 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: kcmutils\n"
+"Report-Msgid-Bugs-To: https://bugs.kde.org\n"
+"POT-Creation-Date: 2023-03-01 21:29+0000\n"
+"PO-Revision-Date: 2023-03-02 20:56+0100\n"
+"Last-Translator: KDE Francophone <kde-francophone@kde.org>\n"
+"Language-Team: KDE Francophone <kde-francophone@kde.org>\n"
+"Language: fr\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+
+#, kde-format
+msgctxt "NAME OF TRANSLATORS"
+msgid "Your names"
+msgstr ""
+
+#, kde-format
+msgctxt "EMAIL OF TRANSLATORS"
+msgid "Your emails"
+msgstr ""
+
+#: main.cpp:132
+#, kde-format
+msgid "System Settings Module"
+msgstr ""
+
+#: main.cpp:134
+#, kde-format
+msgid "A tool to start single system settings modules"
+msgstr ""
+
+#: main.cpp:136
+#, kde-format
+msgid "(c) 1999-2016, The KDE Developers"
+msgstr ""
+
+#: main.cpp:138
+#, kde-format
+msgid "Frans Englich"
+msgstr ""
+
+#: main.cpp:138
+#, kde-format
+msgid "Maintainer"
+msgstr ""
+
+#: main.cpp:139
+#, kde-format
+msgid "Daniel Molkentin"
+msgstr ""
+
+#: main.cpp:140
+#, kde-format
+msgid "Matthias Hoelzer-Kluepfel"
+msgstr ""
+
+#: main.cpp:141
+#, kde-format
+msgid "Matthias Elter"
+msgstr ""
+
+#: main.cpp:142
+#, kde-format
+msgid "Matthias Ettrich"
+msgstr ""
+
+#: main.cpp:143
+#, kde-format
+msgid "Waldo Bastian"
+msgstr ""
+
+#: main.cpp:149
+#, kde-format
+msgid "List all possible modules"
+msgstr ""
+
+#: main.cpp:150
+#, kde-format
+msgid "Configuration module to open"
+msgstr ""
+
+#: main.cpp:151
+#, kde-format
+msgid "Specify a particular language"
+msgstr ""
+
+#: main.cpp:152
+#, kde-format
+msgid "Do not display main window"
+msgstr ""
+
+#: main.cpp:153
+#, kde-format
+msgid "Arguments for the module"
+msgstr ""
+
+#: main.cpp:154
+#, kde-format
+msgid "Use a specific icon for the window"
+msgstr ""
+
+#: main.cpp:155
+#, kde-format
+msgid "Use a specific caption for the window"
+msgstr ""
+
+#: main.cpp:164
+#, kde-format
+msgid ""
+"--lang is deprecated. Please set the LANGUAGE environment variable instead"
+msgstr ""
+
+#: main.cpp:168
+#, kde-format
+msgid "The following modules are available:"
+msgstr ""
+
+#: main.cpp:181
+#, kde-format
+msgid "No description available"
+msgstr ""
