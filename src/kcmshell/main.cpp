@@ -36,9 +36,9 @@
 #include <algorithm>
 #include <iostream>
 
-inline QVector<KPluginMetaData> findKCMsMetaData()
+inline QList<KPluginMetaData> findKCMsMetaData()
 {
-    QVector<KPluginMetaData> metaDataList = KPluginMetaData::findPlugins(QStringLiteral("plasma/kcms"));
+    QList<KPluginMetaData> metaDataList = KPluginMetaData::findPlugins(QStringLiteral("plasma/kcms"));
     metaDataList << KPluginMetaData::findPlugins(QStringLiteral("plasma/kcms/systemsettings"));
     metaDataList << KPluginMetaData::findPlugins(QStringLiteral("plasma/kcms/systemsettings_qwidgets"));
     metaDataList << KPluginMetaData::findPlugins(QStringLiteral("plasma/kcms/kinfocenter"));
@@ -167,7 +167,7 @@ int main(int _argc, char *_argv[])
     if (parser.isSet(QStringLiteral("list"))) {
         std::cout << i18n("The following modules are available:").toLocal8Bit().constData() << '\n';
 
-        QVector<KPluginMetaData> plugins = findKCMsMetaData();
+        QList<KPluginMetaData> plugins = findKCMsMetaData();
         int maxLen = 0;
 
         for (const auto &plugin : plugins) {

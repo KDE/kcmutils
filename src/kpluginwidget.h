@@ -8,7 +8,7 @@
 #ifndef KPLUGINWIDGET_H
 #define KPLUGINWIDGET_H
 
-#include <QVector>
+#include <QList>
 #include <QWidget>
 
 #include <KPluginMetaData>
@@ -43,7 +43,7 @@ public:
     /**
      * Adds the plugins with the given label to the widget
      */
-    void addPlugins(const QVector<KPluginMetaData> &plugins, const QString &categoryLabel);
+    void addPlugins(const QList<KPluginMetaData> &plugins, const QString &categoryLabel);
 
     /**
      * Set the config object that will be used to store the enabled state of the plugins.

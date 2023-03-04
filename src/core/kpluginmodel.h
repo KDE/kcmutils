@@ -11,7 +11,7 @@
 #include "kcmutilscore_export.h"
 
 #include <QAbstractListModel>
-#include <QVector>
+#include <QList>
 
 #include <KPluginMetaData>
 #include <memory>
@@ -44,7 +44,7 @@ public:
     int rowCount(const QModelIndex &parent = QModelIndex()) const override;
     QHash<int, QByteArray> roleNames() const override;
 
-    void addPlugins(const QVector<KPluginMetaData> &plugins, const QString &categoryLabel);
+    void addPlugins(const QList<KPluginMetaData> &plugins, const QString &categoryLabel);
     void clear();
     void setConfig(const KConfigGroup &config);
     void save();

@@ -59,7 +59,7 @@ public:
         return KPluginMetaData();
     }
 
-    QVector<KPluginMetaData> m_plugins;
+    QList<KPluginMetaData> m_plugins;
     QHash<QString, KPluginMetaData> m_pluginKcms;
     KConfigGroup m_config;
     QHash<QString, QString> m_categoryLabels;
@@ -153,7 +153,7 @@ QHash<int, QByteArray> KPluginModel::roleNames() const
     };
 };
 
-void KPluginModel::addPlugins(const QVector<KPluginMetaData> &newPlugins, const QString &categoryLabel)
+void KPluginModel::addPlugins(const QList<KPluginMetaData> &newPlugins, const QString &categoryLabel)
 {
     beginInsertRows({}, d->m_plugins.size(), d->m_plugins.size() + newPlugins.size() - 1);
     d->m_plugins.append(newPlugins);

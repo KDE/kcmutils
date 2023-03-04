@@ -68,7 +68,7 @@ KPluginWidget::KPluginWidget(QWidget *parent)
     connect(d->pluginModel,
             &QAbstractItemModel::dataChanged,
             this,
-            [this](const QModelIndex &topLeft, const QModelIndex & /*bottomRight*/, const QVector<int> &roles) {
+            [this](const QModelIndex &topLeft, const QModelIndex & /*bottomRight*/, const QList<int> &roles) {
                 if (roles.contains(KPluginModel::EnabledRole)) {
                     Q_EMIT pluginEnabledChanged(topLeft.data(KPluginModel::IdRole).toString(), topLeft.data(KPluginModel::EnabledRole).toBool());
                     Q_EMIT changed(d->pluginModel->isSaveNeeded());
@@ -107,7 +107,7 @@ KPluginWidget::~KPluginWidget()
     delete d->listView; // depends on some other things in d, make sure this dies first.
 }
 
-void KPluginWidget::addPlugins(const QVector<KPluginMetaData> &plugins, const QString &categoryLabel)
+void KPluginWidget::addPlugins(const QList<KPluginMetaData> &plugins, const QString &categoryLabel)
 {
     d->pluginModel->addPlugins(plugins, categoryLabel);
     d->proxyModel->sort(0);
