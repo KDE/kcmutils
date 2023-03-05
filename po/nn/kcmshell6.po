@@ -1,45 +1,48 @@
-# Xavier BESNARD <xavier.besnard]neuf.fr>, 2023.
+# Translation of kcmshell6 to Norwegian Nynorsk
+#
+# Karl Ove Hufthammer <karl@huftis.org>, 2023.
 msgid ""
 msgstr ""
 "Project-Id-Version: kcmutils\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-03-01 21:29+0000\n"
-"PO-Revision-Date: 2023-03-03 18:40+0100\n"
-"Last-Translator: Xavier BESNARD <xavier.besnard]neuf.fr>\n"
-"Language-Team: fr\n"
-"Language: fr\n"
+"PO-Revision-Date: 2023-03-04 16:26+0100\n"
+"Last-Translator: Karl Ove Hufthammer <karl@huftis.org>\n"
+"Language-Team: Norwegian Nynorsk <l10n-no@lister.huftis.org>\n"
+"Language: nn\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=2; plural=(n > 1);\n"
-"X-Generator: Lokalize 22.12.3\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Lokalize 22.12.2\n"
+"X-Environment: kde\n"
+"X-Accelerator-Marker: &\n"
+"X-Text-Markup: kde4\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
 msgid "Your names"
-msgstr "Xavier Besnard"
+msgstr "Karl Ove Hufthammer"
 
 #, kde-format
 msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
-msgstr "xavier.besnard@neuf.fr"
+msgstr "karl@huftis.org"
 
 #: main.cpp:132
 #, kde-format
 msgid "System Settings Module"
-msgstr "Module de configuration du système"
+msgstr "Modul for systemoppsett"
 
 #: main.cpp:134
 #, kde-format
 msgid "A tool to start single system settings modules"
-msgstr ""
-"Un outil permettant de lancer spécifiquement des modules de configuration du "
-"système"
+msgstr "Verktøy for å starta systemoppsettmodular"
 
 #: main.cpp:136
 #, kde-format
 msgid "(c) 1999-2016, The KDE Developers"
-msgstr "(c) 1999-2016, L'équipe de développement de KDE"
+msgstr "© 1999–2016 KDE-utviklarane"
 
 #: main.cpp:138
 #, kde-format
@@ -49,7 +52,7 @@ msgstr "Frans Englich"
 #: main.cpp:138
 #, kde-format
 msgid "Maintainer"
-msgstr "Mainteneur"
+msgstr "Vedlikehaldar"
 
 #: main.cpp:139
 #, kde-format
@@ -59,7 +62,7 @@ msgstr "Daniel Molkentin"
 #: main.cpp:140
 #, kde-format
 msgid "Matthias Hoelzer-Kluepfel"
-msgstr "Matthias Hoelzer-Kluepfel"
+msgstr "Matthias Hölzer-Klüpfel"
 
 #: main.cpp:141
 #, kde-format
@@ -79,52 +82,51 @@ msgstr "Waldo Bastian"
 #: main.cpp:149
 #, kde-format
 msgid "List all possible modules"
-msgstr "Liste tous les modules existants"
+msgstr "Vis alle moglege modular"
 
 #: main.cpp:150
 #, kde-format
 msgid "Configuration module to open"
-msgstr "Module de configuration à ouvrir"
+msgstr "Oppsettsmodul som skal opnast"
 
 #: main.cpp:151
 #, kde-format
 msgid "Specify a particular language"
-msgstr "Spécifier une langue particulière"
+msgstr "Vel eit språk"
 
 #: main.cpp:152
 #, kde-format
 msgid "Do not display main window"
-msgstr "Ne pas afficher la fenêtre principale"
+msgstr "Ikkje vis hovudvindauget"
 
 #: main.cpp:153
 #, kde-format
 msgid "Arguments for the module"
-msgstr "Paramètres pour le module"
+msgstr "Argument for modulen"
 
 #: main.cpp:154
 #, kde-format
 msgid "Use a specific icon for the window"
-msgstr "Utiliser une icône spécifique pour la fenêtre"
+msgstr "Bruk valt ikon for vindauget"
 
 #: main.cpp:155
 #, kde-format
 msgid "Use a specific caption for the window"
-msgstr "Utiliser un titre spécifique pour la fenêtre"
+msgstr "Bruk vald tittel for vindauget"
 
 #: main.cpp:164
 #, kde-format
 msgid ""
 "--lang is deprecated. Please set the LANGUAGE environment variable instead"
 msgstr ""
-"Le paramètre « --lang » est déconseillé. Veuillez utiliser plutôt la "
-"variable d'environnement « LANGUAGE » à la place."
+"«--lang»-argumentet er utdatert. Bruk heller miljøvariabelen «LANGUAGE»."
 
 #: main.cpp:168
 #, kde-format
 msgid "The following modules are available:"
-msgstr "Les modules suivants sont disponibles :"
+msgstr "Desse modulane er tilgjengelege:"
 
 #: main.cpp:181
 #, kde-format
 msgid "No description available"
-msgstr "Aucune description disponible"
+msgstr "Inga skildring tilgjengeleg"
