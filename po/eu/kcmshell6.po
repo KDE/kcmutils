@@ -1,0 +1,134 @@
+# Translation for kcmshell6.po to Euskara/Basque (eu).
+# Copyright (C) 2023 This file is copyright:
+# This file is distributed under the same license as the kcmutils package.
+# KDE euskaratzeko proiektuko arduraduna <xalba@ni.eus>.
+#
+# Translators:
+# Iñigo Salvador Azurmendi <xalba@ni.eus>, 2023.
+msgid ""
+msgstr ""
+"Project-Id-Version: kcmutils\n"
+"Report-Msgid-Bugs-To: https://bugs.kde.org\n"
+"POT-Creation-Date: 2023-03-01 21:29+0000\n"
+"PO-Revision-Date: 2023-03-05 21:33+0100\n"
+"Last-Translator: Iñigo Salvador Azurmendi <xalba@ni.eus>\n"
+"Language-Team: Basque\n"
+"Language: eu\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Lokalize 22.12.3\n"
+
+#, kde-format
+msgctxt "NAME OF TRANSLATORS"
+msgid "Your names"
+msgstr "Iñigo Salvador Azurmendi"
+
+#, kde-format
+msgctxt "EMAIL OF TRANSLATORS"
+msgid "Your emails"
+msgstr "xalba@ni.eus"
+
+#: main.cpp:132
+#, kde-format
+msgid "System Settings Module"
+msgstr "Sistema-ezarpenak modulua"
+
+#: main.cpp:134
+#, kde-format
+msgid "A tool to start single system settings modules"
+msgstr "Sistema-ezarpenetako moduluak banaka abiarazteko tresna bat"
+
+#: main.cpp:136
+#, kde-format
+msgid "(c) 1999-2016, The KDE Developers"
+msgstr "(c) 1999-2016, KDE garatzaileak"
+
+#: main.cpp:138
+#, kde-format
+msgid "Frans Englich"
+msgstr "Frans Englich"
+
+#: main.cpp:138
+#, kde-format
+msgid "Maintainer"
+msgstr "Arduraduna"
+
+#: main.cpp:139
+#, kde-format
+msgid "Daniel Molkentin"
+msgstr "Daniel Molkentin"
+
+#: main.cpp:140
+#, kde-format
+msgid "Matthias Hoelzer-Kluepfel"
+msgstr "Matthias Hoelzer-Kluepfel"
+
+#: main.cpp:141
+#, kde-format
+msgid "Matthias Elter"
+msgstr "Matthias Elter"
+
+#: main.cpp:142
+#, kde-format
+msgid "Matthias Ettrich"
+msgstr "Matthias Ettrich"
+
+#: main.cpp:143
+#, kde-format
+msgid "Waldo Bastian"
+msgstr "Waldo Bastian"
+
+#: main.cpp:149
+#, kde-format
+msgid "List all possible modules"
+msgstr "Zerrendatu modulu posible guztiak"
+
+#: main.cpp:150
+#, kde-format
+msgid "Configuration module to open"
+msgstr "Ireki beharreko konfigurazio-modulua"
+
+#: main.cpp:151
+#, kde-format
+msgid "Specify a particular language"
+msgstr "Zehaztu hizkuntza jakin bat"
+
+#: main.cpp:152
+#, kde-format
+msgid "Do not display main window"
+msgstr "Ez azaldu leiho nagusia"
+
+#: main.cpp:153
+#, kde-format
+msgid "Arguments for the module"
+msgstr "Modulurako argumentuak"
+
+#: main.cpp:154
+#, kde-format
+msgid "Use a specific icon for the window"
+msgstr "Leihorako ikono zehatz bat erabili"
+
+#: main.cpp:155
+#, kde-format
+msgid "Use a specific caption for the window"
+msgstr "Leihorako legenda zehatz bat erabili"
+
+#: main.cpp:164
+#, kde-format
+msgid ""
+"--lang is deprecated. Please set the LANGUAGE environment variable instead"
+msgstr ""
+"--lang zaharkitua dago. Mesedez, horren ordez, ezarri LANGUAGE ingurune "
+"aldagaia"
+
+#: main.cpp:168
+#, kde-format
+msgid "The following modules are available:"
+msgstr "Ondoko moduluak erabilgarri daude:"
+
+#: main.cpp:181
+#, kde-format
+msgid "No description available"
+msgstr "Ez dago azalpenik"

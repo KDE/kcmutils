@@ -1,0 +1,132 @@
+# Translation of kcmshell6.po to Catalan
+# Copyright (C) 2023 This_file_is_part_of_KDE
+# This file is distributed under the license LGPL version 2.1 or
+# version 3 or later versions approved by the membership of KDE e.V.
+#
+# Josep M. Ferrer <txemaq@gmail.com>, 2023.
+msgid ""
+msgstr ""
+"Project-Id-Version: kcmutils\n"
+"Report-Msgid-Bugs-To: https://bugs.kde.org\n"
+"POT-Creation-Date: 2023-03-01 21:29+0000\n"
+"PO-Revision-Date: 2023-03-05 13:00+0100\n"
+"Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
+"Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
+"Language: ca\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Lokalize 20.12.0\n"
+
+#, kde-format
+msgctxt "NAME OF TRANSLATORS"
+msgid "Your names"
+msgstr "Josep M. Ferrer"
+
+#, kde-format
+msgctxt "EMAIL OF TRANSLATORS"
+msgid "Your emails"
+msgstr "txemaq@gmail.com"
+
+#: main.cpp:132
+#, kde-format
+msgid "System Settings Module"
+msgstr "Mòdul de l'Arranjament del sistema"
+
+#: main.cpp:134
+#, kde-format
+msgid "A tool to start single system settings modules"
+msgstr ""
+"Una eina per a iniciar mòduls individuals per a la configuració del sistema"
+
+#: main.cpp:136
+#, kde-format
+msgid "(c) 1999-2016, The KDE Developers"
+msgstr "(c) 1999-2016, The KDE Developers"
+
+#: main.cpp:138
+#, kde-format
+msgid "Frans Englich"
+msgstr "Frans Englich"
+
+#: main.cpp:138
+#, kde-format
+msgid "Maintainer"
+msgstr "Mantenidor"
+
+#: main.cpp:139
+#, kde-format
+msgid "Daniel Molkentin"
+msgstr "Daniel Molkentin"
+
+#: main.cpp:140
+#, kde-format
+msgid "Matthias Hoelzer-Kluepfel"
+msgstr "Matthias Hoelzer-Kluepfel"
+
+#: main.cpp:141
+#, kde-format
+msgid "Matthias Elter"
+msgstr "Matthias Elter"
+
+#: main.cpp:142
+#, kde-format
+msgid "Matthias Ettrich"
+msgstr "Matthias Ettrich"
+
+#: main.cpp:143
+#, kde-format
+msgid "Waldo Bastian"
+msgstr "Waldo Bastian"
+
+#: main.cpp:149
+#, kde-format
+msgid "List all possible modules"
+msgstr "Llista tots els mòduls possibles"
+
+#: main.cpp:150
+#, kde-format
+msgid "Configuration module to open"
+msgstr "Mòdul de configuració a obrir"
+
+#: main.cpp:151
+#, kde-format
+msgid "Specify a particular language"
+msgstr "Especifiqueu un idioma en particular"
+
+#: main.cpp:152
+#, kde-format
+msgid "Do not display main window"
+msgstr "No mostris la finestra principal"
+
+#: main.cpp:153
+#, kde-format
+msgid "Arguments for the module"
+msgstr "Arguments per al mòdul"
+
+#: main.cpp:154
+#, kde-format
+msgid "Use a specific icon for the window"
+msgstr "Usa una icona específica per a la finestra"
+
+#: main.cpp:155
+#, kde-format
+msgid "Use a specific caption for the window"
+msgstr "Usa una llegenda específica per a la finestra"
+
+#: main.cpp:164
+#, kde-format
+msgid ""
+"--lang is deprecated. Please set the LANGUAGE environment variable instead"
+msgstr "--lang està en desús. Establiu la variable d'entorn LANGUAGE"
+
+#: main.cpp:168
+#, kde-format
+msgid "The following modules are available:"
+msgstr "Hi ha disponibles els mòduls següents:"
+
+#: main.cpp:181
+#, kde-format
+msgid "No description available"
+msgstr "No hi ha disponible cap descripció"
