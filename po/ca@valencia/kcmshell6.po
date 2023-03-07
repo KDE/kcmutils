@@ -1,47 +1,49 @@
-# Copyright (C) YEAR This file is copyright:
-# This file is distributed under the same license as the kcmutils package.
+# Translation of kcmshell6.po to Catalan (Valencian)
+# Copyright (C) 2023 This_file_is_part_of_KDE
+# This file is distributed under the license LGPL version 2.1 or
+# version 3 or later versions approved by the membership of KDE e.V.
 #
-# Matjaž Jeran <matjaz.jeran@amis.net>, 2023.
+# Josep M. Ferrer <txemaq@gmail.com>, 2023.
 msgid ""
 msgstr ""
 "Project-Id-Version: kcmutils\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-03-01 21:29+0000\n"
-"PO-Revision-Date: 2023-03-04 09:46+0100\n"
-"Last-Translator: Matjaž Jeran <matjaz.jeran@amis.net>\n"
-"Language-Team: Slovenian <lugos-slo@lugos.si>\n"
-"Language: sl\n"
+"PO-Revision-Date: 2023-03-05 13:00+0100\n"
+"Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
+"Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
+"Language: ca@valencia\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=4; plural=(n%100==1 ? 1 : n%100==2 ? 2 : n%100==3 || n"
-"%100==4 ? 3 : 0);\n"
-"X-Generator: Lokalize 22.12.2\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Lokalize 20.12.0\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
 msgid "Your names"
-msgstr "Matjaž Jeran"
+msgstr "Josep M. Ferrer"
 
 #, kde-format
 msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
-msgstr "matjaz.jeran@amis.net"
+msgstr "txemaq@gmail.com"
 
 #: main.cpp:132
 #, kde-format
 msgid "System Settings Module"
-msgstr "Modul sistemskih nastavitev"
+msgstr "Mòdul de Configuració del sistema"
 
 #: main.cpp:134
 #, kde-format
 msgid "A tool to start single system settings modules"
-msgstr "Orodje za zagon enega modula sistemskih nastavitev"
+msgstr ""
+"Una eina per a iniciar mòduls individuals per a la configuració del sistema"
 
 #: main.cpp:136
 #, kde-format
 msgid "(c) 1999-2016, The KDE Developers"
-msgstr "(c) 1999-2016, razvijalci KDE"
+msgstr "(c) 1999-2016, Els desenvolupadors de KDE"
 
 #: main.cpp:138
 #, kde-format
@@ -51,7 +53,7 @@ msgstr "Frans Englich"
 #: main.cpp:138
 #, kde-format
 msgid "Maintainer"
-msgstr "Vzdrževalec"
+msgstr "Mantenidor"
 
 #: main.cpp:139
 #, kde-format
@@ -81,50 +83,50 @@ msgstr "Waldo Bastian"
 #: main.cpp:149
 #, kde-format
 msgid "List all possible modules"
-msgstr "Navedi vse možne module"
+msgstr "Llista tots els mòduls possibles"
 
 #: main.cpp:150
 #, kde-format
 msgid "Configuration module to open"
-msgstr "Modul konfiguracije za odpiranje"
+msgstr "Mòdul de configuració que s'ha d'obrir"
 
 #: main.cpp:151
 #, kde-format
 msgid "Specify a particular language"
-msgstr "Navedi določen jezik"
+msgstr "Especifiqueu un idioma en particular"
 
 #: main.cpp:152
 #, kde-format
 msgid "Do not display main window"
-msgstr "Ne prikazuj glavnega okna"
+msgstr "No mostres la finestra principal"
 
 #: main.cpp:153
 #, kde-format
 msgid "Arguments for the module"
-msgstr "Argumenti za modul"
+msgstr "Arguments per al mòdul"
 
 #: main.cpp:154
 #, kde-format
 msgid "Use a specific icon for the window"
-msgstr "Uporabi posebno ikono za okno"
+msgstr "Utilitza una icona específica per a la finestra"
 
 #: main.cpp:155
 #, kde-format
 msgid "Use a specific caption for the window"
-msgstr "Uporabi poseben zajem za okno"
+msgstr "Utilitza una llegenda específica per a la finestra"
 
 #: main.cpp:164
 #, kde-format
 msgid ""
 "--lang is deprecated. Please set the LANGUAGE environment variable instead"
-msgstr "--lang je zastarel. Namesto tega nastavite okolje LANGUAGE"
+msgstr "--lang està en desús. Establiu la variable d'entorn LANGUAGE"
 
 #: main.cpp:168
 #, kde-format
 msgid "The following modules are available:"
-msgstr "NA voljo so naslednji moduli:"
+msgstr "Hi ha disponibles els mòduls següents:"
 
 #: main.cpp:181
 #, kde-format
 msgid "No description available"
-msgstr "Opisa ni na voljo"
+msgstr "No hi ha disponible cap descripció"
