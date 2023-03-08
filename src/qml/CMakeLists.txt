@@ -29,18 +29,18 @@ target_link_libraries(KF6KCMUtilsQuick
 set_target_properties(KF6KCMUtilsQuick PROPERTIES
                       VERSION ${KCMUTILS_VERSION}
                       SOVERSION ${KCMUTILS_SOVERSION}
-                      EXPORT_NAME KCMUtilsQml)
-ecm_generate_headers(KCMUtilsQml_HEADERS
+                      EXPORT_NAME KCMUtilsQuick)
+ecm_generate_headers(KCMUtilsQuick_HEADERS
   HEADER_NAMES
   KQuickConfigModule
   KQuickManagedConfigModule
   KQuickConfigModuleLoader
 
-  REQUIRED_HEADERS KCMUtilsQml_HEADERS
+  REQUIRED_HEADERS KCMUtilsQuick_HEADERS
 )
 install(FILES
   ${CMAKE_CURRENT_BINARY_DIR}/kcmutilsquick_export.h
-  ${KCMUtilsQml_HEADERS}
+  ${KCMUtilsQuick_HEADERS}
   DESTINATION ${KDE_INSTALL_INCLUDEDIR_KF}/KCMUtilsQuick COMPONENT Devel
 )
 
