@@ -17,6 +17,6 @@ public:
     }
 };
 
-K_PLUGIN_CLASS_WITH_JSON(TimeSettings, "kcm_time.json")
+K_PLUGIN_CLASS_WITH_JSON(TimeSettings, "kcm_testqml.json")
 
 #include "timesettings.moc"
