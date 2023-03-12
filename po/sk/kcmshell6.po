@@ -1,46 +1,44 @@
-# Copyright (C) YEAR This file is copyright:
-# This file is distributed under the same license as the kcmutils package.
-#
-# Steve Allewell <steve.allewell@gmail.com>, 2023.
+# translation of kcmshell6.po to Slovak
+# Roman Paholik <wizzardsk@gmail.com>, 2023.
 msgid ""
 msgstr ""
-"Project-Id-Version: kcmutils\n"
+"Project-Id-Version: kcmshell6\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-03-01 21:29+0000\n"
-"PO-Revision-Date: 2023-03-10 19:31+0000\n"
-"Last-Translator: Steve Allewell <steve.allewell@gmail.com>\n"
-"Language-Team: British English\n"
-"Language: en_GB\n"
+"PO-Revision-Date: 2023-03-11 18:06+0100\n"
+"Last-Translator: Roman Paholik <wizzardsk@gmail.com>\n"
+"Language-Team: Slovak <kde-sk@linux.sk>\n"
+"Language: sk\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Lokalize 23.03.70\n"
+"X-Generator: Lokalize 22.12.3\n"
+"Plural-Forms: nplurals=3; plural=(n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2;\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
 msgid "Your names"
-msgstr "Steve Allewell"
+msgstr "Roman Paholík"
 
 #, kde-format
 msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
-msgstr "steve.allewell@gmail.com"
+msgstr "wizzardsk@gmail.com"
 
 #: main.cpp:132
 #, kde-format
 msgid "System Settings Module"
-msgstr "System Settings Module"
+msgstr "Modul systémových nastavení"
 
 #: main.cpp:134
 #, kde-format
 msgid "A tool to start single system settings modules"
-msgstr "A tool to start single system settings modules"
+msgstr "Nástroj pre spustenie jednotlivých ovládacích modulov"
 
 #: main.cpp:136
 #, kde-format
 msgid "(c) 1999-2016, The KDE Developers"
-msgstr "(c) 1999-2016, The KDE Developers"
+msgstr "(c) 1999-2016, Vývojári KDE"
 
 #: main.cpp:138
 #, kde-format
@@ -50,7 +48,7 @@ msgstr "Frans Englich"
 #: main.cpp:138
 #, kde-format
 msgid "Maintainer"
-msgstr "Maintainer"
+msgstr "Správca"
 
 #: main.cpp:139
 #, kde-format
@@ -80,51 +78,52 @@ msgstr "Waldo Bastian"
 #: main.cpp:149
 #, kde-format
 msgid "List all possible modules"
-msgstr "List all possible modules"
+msgstr "Zoznam všetkých dostupných modulov"
 
 #: main.cpp:150
 #, kde-format
 msgid "Configuration module to open"
-msgstr "Configuration module to open"
+msgstr "Konfiguračný modul na otvorenie"
 
 #: main.cpp:151
 #, kde-format
 msgid "Specify a particular language"
-msgstr "Specify a particular language"
+msgstr "Spustiť pre daný jazyk"
 
 #: main.cpp:152
 #, kde-format
 msgid "Do not display main window"
-msgstr "Do not display main window"
+msgstr "Nezobrazovať hlavné okno"
 
 #: main.cpp:153
 #, kde-format
 msgid "Arguments for the module"
-msgstr "Arguments for the module"
+msgstr "Argumenty pre modul"
 
 #: main.cpp:154
 #, kde-format
 msgid "Use a specific icon for the window"
-msgstr "Use a specific icon for the window"
+msgstr "Použiť špecifickú ikonu pre okno"
 
 #: main.cpp:155
 #, kde-format
 msgid "Use a specific caption for the window"
-msgstr "Use a specific caption for the window"
+msgstr "Použiť špecifický popis pre okno"
 
 #: main.cpp:164
 #, kde-format
 msgid ""
 "--lang is deprecated. Please set the LANGUAGE environment variable instead"
 msgstr ""
-"--lang is deprecated. Please set the LANGUAGE environment variable instead"
+"--lang je zastaralé. Prosím, použite namiesto toto premennú prostredia "
+"LANGUAGE"
 
 #: main.cpp:168
 #, kde-format
 msgid "The following modules are available:"
-msgstr "The following modules are available:"
+msgstr "Sú dostupné tieto moduly:"
 
 #: main.cpp:181
 #, kde-format
 msgid "No description available"
-msgstr "No description available"
+msgstr "Popis nie je k dispozícii"
