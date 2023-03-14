@@ -84,6 +84,14 @@ public:
     void defaults() override;
 
     /**
+     * Utility function that marks the KCM as changed
+     */
+    void markAsChanged()
+    {
+        setNeedsSave(true);
+    }
+
+    /**
      * Get the associated widget that can be embedded
      * The returned widget should be used as a parent for widgets you create
      */
