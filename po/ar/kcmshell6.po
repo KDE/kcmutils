@@ -1,133 +1,130 @@
-# German translations for kcmutils package.
-# Copyright (C) 2023 This file is copyright:
+# Copyright (C) YEAR This file is copyright:
 # This file is distributed under the same license as the kcmutils package.
-# Frederik Schwarzer <schwarzer@kde.org>, 2023.
 #
-# Automatically generated, 2023.
+# Zayed Al-Saidi <zayed.alsaidi@gmail.com>, 2023.
 msgid ""
 msgstr ""
 "Project-Id-Version: kcmutils\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-03-01 21:29+0000\n"
-"PO-Revision-Date: 2023-03-12 16:05+0100\n"
-"Last-Translator: Frederik Schwarzer <schwarzer@kde.org>\n"
-"Language-Team: German <kde-i18n-de@kde.org>\n"
-"Language: de\n"
+"PO-Revision-Date: 2023-03-16 12:56+0400\n"
+"Last-Translator: Zayed Al-Saidi <zayed.alsaidi@gmail.com>\n"
+"Language-Team: ar\n"
+"Language: ar\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Lokalize 22.07.70\n"
+"Plural-Forms: nplurals=6; plural=n==0 ? 0 : n==1 ? 1 : n==2 ? 2 : n%100>=3 "
+"&& n%100<=10 ? 3 : n%100>=11 && n%100<=99 ? 4 : 5;\n"
+"X-Generator: Lokalize 21.12.3\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
 msgid "Your names"
-msgstr "Deutsches KDE-Übersetzerteam"
+msgstr "زايد السعيدي"
 
 #, kde-format
 msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
-msgstr "kde-i18n-de@kde.org"
+msgstr "zayed.alsaidi@gmail.com"
 
 #: main.cpp:132
 #, kde-format
 msgid "System Settings Module"
-msgstr "Modul für Systemeinstellungen"
+msgstr "وحدة إعدادات النّظام"
 
 #: main.cpp:134
 #, kde-format
 msgid "A tool to start single system settings modules"
-msgstr "Ein Hilfsprogramm zum Starten von Modulen der Systemeinstellungen"
+msgstr "أداة لبدء وحدات إعدادات النظام بشكل منفصل"
 
 #: main.cpp:136
 #, kde-format
 msgid "(c) 1999-2016, The KDE Developers"
-msgstr "Copyright 1999–2016, Die KDE-Entwickler"
+msgstr "© ١٩٩٩-٢٠١٦ لمطوري كدي"
 
 #: main.cpp:138
 #, kde-format
 msgid "Frans Englich"
-msgstr "Frans Englich"
+msgstr "فرانس إنجليتش"
 
 #: main.cpp:138
 #, kde-format
 msgid "Maintainer"
-msgstr "Betreuer"
+msgstr "المصين"
 
 #: main.cpp:139
 #, kde-format
 msgid "Daniel Molkentin"
-msgstr "Daniel Molkentin"
+msgstr "دانييل مولكنتين"
 
 #: main.cpp:140
 #, kde-format
 msgid "Matthias Hoelzer-Kluepfel"
-msgstr "Matthias Hoelzer-Kluepfel"
+msgstr "ماتياس هويلزر-كلويبفيل"
 
 #: main.cpp:141
 #, kde-format
 msgid "Matthias Elter"
-msgstr "Matthias Elter"
+msgstr "ماتياس إيلتر"
 
 #: main.cpp:142
 #, kde-format
 msgid "Matthias Ettrich"
-msgstr "Matthias Ettrich"
+msgstr "ماتياس إيتيش"
 
 #: main.cpp:143
 #, kde-format
 msgid "Waldo Bastian"
-msgstr "Waldo Bastian"
+msgstr "والدو باستيان"
 
 #: main.cpp:149
 #, kde-format
 msgid "List all possible modules"
-msgstr "Alle möglichen Module anzeigen"
+msgstr "سرد كل الوحدات المحتملة"
 
 #: main.cpp:150
 #, kde-format
 msgid "Configuration module to open"
-msgstr "Zu öffnendes Einstellungsmodul"
+msgstr "وحدة الضبط لفتح"
 
 #: main.cpp:151
 #, kde-format
 msgid "Specify a particular language"
-msgstr "Wählen Sie eine bestimmte Sprache"
+msgstr "حدّد لغة معينة"
 
 #: main.cpp:152
 #, kde-format
 msgid "Do not display main window"
-msgstr "Hauptfenster nicht anzeigen"
+msgstr "لا تعرض النافذة الرئيسية"
 
 #: main.cpp:153
 #, kde-format
 msgid "Arguments for the module"
-msgstr "Argumente für das Modul"
+msgstr "معامِلات الوحدات"
 
 #: main.cpp:154
 #, kde-format
 msgid "Use a specific icon for the window"
-msgstr "Ein spezielles Symbol für das Fenster verwenden"
+msgstr "استعمل رمز محدد للنافذة"
 
 #: main.cpp:155
 #, kde-format
 msgid "Use a specific caption for the window"
-msgstr "Einen speziellen Titel für das Fenster verwenden"
+msgstr "استعمل وصف محدد للنافذة"
 
 #: main.cpp:164
 #, kde-format
 msgid ""
 "--lang is deprecated. Please set the LANGUAGE environment variable instead"
-msgstr ""
-"--lang ist veraltet, bitte verwenden Sie stattdessen die Umgebungsvariable "
-"LANGUAGE"
+msgstr "المعامل --lang مهجور. الرجاء استخدم متغير البيئة LANGUAGE عوضا عن ذلك."
 
 #: main.cpp:168
 #, kde-format
 msgid "The following modules are available:"
-msgstr "Die folgenden Module sind verfügbar:"
+msgstr "الوحدات النمطية التالية هي متوفرة:"
 
 #: main.cpp:181
 #, kde-format
 msgid "No description available"
-msgstr "Keine Beschreibung verfügbar"
+msgstr "لا يوجد وصف"

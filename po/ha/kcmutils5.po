@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdelibs4\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-03-01 21:29+0000\n"
+"POT-Creation-Date: 2023-03-17 02:32+0000\n"
 "PO-Revision-Date: 2009-03-17 11:22+0100\n"
 "Last-Translator: Adriaan de Groot <groot@kde.org>\n"
 "Language-Team: Hausa <kde-i18n-doc@lists.kde.org>\n"
@@ -28,22 +28,7 @@ msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
 msgstr ",groot@kde.org,"
 
-#: kcmoduleloader.cpp:57
-#, kde-format
-msgid "The module %1 is disabled."
-msgstr ""
-
-#: kcmoduleloader.cpp:58
-#, kde-format
-msgid "The module has been disabled by the system administrator."
-msgstr ""
-
-#: kcmoduleloader.cpp:84
-#, kde-format
-msgid "Error loading QML file."
-msgstr ""
-
-#: kcmoduleloader.cpp:105
+#: kcmoduleloader.cpp:49
 #, kde-format
 msgid ""
 "<qt><p>Possible reasons:<ul><li>An error occurred during your last system "
@@ -53,26 +38,35 @@ msgid ""
 "this fails, consider contacting your distributor or packager.</p></qt>"
 msgstr ""
 
-#: kcmoduleproxy.cpp:98
+#: kcmoduleloader.cpp:69
 #, kde-format
-msgctxt "Argument is application name"
-msgid "This configuration section is already opened in %1"
+msgid "The module %1 is disabled."
 msgstr ""
 
-#: kcmultidialog.cpp:49
+#: kcmoduleloader.cpp:69
+#, kde-format
+msgid "The module has been disabled by the system administrator."
+msgstr ""
+
+#: kcmoduleloader.cpp:75
+#, kde-format
+msgid "Error loading QML file."
+msgstr ""
+
+#: kcmultidialog.cpp:44
 #, kde-format
 msgid ""
 "The settings of the current module have changed.\n"
 "Do you want to apply the changes or discard them?"
 msgstr ""
 
-#: kcmultidialog.cpp:51
+#: kcmultidialog.cpp:46
 #, fuzzy, kde-format
 #| msgid "Settings"
 msgid "Apply Settings"
 msgstr "Tsarawa"
 
-#: kcmultidialog.cpp:243 kpluginwidget.cpp:329
+#: kcmultidialog.cpp:203 kpluginwidget.cpp:329
 #, kde-format
 msgid "Configure"
 msgstr "Haɗawa"
@@ -148,6 +142,16 @@ msgstr "Fassara"
 #: qml/components/private/AboutPlugin.qml:161
 #, kde-format
 msgid "Send an email to %1"
+msgstr ""
+
+#: qml/kquickconfigmodule.cpp:116
+#, kde-format
+msgid "Invalid KPackage '%1'"
+msgstr ""
+
+#: qml/kquickconfigmodule.cpp:122
+#, kde-format
+msgid "No QML file provided"
 msgstr ""
 
 #~ msgid "Color for links"

@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdelibs4\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-03-01 21:29+0000\n"
+"POT-Creation-Date: 2023-03-17 02:32+0000\n"
 "PO-Revision-Date: 2022-05-24 21:21+0530\n"
 "Last-Translator: Kishore G <kishore96@gmail.com>\n"
 "Language-Team: Tamil <kde-i18n-doc@kde.org>\n"
@@ -30,22 +30,7 @@ msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
 msgstr "amachu@yavarkkum.org, Kde-l10n-ta@kde.org"
 
-#: kcmoduleloader.cpp:57
-#, kde-format
-msgid "The module %1 is disabled."
-msgstr "%1 என்ற கூறு முடக்கப்பட்டுள்ளது."
-
-#: kcmoduleloader.cpp:58
-#, kde-format
-msgid "The module has been disabled by the system administrator."
-msgstr "இக்கூறு, கணினியின் நிர்வாகியால் முடக்கப்பட்டுள்ளது."
-
-#: kcmoduleloader.cpp:84
-#, kde-format
-msgid "Error loading QML file."
-msgstr "QML கோப்பை ஏற்றுவதில் சிக்கல்."
-
-#: kcmoduleloader.cpp:105
+#: kcmoduleloader.cpp:49
 #, kde-format
 msgid ""
 "<qt><p>Possible reasons:<ul><li>An error occurred during your last system "
@@ -60,13 +45,22 @@ msgstr ""
 "p><p>இவற்றை சரிபார்த்து, சிக்கலறிக்கையில் குறுப்பிடப்பட்டுள்ள கூறை நீக்க முயற்சியுங்கள். "
 "அதுவும் தோல்வியடைந்தால், உங்கள் நிரல் விநியோகிப்பாளரை அணுகுங்கள்.</p></qt>"
 
-#: kcmoduleproxy.cpp:98
+#: kcmoduleloader.cpp:69
 #, kde-format
-msgctxt "Argument is application name"
-msgid "This configuration section is already opened in %1"
-msgstr "%1 தனில் இவ்வடிவமைப்புக் கோப்பு ஏற்கனவே திறக்கப்பட்டுள்ளது"
+msgid "The module %1 is disabled."
+msgstr "%1 என்ற கூறு முடக்கப்பட்டுள்ளது."
 
-#: kcmultidialog.cpp:49
+#: kcmoduleloader.cpp:69
+#, kde-format
+msgid "The module has been disabled by the system administrator."
+msgstr "இக்கூறு, கணினியின் நிர்வாகியால் முடக்கப்பட்டுள்ளது."
+
+#: kcmoduleloader.cpp:75
+#, kde-format
+msgid "Error loading QML file."
+msgstr "QML கோப்பை ஏற்றுவதில் சிக்கல்."
+
+#: kcmultidialog.cpp:44
 #, kde-format
 msgid ""
 "The settings of the current module have changed.\n"
@@ -75,12 +69,12 @@ msgstr ""
 "தற்போதைய பாகத்தின் அமைப்புகள் மாற்றப்பட்டுள்ளன.\n"
 "காக்க விரும்புகிறீர்களா அல்லது தவிர்க்க விரும்புகிறீர்களா?"
 
-#: kcmultidialog.cpp:51
+#: kcmultidialog.cpp:46
 #, kde-format
 msgid "Apply Settings"
 msgstr "அமைப்புகளை செயல்படுத்தவும்"
 
-#: kcmultidialog.cpp:243 kpluginwidget.cpp:329
+#: kcmultidialog.cpp:203 kpluginwidget.cpp:329
 #, kde-format
 msgid "Configure"
 msgstr "வடிவமை"
@@ -152,6 +146,20 @@ msgstr "மொழிபெயர்ப்பாளர்கள்"
 #, kde-format
 msgid "Send an email to %1"
 msgstr "%1 என்பவருக்கு மின்னஞ்சல் அனுப்பு"
+
+#: qml/kquickconfigmodule.cpp:116
+#, kde-format
+msgid "Invalid KPackage '%1'"
+msgstr ""
+
+#: qml/kquickconfigmodule.cpp:122
+#, kde-format
+msgid "No QML file provided"
+msgstr ""
+
+#~ msgctxt "Argument is application name"
+#~ msgid "This configuration section is already opened in %1"
+#~ msgstr "%1 தனில் இவ்வடிவமைப்புக் கோப்பு ஏற்கனவே திறக்கப்பட்டுள்ளது"
 
 #~ msgid "The module %1 could not be found."
 #~ msgstr "%1 என்ற கூறை கண்டுபிடிக்க முடியவில்லை."

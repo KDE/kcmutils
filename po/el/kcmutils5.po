@@ -19,7 +19,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdelibs4\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-03-01 21:29+0000\n"
+"POT-Creation-Date: 2023-03-17 02:32+0000\n"
 "PO-Revision-Date: 2023-01-05 11:29+0200\n"
 "Last-Translator: Stelios <sstavra@gmail.com>\n"
 "Language-Team: Greek <kde-i18n-el@kde.org>\n"
@@ -40,22 +40,7 @@ msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
 msgstr "sng@hellug.gr, manolis@koppermind.homelinux.org, p_vidalis@hotmail.com"
 
-#: kcmoduleloader.cpp:57
-#, kde-format
-msgid "The module %1 is disabled."
-msgstr "Το άρθρωμα %1 είναι απενεργοποιημένο."
-
-#: kcmoduleloader.cpp:58
-#, kde-format
-msgid "The module has been disabled by the system administrator."
-msgstr "Το άρθρωμα έχει απενεργοποιηθεί από τον διαχειριστή του συστήματος."
-
-#: kcmoduleloader.cpp:84
-#, kde-format
-msgid "Error loading QML file."
-msgstr "Σφάλμα κατά τη φόρτωση του UML αρχείου."
-
-#: kcmoduleloader.cpp:105
+#: kcmoduleloader.cpp:49
 #, kde-format
 msgid ""
 "<qt><p>Possible reasons:<ul><li>An error occurred during your last system "
@@ -71,13 +56,22 @@ msgstr ""
 "σφάλματος. Αν αυτό αποτύχει, ίσως πρέπει να επικοινωνήσετε με το διανομέα "
 "σας ή το δημιουργό του πακέτου.</p></qt>"
 
-#: kcmoduleproxy.cpp:98
+#: kcmoduleloader.cpp:69
 #, kde-format
-msgctxt "Argument is application name"
-msgid "This configuration section is already opened in %1"
-msgstr "Αυτός ο τομέας διαμόρφωσης είναι ήδη ανοικτός στο %1"
+msgid "The module %1 is disabled."
+msgstr "Το άρθρωμα %1 είναι απενεργοποιημένο."
 
-#: kcmultidialog.cpp:49
+#: kcmoduleloader.cpp:69
+#, kde-format
+msgid "The module has been disabled by the system administrator."
+msgstr "Το άρθρωμα έχει απενεργοποιηθεί από τον διαχειριστή του συστήματος."
+
+#: kcmoduleloader.cpp:75
+#, kde-format
+msgid "Error loading QML file."
+msgstr "Σφάλμα κατά τη φόρτωση του UML αρχείου."
+
+#: kcmultidialog.cpp:44
 #, kde-format
 msgid ""
 "The settings of the current module have changed.\n"
@@ -86,12 +80,12 @@ msgstr ""
 "Οι ρυθμίσεις του τρέχοντος αρθρώματος έχουν αλλάξει.\n"
 "Θέλετε να εφαρμόσετε τις αλλαγές σας ή να τις ακυρώσετε;"
 
-#: kcmultidialog.cpp:51
+#: kcmultidialog.cpp:46
 #, kde-format
 msgid "Apply Settings"
 msgstr "Εφαρμογή ρυθμίσεων"
 
-#: kcmultidialog.cpp:243 kpluginwidget.cpp:329
+#: kcmultidialog.cpp:203 kpluginwidget.cpp:329
 #, kde-format
 msgid "Configure"
 msgstr "Διαμόρφωση"
@@ -163,6 +157,20 @@ msgstr "Μεταφραστές"
 #, kde-format
 msgid "Send an email to %1"
 msgstr "Αποστολή ηλ. αλληλογραφίας στο %1"
+
+#: qml/kquickconfigmodule.cpp:116
+#, kde-format
+msgid "Invalid KPackage '%1'"
+msgstr ""
+
+#: qml/kquickconfigmodule.cpp:122
+#, kde-format
+msgid "No QML file provided"
+msgstr ""
+
+#~ msgctxt "Argument is application name"
+#~ msgid "This configuration section is already opened in %1"
+#~ msgstr "Αυτός ο τομέας διαμόρφωσης είναι ήδη ανοικτός στο %1"
 
 #~ msgid "The module %1 could not be found."
 #~ msgstr "Η μονάδα %1 δεν ήταν δυνατό να βρεθεί."

@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdelibs4 stable\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-03-01 21:29+0000\n"
+"POT-Creation-Date: 2023-03-17 02:32+0000\n"
 "PO-Revision-Date: 2006-01-12 16:33+0200\n"
 "Last-Translator: JUANITA FRANZ <JUANITA.FRANZ@VR-WEB.DE>\n"
 "Language-Team: AFRIKAANS <translate-discuss-af@lists.sourceforge.net>\n"
@@ -23,24 +23,7 @@ msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
 msgstr "frix@expertron.co.za,juanita.franz@vr-web.de "
 
-#: kcmoduleloader.cpp:57
-#, fuzzy, kde-format
-msgid "The module %1 is disabled."
-msgstr "Kon nie module %1 laai nie."
-
-#: kcmoduleloader.cpp:58
-#, fuzzy, kde-format
-#| msgid "Please contact your system administrator."
-msgid "The module has been disabled by the system administrator."
-msgstr "Kontak asseblief die stelsel administrateur."
-
-#: kcmoduleloader.cpp:84
-#, fuzzy, kde-format
-#| msgid "Error opening file."
-msgid "Error loading QML file."
-msgstr "Fout met oopmaak van lêer voorgekom"
-
-#: kcmoduleloader.cpp:105
+#: kcmoduleloader.cpp:49
 #, fuzzy, kde-format
 #| msgid ""
 #| "<qt><p>The diagnostics is:<br>%1<p>Possible reasons:</p><ul><li>An error "
@@ -63,13 +46,24 @@ msgstr ""
 "boodskap genoem is. As dit nie help nie, oorweeg om jou verspreider of "
 "verpakker te kontak.</p></qt>"
 
-#: kcmoduleproxy.cpp:98
-#, kde-format
-msgctxt "Argument is application name"
-msgid "This configuration section is already opened in %1"
-msgstr "Hierdie opstel afdeling is alreeds oopgemaak in %1"
+#: kcmoduleloader.cpp:69
+#, fuzzy, kde-format
+msgid "The module %1 is disabled."
+msgstr "Kon nie module %1 laai nie."
 
-#: kcmultidialog.cpp:49
+#: kcmoduleloader.cpp:69
+#, fuzzy, kde-format
+#| msgid "Please contact your system administrator."
+msgid "The module has been disabled by the system administrator."
+msgstr "Kontak asseblief die stelsel administrateur."
+
+#: kcmoduleloader.cpp:75
+#, fuzzy, kde-format
+#| msgid "Error opening file."
+msgid "Error loading QML file."
+msgstr "Fout met oopmaak van lêer voorgekom"
+
+#: kcmultidialog.cpp:44
 #, fuzzy, kde-format
 #| msgid ""
 #| "The document \"%1\" has been modified.\n"
@@ -81,13 +75,13 @@ msgstr ""
 "Die dokument \"%1\" het verander.\n"
 "Wil jy jou veranderinge stoor of weggooi?"
 
-#: kcmultidialog.cpp:51
+#: kcmultidialog.cpp:46
 #, fuzzy, kde-format
 #| msgid "Apply settings"
 msgid "Apply Settings"
 msgstr "Wend aan instellings"
 
-#: kcmultidialog.cpp:243 kpluginwidget.cpp:329
+#: kcmultidialog.cpp:203 kpluginwidget.cpp:329
 #, kde-format
 msgid "Configure"
 msgstr "Stel op"
@@ -170,6 +164,20 @@ msgstr "Vertaling"
 #| msgid "&Send Email"
 msgid "Send an email to %1"
 msgstr "Stuur E-pos"
+
+#: qml/kquickconfigmodule.cpp:116
+#, kde-format
+msgid "Invalid KPackage '%1'"
+msgstr ""
+
+#: qml/kquickconfigmodule.cpp:122
+#, kde-format
+msgid "No QML file provided"
+msgstr ""
+
+#~ msgctxt "Argument is application name"
+#~ msgid "This configuration section is already opened in %1"
+#~ msgstr "Hierdie opstel afdeling is alreeds oopgemaak in %1"
 
 #~ msgid "The module %1 could not be found."
 #~ msgstr "Kon nie module %1 vind nie."

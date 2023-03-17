@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdelibs4-1.1\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-03-01 21:29+0000\n"
+"POT-Creation-Date: 2023-03-17 02:32+0000\n"
 "PO-Revision-Date: 2007-10-15 22:19+0200\n"
 "Last-Translator: Jañ-Mai Drapier <jan-mai.drapier@mail.dotcom.fr>\n"
 "Language-Team: Brezhoneg <Suav.Icb@wanadoo.fr>\n"
@@ -28,24 +28,7 @@ msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
 msgstr "tvignaud@mandriva.com, jdrapier@club-internet.fr"
 
-#: kcmoduleloader.cpp:57
-#, fuzzy, kde-format
-msgid "The module %1 is disabled."
-msgstr "N'em eus ket kargañ ar mollad %1."
-
-#: kcmoduleloader.cpp:58
-#, fuzzy, kde-format
-#| msgid "Please contact your system administrator."
-msgid "The module has been disabled by the system administrator."
-msgstr "Darempredit merour ho reizhiad mar plij."
-
-#: kcmoduleloader.cpp:84
-#, fuzzy, kde-format
-#| msgid "Error opening file."
-msgid "Error loading QML file."
-msgstr "Fazi en ur zigeriñ ar restr."
-
-#: kcmoduleloader.cpp:105
+#: kcmoduleloader.cpp:49
 #, kde-format
 msgid ""
 "<qt><p>Possible reasons:<ul><li>An error occurred during your last system "
@@ -55,13 +38,24 @@ msgid ""
 "this fails, consider contacting your distributor or packager.</p></qt>"
 msgstr ""
 
-#: kcmoduleproxy.cpp:98
-#, kde-format
-msgctxt "Argument is application name"
-msgid "This configuration section is already opened in %1"
-msgstr ""
+#: kcmoduleloader.cpp:69
+#, fuzzy, kde-format
+msgid "The module %1 is disabled."
+msgstr "N'em eus ket kargañ ar mollad %1."
 
-#: kcmultidialog.cpp:49
+#: kcmoduleloader.cpp:69
+#, fuzzy, kde-format
+#| msgid "Please contact your system administrator."
+msgid "The module has been disabled by the system administrator."
+msgstr "Darempredit merour ho reizhiad mar plij."
+
+#: kcmoduleloader.cpp:75
+#, fuzzy, kde-format
+#| msgid "Error opening file."
+msgid "Error loading QML file."
+msgstr "Fazi en ur zigeriñ ar restr."
+
+#: kcmultidialog.cpp:44
 #, fuzzy, kde-format
 #| msgid ""
 #| "The document \"%1\" has been modified.\n"
@@ -73,13 +67,13 @@ msgstr ""
 "Kemmet eo bet an teul « %1 ».\n"
 "Ha fellout a ra deoc'h e enrollañ ho c'hemmoù pe diskar outo ?"
 
-#: kcmultidialog.cpp:51
+#: kcmultidialog.cpp:46
 #, fuzzy, kde-format
 #| msgid "Apply settings"
 msgid "Apply Settings"
 msgstr "Arloañ ar gefluniadur"
 
-#: kcmultidialog.cpp:243 kpluginwidget.cpp:329
+#: kcmultidialog.cpp:203 kpluginwidget.cpp:329
 #, kde-format
 msgid "Configure"
 msgstr "Kefluniañ"
@@ -162,6 +156,17 @@ msgstr "Troidigezh"
 #| msgid "&Send Email"
 msgid "Send an email to %1"
 msgstr "&Kas ul lizher"
+
+#: qml/kquickconfigmodule.cpp:116
+#, fuzzy, kde-format
+#| msgid "Install Script Package"
+msgid "Invalid KPackage '%1'"
+msgstr "Staliañ ur pakad urzhiaoueg"
+
+#: qml/kquickconfigmodule.cpp:122
+#, kde-format
+msgid "No QML file provided"
+msgstr ""
 
 #~ msgid "The module %1 could not be found."
 #~ msgstr "N'eo ket bet kavet ar mollad %1."
@@ -11013,9 +11018,6 @@ msgstr "&Kas ul lizher"
 
 #~ msgid "Collection"
 #~ msgstr "Dastumad"
-
-#~ msgid "Install Script Package"
-#~ msgstr "Staliañ ur pakad urzhiaoueg"
 
 #~ msgid "Could not read the package \"%1\"."
 #~ msgstr "Ne m'eus ket bet lenn ar pakad « %1 »."

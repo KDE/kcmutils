@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdelibs4\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-03-01 21:29+0000\n"
+"POT-Creation-Date: 2023-03-17 02:32+0000\n"
 "PO-Revision-Date: 2009-02-10 20:44+0530\n"
 "Last-Translator: Ravishankar Shrivastava <raviratlami@aol.in>\n"
 "Language-Team: Hindi <kde-i18n-doc@lists.kde.org>\n"
@@ -29,24 +29,7 @@ msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
 msgstr "raviratlami@aol.in,"
 
-#: kcmoduleloader.cpp:57
-#, kde-format
-msgid "The module %1 is disabled."
-msgstr "माड्यूल %1 अक्छम हे."
-
-#: kcmoduleloader.cpp:58
-#, fuzzy, kde-format
-#| msgid "Please contact your system administrator."
-msgid "The module has been disabled by the system administrator."
-msgstr "किरपा करके, अपन तंत्र प्रसासक से संपर्क करव."
-
-#: kcmoduleloader.cpp:84
-#, fuzzy, kde-format
-#| msgid "Error opening file."
-msgid "Error loading QML file."
-msgstr "फाइल ल खोले मं गलती."
-
-#: kcmoduleloader.cpp:105
+#: kcmoduleloader.cpp:49
 #, kde-format
 msgid ""
 "<qt><p>Possible reasons:<ul><li>An error occurred during your last system "
@@ -56,13 +39,24 @@ msgid ""
 "this fails, consider contacting your distributor or packager.</p></qt>"
 msgstr ""
 
-#: kcmoduleproxy.cpp:98
+#: kcmoduleloader.cpp:69
 #, kde-format
-msgctxt "Argument is application name"
-msgid "This configuration section is already opened in %1"
-msgstr "%1 मं कान्फिगरेसन खन्ड पहिली ही खोले गे हे"
+msgid "The module %1 is disabled."
+msgstr "माड्यूल %1 अक्छम हे."
 
-#: kcmultidialog.cpp:49
+#: kcmoduleloader.cpp:69
+#, fuzzy, kde-format
+#| msgid "Please contact your system administrator."
+msgid "The module has been disabled by the system administrator."
+msgstr "किरपा करके, अपन तंत्र प्रसासक से संपर्क करव."
+
+#: kcmoduleloader.cpp:75
+#, fuzzy, kde-format
+#| msgid "Error opening file."
+msgid "Error loading QML file."
+msgstr "फाइल ल खोले मं गलती."
+
+#: kcmultidialog.cpp:44
 #, fuzzy, kde-format
 #| msgid ""
 #| "The document \"%1\" has been modified.\n"
@@ -74,13 +68,13 @@ msgstr ""
 "कागद \"%1\" बदल दे गे हे.\n"
 "का आप मन एला सहेजना चाहू या बदलाव मन ल फेंक देव?"
 
-#: kcmultidialog.cpp:51
+#: kcmultidialog.cpp:46
 #, fuzzy, kde-format
 #| msgid "Settings"
 msgid "Apply Settings"
 msgstr "सेटिंग"
 
-#: kcmultidialog.cpp:243 kpluginwidget.cpp:329
+#: kcmultidialog.cpp:203 kpluginwidget.cpp:329
 #, kde-format
 msgid "Configure"
 msgstr "कान्फिगर"
@@ -163,6 +157,20 @@ msgstr "अनुवाद "
 #| msgid "&Send Email"
 msgid "Send an email to %1"
 msgstr "ईमेल भेजव (&S)"
+
+#: qml/kquickconfigmodule.cpp:116
+#, kde-format
+msgid "Invalid KPackage '%1'"
+msgstr ""
+
+#: qml/kquickconfigmodule.cpp:122
+#, kde-format
+msgid "No QML file provided"
+msgstr ""
+
+#~ msgctxt "Argument is application name"
+#~ msgid "This configuration section is already opened in %1"
+#~ msgstr "%1 मं कान्फिगरेसन खन्ड पहिली ही खोले गे हे"
 
 #~ msgid "The module %1 could not be found."
 #~ msgstr "माड्यूल %1 नइ मिलिस."

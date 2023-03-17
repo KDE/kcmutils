@@ -18,7 +18,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdelibs4\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-03-01 21:29+0000\n"
+"POT-Creation-Date: 2023-03-17 02:32+0000\n"
 "PO-Revision-Date: 2023-01-26 14:24+0100\n"
 "Last-Translator: Freek de Kruijf <freekdekruijf@kde.nl>\n"
 "Language-Team: \n"
@@ -46,22 +46,7 @@ msgstr ""
 "rinsedevries@kde.nl,wbsoft@xs4all.nl,bramschoenmakers@kde.nl,tomalbers@kde."
 "nl,tijmenbaarda@kde.nl,,freekdekruijf@kde.nl"
 
-#: kcmoduleloader.cpp:57
-#, kde-format
-msgid "The module %1 is disabled."
-msgstr "De module %1 is uitgeschakeld."
-
-#: kcmoduleloader.cpp:58
-#, kde-format
-msgid "The module has been disabled by the system administrator."
-msgstr "De module is uitgeschakeld door de systeembeheerder."
-
-#: kcmoduleloader.cpp:84
-#, kde-format
-msgid "Error loading QML file."
-msgstr "Fout bij het laden van QML-bestand."
-
-#: kcmoduleloader.cpp:105
+#: kcmoduleloader.cpp:49
 #, kde-format
 msgid ""
 "<qt><p>Possible reasons:<ul><li>An error occurred during your last system "
@@ -78,13 +63,22 @@ msgstr ""
 "niet lukt, overweeg dan contact op te nemen met uw distributeur of "
 "pakketbeheerder.</p></qt>"
 
-#: kcmoduleproxy.cpp:98
+#: kcmoduleloader.cpp:69
 #, kde-format
-msgctxt "Argument is application name"
-msgid "This configuration section is already opened in %1"
-msgstr "Deze configuratiesectie is al geopend in %1"
+msgid "The module %1 is disabled."
+msgstr "De module %1 is uitgeschakeld."
 
-#: kcmultidialog.cpp:49
+#: kcmoduleloader.cpp:69
+#, kde-format
+msgid "The module has been disabled by the system administrator."
+msgstr "De module is uitgeschakeld door de systeembeheerder."
+
+#: kcmoduleloader.cpp:75
+#, kde-format
+msgid "Error loading QML file."
+msgstr "Fout bij het laden van QML-bestand."
+
+#: kcmultidialog.cpp:44
 #, kde-format
 msgid ""
 "The settings of the current module have changed.\n"
@@ -93,12 +87,12 @@ msgstr ""
 "De instellingen van het huidige module zijn gewijzigd.\n"
 "Wilt u de wijzigingen opslaan of verwerpen?"
 
-#: kcmultidialog.cpp:51
+#: kcmultidialog.cpp:46
 #, kde-format
 msgid "Apply Settings"
 msgstr "Instellingen toepassen"
 
-#: kcmultidialog.cpp:243 kpluginwidget.cpp:329
+#: kcmultidialog.cpp:203 kpluginwidget.cpp:329
 #, kde-format
 msgid "Configure"
 msgstr "Configureren"
@@ -170,6 +164,20 @@ msgstr "Vertalers"
 #, kde-format
 msgid "Send an email to %1"
 msgstr "Een e-mail verzenden naar %1"
+
+#: qml/kquickconfigmodule.cpp:116
+#, kde-format
+msgid "Invalid KPackage '%1'"
+msgstr ""
+
+#: qml/kquickconfigmodule.cpp:122
+#, kde-format
+msgid "No QML file provided"
+msgstr ""
+
+#~ msgctxt "Argument is application name"
+#~ msgid "This configuration section is already opened in %1"
+#~ msgstr "Deze configuratiesectie is al geopend in %1"
 
 #~ msgid "The module %1 could not be found."
 #~ msgstr "De module %1 is niet gevonden."

@@ -4,7 +4,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdelibs4\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-03-01 21:29+0000\n"
+"POT-Creation-Date: 2023-03-17 02:32+0000\n"
 "PO-Revision-Date: 2012-06-27 10:04+0700\n"
 "Last-Translator: Khoem Sokhem <khoemsokhem@khmeros.info>\n"
 "Language-Team: Khmer\n"
@@ -28,24 +28,7 @@ msgstr ""
 "khoemsokhem@khmeros.info,​​mornmet@khmeros.info,sutha@khmeros.info,"
 "ratanak@khmeros.info,sophea@khmeros.info"
 
-#: kcmoduleloader.cpp:57
-#, kde-format
-msgid "The module %1 is disabled."
-msgstr "ម៉ឺឌុល %1 ត្រូវបាន​បិទ ។"
-
-#: kcmoduleloader.cpp:58
-#, fuzzy, kde-format
-#| msgid "Please contact your system administrator."
-msgid "The module has been disabled by the system administrator."
-msgstr "សូម​ទាក់ទង​អ្នក​គ្រប់គ្រង​ប្រព័ន្ធ​របស់​អ្នក ។"
-
-#: kcmoduleloader.cpp:84
-#, fuzzy, kde-format
-#| msgid "Error loading '%1'.\n"
-msgid "Error loading QML file."
-msgstr "កំហុស​ក្នុង​ការ​ផ្ទុក '%1' ។\n"
-
-#: kcmoduleloader.cpp:105
+#: kcmoduleloader.cpp:49
 #, fuzzy, kde-format
 #| msgid ""
 #| "<qt><p>Possible reasons:<ul><li>An error occurred during your last KDE "
@@ -65,13 +48,24 @@ msgstr ""
 "ចំណុច​ទាំងនេះ​ដោយ​ប្រុងប្រយ័ត្ន ហើយ​ព្យាយាម​យក​ម៉ូឌុល​ដែល​រៀបរាប់​នៅ​ក្នុង​សារ​កំហុស​ចេញ ។ ប្រសិន​បើ​បរាជ័យ អាច​"
 "ចាត់ទុក​ថា​ទាក់ទង​អ្នក​ចូលរួម​ ឬ​កម្មវិធី​បង្កើត​កញ្ចប់​របស់​អ្នក ។</p></qt>"
 
-#: kcmoduleproxy.cpp:98
+#: kcmoduleloader.cpp:69
 #, kde-format
-msgctxt "Argument is application name"
-msgid "This configuration section is already opened in %1"
-msgstr "ផ្នែក​កំណត់រចនា​សម្ព័ន្ធ​​នេះ​គឺ​ត្រូវបាន​បើក​នៅ​ក្នុង %1 រួចហើយ"
+msgid "The module %1 is disabled."
+msgstr "ម៉ឺឌុល %1 ត្រូវបាន​បិទ ។"
 
-#: kcmultidialog.cpp:49
+#: kcmoduleloader.cpp:69
+#, fuzzy, kde-format
+#| msgid "Please contact your system administrator."
+msgid "The module has been disabled by the system administrator."
+msgstr "សូម​ទាក់ទង​អ្នក​គ្រប់គ្រង​ប្រព័ន្ធ​របស់​អ្នក ។"
+
+#: kcmoduleloader.cpp:75
+#, fuzzy, kde-format
+#| msgid "Error loading '%1'.\n"
+msgid "Error loading QML file."
+msgstr "កំហុស​ក្នុង​ការ​ផ្ទុក '%1' ។\n"
+
+#: kcmultidialog.cpp:44
 #, kde-format
 msgid ""
 "The settings of the current module have changed.\n"
@@ -80,12 +74,12 @@ msgstr ""
 "ការ​កំណត់​​ម៉ូឌុល​បច្ចុប្បន្ន​​បានផ្លាស់ប្ដូរ ។\n"
 "តើ​អ្នក​ចង់​អនុវត្ត​ការ​ផ្លាស់ប្ដូរ ឬ​បោះបង់​ពួកវា ?"
 
-#: kcmultidialog.cpp:51
+#: kcmultidialog.cpp:46
 #, kde-format
 msgid "Apply Settings"
 msgstr "អនុវត្ត​ការ​កំណត់"
 
-#: kcmultidialog.cpp:243 kpluginwidget.cpp:329
+#: kcmultidialog.cpp:203 kpluginwidget.cpp:329
 #, kde-format
 msgid "Configure"
 msgstr "កំណត់​រចនាសម្ព័ន្ធ"
@@ -168,6 +162,20 @@ msgstr "ការ​បកប្រែ"
 #| msgid "&Send Email"
 msgid "Send an email to %1"
 msgstr "ផ្ញើ​អ៊ីមែល"
+
+#: qml/kquickconfigmodule.cpp:116
+#, kde-format
+msgid "Invalid KPackage '%1'"
+msgstr ""
+
+#: qml/kquickconfigmodule.cpp:122
+#, kde-format
+msgid "No QML file provided"
+msgstr ""
+
+#~ msgctxt "Argument is application name"
+#~ msgid "This configuration section is already opened in %1"
+#~ msgstr "ផ្នែក​កំណត់រចនា​សម្ព័ន្ធ​​នេះ​គឺ​ត្រូវបាន​បើក​នៅ​ក្នុង %1 រួចហើយ"
 
 #~ msgid "The module %1 could not be found."
 #~ msgstr "មិន​អាច​រក​ឃើញម៉ូឌុល %1 ឡើយ ។"

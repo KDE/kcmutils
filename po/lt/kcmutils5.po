@@ -12,7 +12,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdelibs4\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-03-01 21:29+0000\n"
+"POT-Creation-Date: 2023-03-17 02:32+0000\n"
 "PO-Revision-Date: 2021-08-25 14:22+0300\n"
 "Last-Translator: Moo\n"
 "Language-Team: lt <kde-i18n-lt@kde.org>\n"
@@ -38,22 +38,7 @@ msgstr ""
 "rch@richard.eu.org, dgvirtual@akl.lt, gintautas@miselis.lt, stikonas@gmail."
 "com, liudas@akmc.lt, <>"
 
-#: kcmoduleloader.cpp:57
-#, kde-format
-msgid "The module %1 is disabled."
-msgstr "Modulis %1 yra išjungtas."
-
-#: kcmoduleloader.cpp:58
-#, kde-format
-msgid "The module has been disabled by the system administrator."
-msgstr "Sistemos administratorius išjungė šį modulį."
-
-#: kcmoduleloader.cpp:84
-#, kde-format
-msgid "Error loading QML file."
-msgstr "Klaida įkeliant QML failą."
-
-#: kcmoduleloader.cpp:105
+#: kcmoduleloader.cpp:49
 #, kde-format
 msgid ""
 "<qt><p>Possible reasons:<ul><li>An error occurred during your last system "
@@ -69,13 +54,22 @@ msgstr ""
 "modulius. Jei tai nepavyks, susisiekite su savo platinamuoju paketu ar "
 "pakuotoju.</p></qt>"
 
-#: kcmoduleproxy.cpp:98
+#: kcmoduleloader.cpp:69
 #, kde-format
-msgctxt "Argument is application name"
-msgid "This configuration section is already opened in %1"
-msgstr "Ši konfigūravimo sekcija jau atverta ties %1"
+msgid "The module %1 is disabled."
+msgstr "Modulis %1 yra išjungtas."
 
-#: kcmultidialog.cpp:49
+#: kcmoduleloader.cpp:69
+#, kde-format
+msgid "The module has been disabled by the system administrator."
+msgstr "Sistemos administratorius išjungė šį modulį."
+
+#: kcmoduleloader.cpp:75
+#, kde-format
+msgid "Error loading QML file."
+msgstr "Klaida įkeliant QML failą."
+
+#: kcmultidialog.cpp:44
 #, kde-format
 msgid ""
 "The settings of the current module have changed.\n"
@@ -84,12 +78,12 @@ msgstr ""
 "Esamo modulio nuostatos buvo pakeistos.\n"
 "Ar norite taikyti pakeitimus ar juos atmesti?"
 
-#: kcmultidialog.cpp:51
+#: kcmultidialog.cpp:46
 #, kde-format
 msgid "Apply Settings"
 msgstr "Taikyti nuostatas"
 
-#: kcmultidialog.cpp:243 kpluginwidget.cpp:329
+#: kcmultidialog.cpp:203 kpluginwidget.cpp:329
 #, kde-format
 msgid "Configure"
 msgstr "Konfigūruoti"
@@ -163,6 +157,20 @@ msgstr ""
 #, kde-format
 msgid "Send an email to %1"
 msgstr ""
+
+#: qml/kquickconfigmodule.cpp:116
+#, kde-format
+msgid "Invalid KPackage '%1'"
+msgstr ""
+
+#: qml/kquickconfigmodule.cpp:122
+#, kde-format
+msgid "No QML file provided"
+msgstr ""
+
+#~ msgctxt "Argument is application name"
+#~ msgid "This configuration section is already opened in %1"
+#~ msgstr "Ši konfigūravimo sekcija jau atverta ties %1"
 
 #~ msgid "The module %1 could not be found."
 #~ msgstr "Modulis %1 nerastas."

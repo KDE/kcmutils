@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdelibs4_as\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-03-01 21:29+0000\n"
+"POT-Creation-Date: 2023-03-17 02:32+0000\n"
 "PO-Revision-Date: 2008-12-26 15:19+0530\n"
 "Last-Translator: Amitakhya Phukan <অমিতাক্ষ ফুকন>\n"
 "Language-Team: Assamese <fedora-trans-as@redhat.com>\n"
@@ -28,24 +28,7 @@ msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
 msgstr "aphukan@fedoraproject.org"
 
-#: kcmoduleloader.cpp:57
-#, kde-format
-msgid "The module %1 is disabled."
-msgstr "%1 অংশ নিষ্ক্ৰিয় কৰা হৈছে ।"
-
-#: kcmoduleloader.cpp:58
-#, fuzzy, kde-format
-#| msgid "Please contact your system administrator."
-msgid "The module has been disabled by the system administrator."
-msgstr "অনুগ্ৰহ কৰি ব্যৱস্থাপ্ৰণালী প্ৰশাসকৰ সৈতে যোগাযোগ কৰক ।"
-
-#: kcmoduleloader.cpp:84
-#, fuzzy, kde-format
-#| msgid "Error loading '%1'.\n"
-msgid "Error loading QML file."
-msgstr "'%1' লোড কৰিবলৈ সমস্যা ।\n"
-
-#: kcmoduleloader.cpp:105
+#: kcmoduleloader.cpp:49
 #, kde-format
 msgid ""
 "<qt><p>Possible reasons:<ul><li>An error occurred during your last system "
@@ -55,13 +38,24 @@ msgid ""
 "this fails, consider contacting your distributor or packager.</p></qt>"
 msgstr ""
 
-#: kcmoduleproxy.cpp:98
+#: kcmoduleloader.cpp:69
 #, kde-format
-msgctxt "Argument is application name"
-msgid "This configuration section is already opened in %1"
-msgstr "বিন্যাসৰ এই বিভাগ বৰ্তমানে %1 ত খোলা আছে"
+msgid "The module %1 is disabled."
+msgstr "%1 অংশ নিষ্ক্ৰিয় কৰা হৈছে ।"
 
-#: kcmultidialog.cpp:49
+#: kcmoduleloader.cpp:69
+#, fuzzy, kde-format
+#| msgid "Please contact your system administrator."
+msgid "The module has been disabled by the system administrator."
+msgstr "অনুগ্ৰহ কৰি ব্যৱস্থাপ্ৰণালী প্ৰশাসকৰ সৈতে যোগাযোগ কৰক ।"
+
+#: kcmoduleloader.cpp:75
+#, fuzzy, kde-format
+#| msgid "Error loading '%1'.\n"
+msgid "Error loading QML file."
+msgstr "'%1' লোড কৰিবলৈ সমস্যা ।\n"
+
+#: kcmultidialog.cpp:44
 #, fuzzy, kde-format
 #| msgid ""
 #| "The document \"%1\" has been modified.\n"
@@ -73,13 +67,13 @@ msgstr ""
 "\"%1\" আলেখ্যনত কিছু পৰিবৰ্তন কৰা হৈছে ।\n"
 "পৰিবৰ্তনসমূহ সংৰক্ষণ কৰা হ'ব নে বৰ্জন কৰা হ'ব?"
 
-#: kcmultidialog.cpp:51
+#: kcmultidialog.cpp:46
 #, fuzzy, kde-format
 #| msgid "Settings"
 msgid "Apply Settings"
 msgstr "বৈশিষ্ট্য"
 
-#: kcmultidialog.cpp:243 kpluginwidget.cpp:329
+#: kcmultidialog.cpp:203 kpluginwidget.cpp:329
 #, kde-format
 msgid "Configure"
 msgstr "বিন্যাস কৰক"
@@ -162,6 +156,20 @@ msgstr "অনুবাদ"
 #| msgid "&Send Email"
 msgid "Send an email to %1"
 msgstr "ঈ-মেইল কৰক (&S)"
+
+#: qml/kquickconfigmodule.cpp:116
+#, kde-format
+msgid "Invalid KPackage '%1'"
+msgstr ""
+
+#: qml/kquickconfigmodule.cpp:122
+#, kde-format
+msgid "No QML file provided"
+msgstr ""
+
+#~ msgctxt "Argument is application name"
+#~ msgid "This configuration section is already opened in %1"
+#~ msgstr "বিন্যাসৰ এই বিভাগ বৰ্তমানে %1 ত খোলা আছে"
 
 #~ msgid "The module %1 could not be found."
 #~ msgstr "অংশ %1 পোৱা নাযায় ।"
