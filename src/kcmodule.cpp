@@ -21,6 +21,7 @@
 
 class KCModuleProxyInternal : public QWidget
 {
+    Q_OBJECT
 public:
     KCModuleProxyInternal(KCModule *parentModule, QWidget *parent)
         : QWidget(parent)
@@ -182,3 +183,5 @@ QList<KConfigDialogManager *> KCModule::configs() const
 {
     return d->managers;
 }
+
+#include "kcmodule.moc"
