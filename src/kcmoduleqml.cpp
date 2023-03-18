@@ -22,6 +22,7 @@
 
 #include <kcmutils_debug.h>
 
+class QmlConfigModuleWidget;
 class KCModuleQmlPrivate
 {
 public:
@@ -50,6 +51,7 @@ public:
     QQuickItem *rootPlaceHolder = nullptr;
     QQuickItem *pageRow = nullptr;
     KQuickConfigModule *configModule;
+    QmlConfigModuleWidget *widget = nullptr;
 };
 
 class QmlConfigModuleWidget : public QWidget
@@ -109,9 +111,10 @@ private:
 };
 
 KCModuleQml::KCModuleQml(KQuickConfigModule *configModule, QWidget *parent, const QVariantList &args)
-    : KCModule(new QmlConfigModuleWidget(this, parent), configModule->metaData(), args)
+    : KCModule(parent, configModule->metaData(), args)
     , d(new KCModuleQmlPrivate(configModule, this))
 {
+    d->widget = new QmlConfigModuleWidget(this, parent);
     setButtons(d->configModule->buttons());
     connect(d->configModule, &KQuickConfigModule::buttonsChanged, d->configModule, [this] {
         setButtons(d->configModule->buttons());
@@ -132,10 +135,10 @@ KCModuleQml::KCModuleQml(KQuickConfigModule *configModule, QWidget *parent, cons
     connect(this, &KCModule::defaultsIndicatorsVisibleChanged, d->configModule, &KQuickConfigModule::defaultsIndicatorsVisibleChanged);
 
     // Build the UI
-    QVBoxLayout *layout = new QVBoxLayout(widget());
+    QVBoxLayout *layout = new QVBoxLayout(d->widget);
     layout->setContentsMargins(0, 0, 0, 0);
 
-    d->quickWidget = new QQuickWidget(d->configModule->engine().get(), widget());
+    d->quickWidget = new QQuickWidget(d->configModule->engine().get(), d->widget);
     d->quickWidget->setResizeMode(QQuickWidget::SizeRootObjectToView);
     d->quickWidget->setFocusPolicy(Qt::StrongFocus);
     d->quickWidget->setAttribute(Qt::WA_AlwaysStackOnTop, true);
@@ -249,6 +252,11 @@ void KCModuleQml::save()
 void KCModuleQml::defaults()
 {
     d->configModule->defaults();
+}
+
+QWidget *KCModuleQml::widget()
+{
+    return d->widget;
 }
 
 #include "kcmoduleqml.moc"

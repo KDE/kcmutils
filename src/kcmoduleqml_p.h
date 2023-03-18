@@ -28,6 +28,7 @@ public Q_SLOTS:
     void load() override;
     void save() override;
     void defaults() override;
+    QWidget *widget() override;
 
 private:
     friend class QmlConfigModuleWidget;

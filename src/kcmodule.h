@@ -94,8 +94,10 @@ public:
     /**
      * Get the associated widget that can be embedded
      * The returned widget should be used as a parent for widgets you create
+     *
+     * @note Overwriting this function should not be necessary for consumers!
      */
-    QWidget *widget() const;
+    virtual QWidget *widget();
 
 protected:
     /**

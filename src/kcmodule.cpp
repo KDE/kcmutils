@@ -54,11 +54,12 @@ private:
 class KCModulePrivate
 {
 public:
-    KCModulePrivate()
+    KCModulePrivate(QWidget *parentWidget)
         : _needsAuthorization(false)
         , _unmanagedWidgetChangeState(false)
         , _unmanagedWidgetDefaultState(false)
         , _unmanagedWidgetDefaultStateCalled(false)
+        , parentWidget(parentWidget)
     {
     }
 
@@ -76,16 +77,14 @@ public:
     bool _unmanagedWidgetDefaultState : 1;
     bool _unmanagedWidgetDefaultStateCalled : 1;
     QVBoxLayout *m_topLayout = nullptr; /* Contains QScrollView view, and root stuff */
-    KCModuleProxyInternal *m_proxyInternal;
+    QWidget *parentWidget;
+    KCModuleProxyInternal *m_proxyInternal = nullptr;
 };
 
 KCModule::KCModule(QWidget *parent, const KPluginMetaData &data, const QVariantList &)
     : KAbstractConfigModule(parent, data, {})
-    , d(new KCModulePrivate)
+    , d(new KCModulePrivate(parent))
 {
-    d->m_topLayout = new QVBoxLayout(parent);
-    d->m_proxyInternal = new KCModuleProxyInternal(this, parent);
-    d->m_topLayout->addWidget(d->m_proxyInternal);
 }
 
 KConfigDialogManager *KCModule::addConfig(KCoreConfigSkeleton *config, QWidget *widget)
@@ -129,8 +128,13 @@ void KCModule::defaults()
     }
 }
 
-QWidget *KCModule::widget() const
+QWidget *KCModule::widget()
 {
+    if (!d->m_proxyInternal) {
+        d->m_topLayout = new QVBoxLayout(d->parentWidget);
+        d->m_proxyInternal = new KCModuleProxyInternal(this, d->parentWidget);
+        d->m_topLayout->addWidget(d->m_proxyInternal);
+    }
     return d->m_proxyInternal;
 }
 
