@@ -148,6 +148,18 @@ protected:
     {
     }
 
+    /**
+     * Utility constructor for creating a KCModule that is embedded, for example in a KPluginWidget
+     * This constructor should not be used for KCMs that are part launched in systemsettings!
+     *
+     * @note do not emit changed signals here, since they are not yet connected
+     *       to any slot.
+     */
+    explicit KCModule(QObject *parent, const QVariantList &args = {})
+        : KCModule(qobject_cast<QWidget *>(parent), KPluginMetaData{}, args)
+    {
+    }
+
 private:
     std::unique_ptr<KCModulePrivate> const d;
 };
