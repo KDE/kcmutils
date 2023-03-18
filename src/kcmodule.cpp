@@ -107,6 +107,7 @@ KCModule::~KCModule()
 
 void KCModule::load()
 {
+    KAbstractConfigModule::load();
     for (KConfigDialogManager *manager : std::as_const(d->managers)) {
         manager->updateWidgets();
     }
@@ -115,14 +116,15 @@ void KCModule::load()
 
 void KCModule::save()
 {
+    KAbstractConfigModule::save();
     for (KConfigDialogManager *manager : std::as_const(d->managers)) {
         manager->updateSettings();
     }
-    setNeedsSave(false);
 }
 
 void KCModule::defaults()
 {
+    KAbstractConfigModule::defaults();
     for (KConfigDialogManager *manager : std::as_const(d->managers)) {
         manager->updateWidgetsDefault();
     }

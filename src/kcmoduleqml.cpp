@@ -256,8 +256,8 @@ KCModuleQml::~KCModuleQml() = default;
 
 void KCModuleQml::load()
 {
+    KCModule::load(); // calls setNeedsSave(false)
     d->configModule->load();
-    setNeedsSave(d->configModule->representsDefaults());
 }
 
 void KCModuleQml::save()
