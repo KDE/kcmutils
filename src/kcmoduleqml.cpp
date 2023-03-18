@@ -106,8 +106,25 @@ public:
         return QWidget::eventFilter(watched, event);
     }
 
+    void showEvent(QShowEvent *ev) override
+    {
+        if (m_firstShow) {
+            m_firstShow = false;
+            QMetaObject::invokeMethod(m_module, &KCModule::load, Qt::QueuedConnection);
+            QMetaObject::invokeMethod(
+                this,
+                [this]() {
+                    m_module->setNeedsSave(false);
+                },
+                Qt::QueuedConnection);
+        }
+
+        QWidget::showEvent(ev);
+    }
+
 private:
     KCModuleQml *m_module;
+    bool m_firstShow = true;
 };
 
 KCModuleQml::KCModuleQml(KQuickConfigModule *configModule, QWidget *parent, const QVariantList &args)
