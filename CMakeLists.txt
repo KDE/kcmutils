@@ -63,7 +63,7 @@ ecm_set_disabled_deprecation_versions(
     KF 5.102.0
 )
 
-add_definitions(-DTRANSLATION_DOMAIN=\"kcmutils5\")
+add_definitions(-DTRANSLATION_DOMAIN=\"kcmutils6\")
 ki18n_install(po)
 add_subdirectory(src)
 add_subdirectory(tools)
