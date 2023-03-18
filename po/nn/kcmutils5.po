@@ -160,7 +160,3 @@ msgstr ""
 #, kde-format
 msgid "No QML file provided"
 msgstr ""
-
-#~ msgctxt "Argument is application name"
-#~ msgid "This configuration section is already opened in %1"
-#~ msgstr "Dette oppsettet er alt ope i %1."

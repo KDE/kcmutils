@@ -1,12 +1,12 @@
 # Translation of kcmutils5.po to Catalan
-# Copyright (C) 1998-2022 This_file_is_part_of_KDE
+# Copyright (C) 1998-2023 This_file_is_part_of_KDE
 # This file is distributed under the license LGPL version 2.1 or
 # version 3 or later versions approved by the membership of KDE e.V.
 #
 # Sebastià Pla i Sanz <sps@sastia.com>, 1998, 1999, 2000, 2001, 2002, 2003, 2004, 2005, 2006, 2007.
 # Antoni Bella Pérez <antonibella5@yahoo.com>, 2003, 2006, 2011, 2012, 2013, 2014, 2020, 2021.
 # Albert Astals Cid <aacid@kde.org>, 2004, 2005, 2007.
-# Josep M. Ferrer <txemaq@gmail.com>, 2007, 2008, 2009, 2010, 2011, 2012, 2013, 2014, 2015, 2016, 2017, 2018, 2019, 2020, 2022.
+# Josep M. Ferrer <txemaq@gmail.com>, 2007, 2008, 2009, 2010, 2011, 2012, 2013, 2014, 2015, 2016, 2017, 2018, 2019, 2020, 2022, 2023.
 # Robert Millan <rmh@aybabtu.com>, 2009.
 # Orestes Mas <orestes@tsc.upc.edu>, 2010.
 msgid ""
@@ -14,7 +14,7 @@ msgstr ""
 "Project-Id-Version: kcmutils\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-03-17 02:32+0000\n"
-"PO-Revision-Date: 2022-04-24 10:10+0200\n"
+"PO-Revision-Date: 2023-03-17 13:20+0100\n"
 "Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
 "Language: ca\n"
@@ -156,101 +156,9 @@ msgstr "Envia un correu a %1"
 #: qml/kquickconfigmodule.cpp:116
 #, kde-format
 msgid "Invalid KPackage '%1'"
-msgstr ""
+msgstr "KPackage «%1» no vàlid"
 
 #: qml/kquickconfigmodule.cpp:122
 #, kde-format
 msgid "No QML file provided"
-msgstr ""
-
-#~ msgctxt "Argument is application name"
-#~ msgid "This configuration section is already opened in %1"
-#~ msgstr "Aquesta secció de configuració ja està oberta a %1"
-
-#~ msgid "The module %1 could not be found."
-#~ msgstr "El mòdul %1 no s'ha pogut trobar."
-
-#~ msgid ""
-#~ "<qt><p>The diagnosis is:<br />The desktop file %1 could not be found.</"
-#~ "p></qt>"
-#~ msgstr ""
-#~ "<qt><p>El diagnòstic és:<br />No s'ha pogut trobar el fitxer «desktop» %1."
-#~ "</p></qt>"
-
-#~ msgid ""
-#~ "<qt><p>Either the hardware/software the module configures is not "
-#~ "available or the module has been disabled by the administrator.</p></qt>"
-#~ msgstr ""
-#~ "<qt><p>Aquest mòdul configura un maquinari o un programari que ara no "
-#~ "estan disponibles, o l'administrador ha desactivat el mòdul.</p></qt>"
-
-#~ msgid "Error loading config module"
-#~ msgstr "Error en carregar el mòdul de configuració"
-
-#~ msgid "The module %1 is not a valid configuration module."
-#~ msgstr "El mòdul %1 no és un mòdul de configuració vàlid."
-
-#~ msgid ""
-#~ "<qt>The diagnosis is:<br />The desktop file %1 does not specify a library."
-#~ "</qt>"
-#~ msgstr ""
-#~ "<qt>El diagnòstic és:<br />El fitxer «desktop» %1 no especifica cap "
-#~ "biblioteca.</qt>"
-
-#~ msgid ""
-#~ "Automatic changes have been performed due to plugin dependencies. Click "
-#~ "here for further information"
-#~ msgstr ""
-#~ "Per a les dependències del connector, s'han executat canvis automàtics. "
-#~ "Cliqueu aquí per a més informació"
-
-#~ msgid ""
-#~ "Automatic changes have been performed in order to satisfy plugin "
-#~ "dependencies:\n"
-#~ msgstr ""
-#~ "S'han executat canvis automàtics per tal de solucionar les dependències "
-#~ "dels connectors:\n"
-
-#~ msgid ""
-#~ "\n"
-#~ "    %1 plugin has been automatically checked because of the dependency of "
-#~ "%2 plugin"
-#~ msgstr ""
-#~ "\n"
-#~ "    el connector %1 s'ha marcat automàticament degut a la dependència del "
-#~ "connector %2"
-
-#~ msgid ""
-#~ "\n"
-#~ "    %1 plugin has been automatically unchecked because of its dependency "
-#~ "on %2 plugin"
-#~ msgstr ""
-#~ "\n"
-#~ "    el connector %1 s'ha desmarcat automàticament degut a la dependència "
-#~ "del connector %2"
-
-#~ msgid "Dependency Check"
-#~ msgstr "Comprovació de les dependències"
-
-#~ msgid "%1 plugin automatically added due to plugin dependencies"
-#~ msgid_plural "%1 plugins automatically added due to plugin dependencies"
-#~ msgstr[0] ""
-#~ "S'ha afegit automàticament %1 connector per les dependències del connector"
-#~ msgstr[1] ""
-#~ "S'han afegit automàticament %1 connectors per les dependències del "
-#~ "connector"
-
-#~ msgid ", "
-#~ msgstr ", "
-
-#~ msgid "%1 plugin automatically removed due to plugin dependencies"
-#~ msgid_plural "%1 plugins automatically removed due to plugin dependencies"
-#~ msgstr[0] ""
-#~ "S'ha eliminat automàticament %1 connector per les dependències del "
-#~ "connector"
-#~ msgstr[1] ""
-#~ "S'han eliminat automàticament %1 connectors per les dependències del "
-#~ "connector"
-
-#~ msgid "Enable component"
-#~ msgstr "Activa el component"
+msgstr "No s'ha proporcionat cap fitxer QML"
