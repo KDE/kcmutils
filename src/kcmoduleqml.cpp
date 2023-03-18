@@ -54,6 +54,7 @@ public:
 
 class QmlConfigModuleWidget : public QWidget
 {
+    Q_OBJECT
 public:
     QmlConfigModuleWidget(KCModuleQml *module, QWidget *parent)
         : QWidget(parent)
@@ -250,4 +251,5 @@ void KCModuleQml::defaults()
     d->configModule->defaults();
 }
 
+#include "kcmoduleqml.moc"
 #include "moc_kcmoduleqml_p.cpp"
