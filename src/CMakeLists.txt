@@ -56,12 +56,10 @@ target_link_libraries(KF6KCMUtils
   PUBLIC
     Qt6::Widgets
     KF6::CoreAddons # KPluginMetaData
-    KF6::ConfigWidgets  # KCModule
+    KF6::ConfigWidgets  # KPageDialog
     KF6KCMUtilsQuick      # QML KCM class
   PRIVATE
-    KF6::ConfigWidgets
     kcmutils_proxy_model
-    Qt6::DBus       # dbus usage in kcmoduleproxy.cpp
     Qt6::Qml
     Qt6::Quick
     Qt6::QuickWidgets
