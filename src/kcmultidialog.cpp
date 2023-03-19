@@ -118,24 +118,9 @@ void KCMultiDialogPrivate::clientChanged()
         }
     }
 
-    bool change = false;
-    bool defaulted = false;
-    if (activeModule) {
-        change = activeModule->needsSave();
-        defaulted = activeModule->representsDefaults();
-
-        QPushButton *applyButton = q->buttonBox()->button(QDialogButtonBox::Apply);
-        if (applyButton) {
-            q->disconnect(applyButton, &QAbstractButton::clicked, q, &KCMultiDialog::slotApplyClicked);
-        }
-
-        QPushButton *okButton = q->buttonBox()->button(QDialogButtonBox::Ok);
-        if (okButton) {
-            q->disconnect(okButton, &QAbstractButton::clicked, q, &KCMultiDialog::slotOkClicked);
-        }
-    }
-
-    auto buttons = activeModule ? activeModule->buttons() : KCModule::NoAdditionalButton;
+    const bool change = activeModule && activeModule->needsSave();
+    const bool defaulted = activeModule && activeModule->representsDefaults();
+    const auto buttons = activeModule ? activeModule->buttons() : KCModule::NoAdditionalButton;
 
     QPushButton *resetButton = q->buttonBox()->button(QDialogButtonBox::Reset);
     if (resetButton) {
