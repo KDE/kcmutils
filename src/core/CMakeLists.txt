@@ -15,7 +15,12 @@ ecm_generate_export_header(KF6KCMUtilsCore
 )
 target_include_directories(KF6KCMUtilsCore INTERFACE "$<INSTALL_INTERFACE:${KDE_INSTALL_INCLUDEDIR_KF}/KCMUtilsCore>")
 
-target_sources(KF6KCMUtilsCore PRIVATE kpluginmodel.cpp kabstractconfigmodule.cpp)
+target_sources(KF6KCMUtilsCore PRIVATE
+    kpluginmodel.cpp
+    kabstractconfigmodule.cpp
+    kcmoduledata.cpp
+    kcmoduledata.h
+)
 target_link_libraries(KF6KCMUtilsCore
   PUBLIC
     KF6::CoreAddons
@@ -32,6 +37,7 @@ ecm_generate_headers(KCMUtilsCore_HEADERS
   HEADER_NAMES
   KPluginModel
   KAbstractConfigModule
+  KCModuleData
 
   REQUIRED_HEADERS KCMUtilsCore_HEADERS
 )

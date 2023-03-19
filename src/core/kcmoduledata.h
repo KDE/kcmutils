@@ -10,7 +10,7 @@
 
 #include <QObject>
 #include <QVariantList>
-#include <kcmutils_export.h>
+#include <kcmutilscore_export.h>
 
 class KCModuleDataPrivate;
 class KCoreConfigSkeleton;
@@ -22,7 +22,7 @@ class KCoreConfigSkeleton;
  *
  * @since 5.74
  */
-class KCMUTILS_EXPORT KCModuleData : public QObject
+class KCMUTILSCORE_EXPORT KCModuleData : public QObject
 {
     Q_OBJECT
 public:

@@ -18,8 +18,6 @@ add_subdirectory(qml)
 
 ########### kcmutils ###############
 set(kcmutils_LIB_SRCS
-    kcmoduledata.cpp
-    kcmoduledata.h
     kcmoduleloader.cpp
     kcmoduleloader.h
     kcmoduleqml.cpp
@@ -79,7 +77,6 @@ ecm_generate_headers(KCMUtils_HEADERS
   HEADER_NAMES
   KCModuleLoader
   KCMultiDialog
-  KCModuleData
   KPluginWidget
   KCModule
 

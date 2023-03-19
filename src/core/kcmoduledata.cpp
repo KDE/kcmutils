@@ -29,7 +29,12 @@ KCModuleData::KCModuleData(QObject *parent, const QVariantList &)
     , d(new KCModuleDataPrivate(this))
 {
     connect(this, &KCModuleData::aboutToLoad, this, &KCModuleData::loaded);
-    QMetaObject::invokeMethod(this, [this] { aboutToLoad(QPrivateSignal()); }, Qt::QueuedConnection);
+    QMetaObject::invokeMethod(
+        this,
+        [this] {
+            aboutToLoad(QPrivateSignal());
+        },
+        Qt::QueuedConnection);
 }
 
 KCModuleData::~KCModuleData()
