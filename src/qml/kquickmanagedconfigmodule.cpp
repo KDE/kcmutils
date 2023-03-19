@@ -31,10 +31,7 @@ KQuickManagedConfigModule::KQuickManagedConfigModule(QObject *parent, const KPlu
 {
 }
 
-KQuickManagedConfigModule::~KQuickManagedConfigModule()
-{
-    delete d;
-}
+KQuickManagedConfigModule::~KQuickManagedConfigModule() = default;
 
 void KQuickManagedConfigModule::load()
 {

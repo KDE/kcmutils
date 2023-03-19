@@ -11,6 +11,7 @@
 #include <QObject>
 #include <QVariantList>
 #include <kcmutilscore_export.h>
+#include <memory>
 
 class KCModuleDataPrivate;
 class KCoreConfigSkeleton;
@@ -79,7 +80,7 @@ protected:
     virtual void virtual_hook(int id, void *data);
 
 private:
-    KCModuleDataPrivate *const d;
+    const std::unique_ptr<KCModuleDataPrivate> d;
     friend class KCModuleDataPrivate;
 };
 

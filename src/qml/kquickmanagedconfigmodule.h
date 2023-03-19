@@ -7,6 +7,7 @@
 #define MANAGEDCONFIGMODULE_H
 
 #include "kquickconfigmodule.h"
+#include <memory>
 
 class KCoreConfigSkeleton;
 
@@ -127,7 +128,7 @@ private:
      */
     virtual bool isDefaults() const;
 
-    KQuickManagedConfigModulePrivate *const d;
+    const std::unique_ptr<KQuickManagedConfigModulePrivate> d;
     friend class KQuickManagedConfigModulePrivate;
 };
 

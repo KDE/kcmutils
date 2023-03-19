@@ -66,8 +66,6 @@ KQuickConfigModule::~KQuickConfigModule()
     if (d->_engine) {
         KQuickConfigModulePrivate::s_rootObjects.remove(d->_engine->rootContext());
     }
-
-    delete d;
 }
 
 KQuickConfigModule *KQuickConfigModule::qmlAttachedProperties(QObject *object)

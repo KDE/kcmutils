@@ -37,10 +37,7 @@ KCModuleData::KCModuleData(QObject *parent, const QVariantList &)
         Qt::QueuedConnection);
 }
 
-KCModuleData::~KCModuleData()
-{
-    delete d;
-}
+KCModuleData::~KCModuleData() = default;
 
 void KCModuleData::virtual_hook(int, void *)
 {
