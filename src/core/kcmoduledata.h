@@ -76,9 +76,6 @@ protected Q_SLOTS:
      */
     void autoRegisterSkeletons();
 
-protected:
-    virtual void virtual_hook(int id, void *data);
-
 private:
     const std::unique_ptr<KCModuleDataPrivate> d;
     friend class KCModuleDataPrivate;

@@ -39,10 +39,6 @@ KCModuleData::KCModuleData(QObject *parent, const QVariantList &)
 
 KCModuleData::~KCModuleData() = default;
 
-void KCModuleData::virtual_hook(int, void *)
-{
-}
-
 void KCModuleData::registerSkeleton(KCoreConfigSkeleton *skeleton)
 {
     if (!skeleton || d->_skeletons.contains(skeleton)) {
