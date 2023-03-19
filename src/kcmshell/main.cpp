@@ -153,6 +153,7 @@ int main(int _argc, char *_argv[])
     parser.addOption(QCommandLineOption(QStringLiteral("args"), i18n("Arguments for the module"), QLatin1String("arguments")));
     parser.addOption(QCommandLineOption(QStringLiteral("icon"), i18n("Use a specific icon for the window"), QLatin1String("icon")));
     parser.addOption(QCommandLineOption(QStringLiteral("caption"), i18n("Use a specific caption for the window"), QLatin1String("caption")));
+    parser.addOption(QCommandLineOption(QStringLiteral("highlight"), i18n("Show an indicator when settings have changed from their default value")));
 
     parser.parse(app.arguments());
     aboutData.processCommandLine(&parser);
@@ -270,6 +271,10 @@ int main(int _argc, char *_argv[])
         dlg->setWindowIcon(QIcon::fromTheme(parser.value(QStringLiteral("icon"))));
     } else {
         dlg->setWindowIcon(QIcon::fromTheme(metaDataList.constFirst().iconName()));
+    }
+
+    if (parser.isSet(QStringLiteral("highlight"))) {
+        dlg->setDefaultsIndicatorsVisible(true);
     }
 
     if (app.desktopFileName() == QLatin1String("org.kde.kcmshell6")) {
