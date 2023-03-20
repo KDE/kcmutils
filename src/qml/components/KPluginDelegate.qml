@@ -32,7 +32,7 @@ Kirigami.BasicListItem {
         }
     }
 
-    icon: model.icon
+    icon.name: model.icon
     label: model.name
     subtitle: model.description
 
