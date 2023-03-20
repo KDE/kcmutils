@@ -11,7 +11,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdelibs4\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-03-17 02:32+0000\n"
+"POT-Creation-Date: 2023-03-20 02:18+0000\n"
 "PO-Revision-Date: 2010-08-13 15:45+0200\n"
 "Last-Translator: Erdal Ronahî <erdal.ronahi@nospam.gmail.com>\n"
 "Language-Team: Kurdish Team http://pckurd.net\n"
@@ -93,7 +93,7 @@ msgstr ""
 msgid "Apply Settings"
 msgstr "Mîheng"
 
-#: kcmultidialog.cpp:203 kpluginwidget.cpp:329
+#: kcmultidialog.cpp:188 kpluginwidget.cpp:329
 #, kde-format
 msgid "Configure"
 msgstr "Veavakirin"

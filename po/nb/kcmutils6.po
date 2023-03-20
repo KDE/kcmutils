@@ -1,4 +1,4 @@
-# Translation of kcmutils5 to Norwegian Bokmål
+# Translation of kcmutils6 to Norwegian Bokmål
 #
 # Knut Yrvin <knut.yrvin@gmail.com>, 2002, 2003, 2004, 2005.
 # Bjørn Steensrud <bjornst@skogkatt.homelinux.org>, 2002, 2003, 2004, 2005, 2007, 2008, 2009, 2010, 2011, 2012, 2013, 2014.
@@ -11,7 +11,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdelibs4\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-03-17 02:32+0000\n"
+"POT-Creation-Date: 2023-03-20 02:18+0000\n"
 "PO-Revision-Date: 2014-11-05 13:40+0100\n"
 "Last-Translator: Bjørn Steensrud <bjornst@skogkatt.homelinux.org>\n"
 "Language-Team: Norwegian Bokmål <l10n-no@lister.huftis.org>\n"
@@ -75,7 +75,7 @@ msgstr ""
 msgid "Apply Settings"
 msgstr "Ta i bruk endringer"
 
-#: kcmultidialog.cpp:203 kpluginwidget.cpp:329
+#: kcmultidialog.cpp:188 kpluginwidget.cpp:329
 #, kde-format
 msgid "Configure"
 msgstr "Oppsett"

@@ -4,13 +4,13 @@
 # Sivakumar Shanmugasundaram <sshanmu@yahoo.com>, 2000.
 # Thuraiappah Vaseeharan <t_vasee@yahoo.com>, 2000-2001.
 # ம. ஸ்ரீ ராமதாஸ் | Sri Ramadoss M <amachu@yavarkkum.org>, 2007-2012.
-# Kishore G <kishore96@gmail.com>, 2022.
+# Kishore G <kishore96@gmail.com>, 2022, 2023.
 msgid ""
 msgstr ""
 "Project-Id-Version: kdelibs4\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-03-17 02:32+0000\n"
-"PO-Revision-Date: 2022-05-24 21:21+0530\n"
+"POT-Creation-Date: 2023-03-20 02:18+0000\n"
+"PO-Revision-Date: 2023-03-19 12:31+0530\n"
 "Last-Translator: Kishore G <kishore96@gmail.com>\n"
 "Language-Team: Tamil <kde-i18n-doc@kde.org>\n"
 "Language: ta\n"
@@ -18,7 +18,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Lokalize 22.04.1\n"
+"X-Generator: Lokalize 22.12.3\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
@@ -74,7 +74,7 @@ msgstr ""
 msgid "Apply Settings"
 msgstr "அமைப்புகளை செயல்படுத்தவும்"
 
-#: kcmultidialog.cpp:203 kpluginwidget.cpp:329
+#: kcmultidialog.cpp:188 kpluginwidget.cpp:329
 #, kde-format
 msgid "Configure"
 msgstr "வடிவமை"
@@ -150,12 +150,12 @@ msgstr "%1 என்பவருக்கு மின்னஞ்சல் அ�
 #: qml/kquickconfigmodule.cpp:116
 #, kde-format
 msgid "Invalid KPackage '%1'"
-msgstr ""
+msgstr "செல்லுபடியாகாத KPackage '%1'"
 
 #: qml/kquickconfigmodule.cpp:122
 #, kde-format
 msgid "No QML file provided"
-msgstr ""
+msgstr "QML கோப்பு தரப்படவில்லை"
 
 #~ msgctxt "Argument is application name"
 #~ msgid "This configuration section is already opened in %1"
