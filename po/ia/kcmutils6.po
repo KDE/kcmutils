@@ -1,13 +1,13 @@
 # Copyright (C) YEAR This_file_is_part_of_KDE
 # This file is distributed under the same license as the PACKAGE package.
 #
-# g.sora <g.sora@tiscali.it>, 2010, 2011, 2012, 2013, 2019, 2021, 2022.
+# g.sora <g.sora@tiscali.it>, 2010, 2011, 2012, 2013, 2019, 2021, 2022, 2023.
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-03-20 02:18+0000\n"
-"PO-Revision-Date: 2022-07-15 11:41+0200\n"
+"PO-Revision-Date: 2023-03-20 12:27+0100\n"
 "Last-Translator: giovanni <g.sora@tiscali.it>\n"
 "Language-Team: Interlingua <kde-i18n-doc@kde.org>\n"
 "Language: ia\n"
@@ -148,12 +148,12 @@ msgstr "Invia un message de e-posta a  %1"
 #: qml/kquickconfigmodule.cpp:116
 #, kde-format
 msgid "Invalid KPackage '%1'"
-msgstr ""
+msgstr "Invalide KPackage '%1'"
 
 #: qml/kquickconfigmodule.cpp:122
 #, kde-format
 msgid "No QML file provided"
-msgstr ""
+msgstr "Necun file QML fornite"
 
 #~ msgctxt "Argument is application name"
 #~ msgid "This configuration section is already opened in %1"

@@ -152,13 +152,9 @@ msgstr "Odeslat e-mail %1"
 #: qml/kquickconfigmodule.cpp:116
 #, kde-format
 msgid "Invalid KPackage '%1'"
-msgstr ""
+msgstr "Neplatný KPackage '%1'"
 
 #: qml/kquickconfigmodule.cpp:122
 #, kde-format
 msgid "No QML file provided"
-msgstr ""
-
-#~ msgctxt "Argument is application name"
-#~ msgid "This configuration section is already opened in %1"
-#~ msgstr "Konfigurační sekce je již otevřena v '%1'"
+msgstr "Nebyl poskytnut soubor QML"
