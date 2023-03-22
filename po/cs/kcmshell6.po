@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kcmutils\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-03-01 21:29+0000\n"
+"POT-Creation-Date: 2023-03-22 02:44+0000\n"
 "PO-Revision-Date: 2023-03-03 11:28+0100\n"
 "Last-Translator: Vit Pelcak <vit@pelcak.org>\n"
 "Language-Team: Czech <kde-i18n-doc@kde.org>\n"
@@ -112,7 +112,12 @@ msgstr "Použít pro okno vlastní ikonu"
 msgid "Use a specific caption for the window"
 msgstr "Použít pro okno vlastní nadpis"
 
-#: main.cpp:164
+#: main.cpp:156
+#, kde-format
+msgid "Show an indicator when settings have changed from their default value"
+msgstr ""
+
+#: main.cpp:165
 #, kde-format
 msgid ""
 "--lang is deprecated. Please set the LANGUAGE environment variable instead"
@@ -120,12 +125,12 @@ msgstr ""
 "--lang je zastaralé. Prosím, nastavte namísto toho proměnnou prostředí "
 "LANGUAGE"
 
-#: main.cpp:168
+#: main.cpp:169
 #, kde-format
 msgid "The following modules are available:"
 msgstr "Jsou dostupné tyto moduly:"
 
-#: main.cpp:181
+#: main.cpp:182
 #, kde-format
 msgid "No description available"
 msgstr "Popis není dostupný"

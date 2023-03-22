@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kcmutils\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-03-01 21:29+0000\n"
+"POT-Creation-Date: 2023-03-22 02:44+0000\n"
 "PO-Revision-Date: 2023-03-05 13:00+0100\n"
 "Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
@@ -115,18 +115,23 @@ msgstr "Utilitza una icona específica per a la finestra"
 msgid "Use a specific caption for the window"
 msgstr "Utilitza una llegenda específica per a la finestra"
 
-#: main.cpp:164
+#: main.cpp:156
+#, kde-format
+msgid "Show an indicator when settings have changed from their default value"
+msgstr ""
+
+#: main.cpp:165
 #, kde-format
 msgid ""
 "--lang is deprecated. Please set the LANGUAGE environment variable instead"
 msgstr "--lang està en desús. Establiu la variable d'entorn LANGUAGE"
 
-#: main.cpp:168
+#: main.cpp:169
 #, kde-format
 msgid "The following modules are available:"
 msgstr "Hi ha disponibles els mòduls següents:"
 
-#: main.cpp:181
+#: main.cpp:182
 #, kde-format
 msgid "No description available"
 msgstr "No hi ha disponible cap descripció"

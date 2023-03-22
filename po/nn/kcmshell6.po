@@ -5,7 +5,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kcmutils\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-03-01 21:29+0000\n"
+"POT-Creation-Date: 2023-03-22 02:44+0000\n"
 "PO-Revision-Date: 2023-03-04 16:26+0100\n"
 "Last-Translator: Karl Ove Hufthammer <karl@huftis.org>\n"
 "Language-Team: Norwegian Nynorsk <l10n-no@lister.huftis.org>\n"
@@ -114,19 +114,24 @@ msgstr "Bruk valt ikon for vindauget"
 msgid "Use a specific caption for the window"
 msgstr "Bruk vald tittel for vindauget"
 
-#: main.cpp:164
+#: main.cpp:156
+#, kde-format
+msgid "Show an indicator when settings have changed from their default value"
+msgstr ""
+
+#: main.cpp:165
 #, kde-format
 msgid ""
 "--lang is deprecated. Please set the LANGUAGE environment variable instead"
 msgstr ""
 "«--lang»-argumentet er utdatert. Bruk heller miljøvariabelen «LANGUAGE»."
 
-#: main.cpp:168
+#: main.cpp:169
 #, kde-format
 msgid "The following modules are available:"
 msgstr "Desse modulane er tilgjengelege:"
 
-#: main.cpp:181
+#: main.cpp:182
 #, kde-format
 msgid "No description available"
 msgstr "Inga skildring tilgjengeleg"
