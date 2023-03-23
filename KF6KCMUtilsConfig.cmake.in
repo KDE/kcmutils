@@ -5,6 +5,7 @@
 
 include(CMakeFindDependencyMacro)
 find_dependency(KF6ConfigWidgets  "@KF_DEP_VERSION@")
+find_dependency(KF6CoreAddons   "@KF_DEP_VERSION@")
 find_dependency(Qt6Qml          "@REQUIRED_QT_VERSION@")
 
 if (NOT @BUILD_SHARED_LIBS@)
@@ -12,7 +13,6 @@ if (NOT @BUILD_SHARED_LIBS@)
     find_dependency(Qt6Quick        "@REQUIRED_QT_VERSION@")
     find_dependency(Qt6QuickWidgets "@REQUIRED_QT_VERSION@")
 
-    find_dependency(KF6CoreAddons   "@KF_DEP_VERSION@")
     find_dependency(KF6GuiAddons    "@KF_DEP_VERSION@")
     find_dependency(KF6I18n         "@KF_DEP_VERSION@")
     find_dependency(KF6ItemViews    "@KF_DEP_VERSION@")
