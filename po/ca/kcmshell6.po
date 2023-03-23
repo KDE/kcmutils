@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: kcmutils\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-03-22 02:44+0000\n"
-"PO-Revision-Date: 2023-03-05 13:00+0100\n"
+"PO-Revision-Date: 2023-03-22 13:08+0100\n"
 "Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
 "Language: ca\n"
@@ -119,6 +119,8 @@ msgstr "Usa una llegenda específica per a la finestra"
 #, kde-format
 msgid "Show an indicator when settings have changed from their default value"
 msgstr ""
+"Mostra un indicador quan els paràmetres de configuració hagin canviat dels "
+"seus valors predeterminats"
 
 #: main.cpp:165
 #, kde-format

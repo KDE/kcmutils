@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: kcmutils\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-03-22 02:44+0000\n"
-"PO-Revision-Date: 2023-03-02 20:54+0200\n"
+"PO-Revision-Date: 2023-03-22 13:33+0200\n"
 "Last-Translator: Yuri Chornoivan <yurchor@ukr.net>\n"
 "Language-Team: Ukrainian <kde-i18n-uk@kde.org>\n"
 "Language: uk\n"
@@ -116,7 +116,7 @@ msgstr "Використовувати для вікна певний підпи
 #: main.cpp:156
 #, kde-format
 msgid "Show an indicator when settings have changed from their default value"
-msgstr ""
+msgstr "Показувати індикатор, якщо було змінено типове значення параметрів"
 
 #: main.cpp:165
 #, kde-format
