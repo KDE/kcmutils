@@ -13,7 +13,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdelibs4\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-03-20 02:18+0000\n"
+"POT-Creation-Date: 2023-03-24 02:07+0000\n"
 "PO-Revision-Date: 2018-11-08 23:01-0800\n"
 "Last-Translator: A S Alam <alam.yellow@gmail.com>\n"
 "Language-Team: Punjabi <punjabi-users@lists.sf.net>\n"
@@ -168,12 +168,12 @@ msgstr "ਅਨੁਵਾਦ"
 msgid "Send an email to %1"
 msgstr "ਈ-ਮੇਲ ਭੇਜੋ(&S)"
 
-#: qml/kquickconfigmodule.cpp:116
+#: qml/kquickconfigmodule.cpp:114
 #, kde-format
 msgid "Invalid KPackage '%1'"
 msgstr ""
 
-#: qml/kquickconfigmodule.cpp:122
+#: qml/kquickconfigmodule.cpp:120
 #, kde-format
 msgid "No QML file provided"
 msgstr ""

@@ -13,7 +13,7 @@
 # Khaled Hosny <khaledhosny@eglug.org>, 2007.
 # Youssef Chahibi <chahibi@gmail.com>, 2007.
 # zayed <zayed.alsaidi@gmail.com>, 2008, 2009.
-# Zayed Al-Saidi <zayed.alsaidi@gmail.com>, 2009, 2021, 2022.
+# Zayed Al-Saidi <zayed.alsaidi@gmail.com>, 2009, 2021, 2022, 2023.
 # hanny <hannysabbagh@hotmail.com>, 2012.
 # Abderrahim Kitouni <a.kitouni@gmail.com>, 2012.
 # Safa Alfulaij <safaalfulaij@hotmail.com>, 2013, 2017, 2018.
@@ -21,17 +21,17 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdelibs4\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-03-20 02:18+0000\n"
-"PO-Revision-Date: 2022-04-28 12:58+0400\n"
+"POT-Creation-Date: 2023-03-24 02:07+0000\n"
+"PO-Revision-Date: 2023-03-23 10:52+0400\n"
 "Last-Translator: Zayed Al-Saidi <zayed.alsaidi@gmail.com>\n"
-"Language-Team: Arabic <kde-l10n-ar@kde.org>\n"
+"Language-Team: ar\n"
 "Language: ar\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=6; plural=n==0 ? 0 : n==1 ? 1 : n==2 ? 2 : n%100>=3 "
 "&& n%100<=10 ? 3 : n%100>=11 && n%100<=99 ? 4 : 5;\n"
-"X-Generator: Lokalize 21.07.70\n"
+"X-Generator: Lokalize 21.12.3\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
@@ -160,15 +160,15 @@ msgstr "المترجمون"
 msgid "Send an email to %1"
 msgstr "أرسِل بريد الإلكتروني إلى %1"
 
-#: qml/kquickconfigmodule.cpp:116
+#: qml/kquickconfigmodule.cpp:114
 #, kde-format
 msgid "Invalid KPackage '%1'"
-msgstr ""
+msgstr "حزمة KPackage غير صالحة '%1'"
 
-#: qml/kquickconfigmodule.cpp:122
+#: qml/kquickconfigmodule.cpp:120
 #, kde-format
 msgid "No QML file provided"
-msgstr ""
+msgstr "لا يوجد ملف QML"
 
 #~ msgctxt "Argument is application name"
 #~ msgid "This configuration section is already opened in %1"

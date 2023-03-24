@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-03-20 02:18+0000\n"
+"POT-Creation-Date: 2023-03-24 02:07+0000\n"
 "PO-Revision-Date: 2023-03-20 12:27+0100\n"
 "Last-Translator: giovanni <g.sora@tiscali.it>\n"
 "Language-Team: Interlingua <kde-i18n-doc@kde.org>\n"
@@ -145,12 +145,12 @@ msgstr "Traductores"
 msgid "Send an email to %1"
 msgstr "Invia un message de e-posta a  %1"
 
-#: qml/kquickconfigmodule.cpp:116
+#: qml/kquickconfigmodule.cpp:114
 #, kde-format
 msgid "Invalid KPackage '%1'"
 msgstr "Invalide KPackage '%1'"
 
-#: qml/kquickconfigmodule.cpp:122
+#: qml/kquickconfigmodule.cpp:120
 #, kde-format
 msgid "No QML file provided"
 msgstr "Necun file QML fornite"

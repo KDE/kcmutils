@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdelibs4\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-03-20 02:18+0000\n"
+"POT-Creation-Date: 2023-03-24 02:07+0000\n"
 "PO-Revision-Date: 2023-03-19 14:31+0100\n"
 "Last-Translator: Karl Ove Hufthammer <karl@huftis.org>\n"
 "Language-Team: Norwegian Nynorsk <l10n-no@lister.huftis.org>\n"
@@ -151,12 +151,12 @@ msgstr "Omsetjarar"
 msgid "Send an email to %1"
 msgstr "Send e-post til %1"
 
-#: qml/kquickconfigmodule.cpp:116
+#: qml/kquickconfigmodule.cpp:114
 #, kde-format
 msgid "Invalid KPackage '%1'"
 msgstr "Ugyldig KPackage «%1»"
 
-#: qml/kquickconfigmodule.cpp:122
+#: qml/kquickconfigmodule.cpp:120
 #, kde-format
 msgid "No QML file provided"
 msgstr "Manglar QML-fil"

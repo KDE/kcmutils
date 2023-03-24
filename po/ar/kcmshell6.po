@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: kcmutils\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-03-22 02:44+0000\n"
-"PO-Revision-Date: 2023-03-16 12:56+0400\n"
+"PO-Revision-Date: 2023-03-23 10:52+0400\n"
 "Last-Translator: Zayed Al-Saidi <zayed.alsaidi@gmail.com>\n"
 "Language-Team: ar\n"
 "Language: ar\n"
@@ -116,7 +116,7 @@ msgstr "استعمل وصف محدد للنافذة"
 #: main.cpp:156
 #, kde-format
 msgid "Show an indicator when settings have changed from their default value"
-msgstr ""
+msgstr "اعرض مؤشر عند تغيير الإعدادات عن القيمة المبدئية"
 
 #: main.cpp:165
 #, kde-format
