@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-03-24 02:07+0000\n"
-"PO-Revision-Date: 2023-03-20 12:27+0100\n"
+"PO-Revision-Date: 2023-03-24 11:10+0100\n"
 "Last-Translator: giovanni <g.sora@tiscali.it>\n"
 "Language-Team: Interlingua <kde-i18n-doc@kde.org>\n"
 "Language: ia\n"
@@ -46,12 +46,12 @@ msgstr ""
 #: kcmoduleloader.cpp:69
 #, kde-format
 msgid "The module %1 is disabled."
-msgstr "Le modulo %1 es inhabilitate."
+msgstr "Le modulo %1 es dishabilitate."
 
 #: kcmoduleloader.cpp:69
 #, kde-format
 msgid "The module has been disabled by the system administrator."
-msgstr "Le modulo ha essite dishabilitate per le administrator de systema"
+msgstr "Le modulo ha essite dishabilitate per le administrator de systema."
 
 #: kcmoduleloader.cpp:75
 #, kde-format
