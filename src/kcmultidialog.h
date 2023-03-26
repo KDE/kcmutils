@@ -151,7 +151,7 @@ public:
         }
     }
 
-    UnboundScrollArea(QWidget *w)
+    explicit UnboundScrollArea(QWidget *w)
         : QScrollArea(w)
     {
     }

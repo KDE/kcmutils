@@ -35,7 +35,7 @@ class KCMUTILS_EXPORT KPluginWidget : public QWidget
     Q_OBJECT
 
 public:
-    KPluginWidget(QWidget *parent = nullptr);
+    explicit KPluginWidget(QWidget *parent = nullptr);
 
     ~KPluginWidget();
 
