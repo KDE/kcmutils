@@ -20,7 +20,6 @@ target_link_libraries(KF6KCMUtilsQuick
     KF6KCMUtilsCore
   PRIVATE
     KF6::I18n
-    KF6::Package
     KF6::ConfigGui
     Qt6::Quick
     kcmutils_logging_STATIC

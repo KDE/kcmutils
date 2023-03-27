@@ -5,12 +5,10 @@ Dependencies:
     'frameworks/kitemviews' : '@same'
     'frameworks/kcoreaddons' : '@same'
     'frameworks/ki18n' : '@same'
-    'frameworks/kiconthemes' : '@same'
     'frameworks/kxmlgui' : '@same'
     'frameworks/kactivities' : '@same'
     'frameworks/kwindowsystem' : '@same'
     'frameworks/kirigami' : '@same'
-    'frameworks/kpackage' : '@same'
 
 Options:
   test-before-installing: True

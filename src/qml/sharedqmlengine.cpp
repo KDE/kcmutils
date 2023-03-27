@@ -14,6 +14,7 @@
 #include <QQmlIncubator>
 #include <QQmlNetworkAccessManagerFactory>
 #include <QQuickItem>
+#include <QResource>
 #include <QTimer>
 
 // TODO: This incubation controller is not great. Ideally, we need to reuse QQuickWindow's QML engine.
@@ -120,6 +121,7 @@ void SharedQmlEnginePrivate::execute(const QUrl &source)
     QObject::connect(component, &QQmlComponent::statusChanged, q, &SharedQmlEngine::statusChanged, Qt::QueuedConnection);
     delete incubator.object();
 
+    m_engine->addImportPath(QStringLiteral("qrc:/"));
     component->loadUrl(source);
 
     if (delay) {
@@ -140,7 +142,7 @@ void SharedQmlEnginePrivate::scheduleExecutionEnd()
     }
 }
 
-SharedQmlEngine::SharedQmlEngine(const std::shared_ptr<QQmlEngine> &engine,QObject *parent)
+SharedQmlEngine::SharedQmlEngine(const std::shared_ptr<QQmlEngine> &engine, QObject *parent)
     : QObject(parent)
     , d(new SharedQmlEnginePrivate(engine, this))
 {

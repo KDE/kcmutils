@@ -18,12 +18,11 @@
 #include <QQmlEngine>
 #include <QQmlFileSelector>
 #include <QQuickItem>
+#include <QResource>
 #include <QUrl>
 
 #include <KLocalizedContext>
 #include <KLocalizedString>
-#include <KPackage/Package>
-#include <KPackage/PackageLoader>
 
 #include <memory>
 
@@ -42,9 +41,16 @@ public:
     int _columnWidth = -1;
     int currentIndex = 0;
     QString _errorString;
-    KPackage::Package package;
 
     static QHash<QObject *, KQuickConfigModule *> s_rootObjects;
+    QString getResourcePath(const QString &file)
+    {
+        return QLatin1String("/kcm/") + _q->metaData().pluginId() + QLatin1String("/") + file;
+    }
+    QUrl getResourceUrl(const QString &resourcePath)
+    {
+        return QUrl(QLatin1String("qrc:") + resourcePath);
+    }
 };
 
 QHash<QObject *, KQuickConfigModule *> KQuickConfigModulePrivate::s_rootObjects = QHash<QObject *, KQuickConfigModule *>();
@@ -105,25 +111,15 @@ QQuickItem *KQuickConfigModule::mainUi()
     d->_engine->setTranslationDomain(componentName);
     d->_engine->setInitializationDelayed(true);
 
-    d->package = KPackage::PackageLoader::self()->loadPackage(QStringLiteral("KPackage/GenericQML"));
-    d->package.setDefaultPackageRoot(QStringLiteral("kpackage/kcms"));
-    d->package.setPath(metaData().pluginId());
-    d->package.setMetadata(metaData());
-
-    if (!d->package.isValid()) {
-        d->_errorString = i18n("Invalid KPackage '%1'", componentName);
-        qWarning() << "Error loading the module" << componentName << ": invalid KPackage";
-        return nullptr;
-    }
-
-    if (d->package.filePath("mainscript").isEmpty()) {
-        d->_errorString = i18n("No QML file provided");
-        qWarning() << "Error loading the module" << componentName << ": no QML file provided";
+    const QString resourcePath = d->getResourcePath(QStringLiteral("main.qml"));
+    if (QResource r(resourcePath); !r.isValid()) {
+        d->_errorString = i18n("Could not find resource '%1'", resourcePath);
+        qWarning() << "Could not find resource" << resourcePath;
         return nullptr;
     }
 
     new QQmlFileSelector(d->_engine->engine().get(), this);
-    d->_engine->setSource(d->package.fileUrl("mainscript"));
+    d->_engine->setSource(d->getResourceUrl(resourcePath));
     d->_engine->rootContext()->setContextProperty(QStringLiteral("kcm"), this);
     d->_engine->completeInitialization();
 
@@ -147,7 +143,11 @@ void KQuickConfigModule::push(const QString &fileName, const QVariantMap &proper
         propertyHash.insert(it.key(), it.value());
     }
 
-    QObject *object = d->_engine->createObjectFromSource(QUrl::fromLocalFile(d->package.filePath("ui", fileName)), d->_engine->rootContext(), propertyHash);
+    const QString resourcePath = d->getResourcePath(fileName);
+    if (QResource r(resourcePath); !r.isValid()) {
+        qWarning() << "Requested resource" << resourcePath << "does not exist";
+    }
+    QObject *object = d->_engine->createObjectFromSource(d->getResourceUrl(resourcePath), d->_engine->rootContext(), propertyHash);
 
     QQuickItem *item = qobject_cast<QQuickItem *>(object);
     if (!item) {
