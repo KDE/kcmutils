@@ -15,7 +15,7 @@ target_include_directories(KF6KCMUtilsQuick INTERFACE "$<INSTALL_INTERFACE:${KDE
 target_link_libraries(KF6KCMUtilsQuick
   PUBLIC
     KF6::CoreAddons
-    KF6::ConfigGui
+    KF6::ConfigCore
     Qt6::Qml
     KF6KCMUtilsCore
   PRIVATE
