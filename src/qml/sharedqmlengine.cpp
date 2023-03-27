@@ -111,11 +111,7 @@ void SharedQmlEnginePrivate::errorPrint(QQmlComponent *component)
 
 void SharedQmlEnginePrivate::execute(const QUrl &source)
 {
-    if (source.isEmpty()) {
-        qWarning() << "File name empty!";
-        return;
-    }
-
+    Q_ASSERT(!source.isEmpty());
     delete component;
     component = new QQmlComponent(m_engine.get(), q);
     QObject::connect(component, &QQmlComponent::statusChanged, q, &SharedQmlEngine::statusChanged, Qt::QueuedConnection);
