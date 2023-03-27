@@ -5,7 +5,7 @@
 
 #include "kquickmanagedconfigmodule.h"
 
-#include <KConfigCore/KCoreConfigSkeleton>
+#include <KCoreConfigSkeleton>
 #include <QPointer>
 #include <QTimer>
 
