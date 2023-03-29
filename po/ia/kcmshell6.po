@@ -1,46 +1,46 @@
 # Copyright (C) YEAR This file is copyright:
 # This file is distributed under the same license as the kcmutils package.
-# Vincenzo Reale <smart2128vr@gmail.com>, 2023.
 #
+# giovanni <g.sora@tiscali.it>, 2023.
 msgid ""
 msgstr ""
 "Project-Id-Version: kcmutils\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-03-22 02:44+0000\n"
-"PO-Revision-Date: 2023-03-22 15:42+0100\n"
-"Last-Translator: Vincenzo Reale <smart2128vr@gmail.com>\n"
-"Language-Team: Italian <kde-i18n-it@kde.org>\n"
-"Language: it\n"
+"PO-Revision-Date: 2023-03-28 08:49+0200\n"
+"Last-Translator: giovanni <g.sora@tiscali.it>\n"
+"Language-Team: Interlingua <kde-i18n-doc@kde.org>\n"
+"Language: ia\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Lokalize 22.12.3\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Lokalize 21.12.1\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
 msgid "Your names"
-msgstr "Vincenzo Reale"
+msgstr "Giovanni Sora"
 
 #, kde-format
 msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
-msgstr "smart2128vr@gmail.com"
+msgstr "g.sora@tiscali.it"
 
 #: main.cpp:132
 #, kde-format
 msgid "System Settings Module"
-msgstr "Modulo di Impostazioni di sistema"
+msgstr "Modulo de Preferentias de Systema"
 
 #: main.cpp:134
 #, kde-format
 msgid "A tool to start single system settings modules"
-msgstr "Uno strumento per avviare singoli moduli delle impostazioni di sistema"
+msgstr "Un instrumento pro initiar singule modulos de preferentias de systema"
 
 #: main.cpp:136
 #, kde-format
 msgid "(c) 1999-2016, The KDE Developers"
-msgstr "(c) 1999-2016, Gli sviluppatori di KDE"
+msgstr "(c) 1999-2016, Le disveloppatores de KDE"
 
 #: main.cpp:138
 #, kde-format
@@ -50,7 +50,7 @@ msgstr "Frans Englich"
 #: main.cpp:138
 #, kde-format
 msgid "Maintainer"
-msgstr "Responsabile"
+msgstr "Mantenitor"
 
 #: main.cpp:139
 #, kde-format
@@ -80,57 +80,57 @@ msgstr "Waldo Bastian"
 #: main.cpp:149
 #, kde-format
 msgid "List all possible modules"
-msgstr "Elenca tutti i moduli possibili"
+msgstr "Lista omne possibile modulos"
 
 #: main.cpp:150
 #, kde-format
 msgid "Configuration module to open"
-msgstr "Modulo di configurazione da aprire"
+msgstr "Modulo de configuration a aperir"
 
 #: main.cpp:151
 #, kde-format
 msgid "Specify a particular language"
-msgstr "Specifica una lingua"
+msgstr "Specifica un specific linguage"
 
 #: main.cpp:152
 #, kde-format
 msgid "Do not display main window"
-msgstr "Non mostrare la finestra principale"
+msgstr "Non monstra fenestra principal"
 
 #: main.cpp:153
 #, kde-format
 msgid "Arguments for the module"
-msgstr "Argomenti per il modulo"
+msgstr "Argumentos pro le modulo"
 
 #: main.cpp:154
 #, kde-format
 msgid "Use a specific icon for the window"
-msgstr "Utilizza un'icona specifica per la finestra"
+msgstr "Usa un icone specific per le fenestra"
 
 #: main.cpp:155
 #, kde-format
 msgid "Use a specific caption for the window"
-msgstr "Utilizza un titolo specifico per la finestra"
+msgstr "Usa un legenda specific per le fenestra"
 
 #: main.cpp:156
 #, kde-format
 msgid "Show an indicator when settings have changed from their default value"
 msgstr ""
-"Mostra un indicatore quando le impostazioni sono modificate rispetto al loro "
-"valore predefinito"
 
 #: main.cpp:165
 #, kde-format
 msgid ""
 "--lang is deprecated. Please set the LANGUAGE environment variable instead"
-msgstr "--lang è deprecato. Imposta invece la variabile d'ambiente LANGUAGE"
+msgstr ""
+"--lang es deprecate. Pro favor in loco tu fixa le variabile e ambiente "
+"LANGUAGE "
 
 #: main.cpp:169
 #, kde-format
 msgid "The following modules are available:"
-msgstr "Sono disponibili i seguenti moduli:"
+msgstr "Le sequente modulos es disponibile:"
 
 #: main.cpp:182
 #, kde-format
 msgid "No description available"
-msgstr "Nessuna descrizione disponibile"
+msgstr "Nulle description disponibile"
