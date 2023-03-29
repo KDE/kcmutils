@@ -24,6 +24,9 @@
 #include <KLocalizedContext>
 #include <KLocalizedString>
 
+#include <KPackage/Package>
+#include <KPackage/PackageLoader>
+
 #include <memory>
 
 class KQuickConfigModulePrivate
@@ -111,15 +114,25 @@ QQuickItem *KQuickConfigModule::mainUi()
     d->_engine->setTranslationDomain(componentName);
     d->_engine->setInitializationDelayed(true);
 
-    const QString resourcePath = d->getResourcePath(QStringLiteral("main.qml"));
+    QString resourcePath = d->getResourcePath(QStringLiteral("main.qml"));
+    QUrl resourceUrl = d->getResourceUrl(resourcePath);
     if (QResource r(resourcePath); !r.isValid()) {
-        d->_errorString = i18n("Could not find resource '%1'", resourcePath);
-        qWarning() << "Could not find resource" << resourcePath;
-        return nullptr;
+        auto package = KPackage::PackageLoader::self()->loadPackage(QStringLiteral("KPackage/GenericQML"));
+        package.setDefaultPackageRoot(QStringLiteral("kpackage/kcms"));
+        package.setPath(metaData().pluginId());
+        package.setMetadata(metaData());
+        if (package.isValid()) {
+            resourcePath = package.filePath("mainscript");
+            resourceUrl = QUrl::fromLocalFile(resourcePath);
+        } else {
+            d->_errorString = i18n("Could not find resource '%1'", resourcePath);
+            qWarning() << "Could not find resource" << resourcePath;
+            return nullptr;
+        }
     }
 
     new QQmlFileSelector(d->_engine->engine().get(), this);
-    d->_engine->setSource(d->getResourceUrl(resourcePath));
+    d->_engine->setSource(resourceUrl);
     d->_engine->rootContext()->setContextProperty(QStringLiteral("kcm"), this);
     d->_engine->completeInitialization();
 
