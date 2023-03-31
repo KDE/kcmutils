@@ -115,7 +115,7 @@ msgstr "Použít pro okno vlastní nadpis"
 #: main.cpp:156
 #, kde-format
 msgid "Show an indicator when settings have changed from their default value"
-msgstr ""
+msgstr "Zobrazit indikátor změny výchozí hodnoty v nastavení"
 
 #: main.cpp:165
 #, kde-format
