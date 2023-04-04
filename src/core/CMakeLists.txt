@@ -1,5 +1,11 @@
 add_library(KF6KCMUtilsCore)
 
+set_target_properties(KF6KCMUtilsCore PROPERTIES
+    VERSION     ${KCMUTILS_VERSION}
+    SOVERSION   ${KCMUTILS_SOVERSION}
+    EXPORT_NAME KCMUtilsCore
+)
+
 ecm_qt_declare_logging_category(KF6KCMUtilsCore
     HEADER kcmutilscore_debug.h
     IDENTIFIER KCMUTILS_CORE_LOG
@@ -29,10 +35,6 @@ target_link_libraries(KF6KCMUtilsCore
     KF6::ItemViews
 )
 
-set_target_properties(KF6KCMUtilsCore PROPERTIES
-                      VERSION ${KCMUTILS_VERSION}
-                      SOVERSION ${KCMUTILS_SOVERSION}
-                      EXPORT_NAME KCMUtilsCore)
 ecm_generate_headers(KCMUtilsCore_HEADERS
   HEADER_NAMES
   KPluginModel

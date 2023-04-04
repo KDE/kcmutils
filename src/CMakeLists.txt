@@ -2,8 +2,8 @@
 # SPDX-License-Identifier: BSD-3-Clause
 
 add_library(kcmutils_logging_STATIC STATIC)
-target_link_libraries(kcmutils_logging_STATIC PRIVATE Qt6::Core)
 set_target_properties(kcmutils_logging_STATIC PROPERTIES POSITION_INDEPENDENT_CODE ON)
+target_link_libraries(kcmutils_logging_STATIC PRIVATE Qt6::Core)
 ecm_qt_declare_logging_category(kcmutils_logging_STATIC
     HEADER kcmutils_debug.h
     IDENTIFIER KCMUTILS_LOG
@@ -31,6 +31,12 @@ set(kcmutils_LIB_SRCS
 )
 
 add_library(KF6KCMUtils ${kcmutils_LIB_SRCS})
+
+set_target_properties(KF6KCMUtils PROPERTIES
+    VERSION     ${KCMUTILS_VERSION}
+    SOVERSION   ${KCMUTILS_SOVERSION}
+    EXPORT_NAME KCMUtils
+)
 
 if (WITH_KAUTH)
     set(WITH_KAUTH_DEFINE_VALUE 1)
@@ -67,11 +73,6 @@ target_link_libraries(KF6KCMUtils
     KF6::XmlGui          # KAboutApplicationDialog
     kcmutils_logging_STATIC
 )
-
-set_target_properties(KF6KCMUtils PROPERTIES
-                      VERSION ${KCMUTILS_VERSION}
-                      SOVERSION ${KCMUTILS_SOVERSION}
-                      EXPORT_NAME KCMUtils)
 
 ecm_generate_headers(KCMUtils_HEADERS
   HEADER_NAMES
