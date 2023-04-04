@@ -17,9 +17,17 @@ ecm_generate_export_header(KF6KCMUtilsCore
     BASE_NAME KCMUtilsCore
     GROUP_BASE_NAME KF
     VERSION ${KF_VERSION}
+    USE_VERSION_HEADER
+    VERSION_BASE_NAME KCMUtils
     DEPRECATED_BASE_VERSION 0
 )
-target_include_directories(KF6KCMUtilsCore INTERFACE "$<INSTALL_INTERFACE:${KDE_INSTALL_INCLUDEDIR_KF}/KCMUtilsCore>")
+target_include_directories(KF6KCMUtilsCore PUBLIC
+    "$<BUILD_INTERFACE:${CMAKE_CURRENT_BINARY_DIR}/..>" # module version header
+)
+target_include_directories(KF6KCMUtilsCore INTERFACE
+    "$<INSTALL_INTERFACE:${KDE_INSTALL_INCLUDEDIR_KF}/KCMUtilsCore>"
+    "$<INSTALL_INTERFACE:${KDE_INSTALL_INCLUDEDIR_KF}/KCMUtils>" # module version header
+)
 
 target_sources(KF6KCMUtilsCore PRIVATE
     kpluginmodel.cpp
