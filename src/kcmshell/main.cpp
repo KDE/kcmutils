@@ -129,7 +129,7 @@ int main(int _argc, char *_argv[])
     }
     KLocalizedString::setApplicationDomain("kcmshell6");
     KAboutData aboutData(QStringLiteral("kcmshell6"), //
-                         i18n("System Settings Module"),
+                         QString(),
                          QLatin1String(PROJECT_VERSION),
                          i18n("A tool to start single system settings modules"),
                          KAboutLicense::GPL,
