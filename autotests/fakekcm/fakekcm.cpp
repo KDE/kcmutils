@@ -23,6 +23,7 @@ public:
     }
     void load() override
     {
+        qWarning() << Q_FUNC_INFO;
         // The QObject hierarchy until we are at the KCMultiDialog
         auto p = parent()->parent()->parent()->parent();
         p->setProperty("loadcalled", p->property("loadcalled").toInt() + 1);

@@ -14,6 +14,11 @@ public:
     TimeSettings(QObject *parent, const KPluginMetaData &data, const QVariantList &args)
         : KQuickManagedConfigModule(parent, data, args)
     {
+        qWarning() << Q_FUNC_INFO;
+    }
+    void load() override
+    {
+        qWarning() << Q_FUNC_INFO;
     }
 };
 
