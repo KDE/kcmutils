@@ -56,7 +56,7 @@ Kirigami.BasicListItem {
         visible: model.config.isValid
         enabled: model.enabled
         icon.name: "configure"
-        tooltip: i18nc("@info:tooltip", "Configure...")
+        tooltip: i18nc("@info:tooltip", "Configure…")
         onTriggered: listItem.configTriggered()
     }
 
