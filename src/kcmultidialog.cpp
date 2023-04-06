@@ -114,6 +114,10 @@ void KCMultiDialogPrivate::clientChanged()
     for (int i = 0; i < modules.count(); ++i) {
         if (modules[i].item == q->currentPage()) {
             activeModule = modules[i].kcm;
+            if (activeModule && modules[i].firstShow) {
+                activeModule->load();
+                modules[i].firstShow = false;
+            }
             break;
         }
     }

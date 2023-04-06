@@ -25,13 +25,13 @@ public:
     {
     }
 
-
     KCModule *currentModule;
 
     struct CreatedModule {
         KCModule *kcm;
         KPageWidgetItem *item;
         QStringList componentNames;
+        bool firstShow = true;
     };
 
     typedef QList<CreatedModule> ModuleList;

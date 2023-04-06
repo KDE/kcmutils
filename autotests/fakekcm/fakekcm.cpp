@@ -19,6 +19,14 @@ public:
     {
         auto label = new QLabel(widget());
         label->setText(QStringLiteral("Demo Text"));
+        qWarning() << Q_FUNC_INFO;
+    }
+    void load() override
+    {
+        // The QObject hierarchy until we are at the KCMultiDialog
+        auto p = parent()->parent()->parent()->parent();
+        p->setProperty("loadcalled", p->property("loadcalled").toInt() + 1);
+        setNeedsSave(false);
     }
 };
 

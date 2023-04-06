@@ -9,21 +9,41 @@
 
 #include <QObject>
 #include <QTest>
+#include <qtestsupport_core.h>
 
 class KCMultiDialogTest : public QObject
 {
     Q_OBJECT
+    const KPluginMetaData fakekcm{QStringLiteral("plasma/kcms/systemsettings_qwidgets/fakekcm")};
 private Q_SLOTS:
-    void testClear();
-};
+    void testClear()
+    {
+        KCMultiDialog dialog;
+        dialog.addModule(fakekcm);
+        // Just verify that it doesn't crash
+        dialog.clear();
+    }
+    void testLoadKcm()
+    {
+        KCMultiDialog dialog;
+        // Simple property to check how often the load method was called
+        QCOMPARE(dialog.property("loadcalled").toInt(), 0);
 
-void KCMultiDialogTest::testClear()
-{
-    KCMultiDialog dialog;
-    dialog.addModule(KPluginMetaData(QStringLiteral("fakekcm")));
-    // Just verify that it doesn't crash
-    dialog.clear();
-}
+        // For the first KCM, it should be called once
+        auto page1 = dialog.addModule(fakekcm);
+        QCOMPARE(dialog.property("loadcalled").toInt(), 1);
+
+        // For the newly instantiated KCM, load should be called after we change the page
+        // Because it does not have a higher weight, it is not shown initially
+        auto page2 = dialog.addModule(fakekcm);
+        dialog.setCurrentPage(page2);
+        QCOMPARE(dialog.property("loadcalled").toInt(), 2);
+
+        // Go back to page 1, load should not be called again
+        QCOMPARE(dialog.property("loadcalled").toInt(), 2);
+        dialog.setCurrentPage(page1);
+    }
+};
 
 QTEST_MAIN(KCMultiDialogTest)
 #include "kcmultidialogtest.moc"

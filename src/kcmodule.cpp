@@ -23,32 +23,10 @@ class KCModuleProxyInternal : public QWidget
 {
     Q_OBJECT
 public:
-    KCModuleProxyInternal(KCModule *parentModule, QWidget *parent)
+    KCModuleProxyInternal(QWidget *parent)
         : QWidget(parent)
-        , m_parentModule(parentModule)
     {
     }
-
-protected:
-    void showEvent(QShowEvent *ev) override
-    {
-        if (m_firstShow) {
-            m_firstShow = false;
-            QMetaObject::invokeMethod(m_parentModule, &KCModule::load, Qt::QueuedConnection);
-            QMetaObject::invokeMethod(
-                this,
-                [this]() {
-                    m_parentModule->setNeedsSave(false);
-                },
-                Qt::QueuedConnection);
-        }
-
-        QWidget::showEvent(ev);
-    }
-
-private:
-    bool m_firstShow = true;
-    KCModule *m_parentModule;
 };
 
 class KCModulePrivate
@@ -134,7 +112,7 @@ QWidget *KCModule::widget()
 {
     if (!d->m_proxyInternal) {
         d->m_topLayout = new QVBoxLayout(d->parentWidget);
-        d->m_proxyInternal = new KCModuleProxyInternal(this, d->parentWidget);
+        d->m_proxyInternal = new KCModuleProxyInternal(d->parentWidget);
         d->m_topLayout->addWidget(d->m_proxyInternal);
     }
     return d->m_proxyInternal;
