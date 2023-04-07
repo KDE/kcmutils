@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdelibs4\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-03-24 02:07+0000\n"
+"POT-Creation-Date: 2023-04-07 02:03+0000\n"
 "PO-Revision-Date: 2023-03-19 12:31+0530\n"
 "Last-Translator: Kishore G <kishore96@gmail.com>\n"
 "Language-Team: Tamil <kde-i18n-doc@kde.org>\n"
@@ -96,10 +96,11 @@ msgid "About"
 msgstr "பற்றி"
 
 #: qml/components/KPluginDelegate.qml:59
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Configure"
 msgctxt "@info:tooltip"
-msgid "Configure..."
-msgstr "அமை…"
+msgid "Configure…"
+msgstr "வடிவமை"
 
 #: qml/components/KPluginSelector.qml:81
 #, kde-format
@@ -156,6 +157,10 @@ msgstr "செல்லுபடியாகாத KPackage '%1'"
 #, kde-format
 msgid "No QML file provided"
 msgstr "QML கோப்பு தரப்படவில்லை"
+
+#~ msgctxt "@info:tooltip"
+#~ msgid "Configure..."
+#~ msgstr "அமை…"
 
 #~ msgctxt "Argument is application name"
 #~ msgid "This configuration section is already opened in %1"

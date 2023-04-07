@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kcmutils\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-03-22 02:44+0000\n"
+"POT-Creation-Date: 2023-04-07 02:03+0000\n"
 "PO-Revision-Date: 2023-03-23 08:04+0100\n"
 "Last-Translator: Matjaž Jeran <matjaz.jeran@amis.net>\n"
 "Language-Team: Slovenian <lugos-slo@lugos.si>\n"
@@ -27,11 +27,6 @@ msgstr "Matjaž Jeran"
 msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
 msgstr "matjaz.jeran@amis.net"
-
-#: main.cpp:132
-#, kde-format
-msgid "System Settings Module"
-msgstr "Modul sistemskih nastavitev"
 
 #: main.cpp:134
 #, kde-format
@@ -135,3 +130,6 @@ msgstr "NA voljo so naslednji moduli:"
 #, kde-format
 msgid "No description available"
 msgstr "Opisa ni na voljo"
+
+#~ msgid "System Settings Module"
+#~ msgstr "Modul sistemskih nastavitev"

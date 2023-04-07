@@ -12,7 +12,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdelibs4\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-03-24 02:07+0000\n"
+"POT-Creation-Date: 2023-04-07 02:03+0000\n"
 "PO-Revision-Date: 2011-07-06 12:57+0300\n"
 "Last-Translator: Maris Nartiss <maris.kde@gmail.com>\n"
 "Language-Team: Latvian\n"
@@ -114,10 +114,10 @@ msgstr "&Par"
 
 #: qml/components/KPluginDelegate.qml:59
 #, fuzzy, kde-format
-#| msgid "Confi&gure..."
+#| msgid "Configure"
 msgctxt "@info:tooltip"
-msgid "Configure..."
-msgstr "&Konfigurēt..."
+msgid "Configure…"
+msgstr "Konfigurēt"
 
 #: qml/components/KPluginSelector.qml:81
 #, kde-format
@@ -181,6 +181,12 @@ msgstr ""
 #, kde-format
 msgid "No QML file provided"
 msgstr ""
+
+#, fuzzy
+#~| msgid "Confi&gure..."
+#~ msgctxt "@info:tooltip"
+#~ msgid "Configure..."
+#~ msgstr "&Konfigurēt..."
 
 #~ msgctxt "Argument is application name"
 #~ msgid "This configuration section is already opened in %1"

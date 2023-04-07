@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kcmutils\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-03-22 02:44+0000\n"
+"POT-Creation-Date: 2023-04-07 02:03+0000\n"
 "PO-Revision-Date: 2023-03-22 13:33+0200\n"
 "Last-Translator: Yuri Chornoivan <yurchor@ukr.net>\n"
 "Language-Team: Ukrainian <kde-i18n-uk@kde.org>\n"
@@ -27,11 +27,6 @@ msgstr "Юрій Чорноіван"
 msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
 msgstr "yurchor@ukr.net"
-
-#: main.cpp:132
-#, kde-format
-msgid "System Settings Module"
-msgstr "Модуль «Системних параметрів»"
 
 #: main.cpp:134
 #, kde-format
@@ -135,3 +130,6 @@ msgstr "Наявні наступні модулі:"
 #, kde-format
 msgid "No description available"
 msgstr "Немає опису"
+
+#~ msgid "System Settings Module"
+#~ msgstr "Модуль «Системних параметрів»"

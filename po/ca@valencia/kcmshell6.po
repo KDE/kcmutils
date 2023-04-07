@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kcmutils\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-03-22 02:44+0000\n"
+"POT-Creation-Date: 2023-04-07 02:03+0000\n"
 "PO-Revision-Date: 2023-03-22 13:08+0100\n"
 "Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
@@ -28,11 +28,6 @@ msgstr "Josep M. Ferrer"
 msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
 msgstr "txemaq@gmail.com"
-
-#: main.cpp:132
-#, kde-format
-msgid "System Settings Module"
-msgstr "Mòdul de Configuració del sistema"
 
 #: main.cpp:134
 #, kde-format
@@ -137,3 +132,6 @@ msgstr "Hi ha disponibles els mòduls següents:"
 #, kde-format
 msgid "No description available"
 msgstr "No hi ha disponible cap descripció"
+
+#~ msgid "System Settings Module"
+#~ msgstr "Mòdul de Configuració del sistema"

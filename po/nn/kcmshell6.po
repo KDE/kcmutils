@@ -5,7 +5,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kcmutils\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-03-22 02:44+0000\n"
+"POT-Creation-Date: 2023-04-07 02:03+0000\n"
 "PO-Revision-Date: 2023-03-31 21:20+0200\n"
 "Last-Translator: Karl Ove Hufthammer <karl@huftis.org>\n"
 "Language-Team: Norwegian Nynorsk <l10n-no@lister.huftis.org>\n"
@@ -28,11 +28,6 @@ msgstr "Karl Ove Hufthammer"
 msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
 msgstr "karl@huftis.org"
-
-#: main.cpp:132
-#, kde-format
-msgid "System Settings Module"
-msgstr "Modul for systemoppsett"
 
 #: main.cpp:134
 #, kde-format
@@ -135,3 +130,6 @@ msgstr "Desse modulane er tilgjengelege:"
 #, kde-format
 msgid "No description available"
 msgstr "Inga skildring tilgjengeleg"
+
+#~ msgid "System Settings Module"
+#~ msgstr "Modul for systemoppsett"

@@ -13,7 +13,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kcmutils\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-03-24 02:07+0000\n"
+"POT-Creation-Date: 2023-04-07 02:03+0000\n"
 "PO-Revision-Date: 2023-03-17 13:20+0100\n"
 "Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
@@ -102,10 +102,11 @@ msgid "About"
 msgstr "Quant a"
 
 #: qml/components/KPluginDelegate.qml:59
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Configure"
 msgctxt "@info:tooltip"
-msgid "Configure..."
-msgstr "Configura..."
+msgid "Configure…"
+msgstr "Configura"
 
 #: qml/components/KPluginSelector.qml:81
 #, kde-format
@@ -162,3 +163,7 @@ msgstr "KPackage «%1» no vàlid"
 #, kde-format
 msgid "No QML file provided"
 msgstr "No s'ha proporcionat cap fitxer QML"
+
+#~ msgctxt "@info:tooltip"
+#~ msgid "Configure..."
+#~ msgstr "Configura..."

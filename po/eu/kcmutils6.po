@@ -14,7 +14,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kcmutils\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-03-24 02:07+0000\n"
+"POT-Creation-Date: 2023-04-07 02:03+0000\n"
 "PO-Revision-Date: 2022-07-30 23:12+0200\n"
 "Last-Translator: Iñigo Salvador Azurmendi <xalba@ni.eus>\n"
 "Language-Team: Basque <kde-i18n-eu@kde.org>\n"
@@ -102,10 +102,11 @@ msgid "About"
 msgstr "Honi buruz"
 
 #: qml/components/KPluginDelegate.qml:59
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Configure"
 msgctxt "@info:tooltip"
-msgid "Configure..."
-msgstr "Konfiguratu..."
+msgid "Configure…"
+msgstr "Konfiguratu"
 
 #: qml/components/KPluginSelector.qml:81
 #, kde-format
@@ -162,6 +163,10 @@ msgstr ""
 #, kde-format
 msgid "No QML file provided"
 msgstr ""
+
+#~ msgctxt "@info:tooltip"
+#~ msgid "Configure..."
+#~ msgstr "Konfiguratu..."
 
 #~ msgctxt "Argument is application name"
 #~ msgid "This configuration section is already opened in %1"

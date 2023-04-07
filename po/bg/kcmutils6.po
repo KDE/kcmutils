@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdelibs4\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-03-24 02:07+0000\n"
+"POT-Creation-Date: 2023-04-07 02:03+0000\n"
 "PO-Revision-Date: 2023-03-17 21:55+0100\n"
 "Last-Translator: Mincho Kondarev <mkondarev@yahoo.de>\n"
 "Language-Team: Bulgarian <kde-i18n-doc@kde.org>\n"
@@ -96,10 +96,11 @@ msgid "About"
 msgstr "Относно"
 
 #: qml/components/KPluginDelegate.qml:59
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Configure"
 msgctxt "@info:tooltip"
-msgid "Configure..."
-msgstr "Конфигуриране..."
+msgid "Configure…"
+msgstr "Настройки"
 
 #: qml/components/KPluginSelector.qml:81
 #, kde-format
@@ -157,86 +158,6 @@ msgstr "Невалиден KPackage '%1'"
 msgid "No QML file provided"
 msgstr "Не е предоставен QML файл"
 
-#~ msgctxt "Argument is application name"
-#~ msgid "This configuration section is already opened in %1"
-#~ msgstr "Модулът за настройване вече е отворен в %1"
-
-#~ msgid "The module %1 could not be found."
-#~ msgstr "Модулът %1 не може да бъда намерен."
-
-#~ msgid ""
-#~ "<qt><p>The diagnosis is:<br />The desktop file %1 could not be found.</"
-#~ "p></qt>"
-#~ msgstr ""
-#~ "<qt><p> Диагнозата е: <br /> Файлът на работния плот %1 не може да бъде "
-#~ "намерен. </p> </qt>"
-
-#~ msgid ""
-#~ "<qt><p>Either the hardware/software the module configures is not "
-#~ "available or the module has been disabled by the administrator.</p></qt>"
-#~ msgstr ""
-#~ "<qt><p>Липсва хардуер/софтуер или модулът е деактивиран от администратора."
-#~ "</p></qt>"
-
-#~ msgid "Error loading config module"
-#~ msgstr "Грешка при зареждането на конфигурационния модул"
-
-#~ msgid "The module %1 is not a valid configuration module."
-#~ msgstr "Модулът %1 не е валиден конфигурационен модул."
-
-#~ msgid ""
-#~ "<qt>The diagnosis is:<br />The desktop file %1 does not specify a library."
-#~ "</qt>"
-#~ msgstr ""
-#~ "<qt> Диагнозата е: <br /> Файл на работния плот %1 не посочва библиотека. "
-#~ "</qt>"
-
-#~ msgid ""
-#~ "Automatic changes have been performed due to plugin dependencies. Click "
-#~ "here for further information"
-#~ msgstr ""
-#~ "Поради зависимости в приставките са изпълнени някои автоматични промени. "
-#~ "Щракнете тук за повече информация"
-
-#~ msgid ""
-#~ "Automatic changes have been performed in order to satisfy plugin "
-#~ "dependencies:\n"
-#~ msgstr ""
-#~ "Поради зависимости в приставките са изпълнени някои автоматични промени:\n"
-
-#~ msgid ""
-#~ "\n"
-#~ "    %1 plugin has been automatically checked because of the dependency of "
-#~ "%2 plugin"
-#~ msgstr ""
-#~ "\n"
-#~ "    %1 приставка беше автоматично включена поради зависимост от "
-#~ "приставката %2"
-
-#~ msgid ""
-#~ "\n"
-#~ "    %1 plugin has been automatically unchecked because of its dependency "
-#~ "on %2 plugin"
-#~ msgstr ""
-#~ "\n"
-#~ "    %1 приставка беше автоматично изключена поради зависимост от "
-#~ "приставката %2"
-
-#~ msgid "Dependency Check"
-#~ msgstr "Проверка за зависимости"
-
-#~ msgid "%1 plugin automatically added due to plugin dependencies"
-#~ msgid_plural "%1 plugins automatically added due to plugin dependencies"
-#~ msgstr[0] "Поради зависимости %1 приставка беше автоматично добавена."
-#~ msgstr[1] "Поради зависимости %1 приставки бяха автоматично добавени."
-
-#~ msgid ", "
-#~ msgstr ", "
-
-#~ msgid "%1 plugin automatically removed due to plugin dependencies"
-#~ msgid_plural "%1 plugins automatically removed due to plugin dependencies"
-#~ msgstr[0] "Поради зависимости %1 приставка беше автоматично премахната."
-#~ msgstr[1] "Поради зависимости %1 приставки бяха автоматично премахнати."
-
-#~ msgid "Enable component"
-#~ msgstr "Включване на компонент"
+#~ msgctxt "@info:tooltip"
+#~ msgid "Configure..."
+#~ msgstr "Конфигуриране..."

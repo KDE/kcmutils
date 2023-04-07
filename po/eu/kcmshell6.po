@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kcmutils\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-03-22 02:44+0000\n"
+"POT-Creation-Date: 2023-04-07 02:03+0000\n"
 "PO-Revision-Date: 2023-03-05 21:33+0100\n"
 "Last-Translator: Iñigo Salvador Azurmendi <xalba@ni.eus>\n"
 "Language-Team: Basque\n"
@@ -29,11 +29,6 @@ msgstr "Iñigo Salvador Azurmendi"
 msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
 msgstr "xalba@ni.eus"
-
-#: main.cpp:132
-#, kde-format
-msgid "System Settings Module"
-msgstr "Sistema-ezarpenak modulua"
 
 #: main.cpp:134
 #, kde-format
@@ -137,3 +132,6 @@ msgstr "Ondoko moduluak erabilgarri daude:"
 #, kde-format
 msgid "No description available"
 msgstr "Ez dago azalpenik"
+
+#~ msgid "System Settings Module"
+#~ msgstr "Sistema-ezarpenak modulua"

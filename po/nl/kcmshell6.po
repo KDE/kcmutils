@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kcmutils\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-03-22 02:44+0000\n"
+"POT-Creation-Date: 2023-04-07 02:03+0000\n"
 "PO-Revision-Date: 2023-03-22 13:19+0100\n"
 "Last-Translator: Freek de Kruijf <freekdekruijf@kde.nl>\n"
 "Language-Team: \n"
@@ -26,11 +26,6 @@ msgstr "Freek de Kruijf - 2023"
 msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
 msgstr "freekdekruijf@kde.nl"
-
-#: main.cpp:132
-#, kde-format
-msgid "System Settings Module"
-msgstr "Module voor systeeminstellingen"
 
 #: main.cpp:134
 #, kde-format
@@ -135,3 +130,6 @@ msgstr "De volgende modules zijn beschikbaar:"
 #, kde-format
 msgid "No description available"
 msgstr "Geen beschrijving beschikbaar"
+
+#~ msgid "System Settings Module"
+#~ msgstr "Module voor systeeminstellingen"
