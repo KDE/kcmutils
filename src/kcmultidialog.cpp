@@ -111,15 +111,27 @@ void KCMultiDialogPrivate::clientChanged()
 {
     // Get the current module
     KCModule *activeModule = nullptr;
+    bool scheduleFirstShow = false;
     for (int i = 0; i < modules.count(); ++i) {
         if (modules[i].item == q->currentPage()) {
             activeModule = modules[i].kcm;
-            if (activeModule && modules[i].firstShow) {
-                activeModule->load();
-                modules[i].firstShow = false;
-            }
+            scheduleFirstShow = activeModule && modules[i].firstShow;
             break;
         }
+    }
+
+    // When we first show a module, we call the load method
+    // Just in case we have multiple loadModule calls in a row, the current module could change
+    // Meaning we wait for the next tick, check the active module and call load if needed
+    if (scheduleFirstShow) {
+        QTimer::singleShot(0, q, [this]() {
+            for (int i = 0; i < modules.count(); ++i) {
+                if (modules[i].firstShow && modules[i].kcm && modules[i].item == q->currentPage()) {
+                    modules[i].kcm->load();
+                    modules[i].firstShow = false;
+                }
+            }
+        });
     }
 
     const bool change = activeModule && activeModule->needsSave();

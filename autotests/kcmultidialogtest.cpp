@@ -9,12 +9,20 @@
 
 #include <QObject>
 #include <QTest>
-#include <qtestsupport_core.h>
+#include <QTimer>
 
 class KCMultiDialogTest : public QObject
 {
     Q_OBJECT
     const KPluginMetaData fakekcm{QStringLiteral("plasma/kcms/systemsettings_qwidgets/fakekcm")};
+    void sleep(int ms)
+    {
+        QEventLoop l;
+        QTimer::singleShot(ms, this, [&l]() {
+            l.quit();
+        });
+        l.exec();
+    }
 private Q_SLOTS:
     void testClear()
     {
@@ -31,17 +39,19 @@ private Q_SLOTS:
 
         // For the first KCM, it should be called once
         auto page1 = dialog.addModule(fakekcm);
-        QCOMPARE(dialog.property("loadcalled").toInt(), 1);
+        sleep(1);
 
         // For the newly instantiated KCM, load should be called after we change the page
         // Because it does not have a higher weight, it is not shown initially
         auto page2 = dialog.addModule(fakekcm);
         dialog.setCurrentPage(page2);
+        sleep(1);
         QCOMPARE(dialog.property("loadcalled").toInt(), 2);
 
         // Go back to page 1, load should not be called again
-        QCOMPARE(dialog.property("loadcalled").toInt(), 2);
         dialog.setCurrentPage(page1);
+        sleep(1);
+        QCOMPARE(dialog.property("loadcalled").toInt(), 2);
     }
 };
 
