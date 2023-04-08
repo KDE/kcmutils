@@ -149,7 +149,9 @@ KCModuleQml::KCModuleQml(KQuickConfigModule *configModule, QWidget *parent, cons
         setAuthActionName(d->configModule->authActionName());
     });
 
-    connect(this, &KCModule::defaultsIndicatorsVisibleChanged, d->configModule, &KQuickConfigModule::defaultsIndicatorsVisibleChanged);
+    connect(this, &KCModule::defaultsIndicatorsVisibleChanged, d->configModule, [this] {
+        d->configModule->setDefaultsIndicatorsVisible(defaultsIndicatorsVisible());
+    });
 
     // Build the UI
     QVBoxLayout *layout = new QVBoxLayout(d->widget);
