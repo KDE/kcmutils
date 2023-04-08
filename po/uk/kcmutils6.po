@@ -12,7 +12,7 @@ msgstr ""
 "Project-Id-Version: kcmutils5\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-04-07 02:03+0000\n"
-"PO-Revision-Date: 2023-03-17 14:23+0200\n"
+"PO-Revision-Date: 2023-04-07 21:58+0300\n"
 "Last-Translator: Yuri Chornoivan <yurchor@ukr.net>\n"
 "Language-Team: Ukrainian <kde-i18n-uk@kde.org>\n"
 "Language: uk\n"
@@ -99,11 +99,10 @@ msgid "About"
 msgstr "Відомості"
 
 #: qml/components/KPluginDelegate.qml:59
-#, fuzzy, kde-format
-#| msgid "Configure"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Configure…"
-msgstr "Налаштування"
+msgstr "Налаштувати…"
 
 #: qml/components/KPluginSelector.qml:81
 #, kde-format
