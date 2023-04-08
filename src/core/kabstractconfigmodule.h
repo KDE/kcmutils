@@ -27,7 +27,7 @@ class KCMUTILSCORE_EXPORT KAbstractConfigModule : public QObject
     Q_OBJECT
 
     Q_PROPERTY(KAbstractConfigModule::Buttons buttons READ buttons WRITE setButtons NOTIFY buttonsChanged)
-    Q_PROPERTY(int defaultsIndicatorsVisible READ defaultsIndicatorsVisible WRITE setDefaultsIndicatorsVisible NOTIFY defaultsIndicatorsVisibleChanged)
+    Q_PROPERTY(bool defaultsIndicatorsVisible READ defaultsIndicatorsVisible WRITE setDefaultsIndicatorsVisible NOTIFY defaultsIndicatorsVisibleChanged)
     Q_PROPERTY(bool needsAuthorization READ needsAuthorization NOTIFY authActionNameChanged)
     Q_PROPERTY(bool representsDefaults READ representsDefaults WRITE setRepresentsDefaults NOTIFY representsDefaultsChanged)
     Q_PROPERTY(bool needsSave READ needsSave WRITE setNeedsSave NOTIFY needsSaveChanged)
