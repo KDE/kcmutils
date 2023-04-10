@@ -10,7 +10,7 @@ msgstr ""
 "Project-Id-Version: kdelibs4\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-04-07 02:03+0000\n"
-"PO-Revision-Date: 2023-03-19 12:31+0530\n"
+"PO-Revision-Date: 2023-04-09 21:25+0530\n"
 "Last-Translator: Kishore G <kishore96@gmail.com>\n"
 "Language-Team: Tamil <kde-i18n-doc@kde.org>\n"
 "Language: ta\n"
@@ -18,7 +18,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Lokalize 22.12.3\n"
+"X-Generator: Lokalize 23.03.90\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
@@ -96,11 +96,10 @@ msgid "About"
 msgstr "பற்றி"
 
 #: qml/components/KPluginDelegate.qml:59
-#, fuzzy, kde-format
-#| msgid "Configure"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Configure…"
-msgstr "வடிவமை"
+msgstr "அமை..."
 
 #: qml/components/KPluginSelector.qml:81
 #, kde-format

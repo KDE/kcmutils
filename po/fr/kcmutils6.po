@@ -24,7 +24,7 @@ msgstr ""
 "Project-Id-Version: kdelibs4\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-04-07 02:03+0000\n"
-"PO-Revision-Date: 2023-03-18 07:53+0100\n"
+"PO-Revision-Date: 2023-04-08 10:16+0200\n"
 "Last-Translator: Xavier BESNARD <xavier.besnard]neuf.fr>\n"
 "Language-Team: fr\n"
 "Language: fr\n"
@@ -119,11 +119,10 @@ msgid "About"
 msgstr "À propos"
 
 #: qml/components/KPluginDelegate.qml:59
-#, fuzzy, kde-format
-#| msgid "Configure"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Configure…"
-msgstr "Configuration"
+msgstr "Configurer..."
 
 #: qml/components/KPluginSelector.qml:81
 #, kde-format

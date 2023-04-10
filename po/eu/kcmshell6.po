@@ -10,9 +10,9 @@ msgstr ""
 "Project-Id-Version: kcmutils\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-04-07 02:03+0000\n"
-"PO-Revision-Date: 2023-03-05 21:33+0100\n"
+"PO-Revision-Date: 2023-04-09 21:05+0200\n"
 "Last-Translator: Iñigo Salvador Azurmendi <xalba@ni.eus>\n"
-"Language-Team: Basque\n"
+"Language-Team: Basque <kde-i18n-eu@kde.org>\n"
 "Language: eu\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -114,6 +114,7 @@ msgstr "Leihorako legenda zehatz bat erabili"
 #, kde-format
 msgid "Show an indicator when settings have changed from their default value"
 msgstr ""
+"Erakutsi adierazle bat ezarpenak haien balio lehenetsietatik aldatu direnean"
 
 #: main.cpp:165
 #, kde-format
