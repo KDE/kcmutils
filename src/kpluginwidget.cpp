@@ -445,10 +445,11 @@ void PluginDelegate::configure(const QModelIndex &index)
     configDialog->setModal(true);
     configDialog->setWindowTitle(model->data(index, KPluginModel::NameRole).toString());
 
-    auto kcmInstance = KCModuleLoader::loadModule(kcm, configDialog, pluginSelector_d->kcmArguments);
+    QWidget *kcmWrapper = new QWidget;
+    auto kcmInstance = KCModuleLoader::loadModule(kcm, kcmWrapper, pluginSelector_d->kcmArguments);
 
     auto layout = new QVBoxLayout(configDialog);
-    layout->addWidget(kcmInstance->widget());
+    layout->addWidget(kcmWrapper);
 
     auto buttonBox = new QDialogButtonBox(configDialog);
     buttonBox->setStandardButtons(QDialogButtonBox::Ok | QDialogButtonBox::Cancel | QDialogButtonBox::RestoreDefaults);
