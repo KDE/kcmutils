@@ -11,13 +11,13 @@
 # Marta Rybczyńska <kde-i18n@rybczynska.net>, 2007, 2008, 2009, 2010, 2011, 2012, 2013.
 # Michal Rudolf <michal@rudolf.waw.pl>, 2010.
 # Artur Chłond <eugenewolfe@o2.pl>, 2010.
-# Łukasz Wojniłowicz <lukasz.wojnilowicz@gmail.com>, 2011, 2012, 2013, 2014, 2015, 2016, 2018, 2019, 2021, 2022.
+# Łukasz Wojniłowicz <lukasz.wojnilowicz@gmail.com>, 2011, 2012, 2013, 2014, 2015, 2016, 2018, 2019, 2021, 2022, 2023.
 msgid ""
 msgstr ""
 "Project-Id-Version: kdelibs4\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-04-07 02:03+0000\n"
-"PO-Revision-Date: 2022-04-30 21:03+0200\n"
+"PO-Revision-Date: 2023-04-10 10:56+0200\n"
 "Last-Translator: Łukasz Wojniłowicz <lukasz.wojnilowicz@gmail.com>\n"
 "Language-Team: Polish <kde-i18n-doc@kde.org>\n"
 "Language: pl\n"
@@ -108,7 +108,7 @@ msgstr ""
 ">\n"
 ">\n"
 ">\n"
-"X-Generator: Lokalize 22.03.70\n"
+"X-Generator: Lokalize 22.12.3\n"
 "Plural-Forms: nplurals=3; plural=(n==1 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 "
 "|| n%100>=20) ? 1 : 2);\n"
 
@@ -189,11 +189,10 @@ msgid "About"
 msgstr "O programie"
 
 #: qml/components/KPluginDelegate.qml:59
-#, fuzzy, kde-format
-#| msgid "Configure"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Configure…"
-msgstr "Ustawienia"
+msgstr "Ustawienia..."
 
 #: qml/components/KPluginSelector.qml:81
 #, kde-format
@@ -244,12 +243,12 @@ msgstr "Wyślij wiadomość do %1"
 #: qml/kquickconfigmodule.cpp:114
 #, kde-format
 msgid "Invalid KPackage '%1'"
-msgstr ""
+msgstr "Nieprawidłowy KPackage '%1'"
 
 #: qml/kquickconfigmodule.cpp:120
 #, kde-format
 msgid "No QML file provided"
-msgstr ""
+msgstr "Nie podano pliku QML"
 
 #~ msgctxt "@info:tooltip"
 #~ msgid "Configure..."
