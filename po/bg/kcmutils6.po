@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: kdelibs4\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-04-07 02:03+0000\n"
-"PO-Revision-Date: 2023-03-17 21:55+0100\n"
+"PO-Revision-Date: 2023-04-13 23:49+0200\n"
 "Last-Translator: Mincho Kondarev <mkondarev@yahoo.de>\n"
 "Language-Team: Bulgarian <kde-i18n-doc@kde.org>\n"
 "Language: bg\n"
@@ -96,11 +96,10 @@ msgid "About"
 msgstr "Относно"
 
 #: qml/components/KPluginDelegate.qml:59
-#, fuzzy, kde-format
-#| msgid "Configure"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Configure…"
-msgstr "Настройки"
+msgstr "Настройка…"
 
 #: qml/components/KPluginSelector.qml:81
 #, kde-format
@@ -157,7 +156,3 @@ msgstr "Невалиден KPackage '%1'"
 #, kde-format
 msgid "No QML file provided"
 msgstr "Не е предоставен QML файл"
-
-#~ msgctxt "@info:tooltip"
-#~ msgid "Configure..."
-#~ msgstr "Конфигуриране..."
