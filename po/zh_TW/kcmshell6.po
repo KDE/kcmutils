@@ -1,43 +1,41 @@
-# German translations for kcmutils package.
-# Copyright (C) 2023 This file is copyright:
+# Copyright (C) YEAR This file is copyright:
 # This file is distributed under the same license as the kcmutils package.
-# Frederik Schwarzer <schwarzer@kde.org>, 2023.
 #
-# Automatically generated, 2023.
+# Kisaragi Hiu <mail@kisaragi-hiu.com>, 2023.
 msgid ""
 msgstr ""
 "Project-Id-Version: kcmutils\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-04-07 02:03+0000\n"
-"PO-Revision-Date: 2023-04-03 16:21+0200\n"
-"Last-Translator: Frederik Schwarzer <schwarzer@kde.org>\n"
-"Language-Team: German <kde-i18n-de@kde.org>\n"
-"Language: de\n"
+"PO-Revision-Date: 2023-04-14 21:30+0900\n"
+"Last-Translator: Kisaragi Hiu <mail@kisaragi-hiu.com>\n"
+"Language-Team: Traditional Chinese <zh-l10n@linux.org.tw>\n"
+"Language: zh_TW\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
 "X-Generator: Lokalize 22.12.3\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
 msgid "Your names"
-msgstr "Deutsches KDE-Übersetzerteam"
+msgstr "Kisaragi Hiu"
 
 #, kde-format
 msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
-msgstr "kde-i18n-de@kde.org"
+msgstr "mail@kisaragi-hiu.com"
 
 #: main.cpp:134
 #, kde-format
 msgid "A tool to start single system settings modules"
-msgstr "Ein Hilfsprogramm zum Starten von Modulen der Systemeinstellungen"
+msgstr "用來開啟個別系統設定模組的工具"
 
 #: main.cpp:136
 #, kde-format
 msgid "(c) 1999-2016, The KDE Developers"
-msgstr "Copyright 1999–2016, Die KDE-Entwickler"
+msgstr "(c) 1999-2016, KDE 開發團隊"
 
 #: main.cpp:138
 #, kde-format
@@ -47,7 +45,7 @@ msgstr "Frans Englich"
 #: main.cpp:138
 #, kde-format
 msgid "Maintainer"
-msgstr "Betreuer"
+msgstr "維護者"
 
 #: main.cpp:139
 #, kde-format
@@ -77,61 +75,55 @@ msgstr "Waldo Bastian"
 #: main.cpp:149
 #, kde-format
 msgid "List all possible modules"
-msgstr "Alle möglichen Module anzeigen"
+msgstr "列出所有可能的模組"
 
 #: main.cpp:150
 #, kde-format
 msgid "Configuration module to open"
-msgstr "Zu öffnendes Einstellungsmodul"
+msgstr "要開啟的設定模組"
 
 #: main.cpp:151
 #, kde-format
 msgid "Specify a particular language"
-msgstr "Wählen Sie eine bestimmte Sprache"
+msgstr "指定某個特定的語言"
 
 #: main.cpp:152
 #, kde-format
 msgid "Do not display main window"
-msgstr "Hauptfenster nicht anzeigen"
+msgstr "不顯示主視窗"
 
 #: main.cpp:153
 #, kde-format
 msgid "Arguments for the module"
-msgstr "Argumente für das Modul"
+msgstr "模組的引數"
 
 #: main.cpp:154
 #, kde-format
 msgid "Use a specific icon for the window"
-msgstr "Ein spezielles Symbol für das Fenster verwenden"
+msgstr "為視窗指定圖示"
 
 #: main.cpp:155
 #, kde-format
 msgid "Use a specific caption for the window"
-msgstr "Einen speziellen Titel für das Fenster verwenden"
+msgstr "為視窗指定說明"
 
 #: main.cpp:156
 #, kde-format
 msgid "Show an indicator when settings have changed from their default value"
-msgstr ""
-"Eine Markierung anzeigen, wenn Einstellungen von ihrem Standardwert abweichen"
+msgstr "當設定從預設值被變更時顯示指示器"
 
 #: main.cpp:165
 #, kde-format
 msgid ""
 "--lang is deprecated. Please set the LANGUAGE environment variable instead"
-msgstr ""
-"--lang ist veraltet, bitte verwenden Sie stattdessen die Umgebungsvariable "
-"LANGUAGE"
+msgstr "--lang 已棄用。請改為設定 LANGUAGE 環境變數"
 
 #: main.cpp:169
 #, kde-format
 msgid "The following modules are available:"
-msgstr "Die folgenden Module sind verfügbar:"
+msgstr "以下模組是可用的："
 
 #: main.cpp:182
 #, kde-format
 msgid "No description available"
-msgstr "Keine Beschreibung verfügbar"
-
-#~ msgid "System Settings Module"
-#~ msgstr "Modul für Systemeinstellungen"
+msgstr "沒有可用的描述"

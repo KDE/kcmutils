@@ -129,6 +129,3 @@ msgstr "Jsou dostupné tyto moduly:"
 #, kde-format
 msgid "No description available"
 msgstr "Popis není dostupný"
-
-#~ msgid "System Settings Module"
-#~ msgstr "Modul Nastavení systému"
