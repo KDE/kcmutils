@@ -15,7 +15,7 @@ msgstr ""
 "Project-Id-Version: kcmutils\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-04-07 02:03+0000\n"
-"PO-Revision-Date: 2023-04-07 00:35+0100\n"
+"PO-Revision-Date: 2023-04-15 14:32+0100\n"
 "Last-Translator: Oliver Kellogg <okellogg@users.sourceforge.net>\n"
 "Language-Team: Esperanto <kde-i18n-eo@kde.org>\n"
 "Language: eo\n"
@@ -104,11 +104,10 @@ msgid "About"
 msgstr "Pri"
 
 #: qml/components/KPluginDelegate.qml:59
-#, fuzzy, kde-format
-#| msgid "Configure"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Configure…"
-msgstr "Agordi"
+msgstr "Agordi…"
 
 #: qml/components/KPluginSelector.qml:81
 #, kde-format
@@ -165,7 +164,3 @@ msgstr "Nevalida KPackage '%1'"
 #, kde-format
 msgid "No QML file provided"
 msgstr "Neniu QML-dosiero provizita"
-
-#~ msgctxt "@info:tooltip"
-#~ msgid "Configure..."
-#~ msgstr "Agordi..."
