@@ -130,6 +130,3 @@ msgstr "Desse modulane er tilgjengelege:"
 #, kde-format
 msgid "No description available"
 msgstr "Inga skildring tilgjengeleg"
-
-#~ msgid "System Settings Module"
-#~ msgstr "Modul for systemoppsett"
