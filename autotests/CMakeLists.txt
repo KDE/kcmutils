@@ -12,5 +12,6 @@ add_subdirectory(qmlkcm)
 
 ecm_add_tests(
     kcmultidialogtest.cpp
+    kcmloadtest.cpp
     LINK_LIBRARIES KF6KCMUtils Qt6::Test
 )
