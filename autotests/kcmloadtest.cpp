@@ -18,6 +18,13 @@ private Q_SLOTS:
         QVERIFY(mod);
         QCOMPARE(mod->metaObject()->className(), "KCModuleQml");
     }
+
+    void testFallbackKCM()
+    {
+        auto modFail = KCModuleLoader::loadModule(KPluginMetaData(QStringLiteral("nonexistent_kcm")));
+        QVERIFY(modFail);
+        QCOMPARE(modFail->metaObject()->className(), "KCMError");
+    }
 };
 
 QTEST_MAIN(KCMTest)

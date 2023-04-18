@@ -39,6 +39,7 @@ using namespace KCModuleLoader;
  */
 class KCMError : public KCModule
 {
+    Q_OBJECT
 public:
     KCMError(const QString &msg, const QString &details, QWidget *parent)
         : KCModule(parent, KPluginMetaData(), QVariantList())
@@ -90,3 +91,5 @@ KCModule *KCModuleLoader::loadModule(const KPluginMetaData &metaData, QWidget *p
 
     return new KCMError(QString(), kcmoduleResult.errorString, parent);
 }
+
+#include "kcmoduleloader.moc"
