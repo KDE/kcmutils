@@ -12,7 +12,6 @@ import org.kde.kcmutils 1.0
 
 SimpleKCM {
     ConfigModule.buttons: ConfigModule.NoAdditionalButton // Just to show that setting the buttons works
-    Component.onCompleted: console.log(ConfigModule.buttons)
     Controls.Label {
         text: i18n("Configure Time")
     }
