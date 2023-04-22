@@ -170,6 +170,13 @@ Kirigami.ApplicationItem {
     Keys.onEnterPressed: {
         event.accepted = true
     }
+
+    Window.onWindowChanged: {
+        if (Window.window) {
+            Window.window.LayoutMirroring.enabled = Qt.binding(() => Qt.application.layoutDirection === Qt.RightToLeft)
+            Window.window.LayoutMirroring.childrenInherit = true
+        }
+    }
 }
     )"), QUrl(QStringLiteral("kcmutils/kcmmoduleqml.cpp")));
     // clang-format on
