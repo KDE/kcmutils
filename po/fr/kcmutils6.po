@@ -23,7 +23,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdelibs4\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-04-07 02:03+0000\n"
+"POT-Creation-Date: 2023-04-23 03:27+0000\n"
 "PO-Revision-Date: 2023-04-08 10:16+0200\n"
 "Last-Translator: Xavier BESNARD <xavier.besnard]neuf.fr>\n"
 "Language-Team: fr\n"
@@ -97,7 +97,7 @@ msgstr ""
 msgid "Apply Settings"
 msgstr "Appliquer les réglages"
 
-#: kcmultidialog.cpp:188 kpluginwidget.cpp:329
+#: kcmultidialog.cpp:204 kpluginwidget.cpp:329
 #, kde-format
 msgid "Configure"
 msgstr "Configuration"

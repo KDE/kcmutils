@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdelibs4\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-04-07 02:03+0000\n"
+"POT-Creation-Date: 2023-04-23 03:27+0000\n"
 "PO-Revision-Date: 2010-12-31 22:47+0700\n"
 "Last-Translator: Phuwanat Sakornsakolpat <narachai@gmail.com>\n"
 "Language-Team: Thai <thai-l10n@googlegroups.com>\n"
@@ -82,7 +82,7 @@ msgstr ""
 msgid "Apply Settings"
 msgstr "ปรับใช้การตั้งค่า"
 
-#: kcmultidialog.cpp:188 kpluginwidget.cpp:329
+#: kcmultidialog.cpp:204 kpluginwidget.cpp:329
 #, kde-format
 msgid "Configure"
 msgstr "ปรับแต่งค่า"

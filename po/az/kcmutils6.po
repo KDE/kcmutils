@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kcmutils\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-04-07 02:03+0000\n"
+"POT-Creation-Date: 2023-04-23 03:27+0000\n"
 "PO-Revision-Date: 2022-05-01 22:36+0400\n"
 "Last-Translator: Kheyyam Gojayev <xxmn77@gmail.com>\n"
 "Language-Team: Azerbaijani <kde-i18n-doc@kde.org>\n"
@@ -71,7 +71,7 @@ msgstr ""
 msgid "Apply Settings"
 msgstr "Ayarların tətbiq edilməsi"
 
-#: kcmultidialog.cpp:188 kpluginwidget.cpp:329
+#: kcmultidialog.cpp:204 kpluginwidget.cpp:329
 #, kde-format
 msgid "Configure"
 msgstr "Tənzimləmək"
