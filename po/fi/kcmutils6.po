@@ -26,7 +26,7 @@ msgstr ""
 "Project-Id-Version: kdelibs4\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-04-23 03:27+0000\n"
-"PO-Revision-Date: 2023-03-29 23:10+0300\n"
+"PO-Revision-Date: 2023-04-20 17:32+0300\n"
 "Last-Translator: Tommi Nieminen <translator@legisign.org>\n"
 "Language-Team: Finnish <kde-i18n-doc@kde.org>\n"
 "Language: fi\n"
@@ -34,7 +34,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Lokalize 20.12.0\n"
+"X-Generator: Lokalize 22.12.3\n"
 "X-POT-Import-Date: 2013-01-13 20:43:21+0000\n"
 
 #, kde-format
@@ -119,11 +119,10 @@ msgid "About"
 msgstr "Tietoa"
 
 #: qml/components/KPluginDelegate.qml:59
-#, fuzzy, kde-format
-#| msgid "Configure"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Configure…"
-msgstr "Asetukset"
+msgstr "Asetukset…"
 
 #: qml/components/KPluginSelector.qml:81
 #, kde-format
