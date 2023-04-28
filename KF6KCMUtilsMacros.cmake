@@ -9,7 +9,7 @@
 # generating basic module data classes. Class derivated from KCModuleData
 # ::
 #
-#   kcmutils_generate_module_data(<sources_var>
+#   kcmutils_generate_module_data(<sources_var | target_name (since 6.0)>
 #       MODULE_DATA_CLASS_NAME <class_name>
 #       MODULE_DATA_HEADER <header_file_name>
 #       SETTINGS_HEADERS <setting_header.h> [<second_setting_header.h> [...]]]
