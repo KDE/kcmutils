@@ -7,7 +7,6 @@ Dependencies:
     'frameworks/ki18n' : '@same'
     'frameworks/kxmlgui' : '@same'
     'frameworks/kactivities' : '@same'
-    'frameworks/kwindowsystem' : '@same'
     'frameworks/kirigami' : '@same'
     'frameworks/kpackage' : '@same'
 

@@ -2,13 +2,13 @@
   SPDX-FileCopyrightText: 1999 Matthias Hoelzer-Kluepfel <hoelzer@kde.org>
   SPDX-FileCopyrightText: 2000 Matthias Elter <elter@kde.org>
   SPDX-FileCopyrightText: 2004 Frans Englich <frans.englich@telia.com>
+  SPDX-FileCopyrightText: 2023 Alexander Lohnau <alexander.lohnau@gmx.de>
 
   SPDX-License-Identifier: GPL-2.0-or-later
 
 */
 
-#include "main.h"
-
+#include <QApplication>
 #include <QCommandLineOption>
 #include <QCommandLineParser>
 #include <QDebug>
@@ -20,7 +20,9 @@
 #include <KActivities/ResourceInstance>
 #include <KAuthorized>
 #include <KCModule>
+#include <KCMultiDialog>
 #include <KLocalizedString>
+#include <KPageDialog>
 #include <KPluginMetaData>
 
 #if __has_include(<KStartupInfo>)
@@ -41,19 +43,29 @@ inline QList<KPluginMetaData> findKCMsMetaData()
     return metaDataList;
 }
 
-KCMShellMultiDialog::KCMShellMultiDialog(KPageDialog::FaceType dialogFace, QWidget *parent)
-    : KCMultiDialog(parent)
+class KCMShellMultiDialog : public KCMultiDialog
 {
-    setFaceType(dialogFace);
-    setModal(false);
+    Q_OBJECT
 
-    connect(this, &KCMShellMultiDialog::currentPageChanged, this, [](KPageWidgetItem *newPage) {
-        if (KCModule *activeModule = newPage->widget()->findChild<KCModule *>()) {
-            KActivities::ResourceInstance::notifyAccessed(QUrl(QLatin1String("kcm:") + activeModule->metaData().pluginId()),
-                                                          QStringLiteral("org.kde.systemsettings"));
-        }
-    });
-}
+public:
+    /**
+     * Constructor. Parameter @p dialogFace is passed to KCMultiDialog
+     * unchanged.
+     */
+    explicit KCMShellMultiDialog(KPageDialog::FaceType dialogFace)
+        : KCMultiDialog()
+    {
+        setFaceType(dialogFace);
+        setModal(false);
+
+        connect(this, &KCMShellMultiDialog::currentPageChanged, this, [](KPageWidgetItem *newPage) {
+            if (KCModule *activeModule = newPage->widget()->findChild<KCModule *>()) {
+                KActivities::ResourceInstance::notifyAccessed(QUrl(QLatin1String("kcm:") + activeModule->metaData().pluginId()),
+                                                              QStringLiteral("org.kde.systemsettings"));
+            }
+        });
+    }
+};
 
 int main(int argc, char *argv[])
 {
@@ -133,67 +145,45 @@ int main(int argc, char *argv[])
         return -1;
     }
 
-    QString serviceName;
     QList<KPluginMetaData> metaDataList;
 
     QStringList args = parser.positionalArguments();
     args.removeDuplicates();
     for (const QString &arg : args) {
-        KPluginMetaData data(arg);
-        if (data.isValid()) {
+        if (KPluginMetaData data(arg); data.isValid()) {
             metaDataList << data;
-            if (!serviceName.isEmpty()) {
-                serviceName += QLatin1Char('_');
-            }
-            serviceName += data.pluginId();
         } else {
             // Look in the namespaces for systemsettings/kinfocenter
             const static auto knownKCMs = findKCMsMetaData();
             const QStringList possibleIds{arg, QStringLiteral("kcm_") + arg, QStringLiteral("kcm") + arg};
-            bool foundKCM = std::any_of(knownKCMs.begin(), knownKCMs.end(), [&possibleIds, &metaDataList, &serviceName](const KPluginMetaData &data) {
+            std::any_of(knownKCMs.begin(), knownKCMs.end(), [&possibleIds, &metaDataList](const KPluginMetaData &data) {
                 bool idMatches = possibleIds.contains(data.pluginId());
                 if (idMatches) {
                     metaDataList << data;
-                    if (!serviceName.isEmpty()) {
-                        serviceName += QLatin1Char('_');
-                    }
-                    serviceName += data.pluginId();
                 }
                 return idMatches;
             });
-            if (foundKCM) {
-                continue;
-            }
         }
     }
-
-    KPageDialog::FaceType ftype = KPageDialog::Plain;
-
-    const int modCount = metaDataList.count();
-    if (modCount == 0) {
+    if (metaDataList.isEmpty()) {
         return -1;
     }
 
-    if (modCount > 1) {
-        ftype = KPageDialog::List;
-    }
-
-    KCMShellMultiDialog *dlg = new KCMShellMultiDialog(ftype);
+    const bool multipleKCMs = metaDataList.size() > 1;
+    KPageDialog::FaceType ftype = multipleKCMs ? KPageDialog::List : KPageDialog::Plain;
+    auto dlg = new KCMShellMultiDialog(ftype);
     dlg->setAttribute(Qt::WA_DeleteOnClose);
 
     if (parser.isSet(QStringLiteral("caption"))) {
         dlg->setWindowTitle(parser.value(QStringLiteral("caption")));
-    } else if (modCount == 1) {
+    } else if (!multipleKCMs) { // We will have the "Configure" window title set by KCMultiDialog
         dlg->setWindowTitle(metaDataList.constFirst().name());
     }
 
-    const QStringList moduleArgs = parser.value(QStringLiteral("args")).split(QRegularExpression(QStringLiteral(" +")));
+    const QStringList cliArgs = parser.values(QStringLiteral("args"));
+    const QVariantList pluginArgs(cliArgs.begin(), cliArgs.end());
     for (const KPluginMetaData &m : std::as_const(metaDataList)) {
-        QVariantList list;
-        for (const auto &arg : moduleArgs) {
-            list << QVariant::fromValue(arg);
-        }
-        dlg->addModule(m, list);
+        dlg->addModule(m, pluginArgs);
     }
 
     if (parser.isSet(QStringLiteral("icon"))) {
@@ -222,4 +212,5 @@ int main(int argc, char *argv[])
 
     return 0;
 }
-// vim: sw=4 et sts=4
+
+#include "main.moc"

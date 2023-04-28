@@ -9,7 +9,6 @@ find_package(ECM 5.240.0  NO_MODULE)
 set_package_properties(ECM PROPERTIES TYPE REQUIRED DESCRIPTION "Extra CMake Modules." URL "https://invent.kde.org/frameworks/extra-cmake-modules")
 feature_summary(WHAT REQUIRED_PACKAGES_NOT_FOUND FATAL_ON_MISSING_REQUIRED_PACKAGES)
 
-
 set(CMAKE_MODULE_PATH ${ECM_MODULE_PATH})
 
 include(KDEInstallDirs)
@@ -48,7 +47,6 @@ ecm_setup_version(PROJECT VARIABLE_PREFIX KCMUTILS
                         PACKAGE_VERSION_FILE "${CMAKE_CURRENT_BINARY_DIR}/KF6KCMUtilsConfigVersion.cmake"
                         SOVERSION 6)
 
-find_package(KF6WindowSystem ${KF_DEP_VERSION} REQUIRED)
 find_package(KF6Activities ${KF_DEP_VERSION} REQUIRED)
 find_package(KF6ItemViews ${KF_DEP_VERSION} REQUIRED)
 find_package(KF6ConfigWidgets ${KF_DEP_VERSION} REQUIRED)
