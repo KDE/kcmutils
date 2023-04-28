@@ -156,13 +156,17 @@ int main(int argc, char *argv[])
             // Look in the namespaces for systemsettings/kinfocenter
             const static auto knownKCMs = findKCMsMetaData();
             const QStringList possibleIds{arg, QStringLiteral("kcm_") + arg, QStringLiteral("kcm") + arg};
-            std::any_of(knownKCMs.begin(), knownKCMs.end(), [&possibleIds, &metaDataList](const KPluginMetaData &data) {
+            bool found = std::any_of(knownKCMs.begin(), knownKCMs.end(), [&possibleIds, &metaDataList](const KPluginMetaData &data) {
                 bool idMatches = possibleIds.contains(data.pluginId());
                 if (idMatches) {
                     metaDataList << data;
                 }
                 return idMatches;
             });
+            if (!found) {
+                metaDataList << KPluginMetaData(arg); // So that we show an error message in the dialog
+                qWarning() << "Could not find KCM with given Id" << arg;
+            }
         }
     }
     if (metaDataList.isEmpty()) {
