@@ -150,7 +150,7 @@ int main(int argc, char *argv[])
     QStringList args = parser.positionalArguments();
     args.removeDuplicates();
     for (const QString &arg : args) {
-        if (KPluginMetaData data(arg); data.isValid()) {
+        if (KPluginMetaData data(arg, KPluginMetaData::AllowEmptyMetaData); data.isValid()) {
             metaDataList << data;
         } else {
             // Look in the namespaces for systemsettings/kinfocenter
