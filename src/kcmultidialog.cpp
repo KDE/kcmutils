@@ -362,11 +362,6 @@ void KCMultiDialog::closeEvent(QCloseEvent *event)
 {
     KPageDialog::closeEvent(event);
 
-    /**
-     * If we don't delete them, the DBUS registration stays, and trying to load the KCMs
-     * in other situations will lead to "module already loaded in Foo," while to the user
-     * doesn't appear so(the dialog is hidden)
-     */
     for (auto &module : d->modules) {
         delete module.kcm;
         module.kcm = nullptr;

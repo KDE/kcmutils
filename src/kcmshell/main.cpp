@@ -11,10 +11,6 @@
 
 #include <QCommandLineOption>
 #include <QCommandLineParser>
-#include <QDBusConnection>
-#include <QDBusConnectionInterface>
-#include <QDBusInterface>
-#include <QDBusServiceWatcher>
 #include <QDebug>
 #include <QIcon>
 #include <QRegularExpression>
@@ -45,90 +41,30 @@ inline QList<KPluginMetaData> findKCMsMetaData()
     return metaDataList;
 }
 
-bool KCMShell::isRunning()
-{
-    const QString owner = QDBusConnection::sessionBus().interface()->serviceOwner(m_serviceName);
-    if (owner == QDBusConnection::sessionBus().baseService()) {
-        return false; // We are the one and only.
-    }
-
-    qDebug() << "kcmshell6 with modules" << m_serviceName << "is already running.";
-
-#ifdef HAVE_X11
-    QDBusInterface iface(m_serviceName, QStringLiteral("/KCModule/dialog"), QStringLiteral("org.kde.KCMShellMultiDialog"));
-    QDBusReply<void> reply = iface.call(QStringLiteral("activate"), QX11Info::nextStartupId());
-    if (!reply.isValid()) {
-        qDebug() << "Calling D-Bus function dialog::activate() failed.";
-        return false; // Error, we have to do it ourselves.
-    }
-#endif
-
-    return true;
-}
-
 KCMShellMultiDialog::KCMShellMultiDialog(KPageDialog::FaceType dialogFace, QWidget *parent)
     : KCMultiDialog(parent)
 {
     setFaceType(dialogFace);
     setModal(false);
 
-    QDBusConnection::sessionBus().registerObject(QStringLiteral("/KCModule/dialog"), this, QDBusConnection::ExportScriptableSlots);
-
-    connect(this, &KCMShellMultiDialog::currentPageChanged, this, [](KPageWidgetItem *newPage, KPageWidgetItem *oldPage) {
-        Q_UNUSED(oldPage);
-        KCModule *activeModule = newPage->widget()->findChild<KCModule *>();
-        if (activeModule) {
+    connect(this, &KCMShellMultiDialog::currentPageChanged, this, [](KPageWidgetItem *newPage) {
+        if (KCModule *activeModule = newPage->widget()->findChild<KCModule *>()) {
             KActivities::ResourceInstance::notifyAccessed(QUrl(QLatin1String("kcm:") + activeModule->metaData().pluginId()),
                                                           QStringLiteral("org.kde.systemsettings"));
         }
     });
 }
 
-void KCMShellMultiDialog::activate(const QByteArray &asn_id)
-{
-#ifdef HAVE_X11
-    setAttribute(Qt::WA_NativeWindow, true);
-    KStartupInfo::setNewStartupId(windowHandle(), asn_id);
-#endif
-}
-
-void KCMShell::setServiceName(const QString &dbusName)
-{
-    m_serviceName = QLatin1String("org.kde.kcmshell_") + dbusName;
-    QDBusConnection::sessionBus().registerService(m_serviceName);
-}
-
-void KCMShell::waitForExit()
-{
-    QDBusServiceWatcher *watcher = new QDBusServiceWatcher(this);
-    watcher->setConnection(QDBusConnection::sessionBus());
-    watcher->setWatchMode(QDBusServiceWatcher::WatchForOwnerChange);
-    watcher->addWatchedService(m_serviceName);
-    connect(watcher, &QDBusServiceWatcher::serviceOwnerChanged, this, &KCMShell::appExit);
-    exec();
-}
-
-void KCMShell::appExit(const QString &appId, const QString &oldName, const QString &newName)
-{
-    Q_UNUSED(appId);
-    Q_UNUSED(newName);
-
-    if (!oldName.isEmpty()) {
-        qDebug() << appId << "closed, quitting.";
-        qApp->quit();
-    }
-}
-
-int main(int _argc, char *_argv[])
+int main(int argc, char *argv[])
 {
     const bool qpaVariable = qEnvironmentVariableIsSet("QT_QPA_PLATFORM");
-    KCMShell app(_argc, _argv);
+    QApplication app(argc, argv);
     if (!qpaVariable) {
         // don't leak the env variable to processes we start
         qunsetenv("QT_QPA_PLATFORM");
     }
     KLocalizedString::setApplicationDomain("kcmshell6");
-    KAboutData aboutData(QStringLiteral("kcmshell6"), //
+    KAboutData aboutData(QStringLiteral("kcmshell6"),
                          QString(),
                          QLatin1String(PROJECT_VERSION),
                          i18n("A tool to start single system settings modules"),
@@ -229,13 +165,6 @@ int main(int _argc, char *_argv[])
                 continue;
             }
         }
-    }
-
-    /* Check if this particular module combination is already running */
-    app.setServiceName(serviceName);
-    if (app.isRunning()) {
-        app.waitForExit();
-        return 0;
     }
 
     KPageDialog::FaceType ftype = KPageDialog::Plain;

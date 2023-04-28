@@ -9,7 +9,6 @@ find_dependency(KF6CoreAddons   "@KF_DEP_VERSION@")
 find_dependency(Qt6Qml          "@REQUIRED_QT_VERSION@")
 
 if (NOT @BUILD_SHARED_LIBS@)
-    find_dependency(Qt6DBus         "@REQUIRED_QT_VERSION@")
     find_dependency(Qt6Quick        "@REQUIRED_QT_VERSION@")
     find_dependency(Qt6QuickWidgets "@REQUIRED_QT_VERSION@")
 
