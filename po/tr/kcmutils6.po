@@ -22,7 +22,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdelibs4\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-04-23 03:27+0000\n"
+"POT-Creation-Date: 2023-04-29 02:19+0000\n"
 "PO-Revision-Date: 2023-04-07 11:27+0300\n"
 "Last-Translator: Emir SARI <emir_sari@icloud.com>\n"
 "Language-Team: Turkish <kde-l10n-tr@kde.org>\n"
@@ -46,7 +46,7 @@ msgstr ""
 "tulliana@gmail.com, gorkem@kde.org, ibrahim@pardus.org.tr, volkangezer@gmail."
 "com, emir_sari@icloud.com"
 
-#: kcmoduleloader.cpp:49
+#: kcmoduleloader.cpp:50
 #, kde-format
 msgid ""
 "<qt><p>Possible reasons:<ul><li>An error occurred during your last system "
@@ -62,17 +62,17 @@ msgstr ""
 "başarısız olursa dağıtımınıza veya uygulamayı paketleyen geliştiriciye "
 "durumu bildirin.</p></qt>"
 
-#: kcmoduleloader.cpp:69
+#: kcmoduleloader.cpp:70
 #, kde-format
 msgid "The module %1 is disabled."
 msgstr "%1 modülü devre dışı."
 
-#: kcmoduleloader.cpp:69
+#: kcmoduleloader.cpp:70
 #, kde-format
 msgid "The module has been disabled by the system administrator."
 msgstr "Bu modül, sistem yöneticiniz tarafından devre dışı bırakıldı."
 
-#: kcmoduleloader.cpp:75
+#: kcmoduleloader.cpp:76
 #, kde-format
 msgid "Error loading QML file."
 msgstr "QML dosyası yüklenirken hata."
@@ -164,15 +164,16 @@ msgstr "Çevirmenler"
 msgid "Send an email to %1"
 msgstr "%1 kişisine e-posta gönderin"
 
-#: qml/kquickconfigmodule.cpp:114
+#: qml/kquickconfigmodule.cpp:128
 #, kde-format
-msgid "Invalid KPackage '%1'"
-msgstr "Geçersiz KPackage '%1'"
+msgid "Could not find resource '%1'"
+msgstr ""
 
-#: qml/kquickconfigmodule.cpp:120
-#, kde-format
-msgid "No QML file provided"
-msgstr "Bir QML dosyası sağlanmadı"
+#~ msgid "Invalid KPackage '%1'"
+#~ msgstr "Geçersiz KPackage '%1'"
+
+#~ msgid "No QML file provided"
+#~ msgstr "Bir QML dosyası sağlanmadı"
 
 #~ msgctxt "@info:tooltip"
 #~ msgid "Configure..."

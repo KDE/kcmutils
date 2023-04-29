@@ -18,7 +18,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdelibs4\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-04-23 03:27+0000\n"
+"POT-Creation-Date: 2023-04-29 02:19+0000\n"
 "PO-Revision-Date: 2023-04-14 21:27+0900\n"
 "Last-Translator: Kisaragi Hiu <mail@kisaragi-hiu.com>\n"
 "Language-Team: Traditional Chinese <zh-l10n@linux.org.tw>\n"
@@ -39,7 +39,7 @@ msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
 msgstr "franklin@goodhorse.idv.tw"
 
-#: kcmoduleloader.cpp:49
+#: kcmoduleloader.cpp:50
 #, kde-format
 msgid ""
 "<qt><p>Possible reasons:<ul><li>An error occurred during your last system "
@@ -52,17 +52,17 @@ msgstr ""
 "li><li>您正在使用一個第三方的模組。</li></ul></p><p>請小心檢查上述的問題，並"
 "嘗試移除錯誤訊息中的模組。若是不行，請聯絡您的軟體散布商或打包者。</p></qt>"
 
-#: kcmoduleloader.cpp:69
+#: kcmoduleloader.cpp:70
 #, kde-format
 msgid "The module %1 is disabled."
 msgstr "此模組 %1 已關閉。"
 
-#: kcmoduleloader.cpp:69
+#: kcmoduleloader.cpp:70
 #, kde-format
 msgid "The module has been disabled by the system administrator."
 msgstr "模組已被系統管理員停用。"
 
-#: kcmoduleloader.cpp:75
+#: kcmoduleloader.cpp:76
 #, kde-format
 msgid "Error loading QML file."
 msgstr "載入 QML 檔案時發生錯誤。"
@@ -154,15 +154,16 @@ msgstr "翻譯者"
 msgid "Send an email to %1"
 msgstr "傳送電子郵件給 %1"
 
-#: qml/kquickconfigmodule.cpp:114
+#: qml/kquickconfigmodule.cpp:128
 #, kde-format
-msgid "Invalid KPackage '%1'"
-msgstr "「%1」KPackage 無效"
+msgid "Could not find resource '%1'"
+msgstr ""
 
-#: qml/kquickconfigmodule.cpp:120
-#, kde-format
-msgid "No QML file provided"
-msgstr "未提供 QML 檔案"
+#~ msgid "Invalid KPackage '%1'"
+#~ msgstr "「%1」KPackage 無效"
+
+#~ msgid "No QML file provided"
+#~ msgstr "未提供 QML 檔案"
 
 #~ msgctxt "@info:tooltip"
 #~ msgid "Configure..."

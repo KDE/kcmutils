@@ -15,7 +15,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdelibs4\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-04-23 03:27+0000\n"
+"POT-Creation-Date: 2023-04-29 02:19+0000\n"
 "PO-Revision-Date: 2020-01-05 18:42+0100\n"
 "Last-Translator: Adrián Chaves (Gallaecio) <adrian@chaves.io>\n"
 "Language-Team: Galician <proxecto@trasno.gal>\n"
@@ -36,7 +36,7 @@ msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
 msgstr "xosecalvo@gmail.com, mvillarino@gmail.com, proxecto@trasno.gal"
 
-#: kcmoduleloader.cpp:49
+#: kcmoduleloader.cpp:50
 #, kde-format
 msgid ""
 "<qt><p>Possible reasons:<ul><li>An error occurred during your last system "
@@ -51,18 +51,18 @@ msgstr ""
 "coidado e intente retirar o módulo mencionado na mensaxe de erro. Se isto "
 "falla, considere contactar co seu distribuidor de paquetes.</p></qt>"
 
-#: kcmoduleloader.cpp:69
+#: kcmoduleloader.cpp:70
 #, kde-format
 msgid "The module %1 is disabled."
 msgstr "O módulo %1 está desactivado."
 
-#: kcmoduleloader.cpp:69
+#: kcmoduleloader.cpp:70
 #, fuzzy, kde-format
 #| msgid "Please contact your system administrator."
 msgid "The module has been disabled by the system administrator."
 msgstr "Por favor, contacte co seu administrador do sistema."
 
-#: kcmoduleloader.cpp:75
+#: kcmoduleloader.cpp:76
 #, kde-format
 msgid "Error loading QML file."
 msgstr "Produciuse un erro ao cargar o ficheiro QML."
@@ -164,15 +164,11 @@ msgstr "Tradución"
 msgid "Send an email to %1"
 msgstr "&Enviar por correo"
 
-#: qml/kquickconfigmodule.cpp:114
-#, kde-format
-msgid "Invalid KPackage '%1'"
-msgstr ""
-
-#: qml/kquickconfigmodule.cpp:120
-#, kde-format
-msgid "No QML file provided"
-msgstr ""
+#: qml/kquickconfigmodule.cpp:128
+#, fuzzy, kde-format
+#| msgid "Could not find service '%1'."
+msgid "Could not find resource '%1'"
+msgstr "Non foi posíbel atopar o servizo «%1»."
 
 #, fuzzy
 #~| msgid "Confi&gure..."
@@ -8305,9 +8301,6 @@ msgstr ""
 
 #~ msgid "KDEInit could not launch '%1'"
 #~ msgstr "KDEInit non puido iniciar «%1»"
-
-#~ msgid "Could not find service '%1'."
-#~ msgstr "Non foi posíbel atopar o servizo «%1»."
 
 #~ msgid "Service '%1' must be executable to run."
 #~ msgstr "O servizo «%1» debe ser executábel."

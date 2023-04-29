@@ -5,7 +5,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdelibs4\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-04-23 03:27+0000\n"
+"POT-Creation-Date: 2023-04-29 02:19+0000\n"
 "PO-Revision-Date: 2006-06-22 16:29+0200\n"
 "Last-Translator: Michel Ludwig <michel.ludwig@kdemail.net>\n"
 "Language-Team: Luxembourgish <kde-i18n-lb@kde.org>\n"
@@ -26,7 +26,7 @@ msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
 msgstr "kevin@math.uni-sb.de,miclud@studcs.uni-sb.de"
 
-#: kcmoduleloader.cpp:49
+#: kcmoduleloader.cpp:50
 #, fuzzy, kde-format
 #| msgid ""
 #| "<qt><p>The diagnostics is:<br>%1<p>Possible reasons:</p><ul><li>An error "
@@ -48,18 +48,18 @@ msgstr ""
 "</ul><p>Kuckt dëss Punkten opmierksam duerch a probéiert, dee Modul ze "
 "läschen. Wann dat net klappt, frot bei ärem Verdeler no.</p></qt>"
 
-#: kcmoduleloader.cpp:69
+#: kcmoduleloader.cpp:70
 #, fuzzy, kde-format
 msgid "The module %1 is disabled."
 msgstr "De Modul %1 konnt net geluede ginn."
 
-#: kcmoduleloader.cpp:69
+#: kcmoduleloader.cpp:70
 #, fuzzy, kde-format
 #| msgid "Please contact your system administrator."
 msgid "The module has been disabled by the system administrator."
 msgstr "Mellt iech w.e.g. bei ärer Systemverwaltung."
 
-#: kcmoduleloader.cpp:75
+#: kcmoduleloader.cpp:76
 #, fuzzy, kde-format
 #| msgid "Error opening file."
 msgid "Error loading QML file."
@@ -167,15 +167,11 @@ msgstr "Iwwersetzung"
 msgid "Send an email to %1"
 msgstr "E-Mail &verschécken"
 
-#: qml/kquickconfigmodule.cpp:114
-#, kde-format
-msgid "Invalid KPackage '%1'"
-msgstr ""
-
-#: qml/kquickconfigmodule.cpp:120
-#, kde-format
-msgid "No QML file provided"
-msgstr ""
+#: qml/kquickconfigmodule.cpp:128
+#, fuzzy, kde-format
+#| msgid "Could not find service '%1'."
+msgid "Could not find resource '%1'"
+msgstr "Konnt de Service '%1' net fannen."
 
 #, fuzzy
 #~| msgid "Confi&gure..."
@@ -8340,9 +8336,6 @@ msgstr ""
 #~| msgid "KDEInit could not launch '%1'."
 #~ msgid "KDEInit could not launch '%1'"
 #~ msgstr "KDEInit konnt '%1' net starten."
-
-#~ msgid "Could not find service '%1'."
-#~ msgstr "Konnt de Service '%1' net fannen."
 
 #~ msgid "Service '%1' is malformatted."
 #~ msgstr "De Service '%1' huet ën ongültege Format."

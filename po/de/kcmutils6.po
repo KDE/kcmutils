@@ -13,7 +13,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdelibs4\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-04-23 03:27+0000\n"
+"POT-Creation-Date: 2023-04-29 02:19+0000\n"
 "PO-Revision-Date: 2023-04-11 23:02+0200\n"
 "Last-Translator: Frederik Schwarzer <schwarzer@kde.org>\n"
 "Language-Team: German <kde-i18n-de@kde.org>\n"
@@ -34,7 +34,7 @@ msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
 msgstr "tr@erdfunkstelle.de, hunsum@gmx.de, thd@kde.org"
 
-#: kcmoduleloader.cpp:49
+#: kcmoduleloader.cpp:50
 #, kde-format
 msgid ""
 "<qt><p>Possible reasons:<ul><li>An error occurred during your last system "
@@ -53,17 +53,17 @@ msgstr ""
 "Unix-)Distributor bzw. dem Ersteller der aktualisierten Pakete aufnehmen.</"
 "p></qt>"
 
-#: kcmoduleloader.cpp:69
+#: kcmoduleloader.cpp:70
 #, kde-format
 msgid "The module %1 is disabled."
 msgstr "Das Modul %1 ist nicht aktiviert."
 
-#: kcmoduleloader.cpp:69
+#: kcmoduleloader.cpp:70
 #, kde-format
 msgid "The module has been disabled by the system administrator."
 msgstr "Das Modul ist vom Systemverwalter deaktiviert worden."
 
-#: kcmoduleloader.cpp:75
+#: kcmoduleloader.cpp:76
 #, kde-format
 msgid "Error loading QML file."
 msgstr "Fehler beim Laden der QML-Datei."
@@ -155,15 +155,17 @@ msgstr "Übersetzer"
 msgid "Send an email to %1"
 msgstr "Eine E-Mail an %1 senden"
 
-#: qml/kquickconfigmodule.cpp:114
-#, kde-format
-msgid "Invalid KPackage '%1'"
-msgstr "Ungültiges KPackage „%1“"
+#: qml/kquickconfigmodule.cpp:128
+#, fuzzy, kde-format
+#| msgid "Could not find service '%1'."
+msgid "Could not find resource '%1'"
+msgstr "Dienst „%1“ nicht auffindbar."
 
-#: qml/kquickconfigmodule.cpp:120
-#, kde-format
-msgid "No QML file provided"
-msgstr "Keine QML-Datei angegeben"
+#~ msgid "Invalid KPackage '%1'"
+#~ msgstr "Ungültiges KPackage „%1“"
+
+#~ msgid "No QML file provided"
+#~ msgstr "Keine QML-Datei angegeben"
 
 #~ msgctxt "@info:tooltip"
 #~ msgid "Configure..."
@@ -8385,9 +8387,6 @@ msgstr "Keine QML-Datei angegeben"
 
 #~ msgid "KDEInit could not launch '%1'"
 #~ msgstr "KDEInit kann „%1“ nicht starten"
-
-#~ msgid "Could not find service '%1'."
-#~ msgstr "Dienst „%1“ nicht auffindbar."
 
 #~ msgid "Service '%1' must be executable to run."
 #~ msgstr ""

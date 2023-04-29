@@ -11,7 +11,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdelibs4\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-04-23 03:27+0000\n"
+"POT-Creation-Date: 2023-04-29 02:19+0000\n"
 "PO-Revision-Date: 2019-12-12 21:04+0000\n"
 "Last-Translator: Vivek KJ Pazhedath <vivekkj2004@gmail.com>\n"
 "Language-Team: SMC <smc.org.in>\n"
@@ -31,7 +31,7 @@ msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
 msgstr "shijualexonline@gmail.com,snalledam@dataone.in,vivekkj2004@gmail.com"
 
-#: kcmoduleloader.cpp:49
+#: kcmoduleloader.cpp:50
 #, kde-format
 msgid ""
 "<qt><p>Possible reasons:<ul><li>An error occurred during your last system "
@@ -41,18 +41,18 @@ msgid ""
 "this fails, consider contacting your distributor or packager.</p></qt>"
 msgstr ""
 
-#: kcmoduleloader.cpp:69
+#: kcmoduleloader.cpp:70
 #, kde-format
 msgid "The module %1 is disabled."
 msgstr "ഘടകം %1 പ്രവര്‍ത്തന രഹിതമാണു്."
 
-#: kcmoduleloader.cpp:69
+#: kcmoduleloader.cpp:70
 #, fuzzy, kde-format
 #| msgid "Please contact your system administrator."
 msgid "The module has been disabled by the system administrator."
 msgstr "ദയവായി നിങ്ങളുടെ സിസ്റ്റം ഭരണാധികാരിയുമായി ബന്ധപ്പെടുക."
 
-#: kcmoduleloader.cpp:75
+#: kcmoduleloader.cpp:76
 #, fuzzy, kde-format
 #| msgid "Error loading '%1'.\n"
 msgid "Error loading QML file."
@@ -153,15 +153,11 @@ msgstr "തര്‍ജ്ജമ"
 msgid "Send an email to %1"
 msgstr "ഈമെയില്‍ &അയയ്ക്കുക"
 
-#: qml/kquickconfigmodule.cpp:114
-#, kde-format
-msgid "Invalid KPackage '%1'"
-msgstr ""
-
-#: qml/kquickconfigmodule.cpp:120
-#, kde-format
-msgid "No QML file provided"
-msgstr ""
+#: qml/kquickconfigmodule.cpp:128
+#, fuzzy, kde-format
+#| msgid "Could not find service '%1'."
+msgid "Could not find resource '%1'"
+msgstr "'%1' സേവനം ലഭ്യമാക്കുവാന്‍ സാധ്യമായില്ല."
 
 #, fuzzy
 #~| msgid "Confi&gure..."
@@ -7110,9 +7106,6 @@ msgstr ""
 #, fuzzy
 #~ msgid "KDEInit could not launch '%1'"
 #~ msgstr "KDEInit-നു് '%1' ലഭ്യമാക്കുവാന്‍ സാധ്യമായില്ല."
-
-#~ msgid "Could not find service '%1'."
-#~ msgstr "'%1' സേവനം ലഭ്യമാക്കുവാന്‍ സാധ്യമായില്ല."
 
 #~ msgid "Service '%1' must be executable to run."
 #~ msgstr "'%1' എന്ന സേവനം പ്രവര്‍ത്തിപ്പിയ്ക്കാവുന്നതാകണം."

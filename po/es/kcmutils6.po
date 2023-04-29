@@ -14,7 +14,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdelibs4\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-04-23 03:27+0000\n"
+"POT-Creation-Date: 2023-04-29 02:19+0000\n"
 "PO-Revision-Date: 2023-04-08 00:18+0200\n"
 "Last-Translator: Eloy Cuadra <ecuadra@eloihr.net>\n"
 "Language-Team: Spanish <kde-l10n-es@kde.org>\n"
@@ -36,7 +36,7 @@ msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
 msgstr "ecuadra@eloihr.net"
 
-#: kcmoduleloader.cpp:49
+#: kcmoduleloader.cpp:50
 #, kde-format
 msgid ""
 "<qt><p>Possible reasons:<ul><li>An error occurred during your last system "
@@ -52,17 +52,17 @@ msgstr ""
 "mencionado en el mensaje de error. Si esto falla, contacte con su "
 "distribuidor o con el empaquetador.</p></qt>"
 
-#: kcmoduleloader.cpp:69
+#: kcmoduleloader.cpp:70
 #, kde-format
 msgid "The module %1 is disabled."
 msgstr "El módulo %1 está inhabilitado."
 
-#: kcmoduleloader.cpp:69
+#: kcmoduleloader.cpp:70
 #, kde-format
 msgid "The module has been disabled by the system administrator."
 msgstr "El módulo ha sido desactivado por el administrador del sistema."
 
-#: kcmoduleloader.cpp:75
+#: kcmoduleloader.cpp:76
 #, kde-format
 msgid "Error loading QML file."
 msgstr "Ha ocurrido un error al cargar el archivo QML."
@@ -154,15 +154,17 @@ msgstr "Traductores"
 msgid "Send an email to %1"
 msgstr "Enviar correo electrónico a %1"
 
-#: qml/kquickconfigmodule.cpp:114
-#, kde-format
-msgid "Invalid KPackage '%1'"
-msgstr "KPackage «%1» no válido"
+#: qml/kquickconfigmodule.cpp:128
+#, fuzzy, kde-format
+#| msgid "Could not find service '%1'."
+msgid "Could not find resource '%1'"
+msgstr "No se pudo encontrar el servicio «%1»."
 
-#: qml/kquickconfigmodule.cpp:120
-#, kde-format
-msgid "No QML file provided"
-msgstr "No se ha proporcionado ningún archivo QML"
+#~ msgid "Invalid KPackage '%1'"
+#~ msgstr "KPackage «%1» no válido"
+
+#~ msgid "No QML file provided"
+#~ msgstr "No se ha proporcionado ningún archivo QML"
 
 #~ msgctxt "@info:tooltip"
 #~ msgid "Configure..."
@@ -8347,9 +8349,6 @@ msgstr "No se ha proporcionado ningún archivo QML"
 
 #~ msgid "KDEInit could not launch '%1'"
 #~ msgstr "KDEInit no ha podido lanzar «%1»"
-
-#~ msgid "Could not find service '%1'."
-#~ msgstr "No se pudo encontrar el servicio «%1»."
 
 #~ msgid "Service '%1' must be executable to run."
 #~ msgstr "El servicio «%1» debe ser ejecutable."

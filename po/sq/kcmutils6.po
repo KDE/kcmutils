@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kde4libs\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-04-23 03:27+0000\n"
+"POT-Creation-Date: 2023-04-29 02:19+0000\n"
 "PO-Revision-Date: 2012-01-19 00:20-0500\n"
 "Last-Translator: Agron Selimaj <as9902613@gmail.com>\n"
 "Language-Team: Albanian <sq@li.org>\n"
@@ -26,7 +26,7 @@ msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
 msgstr ""
 
-#: kcmoduleloader.cpp:49
+#: kcmoduleloader.cpp:50
 #, kde-format
 msgid ""
 "<qt><p>Possible reasons:<ul><li>An error occurred during your last system "
@@ -36,19 +36,19 @@ msgid ""
 "this fails, consider contacting your distributor or packager.</p></qt>"
 msgstr ""
 
-#: kcmoduleloader.cpp:69
+#: kcmoduleloader.cpp:70
 #, fuzzy, kde-format
 #| msgid "The module %1 could not be found."
 msgid "The module %1 is disabled."
 msgstr "Moduli %1 nuk mund të gjendet."
 
-#: kcmoduleloader.cpp:69
+#: kcmoduleloader.cpp:70
 #, fuzzy, kde-format
 #| msgid "Please contact your system administrator."
 msgid "The module has been disabled by the system administrator."
 msgstr "Ju lutemi kontaktoni administratorin e sistemit tuaj."
 
-#: kcmoduleloader.cpp:75
+#: kcmoduleloader.cpp:76
 #, fuzzy, kde-format
 #| msgid "Error loading '%1'.\n"
 msgid "Error loading QML file."
@@ -156,15 +156,11 @@ msgstr "Përkthim"
 msgid "Send an email to %1"
 msgstr "&Dërgo Email-in"
 
-#: qml/kquickconfigmodule.cpp:114
-#, kde-format
-msgid "Invalid KPackage '%1'"
-msgstr ""
-
-#: qml/kquickconfigmodule.cpp:120
-#, kde-format
-msgid "No QML file provided"
-msgstr ""
+#: qml/kquickconfigmodule.cpp:128
+#, fuzzy, kde-format
+#| msgid "Could not find service '%1'."
+msgid "Could not find resource '%1'"
+msgstr "Nuk mund të gjejmë shërbimin '%1'."
 
 #, fuzzy
 #~| msgid "Confi&gure..."
@@ -7208,9 +7204,6 @@ msgstr ""
 #~| msgid "KDEInit could not launch '%1'."
 #~ msgid "KDEInit could not launch '%1'"
 #~ msgstr "KDEInit nuk mund të niset '%1'."
-
-#~ msgid "Could not find service '%1'."
-#~ msgstr "Nuk mund të gjejmë shërbimin '%1'."
 
 #~ msgid "Service '%1' is malformatted."
 #~ msgstr "Shërbimi '%1' është i keqformatuar."

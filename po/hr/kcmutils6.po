@@ -11,7 +11,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdelibs4\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-04-23 03:27+0000\n"
+"POT-Creation-Date: 2023-04-29 02:19+0000\n"
 "PO-Revision-Date: 2011-07-22 16:08+0200\n"
 "Last-Translator: Marko Dimjašević <marko@dimjasevic.net>\n"
 "Language-Team: Croatian <kde-croatia-list@lists.sourceforge.net>\n"
@@ -41,7 +41,7 @@ msgstr ""
 "renato@translator-shop.org, zarko.pintar@gmail.com, marko@dimjasevic.net, "
 "adundovi@gmail.com"
 
-#: kcmoduleloader.cpp:49
+#: kcmoduleloader.cpp:50
 #, fuzzy, kde-format
 #| msgid ""
 #| "<qt><p>Possible reasons:<ul><li>An error occurred during your last KDE "
@@ -62,18 +62,18 @@ msgstr ""
 "spomenuti modul u poruci o grešci. Ako to ne uspije, kontaktirajte svojeg "
 "distributora ili paketara</p></qt>"
 
-#: kcmoduleloader.cpp:69
+#: kcmoduleloader.cpp:70
 #, kde-format
 msgid "The module %1 is disabled."
 msgstr "Modul %1 je onemogućen."
 
-#: kcmoduleloader.cpp:69
+#: kcmoduleloader.cpp:70
 #, fuzzy, kde-format
 #| msgid "Please contact your system administrator."
 msgid "The module has been disabled by the system administrator."
 msgstr "Kontaktirajte vašeg administratora sustava."
 
-#: kcmoduleloader.cpp:75
+#: kcmoduleloader.cpp:76
 #, fuzzy, kde-format
 #| msgid "Error loading '%1'.\n"
 msgid "Error loading QML file."
@@ -177,15 +177,11 @@ msgstr "Prijevod"
 msgid "Send an email to %1"
 msgstr "%Pošalji e-poštu"
 
-#: qml/kquickconfigmodule.cpp:114
-#, kde-format
-msgid "Invalid KPackage '%1'"
-msgstr ""
-
-#: qml/kquickconfigmodule.cpp:120
-#, kde-format
-msgid "No QML file provided"
-msgstr ""
+#: qml/kquickconfigmodule.cpp:128
+#, fuzzy, kde-format
+#| msgid "Could not find service '%1'."
+msgid "Could not find resource '%1'"
+msgstr "Nije moguće pronaći uslugu '%1'."
 
 #, fuzzy
 #~| msgid "Confi&gure..."
@@ -8321,9 +8317,6 @@ msgstr ""
 
 #~ msgid "KDEInit could not launch '%1'."
 #~ msgstr "KDEInit ne može pokrenuti '%1'"
-
-#~ msgid "Could not find service '%1'."
-#~ msgstr "Nije moguće pronaći uslugu '%1'."
 
 #~ msgid "Service '%1' must be executable to run."
 #~ msgstr "Usluga '%1' mora biti izvršnog tipa da bi se pokrenula."

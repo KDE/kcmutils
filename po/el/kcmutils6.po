@@ -19,7 +19,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdelibs4\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-04-23 03:27+0000\n"
+"POT-Creation-Date: 2023-04-29 02:19+0000\n"
 "PO-Revision-Date: 2023-01-05 11:29+0200\n"
 "Last-Translator: Stelios <sstavra@gmail.com>\n"
 "Language-Team: Greek <kde-i18n-el@kde.org>\n"
@@ -40,7 +40,7 @@ msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
 msgstr "sng@hellug.gr, manolis@koppermind.homelinux.org, p_vidalis@hotmail.com"
 
-#: kcmoduleloader.cpp:49
+#: kcmoduleloader.cpp:50
 #, kde-format
 msgid ""
 "<qt><p>Possible reasons:<ul><li>An error occurred during your last system "
@@ -56,17 +56,17 @@ msgstr ""
 "σφάλματος. Αν αυτό αποτύχει, ίσως πρέπει να επικοινωνήσετε με το διανομέα "
 "σας ή το δημιουργό του πακέτου.</p></qt>"
 
-#: kcmoduleloader.cpp:69
+#: kcmoduleloader.cpp:70
 #, kde-format
 msgid "The module %1 is disabled."
 msgstr "Το άρθρωμα %1 είναι απενεργοποιημένο."
 
-#: kcmoduleloader.cpp:69
+#: kcmoduleloader.cpp:70
 #, kde-format
 msgid "The module has been disabled by the system administrator."
 msgstr "Το άρθρωμα έχει απενεργοποιηθεί από τον διαχειριστή του συστήματος."
 
-#: kcmoduleloader.cpp:75
+#: kcmoduleloader.cpp:76
 #, kde-format
 msgid "Error loading QML file."
 msgstr "Σφάλμα κατά τη φόρτωση του UML αρχείου."
@@ -159,15 +159,11 @@ msgstr "Μεταφραστές"
 msgid "Send an email to %1"
 msgstr "Αποστολή ηλ. αλληλογραφίας στο %1"
 
-#: qml/kquickconfigmodule.cpp:114
-#, kde-format
-msgid "Invalid KPackage '%1'"
-msgstr ""
-
-#: qml/kquickconfigmodule.cpp:120
-#, kde-format
-msgid "No QML file provided"
-msgstr ""
+#: qml/kquickconfigmodule.cpp:128
+#, fuzzy, kde-format
+#| msgid "Could not find service '%1'."
+msgid "Could not find resource '%1'"
+msgstr "Αδυναμία εύρεσης της υπηρεσίας '%1'."
 
 #~ msgctxt "@info:tooltip"
 #~ msgid "Configure..."
@@ -8379,9 +8375,6 @@ msgstr ""
 
 #~ msgid "KDEInit could not launch '%1'"
 #~ msgstr "Το KDEInit δεν μπόρεσε να εκτελέσει το '%1'."
-
-#~ msgid "Could not find service '%1'."
-#~ msgstr "Αδυναμία εύρεσης της υπηρεσίας '%1'."
 
 #~ msgid "Service '%1' must be executable to run."
 #~ msgstr "Η υπηρεσία '%1' πρέπει να είναι εκτελέσιμη για την έναρξή της."

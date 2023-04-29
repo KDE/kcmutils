@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdelibs4\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-04-23 03:27+0000\n"
+"POT-Creation-Date: 2023-04-29 02:19+0000\n"
 "PO-Revision-Date: 2023-03-19 14:31+0100\n"
 "Last-Translator: Karl Ove Hufthammer <karl@huftis.org>\n"
 "Language-Team: Norwegian Nynorsk <l10n-no@lister.huftis.org>\n"
@@ -33,7 +33,7 @@ msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
 msgstr "gaute@verdsveven.com,karl@huftis.org"
 
-#: kcmoduleloader.cpp:49
+#: kcmoduleloader.cpp:50
 #, kde-format
 msgid ""
 "<qt><p>Possible reasons:<ul><li>An error occurred during your last system "
@@ -49,17 +49,17 @@ msgstr ""
 "lukkast, kan du vurdera å kontakta distributøren din eller pakkebyggjaren.</"
 "p></qt>"
 
-#: kcmoduleloader.cpp:69
+#: kcmoduleloader.cpp:70
 #, kde-format
 msgid "The module %1 is disabled."
 msgstr "Modulen %1 er slått av."
 
-#: kcmoduleloader.cpp:69
+#: kcmoduleloader.cpp:70
 #, kde-format
 msgid "The module has been disabled by the system administrator."
 msgstr "Denne modulen er slått av av systemadministratoren."
 
-#: kcmoduleloader.cpp:75
+#: kcmoduleloader.cpp:76
 #, kde-format
 msgid "Error loading QML file."
 msgstr "Feil ved lasting av QML-fil."
@@ -152,12 +152,13 @@ msgstr "Omsetjarar"
 msgid "Send an email to %1"
 msgstr "Send e-post til %1"
 
-#: qml/kquickconfigmodule.cpp:114
+#: qml/kquickconfigmodule.cpp:128
 #, kde-format
-msgid "Invalid KPackage '%1'"
-msgstr "Ugyldig KPackage «%1»"
+msgid "Could not find resource '%1'"
+msgstr ""
 
-#: qml/kquickconfigmodule.cpp:120
-#, kde-format
-msgid "No QML file provided"
-msgstr "Manglar QML-fil"
+#~ msgid "Invalid KPackage '%1'"
+#~ msgstr "Ugyldig KPackage «%1»"
+
+#~ msgid "No QML file provided"
+#~ msgstr "Manglar QML-fil"

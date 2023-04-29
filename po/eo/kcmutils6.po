@@ -14,7 +14,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kcmutils\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-04-23 03:27+0000\n"
+"POT-Creation-Date: 2023-04-29 02:19+0000\n"
 "PO-Revision-Date: 2023-04-15 14:32+0100\n"
 "Last-Translator: Oliver Kellogg <okellogg@users.sourceforge.net>\n"
 "Language-Team: Esperanto <kde-i18n-eo@kde.org>\n"
@@ -38,7 +38,7 @@ msgstr ""
 "matthias@peick.de, okellogg@users.sourceforge.net, cfmckee@gmail.com, "
 "axel@esperanto-jeunes.org, michael.moroni@mailoo.org"
 
-#: kcmoduleloader.cpp:49
+#: kcmoduleloader.cpp:50
 #, kde-format
 msgid ""
 "<qt><p>Possible reasons:<ul><li>An error occurred during your last system "
@@ -53,17 +53,17 @@ msgstr ""
 "kaj provu forigi la modulon nomitan en la erarmesaĝo. Se tio malsukcesas, "
 "konsideru kontakti vian distribuanton aŭ pakaĵanton.</p></qt>"
 
-#: kcmoduleloader.cpp:69
+#: kcmoduleloader.cpp:70
 #, kde-format
 msgid "The module %1 is disabled."
 msgstr "La modulo %1 estas malŝaltita."
 
-#: kcmoduleloader.cpp:69
+#: kcmoduleloader.cpp:70
 #, kde-format
 msgid "The module has been disabled by the system administrator."
 msgstr "La modulo estis malebligata far le sistemadministranto."
 
-#: kcmoduleloader.cpp:75
+#: kcmoduleloader.cpp:76
 #, kde-format
 msgid "Error loading QML file."
 msgstr "Eraro dum lego de QML-dosiero."
@@ -155,12 +155,13 @@ msgstr "Tradukistoj"
 msgid "Send an email to %1"
 msgstr "Sendi retleteron al %1"
 
-#: qml/kquickconfigmodule.cpp:114
+#: qml/kquickconfigmodule.cpp:128
 #, kde-format
-msgid "Invalid KPackage '%1'"
-msgstr "Nevalida KPackage '%1'"
+msgid "Could not find resource '%1'"
+msgstr ""
 
-#: qml/kquickconfigmodule.cpp:120
-#, kde-format
-msgid "No QML file provided"
-msgstr "Neniu QML-dosiero provizita"
+#~ msgid "Invalid KPackage '%1'"
+#~ msgstr "Nevalida KPackage '%1'"
+
+#~ msgid "No QML file provided"
+#~ msgstr "Neniu QML-dosiero provizita"

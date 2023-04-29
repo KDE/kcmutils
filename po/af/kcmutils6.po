@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdelibs4 stable\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-04-23 03:27+0000\n"
+"POT-Creation-Date: 2023-04-29 02:19+0000\n"
 "PO-Revision-Date: 2006-01-12 16:33+0200\n"
 "Last-Translator: JUANITA FRANZ <JUANITA.FRANZ@VR-WEB.DE>\n"
 "Language-Team: AFRIKAANS <translate-discuss-af@lists.sourceforge.net>\n"
@@ -23,7 +23,7 @@ msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
 msgstr "frix@expertron.co.za,juanita.franz@vr-web.de "
 
-#: kcmoduleloader.cpp:49
+#: kcmoduleloader.cpp:50
 #, fuzzy, kde-format
 #| msgid ""
 #| "<qt><p>The diagnostics is:<br>%1<p>Possible reasons:</p><ul><li>An error "
@@ -46,18 +46,18 @@ msgstr ""
 "boodskap genoem is. As dit nie help nie, oorweeg om jou verspreider of "
 "verpakker te kontak.</p></qt>"
 
-#: kcmoduleloader.cpp:69
+#: kcmoduleloader.cpp:70
 #, fuzzy, kde-format
 msgid "The module %1 is disabled."
 msgstr "Kon nie module %1 laai nie."
 
-#: kcmoduleloader.cpp:69
+#: kcmoduleloader.cpp:70
 #, fuzzy, kde-format
 #| msgid "Please contact your system administrator."
 msgid "The module has been disabled by the system administrator."
 msgstr "Kontak asseblief die stelsel administrateur."
 
-#: kcmoduleloader.cpp:75
+#: kcmoduleloader.cpp:76
 #, fuzzy, kde-format
 #| msgid "Error opening file."
 msgid "Error loading QML file."
@@ -165,15 +165,11 @@ msgstr "Vertaling"
 msgid "Send an email to %1"
 msgstr "Stuur E-pos"
 
-#: qml/kquickconfigmodule.cpp:114
-#, kde-format
-msgid "Invalid KPackage '%1'"
-msgstr ""
-
-#: qml/kquickconfigmodule.cpp:120
-#, kde-format
-msgid "No QML file provided"
-msgstr ""
+#: qml/kquickconfigmodule.cpp:128
+#, fuzzy, kde-format
+#| msgid "Could not find service '%1'."
+msgid "Could not find resource '%1'"
+msgstr "Kon nie soek diens '%1'."
 
 #, fuzzy
 #~| msgid "Confi&gure..."
@@ -8321,9 +8317,6 @@ msgstr ""
 #~| msgid "KDEInit could not launch '%1'."
 #~ msgid "KDEInit could not launch '%1'"
 #~ msgstr "Kdeinit kon nie '%1' lanseer nie."
-
-#~ msgid "Could not find service '%1'."
-#~ msgstr "Kon nie soek diens '%1'."
 
 #~ msgid "Service '%1' is malformatted."
 #~ msgstr "Diens '%1' is verkeerd geformatteer."

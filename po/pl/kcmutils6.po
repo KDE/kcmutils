@@ -16,7 +16,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdelibs4\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-04-23 03:27+0000\n"
+"POT-Creation-Date: 2023-04-29 02:19+0000\n"
 "PO-Revision-Date: 2023-04-10 10:56+0200\n"
 "Last-Translator: Łukasz Wojniłowicz <lukasz.wojnilowicz@gmail.com>\n"
 "Language-Team: Polish <kde-i18n-doc@kde.org>\n"
@@ -122,7 +122,7 @@ msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
 msgstr "mrudolf@kdewebdev.org, eugenewolfe@o2.pl, lukasz.wojnilowicz@gmail.com"
 
-#: kcmoduleloader.cpp:49
+#: kcmoduleloader.cpp:50
 #, kde-format
 msgid ""
 "<qt><p>Possible reasons:<ul><li>An error occurred during your last system "
@@ -138,17 +138,17 @@ msgstr ""
 "błąd. Jeśli to się nie powiedzie, proszę skontaktować się z twórcą "
 "dystrybucji lub administratorem systemu.</p></qt>"
 
-#: kcmoduleloader.cpp:69
+#: kcmoduleloader.cpp:70
 #, kde-format
 msgid "The module %1 is disabled."
 msgstr "Moduł %1 jest wyłączony."
 
-#: kcmoduleloader.cpp:69
+#: kcmoduleloader.cpp:70
 #, kde-format
 msgid "The module has been disabled by the system administrator."
 msgstr "Moduł ten został wyłączony przez administratora systemu."
 
-#: kcmoduleloader.cpp:75
+#: kcmoduleloader.cpp:76
 #, kde-format
 msgid "Error loading QML file."
 msgstr "Błąd wczytywania pliku QML."
@@ -240,15 +240,17 @@ msgstr "Tłumacze"
 msgid "Send an email to %1"
 msgstr "Wyślij wiadomość do %1"
 
-#: qml/kquickconfigmodule.cpp:114
-#, kde-format
-msgid "Invalid KPackage '%1'"
-msgstr "Nieprawidłowy KPackage '%1'"
+#: qml/kquickconfigmodule.cpp:128
+#, fuzzy, kde-format
+#| msgid "Could not find service '%1'."
+msgid "Could not find resource '%1'"
+msgstr "Nie można odnaleźć serwisu '%1'."
 
-#: qml/kquickconfigmodule.cpp:120
-#, kde-format
-msgid "No QML file provided"
-msgstr "Nie podano pliku QML"
+#~ msgid "Invalid KPackage '%1'"
+#~ msgstr "Nieprawidłowy KPackage '%1'"
+
+#~ msgid "No QML file provided"
+#~ msgstr "Nie podano pliku QML"
 
 #~ msgctxt "@info:tooltip"
 #~ msgid "Configure..."
@@ -8354,9 +8356,6 @@ msgstr "Nie podano pliku QML"
 
 #~ msgid "KDEInit could not launch '%1'"
 #~ msgstr "KDEInit nie może uruchomić '%1'"
-
-#~ msgid "Could not find service '%1'."
-#~ msgstr "Nie można odnaleźć serwisu '%1'."
 
 #~ msgid "Service '%1' must be executable to run."
 #~ msgstr "Usługa '%1' musi być wykonywalna, żeby można ją było uruchomić."

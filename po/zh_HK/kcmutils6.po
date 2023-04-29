@@ -24,7 +24,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdelibs4\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-04-23 03:27+0000\n"
+"POT-Creation-Date: 2023-04-29 02:19+0000\n"
 "PO-Revision-Date: 2006-01-04 13:32+0800\n"
 "Last-Translator: Abel Cheung <abel@oaka.org>\n"
 "Language-Team: Chinese (Hong Kong) <community@linuxhall.org>\n"
@@ -52,7 +52,7 @@ msgstr ""
 "ycheng@slat.org,lark@linux.ustc.edu.cn,fundawang@en2china.com,sarahs@redhat."
 "com,jxiong@offtopic.org,acelan@linux.org.tw,stanley18fan0k@yahoo.com.hk"
 
-#: kcmoduleloader.cpp:49
+#: kcmoduleloader.cpp:50
 #, fuzzy, kde-format
 #| msgid ""
 #| "<qt><p>The diagnostics is:<br>%1<p>Possible reasons:</p><ul><li>An error "
@@ -73,18 +73,18 @@ msgstr ""
 "問題，並嘗試移除錯誤訊息中的模組。若是不行，請聯絡你的發行商或套件供應者。</"
 "p></qt>"
 
-#: kcmoduleloader.cpp:69
+#: kcmoduleloader.cpp:70
 #, fuzzy, kde-format
 msgid "The module %1 is disabled."
 msgstr "無法載入模組 %1。"
 
-#: kcmoduleloader.cpp:69
+#: kcmoduleloader.cpp:70
 #, fuzzy, kde-format
 #| msgid "Please contact your system administrator."
 msgid "The module has been disabled by the system administrator."
 msgstr "請聯絡你的系統管理者。"
 
-#: kcmoduleloader.cpp:75
+#: kcmoduleloader.cpp:76
 #, fuzzy, kde-format
 #| msgid "Error opening file."
 msgid "Error loading QML file."
@@ -194,15 +194,11 @@ msgstr "翻譯"
 msgid "Send an email to %1"
 msgstr "傳送 &Email"
 
-#: qml/kquickconfigmodule.cpp:114
-#, kde-format
-msgid "Invalid KPackage '%1'"
-msgstr ""
-
-#: qml/kquickconfigmodule.cpp:120
-#, kde-format
-msgid "No QML file provided"
-msgstr ""
+#: qml/kquickconfigmodule.cpp:128
+#, fuzzy, kde-format
+#| msgid "Could not find service '%1'."
+msgid "Could not find resource '%1'"
+msgstr "找不到服務程式‘%1’。"
 
 #, fuzzy
 #~| msgid "Confi&gure..."
@@ -8181,9 +8177,6 @@ msgstr ""
 #~| msgid "KDEInit could not launch '%1'."
 #~ msgid "KDEInit could not launch '%1'"
 #~ msgstr "KDEInit 無法啟動‘%1’。"
-
-#~ msgid "Could not find service '%1'."
-#~ msgstr "找不到服務程式‘%1’。"
 
 #~ msgid "Service '%1' is malformatted."
 #~ msgstr "服務程式‘%1’的格式不正確。"

@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdelibs4\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-04-23 03:27+0000\n"
+"POT-Creation-Date: 2023-04-29 02:19+0000\n"
 "PO-Revision-Date: 2022-09-27 23:06+0700\n"
 "Last-Translator: Wantoyèk <wantoyek@gmail.com>\n"
 "Language-Team: Indonesian <kde-i18n-doc@kde.org>\n"
@@ -31,7 +31,7 @@ msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
 msgstr "andhika.padmawan@gmail.com,wantoyek@gmail.com"
 
-#: kcmoduleloader.cpp:49
+#: kcmoduleloader.cpp:50
 #, kde-format
 msgid ""
 "<qt><p>Possible reasons:<ul><li>An error occurred during your last system "
@@ -47,17 +47,17 @@ msgstr ""
 "modul yang disebutkan dalam pesan error. Jika hal ini tetap gagal, "
 "pertimbangkanlah untuk menghubungi distributor atau pemaketmu.</p></qt>"
 
-#: kcmoduleloader.cpp:69
+#: kcmoduleloader.cpp:70
 #, kde-format
 msgid "The module %1 is disabled."
 msgstr "Modul %1 dinonfungsikan."
 
-#: kcmoduleloader.cpp:69
+#: kcmoduleloader.cpp:70
 #, kde-format
 msgid "The module has been disabled by the system administrator."
 msgstr "Modul telah dinonaktifkan oleh administrator sistem."
 
-#: kcmoduleloader.cpp:75
+#: kcmoduleloader.cpp:76
 #, kde-format
 msgid "Error loading QML file."
 msgstr "Error memuat file QML."
@@ -150,15 +150,11 @@ msgstr "Penerjemah"
 msgid "Send an email to %1"
 msgstr "Kirim sebuah email ke %1"
 
-#: qml/kquickconfigmodule.cpp:114
-#, kde-format
-msgid "Invalid KPackage '%1'"
-msgstr ""
-
-#: qml/kquickconfigmodule.cpp:120
-#, kde-format
-msgid "No QML file provided"
-msgstr ""
+#: qml/kquickconfigmodule.cpp:128
+#, fuzzy, kde-format
+#| msgid "Could not find service '%1'."
+msgid "Could not find resource '%1'"
+msgstr "Tak dapat menemukan layanan '%1'."
 
 #~ msgctxt "@info:tooltip"
 #~ msgid "Configure..."
@@ -8248,9 +8244,6 @@ msgstr ""
 
 #~ msgid "KDEInit could not launch '%1'"
 #~ msgstr "KDEInit tak dapat menjalankan '%1'"
-
-#~ msgid "Could not find service '%1'."
-#~ msgstr "Tak dapat menemukan layanan '%1'."
 
 #~ msgid "Service '%1' must be executable to run."
 #~ msgstr "Layanan '%1' harus dapat dieksekusi agar berjalan."

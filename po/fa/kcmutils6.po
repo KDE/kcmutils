@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdelibs4\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-04-23 03:27+0000\n"
+"POT-Creation-Date: 2023-04-29 02:19+0000\n"
 "PO-Revision-Date: 2012-06-28 16:40+0430\n"
 "Last-Translator: Mohammad Reza Mirdamadi <mohi@linuxshop.ir>\n"
 "Language-Team: Farsi (Persian) <kde-i18n-fa@kde.org>\n"
@@ -33,7 +33,7 @@ msgstr ""
 "mohi@linuxshop.ir , kazemi@itland.ir , mebrahim@gmail.com , s.taghavi@gmail."
 "com"
 
-#: kcmoduleloader.cpp:49
+#: kcmoduleloader.cpp:50
 #, fuzzy, kde-format
 #| msgid ""
 #| "<qt><p>Possible reasons:<ul><li>An error occurred during your last KDE "
@@ -54,18 +54,18 @@ msgstr ""
 "پیام خطا را حذف کنید. اگر این خراب می‌شود، تماس با توزیع‌کننده یا "
 "بسته‌بندی‌کننده خود را مد نظر بگیرید.</p></qt>"
 
-#: kcmoduleloader.cpp:69
+#: kcmoduleloader.cpp:70
 #, kde-format
 msgid "The module %1 is disabled."
 msgstr "پیمانه  %1 غیرفعال می‌شود."
 
-#: kcmoduleloader.cpp:69
+#: kcmoduleloader.cpp:70
 #, fuzzy, kde-format
 #| msgid "Please contact your system administrator."
 msgid "The module has been disabled by the system administrator."
 msgstr "لطفاً، با سرپرست سیستم خود تماس بگیرید."
 
-#: kcmoduleloader.cpp:75
+#: kcmoduleloader.cpp:76
 #, fuzzy, kde-format
 #| msgid "Error opening file."
 msgid "Error loading QML file."
@@ -171,15 +171,11 @@ msgstr "ترجمه"
 msgid "Send an email to %1"
 msgstr "&ارسال رایانامه‌"
 
-#: qml/kquickconfigmodule.cpp:114
-#, kde-format
-msgid "Invalid KPackage '%1'"
-msgstr ""
-
-#: qml/kquickconfigmodule.cpp:120
-#, kde-format
-msgid "No QML file provided"
-msgstr ""
+#: qml/kquickconfigmodule.cpp:128
+#, fuzzy, kde-format
+#| msgid "Could not find service '%1'."
+msgid "Could not find resource '%1'"
+msgstr "نتوانست خدمت »%1« را پیدا کند."
 
 #, fuzzy
 #~| msgid "Confi&gure..."
@@ -8424,9 +8420,6 @@ msgstr ""
 #~| msgid "KDEInit could not launch '%1'."
 #~ msgid "KDEInit could not launch '%1'"
 #~ msgstr "KDEInit نتوانست  »%1« را راه‌اندازی کند."
-
-#~ msgid "Could not find service '%1'."
-#~ msgstr "نتوانست خدمت »%1« را پیدا کند."
 
 #~ msgid "Service '%1' must be executable to run."
 #~ msgstr "سرویس «%1»  برای اجرا شدن باید اجرایی باشد."

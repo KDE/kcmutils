@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdelibs4\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-04-23 03:27+0000\n"
+"POT-Creation-Date: 2023-04-29 02:19+0000\n"
 "PO-Revision-Date: 2010-12-31 22:47+0700\n"
 "Last-Translator: Phuwanat Sakornsakolpat <narachai@gmail.com>\n"
 "Language-Team: Thai <thai-l10n@googlegroups.com>\n"
@@ -31,7 +31,7 @@ msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
 msgstr "donga.nb@gmail.com, drrider@gmail.com"
 
-#: kcmoduleloader.cpp:49
+#: kcmoduleloader.cpp:50
 #, fuzzy, kde-format
 #| msgid ""
 #| "<qt><p>Possible reasons:<ul><li>An error occurred during your last KDE "
@@ -51,18 +51,18 @@ msgstr ""
 "p><p>ให้ตรวจสอบจุดเหล่านี้อย่างระมัดระวัง และให้ลองลบมอดูลที่ถูกกล่าวถึง "
 "ในข้อความบอกข้อผิดพลาด หากยังไม่ได้ผล โปรดพิจารณาติดต่อผู้แจกจ่าย หรือผู้ทำแพกเกจ</p></qt>"
 
-#: kcmoduleloader.cpp:69
+#: kcmoduleloader.cpp:70
 #, kde-format
 msgid "The module %1 is disabled."
 msgstr "มอดูล %1 ถูกปิดการใช้งาน"
 
-#: kcmoduleloader.cpp:69
+#: kcmoduleloader.cpp:70
 #, fuzzy, kde-format
 #| msgid "Please contact your system administrator."
 msgid "The module has been disabled by the system administrator."
 msgstr "โปรดติดต่อผู้บริหารระบบของคุณ"
 
-#: kcmoduleloader.cpp:75
+#: kcmoduleloader.cpp:76
 #, fuzzy, kde-format
 #| msgid "Error loading '%1'.\n"
 msgid "Error loading QML file."
@@ -166,15 +166,11 @@ msgstr "การแปลภาษา"
 msgid "Send an email to %1"
 msgstr "&ส่งอีเมล"
 
-#: qml/kquickconfigmodule.cpp:114
-#, kde-format
-msgid "Invalid KPackage '%1'"
-msgstr ""
-
-#: qml/kquickconfigmodule.cpp:120
-#, kde-format
-msgid "No QML file provided"
-msgstr ""
+#: qml/kquickconfigmodule.cpp:128
+#, fuzzy, kde-format
+#| msgid "Could not find service '%1'."
+msgid "Could not find resource '%1'"
+msgstr "ไม่พบบริการ '%1'"
 
 #, fuzzy
 #~| msgid "Confi&gure..."
@@ -8121,9 +8117,6 @@ msgstr ""
 #~| msgid "KDEInit could not launch '%1'."
 #~ msgid "KDEInit could not launch '%1'"
 #~ msgstr "KDEInit ไม่สามารถเรียก '%1' ให้ทำงานได้"
-
-#~ msgid "Could not find service '%1'."
-#~ msgstr "ไม่พบบริการ '%1'"
 
 #~ msgid "Service '%1' must be executable to run."
 #~ msgstr "บริการ '%1' จะต้องมีสิทธิ์สามารถประมวลผลได้เพื่อจะเรียกใช้ได้"

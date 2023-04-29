@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdelibs4\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-04-23 03:27+0000\n"
+"POT-Creation-Date: 2023-04-29 02:19+0000\n"
 "PO-Revision-Date: 2021-08-22 13:04+0530\n"
 "Last-Translator: Raghavendra Kamath <raghu@raghukamath.com>\n"
 "Language-Team: kde-hindi\n"
@@ -31,7 +31,7 @@ msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
 msgstr "karunakar@indlinux.org, raghu@raghukamath.com"
 
-#: kcmoduleloader.cpp:49
+#: kcmoduleloader.cpp:50
 #, kde-format
 msgid ""
 "<qt><p>Possible reasons:<ul><li>An error occurred during your last system "
@@ -46,17 +46,17 @@ msgstr ""
 "प्रयास करें। यदि यह विफल रहता है, तो अपने वितरक या पैकेजर से संपर्क करने पर विचार करें।</"
 "p></qt>"
 
-#: kcmoduleloader.cpp:69
+#: kcmoduleloader.cpp:70
 #, kde-format
 msgid "The module %1 is disabled."
 msgstr "मॉड्यूल %1 अक्षम है।"
 
-#: kcmoduleloader.cpp:69
+#: kcmoduleloader.cpp:70
 #, kde-format
 msgid "The module has been disabled by the system administrator."
 msgstr "मॉड्यूल को तंत्र व्यवस्थापक द्वारा निष्क्रियम कर दिया गया है।"
 
-#: kcmoduleloader.cpp:75
+#: kcmoduleloader.cpp:76
 #, kde-format
 msgid "Error loading QML file."
 msgstr "क्यूएमएल फाइल लोड करने में त्रुटि।"
@@ -157,15 +157,11 @@ msgstr "अनुवाद "
 msgid "Send an email to %1"
 msgstr "ईमेल भेजें (&S)"
 
-#: qml/kquickconfigmodule.cpp:114
-#, kde-format
-msgid "Invalid KPackage '%1'"
-msgstr ""
-
-#: qml/kquickconfigmodule.cpp:120
-#, kde-format
-msgid "No QML file provided"
-msgstr ""
+#: qml/kquickconfigmodule.cpp:128
+#, fuzzy, kde-format
+#| msgid "Could not find service '%1'."
+msgid "Could not find resource '%1'"
+msgstr "सर्विस '%1' नहीं मिला."
 
 #, fuzzy
 #~| msgid "Confi&gure..."
@@ -7428,9 +7424,6 @@ msgstr ""
 
 #~ msgid "KDEInit could not launch '%1'"
 #~ msgstr "केडीई-इनिट '%1' को चालू नहीं कर सका."
-
-#~ msgid "Could not find service '%1'."
-#~ msgstr "सर्विस '%1' नहीं मिला."
 
 #~ msgid "Service '%1' is malformatted."
 #~ msgstr "सर्विस '%1' मालफॉर्मेटेड है."

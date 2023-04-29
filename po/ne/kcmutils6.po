@@ -11,7 +11,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdelibs4\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-04-23 03:27+0000\n"
+"POT-Creation-Date: 2023-04-29 02:19+0000\n"
 "PO-Revision-Date: 2007-11-05 15:41+0545\n"
 "Last-Translator: Shyam Krishna Bal <shyamkrishna_bal@yahoo.com>\n"
 "Language-Team: Nepali <info@mpp.org.np>\n"
@@ -32,7 +32,7 @@ msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
 msgstr "submanesh@gmail.com, shyamkrishna_bal@yahoo.com, Nabin@mpp.org.np"
 
-#: kcmoduleloader.cpp:49
+#: kcmoduleloader.cpp:50
 #, fuzzy, kde-format
 #| msgid ""
 #| "<qt><p>Possible reasons:<ul><li>An error occurred during your last KDE "
@@ -53,18 +53,18 @@ msgstr ""
 "हटाउने प्रयास गर्नुहोस् । यदि यो असफल भएमा, तपाईँको वितरक वा प्याकेज बनाउनेलाई सम्पर्क "
 "गर्न सम्झनुहोस् ।</p></qt>"
 
-#: kcmoduleloader.cpp:69
+#: kcmoduleloader.cpp:70
 #, kde-format
 msgid "The module %1 is disabled."
 msgstr " %1 मोड्युल अक्षम पारिएकोछ ।"
 
-#: kcmoduleloader.cpp:69
+#: kcmoduleloader.cpp:70
 #, fuzzy, kde-format
 #| msgid "Please contact your system administrator."
 msgid "The module has been disabled by the system administrator."
 msgstr "कृपया तपाईँको प्रणाली प्रबन्धकसँग सम्पर्क गर्नुहोस् ।"
 
-#: kcmoduleloader.cpp:75
+#: kcmoduleloader.cpp:76
 #, fuzzy, kde-format
 #| msgid "Error opening file."
 msgid "Error loading QML file."
@@ -173,15 +173,11 @@ msgstr "अनुवाद"
 msgid "Send an email to %1"
 msgstr "इमेल पठाउनुहोस्"
 
-#: qml/kquickconfigmodule.cpp:114
-#, kde-format
-msgid "Invalid KPackage '%1'"
-msgstr ""
-
-#: qml/kquickconfigmodule.cpp:120
-#, kde-format
-msgid "No QML file provided"
-msgstr ""
+#: qml/kquickconfigmodule.cpp:128
+#, fuzzy, kde-format
+#| msgid "Could not find service '%1'."
+msgid "Could not find resource '%1'"
+msgstr "'%1' सेवा फेला पार्न सकेन ।"
 
 #, fuzzy
 #~| msgid "Confi&gure..."
@@ -8769,9 +8765,6 @@ msgstr ""
 #~| msgid "KDEInit could not launch '%1'."
 #~ msgid "KDEInit could not launch '%1'"
 #~ msgstr "KDEInit ले '%1' सुरुआत गर्न सकेन ।"
-
-#~ msgid "Could not find service '%1'."
-#~ msgstr "'%1' सेवा फेला पार्न सकेन ।"
 
 #~ msgid "Service '%1' is malformatted."
 #~ msgstr "'%1' सेवा विकृत ढाँचाबद्ध गरिएको छ ।"
