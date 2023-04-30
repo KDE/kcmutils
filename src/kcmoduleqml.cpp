@@ -213,7 +213,7 @@ Kirigami.ApplicationItem {
         qFatal("Failed to initialize KCModuleQML");
     }
     d->rootPlaceHolder->setProperty("kcm", QVariant::fromValue(d->configModule));
-    d->rootPlaceHolder->installEventFilter(this);
+    d->rootPlaceHolder->installEventFilter(d->widget);
     d->quickWidget->setContent(QUrl(), component, d->rootPlaceHolder);
 
     d->pageRow = d->rootPlaceHolder->property("pageStack").value<QQuickItem *>();
