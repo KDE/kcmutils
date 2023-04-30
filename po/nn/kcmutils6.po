@@ -156,9 +156,3 @@ msgstr "Send e-post til %1"
 #, kde-format
 msgid "Could not find resource '%1'"
 msgstr ""
-
-#~ msgid "Invalid KPackage '%1'"
-#~ msgstr "Ugyldig KPackage «%1»"
-
-#~ msgid "No QML file provided"
-#~ msgstr "Manglar QML-fil"
