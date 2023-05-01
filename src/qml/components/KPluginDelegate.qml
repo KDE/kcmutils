@@ -1,16 +1,16 @@
 /*
     SPDX-FileCopyrightText: 2022 Alexander Lohnau <alexander.lohnau@gmx.de>
+    SPDX-FileCopyrightText: 2023 ivan tkachenko <me@ratijas.tk>
+
     SPDX-License-Identifier: LGPL-2.0-or-later
 */
 
-import QtQuick 2.5
-import QtQuick.Controls 2.5 as QQC2
-import QtQuick.Controls 2.4 as Controls
+import QtQuick
+import QtQuick.Controls as QQC2
+import QtQuick.Layouts
 
-import QtQuick.Layouts 1.1
-
-import org.kde.kirigami 2.5 as Kirigami
-import org.kde.kcm 1.5 as KCM
+import org.kde.kirigami 2 as Kirigami
+import org.kde.kcm as KCM
 
 /// @since 5.94
 // Not using Kirigami.CheckableListItem despite having a checkbox because we
@@ -20,15 +20,18 @@ Kirigami.BasicListItem {
     id: listItem
 
     property list<QQC2.Action> additionalActions
+
     signal configTriggered()
 
     leading: QQC2.CheckBox {
-        checkState: model.enabled ? Qt.Checked : Qt.Unchecked;
+        id: checkbox
 
-        onToggled: model.enabled = checkState
+        checked: model.enabled
+
+        onToggled: model.enabled = checked
 
         KCM.SettingHighlighter {
-            highlight: parent.checked !== model.enabledByDefault
+            highlight: checkbox.checked !== model.enabledByDefault
         }
     }
 
@@ -43,35 +46,31 @@ Kirigami.BasicListItem {
     reserveSpaceForSubtitle: true
 
     // Take care of displaying the actions
-    property var infoAction: Kirigami.Action {
+    readonly property Kirigami.Action __infoAction: Kirigami.Action {
+        id: infoAction
+
         icon.name: "dialog-information"
-        tooltip: i18nc("@info:tooltip", "About")
+        text: i18nc("@info:tooltip", "About")
+        displayHint: Kirigami.DisplayHint.IconOnly
         onTriggered: {
-            const aboutDialog = listItem.parent.parent.__aboutDialog
+            const aboutDialog = listItem.ListView.view.__aboutDialog
             aboutDialog.metaDataInfo = model.metaData
             aboutDialog.open()
         }
     }
-    property var configureAction: Kirigami.Action {
+
+    readonly property Kirigami.Action __configureAction: Kirigami.Action {
+        id: configureAction
+
         visible: model.config.isValid
         enabled: model.enabled
         icon.name: "configure"
-        tooltip: i18nc("@info:tooltip", "Configure…")
+        text: i18nc("@info:tooltip", "Configure…")
+        displayHint: Kirigami.DisplayHint.IconOnly
         onTriggered: listItem.configTriggered()
     }
 
-    // Put this in an intermediary property so that we can append to the list
-    property var __allActions: []
-    Component.onCompleted:  {
-        const tmp = [];
-        tmp.push(infoAction)
-        tmp.push(configureAction)
-        for (let i = 0; i < additionalActions.length; i++) {
-            tmp.push(additionalActions[i])
-        }
-        __allActions = tmp
-    }
     trailing: Kirigami.ActionToolBar {
-        actions: __allActions
+        actions: [infoAction, configureAction, ...listItem.additionalActions]
     }
 }
