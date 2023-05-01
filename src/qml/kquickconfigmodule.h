@@ -55,8 +55,8 @@ class KQuickConfigModulePrivate;
  *
  * The constructor of the ConfigModule then looks like this:
  * \code
- * YourConfigModule::YourConfigModule(QObject *parent, const KPluginMetaData &metaData, const QVariantList &args)
- *   : KQuickConfigModule(parent, metaData, args)
+ * YourConfigModule::YourConfigModule(QObject *parent, const KPluginMetaData &metaData)
+ *   : KQuickConfigModule(parent, metaData)
  * {
  * }
  * \endcode
@@ -115,7 +115,7 @@ public:
      * @note do not emit changed signals here, since they are not yet connected
      *       to any slot.
      */
-    explicit KQuickConfigModule(QObject *parent, const KPluginMetaData &metaData, const QVariantList &args);
+    explicit KQuickConfigModule(QObject *parent, const KPluginMetaData &metaData, const QVariantList &args = {});
 
     /**
      * Destroys the module.

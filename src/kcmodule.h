@@ -42,8 +42,8 @@ class KCModulePrivate;
  *
  * The constructor of the KCModule then looks like this:
  * \code
- * YourKCModule::YourKCModule(QWidget *parent, const KPluginMetaData &data, const QVariantList &args)
- *   : KCModule(parent, data, args)
+ * YourKCModule::YourKCModule(QWidget *parent, const KPluginMetaData &data)
+ *   : KCModule(parent, data)
  * {
  * // KCModule does not directly extend QWidget due to ambiguity with KAbstractConfigModule
  * // Because of this, you need to call widget() to get the parent widget
@@ -67,7 +67,7 @@ public:
      * @note do not emit changed signals here, since they are not yet connected
      *       to any slot.
      */
-    explicit KCModule(QWidget *parent, const KPluginMetaData &data, const QVariantList &args);
+    explicit KCModule(QWidget *parent, const KPluginMetaData &data, const QVariantList &args = {});
 
     /**
      * Destroys the module.
@@ -145,7 +145,7 @@ protected:
      * Utility overload to avoid having to take both parent and parentWidget
      * KCModuleLoader::loadModule enforces the parent to be a QWidget anyway
      */
-    explicit KCModule(QObject *parent, const KPluginMetaData &data, const QVariantList &args)
+    explicit KCModule(QObject *parent, const KPluginMetaData &data, const QVariantList &args = {})
         : KCModule(qobject_cast<QWidget *>(parent), data, args)
     {
     }
