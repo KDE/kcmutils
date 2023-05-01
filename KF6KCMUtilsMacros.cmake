@@ -167,7 +167,7 @@ function(kcmutils_add_qml_kcm target_name)
     endif()
 
     kcoreaddons_add_plugin(${target_name} INSTALL_NAMESPACE ${ARG_INSTALL_NAMESPACE} SOURCES ${ARG_SOURCES})
-    if (NOT DISABLE_DESKTOP_FILE_GENERATION)
+    if (NOT ARG_DISABLE_DESKTOP_FILE_GENERATION)
         kcmutils_generate_desktop_file(${target_name})
     endif()
     # Hardcode the "ui" filder for now
