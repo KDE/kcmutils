@@ -16,7 +16,7 @@ msgstr ""
 "Project-Id-Version: kdelibs4\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-04-29 02:19+0000\n"
-"PO-Revision-Date: 2023-04-12 03:15+0200\n"
+"PO-Revision-Date: 2023-04-30 11:01+0200\n"
 "Last-Translator: Vincenzo Reale <smart2128vr@gmail.com>\n"
 "Language-Team: Italian <kde-i18n-it@kde.org>\n"
 "Language: it\n"
@@ -24,7 +24,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Lokalize 22.12.3\n"
+"X-Generator: Lokalize 23.04.0\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
@@ -156,10 +156,9 @@ msgid "Send an email to %1"
 msgstr "Invia un messaggio di posta elettronica a %1"
 
 #: qml/kquickconfigmodule.cpp:128
-#, fuzzy, kde-format
-#| msgid "Could not find service '%1'."
+#, kde-format
 msgid "Could not find resource '%1'"
-msgstr "Impossibile trovare il servizio «%1»."
+msgstr "Impossibile trovare la risorsa «%1»"
 
 #~ msgid "Invalid KPackage '%1'"
 #~ msgstr "KPackage «%1» non valido"
