@@ -24,7 +24,7 @@ msgstr ""
 "Project-Id-Version: kdelibs4\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-04-29 02:19+0000\n"
-"PO-Revision-Date: 2023-04-08 10:16+0200\n"
+"PO-Revision-Date: 2023-05-05 16:14+0200\n"
 "Last-Translator: Xavier BESNARD <xavier.besnard]neuf.fr>\n"
 "Language-Team: fr\n"
 "Language: fr\n"
@@ -171,10 +171,9 @@ msgid "Send an email to %1"
 msgstr "Envoyer un courriel vers %1"
 
 #: qml/kquickconfigmodule.cpp:128
-#, fuzzy, kde-format
-#| msgid "Could not find service '%1'."
+#, kde-format
 msgid "Could not find resource '%1'"
-msgstr "Il est impossible de trouver le service « %1 »."
+msgstr "Impossible de trouver la ressource « %1 »"
 
 #~ msgid "Invalid KPackage '%1'"
 #~ msgstr "KPackage « %1 » non valable"
