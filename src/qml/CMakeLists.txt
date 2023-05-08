@@ -52,8 +52,8 @@ target_sources(kcmutilsqmlplugin PRIVATE qmlplugin.cpp settingstateproxy.cpp set
 target_link_libraries(kcmutilsqmlplugin PRIVATE Qt6::Qml Qt6::Quick kcmutils_proxy_model KF6KCMUtilsQuick)
 
 ecm_target_qml_sources(kcmutilsqmlplugin SOURCES
-    components/KPluginDelegate.qml
-    components/KPluginSelector.qml
+    components/PluginDelegate.qml
+    components/PluginSelector.qml
     components/AbstractKCM.qml
     components/ContextualHelpButton.qml
     components/GridDelegate.qml

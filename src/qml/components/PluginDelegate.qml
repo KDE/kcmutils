@@ -12,7 +12,7 @@ import QtQuick.Layouts
 import org.kde.kirigami 2 as Kirigami
 import org.kde.kcmutils as KCM
 
-/// @since 5.94
+/// @since 6.0, this got renamed from KPluginDelegate to PluginDelegate
 // Not using Kirigami.CheckableListItem despite having a checkbox because we
 // need the checkbox to be highlighted by KCM.SettingHighlighter, and
 // CheckableListItem doesn't have that built in.

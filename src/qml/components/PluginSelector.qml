@@ -17,7 +17,7 @@ import "private" as Private
  * If extra butons should be added, a custom KPluginDelegate with the additionalActions
  * property should be defined.
  * 
- * @since 6.0
+ * @since 6.0, this got renamed from KPluginSelector to PluginSelector
  */
 ListView {
     id: pluginSelector
