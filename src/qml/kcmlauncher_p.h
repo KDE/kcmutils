@@ -9,12 +9,9 @@
 
 #include <QObject>
 
-class KCMShell : public QObject
+class KCMLauncher : public QObject
 {
     Q_OBJECT
-
-public:
-    explicit KCMShell(QObject *parent = nullptr);
 
 public Q_SLOTS:
     void open(const QStringList &names) const;

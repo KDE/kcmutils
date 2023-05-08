@@ -4,25 +4,18 @@
     SPDX-License-Identifier: LGPL-2.0-or-later
 */
 
-#include "kcmshell.h"
-
-#include <KAuthorized>
-#include <KService>
+#include "kcmlauncher_p.h"
 
 #include <KIO/CommandLauncherJob>
+#include <KService>
 
-KCMShell::KCMShell(QObject *parent)
-    : QObject(parent)
-{
-}
-
-void KCMShell::open(const QStringList &names) const
+void KCMLauncher::open(const QStringList &names) const
 {
     KIO::CommandLauncherJob *job = new KIO::CommandLauncherJob(QStringLiteral("kcmshell5"), names);
     job->start();
 }
 
-void KCMShell::openSystemSettings(const QString &name, const QStringList &args) const
+void KCMLauncher::openSystemSettings(const QString &name, const QStringList &args) const
 {
     // The desktop filename is the same as the binary and icon
     const QString systemSettings = QStringLiteral("systemsettings");
@@ -45,7 +38,7 @@ void KCMShell::openSystemSettings(const QString &name, const QStringList &args) 
     job->start();
 }
 
-void KCMShell::openInfoCenter(const QString &name) const
+void KCMLauncher::openInfoCenter(const QString &name) const
 {
     const QString infoCenterDesktopFile = QStringLiteral("org.kde.kinfocenter");
     const QString infoCenterbinary = QStringLiteral("kinfocenter");
