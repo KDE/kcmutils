@@ -7,6 +7,8 @@
 
 #include "../core/kpluginproxymodel.h"
 #include "kquickconfigmodule.h"
+#include "settinghighlighterprivate.h"
+#include "settingstateproxy.h"
 
 class KCMUtilsQmlPlugin : public QQmlExtensionPlugin
 {
@@ -15,10 +17,11 @@ class KCMUtilsQmlPlugin : public QQmlExtensionPlugin
 public:
     void registerTypes(const char *uri) override
     {
-        Q_ASSERT(QLatin1String(uri) == QLatin1String("org.kde.kcmutils"));
-        qmlRegisterType<KPluginProxyModel>("org.kde.kcmutils.private", 1, 0, "ProxyModel");
+        qmlRegisterType<KPluginProxyModel>("org.kde.kcmutilsprivate", 1, 0, "ProxyModel");
         qmlRegisterModule(uri, 1, 0);
-        qmlRegisterUncreatableType<KQuickConfigModule>("org.kde.kcmutils", 1, 0, "ConfigModule", QLatin1String("Do not create objects of type ConfigModule"));
+        qmlRegisterUncreatableType<KQuickConfigModule>(uri, 1, 0, "ConfigModule", QLatin1String("Do not create objects of type ConfigModule"));
+        qmlRegisterType<SettingStateProxy>(uri, 1, 3, "SettingStateProxy");
+        qmlRegisterType<SettingHighlighterPrivate>("org.kde.kcmutilsprivate", 1, 3, "SettingHighlighterPrivate");
     };
 };
 

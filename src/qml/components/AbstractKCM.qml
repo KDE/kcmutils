@@ -15,7 +15,7 @@ import org.kde.kirigami 2.14 as Kirigami
  * their own scrollviews.
  * Most of the times SimpleKCM should be used instead
  * @code
- * import org.kde.kcm 1.4 as KCM
+ * import org.kde.kcmutils as KCM
  * import org.kde.kirigami 2.3 as Kirigami
  * KCM.AbstractKCM {
  *     RowLayout {
@@ -30,6 +30,7 @@ import org.kde.kirigami 2.14 as Kirigami
  * }
  * @endcode
  * @inherits org.kde.kirigami.Page
+ * @since 6.0
  */
 Kirigami.Page {
     id: root
@@ -41,8 +42,6 @@ Kirigami.Page {
      * Whether to use this component as the base of a "framed" KCM with an
      * inner scrollview that draws its own frame.
      * Default: true
-     *
-     * @since 5.90
      */
     property bool framedView: true
 
@@ -56,8 +55,6 @@ Kirigami.Page {
      * such restriction, or in System Settings KCMs that don't show Apply, Help,
      * or Defaults buttons, set it to false.
      * Default: true
-     *
-     * @since 5.99
      */
     property bool extraFooterTopPadding: true
 

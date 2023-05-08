@@ -48,10 +48,22 @@ install(TARGETS KF6KCMUtilsQuick EXPORT KF6KCMUtilsTargets ${KF_INSTALL_TARGETS_
 
 # QML plugin
 ecm_add_qml_module(kcmutilsqmlplugin URI "org.kde.kcmutils" CLASSNAME KCMUtilsQmlPlugin)
-target_sources(kcmutilsqmlplugin PRIVATE qmlplugin.cpp)
-target_link_libraries(kcmutilsqmlplugin PRIVATE Qt6::Qml kcmutils_proxy_model KF6KCMUtilsQuick)
+target_sources(kcmutilsqmlplugin PRIVATE qmlplugin.cpp settingstateproxy.cpp settinghighlighterprivate.cpp)
+target_link_libraries(kcmutilsqmlplugin PRIVATE Qt6::Qml Qt6::Quick kcmutils_proxy_model KF6KCMUtilsQuick)
 
-ecm_target_qml_sources(kcmutilsqmlplugin SOURCES components/KPluginDelegate.qml components/KPluginSelector.qml)
+ecm_target_qml_sources(kcmutilsqmlplugin SOURCES
+    components/KPluginDelegate.qml
+    components/KPluginSelector.qml
+    components/AbstractKCM.qml
+    components/ContextualHelpButton.qml
+    components/GridDelegate.qml
+    components/GridViewKCM.qml
+    components/ScrollView.qml
+    components/ScrollViewKCM.qml
+    components/SettingHighlighter.qml
+    components/SettingStateBinding.qml
+    components/SimpleKCM.qml
+)
 ecm_target_qml_sources(kcmutilsqmlplugin SOURCES components/private/AboutPlugin.qml PATH private PRIVATE)
 
 ecm_finalize_qml_module(kcmutilsqmlplugin DESTINATION ${KDE_INSTALL_QMLDIR})

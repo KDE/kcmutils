@@ -9,7 +9,7 @@ import QtQuick.Layouts 1.1
 
 import org.kde.kirigami 2.19 as Kirigami
 
-import org.kde.kcmutils.private 1.0 as KCMUtilsPrivate
+import org.kde.kcmutils.private as KCMUtilsPrivate
 import "private" as Private
 
 /**
@@ -17,7 +17,7 @@ import "private" as Private
  * If extra butons should be added, a custom KPluginDelegate with the additionalActions
  * property should be defined.
  * 
- * @since 5.94
+ * @since 6.0
  */
 ListView {
     id: pluginSelector

@@ -15,7 +15,7 @@ import org.kde.kirigami 2.3 as Kirigami
  * For most KControl modules, it's recommended to use instead the GridViewKCM
  * component as the root element of your module.
  * @code
- * import org.kde.kcm 1.2 as KCM
+ * import org.kde.kcmutils as KCM
  * KCM.ScrollView {
  *     view: ListView {
  *       ...

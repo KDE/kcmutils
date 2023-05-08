@@ -7,8 +7,8 @@
 import QtQuick 2.15
 // Deliberately imported after QtQuick to avoid missing restoreMode property in Binding. Fix in Qt 6.
 import QtQml 2.15
-import org.kde.kcm 1.3 as KCM
-import org.kde.kcm.private 1.3 as KCMP
+import org.kde.kcmutils as KCM
+import org.kde.kcmutils.private as KCMP
 
 /**
  * SettingStateBinding automatically impacts the representation
@@ -19,7 +19,7 @@ import org.kde.kcm.private 1.3 as KCMP
  * This is a higher level convenience wrapper for KCM.SettingStateProxy
  * and KCM.SettingStateIndicator.
  *
- * @since 5.73
+ * @since 6.0
  */
 Item {
     id: root
@@ -61,8 +61,6 @@ Item {
      * nonDefaultHighlightVisible: bool
      * Expose whether the non default highlight is visible.
      * Allow one to implement highlight with custom items.
-     *
-     * @since 5.73
      */
     readonly property bool nonDefaultHighlightVisible: helper.highlight && __defaultsIndicatorsVisible
 

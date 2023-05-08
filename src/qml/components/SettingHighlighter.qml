@@ -6,14 +6,14 @@
 */
 
 import QtQuick 2.8
-import org.kde.kcm.private 1.3 as P
+import org.kde.kcm.private as P
 
 /**
  * SettingHighlighter automatically impacts the representation of an item based on
  * the value of a setting. When you are using this item you need to manually
  * manage whether the highlighting is enabled or not. For a higher level component
  * see KCM.SettingStateBinding which will manage the state of the Item
- * @since 5.75
+ * @since 6.0
  */
 Item {
     id: root

@@ -15,9 +15,6 @@ class KCMTest : public QObject
 private Q_SLOTS:
     void testLoadQmlPlugin()
     {
-        if (qEnvironmentVariableIsSet("KDECI_BUILD")) {
-            QSKIP("Skipping this for now, until org.kde.kcm is imported yet, skip it for now");
-        }
         auto mod = KCModuleLoader::loadModule(KPluginMetaData(QStringLiteral("plasma/kcms/systemsettings/kcm_testqml")));
         QVERIFY(mod);
         QCOMPARE(mod->metaObject()->className(), "KCModuleQml");

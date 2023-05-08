@@ -7,7 +7,7 @@
 import QtQuick 2.7
 import QtQuick.Controls 2.2 as QQC2
 import org.kde.kirigami 2.2 as Kirigami
-import org.kde.kcm 1.4 as KCM
+import org.kde.kcmutils as KCM
 
 /**
  * This component is intended to be used as the root item for KCMs that are based upon
@@ -32,7 +32,7 @@ KCM.AbstractKCM {
      * Exposes the internal GridView: in order to set a model or a delegate to it,
      * use the following code:
      * @code
-     * import org.kde.kcm 1.1 as KCM
+     * import org.kde.kcmutils as KCM
      * KCM.GridViewKCM {
      *     ...
      *     view.model: kcm.model
@@ -47,8 +47,6 @@ KCM.AbstractKCM {
      * framedView: bool
      * Whether to draw a frame around the KCM's inner scrollable grid view.
      * Default: false
-     *
-     * @since 5.90
      */
     framedView: false
 

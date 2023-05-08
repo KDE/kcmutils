@@ -14,7 +14,7 @@ import org.kde.kirigami 2.14 as Kirigami
  * is used as main element.
  * It is possible to specify a header and footer component.
  * @code
- * import org.kde.kcm 1.1 as KCM
+ * import org.kde.kcmutils as KCM
  * import org.kde.kirigami 2.3 as Kirigami
  * KCM.SimpleKCM {
  *     Kirigami.FormLayout {
@@ -45,8 +45,6 @@ Kirigami.ScrollablePage {
      * such restriction, or in System Settings KCMs that don't show Apply, Help,
      * or Defaults buttons, set it to false.
      * Default: true
-     *
-     * @since 5.101
      */
     property bool extraFooterTopPadding: true
 
