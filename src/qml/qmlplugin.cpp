@@ -6,6 +6,7 @@
 #include <QQmlExtensionPlugin>
 
 #include "../core/kpluginproxymodel.h"
+#include "kcmshell.h"
 #include "kquickconfigmodule.h"
 #include "settinghighlighterprivate.h"
 #include "settingstateproxy.h"
@@ -22,7 +23,8 @@ public:
         qmlRegisterUncreatableType<KQuickConfigModule>(uri, 1, 0, "ConfigModule", QLatin1String("Do not create objects of type ConfigModule"));
         qmlRegisterType<SettingStateProxy>(uri, 1, 3, "SettingStateProxy");
         qmlRegisterType<SettingHighlighterPrivate>("org.kde.kcmutilsprivate", 1, 3, "SettingHighlighterPrivate");
-    };
+        qmlRegisterType<KCMShell>("org.kde.kcmutilsprivate", 1, 3, "SettingHighlighterPrivate");
+    }
 };
 
 #include "qmlplugin.moc"

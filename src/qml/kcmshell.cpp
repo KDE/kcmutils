@@ -16,10 +16,6 @@ KCMShell::KCMShell(QObject *parent)
 {
 }
 
-KCMShell::~KCMShell()
-{
-}
-
 void KCMShell::open(const QStringList &names) const
 {
     KIO::CommandLauncherJob *job = new KIO::CommandLauncherJob(QStringLiteral("kcmshell5"), names);
@@ -65,9 +61,4 @@ void KCMShell::openInfoCenter(const QString &name) const
     }
 
     job->start();
-}
-
-QStringList KCMShell::authorize(const QStringList &menuIds) const
-{
-    return KAuthorized::authorizeControlModules(menuIds);
 }

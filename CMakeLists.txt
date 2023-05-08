@@ -48,6 +48,7 @@ ecm_setup_version(PROJECT VARIABLE_PREFIX KCMUTILS
                         SOVERSION 6)
 
 find_package(KF6Activities ${KF_DEP_VERSION} REQUIRED)
+find_package(KF6KIO ${KF_DEP_VERSION} REQUIRED)
 find_package(KF6ItemViews ${KF_DEP_VERSION} REQUIRED)
 find_package(KF6ConfigWidgets ${KF_DEP_VERSION} REQUIRED)
 find_package(KF6CoreAddons ${KF_DEP_VERSION} REQUIRED)
