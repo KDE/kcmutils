@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kcmutils\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-04-07 02:03+0000\n"
+"POT-Creation-Date: 2023-05-08 02:07+0000\n"
 "PO-Revision-Date: 2023-04-09 21:05+0200\n"
 "Last-Translator: Iñigo Salvador Azurmendi <xalba@ni.eus>\n"
 "Language-Team: Basque <kde-i18n-eu@kde.org>\n"
@@ -30,93 +30,93 @@ msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
 msgstr "xalba@ni.eus"
 
-#: main.cpp:134
+#: main.cpp:82
 #, kde-format
 msgid "A tool to start single system settings modules"
 msgstr "Sistema-ezarpenetako moduluak banaka abiarazteko tresna bat"
 
-#: main.cpp:136
+#: main.cpp:84
 #, kde-format
 msgid "(c) 1999-2016, The KDE Developers"
 msgstr "(c) 1999-2016, KDE garatzaileak"
 
-#: main.cpp:138
+#: main.cpp:86
 #, kde-format
 msgid "Frans Englich"
 msgstr "Frans Englich"
 
-#: main.cpp:138
+#: main.cpp:86
 #, kde-format
 msgid "Maintainer"
 msgstr "Arduraduna"
 
-#: main.cpp:139
+#: main.cpp:87
 #, kde-format
 msgid "Daniel Molkentin"
 msgstr "Daniel Molkentin"
 
-#: main.cpp:140
+#: main.cpp:88
 #, kde-format
 msgid "Matthias Hoelzer-Kluepfel"
 msgstr "Matthias Hoelzer-Kluepfel"
 
-#: main.cpp:141
+#: main.cpp:89
 #, kde-format
 msgid "Matthias Elter"
 msgstr "Matthias Elter"
 
-#: main.cpp:142
+#: main.cpp:90
 #, kde-format
 msgid "Matthias Ettrich"
 msgstr "Matthias Ettrich"
 
-#: main.cpp:143
+#: main.cpp:91
 #, kde-format
 msgid "Waldo Bastian"
 msgstr "Waldo Bastian"
 
-#: main.cpp:149
+#: main.cpp:97
 #, kde-format
 msgid "List all possible modules"
 msgstr "Zerrendatu modulu posible guztiak"
 
-#: main.cpp:150
+#: main.cpp:98
 #, kde-format
 msgid "Configuration module to open"
 msgstr "Ireki beharreko konfigurazio-modulua"
 
-#: main.cpp:151
+#: main.cpp:99
 #, kde-format
 msgid "Specify a particular language"
 msgstr "Zehaztu hizkuntza jakin bat"
 
-#: main.cpp:152
+#: main.cpp:100
 #, kde-format
 msgid "Do not display main window"
 msgstr "Ez azaldu leiho nagusia"
 
-#: main.cpp:153
+#: main.cpp:101
 #, kde-format
 msgid "Arguments for the module"
 msgstr "Modulurako argumentuak"
 
-#: main.cpp:154
+#: main.cpp:102
 #, kde-format
 msgid "Use a specific icon for the window"
 msgstr "Leihorako ikono zehatz bat erabili"
 
-#: main.cpp:155
+#: main.cpp:103
 #, kde-format
 msgid "Use a specific caption for the window"
 msgstr "Leihorako legenda zehatz bat erabili"
 
-#: main.cpp:156
+#: main.cpp:104
 #, kde-format
 msgid "Show an indicator when settings have changed from their default value"
 msgstr ""
 "Erakutsi adierazle bat ezarpenak haien balio lehenetsietatik aldatu direnean"
 
-#: main.cpp:165
+#: main.cpp:113
 #, kde-format
 msgid ""
 "--lang is deprecated. Please set the LANGUAGE environment variable instead"
@@ -124,12 +124,12 @@ msgstr ""
 "--lang zaharkitua dago. Mesedez, horren ordez, ezarri LANGUAGE ingurune "
 "aldagaia"
 
-#: main.cpp:169
+#: main.cpp:117
 #, kde-format
 msgid "The following modules are available:"
 msgstr "Ondoko moduluak erabilgarri daude:"
 
-#: main.cpp:182
+#: main.cpp:130
 #, kde-format
 msgid "No description available"
 msgstr "Ez dago azalpenik"
