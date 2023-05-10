@@ -11,7 +11,7 @@
 
 void KCMLauncher::open(const QStringList &names) const
 {
-    KIO::CommandLauncherJob *job = new KIO::CommandLauncherJob(QStringLiteral("kcmshell5"), names);
+    KIO::CommandLauncherJob *job = new KIO::CommandLauncherJob(QStringLiteral("kcmshell6"), names);
     job->start();
 }
 
