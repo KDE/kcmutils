@@ -6,7 +6,7 @@
 */
 
 import QtQuick 2.8
-import org.kde.kcm.private as P
+import org.kde.kcmutils.private as P
 
 /**
  * SettingHighlighter automatically impacts the representation of an item based on

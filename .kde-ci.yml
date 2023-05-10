@@ -9,6 +9,7 @@ Dependencies:
     'frameworks/kactivities' : '@same'
     'frameworks/kirigami' : '@same'
     'frameworks/kpackage' : '@same'
+    'frameworks/kio' : '@same' # CommandLauncherJob, this will get moved to KService
 
 Options:
   test-before-installing: True

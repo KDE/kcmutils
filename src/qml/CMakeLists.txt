@@ -57,6 +57,7 @@ ecm_target_qml_sources(kcmutilsqmlplugin SOURCES
     components/AbstractKCM.qml
     components/ContextualHelpButton.qml
     components/GridDelegate.qml
+    components/GridView.qml
     components/GridViewKCM.qml
     components/ScrollView.qml
     components/ScrollViewKCM.qml
@@ -64,7 +65,9 @@ ecm_target_qml_sources(kcmutilsqmlplugin SOURCES
     components/SettingStateBinding.qml
     components/SimpleKCM.qml
 )
-ecm_target_qml_sources(kcmutilsqmlplugin SOURCES components/private/AboutPlugin.qml PATH private PRIVATE)
-
+ecm_target_qml_sources(kcmutilsqmlplugin PATH private SOURCES
+    components/private/AboutPlugin.qml
+    components/private/GridViewInternal.qml
+)
 ecm_finalize_qml_module(kcmutilsqmlplugin DESTINATION ${KDE_INSTALL_QMLDIR})
 

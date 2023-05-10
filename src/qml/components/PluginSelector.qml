@@ -37,7 +37,7 @@ ListView {
         query: pluginSelector.query ?? ""
     }
 
-    delegate: KPluginDelegate {
+    delegate: PluginDelegate {
     }
 
     section.property: "category"

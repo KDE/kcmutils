@@ -18,11 +18,11 @@ class KCMUtilsQmlPlugin : public QQmlExtensionPlugin
 public:
     void registerTypes(const char *uri) override
     {
-        qmlRegisterType<KPluginProxyModel>("org.kde.kcmutilsprivate", 1, 0, "ProxyModel");
+        qmlRegisterType<KPluginProxyModel>("org.kde.kcmutils.private", 1, 0, "ProxyModel");
         qmlRegisterModule(uri, 1, 0);
         qmlRegisterUncreatableType<KQuickConfigModule>(uri, 1, 0, "ConfigModule", QLatin1String("Do not create objects of type ConfigModule"));
         qmlRegisterType<SettingStateProxy>(uri, 1, 0, "SettingStateProxy");
-        qmlRegisterType<SettingHighlighterPrivate>("org.kde.kcmutilsprivate", 1, 0, "SettingHighlighterPrivate");
+        qmlRegisterType<SettingHighlighterPrivate>("org.kde.kcmutils.private", 1, 0, "SettingHighlighterPrivate");
         qmlRegisterSingletonType<KCMLauncher>(uri, 1, 0, "KCMLauncher", [](QQmlEngine *, QJSEngine *) {
             return new KCMLauncher();
         });
