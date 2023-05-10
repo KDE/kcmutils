@@ -186,6 +186,18 @@ public:
     KPluginMetaData metaData() const;
 
     /**
+     * This signal will be emited by a single-instance application (such as
+     * System Settings) to request activation and update arguments to a module
+     * that is already running
+     *
+     * The module should connect to this signal when it needs to handle
+     * the activation request and specially the new arguments
+     *
+     * @param args A list of arguments that get passed to the module
+     */
+    Q_SIGNAL void activationRequested(const QVariantList &args);
+
+    /**
      * Load the configuration data into the module.
      *
      * The load method sets the user interface elements of the

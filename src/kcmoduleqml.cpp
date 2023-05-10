@@ -136,6 +136,8 @@ KCModuleQml::KCModuleQml(KQuickConfigModule *configModule, QWidget *parent)
         d->configModule->setDefaultsIndicatorsVisible(defaultsIndicatorsVisible());
     });
 
+    connect(this, &KAbstractConfigModule::activationRequested, d->configModule, &KQuickConfigModule::activationRequested);
+
     // Build the UI
     QVBoxLayout *layout = new QVBoxLayout(d->widget);
     layout->setContentsMargins(0, 0, 0, 0);
