@@ -9,14 +9,14 @@
 # Xosé <xosecalvo@gmail.com>, 2010.
 # Marce Villarino <mvillarino@kde-espana.es>, 2011, 2012, 2013, 2014.
 # Adrián Chaves Fernández (Gallaecio) <adriyetichaves@gmail.com>, 2017.
-# Adrián Chaves (Gallaecio) <adrian@chaves.io>, 2017, 2018, 2019, 2020.
+# Adrián Chaves (Gallaecio) <adrian@chaves.io>, 2017, 2018, 2019, 2020, 2023.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: kdelibs4\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2022-12-07 00:43+0000\n"
-"PO-Revision-Date: 2020-01-05 18:42+0100\n"
+"PO-Revision-Date: 2023-05-11 16:53+0200\n"
 "Last-Translator: Adrián Chaves (Gallaecio) <adrian@chaves.io>\n"
 "Language-Team: Galician <proxecto@trasno.gal>\n"
 "Language: gl\n"
@@ -24,7 +24,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Lokalize 19.08.3\n"
+"X-Generator: Lokalize 23.04.0\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
@@ -42,10 +42,9 @@ msgid "The module %1 is disabled."
 msgstr "O módulo %1 está desactivado."
 
 #: kcmoduleloader.cpp:58
-#, fuzzy, kde-format
-#| msgid "Please contact your system administrator."
+#, kde-format
 msgid "The module has been disabled by the system administrator."
-msgstr "Por favor, contacte co seu administrador do sistema."
+msgstr "A persoa administradora do sistema desactivou o módulo."
 
 #: kcmoduleloader.cpp:93 kcmoduleloader.cpp:184
 #, kde-format
@@ -91,10 +90,9 @@ msgstr ""
 "configura o módulo ou o administrador desactivou o módulo.</p></qt>"
 
 #: kcmoduleloader.cpp:192
-#, fuzzy, kde-format
-#| msgid "Error loading QML file."
+#, kde-format
 msgid "Error loading config module"
-msgstr "Produciuse un erro ao cargar o ficheiro QML."
+msgstr "Erro ao gardar o módulo de configuración"
 
 #: kcmoduleloader.cpp:236
 #, kde-format
@@ -215,72 +213,62 @@ msgid "Enable component"
 msgstr "Activar o compoñente"
 
 #: qml/components/KPluginDelegate.qml:48
-#, fuzzy, kde-format
-#| msgid "About"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "About"
 msgstr "Sobre"
 
 #: qml/components/KPluginDelegate.qml:59
-#, fuzzy, kde-format
-#| msgid "Confi&gure..."
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Configure..."
-msgstr "Confi&gurar..."
+msgstr "Configurar…"
 
 #: qml/components/KPluginSelector.qml:81
 #, kde-format
 msgid "No matches"
-msgstr ""
+msgstr "Non hai coincidencias"
 
 #: qml/components/KPluginSelector.qml:81
-#, fuzzy, kde-format
-#| msgid "Not found"
+#, kde-format
 msgid "No plugins found"
-msgstr "Non se atopou"
+msgstr "Non se atopou ningún complemento"
 
 #: qml/components/private/AboutPlugin.qml:42
-#, fuzzy, kde-format
-#| msgctxt "concatenation of dates and time"
-#| msgid "%1 %2"
+#, kde-format
 msgctxt "Plugin name and plugin version"
 msgid "%1 %2"
 msgstr "%1 %2"
 
 #: qml/components/private/AboutPlugin.qml:64
-#, fuzzy, kde-format
-#| msgid "Copy"
+#, kde-format
 msgid "Copyright"
-msgstr "Copiar"
+msgstr "Dereitos de copia"
 
 #: qml/components/private/AboutPlugin.qml:81
-#, fuzzy, kde-format
-#| msgid "License:"
+#, kde-format
 msgid "License:"
 msgstr "Licenza:"
 
 #: qml/components/private/AboutPlugin.qml:100
-#, fuzzy, kde-format
-#| msgid "A&uthors"
+#, kde-format
 msgid "Authors"
-msgstr "Au&tores"
+msgstr "Autoría"
 
 #: qml/components/private/AboutPlugin.qml:117
 #, kde-format
 msgid "Credits"
-msgstr ""
+msgstr "Recoñecementos"
 
 #: qml/components/private/AboutPlugin.qml:134
-#, fuzzy, kde-format
-#| msgid "Translation"
+#, kde-format
 msgid "Translators"
 msgstr "Tradución"
 
 #: qml/components/private/AboutPlugin.qml:161
-#, fuzzy, kde-format
-#| msgid "&Send Email"
+#, kde-format
 msgid "Send an email to %1"
-msgstr "&Enviar por correo"
+msgstr "Enviar unha mensaxe de correo electrónico a %1"
 
 #~ msgid "Distance between desktop icons"
 #~ msgstr "Distancia entre as iconas do escritorio"
