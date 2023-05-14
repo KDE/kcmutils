@@ -402,7 +402,7 @@ msgstr "لا يمكن العثور مورد '%1'."
 
 #~ msgid "Whether SOCKS version 4 and 5 should be enabled in KDE's sub systems"
 #~ msgstr ""
-#~ "فيما إذا كان يجب تفعيل إصدارتي ٤ و٥ من SOCKS في أنظمة «كِيدِي» الفرعية"
+#~ "فيما إذا كان يجب تفعيل إصدارتي 4 و5 من SOCKS في أنظمة «كِيدِي» الفرعية"
 
 #~ msgid "Path to custom SOCKS library"
 #~ msgstr "مسار مكتبة SOCKS المخصصة"
