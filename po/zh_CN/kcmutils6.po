@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: kdeorg\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-04-29 02:19+0000\n"
-"PO-Revision-Date: 2023-02-24 12:43\n"
+"PO-Revision-Date: 2023-05-22 13:58\n"
 "Last-Translator: \n"
 "Language-Team: Chinese Simplified\n"
 "Language: zh_CN\n"
@@ -14,8 +14,8 @@ msgstr ""
 "X-Crowdin-Project: kdeorg\n"
 "X-Crowdin-Project-ID: 269464\n"
 "X-Crowdin-Language: zh-CN\n"
-"X-Crowdin-File: /kf5-trunk/messages/kcmutils/kcmutils5.pot\n"
-"X-Crowdin-File-ID: 5566\n"
+"X-Crowdin-File: /kf6-trunk/messages/kcmutils/kcmutils6.pot\n"
+"X-Crowdin-File-ID: 43415\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
@@ -92,11 +92,10 @@ msgid "About"
 msgstr "关于"
 
 #: qml/components/KPluginDelegate.qml:59
-#, fuzzy, kde-format
-#| msgid "Configure"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Configure…"
-msgstr "配置"
+msgstr "配置…"
 
 #: qml/components/KPluginSelector.qml:81
 #, kde-format
@@ -147,81 +146,4 @@ msgstr "发送电子邮件给 %1"
 #: qml/kquickconfigmodule.cpp:128
 #, kde-format
 msgid "Could not find resource '%1'"
-msgstr ""
-
-#~ msgctxt "@info:tooltip"
-#~ msgid "Configure..."
-#~ msgstr "配置..."
-
-#~ msgctxt "Argument is application name"
-#~ msgid "This configuration section is already opened in %1"
-#~ msgstr "此配置节已在 %1 中打开"
-
-#~ msgid "The module %1 could not be found."
-#~ msgstr "模块 %1 未能找到。"
-
-#~ msgid ""
-#~ "<qt><p>The diagnosis is:<br />The desktop file %1 could not be found.</"
-#~ "p></qt>"
-#~ msgstr "<qt><p>诊断信息为：<br />桌面文件 %1 未能找到。</p></qt>"
-
-#~ msgid ""
-#~ "<qt><p>Either the hardware/software the module configures is not "
-#~ "available or the module has been disabled by the administrator.</p></qt>"
-#~ msgstr ""
-#~ "<qt><p>这个模块中的有关硬件或软件的配置都不可用，或者这个模块已经被管理员"
-#~ "禁用。</p></qt>"
-
-#~ msgid "Error loading config module"
-#~ msgstr "加载配置模块出错"
-
-#~ msgid "The module %1 is not a valid configuration module."
-#~ msgstr "模块 %1 不是有效的配置模块。"
-
-#~ msgid ""
-#~ "<qt>The diagnosis is:<br />The desktop file %1 does not specify a library."
-#~ "</qt>"
-#~ msgstr "<qt>诊断信息为：<br />桌面文件 %1 并未指定程序库。</qt>"
-
-#~ msgid ""
-#~ "Automatic changes have been performed due to plugin dependencies. Click "
-#~ "here for further information"
-#~ msgstr "已经根据插件的依赖关系进行自动更改。点击这里获取更多信息"
-
-#~ msgid ""
-#~ "Automatic changes have been performed in order to satisfy plugin "
-#~ "dependencies:\n"
-#~ msgstr "为了满足插件的依赖关系，已经自动执行了更改：\n"
-
-#~ msgid ""
-#~ "\n"
-#~ "    %1 plugin has been automatically checked because of the dependency of "
-#~ "%2 plugin"
-#~ msgstr ""
-#~ "\n"
-#~ "    因为 %2 插件的依赖关系，%1 插件已经被自动选中"
-
-#~ msgid ""
-#~ "\n"
-#~ "    %1 plugin has been automatically unchecked because of its dependency "
-#~ "on %2 plugin"
-#~ msgstr ""
-#~ "\n"
-#~ "    因为对于 %2 插件的依赖，%1 插件已被自动取消选中"
-
-#~ msgid "Dependency Check"
-#~ msgstr "依赖检查"
-
-#~ msgid "%1 plugin automatically added due to plugin dependencies"
-#~ msgid_plural "%1 plugins automatically added due to plugin dependencies"
-#~ msgstr[0] "由于插件的依赖关系，已经自动添加了 %1 个插件"
-
-#~ msgid ", "
-#~ msgstr ", "
-
-#~ msgid "%1 plugin automatically removed due to plugin dependencies"
-#~ msgid_plural "%1 plugins automatically removed due to plugin dependencies"
-#~ msgstr[0] "由于插件的依赖关系，已经自动移除了 %1 个插件"
-
-#~ msgid "Enable component"
-#~ msgstr "启用组件"
+msgstr "无法找到资源“%1”"
