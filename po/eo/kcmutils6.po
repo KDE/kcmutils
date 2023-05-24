@@ -3,7 +3,7 @@
 # Wolfram Diestel <wolfram@steloj.de>, 1998.
 # Heiko Evermann <heiko@evermann.de>, 2002, 2003.
 # Matthias Peick <matthias@peick.de>, 2004, 2005.
-# Oliver Kellogg <okellogg@users.sourceforge.net>,2007.
+# Oliver Kellogg <okellogg@users.sourceforge.net>, 2007, 2023.
 # Cindy McKee <cfmckee@gmail.com>, 2007, 2008.
 # Axel Rousseau <axel@esperanto-jeunes.org>, 2009.
 # Michael Moroni <michael.moroni@mailoo.org>, 2012.
@@ -15,7 +15,7 @@ msgstr ""
 "Project-Id-Version: kcmutils\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-04-29 02:19+0000\n"
-"PO-Revision-Date: 2023-04-15 14:32+0100\n"
+"PO-Revision-Date: 2023-05-23 07:08+0100\n"
 "Last-Translator: Oliver Kellogg <okellogg@users.sourceforge.net>\n"
 "Language-Team: Esperanto <kde-i18n-eo@kde.org>\n"
 "Language: eo\n"
@@ -158,10 +158,4 @@ msgstr "Sendi retleteron al %1"
 #: qml/kquickconfigmodule.cpp:128
 #, kde-format
 msgid "Could not find resource '%1'"
-msgstr ""
-
-#~ msgid "Invalid KPackage '%1'"
-#~ msgstr "Nevalida KPackage '%1'"
-
-#~ msgid "No QML file provided"
-#~ msgstr "Neniu QML-dosiero provizita"
+msgstr "Ne povis trovi rimedon '%1'"
