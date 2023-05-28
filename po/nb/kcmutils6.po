@@ -98,7 +98,6 @@ msgstr ""
 
 #: qml/components/KPluginDelegate.qml:59
 #, fuzzy, kde-format
-#| msgid "Configure"
 msgctxt "@info:tooltip"
 msgid "Configure…"
 msgstr "Oppsett"
