@@ -22,7 +22,7 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
 "X-Accelerator-Marker: &\n"
 "X-Text-Markup: kde4\n"
 "X-Generator: Lokalize 22.12.1\n"
@@ -186,8 +186,6 @@ msgid "%1 plugin automatically added due to plugin dependencies"
 msgid_plural "%1 plugins automatically added due to plugin dependencies"
 msgstr[0] ""
 "プラグインの依存関係により %1 個のプラグインが自動的に追加されました"
-msgstr[1] ""
-"プラグインの依存関係により %1 個のプラグインが自動的に追加されました"
 
 #: kpluginselector.cpp:238
 #, kde-format
@@ -199,8 +197,6 @@ msgstr ", "
 msgid "%1 plugin automatically removed due to plugin dependencies"
 msgid_plural "%1 plugins automatically removed due to plugin dependencies"
 msgstr[0] ""
-"プラグインの依存関係により %1 個のプラグインが自動的に削除されました"
-msgstr[1] ""
 "プラグインの依存関係により %1 個のプラグインが自動的に削除されました"
 
 #: kpluginselector.cpp:264 kpluginwidget.cpp:59
