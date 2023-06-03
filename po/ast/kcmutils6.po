@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kcmutils\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-04-29 02:19+0000\n"
+"POT-Creation-Date: 2023-06-03 02:03+0000\n"
 "PO-Revision-Date: 2023-05-09 23:41+0200\n"
 "Last-Translator: Enol P. <enolp@softastur.org>\n"
 "Language-Team: \n"
@@ -81,13 +81,13 @@ msgstr "Buscar…"
 msgid "About"
 msgstr ""
 
-#: qml/components/KPluginDelegate.qml:48
+#: qml/components/KPluginDelegate.qml:53
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "About"
 msgstr ""
 
-#: qml/components/KPluginDelegate.qml:59
+#: qml/components/KPluginDelegate.qml:68
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Configure…"

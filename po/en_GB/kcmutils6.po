@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdelibs4\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-04-29 02:19+0000\n"
+"POT-Creation-Date: 2023-06-03 02:03+0000\n"
 "PO-Revision-Date: 2023-04-29 12:23+0100\n"
 "Last-Translator: Steve Allewell <steve.allewell@gmail.com>\n"
 "Language-Team: British English\n"
@@ -87,13 +87,13 @@ msgstr "Search..."
 msgid "About"
 msgstr "About"
 
-#: qml/components/KPluginDelegate.qml:48
+#: qml/components/KPluginDelegate.qml:53
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "About"
 msgstr "About"
 
-#: qml/components/KPluginDelegate.qml:59
+#: qml/components/KPluginDelegate.qml:68
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Configure…"

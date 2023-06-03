@@ -22,7 +22,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdelibs4\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-04-29 02:19+0000\n"
+"POT-Creation-Date: 2023-06-03 02:03+0000\n"
 "PO-Revision-Date: 2023-04-29 10:57+0300\n"
 "Last-Translator: Emir SARI <emir_sari@icloud.com>\n"
 "Language-Team: Turkish <kde-l10n-tr@kde.org>\n"
@@ -106,13 +106,13 @@ msgstr "Ara..."
 msgid "About"
 msgstr "Hakkında"
 
-#: qml/components/KPluginDelegate.qml:48
+#: qml/components/KPluginDelegate.qml:53
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "About"
 msgstr "Hakkında"
 
-#: qml/components/KPluginDelegate.qml:59
+#: qml/components/KPluginDelegate.qml:68
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Configure…"

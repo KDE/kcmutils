@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kcmutils\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-04-29 02:19+0000\n"
+"POT-Creation-Date: 2023-06-03 02:03+0000\n"
 "PO-Revision-Date: 2023-04-30 04:05+0200\n"
 "Last-Translator: Temuri Doghonadze <temuri.doghonadze@gmail.com>\n"
 "Language-Team: Georgian <kde-i18n-doc@kde.org>\n"
@@ -88,13 +88,13 @@ msgstr "ძებნა..."
 msgid "About"
 msgstr "შესახებ"
 
-#: qml/components/KPluginDelegate.qml:48
+#: qml/components/KPluginDelegate.qml:53
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "About"
 msgstr "შესახებ"
 
-#: qml/components/KPluginDelegate.qml:59
+#: qml/components/KPluginDelegate.qml:68
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Configure…"

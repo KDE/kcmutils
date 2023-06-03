@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdelibs4\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-04-29 02:19+0000\n"
+"POT-Creation-Date: 2023-06-03 02:03+0000\n"
 "PO-Revision-Date: 2004-12-14 09:11-0600\n"
 "Last-Translator: Kevin Scannell <kscanne@gmail.com>\n"
 "Language-Team: Irish <gaeilge-gnulinux@lists.sourceforge.net>\n"
@@ -100,14 +100,14 @@ msgstr "Cuardaigh"
 msgid "About"
 msgstr "&Eolas"
 
-#: qml/components/KPluginDelegate.qml:48
+#: qml/components/KPluginDelegate.qml:53
 #, fuzzy, kde-format
 #| msgid "&About"
 msgctxt "@info:tooltip"
 msgid "About"
 msgstr "&Eolas"
 
-#: qml/components/KPluginDelegate.qml:59
+#: qml/components/KPluginDelegate.qml:68
 #, fuzzy, kde-format
 #| msgid "Configure"
 msgctxt "@info:tooltip"
