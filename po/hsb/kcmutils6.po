@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdelibs4\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-06-03 02:03+0000\n"
+"POT-Creation-Date: 2023-06-06 02:08+0000\n"
 "PO-Revision-Date: 2008-12-19 22:49+0100\n"
 "Last-Translator: Eduard Werner <edi.werner@gmx.de>\n"
 "Language-Team: en_US <kde-i18n-doc@lists.kde.org>\n"
@@ -104,26 +104,32 @@ msgstr "&Pytać"
 msgid "About"
 msgstr "&Wo tutym programje"
 
-#: qml/components/KPluginDelegate.qml:53
+#: qml/components/ContextualHelpButton.qml:59
+#, kde-format
+msgctxt "@action:button"
+msgid "Show Contextual Help"
+msgstr ""
+
+#: qml/components/PluginDelegate.qml:53
 #, fuzzy, kde-format
 #| msgid "&About"
 msgctxt "@info:tooltip"
 msgid "About"
 msgstr "&Wo tutym programje"
 
-#: qml/components/KPluginDelegate.qml:68
+#: qml/components/PluginDelegate.qml:68
 #, fuzzy, kde-format
 #| msgid "Configure"
 msgctxt "@info:tooltip"
 msgid "Configure…"
 msgstr "Konfiguracija"
 
-#: qml/components/KPluginSelector.qml:81
+#: qml/components/PluginSelector.qml:81
 #, kde-format
 msgid "No matches"
 msgstr ""
 
-#: qml/components/KPluginSelector.qml:81
+#: qml/components/PluginSelector.qml:81
 #, fuzzy, kde-format
 #| msgid "Not found"
 msgid "No plugins found"
@@ -170,6 +176,12 @@ msgstr "Přełožk"
 #| msgid "&Send Email"
 msgid "Send an email to %1"
 msgstr "&Mailku pósłać"
+
+#: qml/components/private/GridViewInternal.qml:78
+#, fuzzy, kde-format
+#| msgid "Not found"
+msgid "No items found"
+msgstr "Njejsym ničo namakał"
 
 #: qml/kquickconfigmodule.cpp:128
 #, fuzzy, kde-format

@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-06-03 02:03+0000\n"
+"POT-Creation-Date: 2023-06-06 02:08+0000\n"
 "PO-Revision-Date: 2023-04-29 23:00+0200\n"
 "Last-Translator: giovanni <g.sora@tiscali.it>\n"
 "Language-Team: Interlingua <kde-i18n-doc@kde.org>\n"
@@ -87,24 +87,30 @@ msgstr "Il cerca ..."
 msgid "About"
 msgstr "A proposito"
 
-#: qml/components/KPluginDelegate.qml:53
+#: qml/components/ContextualHelpButton.qml:59
+#, kde-format
+msgctxt "@action:button"
+msgid "Show Contextual Help"
+msgstr ""
+
+#: qml/components/PluginDelegate.qml:53
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "About"
 msgstr "A proposito"
 
-#: qml/components/KPluginDelegate.qml:68
+#: qml/components/PluginDelegate.qml:68
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Configure…"
 msgstr "Configura…"
 
-#: qml/components/KPluginSelector.qml:81
+#: qml/components/PluginSelector.qml:81
 #, kde-format
 msgid "No matches"
 msgstr "Nulle correspondentias"
 
-#: qml/components/KPluginSelector.qml:81
+#: qml/components/PluginSelector.qml:81
 #, kde-format
 msgid "No plugins found"
 msgstr "Necun plugin  trovate"
@@ -144,6 +150,12 @@ msgstr "Traductores"
 #, kde-format
 msgid "Send an email to %1"
 msgstr "Invia un message de e-posta a  %1"
+
+#: qml/components/private/GridViewInternal.qml:78
+#, fuzzy, kde-format
+#| msgid "No plugins found"
+msgid "No items found"
+msgstr "Necun plugin  trovate"
 
 #: qml/kquickconfigmodule.cpp:128
 #, kde-format

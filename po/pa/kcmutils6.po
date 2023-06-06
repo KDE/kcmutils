@@ -13,7 +13,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdelibs4\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-06-03 02:03+0000\n"
+"POT-Creation-Date: 2023-06-06 02:08+0000\n"
 "PO-Revision-Date: 2018-11-08 23:01-0800\n"
 "Last-Translator: A S Alam <alam.yellow@gmail.com>\n"
 "Language-Team: Punjabi <punjabi-users@lists.sf.net>\n"
@@ -101,26 +101,32 @@ msgstr "ਖੋਜ"
 msgid "About"
 msgstr "ਇਸ ਬਾਰੇ"
 
-#: qml/components/KPluginDelegate.qml:53
+#: qml/components/ContextualHelpButton.qml:59
+#, kde-format
+msgctxt "@action:button"
+msgid "Show Contextual Help"
+msgstr ""
+
+#: qml/components/PluginDelegate.qml:53
 #, fuzzy, kde-format
 #| msgid "About"
 msgctxt "@info:tooltip"
 msgid "About"
 msgstr "ਇਸ ਬਾਰੇ"
 
-#: qml/components/KPluginDelegate.qml:68
+#: qml/components/PluginDelegate.qml:68
 #, fuzzy, kde-format
 #| msgid "Configure"
 msgctxt "@info:tooltip"
 msgid "Configure…"
 msgstr "ਸੰਰਚਨਾ"
 
-#: qml/components/KPluginSelector.qml:81
+#: qml/components/PluginSelector.qml:81
 #, kde-format
 msgid "No matches"
 msgstr ""
 
-#: qml/components/KPluginSelector.qml:81
+#: qml/components/PluginSelector.qml:81
 #, fuzzy, kde-format
 #| msgid "Not found"
 msgid "No plugins found"
@@ -167,6 +173,12 @@ msgstr "ਅਨੁਵਾਦ"
 #| msgid "&Send Email"
 msgid "Send an email to %1"
 msgstr "ਈ-ਮੇਲ ਭੇਜੋ(&S)"
+
+#: qml/components/private/GridViewInternal.qml:78
+#, fuzzy, kde-format
+#| msgid "Not found"
+msgid "No items found"
+msgstr "ਨਹੀਂ ਲੱਭੀ"
 
 #: qml/kquickconfigmodule.cpp:128
 #, fuzzy, kde-format

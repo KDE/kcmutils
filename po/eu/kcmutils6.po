@@ -13,7 +13,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kcmutils\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-06-03 02:03+0000\n"
+"POT-Creation-Date: 2023-06-06 02:08+0000\n"
 "PO-Revision-Date: 2023-04-29 10:14+0200\n"
 "Last-Translator: Iñigo Salvador Azurmendi <xalba@ni.eus>\n"
 "Language-Team: Basque <kde-i18n-eu@kde.org>\n"
@@ -94,24 +94,30 @@ msgstr "Bilatu..."
 msgid "About"
 msgstr "Honi buruz"
 
-#: qml/components/KPluginDelegate.qml:53
+#: qml/components/ContextualHelpButton.qml:59
+#, kde-format
+msgctxt "@action:button"
+msgid "Show Contextual Help"
+msgstr ""
+
+#: qml/components/PluginDelegate.qml:53
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "About"
 msgstr "Honi buruz"
 
-#: qml/components/KPluginDelegate.qml:68
+#: qml/components/PluginDelegate.qml:68
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Configure…"
 msgstr "Konfiguratu..."
 
-#: qml/components/KPluginSelector.qml:81
+#: qml/components/PluginSelector.qml:81
 #, kde-format
 msgid "No matches"
 msgstr "Ez dago bat datorrenik"
 
-#: qml/components/KPluginSelector.qml:81
+#: qml/components/PluginSelector.qml:81
 #, kde-format
 msgid "No plugins found"
 msgstr "Ez da pluginik aurkitu"
@@ -151,6 +157,12 @@ msgstr "Itzultzaileak"
 #, kde-format
 msgid "Send an email to %1"
 msgstr "Bidali e-posta %1(e)ri"
+
+#: qml/components/private/GridViewInternal.qml:78
+#, fuzzy, kde-format
+#| msgid "No plugins found"
+msgid "No items found"
+msgstr "Ez da pluginik aurkitu"
 
 #: qml/kquickconfigmodule.cpp:128
 #, kde-format
