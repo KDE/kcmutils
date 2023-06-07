@@ -12,7 +12,7 @@ msgstr ""
 "Project-Id-Version: kcmutils5\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-06-06 02:08+0000\n"
-"PO-Revision-Date: 2023-04-29 09:16+0300\n"
+"PO-Revision-Date: 2023-06-06 09:22+0300\n"
 "Last-Translator: Yuri Chornoivan <yurchor@ukr.net>\n"
 "Language-Team: Ukrainian <kde-i18n-uk@kde.org>\n"
 "Language: uk\n"
@@ -96,7 +96,7 @@ msgstr "Відомості"
 #, kde-format
 msgctxt "@action:button"
 msgid "Show Contextual Help"
-msgstr ""
+msgstr "Показати контекстну довідку"
 
 #: qml/components/PluginDelegate.qml:53
 #, kde-format
@@ -157,10 +157,9 @@ msgid "Send an email to %1"
 msgstr "Надіслати повідомлення ел. пошти до %1"
 
 #: qml/components/private/GridViewInternal.qml:78
-#, fuzzy, kde-format
-#| msgid "No plugins found"
+#, kde-format
 msgid "No items found"
-msgstr "Додатків не знайдено"
+msgstr "Пункти не знайдено"
 
 #: qml/kquickconfigmodule.cpp:128
 #, kde-format

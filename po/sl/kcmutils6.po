@@ -18,7 +18,7 @@ msgstr ""
 "Project-Id-Version: kdelibs4\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-06-06 02:08+0000\n"
-"PO-Revision-Date: 2023-04-29 07:12+0200\n"
+"PO-Revision-Date: 2023-06-06 07:55+0200\n"
 "Last-Translator: Matjaž Jeran <matjaz.jeran@amis.net>\n"
 "Language-Team: Slovenian <lugos-slo@lugos.si>\n"
 "Language: sl\n"
@@ -27,7 +27,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=4; plural=(n%100==1 ? 1 : n%100==2 ? 2 : n%100==3 || n"
 "%100==4 ? 3 : 0);\n"
-"X-Generator: Poedit 3.2.2\n"
+"X-Generator: Poedit 3.3.1\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
@@ -105,7 +105,7 @@ msgstr "O programu"
 #, kde-format
 msgctxt "@action:button"
 msgid "Show Contextual Help"
-msgstr ""
+msgstr "Prikaži kontekstno pomoč"
 
 #: qml/components/PluginDelegate.qml:53
 #, kde-format
@@ -166,10 +166,9 @@ msgid "Send an email to %1"
 msgstr "Pošlji e-pošto za %1"
 
 #: qml/components/private/GridViewInternal.qml:78
-#, fuzzy, kde-format
-#| msgid "No plugins found"
+#, kde-format
 msgid "No items found"
-msgstr "Ni najdenih vtičnikov"
+msgstr "Ni najdenih postavk"
 
 #: qml/kquickconfigmodule.cpp:128
 #, kde-format

@@ -15,7 +15,7 @@ msgstr ""
 "Project-Id-Version: kcmutils\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-06-06 02:08+0000\n"
-"PO-Revision-Date: 2023-05-23 07:08+0100\n"
+"PO-Revision-Date: 2023-06-06 06:48+0100\n"
 "Last-Translator: Oliver Kellogg <okellogg@users.sourceforge.net>\n"
 "Language-Team: Esperanto <kde-i18n-eo@kde.org>\n"
 "Language: eo\n"
@@ -101,7 +101,7 @@ msgstr "Pri"
 #, kde-format
 msgctxt "@action:button"
 msgid "Show Contextual Help"
-msgstr ""
+msgstr "Montri kuntekstan helpon"
 
 #: qml/components/PluginDelegate.qml:53
 #, kde-format
@@ -162,10 +162,9 @@ msgid "Send an email to %1"
 msgstr "Sendi retleteron al %1"
 
 #: qml/components/private/GridViewInternal.qml:78
-#, fuzzy, kde-format
-#| msgid "No plugins found"
+#, kde-format
 msgid "No items found"
-msgstr "Ne troveblas kromprogramoj"
+msgstr "Trovis neniujn erojn"
 
 #: qml/kquickconfigmodule.cpp:128
 #, kde-format

@@ -23,7 +23,7 @@ msgstr ""
 "Project-Id-Version: kdelibs4\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-06-06 02:08+0000\n"
-"PO-Revision-Date: 2023-04-29 10:57+0300\n"
+"PO-Revision-Date: 2023-06-07 00:49+0300\n"
 "Last-Translator: Emir SARI <emir_sari@icloud.com>\n"
 "Language-Team: Turkish <kde-l10n-tr@kde.org>\n"
 "Language: tr\n"
@@ -31,7 +31,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
-"X-Generator: Lokalize 23.03.70\n"
+"X-Generator: Lokalize 23.07.70\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
@@ -110,7 +110,7 @@ msgstr "Hakkında"
 #, kde-format
 msgctxt "@action:button"
 msgid "Show Contextual Help"
-msgstr ""
+msgstr "Bağlamsal Yardımı Göster"
 
 #: qml/components/PluginDelegate.qml:53
 #, kde-format
@@ -171,10 +171,9 @@ msgid "Send an email to %1"
 msgstr "%1 kişisine e-posta gönderin"
 
 #: qml/components/private/GridViewInternal.qml:78
-#, fuzzy, kde-format
-#| msgid "No plugins found"
+#, kde-format
 msgid "No items found"
-msgstr "Eklenti bulunamadı"
+msgstr "Öge bulunamadı"
 
 #: qml/kquickconfigmodule.cpp:128
 #, kde-format

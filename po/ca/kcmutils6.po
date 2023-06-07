@@ -14,7 +14,7 @@ msgstr ""
 "Project-Id-Version: kcmutils\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-06-06 02:08+0000\n"
-"PO-Revision-Date: 2023-04-29 10:58+0200\n"
+"PO-Revision-Date: 2023-06-06 09:47+0200\n"
 "Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
 "Language: ca\n"
@@ -99,7 +99,7 @@ msgstr "Quant a"
 #, kde-format
 msgctxt "@action:button"
 msgid "Show Contextual Help"
-msgstr ""
+msgstr "Mostra l'ajuda contextual"
 
 #: qml/components/PluginDelegate.qml:53
 #, kde-format
@@ -160,10 +160,9 @@ msgid "Send an email to %1"
 msgstr "Envia un correu a %1"
 
 #: qml/components/private/GridViewInternal.qml:78
-#, fuzzy, kde-format
-#| msgid "No plugins found"
+#, kde-format
 msgid "No items found"
-msgstr "No s'ha trobat cap connector"
+msgstr "No s'ha trobat cap element"
 
 #: qml/kquickconfigmodule.cpp:128
 #, kde-format

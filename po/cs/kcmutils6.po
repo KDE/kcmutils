@@ -10,7 +10,7 @@ msgstr ""
 "Project-Id-Version: kdelibs4\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-06-06 02:08+0000\n"
-"PO-Revision-Date: 2023-04-11 18:05+0200\n"
+"PO-Revision-Date: 2023-05-02 15:14+0200\n"
 "Last-Translator: Vit Pelcak <vit@pelcak.org>\n"
 "Language-Team: Czech <kde-i18n-doc@kde.org>\n"
 "Language: cs\n"
@@ -18,7 +18,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=(n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2;\n"
-"X-Generator: Lokalize 22.12.3\n"
+"X-Generator: Lokalize 23.04.0\n"
 "X-Language: cs_CZ\n"
 "X-Source-Language: en_US\n"
 
@@ -95,7 +95,7 @@ msgstr "O aplikaci"
 #, kde-format
 msgctxt "@action:button"
 msgid "Show Contextual Help"
-msgstr ""
+msgstr "Zobrazit kontextovou nápovědu"
 
 #: qml/components/PluginDelegate.qml:53
 #, kde-format
@@ -156,18 +156,11 @@ msgid "Send an email to %1"
 msgstr "Odeslat e-mail %1"
 
 #: qml/components/private/GridViewInternal.qml:78
-#, fuzzy, kde-format
-#| msgid "No plugins found"
+#, kde-format
 msgid "No items found"
-msgstr "Nenalezeny žádné moduly"
+msgstr "Nenalezeny žádné položky"
 
 #: qml/kquickconfigmodule.cpp:128
 #, kde-format
 msgid "Could not find resource '%1'"
-msgstr ""
-
-#~ msgid "Invalid KPackage '%1'"
-#~ msgstr "Neplatný KPackage '%1'"
-
-#~ msgid "No QML file provided"
-#~ msgstr "Nebyl poskytnut soubor QML"
+msgstr "Nelze najít zdroj '%1'"
