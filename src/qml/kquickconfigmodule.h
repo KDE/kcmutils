@@ -80,7 +80,7 @@ class KQuickConfigModulePrivate;
  *
  * \code
  * import QtQuick 2.1
- * import org.kde.kcm 1.0
+ * import org.kde.kcmutils
  *
  * Item {
  *     //implicitWidth and implicitHeight will be used as initial size when loaded in kcmshell6
