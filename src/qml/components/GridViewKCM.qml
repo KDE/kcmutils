@@ -15,7 +15,7 @@ import org.kde.kcmutils as KCM
  * It contains a GridView as its main item.
  * It is possible to specify a header and footer component.
  * @code
- * import org.kde.kcm 1.1 as KCM
+ * import org.kde.kcmutils as KCM
  * KCM.GridViewKCM {
  *     header: Item {...}
  *     view.model: kcm.model

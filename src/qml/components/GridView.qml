@@ -24,7 +24,7 @@ QQC2.ScrollView {
      * Exposes the internal GridView: in order to set a model or a delegate to it,
      * use the following code:
      * @code
-     * import org.kde.kcm 1.1 as KCM
+     * import org.kde.kcmutils as KCM
      * KCM.GridView {
      *     view.model: kcm.model
      *     view.delegate: KCM.GridDelegate {...}

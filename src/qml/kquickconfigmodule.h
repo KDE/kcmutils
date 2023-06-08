@@ -76,7 +76,7 @@ class KQuickConfigModulePrivate;
  *
  * The QML part can access all the properties of ConfigModule (together with the properties
  * defined in its subclass) by accessing to the global object "kcm", or with the
- * import of "org.kde.kcm 1.0" the ConfigModule attached property.
+ * import of "org.kde.kcmutils" the ConfigModule attached property.
  *
  * \code
  * import QtQuick 2.1
