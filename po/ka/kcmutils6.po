@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: kcmutils\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-06-06 02:08+0000\n"
-"PO-Revision-Date: 2023-04-30 04:05+0200\n"
+"PO-Revision-Date: 2023-06-07 05:42+0200\n"
 "Last-Translator: Temuri Doghonadze <temuri.doghonadze@gmail.com>\n"
 "Language-Team: Georgian <kde-i18n-doc@kde.org>\n"
 "Language: ka\n"
@@ -16,7 +16,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Poedit 3.2.2\n"
+"X-Generator: Poedit 3.3.1\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
@@ -92,7 +92,7 @@ msgstr "შესახებ"
 #, kde-format
 msgctxt "@action:button"
 msgid "Show Contextual Help"
-msgstr ""
+msgstr "კონტექსტური დახმარების ჩვენება"
 
 #: qml/components/PluginDelegate.qml:53
 #, kde-format
@@ -153,10 +153,9 @@ msgid "Send an email to %1"
 msgstr "%1-სთვის ელფოსტის გაგზავნა"
 
 #: qml/components/private/GridViewInternal.qml:78
-#, fuzzy, kde-format
-#| msgid "No plugins found"
+#, kde-format
 msgid "No items found"
-msgstr "დამატებები ნაპოვნი არაა"
+msgstr "ჩანაწერები ნაპოვნი არაა"
 
 #: qml/kquickconfigmodule.cpp:128
 #, kde-format
