@@ -59,8 +59,8 @@ public:
     KCModuleProxyInternal *m_proxyInternal = nullptr;
 };
 
-KCModule::KCModule(QWidget *parent, const KPluginMetaData &data, const QVariantList &)
-    : KAbstractConfigModule(parent, data, {})
+KCModule::KCModule(QWidget *parent, const KPluginMetaData &data)
+    : KAbstractConfigModule(parent, data)
     , d(new KCModulePrivate(parent))
 {
 }

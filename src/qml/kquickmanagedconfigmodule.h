@@ -47,7 +47,7 @@ public:
      * @note do not emit changed signals here, since they are not yet connected
      *       to any slot.
      */
-    explicit KQuickManagedConfigModule(QObject *parent, const KPluginMetaData &metaData, const QVariantList &args = QVariantList());
+    explicit KQuickManagedConfigModule(QObject *parent, const KPluginMetaData &metaData);
 
     /**
      * Destroys the module.

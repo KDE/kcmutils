@@ -25,8 +25,8 @@ public:
     QList<QPointer<KCoreConfigSkeleton>> _skeletons;
 };
 
-KQuickManagedConfigModule::KQuickManagedConfigModule(QObject *parent, const KPluginMetaData &metaData, const QVariantList &args)
-    : KQuickConfigModule(parent, metaData, args)
+KQuickManagedConfigModule::KQuickManagedConfigModule(QObject *parent, const KPluginMetaData &metaData)
+    : KQuickConfigModule(parent, metaData)
     , d(new KQuickManagedConfigModulePrivate(this))
 {
 }

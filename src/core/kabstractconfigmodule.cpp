@@ -21,7 +21,7 @@ public:
     KAbstractConfigModule::Buttons m_buttons = KAbstractConfigModule::Help | KAbstractConfigModule::Default | KAbstractConfigModule::Apply;
 };
 
-KAbstractConfigModule::KAbstractConfigModule(QObject *parent, const KPluginMetaData &metaData, const QVariantList & /*args*/)
+KAbstractConfigModule::KAbstractConfigModule(QObject *parent, const KPluginMetaData &metaData)
     : QObject(parent)
     , d(new KAbstractConfigModulePrivate(metaData))
 {

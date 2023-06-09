@@ -110,8 +110,8 @@ private:
     KCModuleQml *m_module;
 };
 
-KCModuleQml::KCModuleQml(KQuickConfigModule *configModule, QWidget *parent, const QVariantList &args)
-    : KCModule(parent, configModule->metaData(), args)
+KCModuleQml::KCModuleQml(KQuickConfigModule *configModule, QWidget *parent)
+    : KCModule(parent, configModule->metaData())
     , d(new KCModuleQmlPrivate(configModule, this))
 {
     d->widget = new QmlConfigModuleWidget(this, parent);

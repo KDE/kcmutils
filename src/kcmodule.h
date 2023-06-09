@@ -67,7 +67,7 @@ public:
      * @note do not emit changed signals here, since they are not yet connected
      *       to any slot.
      */
-    explicit KCModule(QWidget *parent, const KPluginMetaData &data, const QVariantList &args = {});
+    explicit KCModule(QWidget *parent, const KPluginMetaData &data);
 
     /**
      * Destroys the module.
@@ -145,8 +145,8 @@ protected:
      * Utility overload to avoid having to take both parent and parentWidget
      * KCModuleLoader::loadModule enforces the parent to be a QWidget anyway
      */
-    explicit KCModule(QObject *parent, const KPluginMetaData &data, const QVariantList &args = {})
-        : KCModule(qobject_cast<QWidget *>(parent), data, args)
+    explicit KCModule(QObject *parent, const KPluginMetaData &data)
+        : KCModule(qobject_cast<QWidget *>(parent), data)
     {
     }
 
@@ -157,8 +157,8 @@ protected:
      * @note do not emit changed signals here, since they are not yet connected
      *       to any slot.
      */
-    explicit KCModule(QObject *parent, const QVariantList &args = {})
-        : KCModule(qobject_cast<QWidget *>(parent), KPluginMetaData{}, args)
+    explicit KCModule(QObject *parent)
+        : KCModule(qobject_cast<QWidget *>(parent), KPluginMetaData{})
     {
     }
 

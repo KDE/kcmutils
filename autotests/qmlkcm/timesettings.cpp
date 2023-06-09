@@ -11,8 +11,8 @@ class TimeSettings : public KQuickManagedConfigModule
 {
     Q_OBJECT
 public:
-    TimeSettings(QObject *parent, const KPluginMetaData &data, const QVariantList &args)
-        : KQuickManagedConfigModule(parent, data, args)
+    TimeSettings(QObject *parent, const KPluginMetaData &data)
+        : KQuickManagedConfigModule(parent, data)
     {
         qWarning() << Q_FUNC_INFO;
     }

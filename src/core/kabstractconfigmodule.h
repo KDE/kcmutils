@@ -52,7 +52,7 @@ public:
     Q_DECLARE_FLAGS(Buttons, Button)
     Q_FLAG(Buttons)
 
-    explicit KAbstractConfigModule(QObject *parent, const KPluginMetaData &metaData, const QVariantList &args);
+    explicit KAbstractConfigModule(QObject *parent, const KPluginMetaData &metaData);
 
     ~KAbstractConfigModule() override;
 

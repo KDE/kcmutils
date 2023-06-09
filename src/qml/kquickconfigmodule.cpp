@@ -56,8 +56,8 @@ public:
 
 QHash<QQmlContext *, KQuickConfigModule *> KQuickConfigModulePrivate::s_rootObjects = QHash<QQmlContext *, KQuickConfigModule *>();
 
-KQuickConfigModule::KQuickConfigModule(QObject *parent, const KPluginMetaData &metaData, const QVariantList &args)
-    : KAbstractConfigModule(parent, metaData, args)
+KQuickConfigModule::KQuickConfigModule(QObject *parent, const KPluginMetaData &metaData)
+    : KAbstractConfigModule(parent, metaData)
     , d(new KQuickConfigModulePrivate(this))
 {
 }

@@ -42,7 +42,7 @@ class KCMError : public KCModule
     Q_OBJECT
 public:
     KCMError(const QString &msg, const QString &details, QWidget *parent)
-        : KCModule(parent, KPluginMetaData(), QVariantList())
+        : KCModule(parent, KPluginMetaData())
     {
         QString realDetails = details;
         if (realDetails.isNull()) {
@@ -76,7 +76,7 @@ KCModule *KCModuleLoader::loadModule(const KPluginMetaData &metaData, QWidget *p
             return new KCMError(i18n("Error loading QML file."), qmlKcm->errorString(), parent);
         }
         qCDebug(KCMUTILS_LOG) << "loaded KCM" << metaData.fileName();
-        return new KCModuleQml(qmlKcm, parent, args);
+        return new KCModuleQml(qmlKcm, parent);
     }
 
     const auto kcmoduleResult =
