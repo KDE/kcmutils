@@ -6,8 +6,8 @@
 
 @OPEN_NAMESPACE@
 
-@MODULE_DATA_CLASS_NAME@::@MODULE_DATA_CLASS_NAME@(QObject *parent, const QVariantList &args)
-: KCModuleData(parent, args)
+@MODULE_DATA_CLASS_NAME@::@MODULE_DATA_CLASS_NAME@(QObject *parent)
+: KCModuleData(parent)
 @SETTINGS_CONSTRUCTOR_INITIALIZATION@
 {
 autoRegisterSkeletons();

@@ -27,7 +27,7 @@ class KCMUTILSCORE_EXPORT KCModuleData : public QObject
 {
     Q_OBJECT
 public:
-    explicit KCModuleData(QObject *parent = nullptr, const QVariantList &args = QVariantList());
+    explicit KCModuleData(QObject *parent = nullptr);
     ~KCModuleData() override;
 
     /**

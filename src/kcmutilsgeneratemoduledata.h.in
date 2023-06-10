@@ -16,7 +16,7 @@ class @MODULE_DATA_CLASS_NAME@ : public KCModuleData
     Q_OBJECT
 
 public:
-    explicit @MODULE_DATA_CLASS_NAME@(QObject *parent = nullptr, const QVariantList &args = QVariantList());
+    explicit @MODULE_DATA_CLASS_NAME@(QObject *parent = nullptr);
     @SETTINGS_METHOD_DECLARATION@
 
 private:

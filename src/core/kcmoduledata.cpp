@@ -24,7 +24,7 @@ public:
     QList<QPointer<KCoreConfigSkeleton>> _skeletons;
 };
 
-KCModuleData::KCModuleData(QObject *parent, const QVariantList &)
+KCModuleData::KCModuleData(QObject *parent)
     : QObject(parent)
     , d(new KCModuleDataPrivate(this))
 {
