@@ -17,7 +17,7 @@ msgstr ""
 "Project-Id-Version: kdelibs4\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-06-06 02:08+0000\n"
-"PO-Revision-Date: 2023-04-29 10:34+0200\n"
+"PO-Revision-Date: 2023-06-10 09:21+0200\n"
 "Last-Translator: Łukasz Wojniłowicz <lukasz.wojnilowicz@gmail.com>\n"
 "Language-Team: Polish <kde-i18n-doc@kde.org>\n"
 "Language: pl\n"
@@ -186,7 +186,7 @@ msgstr "O programie"
 #, kde-format
 msgctxt "@action:button"
 msgid "Show Contextual Help"
-msgstr ""
+msgstr "Pokaż pomoc podręczną"
 
 #: qml/components/PluginDelegate.qml:53
 #, kde-format
@@ -247,10 +247,9 @@ msgid "Send an email to %1"
 msgstr "Wyślij wiadomość do %1"
 
 #: qml/components/private/GridViewInternal.qml:78
-#, fuzzy, kde-format
-#| msgid "No plugins found"
+#, kde-format
 msgid "No items found"
-msgstr "Nie znaleziono żadnych wtyczek"
+msgstr "Nie znaleziono niczego"
 
 #: qml/kquickconfigmodule.cpp:128
 #, kde-format
