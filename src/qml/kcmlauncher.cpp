@@ -32,7 +32,7 @@ void KCMLauncher::openSystemSettings(const QString &name, const QStringList &arg
         job = new KIO::CommandLauncherJob(systemSettings, cmdline);
         job->setDesktopName(systemSettings);
     } else {
-        job = new KIO::CommandLauncherJob(QStringLiteral("kcmshell5"), cmdline);
+        job = new KIO::CommandLauncherJob(QStringLiteral("kcmshell6"), cmdline);
     }
 
     job->start();
@@ -50,7 +50,7 @@ void KCMLauncher::openInfoCenter(const QString &name) const
         job = new KIO::CommandLauncherJob(infoCenterbinary, QStringList(name));
         job->setDesktopName(infoCenterDesktopFile);
     } else {
-        job = new KIO::CommandLauncherJob(QStringLiteral("kcmshell5"), QStringList(name));
+        job = new KIO::CommandLauncherJob(QStringLiteral("kcmshell6"), QStringList(name));
     }
 
     job->start();
