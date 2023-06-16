@@ -45,7 +45,8 @@ public:
     int currentIndex = 0;
     QString _errorString;
 
-    static QHash<QObject *, KQuickConfigModule *> s_rootObjects;
+    static QHash<QQmlContext *, KQuickConfigModule *> s_rootObjects;
+
     QString getResourcePath(const QString &file)
     {
         return QLatin1String("/kcm/") + _q->metaData().pluginId() + QLatin1String("/") + file;
@@ -56,7 +57,7 @@ public:
     }
 };
 
-QHash<QObject *, KQuickConfigModule *> KQuickConfigModulePrivate::s_rootObjects = QHash<QObject *, KQuickConfigModule *>();
+QHash<QQmlContext *, KQuickConfigModule *> KQuickConfigModulePrivate::s_rootObjects = QHash<QQmlContext *, KQuickConfigModule *>();
 
 KQuickConfigModule::KQuickConfigModule(QObject *parent, const KPluginMetaData &metaData, const QVariantList &args)
     : KAbstractConfigModule(parent, metaData, args)
@@ -82,18 +83,18 @@ KQuickConfigModule *KQuickConfigModule::qmlAttachedProperties(QObject *object)
     // at the moment of the attached object creation, the root item is the only one that hasn't a parent
     // only way to avoid creation of this attached for everybody but the root item
     const QQmlEngine *engine = qmlEngine(object);
-    QQmlContext *cont = QQmlEngine::contextForObject(object);
+    QQmlContext *ctx = QQmlEngine::contextForObject(object);
 
     // Search the qml context that is the "root" for the sharedqmlobject, which
     // is an ancestor of QQmlEngine::contextForObject(object) and the direct child
     // of the engine's root context: we can do this assumption on the internals as
     // we are distributed on the same repo.
-    while (cont->parentContext() && cont->parentContext() != engine->rootContext()) {
-        cont = cont->parentContext();
+    while (ctx->parentContext() && ctx->parentContext() != engine->rootContext()) {
+        ctx = ctx->parentContext();
     }
 
-    if (!object->parent() && KQuickConfigModulePrivate::s_rootObjects.contains(cont)) {
-        return KQuickConfigModulePrivate::s_rootObjects.value(cont);
+    if (!object->parent() && KQuickConfigModulePrivate::s_rootObjects.contains(ctx)) {
+        return KQuickConfigModulePrivate::s_rootObjects.value(ctx);
     } else {
         return nullptr;
     }
