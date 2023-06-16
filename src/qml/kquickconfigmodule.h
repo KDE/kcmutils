@@ -79,15 +79,17 @@ class KQuickConfigModulePrivate;
  * import of "org.kde.kcmutils" the ConfigModule attached property.
  *
  * \code
- * import QtQuick 2.1
+ * import QtQuick
  * import org.kde.kcmutils
+ * import org.kde.kirigami as Kirigami
  *
  * Item {
- *     //implicitWidth and implicitHeight will be used as initial size when loaded in kcmshell6
- *     implicitWidth: units.gridUnit * 20
- *     implicitHeight: units.gridUnit * 20
+ *     // implicit size will be used as initial size when loaded in kcmshell6
+ *     implicitWidth: Kirigami.Units.gridUnit * 30
+ *     implicitHeight: Kirigami.Units.gridUnit * 30
  *
- *     ConfigModule.buttons: ConfigModule.Help|ConfigModule.Apply
+ *     ConfigModule.buttons: ConfigModule.Help | ConfigModule.Apply
+ *
  *     Label {
  *         text: kcm.needsSave
  *     }
