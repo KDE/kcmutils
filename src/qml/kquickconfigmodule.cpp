@@ -71,6 +71,9 @@ KQuickConfigModule::~KQuickConfigModule()
 {
     // in case mainUi was never called
     if (d->_engine) {
+        // delete the mainUi before removing the root object.
+        // Otherwise, we get lots of console errors about trying to read properties of null objects
+        delete d->_engine->rootObject();
         KQuickConfigModulePrivate::s_rootObjects.remove(d->_engine->rootContext());
     }
 }
