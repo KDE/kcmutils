@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kcmutils\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-06-06 02:08+0000\n"
+"POT-Creation-Date: 2023-06-17 02:06+0000\n"
 "PO-Revision-Date: 2023-05-09 23:41+0200\n"
 "Last-Translator: Enol P. <enolp@softastur.org>\n"
 "Language-Team: \n"
@@ -151,7 +151,7 @@ msgstr ""
 msgid "No items found"
 msgstr "Nun s'atopó nengún plugin"
 
-#: qml/kquickconfigmodule.cpp:128
+#: qml/kquickconfigmodule.cpp:129
 #, kde-format
 msgid "Could not find resource '%1'"
 msgstr "Nun se pudo atopar el recursu «%1»"

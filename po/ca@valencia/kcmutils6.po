@@ -13,7 +13,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kcmutils\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-06-06 02:08+0000\n"
+"POT-Creation-Date: 2023-06-17 02:06+0000\n"
 "PO-Revision-Date: 2023-06-06 09:47+0200\n"
 "Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
@@ -164,7 +164,7 @@ msgstr "Envia un correu a %1"
 msgid "No items found"
 msgstr "No s'ha trobat cap element"
 
-#: qml/kquickconfigmodule.cpp:128
+#: qml/kquickconfigmodule.cpp:129
 #, kde-format
 msgid "Could not find resource '%1'"
 msgstr "No s'ha pogut trobar el recurs «%1»"

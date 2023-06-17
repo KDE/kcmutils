@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-06-06 02:08+0000\n"
+"POT-Creation-Date: 2023-06-17 02:06+0000\n"
 "PO-Revision-Date: 2011-11-26 15:12+0400\n"
 "Last-Translator: Ainur Shakirov <ainur.shakirov.tt@gmail.com>\n"
 "Language-Team: Tatar <>\n"
@@ -175,7 +175,7 @@ msgstr "&Е-mail тапшыру"
 msgid "No items found"
 msgstr "Табылмады"
 
-#: qml/kquickconfigmodule.cpp:128
+#: qml/kquickconfigmodule.cpp:129
 #, fuzzy, kde-format
 #| msgid "Could not find service '%1'."
 msgid "Could not find resource '%1'"

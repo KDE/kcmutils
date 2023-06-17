@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kcmutils\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-06-06 02:08+0000\n"
+"POT-Creation-Date: 2023-06-17 02:06+0000\n"
 "PO-Revision-Date: 2023-06-07 05:42+0200\n"
 "Last-Translator: Temuri Doghonadze <temuri.doghonadze@gmail.com>\n"
 "Language-Team: Georgian <kde-i18n-doc@kde.org>\n"
@@ -157,7 +157,7 @@ msgstr "%1-სთვის ელფოსტის გაგზავნა"
 msgid "No items found"
 msgstr "ჩანაწერები ნაპოვნი არაა"
 
-#: qml/kquickconfigmodule.cpp:128
+#: qml/kquickconfigmodule.cpp:129
 #, kde-format
 msgid "Could not find resource '%1'"
 msgstr "რესურსი '%1' ვერ ვიპოვე"

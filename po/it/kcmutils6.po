@@ -15,7 +15,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdelibs4\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-06-06 02:08+0000\n"
+"POT-Creation-Date: 2023-06-17 02:06+0000\n"
 "PO-Revision-Date: 2023-06-06 15:37+0200\n"
 "Last-Translator: Vincenzo Reale <smart2128vr@gmail.com>\n"
 "Language-Team: Italian <kde-i18n-it@kde.org>\n"
@@ -166,7 +166,7 @@ msgstr "Invia un messaggio di posta elettronica a %1"
 msgid "No items found"
 msgstr "Nessun elemento trovato"
 
-#: qml/kquickconfigmodule.cpp:128
+#: qml/kquickconfigmodule.cpp:129
 #, kde-format
 msgid "Could not find resource '%1'"
 msgstr "Impossibile trovare la risorsa «%1»"
