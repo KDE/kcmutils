@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: kcmutils\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-05-08 02:07+0000\n"
-"PO-Revision-Date: 2023-05-11 16:54+0200\n"
+"PO-Revision-Date: 2023-06-17 12:46+0200\n"
 "Last-Translator: Adrián Chaves (Gallaecio) <adrian@chaves.io>\n"
 "Language-Team: Galician <proxecto@trasno.gal>\n"
 "Language: gl\n"
@@ -15,7 +15,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Lokalize 23.04.0\n"
+"X-Generator: Lokalize 23.04.2\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
@@ -113,7 +113,8 @@ msgstr "Usar un título específico para a xanela."
 #, kde-format
 msgid "Show an indicator when settings have changed from their default value"
 msgstr ""
-"Mostrar un indicados cando as opcións difiran do seu valor predeterminado"
+"Mostrar un indicador cando as opcións cambiasen con respecto ao seu valor "
+"predeterminado."
 
 #: main.cpp:113
 #, kde-format

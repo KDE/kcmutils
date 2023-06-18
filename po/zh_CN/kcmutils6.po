@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: kdeorg\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-06-17 02:06+0000\n"
-"PO-Revision-Date: 2023-05-22 13:58\n"
+"PO-Revision-Date: 2023-06-17 04:09\n"
 "Last-Translator: \n"
 "Language-Team: Chinese Simplified\n"
 "Language: zh_CN\n"
@@ -89,7 +89,7 @@ msgstr "关于"
 #, kde-format
 msgctxt "@action:button"
 msgid "Show Contextual Help"
-msgstr ""
+msgstr "显示相关帮助"
 
 #: qml/components/PluginDelegate.qml:53
 #, kde-format
@@ -150,10 +150,9 @@ msgid "Send an email to %1"
 msgstr "发送电子邮件给 %1"
 
 #: qml/components/private/GridViewInternal.qml:78
-#, fuzzy, kde-format
-#| msgid "No plugins found"
+#, kde-format
 msgid "No items found"
-msgstr "未发现插件"
+msgstr "没有找到项目"
 
 #: qml/kquickconfigmodule.cpp:129
 #, kde-format
