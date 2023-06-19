@@ -40,15 +40,8 @@ class KQuickManagedConfigModulePrivate;
 class KCMUTILSQUICK_EXPORT KQuickManagedConfigModule : public KQuickConfigModule
 {
     Q_OBJECT
-public:
-    /**
-     * Base class for all KControlModules.
-     *
-     * @note do not emit changed signals here, since they are not yet connected
-     *       to any slot.
-     */
-    explicit KQuickManagedConfigModule(QObject *parent, const KPluginMetaData &metaData);
 
+public:
     /**
      * Destroys the module.
      */
@@ -108,6 +101,15 @@ protected Q_SLOTS:
      * After skeleton is registered it will automatically call settingsChanged().
      */
     void registerSettings(KCoreConfigSkeleton *skeleton);
+
+protected:
+    /**
+     * Base class for all KControlModules.
+     * Use KQuickConfigModuleLoader to instantiate this class
+     *
+     * @note do not emit changed signals here, since they are not yet connected to any slot.
+     */
+    explicit KQuickManagedConfigModule(QObject *parent, const KPluginMetaData &metaData);
 
 private:
     /**

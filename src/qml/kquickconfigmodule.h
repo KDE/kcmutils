@@ -112,14 +112,6 @@ class KCMUTILSQUICK_EXPORT KQuickConfigModule : public KAbstractConfigModule
 
 public:
     /**
-     * Base class for all QtQuick config modules.
-     *
-     * @note do not emit changed signals here, since they are not yet connected
-     *       to any slot.
-     */
-    explicit KQuickConfigModule(QObject *parent, const KPluginMetaData &metaData);
-
-    /**
      * Destroys the module.
      */
     ~KQuickConfigModule() override;
@@ -233,6 +225,15 @@ Q_SIGNALS:
      * Emitted when the number of pages changed
      */
     void depthChanged(int index);
+
+protected:
+    /**
+     * Base class for all QtQuick config modules.
+     * Use KQuickConfigModuleLoader to instantiate this class
+     *
+     * @note do not emit changed signals here, since they are not yet connected to any slot.
+     */
+    explicit KQuickConfigModule(QObject *parent, const KPluginMetaData &metaData);
 
 private:
     void setInternalEngine(const std::shared_ptr<QQmlEngine> &engine);
