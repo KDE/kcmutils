@@ -1,14 +1,12 @@
-# Traducerea kdelibs4.po în Română
-# Laurenţiu Buzdugan <lbuz@rolix.org>, 2008, 2009.
-# Sergiu Bivol <sergiu@cip.md>, 2008, 2009, 2010.
-# Sergiu Bivol <sergiu@cip.md>, 2010, 2012, 2013, 2014, 2020, 2021, 2022.
-# Cristian Oneț <onet.cristian@gmail.com>, 2010, 2011, 2012, 2013.
+# Copyright (C) 2023 This file is copyright:
+# This file is distributed under the same license as the kcmutils package.
+# Sergiu Bivol <sergiu@cip.md>, 2008, 2009, 2010, 2012, 2013, 2014, 2020, 2021, 2022, 2023.
 msgid ""
 msgstr ""
-"Project-Id-Version: kdelibs4\n"
+"Project-Id-Version: kcmutils\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2022-12-07 00:43+0000\n"
-"PO-Revision-Date: 2022-06-01 15:14+0100\n"
+"PO-Revision-Date: 2023-06-18 18:20+0100\n"
 "Last-Translator: Sergiu Bivol <sergiu@cip.md>\n"
 "Language-Team: Romanian <kde-i18n-ro@kde.org>\n"
 "Language: ro\n"
@@ -22,12 +20,12 @@ msgstr ""
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
 msgid "Your names"
-msgstr "Claudiu Costin,Sergiu Bivol,Laurențiu Buzdugan,Cristian Oneț"
+msgstr "Sergiu Bivol"
 
 #, kde-format
 msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
-msgstr ",sergiu@cip.md,lbuz@rolix.org,onet.cristian@gmail.com"
+msgstr "sergiu@cip.md"
 
 #: kcmoduleloader.cpp:57 kcmoduleloader.cpp:160
 #, kde-format
@@ -53,12 +51,12 @@ msgid ""
 "carefully and try to remove the module mentioned in the error message. If "
 "this fails, consider contacting your distributor or packager.</p></qt>"
 msgstr ""
-"<qt><p>Motive posibile:<ul><li>A apărut o eroare la ultima actualizare de "
-"sistem ce a lăsat în urmă un modul de control orfan</li><li>Aveți în sistem "
-"un module vechi de la terți.</li></ul></p><p>Verificați aceste situații cu "
-"atenție și încercați să ștergeți modulul menționat în mesajul de eroare. "
-"Dacă acest lucru eșuează, contactați distribuitorul dumneavoastră de "
-"software.</p></qt>"
+"<qt><p>Motive posibile:<ul><li>A intervenit o eroare la ultima actualizare "
+"de sistem ce a lăsat în urmă un modul de control orfan</li><li>Aveți în "
+"sistem module vechi de la terți.</li></ul></p><p>Verificați aceste situații "
+"cu atenție și încercați să ștergeți modulul menționat în mesajul de eroare. "
+"Dacă acest lucru eșuează, contactați distribuitorul sau împachetatorul "
+"dumneavoastră.</p></qt>"
 
 #: kcmoduleloader.cpp:153
 #, kde-format
