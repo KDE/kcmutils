@@ -99,7 +99,7 @@ msgstr "Sobre"
 #, kde-format
 msgctxt "@action:button"
 msgid "Show Contextual Help"
-msgstr "Mostrar a axuda contextual"
+msgstr "Amosar a axuda contextual"
 
 #: qml/components/PluginDelegate.qml:53
 #, kde-format

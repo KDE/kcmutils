@@ -92,7 +92,7 @@ msgstr "Especifique un idioma en particular"
 #: main.cpp:100
 #, kde-format
 msgid "Do not display main window"
-msgstr "Non mostrar a xanela principal"
+msgstr "Non amosar a xanela principal"
 
 #: main.cpp:101
 #, kde-format
@@ -113,7 +113,7 @@ msgstr "Usar un título específico para a xanela."
 #, kde-format
 msgid "Show an indicator when settings have changed from their default value"
 msgstr ""
-"Mostrar un indicador cando as opcións cambiasen con respecto ao seu valor "
+"Amosar un indicador cando as opcións cambiasen con respecto ao seu valor "
 "predeterminado."
 
 #: main.cpp:113
