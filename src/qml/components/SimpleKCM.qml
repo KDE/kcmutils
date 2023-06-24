@@ -81,8 +81,8 @@ Kirigami.ScrollablePage {
         // rightPadding: root.margins
         // bottomPadding: root.margins
 
-        // When the page is scrollable, we need to add a line below the header
-        // ourselves to separate it from the view
+        // When the header is visible, we need to add a line below to separate
+        // it from the view
         Kirigami.Separator {
             z: 999
             anchors {
@@ -90,7 +90,7 @@ Kirigami.ScrollablePage {
                 right: parent.right
                 top: parent.bottom
             }
-            visible: headerParent.contentVisible || (__flickableOverflows && !Kirigami.Settings.isMobile)
+            visible: headerParent.contentVisible
         }
     }
 
