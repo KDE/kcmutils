@@ -26,7 +26,7 @@ msgstr ""
 "Project-Id-Version: kdelibs4\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-06-17 02:06+0000\n"
-"PO-Revision-Date: 2023-04-20 17:32+0300\n"
+"PO-Revision-Date: 2023-06-07 16:40+0300\n"
 "Last-Translator: Tommi Nieminen <translator@legisign.org>\n"
 "Language-Team: Finnish <kde-i18n-doc@kde.org>\n"
 "Language: fi\n"
@@ -34,7 +34,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Lokalize 22.12.3\n"
+"X-Generator: Lokalize 23.04.1\n"
 "X-POT-Import-Date: 2013-01-13 20:43:21+0000\n"
 
 #, kde-format
@@ -183,10 +183,9 @@ msgid "No items found"
 msgstr "Liitännäisiä ei löytynyt"
 
 #: qml/kquickconfigmodule.cpp:129
-#, fuzzy, kde-format
-#| msgid "Could not find service '%1'."
+#, kde-format
 msgid "Could not find resource '%1'"
-msgstr "Palvelua ”%1” ei löytynyt."
+msgstr "Resurssia ”%1” ei löytynyt"
 
 #~ msgid "Invalid KPackage '%1'"
 #~ msgstr "Virheellinen KPackage ”%1”"
