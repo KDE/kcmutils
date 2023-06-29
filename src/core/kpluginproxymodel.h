@@ -3,6 +3,9 @@
     SPDX-License-Identifier: LGPL-2.0-or-later
 */
 
+#ifndef KPLUGINPROXYMODEL_H
+#define KPLUGINPROXYMODEL_H
+
 #include "kcmutilscore_export.h"
 
 #include <KCategorizedSortFilterProxyModel>
@@ -33,3 +36,5 @@ protected:
 private:
     QString m_query;
 };
+
+#endif
