@@ -169,3 +169,4 @@ QList<KConfigDialogManager *> KCModule::configs() const
 }
 
 #include "kcmodule.moc"
+#include "moc_kcmodule.cpp"

@@ -16,3 +16,5 @@ KCMTest::KCMTest(QObject *parent, const QVariantList &args)
 K_PLUGIN_FACTORY_WITH_JSON(kcmtestfactory, "kcmtest.json", registerPlugin<KCMTest>();)
 
 #include "kcmtest.moc"
+
+#include "moc_kcmtest.cpp"

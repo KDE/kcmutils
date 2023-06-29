@@ -247,3 +247,4 @@ bool KPluginModel::isSaveNeeded()
     return !d->m_pendingStates.isEmpty();
 }
 
+#include "moc_kpluginmodel.cpp"

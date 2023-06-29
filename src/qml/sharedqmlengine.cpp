@@ -308,3 +308,5 @@ QObject *SharedQmlEngine::createObjectFromComponent(QQmlComponent *component, QQ
         return nullptr;
     }
 }
+
+#include "moc_sharedqmlengine_p.cpp"

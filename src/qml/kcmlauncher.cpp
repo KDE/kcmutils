@@ -55,3 +55,5 @@ void KCMLauncher::openInfoCenter(const QString &name) const
 
     job->start();
 }
+
+#include "moc_kcmlauncher_p.cpp"
