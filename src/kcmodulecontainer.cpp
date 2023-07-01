@@ -170,6 +170,8 @@ KCModuleContainer::~KCModuleContainer()
     delete d;
 }
 
+#include "moc_kcmodulecontainer.cpp"
+
 #endif
 
 /***********************************************************************/

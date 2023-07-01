@@ -23,4 +23,7 @@ QString KSettingsWidgetAdaptor::applicationName()
     }
     return QCoreApplication::applicationName();
 }
+
+#include "moc_ksettingswidgetadaptor.cpp"
+
 #endif

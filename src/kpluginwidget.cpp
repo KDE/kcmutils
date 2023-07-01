@@ -486,3 +486,6 @@ QFont PluginDelegate::titleFont(const QFont &baseFont) const
 
     return retFont;
 }
+
+#include "moc_kpluginwidget.cpp"
+#include "moc_kpluginwidget_p.cpp"
