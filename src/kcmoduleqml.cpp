@@ -144,6 +144,7 @@ KCModuleQml::KCModuleQml(KQuickConfigModule *configModule, QWidget *parent, cons
     d->quickWidget->setResizeMode(QQuickWidget::SizeRootObjectToView);
     d->quickWidget->setFocusPolicy(Qt::StrongFocus);
     d->quickWidget->setAttribute(Qt::WA_AlwaysStackOnTop, true);
+    d->quickWidget->setAttribute(Qt::WA_NoMousePropagation, true); // Workaround for QTBUG-109861 to fix drag everywhere
     d->quickWindow = d->quickWidget->quickWindow();
     d->quickWindow->setColor(Qt::transparent);
 
