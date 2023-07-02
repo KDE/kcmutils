@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdelibs4\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-06-17 02:06+0000\n"
+"POT-Creation-Date: 2023-07-02 02:35+0000\n"
 "PO-Revision-Date: 2022-05-06 00:21+0200\n"
 "Last-Translator: Shinjo Park <kde@peremen.name>\n"
 "Language-Team: Korean <kde-kr@kde.org>\n"
@@ -158,7 +158,7 @@ msgstr "%1(으)로 이메일 보내기"
 msgid "No items found"
 msgstr "플러그인을 찾을 수 없음"
 
-#: qml/kquickconfigmodule.cpp:129
+#: qml/kquickconfigmodule.cpp:120
 #, kde-format
 msgid "Could not find resource '%1'"
 msgstr ""
