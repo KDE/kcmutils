@@ -25,15 +25,15 @@ Kirigami.BasicListItem {
 
     leading: QQC2.CheckBox {
         id: checkbox
-
         checked: model.enabled
-
         onToggled: model.enabled = checked
+        visible: listItem.leading === checkbox
 
         KCM.SettingHighlighter {
             highlight: checkbox.checked !== model.enabledByDefault
         }
     }
+
 
     icon.name: model.icon
     label: model.name

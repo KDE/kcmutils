@@ -60,8 +60,10 @@ public:
     }
 
     QList<KPluginMetaData> m_plugins;
+    QSet<KPluginMetaData> m_unsortablePlugins;
     QHash<QString, KPluginMetaData> m_pluginKcms;
     KConfigGroup m_config;
+    QList<QString> m_orderedCategories; // Preserve order of categories in which they were added
     QHash<QString, QString> m_categoryLabels;
     QHash<QString, bool> m_pendingStates;
 };
@@ -88,6 +90,9 @@ QVariant KPluginModel::data(const QModelIndex &index, int role) const
     case Roles::EnabledRole:
         return d->isPluginEnabled(plugin);
     case Roles::IsChangeableRole:
+        if (d->m_unsortablePlugins.contains(plugin)) {
+            return false;
+        }
         if (d->m_config.isValid()) {
             return !d->m_config.isEntryImmutable(plugin.pluginId() + QLatin1String("Enabled"));
         }
@@ -103,6 +108,8 @@ QVariant KPluginModel::data(const QModelIndex &index, int role) const
         return plugin.pluginId();
     case EnabledByDefaultRole:
         return plugin.isEnabledByDefault();
+    case SortableRole:
+        return !d->m_unsortablePlugins.contains(plugin);
     }
 
     return {};
@@ -153,9 +160,36 @@ QHash<int, QByteArray> KPluginModel::roleNames() const
     };
 };
 
+void KPluginModel::addUnsortablePlugins(const QList<KPluginMetaData> &newPlugins, const QString &categoryLabel)
+{
+    d->m_unsortablePlugins.unite(QSet(newPlugins.begin(), newPlugins.end()));
+    addPlugins(newPlugins, categoryLabel);
+}
+
+bool KPluginModel::moveRows(const QModelIndex &sourceParent, int sourceRow, int count, const QModelIndex &destinationParent, int destinationChild)
+{
+    if (sourceParent.isValid() || destinationParent.isValid()) {
+        return false;
+    }
+    if ((sourceRow + count - 1) >= d->m_plugins.size()) {
+        return false;
+    }
+
+    const bool isMoveDown = destinationChild > sourceRow;
+    if (!beginMoveRows(sourceParent, sourceRow, sourceRow + count - 1, destinationParent, isMoveDown ? destinationChild + 1 : destinationChild)) {
+        return false;
+    }
+    for (int i = 0; i < count; i++) {
+        d->m_plugins.insert(destinationChild, d->m_plugins.takeAt(sourceRow + i));
+    }
+    endMoveRows();
+    return true;
+}
+
 void KPluginModel::addPlugins(const QList<KPluginMetaData> &newPlugins, const QString &categoryLabel)
 {
     beginInsertRows({}, d->m_plugins.size(), d->m_plugins.size() + newPlugins.size() - 1);
+    d->m_orderedCategories << categoryLabel;
     d->m_plugins.append(newPlugins);
 
     for (const KPluginMetaData &plugin : newPlugins) {
@@ -166,6 +200,16 @@ void KPluginModel::addPlugins(const QList<KPluginMetaData> &newPlugins, const QS
     endInsertRows();
 
     Q_EMIT defaulted(d->isDefaulted());
+}
+
+void KPluginModel::removePlugin(const KPluginMetaData &data)
+{
+    if (const int index = d->m_plugins.indexOf(data); index != -1) {
+        beginRemoveRows({}, index, index);
+        d->m_plugins.removeAt(index);
+        d->m_unsortablePlugins.remove(data);
+        endRemoveRows();
+    }
 }
 
 void KPluginModel::setConfig(const KConfigGroup &config)
@@ -245,6 +289,11 @@ void KPluginModel::defaults()
 bool KPluginModel::isSaveNeeded()
 {
     return !d->m_pendingStates.isEmpty();
+}
+
+QStringList KPluginModel::getOrderedCategoryLabels()
+{
+    return d->m_orderedCategories;
 }
 
 #include "moc_kpluginmodel.cpp"

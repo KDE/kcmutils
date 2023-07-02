@@ -54,7 +54,10 @@ bool KPluginProxyModel::filterAcceptsRow(int sourceRow, const QModelIndex & /*so
 
 bool KPluginProxyModel::subSortLessThan(const QModelIndex &left, const QModelIndex &right) const
 {
-    return left.data(KPluginModel::NameRole).toString().compare(right.data(KPluginModel::NameRole).toString(), Qt::CaseInsensitive) < 0;
+    if (left.data(KPluginModel::SortableRole).toBool() && right.data(KPluginModel::SortableRole).toBool()) {
+        return left.data(KPluginModel::NameRole).toString().compare(right.data(KPluginModel::NameRole).toString(), Qt::CaseInsensitive) < 0;
+    }
+    return 0;
 }
 
 int KPluginProxyModel::compareCategories(const QModelIndex &left, const QModelIndex &right) const

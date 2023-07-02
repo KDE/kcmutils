@@ -7,6 +7,7 @@
 #define KPLUGINPROXYMODEL_H
 
 #include "kcmutilscore_export.h"
+#include "kpluginmodel.h"
 
 #include <KCategorizedSortFilterProxyModel>
 

@@ -34,6 +34,7 @@ public:
         ConfigRole,
         IdRole,
         EnabledByDefaultRole,
+        SortableRole, /// @internal
     };
 
     explicit KPluginModel(QObject *parent = nullptr);
@@ -44,7 +45,19 @@ public:
     int rowCount(const QModelIndex &parent = QModelIndex()) const override;
     QHash<int, QByteArray> roleNames() const override;
 
+    bool moveRows(const QModelIndex &sourceParent, int sourceRow, int count, const QModelIndex &destinationParent, int destinationChild) override;
+
     void addPlugins(const QList<KPluginMetaData> &plugins, const QString &categoryLabel);
+
+    /**
+     * Add plugins that should not be sorted automatically based on their name
+     * This is useful in case your app has a custom sorting mechanism or implements reordering of plugins
+     *
+     * @since 6.0
+     */
+    void addUnsortablePlugins(const QList<KPluginMetaData> &plugins, const QString &categoryLabel);
+    /// @since 6.0
+    void removePlugin(const KPluginMetaData &data);
     void clear();
     void setConfig(const KConfigGroup &config);
     void save();
@@ -64,5 +77,7 @@ public:
 
 private:
     const std::unique_ptr<KPluginModelPrivate> d;
+    friend class KPluginProxyModel;
+    QStringList getOrderedCategoryLabels();
 };
 #endif
