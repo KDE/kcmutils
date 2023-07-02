@@ -24,6 +24,8 @@ public:
     void setModel(QAbstractListModel *model)
     {
         setSourceModel(model);
+        m_model = qobject_cast<KPluginModel *>(model);
+        Q_ASSERT(m_model);
     }
 
 Q_SIGNALS:
@@ -32,9 +34,11 @@ Q_SIGNALS:
 protected:
     bool filterAcceptsRow(int sourceRow, const QModelIndex &sourceParent) const override;
     bool subSortLessThan(const QModelIndex &left, const QModelIndex &right) const override;
+    int compareCategories(const QModelIndex &left, const QModelIndex &right) const override;
 
 private:
     QString m_query;
+    KPluginModel *m_model;
 };
 
 #endif

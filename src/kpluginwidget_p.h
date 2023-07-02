@@ -42,7 +42,7 @@ public:
     KCategorizedView *listView = nullptr;
     KCategoryDrawer *categoryDrawer = nullptr;
     KPluginModel *pluginModel = nullptr;
-    QSortFilterProxyModel *proxyModel = nullptr;
+    KPluginProxyModel *proxyModel = nullptr;
     QVariantList kcmArguments;
     bool showDefaultIndicator = false;
 };

@@ -76,7 +76,7 @@ KPluginWidget::KPluginWidget(QWidget *parent)
             });
 
     d->proxyModel = new KPluginProxyModel(this);
-    d->proxyModel->setSourceModel(d->pluginModel);
+    d->proxyModel->setModel(d->pluginModel);
     d->listView->setModel(d->proxyModel);
     d->listView->setAlternatingRowColors(true);
 

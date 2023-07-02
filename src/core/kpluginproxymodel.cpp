@@ -57,4 +57,13 @@ bool KPluginProxyModel::subSortLessThan(const QModelIndex &left, const QModelInd
     return left.data(KPluginModel::NameRole).toString().compare(right.data(KPluginModel::NameRole).toString(), Qt::CaseInsensitive) < 0;
 }
 
+int KPluginProxyModel::compareCategories(const QModelIndex &left, const QModelIndex &right) const
+{
+    const QStringList orderedCategoryLabels = m_model->getOrderedCategoryLabels();
+    const QString leftLabel = left.data(KCategorizedSortFilterProxyModel::CategorySortRole).toString();
+    const QString rightLabel = right.data(KCategorizedSortFilterProxyModel::CategorySortRole).toString();
+    // Preserve the order in which they were passed in the model from consumers
+    return orderedCategoryLabels.indexOf(leftLabel) - orderedCategoryLabels.indexOf(rightLabel);
+}
+
 #include "moc_kpluginproxymodel.cpp"
