@@ -19,7 +19,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: Lokalize 1.4\n"
-"Plural-Forms: nplurals=1; plural=0;\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
@@ -187,6 +187,7 @@ msgstr "بررسی وابستگی"
 msgid "%1 plugin automatically added due to plugin dependencies"
 msgid_plural "%1 plugins automatically added due to plugin dependencies"
 msgstr[0] "تغییرات خودکار به علت وابستگیهای وصله انجام شده است"
+msgstr[1] ""
 
 #: kpluginselector.cpp:238
 #, kde-format
@@ -199,6 +200,7 @@ msgstr "، "
 msgid "%1 plugin automatically removed due to plugin dependencies"
 msgid_plural "%1 plugins automatically removed due to plugin dependencies"
 msgstr[0] "تغییرات خودکار به علت وابستگیهای وصله انجام شده است"
+msgstr[1] ""
 
 #: kpluginselector.cpp:264 kpluginwidget.cpp:59
 #, fuzzy, kde-format
