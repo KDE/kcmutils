@@ -17,23 +17,6 @@
 #include <QResource>
 #include <QTimer>
 
-// TODO: This incubation controller is not great. Ideally, we need to reuse QQuickWindow's QML engine.
-class PeriodicIncubationController : public QObject, public QQmlIncubationController
-{
-public:
-    explicit PeriodicIncubationController(QObject *parent = nullptr)
-        : QObject(parent)
-    {
-        startTimer(16);
-    }
-
-protected:
-    void timerEvent(QTimerEvent *) override
-    {
-        incubateFor(5);
-    }
-};
-
 class QmlObjectIncubator : public QQmlIncubator
 {
 public:
@@ -142,10 +125,6 @@ SharedQmlEngine::SharedQmlEngine(const std::shared_ptr<QQmlEngine> &engine, QObj
     : QObject(parent)
     , d(new SharedQmlEnginePrivate(engine, this))
 {
-    if (!engine->incubationController()) {
-        engine->setIncubationController(new PeriodicIncubationController(this));
-    }
-
     d->rootContext = new QQmlContext(engine.get());
     d->rootContext->setParent(this); // Delete the context when deleting the shared engine
 
