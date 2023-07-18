@@ -51,7 +51,7 @@ ListView {
         parent: pluginSelector.parent
         property var metaDataInfo
 
-        contentItem: Loader {
+        Loader {
             active: internalAboutDialog.metaDataInfo !== undefined
             sourceComponent: ColumnLayout {
                 Private.AboutPlugin {
