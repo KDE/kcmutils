@@ -471,6 +471,8 @@ void PluginDelegate::configure(const QModelIndex &index)
     });
     layout->addWidget(buttonBox);
 
+    // Load KCM right before showing it
+    kcmInstance->load();
     configDialog->show();
 }
 
