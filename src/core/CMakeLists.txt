@@ -1,3 +1,6 @@
+# SPDX-FileCopyrightText: 2023 Alexander Lohnau <alexander.lohnau@gmx.de>
+# SPDX-License-Identifier: BSD-3-Clause
+
 add_library(KF6KCMUtilsCore)
 
 set_target_properties(KF6KCMUtilsCore PROPERTIES
