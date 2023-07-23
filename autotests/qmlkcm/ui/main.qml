@@ -1,5 +1,5 @@
 /**
- * SPDX-FileCopyrightText: Year Author <author@domanin.com>
+ * SPDX-FileCopyrightText: 2023 Alexander Lohnau <alexander.lohnau@kde.org>
  * SPDX-License-Identifier: GPL-2.0-or-later
  */
 
