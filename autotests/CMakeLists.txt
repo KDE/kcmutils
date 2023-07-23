@@ -1,3 +1,6 @@
+# SPDX-FileCopyrightText: 2023 Alexander Lohnau <alexander.lohnau@kde.org>
+# SPDX-License-Identifier: BSD-2-Clause
+
 include(ECMAddTests)
 include(../KF6KCMUtilsMacros.cmake)
 
