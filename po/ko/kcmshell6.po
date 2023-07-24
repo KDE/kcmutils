@@ -1,36 +1,36 @@
+# Copyright (C) YEAR This file is copyright:
+# This file is distributed under the same license as the kcmutils package.
+# Shinjo Park <kde@peremen.name>, 2023.
+#
 msgid ""
 msgstr ""
-"Project-Id-Version: kdeorg\n"
+"Project-Id-Version: kcmutils\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-05-08 02:07+0000\n"
-"PO-Revision-Date: 2023-07-23 12:26\n"
-"Last-Translator: \n"
-"Language-Team: Chinese Simplified\n"
-"Language: zh_CN\n"
+"PO-Revision-Date: 2023-07-23 00:45+0200\n"
+"Last-Translator: Shinjo Park <kde@peremen.name>\n"
+"Language-Team: Korean <kde-kr@kde.org>\n"
+"Language: ko\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Crowdin-Project: kdeorg\n"
-"X-Crowdin-Project-ID: 269464\n"
-"X-Crowdin-Language: zh-CN\n"
-"X-Crowdin-File: /kf6-trunk/messages/kcmutils/kcmshell6.pot\n"
-"X-Crowdin-File-ID: 42823\n"
+"X-Generator: Lokalize 22.12.3\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
 msgid "Your names"
-msgstr "Tyson Tan"
+msgstr "박신조"
 
 #, kde-format
 msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
-msgstr "tysontan@tysontan.com"
+msgstr "kde@peremen.name"
 
 #: main.cpp:82
 #, kde-format
 msgid "A tool to start single system settings modules"
-msgstr "用于启动单个系统设置模块的工具"
+msgstr "단일 시스템 설정 모듈을 시작하는 도구"
 
 #: main.cpp:84
 #, kde-format
@@ -45,7 +45,7 @@ msgstr "Frans Englich"
 #: main.cpp:86
 #, kde-format
 msgid "Maintainer"
-msgstr "维护者"
+msgstr "관리자"
 
 #: main.cpp:87
 #, kde-format
@@ -75,55 +75,55 @@ msgstr "Waldo Bastian"
 #: main.cpp:97
 #, kde-format
 msgid "List all possible modules"
-msgstr "列出所有可用模块"
+msgstr "가능한 모든 모듈 목록 표시"
 
 #: main.cpp:98
 #, kde-format
 msgid "Configuration module to open"
-msgstr "要打开的配置模块"
+msgstr "열 설정 모듈"
 
 #: main.cpp:99
 #, kde-format
 msgid "Specify a particular language"
-msgstr "指定一种语言"
+msgstr "특정한 언어 지정하기"
 
 #: main.cpp:100
 #, kde-format
 msgid "Do not display main window"
-msgstr "不显示主窗口"
+msgstr "주 창 보이지 않기"
 
 #: main.cpp:101
 #, kde-format
 msgid "Arguments for the module"
-msgstr "模块参数"
+msgstr "모듈의 인자"
 
 #: main.cpp:102
 #, kde-format
 msgid "Use a specific icon for the window"
-msgstr "窗口显示指定的图标"
+msgstr "지정한 창 아이콘 사용"
 
 #: main.cpp:103
 #, kde-format
 msgid "Use a specific caption for the window"
-msgstr "窗口显示指定的标题"
+msgstr "지정한 창 캡션 사용"
 
 #: main.cpp:104
 #, kde-format
 msgid "Show an indicator when settings have changed from their default value"
-msgstr "显示标识以标记非默认值的设置项"
+msgstr "설정이 기본값에서 변경되었을 때 표시기 표시"
 
 #: main.cpp:113
 #, kde-format
 msgid ""
 "--lang is deprecated. Please set the LANGUAGE environment variable instead"
-msgstr "--lang 参数已被废弃。请改为设置 LANGUAGE 环境变量"
+msgstr "--lang은 폐기 예고되었습니다. LANGUAGE 환경 변수를 설정하십시오"
 
 #: main.cpp:117
 #, kde-format
 msgid "The following modules are available:"
-msgstr "下列模块可用："
+msgstr "다음 모듈을 사용할 수 있습니다:"
 
 #: main.cpp:130
 #, kde-format
 msgid "No description available"
-msgstr "无可用描述"
+msgstr "설명 없음"

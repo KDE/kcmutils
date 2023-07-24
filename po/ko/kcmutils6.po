@@ -1,14 +1,14 @@
 # Korean messages for kdelibs.
 # Copyright (C) Free Software Foundation, Inc.
 # Cho Sung Jae <cho.sungjae@gmail.com>, 2007.
-# Shinjo Park <kde@peremen.name>, 2007, 2008, 2009, 2010, 2011, 2012, 2013, 2014, 2015, 2018, 2019, 2020, 2021, 2022.
+# Shinjo Park <kde@peremen.name>, 2007, 2008, 2009, 2010, 2011, 2012, 2013, 2014, 2015, 2018, 2019, 2020, 2021, 2022, 2023.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: kdelibs4\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-07-02 02:35+0000\n"
-"PO-Revision-Date: 2022-05-06 00:21+0200\n"
+"PO-Revision-Date: 2023-07-23 00:44+0200\n"
 "Last-Translator: Shinjo Park <kde@peremen.name>\n"
 "Language-Team: Korean <kde-kr@kde.org>\n"
 "Language: ko\n"
@@ -16,7 +16,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Lokalize 21.12.3\n"
+"X-Generator: Lokalize 22.12.3\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
@@ -91,7 +91,7 @@ msgstr "정보"
 #, kde-format
 msgctxt "@action:button"
 msgid "Show Contextual Help"
-msgstr ""
+msgstr "문맥 도움말 표시"
 
 #: qml/components/PluginDelegate.qml:53
 #, kde-format
@@ -100,11 +100,10 @@ msgid "About"
 msgstr "정보"
 
 #: qml/components/PluginDelegate.qml:68
-#, fuzzy, kde-format
-#| msgid "Configure"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Configure…"
-msgstr "설정"
+msgstr "설정…"
 
 #: qml/components/PluginSelector.qml:81
 #, kde-format
@@ -153,15 +152,14 @@ msgid "Send an email to %1"
 msgstr "%1(으)로 이메일 보내기"
 
 #: qml/components/private/GridViewInternal.qml:78
-#, fuzzy, kde-format
-#| msgid "No plugins found"
+#, kde-format
 msgid "No items found"
-msgstr "플러그인을 찾을 수 없음"
+msgstr "항목 없음"
 
 #: qml/kquickconfigmodule.cpp:120
 #, kde-format
 msgid "Could not find resource '%1'"
-msgstr ""
+msgstr "'%1' 리소스를 찾을 수 없음"
 
 #~ msgctxt "@info:tooltip"
 #~ msgid "Configure..."
