@@ -81,7 +81,7 @@ int main(int argc, char *argv[])
                          QLatin1String(PROJECT_VERSION),
                          i18n("A tool to start single system settings modules"),
                          KAboutLicense::GPL,
-                         i18n("(c) 1999-2016, The KDE Developers"));
+                         i18n("(c) 1999-2023, The KDE Developers"));
 
     aboutData.addAuthor(i18n("Frans Englich"), i18n("Maintainer"), QStringLiteral("frans.englich@kde.org"));
     aboutData.addAuthor(i18n("Daniel Molkentin"), QString(), QStringLiteral("molkentin@kde.org"));
@@ -96,8 +96,6 @@ int main(int argc, char *argv[])
 
     parser.addOption(QCommandLineOption(QStringLiteral("list"), i18n("List all possible modules")));
     parser.addPositionalArgument(QStringLiteral("module"), i18n("Configuration module to open"));
-    parser.addOption(QCommandLineOption(QStringLiteral("lang"), i18n("Specify a particular language"), QLatin1String("language")));
-    parser.addOption(QCommandLineOption(QStringLiteral("silent"), i18n("Do not display main window")));
     parser.addOption(QCommandLineOption(QStringLiteral("args"), i18n("Arguments for the module"), QLatin1String("arguments")));
     parser.addOption(QCommandLineOption(QStringLiteral("icon"), i18n("Use a specific icon for the window"), QLatin1String("icon")));
     parser.addOption(QCommandLineOption(QStringLiteral("caption"), i18n("Use a specific caption for the window"), QLatin1String("caption")));
@@ -107,11 +105,6 @@ int main(int argc, char *argv[])
     aboutData.processCommandLine(&parser);
 
     parser.process(app);
-
-    const QString lang = parser.value(QStringLiteral("lang"));
-    if (!lang.isEmpty()) {
-        std::cout << i18n("--lang is deprecated. Please set the LANGUAGE environment variable instead").toLocal8Bit().constData() << std::endl;
-    }
 
     if (parser.isSet(QStringLiteral("list"))) {
         std::cout << i18n("The following modules are available:").toLocal8Bit().constData() << '\n';
