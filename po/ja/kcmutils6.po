@@ -14,7 +14,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdelibs4\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-07-02 02:35+0000\n"
+"POT-Creation-Date: 2023-07-27 01:58+0000\n"
 "PO-Revision-Date: 2023-02-04 01:22+0900\n"
 "Last-Translator: Ryuichi Yamada <ryuichi_ya220@outlook.jp>\n"
 "Language-Team: Japanese <kde-jp@kde.org>\n"
@@ -41,7 +41,7 @@ msgstr ""
 "kom@kde.gr.jp,shinobo@leo.bekkoame.ne.jp,toyohiro@ksmplus.com,md81@bird."
 "email.ne.jp,tsuno@ngy.1st.ne.jp,ryuichi_ya220@outlook.jp"
 
-#: kcmoduleloader.cpp:50
+#: kcmoduleloader.cpp:49
 #, kde-format
 msgid ""
 "<qt><p>Possible reasons:<ul><li>An error occurred during your last system "
@@ -56,17 +56,17 @@ msgstr ""
 "ているモジュールを削除してみてください。それでも解決しない場合は、ディストリ"
 "ビュータまたはパッケージ作成者に連絡してください。</p></qt>"
 
-#: kcmoduleloader.cpp:70
+#: kcmoduleloader.cpp:69
 #, kde-format
 msgid "The module %1 is disabled."
 msgstr "モジュール “%1” は無効になっています。"
 
-#: kcmoduleloader.cpp:70
+#: kcmoduleloader.cpp:69
 #, kde-format
 msgid "The module has been disabled by the system administrator."
 msgstr "このモジュールはシステム管理者によって無効化されています。"
 
-#: kcmoduleloader.cpp:76
+#: kcmoduleloader.cpp:75
 #, kde-format
 msgid "Error loading QML file."
 msgstr "QML ファイルの読み込み中にエラーが発生しました。"
@@ -100,7 +100,7 @@ msgstr "検索..."
 msgid "About"
 msgstr "情報"
 
-#: qml/components/ContextualHelpButton.qml:59
+#: qml/components/ContextualHelpButton.qml:48
 #, kde-format
 msgctxt "@action:button"
 msgid "Show Contextual Help"

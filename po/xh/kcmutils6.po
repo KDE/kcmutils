@@ -12,7 +12,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdelibs4\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-07-02 02:35+0000\n"
+"POT-Creation-Date: 2023-07-27 01:58+0000\n"
 "PO-Revision-Date: 2002-12-13 17:20SAST\n"
 "Last-Translator: Lwandle Mgidlana <lwandle@translate.org.za>\n"
 "Language-Team: Xhosa <xhosa@translate.org.za>\n"
@@ -33,7 +33,7 @@ msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
 msgstr "Igama elitsha lenginginya."
 
-#: kcmoduleloader.cpp:50
+#: kcmoduleloader.cpp:49
 #, kde-format
 msgid ""
 "<qt><p>Possible reasons:<ul><li>An error occurred during your last system "
@@ -43,17 +43,17 @@ msgid ""
 "this fails, consider contacting your distributor or packager.</p></qt>"
 msgstr ""
 
-#: kcmoduleloader.cpp:70
+#: kcmoduleloader.cpp:69
 #, fuzzy, kde-format
 msgid "The module %1 is disabled."
 msgstr "Ungeniso lwakho olutsha alongezwanga."
 
-#: kcmoduleloader.cpp:70
+#: kcmoduleloader.cpp:69
 #, kde-format
 msgid "The module has been disabled by the system administrator."
 msgstr ""
 
-#: kcmoduleloader.cpp:76
+#: kcmoduleloader.cpp:75
 #, fuzzy, kde-format
 msgid "Error loading QML file."
 msgstr "Imposiso ngexesha ukhetha ifayile ye GSM:"
@@ -91,7 +91,7 @@ msgstr "Phendla"
 msgid "About"
 msgstr "&Malunga"
 
-#: qml/components/ContextualHelpButton.qml:59
+#: qml/components/ContextualHelpButton.qml:48
 #, kde-format
 msgctxt "@action:button"
 msgid "Show Contextual Help"

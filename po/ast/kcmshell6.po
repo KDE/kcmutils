@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kcmutils\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-05-08 02:07+0000\n"
+"POT-Creation-Date: 2023-07-27 01:58+0000\n"
 "PO-Revision-Date: 2023-05-03 23:36+0200\n"
 "Last-Translator: Enol P. <enolp@softastur.org>\n"
 "Language-Team: \n"
@@ -34,7 +34,7 @@ msgstr ""
 
 #: main.cpp:84
 #, kde-format
-msgid "(c) 1999-2016, The KDE Developers"
+msgid "(c) 1999-2023, The KDE Developers"
 msgstr ""
 
 #: main.cpp:86
@@ -84,46 +84,30 @@ msgstr ""
 
 #: main.cpp:99
 #, kde-format
-msgid "Specify a particular language"
+msgid "Arguments for the module"
 msgstr ""
 
 #: main.cpp:100
 #, kde-format
-msgid "Do not display main window"
+msgid "Use a specific icon for the window"
 msgstr ""
 
 #: main.cpp:101
 #, kde-format
-msgid "Arguments for the module"
+msgid "Use a specific caption for the window"
 msgstr ""
 
 #: main.cpp:102
 #, kde-format
-msgid "Use a specific icon for the window"
-msgstr ""
-
-#: main.cpp:103
-#, kde-format
-msgid "Use a specific caption for the window"
-msgstr ""
-
-#: main.cpp:104
-#, kde-format
 msgid "Show an indicator when settings have changed from their default value"
 msgstr ""
 
-#: main.cpp:113
-#, kde-format
-msgid ""
-"--lang is deprecated. Please set the LANGUAGE environment variable instead"
-msgstr ""
-
-#: main.cpp:117
+#: main.cpp:110
 #, kde-format
 msgid "The following modules are available:"
 msgstr ""
 
-#: main.cpp:130
+#: main.cpp:123
 #, kde-format
 msgid "No description available"
 msgstr ""

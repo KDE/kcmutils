@@ -4,7 +4,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kcmshell6\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-05-08 02:07+0000\n"
+"POT-Creation-Date: 2023-07-27 01:58+0000\n"
 "PO-Revision-Date: 2023-03-11 18:06+0100\n"
 "Last-Translator: Roman Paholik <wizzardsk@gmail.com>\n"
 "Language-Team: Slovak <kde-sk@linux.sk>\n"
@@ -31,8 +31,9 @@ msgid "A tool to start single system settings modules"
 msgstr "Nástroj pre spustenie jednotlivých ovládacích modulov"
 
 #: main.cpp:84
-#, kde-format
-msgid "(c) 1999-2016, The KDE Developers"
+#, fuzzy, kde-format
+#| msgid "(c) 1999-2016, The KDE Developers"
+msgid "(c) 1999-2023, The KDE Developers"
 msgstr "(c) 1999-2016, Vývojári KDE"
 
 #: main.cpp:86
@@ -82,51 +83,45 @@ msgstr "Konfiguračný modul na otvorenie"
 
 #: main.cpp:99
 #, kde-format
-msgid "Specify a particular language"
-msgstr "Spustiť pre daný jazyk"
-
-#: main.cpp:100
-#, kde-format
-msgid "Do not display main window"
-msgstr "Nezobrazovať hlavné okno"
-
-#: main.cpp:101
-#, kde-format
 msgid "Arguments for the module"
 msgstr "Argumenty pre modul"
 
-#: main.cpp:102
+#: main.cpp:100
 #, kde-format
 msgid "Use a specific icon for the window"
 msgstr "Použiť špecifickú ikonu pre okno"
 
-#: main.cpp:103
+#: main.cpp:101
 #, kde-format
 msgid "Use a specific caption for the window"
 msgstr "Použiť špecifický popis pre okno"
 
-#: main.cpp:104
+#: main.cpp:102
 #, kde-format
 msgid "Show an indicator when settings have changed from their default value"
 msgstr ""
 
-#: main.cpp:113
-#, kde-format
-msgid ""
-"--lang is deprecated. Please set the LANGUAGE environment variable instead"
-msgstr ""
-"--lang je zastaralé. Prosím, použite namiesto toto premennú prostredia "
-"LANGUAGE"
-
-#: main.cpp:117
+#: main.cpp:110
 #, kde-format
 msgid "The following modules are available:"
 msgstr "Sú dostupné tieto moduly:"
 
-#: main.cpp:130
+#: main.cpp:123
 #, kde-format
 msgid "No description available"
 msgstr "Popis nie je k dispozícii"
+
+#~ msgid "Specify a particular language"
+#~ msgstr "Spustiť pre daný jazyk"
+
+#~ msgid "Do not display main window"
+#~ msgstr "Nezobrazovať hlavné okno"
+
+#~ msgid ""
+#~ "--lang is deprecated. Please set the LANGUAGE environment variable instead"
+#~ msgstr ""
+#~ "--lang je zastaralé. Prosím, použite namiesto toto premennú prostredia "
+#~ "LANGUAGE"
 
 #~ msgid "System Settings Module"
 #~ msgstr "Modul systémových nastavení"

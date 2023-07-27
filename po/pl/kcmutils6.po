@@ -16,7 +16,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdelibs4\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-07-02 02:35+0000\n"
+"POT-Creation-Date: 2023-07-27 01:58+0000\n"
 "PO-Revision-Date: 2023-06-10 09:21+0200\n"
 "Last-Translator: Łukasz Wojniłowicz <lukasz.wojnilowicz@gmail.com>\n"
 "Language-Team: Polish <kde-i18n-doc@kde.org>\n"
@@ -122,7 +122,7 @@ msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
 msgstr "mrudolf@kdewebdev.org, eugenewolfe@o2.pl, lukasz.wojnilowicz@gmail.com"
 
-#: kcmoduleloader.cpp:50
+#: kcmoduleloader.cpp:49
 #, kde-format
 msgid ""
 "<qt><p>Possible reasons:<ul><li>An error occurred during your last system "
@@ -138,17 +138,17 @@ msgstr ""
 "błąd. Jeśli to się nie powiedzie, proszę skontaktować się z twórcą "
 "dystrybucji lub administratorem systemu.</p></qt>"
 
-#: kcmoduleloader.cpp:70
+#: kcmoduleloader.cpp:69
 #, kde-format
 msgid "The module %1 is disabled."
 msgstr "Moduł %1 jest wyłączony."
 
-#: kcmoduleloader.cpp:70
+#: kcmoduleloader.cpp:69
 #, kde-format
 msgid "The module has been disabled by the system administrator."
 msgstr "Moduł ten został wyłączony przez administratora systemu."
 
-#: kcmoduleloader.cpp:76
+#: kcmoduleloader.cpp:75
 #, kde-format
 msgid "Error loading QML file."
 msgstr "Błąd wczytywania pliku QML."
@@ -182,7 +182,7 @@ msgstr "Szukaj..."
 msgid "About"
 msgstr "O programie"
 
-#: qml/components/ContextualHelpButton.qml:59
+#: qml/components/ContextualHelpButton.qml:48
 #, kde-format
 msgctxt "@action:button"
 msgid "Show Contextual Help"

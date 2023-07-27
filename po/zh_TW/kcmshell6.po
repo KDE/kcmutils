@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kcmutils\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-05-08 02:07+0000\n"
+"POT-Creation-Date: 2023-07-27 01:58+0000\n"
 "PO-Revision-Date: 2023-04-14 21:30+0900\n"
 "Last-Translator: Kisaragi Hiu <mail@kisaragi-hiu.com>\n"
 "Language-Team: Traditional Chinese <zh-l10n@linux.org.tw>\n"
@@ -33,8 +33,9 @@ msgid "A tool to start single system settings modules"
 msgstr "用來開啟個別系統設定模組的工具"
 
 #: main.cpp:84
-#, kde-format
-msgid "(c) 1999-2016, The KDE Developers"
+#, fuzzy, kde-format
+#| msgid "(c) 1999-2016, The KDE Developers"
+msgid "(c) 1999-2023, The KDE Developers"
 msgstr "(c) 1999-2016, KDE 開發團隊"
 
 #: main.cpp:86
@@ -84,46 +85,40 @@ msgstr "要開啟的設定模組"
 
 #: main.cpp:99
 #, kde-format
-msgid "Specify a particular language"
-msgstr "指定某個特定的語言"
-
-#: main.cpp:100
-#, kde-format
-msgid "Do not display main window"
-msgstr "不顯示主視窗"
-
-#: main.cpp:101
-#, kde-format
 msgid "Arguments for the module"
 msgstr "模組的引數"
 
-#: main.cpp:102
+#: main.cpp:100
 #, kde-format
 msgid "Use a specific icon for the window"
 msgstr "為視窗指定圖示"
 
-#: main.cpp:103
+#: main.cpp:101
 #, kde-format
 msgid "Use a specific caption for the window"
 msgstr "為視窗指定說明"
 
-#: main.cpp:104
+#: main.cpp:102
 #, kde-format
 msgid "Show an indicator when settings have changed from their default value"
 msgstr "當設定從預設值被變更時顯示指示器"
 
-#: main.cpp:113
-#, kde-format
-msgid ""
-"--lang is deprecated. Please set the LANGUAGE environment variable instead"
-msgstr "--lang 已棄用。請改為設定 LANGUAGE 環境變數"
-
-#: main.cpp:117
+#: main.cpp:110
 #, kde-format
 msgid "The following modules are available:"
 msgstr "以下模組是可用的："
 
-#: main.cpp:130
+#: main.cpp:123
 #, kde-format
 msgid "No description available"
 msgstr "沒有可用的描述"
+
+#~ msgid "Specify a particular language"
+#~ msgstr "指定某個特定的語言"
+
+#~ msgid "Do not display main window"
+#~ msgstr "不顯示主視窗"
+
+#~ msgid ""
+#~ "--lang is deprecated. Please set the LANGUAGE environment variable instead"
+#~ msgstr "--lang 已棄用。請改為設定 LANGUAGE 環境變數"

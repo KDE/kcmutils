@@ -11,7 +11,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdelibs4\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-07-02 02:35+0000\n"
+"POT-Creation-Date: 2023-07-27 01:58+0000\n"
 "PO-Revision-Date: 2007-11-05 15:41+0545\n"
 "Last-Translator: Shyam Krishna Bal <shyamkrishna_bal@yahoo.com>\n"
 "Language-Team: Nepali <info@mpp.org.np>\n"
@@ -32,7 +32,7 @@ msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
 msgstr "submanesh@gmail.com, shyamkrishna_bal@yahoo.com, Nabin@mpp.org.np"
 
-#: kcmoduleloader.cpp:50
+#: kcmoduleloader.cpp:49
 #, fuzzy, kde-format
 #| msgid ""
 #| "<qt><p>Possible reasons:<ul><li>An error occurred during your last KDE "
@@ -53,18 +53,18 @@ msgstr ""
 "हटाउने प्रयास गर्नुहोस् । यदि यो असफल भएमा, तपाईँको वितरक वा प्याकेज बनाउनेलाई सम्पर्क "
 "गर्न सम्झनुहोस् ।</p></qt>"
 
-#: kcmoduleloader.cpp:70
+#: kcmoduleloader.cpp:69
 #, kde-format
 msgid "The module %1 is disabled."
 msgstr " %1 मोड्युल अक्षम पारिएकोछ ।"
 
-#: kcmoduleloader.cpp:70
+#: kcmoduleloader.cpp:69
 #, fuzzy, kde-format
 #| msgid "Please contact your system administrator."
 msgid "The module has been disabled by the system administrator."
 msgstr "कृपया तपाईँको प्रणाली प्रबन्धकसँग सम्पर्क गर्नुहोस् ।"
 
-#: kcmoduleloader.cpp:76
+#: kcmoduleloader.cpp:75
 #, fuzzy, kde-format
 #| msgid "Error opening file."
 msgid "Error loading QML file."
@@ -105,7 +105,7 @@ msgstr "खोजी गर्नुहोस्"
 msgid "About"
 msgstr "बारेमा"
 
-#: qml/components/ContextualHelpButton.qml:59
+#: qml/components/ContextualHelpButton.qml:48
 #, kde-format
 msgctxt "@action:button"
 msgid "Show Contextual Help"

@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kcmutils\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-05-08 02:07+0000\n"
+"POT-Creation-Date: 2023-07-27 01:58+0000\n"
 "PO-Revision-Date: 2023-04-07 08:33+0200\n"
 "Last-Translator: Matjaž Jeran <matjaz.jeran@amis.net>\n"
 "Language-Team: Slovenian <lugos-slo@lugos.si>\n"
@@ -34,8 +34,9 @@ msgid "A tool to start single system settings modules"
 msgstr "Orodje za zagon enega modula sistemskih nastavitev"
 
 #: main.cpp:84
-#, kde-format
-msgid "(c) 1999-2016, The KDE Developers"
+#, fuzzy, kde-format
+#| msgid "(c) 1999-2016, The KDE Developers"
+msgid "(c) 1999-2023, The KDE Developers"
 msgstr "(c) 1999-2016, razvijalci KDE"
 
 #: main.cpp:86
@@ -85,51 +86,45 @@ msgstr "Modul konfiguracije za odpiranje"
 
 #: main.cpp:99
 #, kde-format
-msgid "Specify a particular language"
-msgstr "Navedi določen jezik"
-
-#: main.cpp:100
-#, kde-format
-msgid "Do not display main window"
-msgstr "Ne prikazuj glavnega okna"
-
-#: main.cpp:101
-#, kde-format
 msgid "Arguments for the module"
 msgstr "Argumenti za modul"
 
-#: main.cpp:102
+#: main.cpp:100
 #, kde-format
 msgid "Use a specific icon for the window"
 msgstr "Uporabi posebno ikono za okno"
 
-#: main.cpp:103
+#: main.cpp:101
 #, kde-format
 msgid "Use a specific caption for the window"
 msgstr "Uporabi poseben zajem za okno"
 
-#: main.cpp:104
+#: main.cpp:102
 #, kde-format
 msgid "Show an indicator when settings have changed from their default value"
 msgstr ""
 "Pokaži indikator, kadar so se nastavitve spremenile glede na njihove "
 "privzete vrednosti"
 
-#: main.cpp:113
-#, kde-format
-msgid ""
-"--lang is deprecated. Please set the LANGUAGE environment variable instead"
-msgstr "--lang je zastarel. Namesto tega nastavite okolje LANGUAGE"
-
-#: main.cpp:117
+#: main.cpp:110
 #, kde-format
 msgid "The following modules are available:"
 msgstr "NA voljo so naslednji moduli:"
 
-#: main.cpp:130
+#: main.cpp:123
 #, kde-format
 msgid "No description available"
 msgstr "Opisa ni na voljo"
+
+#~ msgid "Specify a particular language"
+#~ msgstr "Navedi določen jezik"
+
+#~ msgid "Do not display main window"
+#~ msgstr "Ne prikazuj glavnega okna"
+
+#~ msgid ""
+#~ "--lang is deprecated. Please set the LANGUAGE environment variable instead"
+#~ msgstr "--lang je zastarel. Namesto tega nastavite okolje LANGUAGE"
 
 #~ msgid "System Settings Module"
 #~ msgstr "Modul sistemskih nastavitev"

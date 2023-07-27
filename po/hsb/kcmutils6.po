@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdelibs4\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-07-02 02:35+0000\n"
+"POT-Creation-Date: 2023-07-27 01:58+0000\n"
 "PO-Revision-Date: 2008-12-19 22:49+0100\n"
 "Last-Translator: Eduard Werner <edi.werner@gmx.de>\n"
 "Language-Team: en_US <kde-i18n-doc@lists.kde.org>\n"
@@ -31,7 +31,7 @@ msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
 msgstr "edi.werner@gmx.de"
 
-#: kcmoduleloader.cpp:50
+#: kcmoduleloader.cpp:49
 #, fuzzy, kde-format
 #| msgid ""
 #| "<qt><p>Possible reasons:<ul><li>An error occurred during your last KDE "
@@ -52,18 +52,18 @@ msgstr ""
 "instalaciju a spytaj modul, na kotryž so zmylkowa powěsć poćahuje, zničić. "
 "Jeli to njefunguje, wobroć so na swojeho distributora.</p></qt>"
 
-#: kcmoduleloader.cpp:70
+#: kcmoduleloader.cpp:69
 #, kde-format
 msgid "The module %1 is disabled."
 msgstr "Modul %1 je blokowany."
 
-#: kcmoduleloader.cpp:70
+#: kcmoduleloader.cpp:69
 #, fuzzy, kde-format
 #| msgid "Please contact your system administrator."
 msgid "The module has been disabled by the system administrator."
 msgstr "Prošu skontaktujće so z administratorom systema."
 
-#: kcmoduleloader.cpp:76
+#: kcmoduleloader.cpp:75
 #, fuzzy, kde-format
 #| msgid "Error loading '%1'.\n"
 msgid "Error loading QML file."
@@ -104,7 +104,7 @@ msgstr "&Pytać"
 msgid "About"
 msgstr "&Wo tutym programje"
 
-#: qml/components/ContextualHelpButton.qml:59
+#: qml/components/ContextualHelpButton.qml:48
 #, kde-format
 msgctxt "@action:button"
 msgid "Show Contextual Help"

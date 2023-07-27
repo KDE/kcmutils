@@ -11,7 +11,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kcmutils5\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-07-02 02:35+0000\n"
+"POT-Creation-Date: 2023-07-27 01:58+0000\n"
 "PO-Revision-Date: 2023-06-06 09:22+0300\n"
 "Last-Translator: Yuri Chornoivan <yurchor@ukr.net>\n"
 "Language-Team: Ukrainian <kde-i18n-uk@kde.org>\n"
@@ -33,7 +33,7 @@ msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
 msgstr "fr.ivan@ukrainian-orthodox.org,yurchor@ukr.net"
 
-#: kcmoduleloader.cpp:50
+#: kcmoduleloader.cpp:49
 #, kde-format
 msgid ""
 "<qt><p>Possible reasons:<ul><li>An error occurred during your last system "
@@ -48,17 +48,17 @@ msgstr ""
 "варіанти та спробуйте витерти вказаний модуль. Якщо це не спрацювало, "
 "зверніться до авторів вашого дистрибутива чи пакунків.</p></qt>"
 
-#: kcmoduleloader.cpp:70
+#: kcmoduleloader.cpp:69
 #, kde-format
 msgid "The module %1 is disabled."
 msgstr "Модуль %1 вимкнений."
 
-#: kcmoduleloader.cpp:70
+#: kcmoduleloader.cpp:69
 #, kde-format
 msgid "The module has been disabled by the system administrator."
 msgstr "Модуль було вимкнено адміністратором системи."
 
-#: kcmoduleloader.cpp:76
+#: kcmoduleloader.cpp:75
 #, kde-format
 msgid "Error loading QML file."
 msgstr "Помилка під час завантаження файла QML."
@@ -92,7 +92,7 @@ msgstr "Шукати…"
 msgid "About"
 msgstr "Відомості"
 
-#: qml/components/ContextualHelpButton.qml:59
+#: qml/components/ContextualHelpButton.qml:48
 #, kde-format
 msgctxt "@action:button"
 msgid "Show Contextual Help"

@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kcmutils\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-05-08 02:07+0000\n"
+"POT-Creation-Date: 2023-07-27 01:58+0000\n"
 "PO-Revision-Date: 2023-03-29 23:11+0300\n"
 "Last-Translator: Tommi Nieminen <translator@legisign.org>\n"
 "Language-Team: Finnish <kde-i18n-doc@kde.org>\n"
@@ -33,8 +33,9 @@ msgid "A tool to start single system settings modules"
 msgstr "Järjestelmäasetusten osioiden työkalu"
 
 #: main.cpp:84
-#, kde-format
-msgid "(c) 1999-2016, The KDE Developers"
+#, fuzzy, kde-format
+#| msgid "(c) 1999-2016, The KDE Developers"
+msgid "(c) 1999-2023, The KDE Developers"
 msgstr "© 1999–2016 KDE-kehittäjät"
 
 #: main.cpp:86
@@ -84,50 +85,44 @@ msgstr "Avattava asetusmoduuli"
 
 #: main.cpp:99
 #, kde-format
-msgid "Specify a particular language"
-msgstr "Määrittele käytettävä kieli"
-
-#: main.cpp:100
-#, kde-format
-msgid "Do not display main window"
-msgstr "Älä näytä pääikkunaa"
-
-#: main.cpp:101
-#, kde-format
 msgid "Arguments for the module"
 msgstr "Moduulin parametrit"
 
-#: main.cpp:102
+#: main.cpp:100
 #, kde-format
 msgid "Use a specific icon for the window"
 msgstr "Käytä määräkuvaketta ikkunalle"
 
-#: main.cpp:103
+#: main.cpp:101
 #, kde-format
 msgid "Use a specific caption for the window"
 msgstr "Käytä määräotsikkoa ikkunalle"
 
-#: main.cpp:104
+#: main.cpp:102
 #, kde-format
 msgid "Show an indicator when settings have changed from their default value"
 msgstr "Näytä osoitin asetusten muututtua oletusarvoistaan"
 
-#: main.cpp:113
-#, kde-format
-msgid ""
-"--lang is deprecated. Please set the LANGUAGE environment variable instead"
-msgstr ""
-"--lang on vanhennettu. Aseta sen sijaan LANGUAGE-ympäristömuuttujan arvo"
-
-#: main.cpp:117
+#: main.cpp:110
 #, kde-format
 msgid "The following modules are available:"
 msgstr "Seuraavat moduulit ovat saatavilla:"
 
-#: main.cpp:130
+#: main.cpp:123
 #, kde-format
 msgid "No description available"
 msgstr "Ei kuvausta saatavilla"
+
+#~ msgid "Specify a particular language"
+#~ msgstr "Määrittele käytettävä kieli"
+
+#~ msgid "Do not display main window"
+#~ msgstr "Älä näytä pääikkunaa"
+
+#~ msgid ""
+#~ "--lang is deprecated. Please set the LANGUAGE environment variable instead"
+#~ msgstr ""
+#~ "--lang on vanhennettu. Aseta sen sijaan LANGUAGE-ympäristömuuttujan arvo"
 
 #~ msgid "System Settings Module"
 #~ msgstr "Järjestelmäasetusten osio"

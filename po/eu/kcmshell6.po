@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kcmutils\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-05-08 02:07+0000\n"
+"POT-Creation-Date: 2023-07-27 01:58+0000\n"
 "PO-Revision-Date: 2023-04-09 21:05+0200\n"
 "Last-Translator: Iñigo Salvador Azurmendi <xalba@ni.eus>\n"
 "Language-Team: Basque <kde-i18n-eu@kde.org>\n"
@@ -36,8 +36,9 @@ msgid "A tool to start single system settings modules"
 msgstr "Sistema-ezarpenetako moduluak banaka abiarazteko tresna bat"
 
 #: main.cpp:84
-#, kde-format
-msgid "(c) 1999-2016, The KDE Developers"
+#, fuzzy, kde-format
+#| msgid "(c) 1999-2016, The KDE Developers"
+msgid "(c) 1999-2023, The KDE Developers"
 msgstr "(c) 1999-2016, KDE garatzaileak"
 
 #: main.cpp:86
@@ -87,52 +88,46 @@ msgstr "Ireki beharreko konfigurazio-modulua"
 
 #: main.cpp:99
 #, kde-format
-msgid "Specify a particular language"
-msgstr "Zehaztu hizkuntza jakin bat"
-
-#: main.cpp:100
-#, kde-format
-msgid "Do not display main window"
-msgstr "Ez azaldu leiho nagusia"
-
-#: main.cpp:101
-#, kde-format
 msgid "Arguments for the module"
 msgstr "Modulurako argumentuak"
 
-#: main.cpp:102
+#: main.cpp:100
 #, kde-format
 msgid "Use a specific icon for the window"
 msgstr "Leihorako ikono zehatz bat erabili"
 
-#: main.cpp:103
+#: main.cpp:101
 #, kde-format
 msgid "Use a specific caption for the window"
 msgstr "Leihorako legenda zehatz bat erabili"
 
-#: main.cpp:104
+#: main.cpp:102
 #, kde-format
 msgid "Show an indicator when settings have changed from their default value"
 msgstr ""
 "Erakutsi adierazle bat ezarpenak haien balio lehenetsietatik aldatu direnean"
 
-#: main.cpp:113
-#, kde-format
-msgid ""
-"--lang is deprecated. Please set the LANGUAGE environment variable instead"
-msgstr ""
-"--lang zaharkitua dago. Mesedez, horren ordez, ezarri LANGUAGE ingurune "
-"aldagaia"
-
-#: main.cpp:117
+#: main.cpp:110
 #, kde-format
 msgid "The following modules are available:"
 msgstr "Ondoko moduluak erabilgarri daude:"
 
-#: main.cpp:130
+#: main.cpp:123
 #, kde-format
 msgid "No description available"
 msgstr "Ez dago azalpenik"
+
+#~ msgid "Specify a particular language"
+#~ msgstr "Zehaztu hizkuntza jakin bat"
+
+#~ msgid "Do not display main window"
+#~ msgstr "Ez azaldu leiho nagusia"
+
+#~ msgid ""
+#~ "--lang is deprecated. Please set the LANGUAGE environment variable instead"
+#~ msgstr ""
+#~ "--lang zaharkitua dago. Mesedez, horren ordez, ezarri LANGUAGE ingurune "
+#~ "aldagaia"
 
 #~ msgid "System Settings Module"
 #~ msgstr "Sistema-ezarpenak modulua"

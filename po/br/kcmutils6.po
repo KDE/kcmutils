@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdelibs4-1.1\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-07-02 02:35+0000\n"
+"POT-Creation-Date: 2023-07-27 01:58+0000\n"
 "PO-Revision-Date: 2007-10-15 22:19+0200\n"
 "Last-Translator: Jañ-Mai Drapier <jan-mai.drapier@mail.dotcom.fr>\n"
 "Language-Team: Brezhoneg <Suav.Icb@wanadoo.fr>\n"
@@ -28,7 +28,7 @@ msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
 msgstr "tvignaud@mandriva.com, jdrapier@club-internet.fr"
 
-#: kcmoduleloader.cpp:50
+#: kcmoduleloader.cpp:49
 #, kde-format
 msgid ""
 "<qt><p>Possible reasons:<ul><li>An error occurred during your last system "
@@ -38,18 +38,18 @@ msgid ""
 "this fails, consider contacting your distributor or packager.</p></qt>"
 msgstr ""
 
-#: kcmoduleloader.cpp:70
+#: kcmoduleloader.cpp:69
 #, fuzzy, kde-format
 msgid "The module %1 is disabled."
 msgstr "N'em eus ket kargañ ar mollad %1."
 
-#: kcmoduleloader.cpp:70
+#: kcmoduleloader.cpp:69
 #, fuzzy, kde-format
 #| msgid "Please contact your system administrator."
 msgid "The module has been disabled by the system administrator."
 msgstr "Darempredit merour ho reizhiad mar plij."
 
-#: kcmoduleloader.cpp:76
+#: kcmoduleloader.cpp:75
 #, fuzzy, kde-format
 #| msgid "Error opening file."
 msgid "Error loading QML file."
@@ -90,7 +90,7 @@ msgstr "Klask"
 msgid "About"
 msgstr "&Diwar-benn"
 
-#: qml/components/ContextualHelpButton.qml:59
+#: qml/components/ContextualHelpButton.qml:48
 #, kde-format
 msgctxt "@action:button"
 msgid "Show Contextual Help"

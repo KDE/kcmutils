@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdelibs4\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-07-02 02:35+0000\n"
+"POT-Creation-Date: 2023-07-27 01:58+0000\n"
 "PO-Revision-Date: 2023-07-23 00:44+0200\n"
 "Last-Translator: Shinjo Park <kde@peremen.name>\n"
 "Language-Team: Korean <kde-kr@kde.org>\n"
@@ -28,7 +28,7 @@ msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
 msgstr "cho.sungjae@gmail.com,kde@peremen.name"
 
-#: kcmoduleloader.cpp:50
+#: kcmoduleloader.cpp:49
 #, kde-format
 msgid ""
 "<qt><p>Possible reasons:<ul><li>An error occurred during your last system "
@@ -43,17 +43,17 @@ msgstr ""
 "제해 보십시오. 만약 이것이 실패하면 배포하거나 패키징한 사람에게 연락해 보십"
 "시오.</p></qt>"
 
-#: kcmoduleloader.cpp:70
+#: kcmoduleloader.cpp:69
 #, kde-format
 msgid "The module %1 is disabled."
 msgstr "모듈 %1(이)가 비활성화되었습니다."
 
-#: kcmoduleloader.cpp:70
+#: kcmoduleloader.cpp:69
 #, kde-format
 msgid "The module has been disabled by the system administrator."
 msgstr "시스템 관리자가 이 모듈을 비활성화했습니다."
 
-#: kcmoduleloader.cpp:76
+#: kcmoduleloader.cpp:75
 #, kde-format
 msgid "Error loading QML file."
 msgstr "QML 파일을 불러올 수 없습니다."
@@ -87,7 +87,7 @@ msgstr "찾기..."
 msgid "About"
 msgstr "정보"
 
-#: qml/components/ContextualHelpButton.qml:59
+#: qml/components/ContextualHelpButton.qml:48
 #, kde-format
 msgctxt "@action:button"
 msgid "Show Contextual Help"

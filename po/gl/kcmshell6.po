@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kcmutils\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-05-08 02:07+0000\n"
+"POT-Creation-Date: 2023-07-27 01:58+0000\n"
 "PO-Revision-Date: 2023-06-17 12:46+0200\n"
 "Last-Translator: Adrián Chaves (Gallaecio) <adrian@chaves.io>\n"
 "Language-Team: Galician <proxecto@trasno.gal>\n"
@@ -35,8 +35,9 @@ msgstr ""
 "separado."
 
 #: main.cpp:84
-#, kde-format
-msgid "(c) 1999-2016, The KDE Developers"
+#, fuzzy, kde-format
+#| msgid "(c) 1999-2016, The KDE Developers"
+msgid "(c) 1999-2023, The KDE Developers"
 msgstr "© 1999-2016 Desenvolvedores de KDE"
 
 #: main.cpp:86
@@ -86,49 +87,44 @@ msgstr "Módulo de configuración para abrir"
 
 #: main.cpp:99
 #, kde-format
-msgid "Specify a particular language"
-msgstr "Especifique un idioma en particular"
-
-#: main.cpp:100
-#, kde-format
-msgid "Do not display main window"
-msgstr "Non amosar a xanela principal"
-
-#: main.cpp:101
-#, kde-format
 msgid "Arguments for the module"
 msgstr "Argumentos para o módulo"
 
-#: main.cpp:102
+#: main.cpp:100
 #, kde-format
 msgid "Use a specific icon for the window"
 msgstr "Usar unha icona específica para a xanela."
 
-#: main.cpp:103
+#: main.cpp:101
 #, kde-format
 msgid "Use a specific caption for the window"
 msgstr "Usar un título específico para a xanela."
 
-#: main.cpp:104
+#: main.cpp:102
 #, kde-format
 msgid "Show an indicator when settings have changed from their default value"
 msgstr ""
 "Amosar un indicador cando as opcións cambiasen con respecto ao seu valor "
 "predeterminado."
 
-#: main.cpp:113
-#, kde-format
-msgid ""
-"--lang is deprecated. Please set the LANGUAGE environment variable instead"
-msgstr ""
-"«--lang» está obsoleto. Use no seu lugar a variábel de contorno «LANGUAGE»."
-
-#: main.cpp:117
+#: main.cpp:110
 #, kde-format
 msgid "The following modules are available:"
 msgstr "Están dispoñíbeis os seguintes módulos:"
 
-#: main.cpp:130
+#: main.cpp:123
 #, kde-format
 msgid "No description available"
 msgstr "Non hai ningunha descrición dispoñíbel"
+
+#~ msgid "Specify a particular language"
+#~ msgstr "Especifique un idioma en particular"
+
+#~ msgid "Do not display main window"
+#~ msgstr "Non amosar a xanela principal"
+
+#~ msgid ""
+#~ "--lang is deprecated. Please set the LANGUAGE environment variable instead"
+#~ msgstr ""
+#~ "«--lang» está obsoleto. Use no seu lugar a variábel de contorno "
+#~ "«LANGUAGE»."

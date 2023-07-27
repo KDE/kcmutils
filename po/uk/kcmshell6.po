@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kcmutils\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-05-08 02:07+0000\n"
+"POT-Creation-Date: 2023-07-27 01:58+0000\n"
 "PO-Revision-Date: 2023-03-22 13:33+0200\n"
 "Last-Translator: Yuri Chornoivan <yurchor@ukr.net>\n"
 "Language-Team: Ukrainian <kde-i18n-uk@kde.org>\n"
@@ -34,8 +34,9 @@ msgid "A tool to start single system settings modules"
 msgstr "Інструмент для запуску окремих модулів «Системних параметрів»"
 
 #: main.cpp:84
-#, kde-format
-msgid "(c) 1999-2016, The KDE Developers"
+#, fuzzy, kde-format
+#| msgid "(c) 1999-2016, The KDE Developers"
+msgid "(c) 1999-2023, The KDE Developers"
 msgstr "© Розробники KDE, 1999–2016"
 
 #: main.cpp:86
@@ -85,51 +86,45 @@ msgstr "Модуль налаштування, який слід відкрит�
 
 #: main.cpp:99
 #, kde-format
-msgid "Specify a particular language"
-msgstr "Вибір певної мови"
-
-#: main.cpp:100
-#, kde-format
-msgid "Do not display main window"
-msgstr "Не показувати головне вікно"
-
-#: main.cpp:101
-#, kde-format
 msgid "Arguments for the module"
 msgstr "Аргументи для модуля налаштувань"
 
-#: main.cpp:102
+#: main.cpp:100
 #, kde-format
 msgid "Use a specific icon for the window"
 msgstr "Використовувати для вікна певну піктограму"
 
-#: main.cpp:103
+#: main.cpp:101
 #, kde-format
 msgid "Use a specific caption for the window"
 msgstr "Використовувати для вікна певний підпис"
 
-#: main.cpp:104
+#: main.cpp:102
 #, kde-format
 msgid "Show an indicator when settings have changed from their default value"
 msgstr "Показувати індикатор, якщо було змінено типове значення параметрів"
 
-#: main.cpp:113
-#, kde-format
-msgid ""
-"--lang is deprecated. Please set the LANGUAGE environment variable instead"
-msgstr ""
-"--lang вважається застарілим. Будь ласка, скористайтеся для встановлення "
-"мови змінною середовища LANGUAGE."
-
-#: main.cpp:117
+#: main.cpp:110
 #, kde-format
 msgid "The following modules are available:"
 msgstr "Наявні наступні модулі:"
 
-#: main.cpp:130
+#: main.cpp:123
 #, kde-format
 msgid "No description available"
 msgstr "Немає опису"
+
+#~ msgid "Specify a particular language"
+#~ msgstr "Вибір певної мови"
+
+#~ msgid "Do not display main window"
+#~ msgstr "Не показувати головне вікно"
+
+#~ msgid ""
+#~ "--lang is deprecated. Please set the LANGUAGE environment variable instead"
+#~ msgstr ""
+#~ "--lang вважається застарілим. Будь ласка, скористайтеся для встановлення "
+#~ "мови змінною середовища LANGUAGE."
 
 #~ msgid "System Settings Module"
 #~ msgstr "Модуль «Системних параметрів»"

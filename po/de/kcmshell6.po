@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kcmutils\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-05-08 02:07+0000\n"
+"POT-Creation-Date: 2023-07-27 01:58+0000\n"
 "PO-Revision-Date: 2023-04-03 16:21+0200\n"
 "Last-Translator: Frederik Schwarzer <schwarzer@kde.org>\n"
 "Language-Team: German <kde-i18n-de@kde.org>\n"
@@ -35,8 +35,9 @@ msgid "A tool to start single system settings modules"
 msgstr "Ein Hilfsprogramm zum Starten von Modulen der Systemeinstellungen"
 
 #: main.cpp:84
-#, kde-format
-msgid "(c) 1999-2016, The KDE Developers"
+#, fuzzy, kde-format
+#| msgid "(c) 1999-2016, The KDE Developers"
+msgid "(c) 1999-2023, The KDE Developers"
 msgstr "Copyright 1999–2016, Die KDE-Entwickler"
 
 #: main.cpp:86
@@ -86,52 +87,46 @@ msgstr "Zu öffnendes Einstellungsmodul"
 
 #: main.cpp:99
 #, kde-format
-msgid "Specify a particular language"
-msgstr "Wählen Sie eine bestimmte Sprache"
-
-#: main.cpp:100
-#, kde-format
-msgid "Do not display main window"
-msgstr "Hauptfenster nicht anzeigen"
-
-#: main.cpp:101
-#, kde-format
 msgid "Arguments for the module"
 msgstr "Argumente für das Modul"
 
-#: main.cpp:102
+#: main.cpp:100
 #, kde-format
 msgid "Use a specific icon for the window"
 msgstr "Ein spezielles Symbol für das Fenster verwenden"
 
-#: main.cpp:103
+#: main.cpp:101
 #, kde-format
 msgid "Use a specific caption for the window"
 msgstr "Einen speziellen Titel für das Fenster verwenden"
 
-#: main.cpp:104
+#: main.cpp:102
 #, kde-format
 msgid "Show an indicator when settings have changed from their default value"
 msgstr ""
 "Eine Markierung anzeigen, wenn Einstellungen von ihrem Standardwert abweichen"
 
-#: main.cpp:113
-#, kde-format
-msgid ""
-"--lang is deprecated. Please set the LANGUAGE environment variable instead"
-msgstr ""
-"--lang ist veraltet, bitte verwenden Sie stattdessen die Umgebungsvariable "
-"LANGUAGE"
-
-#: main.cpp:117
+#: main.cpp:110
 #, kde-format
 msgid "The following modules are available:"
 msgstr "Die folgenden Module sind verfügbar:"
 
-#: main.cpp:130
+#: main.cpp:123
 #, kde-format
 msgid "No description available"
 msgstr "Keine Beschreibung verfügbar"
+
+#~ msgid "Specify a particular language"
+#~ msgstr "Wählen Sie eine bestimmte Sprache"
+
+#~ msgid "Do not display main window"
+#~ msgstr "Hauptfenster nicht anzeigen"
+
+#~ msgid ""
+#~ "--lang is deprecated. Please set the LANGUAGE environment variable instead"
+#~ msgstr ""
+#~ "--lang ist veraltet, bitte verwenden Sie stattdessen die "
+#~ "Umgebungsvariable LANGUAGE"
 
 #~ msgid "System Settings Module"
 #~ msgstr "Modul für Systemeinstellungen"

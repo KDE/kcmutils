@@ -11,7 +11,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdelibs4\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-07-02 02:35+0000\n"
+"POT-Creation-Date: 2023-07-27 01:58+0000\n"
 "PO-Revision-Date: 2022-06-22 10:05+0000\n"
 "Last-Translator: Sveinn í Felli <sv1@fellsnet.is>\n"
 "Language-Team: Icelandic\n"
@@ -42,7 +42,7 @@ msgstr ""
 "ra@ra.is, logi@logi.org, pjetur@pjetur.net, leosson@frisurf.no, svanur@tern."
 "is, sv1@fellsnet.is"
 
-#: kcmoduleloader.cpp:50
+#: kcmoduleloader.cpp:49
 #, kde-format
 msgid ""
 "<qt><p>Possible reasons:<ul><li>An error occurred during your last system "
@@ -58,17 +58,17 @@ msgstr ""
 "ekki skaltu reyna að hafa samband við dreifingaraðila þinn eða þá sem sáu um "
 "pökkunina</p></qt>"
 
-#: kcmoduleloader.cpp:70
+#: kcmoduleloader.cpp:69
 #, kde-format
 msgid "The module %1 is disabled."
 msgstr "Einingin %1 er óvirk."
 
-#: kcmoduleloader.cpp:70
+#: kcmoduleloader.cpp:69
 #, kde-format
 msgid "The module has been disabled by the system administrator."
 msgstr "Kerfisstjórinn hefur gert þessa einingu óvirka."
 
-#: kcmoduleloader.cpp:76
+#: kcmoduleloader.cpp:75
 #, kde-format
 msgid "Error loading QML file."
 msgstr "Villa við að hlaða inn QML-skrá."
@@ -102,7 +102,7 @@ msgstr "Leita..."
 msgid "About"
 msgstr "Um hugbúnaðinn"
 
-#: qml/components/ContextualHelpButton.qml:59
+#: qml/components/ContextualHelpButton.qml:48
 #, kde-format
 msgctxt "@action:button"
 msgid "Show Contextual Help"
