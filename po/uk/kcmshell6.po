@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: kcmutils\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-07-27 01:58+0000\n"
-"PO-Revision-Date: 2023-03-22 13:33+0200\n"
+"PO-Revision-Date: 2023-07-27 22:17+0300\n"
 "Last-Translator: Yuri Chornoivan <yurchor@ukr.net>\n"
 "Language-Team: Ukrainian <kde-i18n-uk@kde.org>\n"
 "Language: uk\n"
@@ -34,10 +34,9 @@ msgid "A tool to start single system settings modules"
 msgstr "Інструмент для запуску окремих модулів «Системних параметрів»"
 
 #: main.cpp:84
-#, fuzzy, kde-format
-#| msgid "(c) 1999-2016, The KDE Developers"
+#, kde-format
 msgid "(c) 1999-2023, The KDE Developers"
-msgstr "© Розробники KDE, 1999–2016"
+msgstr "© Розробники KDE, 1999–2023"
 
 #: main.cpp:86
 #, kde-format

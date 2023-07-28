@@ -6,7 +6,7 @@ msgstr ""
 "Project-Id-Version: kcmutils\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-07-27 01:58+0000\n"
-"PO-Revision-Date: 2023-03-31 21:20+0200\n"
+"PO-Revision-Date: 2023-07-27 22:02+0200\n"
 "Last-Translator: Karl Ove Hufthammer <karl@huftis.org>\n"
 "Language-Team: Norwegian Nynorsk <l10n-no@lister.huftis.org>\n"
 "Language: nn\n"
@@ -14,7 +14,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Lokalize 22.12.3\n"
+"X-Generator: Lokalize 23.04.3\n"
 "X-Environment: kde\n"
 "X-Accelerator-Marker: &\n"
 "X-Text-Markup: kde4\n"
@@ -35,10 +35,9 @@ msgid "A tool to start single system settings modules"
 msgstr "Verktøy for å starta systemoppsettmodular"
 
 #: main.cpp:84
-#, fuzzy, kde-format
-#| msgid "(c) 1999-2016, The KDE Developers"
+#, kde-format
 msgid "(c) 1999-2023, The KDE Developers"
-msgstr "© 1999–2016 KDE-utviklarane"
+msgstr "© 1999–2023 KDE-utviklarane"
 
 #: main.cpp:86
 #, kde-format
@@ -114,14 +113,3 @@ msgstr "Desse modulane er tilgjengelege:"
 #, kde-format
 msgid "No description available"
 msgstr "Inga skildring tilgjengeleg"
-
-#~ msgid "Specify a particular language"
-#~ msgstr "Vel eit språk"
-
-#~ msgid "Do not display main window"
-#~ msgstr "Ikkje vis hovudvindauget"
-
-#~ msgid ""
-#~ "--lang is deprecated. Please set the LANGUAGE environment variable instead"
-#~ msgstr ""
-#~ "«--lang»-argumentet er utdatert. Bruk heller miljøvariabelen «LANGUAGE»."

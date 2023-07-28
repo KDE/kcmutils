@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: kcmutils\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-07-27 01:58+0000\n"
-"PO-Revision-Date: 2023-03-30 11:55+0200\n"
+"PO-Revision-Date: 2023-07-27 11:13+0200\n"
 "Last-Translator: giovanni <g.sora@tiscali.it>\n"
 "Language-Team: Interlingua <kde-i18n-doc@kde.org>\n"
 "Language: ia\n"
@@ -15,7 +15,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Lokalize 21.12.3\n"
+"X-Generator: Lokalize 22.12.3\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
@@ -33,10 +33,9 @@ msgid "A tool to start single system settings modules"
 msgstr "Un instrumento pro initiar singule modulos de preferentias de systema"
 
 #: main.cpp:84
-#, fuzzy, kde-format
-#| msgid "(c) 1999-2016, The KDE Developers"
+#, kde-format
 msgid "(c) 1999-2023, The KDE Developers"
-msgstr "(c) 1999-2016, Le disveloppatores de KDE"
+msgstr "(c) 1999-2023 Le disveloppatores de KDE"
 
 #: main.cpp:86
 #, kde-format
