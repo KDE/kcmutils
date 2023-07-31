@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: kdeorg\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-07-27 01:58+0000\n"
-"PO-Revision-Date: 2023-07-23 12:26\n"
+"PO-Revision-Date: 2023-07-30 07:07\n"
 "Last-Translator: \n"
 "Language-Team: Chinese Simplified\n"
 "Language: zh_CN\n"
@@ -33,10 +33,9 @@ msgid "A tool to start single system settings modules"
 msgstr "用于启动单个系统设置模块的工具"
 
 #: main.cpp:84
-#, fuzzy, kde-format
-#| msgid "(c) 1999-2016, The KDE Developers"
+#, kde-format
 msgid "(c) 1999-2023, The KDE Developers"
-msgstr "(c) 1999-2016, The KDE Developers"
+msgstr "(c) 1999-2023, The KDE Developers"
 
 #: main.cpp:86
 #, kde-format
@@ -112,13 +111,3 @@ msgstr "下列模块可用："
 #, kde-format
 msgid "No description available"
 msgstr "无可用描述"
-
-#~ msgid "Specify a particular language"
-#~ msgstr "指定一种语言"
-
-#~ msgid "Do not display main window"
-#~ msgstr "不显示主窗口"
-
-#~ msgid ""
-#~ "--lang is deprecated. Please set the LANGUAGE environment variable instead"
-#~ msgstr "--lang 参数已被废弃。请改为设置 LANGUAGE 环境变量"

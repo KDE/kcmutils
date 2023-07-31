@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: kcmutils\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-07-27 01:58+0000\n"
-"PO-Revision-Date: 2023-03-22 13:08+0100\n"
+"PO-Revision-Date: 2023-07-27 18:01+0300\n"
 "Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
 "Language: ca@valencia\n"
@@ -17,7 +17,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Lokalize 20.12.0\n"
+"X-Generator: Lokalize 22.12.3\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
@@ -36,10 +36,9 @@ msgstr ""
 "Una eina per a iniciar mòduls individuals per a la configuració del sistema"
 
 #: main.cpp:84
-#, fuzzy, kde-format
-#| msgid "(c) 1999-2016, The KDE Developers"
+#, kde-format
 msgid "(c) 1999-2023, The KDE Developers"
-msgstr "(c) 1999-2016, Els desenvolupadors de KDE"
+msgstr "(c) 1999-2023, Els desenvolupadors de KDE"
 
 #: main.cpp:86
 #, kde-format
@@ -117,13 +116,3 @@ msgstr "Hi ha disponibles els mòduls següents:"
 #, kde-format
 msgid "No description available"
 msgstr "No hi ha disponible cap descripció"
-
-#~ msgid "Specify a particular language"
-#~ msgstr "Especifiqueu un idioma en particular"
-
-#~ msgid "Do not display main window"
-#~ msgstr "No mostres la finestra principal"
-
-#~ msgid ""
-#~ "--lang is deprecated. Please set the LANGUAGE environment variable instead"
-#~ msgstr "--lang està en desús. Establiu la variable d'entorn LANGUAGE"
