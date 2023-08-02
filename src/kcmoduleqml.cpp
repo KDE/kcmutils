@@ -123,10 +123,13 @@ KCModuleQml::KCModuleQml(KQuickConfigModule *configModule, QWidget *parent)
     connect(d->configModule, &KQuickConfigModule::needsSaveChanged, this, [this] {
         setNeedsSave(d->configModule->needsSave());
     });
+
+    setRepresentsDefaults(d->configModule->representsDefaults());
     connect(d->configModule, &KQuickConfigModule::representsDefaultsChanged, this, [this] {
         setRepresentsDefaults(d->configModule->representsDefaults());
     });
 
+    setAuthActionName(d->configModule->authActionName());
     connect(d->configModule, &KQuickConfigModule::authActionNameChanged, this, [=] {
         setAuthActionName(d->configModule->authActionName());
     });
