@@ -162,9 +162,3 @@ msgstr "Няма отрити елементи"
 #, kde-format
 msgid "Could not find resource '%1'"
 msgstr "Ресурсът не може да бъде намерен '%1'"
-
-#~ msgid "Invalid KPackage '%1'"
-#~ msgstr "Невалиден KPackage '%1'"
-
-#~ msgid "No QML file provided"
-#~ msgstr "Не е предоставен QML файл"
