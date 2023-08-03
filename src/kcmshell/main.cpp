@@ -24,6 +24,7 @@
 #include <KLocalizedString>
 #include <KPageDialog>
 #include <KPluginMetaData>
+#include <KShell>
 
 #if __has_include(<KStartupInfo>)
 #include <KStartupInfo>
@@ -96,7 +97,7 @@ int main(int argc, char *argv[])
 
     parser.addOption(QCommandLineOption(QStringLiteral("list"), i18n("List all possible modules")));
     parser.addPositionalArgument(QStringLiteral("module"), i18n("Configuration module to open"));
-    parser.addOption(QCommandLineOption(QStringLiteral("args"), i18n("Arguments for the module"), QLatin1String("arguments")));
+    parser.addOption(QCommandLineOption(QStringLiteral("args"), i18n("Space separated arguments for the module"), QLatin1String("arguments")));
     parser.addOption(QCommandLineOption(QStringLiteral("icon"), i18n("Use a specific icon for the window"), QLatin1String("icon")));
     parser.addOption(QCommandLineOption(QStringLiteral("caption"), i18n("Use a specific caption for the window"), QLatin1String("caption")));
     parser.addOption(QCommandLineOption(QStringLiteral("highlight"), i18n("Show an indicator when settings have changed from their default value")));
@@ -177,8 +178,8 @@ int main(int argc, char *argv[])
         dlg->setWindowTitle(metaDataList.constFirst().name());
     }
 
-    const QStringList cliArgs = parser.values(QStringLiteral("args"));
-    const QVariantList pluginArgs(cliArgs.begin(), cliArgs.end());
+    const QStringList argSplit = KShell::splitArgs(parser.value(QStringLiteral("args")));
+    QVariantList pluginArgs(argSplit.begin(), argSplit.end());
     for (const KPluginMetaData &m : std::as_const(metaDataList)) {
         dlg->addModule(m, pluginArgs);
     }
