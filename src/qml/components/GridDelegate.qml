@@ -201,6 +201,7 @@ T2.ItemDelegate {
             horizontalAlignment: Text.AlignHCenter
             verticalAlignment: Text.AlignTop
             text: delegate.text
+            color: enabled ? Kirigami.Theme.textColor : Kirigami.Theme.disabledTextColor
             elide: Text.ElideRight
             font.bold: delegate.GridView.isCurrentItem
         }
