@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: kcmutils\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-07-27 01:58+0000\n"
-"PO-Revision-Date: 2023-07-23 00:45+0200\n"
+"PO-Revision-Date: 2023-08-06 19:46+0200\n"
 "Last-Translator: Shinjo Park <kde@peremen.name>\n"
 "Language-Team: Korean <kde-kr@kde.org>\n"
 "Language: ko\n"
@@ -33,10 +33,9 @@ msgid "A tool to start single system settings modules"
 msgstr "단일 시스템 설정 모듈을 시작하는 도구"
 
 #: main.cpp:84
-#, fuzzy, kde-format
-#| msgid "(c) 1999-2016, The KDE Developers"
+#, kde-format
 msgid "(c) 1999-2023, The KDE Developers"
-msgstr "(c) 1999-2016, The KDE Developers"
+msgstr "(c) 1999-2023, The KDE Developers"
 
 #: main.cpp:86
 #, kde-format
