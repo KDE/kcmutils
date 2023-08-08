@@ -108,19 +108,16 @@ T2.ItemDelegate {
 
         color: {
             if (delegate.GridView.isCurrentItem) {
-                if (delegate.GridView.view.neutralHighlight) {
+                if (delegate.enabled && delegate.GridView.view.neutralHighlight) {
                     return Kirigami.Theme.neutralTextColor;
                 }
                 return Kirigami.Theme.highlightColor;
-            } else if (parent.hovered) {
-                // Match appearance of hovered list items
-                return Qt.rgba(Kirigami.Theme.highlightColor.r,
-                               Kirigami.Theme.highlightColor.g,
-                               Kirigami.Theme.highlightColor.b,
-                               0.5);
-            } else {
-                return Kirigami.Theme.backgroundColor;
             }
+            if (delegate.enabled && delegate.hovered) {
+                // Match appearance of hovered list items
+                return Qt.alpha(Kirigami.Theme.highlightColor, 0.5);
+            }
+            return Kirigami.Theme.backgroundColor;
         }
 
         Rectangle {
