@@ -30,23 +30,23 @@ class KQuickConfigModulePrivate
 {
 public:
     KQuickConfigModulePrivate(KQuickConfigModule *module)
-        : _q(module)
+        : q(module)
     {
     }
 
-    KQuickConfigModule *_q;
-    SharedQmlEngine *_engine = nullptr;
+    KQuickConfigModule *q;
+    SharedQmlEngine *engine = nullptr;
     std::shared_ptr<QQmlEngine> passedInEngine;
     QList<QQuickItem *> subPages;
-    int _columnWidth = -1;
+    int columnWidth = -1;
     int currentIndex = 0;
-    QString _errorString;
+    QString errorString;
 
-    static QHash<QQmlContext *, KQuickConfigModule *> s_rootObjects;
+    static QHash<QQmlContext *, KQuickConfigModule *> rootObjects;
 
     QString getResourcePath(const QString &file)
     {
-        return QLatin1String("/kcm/") + _q->metaData().pluginId() + QLatin1String("/") + file;
+        return QLatin1String("/kcm/") + q->metaData().pluginId() + QLatin1String("/") + file;
     }
     QUrl getResourceUrl(const QString &resourcePath)
     {
@@ -54,7 +54,7 @@ public:
     }
 };
 
-QHash<QQmlContext *, KQuickConfigModule *> KQuickConfigModulePrivate::s_rootObjects = QHash<QQmlContext *, KQuickConfigModule *>();
+QHash<QQmlContext *, KQuickConfigModule *> KQuickConfigModulePrivate::rootObjects = QHash<QQmlContext *, KQuickConfigModule *>();
 
 KQuickConfigModule::KQuickConfigModule(QObject *parent, const KPluginMetaData &metaData)
     : KAbstractConfigModule(parent, metaData)
@@ -70,11 +70,11 @@ void KQuickConfigModule::setInternalEngine(const std::shared_ptr<QQmlEngine> &en
 KQuickConfigModule::~KQuickConfigModule()
 {
     // in case mainUi was never called
-    if (d->_engine) {
+    if (d->engine) {
         // delete the mainUi before removing the root object.
         // Otherwise, we get lots of console errors about trying to read properties of null objects
-        delete d->_engine->rootObject();
-        KQuickConfigModulePrivate::s_rootObjects.remove(d->_engine->rootContext());
+        delete d->engine->rootObject();
+        KQuickConfigModulePrivate::rootObjects.remove(d->engine->rootContext());
     }
 }
 
@@ -93,8 +93,8 @@ KQuickConfigModule *KQuickConfigModule::qmlAttachedProperties(QObject *object)
         ctx = ctx->parentContext();
     }
 
-    if (!object->parent() && KQuickConfigModulePrivate::s_rootObjects.contains(ctx)) {
-        return KQuickConfigModulePrivate::s_rootObjects.value(ctx);
+    if (!object->parent() && KQuickConfigModulePrivate::rootObjects.contains(ctx)) {
+        return KQuickConfigModulePrivate::rootObjects.value(ctx);
     } else {
         return nullptr;
     }
@@ -103,36 +103,36 @@ KQuickConfigModule *KQuickConfigModule::qmlAttachedProperties(QObject *object)
 QQuickItem *KQuickConfigModule::mainUi()
 {
     Q_ASSERT(d->passedInEngine);
-    if (d->_engine) {
-        return qobject_cast<QQuickItem *>(d->_engine->rootObject());
+    if (d->engine) {
+        return qobject_cast<QQuickItem *>(d->engine->rootObject());
     }
 
-    d->_errorString.clear();
-    d->_engine = new SharedQmlEngine(d->passedInEngine, this);
+    d->errorString.clear();
+    d->engine = new SharedQmlEngine(d->passedInEngine, this);
 
     const QString componentName = metaData().pluginId();
-    KQuickConfigModulePrivate::s_rootObjects[d->_engine->rootContext()] = this;
-    d->_engine->setTranslationDomain(componentName);
-    d->_engine->setInitializationDelayed(true);
+    KQuickConfigModulePrivate::rootObjects[d->engine->rootContext()] = this;
+    d->engine->setTranslationDomain(componentName);
+    d->engine->setInitializationDelayed(true);
 
     const QString resourcePath = d->getResourcePath(QStringLiteral("main.qml"));
     if (QResource r(resourcePath); !r.isValid()) {
-        d->_errorString = i18n("Could not find resource '%1'", resourcePath);
+        d->errorString = i18n("Could not find resource '%1'", resourcePath);
         qWarning() << "Could not find resource" << resourcePath;
         return nullptr;
     }
 
-    new QQmlFileSelector(d->_engine->engine().get(), this);
-    d->_engine->setSource(d->getResourceUrl(resourcePath));
-    d->_engine->rootContext()->setContextProperty(QStringLiteral("kcm"), this);
-    d->_engine->completeInitialization();
+    new QQmlFileSelector(d->engine->engine().get(), this);
+    d->engine->setSource(d->getResourceUrl(resourcePath));
+    d->engine->rootContext()->setContextProperty(QStringLiteral("kcm"), this);
+    d->engine->completeInitialization();
 
-    if (d->_engine->status() != QQmlComponent::Ready) {
-        d->_errorString = d->_engine->mainComponent()->errorString();
+    if (d->engine->status() != QQmlComponent::Ready) {
+        d->errorString = d->engine->mainComponent()->errorString();
         return nullptr;
     }
 
-    return qobject_cast<QQuickItem *>(d->_engine->rootObject());
+    return qobject_cast<QQuickItem *>(d->engine->rootObject());
 }
 
 void KQuickConfigModule::push(const QString &fileName, const QVariantMap &propertyMap)
@@ -151,7 +151,7 @@ void KQuickConfigModule::push(const QString &fileName, const QVariantMap &proper
     if (QResource r(resourcePath); !r.isValid()) {
         qWarning() << "Requested resource" << resourcePath << "does not exist";
     }
-    QObject *object = d->_engine->createObjectFromSource(d->getResourceUrl(resourcePath), d->_engine->rootContext(), propertyHash);
+    QObject *object = d->engine->createObjectFromSource(d->getResourceUrl(resourcePath), d->engine->rootContext(), propertyHash);
 
     QQuickItem *item = qobject_cast<QQuickItem *>(object);
     if (!item) {
@@ -199,16 +199,16 @@ QQuickItem *KQuickConfigModule::takeLast()
 
 int KQuickConfigModule::columnWidth() const
 {
-    return d->_columnWidth;
+    return d->columnWidth;
 }
 
 void KQuickConfigModule::setColumnWidth(int width)
 {
-    if (d->_columnWidth == width) {
+    if (d->columnWidth == width) {
         return;
     }
 
-    d->_columnWidth = width;
+    d->columnWidth = width;
     Q_EMIT columnWidthChanged(width);
 }
 
@@ -235,12 +235,12 @@ int KQuickConfigModule::currentIndex() const
 
 std::shared_ptr<QQmlEngine> KQuickConfigModule::engine() const
 {
-    return d->_engine->engine();
+    return d->engine->engine();
 }
 
 QString KQuickConfigModule::errorString() const
 {
-    return d->_errorString;
+    return d->errorString;
 }
 
 QQuickItem *KQuickConfigModule::subPage(int index) const
