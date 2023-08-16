@@ -165,6 +165,7 @@ import QtQuick 2.3
 import QtQuick.Window 2.2
 import QtQuick.Controls 2.2
 import org.kde.kirigami 2.14 as Kirigami
+import org.kde.kcmutils as KCMUtils
 
 Kirigami.ApplicationItem {
     //force it to *never* try to resize itself
@@ -176,7 +177,7 @@ Kirigami.ApplicationItem {
     activeFocusOnTab: true
     controlsVisible: false
 
-    property QtObject kcm
+    property KCMUtils.ConfigModule kcm
 
     ToolButton {
         id:toolButton
