@@ -163,7 +163,7 @@ KCModuleQml::KCModuleQml(KQuickConfigModule *configModule, QWidget *parent)
     component->setData(QByteArrayLiteral(R"(
 import QtQuick 2.3
 import QtQuick.Window 2.2
-import QtQuick.Controls 2.2
+import QtQuick.Controls 2.2 as QQC2
 import org.kde.kirigami 2.14 as Kirigami
 import org.kde.kcmutils as KCMUtils
 
@@ -179,7 +179,7 @@ Kirigami.ApplicationItem {
 
     property KCMUtils.ConfigModule kcm
 
-    ToolButton {
+    QQC2.ToolButton {
         id: toolButton
         visible: false
         icon.name: "go-previous"
