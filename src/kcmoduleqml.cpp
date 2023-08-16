@@ -161,10 +161,9 @@ KCModuleQml::KCModuleQml(KQuickConfigModule *configModule, QWidget *parent)
     // Qt bug https://bugreports.qt.io/browse/QTBUG-70934
     // clang-format off
     component->setData(QByteArrayLiteral(R"(
-import QtQuick 2.3
-import QtQuick.Window 2.2
-import QtQuick.Controls 2.2 as QQC2
-import org.kde.kirigami 2.14 as Kirigami
+import QtQuick
+import QtQuick.Controls as QQC2
+import org.kde.kirigami 2 as Kirigami
 import org.kde.kcmutils as KCMUtils
 
 Kirigami.ApplicationItem {
