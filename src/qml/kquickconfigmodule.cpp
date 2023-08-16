@@ -83,11 +83,11 @@ KQuickConfigModule *KQuickConfigModule::qmlAttachedProperties(QObject *object)
     // at the moment of the attached object creation, the root item is the only one that hasn't a parent
     // only way to avoid creation of this attached for everybody but the root item
     const QQmlEngine *engine = qmlEngine(object);
-    QQmlContext *ctx = QQmlEngine::contextForObject(object);
+    QQmlContext *ctx = qmlContext(object);
 
-    // Search the qml context that is the "root" for the sharedqmlobject, which
-    // is an ancestor of QQmlEngine::contextForObject(object) and the direct child
-    // of the engine's root context: we can do this assumption on the internals as
+    // Search the qml context that is the "root" for the sharedqmlobject,
+    // which is an ancestor of qmlContext(object) and the direct child of the
+    // engine's root context: we can do this assumption on the internals as
     // we are distributed on the same repo.
     while (ctx->parentContext() && ctx->parentContext() != engine->rootContext()) {
         ctx = ctx->parentContext();
