@@ -168,7 +168,7 @@ import org.kde.kirigami 2.14 as Kirigami
 import org.kde.kcmutils as KCMUtils
 
 Kirigami.ApplicationItem {
-    //force it to *never* try to resize itself
+    // force it to *never* try to resize itself
     width: Window.width
 
     implicitWidth: pageStack.implicitWidth
@@ -180,7 +180,7 @@ Kirigami.ApplicationItem {
     property KCMUtils.ConfigModule kcm
 
     ToolButton {
-        id:toolButton
+        id: toolButton
         visible: false
         icon.name: "go-previous"
     }
