@@ -272,10 +272,11 @@ QObject *SharedQmlEngine::createObjectFromComponent(QQmlComponent *component, QQ
         component->setParent(object);
         // reparent to root object if wasn't specified otherwise by initialProperties
         if (!initialProperties.contains(QLatin1String("parent"))) {
-            if (qobject_cast<QQuickItem *>(rootObject())) {
-                object->setProperty("parent", QVariant::fromValue(rootObject()));
+            const auto root = rootObject();
+            if (root && root->isQuickItemType()) {
+                object->setProperty("parent", QVariant::fromValue(root));
             } else {
-                object->setParent(rootObject());
+                object->setParent(root);
             }
         }
 
