@@ -14,7 +14,7 @@ class KQuickManagedConfigModulePrivate
 public:
     KQuickManagedConfigModulePrivate(KQuickManagedConfigModule *mod)
     {
-        QTimer::singleShot(0, [mod]() {
+        QTimer::singleShot(0, mod, [mod]() {
             const auto skeletons = mod->findChildren<KCoreConfigSkeleton *>();
             for (auto *skeleton : skeletons) {
                 mod->registerSettings(skeleton);
