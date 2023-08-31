@@ -56,36 +56,9 @@ T2.ItemDelegate {
     height: GridView.view.cellHeight
     hoverEnabled: !Kirigami.Settings.isMobile
 
-    Keys.onEnterPressed: menu.trigger()
-    Keys.onMenuPressed: menu.trigger()
-    Keys.onSpacePressed: menu.trigger()
-
-    QQC2.Menu {
-        id: menu
-
-        function trigger() {
-            delegate.clicked()
-            if (delegate.actions.length > 0) {
-                menu.popup(delegate, thumbnail.x, thumbnail.y + thumbnail.height)
-            }
-        }
-
-        onClosed: delegate.forceActiveFocus()
-
-        Repeater {
-            model: delegate.actions
-            delegate: QQC2.MenuItem {
-                required property Kirigami.Action modelData
-
-                text: modelData.text || modelData.tooltip
-                icon.name: modelData.icon.name
-                enabled: modelData.enabled
-                visible: modelData.visible
-
-                onTriggered: modelData.trigger()
-            }
-        }
-    }
+    Keys.onEnterPressed: thumbnail.trigger()
+    Keys.onMenuPressed: thumbnail.trigger()
+    Keys.onSpacePressed: thumbnail.trigger()
 
     Kirigami.ShadowedRectangle {
         id: thumbnail
@@ -118,6 +91,21 @@ T2.ItemDelegate {
                 return Qt.alpha(Kirigami.Theme.highlightColor, 0.5);
             }
             return Kirigami.Theme.backgroundColor;
+        }
+
+        // The menu is only used for keyboard navigation, so no need to always load
+        // it. This speeds up the compilation of GridDelegate.
+        property QQC2.Menu menu: null
+
+        function trigger() {
+            if (menu) {
+                menu.trigger();
+                return;
+            }
+            const component = Qt.createComponent("private/GridDelegateMenu.qml");
+            menu = component.createObject(delegate);
+            menu.trigger();
+            component.destroy();
         }
 
         Rectangle {
