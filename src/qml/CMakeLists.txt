@@ -66,6 +66,7 @@ ecm_target_qml_sources(kcmutilsqmlplugin SOURCES
 )
 ecm_target_qml_sources(kcmutilsqmlplugin PATH private SOURCES
     components/private/AboutPlugin.qml
+    components/private/GridDelegateMenu.qml
     components/private/GridViewInternal.qml
 )
 ecm_finalize_qml_module(kcmutilsqmlplugin DESTINATION ${KDE_INSTALL_QMLDIR})
