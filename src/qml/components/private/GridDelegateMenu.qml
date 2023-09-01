@@ -22,8 +22,6 @@ QQC2.Menu {
     Repeater {
         model: menu.parent.actions
         delegate: QQC2.MenuItem {
-            required property Kirigami.Action modelData
-
             text: modelData.text || modelData.tooltip
             icon.name: modelData.icon.name
             enabled: modelData.enabled
