@@ -4,9 +4,7 @@
     SPDX-License-Identifier: LGPL-2.0-or-later
 */
 
-import QtQuick 2.15
-// Deliberately imported after QtQuick to avoid missing restoreMode property in Binding. Fix in Qt 6.
-import QtQml 2.15
+import QtQuick
 import org.kde.kcmutils as KCM
 import org.kde.kcmutils.private as KCMP
 
@@ -21,15 +19,17 @@ import org.kde.kcmutils.private as KCMP
  *
  * @since 6.0
  */
-Item {
+Loader {
     id: root
+
+    active: typeof kcm !== "undefined" && root.target !== null
 
     /**
      * target: Item
      * The graphical element whose state we want to manage based on a setting
      * If target is not set, it will try to find the visual parent item
      */
-    property alias target: helper.target
+    property Item target: root.parent
 
     /**
      * configObject: KCoreConfigSkeleton
@@ -54,42 +54,28 @@ Item {
      */
     property bool extraEnabledConditions: true
 
-    // Context properties are not reliable
-    property bool __defaultsIndicatorsVisible: (typeof kcm !== "undefined") ? kcm.defaultsIndicatorsVisible : false
-
     /**
      * nonDefaultHighlightVisible: bool
      * Expose whether the non default highlight is visible.
      * Allow one to implement highlight with custom items.
      */
-    readonly property bool nonDefaultHighlightVisible: helper.highlight && __defaultsIndicatorsVisible
+    readonly property bool nonDefaultHighlightVisible: root.active && root.item.highlight && kcm.defaultsIndicatorsVisible
 
     Binding {
-        when: helper.target
-        target: helper.target
+        when: root.active
+        target: root.target
         property: "enabled"
         value: extraEnabledConditions && !settingState.immutable
-        restoreMode: Binding.RestoreBinding
-    }
-
-    Binding {
-        when: helper.target
-        target: helper
-        property: "highlight"
-        value: !settingState.defaulted
-        restoreMode: Binding.RestoreBinding
     }
 
     KCM.SettingStateProxy {
         id: settingState
     }
 
-    KCMP.SettingHighlighterPrivate {
+    sourceComponent: KCMP.SettingHighlighterPrivate {
         id: helper
-        defaultIndicatorVisible: root.__defaultsIndicatorsVisible
-    }
-
-    Component.onCompleted: {
-        helper.updateTarget();
+        defaultIndicatorVisible: kcm.defaultsIndicatorsVisible
+        highlight: !settingState.defaulted
+        target: root.target
     }
 }

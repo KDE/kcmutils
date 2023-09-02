@@ -9,9 +9,10 @@
 #define SETTINGSHIGHLIGHTERPRIVATE_H
 
 #include <QPointer>
+#include <QQmlParserStatus>
 #include <QQuickItem>
 
-class SettingHighlighterPrivate : public QObject
+class SettingHighlighterPrivate : public QObject, public QQmlParserStatus
 {
     Q_OBJECT
     Q_PROPERTY(QQuickItem *target READ target WRITE setTarget NOTIFY targetChanged)
@@ -35,10 +36,16 @@ Q_SIGNALS:
     void highlightChanged();
     void defaultIndicatorVisibleChanged(bool enabled);
 
-public Q_SLOTS:
+private:
     void updateTarget();
 
-private:
+    void classBegin() override
+    {
+    }
+    void componentComplete() override;
+
+    bool m_isComponentComplete = false;
+
     QPointer<QQuickItem> m_target = nullptr;
     QPointer<QQuickItem> m_styleTarget = nullptr;
     bool m_highlight = false;

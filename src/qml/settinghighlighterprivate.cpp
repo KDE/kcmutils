@@ -66,6 +66,7 @@ void SettingHighlighterPrivate::setTarget(QQuickItem *target)
     }
 
     m_target = target;
+    updateTarget();
     Q_EMIT targetChanged();
 }
 
@@ -104,17 +105,12 @@ void SettingHighlighterPrivate::setDefaultIndicatorVisible(bool enabled)
 
 void SettingHighlighterPrivate::updateTarget()
 {
-    if (!m_styleTarget) {
-        if (!m_target) {
-            // parent is SettingStateBinding/SettingHighlighter, use its visual parent as target item.
-            const auto *parentItem = qobject_cast<QQuickItem *>(parent());
-            if (parentItem) {
-                setTarget(parentItem->parentItem());
-            }
-        }
-        if (m_target) {
-            m_styleTarget = findStyleItem(m_target);
-        }
+    if (!m_isComponentComplete) {
+        return;
+    }
+
+    if (!m_styleTarget && m_target) {
+        m_styleTarget = findStyleItem(m_target);
     }
 
     if (m_styleTarget) {
@@ -125,6 +121,12 @@ void SettingHighlighterPrivate::updateTarget()
         }
         m_styleTarget->polish();
     }
+}
+
+void SettingHighlighterPrivate::componentComplete()
+{
+    m_isComponentComplete = true;
+    updateTarget();
 }
 
 #include "moc_settinghighlighterprivate.cpp"

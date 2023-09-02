@@ -5,7 +5,7 @@
     SPDX-License-Identifier: LGPL-2.0-or-later
 */
 
-import QtQuick 2.8
+import QtQuick
 import org.kde.kcmutils.private as P
 
 /**
@@ -15,28 +15,28 @@ import org.kde.kcmutils.private as P
  * see KCM.SettingStateBinding which will manage the state of the Item
  * @since 6.0
  */
-Item {
+Loader {
     id: root
+
+    active: typeof kcm !== "undefined" && root.target !== null
 
     /**
      * target: Item
      * The graphical element whose appearance will be altered.
      * If target is not set, it will try to find the visual parent item
      */
-    property alias target: helper.target
+    property Item target: root.parent
 
     /**
      * highlight: bool
      * Whether the target will be highlighted.
      */
-    property alias highlight: helper.highlight
+    property bool highlight: false
 
-    P.SettingHighlighterPrivate {
+    sourceComponent: P.SettingHighlighterPrivate {
         id: helper
+        highlight: root.highlight
+        target: root.target
         defaultIndicatorVisible: kcm.defaultsIndicatorsVisible
-    }
-
-    Component.onCompleted: {
-        helper.updateTarget();
     }
 }
