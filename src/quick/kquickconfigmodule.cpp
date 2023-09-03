@@ -45,7 +45,7 @@ public:
 
     QString getResourcePath(const QString &file)
     {
-        return QLatin1String("/kcm/") + q->metaData().pluginId() + QLatin1String("/") + file;
+        return QLatin1String("/qt/qml/org/kde/") + q->metaData().pluginId() + QLatin1String("/") + file;
     }
     QUrl getResourceUrl(const QString &resourcePath)
     {
