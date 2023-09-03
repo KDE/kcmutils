@@ -4,6 +4,7 @@
 kcmutils_add_qml_kcm(kcm_testqml SOURCES timesettings.cpp)
 
 target_link_libraries(kcm_testqml
+    PRIVATE
     Qt6::Core
     KF6::CoreAddons
     KF6::I18n
