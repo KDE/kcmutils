@@ -53,7 +53,7 @@ Kirigami.BasicListItem {
         text: i18nc("@info:tooltip", "About")
         displayHint: Kirigami.DisplayHint.IconOnly
         onTriggered: {
-            const aboutDialog = listItem.ListView.view.__aboutDialog
+            const aboutDialog = (listItem.ListView.view ?? listItem.parent.ListView.view).__aboutDialog
             aboutDialog.metaDataInfo = model.metaData
             aboutDialog.open()
         }
