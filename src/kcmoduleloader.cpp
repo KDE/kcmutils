@@ -43,7 +43,7 @@ public:
     KCMError(const QString &msg, const QString &details, QWidget *parent)
         : KCModule(parent, KPluginMetaData())
     {
-        QString realDetails = details;
+        QString realDetails = details.trimmed();
         if (realDetails.isNull()) {
             realDetails = i18n(
                 "<qt><p>Possible reasons:<ul><li>An error occurred during your last "
@@ -55,10 +55,20 @@ public:
 
         QVBoxLayout *topLayout = new QVBoxLayout(widget());
         QLabel *lab = new QLabel(msg, widget());
+        {
+            // Similar to Kirigami.Heading: Primary, level 3
+            QFont font = lab->font();
+            font.setPointSizeF(font.pointSizeF() * 1.15);
+            font.setBold(true);
+            lab->setFont(font);
+        }
         lab->setWordWrap(true);
+        lab->setTextInteractionFlags(lab->textInteractionFlags() | Qt::TextSelectableByMouse | Qt::TextSelectableByKeyboard);
         topLayout->addWidget(lab);
+
         lab = new QLabel(realDetails, widget());
         lab->setWordWrap(true);
+        lab->setTextInteractionFlags(lab->textInteractionFlags() | Qt::TextSelectableByMouse | Qt::TextSelectableByKeyboard);
         topLayout->addWidget(lab);
     }
 };
