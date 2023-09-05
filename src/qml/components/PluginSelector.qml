@@ -3,7 +3,7 @@
     SPDX-License-Identifier: LGPL-2.0-or-later
 */
 
-import QtQuick 2.5
+import QtQuick
 import QtQuick.Controls 2.5 as QQC2
 import QtQuick.Layouts 1.1
 
@@ -16,7 +16,7 @@ import "private" as Private
  * ListView for showing plugins with their info and configuration.
  * If extra butons should be added, a custom KPluginDelegate with the additionalActions
  * property should be defined.
- * 
+ *
  * @since 6.0, this got renamed from KPluginSelector to PluginSelector
  */
 ListView {
@@ -48,7 +48,7 @@ ListView {
 
     Kirigami.OverlaySheet {
         id: internalAboutDialog
-        parent: pluginSelector.parent
+        parent: pluginSelector.Window.window.contentItem
         property var metaDataInfo
 
         Loader {
