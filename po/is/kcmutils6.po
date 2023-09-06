@@ -11,7 +11,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdelibs4\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-07-27 01:58+0000\n"
+"POT-Creation-Date: 2023-09-06 01:54+0000\n"
 "PO-Revision-Date: 2022-06-22 10:05+0000\n"
 "Last-Translator: Sveinn í Felli <sv1@fellsnet.is>\n"
 "Language-Team: Icelandic\n"
@@ -58,17 +58,17 @@ msgstr ""
 "ekki skaltu reyna að hafa samband við dreifingaraðila þinn eða þá sem sáu um "
 "pökkunina</p></qt>"
 
-#: kcmoduleloader.cpp:69
+#: kcmoduleloader.cpp:79
 #, kde-format
 msgid "The module %1 is disabled."
 msgstr "Einingin %1 er óvirk."
 
-#: kcmoduleloader.cpp:69
+#: kcmoduleloader.cpp:79
 #, kde-format
 msgid "The module has been disabled by the system administrator."
 msgstr "Kerfisstjórinn hefur gert þessa einingu óvirka."
 
-#: kcmoduleloader.cpp:75
+#: kcmoduleloader.cpp:85
 #, kde-format
 msgid "Error loading QML file."
 msgstr "Villa við að hlaða inn QML-skrá."

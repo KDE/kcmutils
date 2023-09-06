@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kcmutils5\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-07-27 01:58+0000\n"
+"POT-Creation-Date: 2023-09-06 01:54+0000\n"
 "PO-Revision-Date: 2017-09-28 17:57+0200\n"
 "Last-Translator: Chusslove Illich <caslav.ilic@gmx.net>\n"
 "Language-Team: Serbian <kde-i18n-sr@kde.org>\n"
@@ -53,17 +53,17 @@ msgstr ""
 "покушајте да уклоните модул поменут у тексту грешке. Ако ово не успе, могли "
 "бисте да се обратите свом дистрибутеру или пакетару.</p></qt>"
 
-#: kcmoduleloader.cpp:69
+#: kcmoduleloader.cpp:79
 #, kde-format
 msgid "The module %1 is disabled."
 msgstr "Модул %1 је искључен."
 
-#: kcmoduleloader.cpp:69
+#: kcmoduleloader.cpp:79
 #, kde-format
 msgid "The module has been disabled by the system administrator."
 msgstr ""
 
-#: kcmoduleloader.cpp:75
+#: kcmoduleloader.cpp:85
 #, kde-format
 msgid "Error loading QML file."
 msgstr ""

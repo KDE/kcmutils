@@ -13,7 +13,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kcmutils\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-07-27 01:58+0000\n"
+"POT-Creation-Date: 2023-09-06 01:54+0000\n"
 "PO-Revision-Date: 2023-07-15 08:41+0200\n"
 "Last-Translator: Iñigo Salvador Azurmendi <xalba@ni.eus>\n"
 "Language-Team: Basque <kde-i18n-eu@kde.org>\n"
@@ -50,17 +50,17 @@ msgstr ""
 "modulua kentzen. Honek huts egiten badu, zure banatzailearekin edo "
 "paketegilearekin harremanetan jartzea aintzat hartu.</p></qt>"
 
-#: kcmoduleloader.cpp:69
+#: kcmoduleloader.cpp:79
 #, kde-format
 msgid "The module %1 is disabled."
 msgstr "%1 modulua desgaituta dago."
 
-#: kcmoduleloader.cpp:69
+#: kcmoduleloader.cpp:79
 #, kde-format
 msgid "The module has been disabled by the system administrator."
 msgstr "Modulua ezgaitu du sistema-administratzaileak."
 
-#: kcmoduleloader.cpp:75
+#: kcmoduleloader.cpp:85
 #, kde-format
 msgid "Error loading QML file."
 msgstr "Errorea QML fitxategia zamatzean."

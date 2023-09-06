@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdelibs4\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-07-27 01:58+0000\n"
+"POT-Creation-Date: 2023-09-06 01:54+0000\n"
 "PO-Revision-Date: 2010-12-31 22:47+0700\n"
 "Last-Translator: Phuwanat Sakornsakolpat <narachai@gmail.com>\n"
 "Language-Team: Thai <thai-l10n@googlegroups.com>\n"
@@ -51,18 +51,18 @@ msgstr ""
 "p><p>ให้ตรวจสอบจุดเหล่านี้อย่างระมัดระวัง และให้ลองลบมอดูลที่ถูกกล่าวถึง "
 "ในข้อความบอกข้อผิดพลาด หากยังไม่ได้ผล โปรดพิจารณาติดต่อผู้แจกจ่าย หรือผู้ทำแพกเกจ</p></qt>"
 
-#: kcmoduleloader.cpp:69
+#: kcmoduleloader.cpp:79
 #, kde-format
 msgid "The module %1 is disabled."
 msgstr "มอดูล %1 ถูกปิดการใช้งาน"
 
-#: kcmoduleloader.cpp:69
+#: kcmoduleloader.cpp:79
 #, fuzzy, kde-format
 #| msgid "Please contact your system administrator."
 msgid "The module has been disabled by the system administrator."
 msgstr "โปรดติดต่อผู้บริหารระบบของคุณ"
 
-#: kcmoduleloader.cpp:75
+#: kcmoduleloader.cpp:85
 #, fuzzy, kde-format
 #| msgid "Error loading '%1'.\n"
 msgid "Error loading QML file."

@@ -24,7 +24,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdelibs4\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-07-27 01:58+0000\n"
+"POT-Creation-Date: 2023-09-06 01:54+0000\n"
 "PO-Revision-Date: 2006-01-04 13:32+0800\n"
 "Last-Translator: Abel Cheung <abel@oaka.org>\n"
 "Language-Team: Chinese (Hong Kong) <community@linuxhall.org>\n"
@@ -73,18 +73,18 @@ msgstr ""
 "問題，並嘗試移除錯誤訊息中的模組。若是不行，請聯絡你的發行商或套件供應者。</"
 "p></qt>"
 
-#: kcmoduleloader.cpp:69
+#: kcmoduleloader.cpp:79
 #, fuzzy, kde-format
 msgid "The module %1 is disabled."
 msgstr "無法載入模組 %1。"
 
-#: kcmoduleloader.cpp:69
+#: kcmoduleloader.cpp:79
 #, fuzzy, kde-format
 #| msgid "Please contact your system administrator."
 msgid "The module has been disabled by the system administrator."
 msgstr "請聯絡你的系統管理者。"
 
-#: kcmoduleloader.cpp:75
+#: kcmoduleloader.cpp:85
 #, fuzzy, kde-format
 #| msgid "Error opening file."
 msgid "Error loading QML file."

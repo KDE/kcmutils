@@ -11,7 +11,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: 86ff119b1606fcaa910d6b44fc14b611\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-07-27 01:58+0000\n"
+"POT-Creation-Date: 2023-09-06 01:54+0000\n"
 "PO-Revision-Date: 2023-02-07 10:31\n"
 "Last-Translator: Darafei Praliaskouski <komzpa@gmail.com>\n"
 "Language-Team: Belarusian\n"
@@ -55,17 +55,17 @@ msgstr ""
 "памылку. Калі гэта не дапамагае, звярніцеся ў службу падтрымкі свайго "
 "дыстрыбутыва.</p></qt>"
 
-#: kcmoduleloader.cpp:69
+#: kcmoduleloader.cpp:79
 #, kde-format
 msgid "The module %1 is disabled."
 msgstr "Модуль %1 адключаны."
 
-#: kcmoduleloader.cpp:69
+#: kcmoduleloader.cpp:79
 #, kde-format
 msgid "The module has been disabled by the system administrator."
 msgstr "Модуль быў адключаны сістэмным адміністратарам."
 
-#: kcmoduleloader.cpp:75
+#: kcmoduleloader.cpp:85
 #, kde-format
 msgid "Error loading QML file."
 msgstr "Не ўдалося загрузіць файл QML."

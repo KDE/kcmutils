@@ -19,7 +19,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kcmutils5\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-07-27 01:58+0000\n"
+"POT-Creation-Date: 2023-09-06 01:54+0000\n"
 "PO-Revision-Date: 2023-08-13 22:36-0300\n"
 "Last-Translator: Geraldo Simiao <geraldosimiao@fedoraproject.org>\n"
 "Language-Team: Brazilian Portuguese <kde-i18n-pt_BR@kde.org>\n"
@@ -60,17 +60,17 @@ msgstr ""
 "erro. Se isso falhar, considere contatar o seu distribuidor ou empacotador.</"
 "p></qt>"
 
-#: kcmoduleloader.cpp:69
+#: kcmoduleloader.cpp:79
 #, kde-format
 msgid "The module %1 is disabled."
 msgstr "O módulo %1 está desabilitado."
 
-#: kcmoduleloader.cpp:69
+#: kcmoduleloader.cpp:79
 #, kde-format
 msgid "The module has been disabled by the system administrator."
 msgstr "O módulo foi desabilitado pelo administrador do sistema."
 
-#: kcmoduleloader.cpp:75
+#: kcmoduleloader.cpp:85
 #, kde-format
 msgid "Error loading QML file."
 msgstr "Ocorreu um erro ao carregar o arquivo QML."

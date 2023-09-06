@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdelibs4\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-07-27 01:58+0000\n"
+"POT-Creation-Date: 2023-09-06 01:54+0000\n"
 "PO-Revision-Date: 2004-12-14 09:11-0600\n"
 "Last-Translator: Kevin Scannell <kscanne@gmail.com>\n"
 "Language-Team: Irish <gaeilge-gnulinux@lists.sourceforge.net>\n"
@@ -52,18 +52,18 @@ msgstr ""
 "earráide a bhaint. Mura n-éiríonn leis seo, téigh i dteagmháil le do "
 "dháileoir nó le do phacáisteoir.</p></qt>"
 
-#: kcmoduleloader.cpp:69
+#: kcmoduleloader.cpp:79
 #, kde-format
 msgid "The module %1 is disabled."
 msgstr "Díchumasaíodh modúl %1."
 
-#: kcmoduleloader.cpp:69
+#: kcmoduleloader.cpp:79
 #, fuzzy, kde-format
 #| msgid "Please contact your system administrator."
 msgid "The module has been disabled by the system administrator."
 msgstr "Téigh i dteagmháil le riarthóir do chórais, le do thoil."
 
-#: kcmoduleloader.cpp:75
+#: kcmoduleloader.cpp:85
 #, fuzzy, kde-format
 #| msgid "Error opening file."
 msgid "Error loading QML file."
