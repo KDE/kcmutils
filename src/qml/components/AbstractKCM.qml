@@ -58,10 +58,16 @@ Kirigami.Page {
      */
     property bool extraFooterTopPadding: true
 
+    property bool sidebarMode: false
+
     title: (typeof kcm !== "undefined") ? kcm.name : ""
 
     // Make pages fill the whole view by default
-    Kirigami.ColumnView.fillWidth: true
+    Kirigami.ColumnView.fillWidth: sidebarMode
+                                   ? Kirigami.ColumnView.view
+                                         && (Kirigami.ColumnView.view.width < Kirigami.Units.gridUnit * 36
+                                             || Kirigami.ColumnView.index >= Kirigami.ColumnView.view.count - 1)
+                                   : true
 
     topPadding: root.framedView && !headerParent.contentVisible ? root.margins : 0
     leftPadding: root.framedView ? root.margins : 0
@@ -103,7 +109,7 @@ Kirigami.Page {
         id: footerParent
         readonly property bool contentVisible: contentItem && contentItem.visible && contentItem.implicitHeight
 
-        height: contentVisible ? implicitHeight : (root.framedView ? 0 : (root.extraFooterTopPadding ? root.margins : 0))
+        height: contentVisible ? implicitHeight : 0
         leftPadding: root.margins
         topPadding: root.margins
         rightPadding: root.margins

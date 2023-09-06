@@ -160,6 +160,7 @@ KCModuleQml::KCModuleQml(KQuickConfigModule *configModule, QWidget *parent)
     // The managers of onEnter/ReturnPressed are a workaround of
     // Qt bug https://bugreports.qt.io/browse/QTBUG-70934
     // clang-format off
+    // TODO: move this in an instantiable component which would be used by the qml-only version as well
     component->setData(QByteArrayLiteral(R"(
 import QtQuick
 import QtQuick.Controls as QQC2
@@ -170,11 +171,10 @@ Kirigami.ApplicationItem {
     // force it to *never* try to resize itself
     width: Window.width
 
-    implicitWidth: pageStack.implicitWidth
-    implicitHeight: pageStack.implicitHeight
+    implicitWidth: Math.max(pageStack.implicitWidth, Kirigami.Units.gridUnit * 36)
+    implicitHeight: Math.max(pageStack.implicitHeight, Kirigami.Units.gridUnit * 20)
 
     activeFocusOnTab: true
-    controlsVisible: false
 
     property KCMUtils.ConfigModule kcm
 
@@ -184,17 +184,33 @@ Kirigami.ApplicationItem {
         icon.name: "go-previous"
     }
 
-    pageStack.separatorVisible: false
+    pageStack.separatorVisible: pageStack.depth > 0 && pageStack.items[0].sidebarMode
     pageStack.globalToolBar.preferredHeight: toolButton.implicitHeight + Kirigami.Units.smallSpacing * 2
     pageStack.globalToolBar.style: Kirigami.ApplicationHeaderStyle.ToolBar
     pageStack.globalToolBar.showNavigationButtons: pageStack.currentIndex > 0 ? Kirigami.ApplicationHeaderStyle.ShowBackButton : Kirigami.ApplicationHeaderStyle.NoNavigationButtons
 
-    pageStack.columnView.columnResizeMode: pageStack.items.length > 0 && pageStack.items[0].Kirigami.ColumnView.fillWidth
+    pageStack.columnView.columnResizeMode: pageStack.items.length > 0 && (pageStack.items[0].Kirigami.ColumnView.fillWidth || pageStack.items.filter(item => item.visible).length === 1)
         ? Kirigami.ColumnView.SingleColumn
         : Kirigami.ColumnView.FixedColumns
 
-    pageStack.defaultColumnWidth: kcm && kcm.columnWidth > 0 ? kcm.columnWidth : Kirigami.Units.gridUnit * 20
+    pageStack.defaultColumnWidth: kcm && kcm.columnWidth > 0 ? kcm.columnWidth : Kirigami.Units.gridUnit * 15
 
+    footer: Rectangle {
+        visible: kcm && kcm.buttons !== KCMUtils.ConfigModule.NoAdditionalButton
+        height: pageStack.items.filter(item => item.extraFooterTopPadding).length > 0
+                ? Kirigami.Units.smallSpacing * 2
+                : 0
+        width: parent.width
+        color: Kirigami.Theme.backgroundColor
+        Kirigami.Separator {
+            visible: pageStack.separatorVisible && pageStack.columnView.visibleItems.length > 1
+            anchors {
+                left: parent.left
+                right: parent.right
+                bottom: parent.top
+            }
+        }
+    }
     Keys.onReturnPressed: event => {
         event.accepted = true
     }
@@ -231,6 +247,10 @@ Kirigami.ApplicationItem {
                                       Qt::DirectConnection,
                                       Q_ARG(QVariant, QVariant::fromValue(d->configModule->subPage(i))),
                                       Q_ARG(QVariant, QVariant()));
+            if (d->configModule->mainUi()->property("sidebarMode").toBool()) {
+                d->pageRow->setProperty("currentIndex", 0);
+                d->configModule->setCurrentIndex(0);
+            }
         }
 
         connect(d->configModule, &KQuickConfigModule::pagePushed, this, [this](QQuickItem *page) {

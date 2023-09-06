@@ -56,6 +56,8 @@ Kirigami.ScrollablePage {
     // Make pages fill the whole view by default
     Kirigami.ColumnView.fillWidth: true
 
+    property bool sidebarMode: false
+
     leftPadding: root.margins
     topPadding:  root.margins
     rightPadding: root.margins
@@ -99,7 +101,7 @@ Kirigami.ScrollablePage {
 
         readonly property bool contentVisible: contentItem && contentItem.visible && contentItem.implicitHeight
 
-        height: contentVisible ? implicitHeight : (root.extraFooterTopPadding ? root.margins : 0)
+        height: contentVisible ? implicitHeight : 0
         leftPadding: 0
         topPadding: 0
         rightPadding: 0
