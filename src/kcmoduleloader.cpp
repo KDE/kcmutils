@@ -88,10 +88,8 @@ KCModule *KCModuleLoader::loadModule(const KPluginMetaData &metaData, QWidget *p
         return new KCModuleQml(qmlKcm, parent);
     }
 
-    const auto kcmoduleResult =
-        KPluginFactory::instantiatePlugin<KCModule>(metaData,
-                                                    parent,
-                                                    QVariantList(args) << metaData.rawData().value(QStringLiteral("X-KDE-KCM-Args")).toArray());
+    const QVariantList pluginArgs = QVariantList(args) << metaData.rawData().value(QLatin1String("X-KDE-KCM-Args")).toArray().toVariantList();
+    const auto kcmoduleResult = KPluginFactory::instantiatePlugin<KCModule>(metaData, parent, pluginArgs);
 
     if (kcmoduleResult) {
         qCDebug(KCMUTILS_LOG) << "loaded KCM" << metaData.fileName();

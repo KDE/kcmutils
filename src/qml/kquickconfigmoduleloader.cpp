@@ -28,11 +28,10 @@ KQuickConfigModuleLoader::loadModule(const KPluginMetaData &metaData, QObject *p
     }
     KPluginFactory *factory = factoryResult.plugin;
 
-    const QVariantList args2 = QVariantList(args) << metaData.rawData().value(QStringLiteral("X-KDE-KCM-Args")).toArray();
     factory->setMetaData(KPluginMetaData(metaData));
 
-    const auto kcm = factory->create<KQuickConfigModule>(parent, args2);
-    if (kcm) {
+    const QVariantList pluginArgs = QVariantList(args) << metaData.rawData().value(QLatin1String("X-KDE-KCM-Args")).toArray().toVariantList();
+    if (const auto kcm = factory->create<KQuickConfigModule>(parent, pluginArgs)) {
         const std::shared_ptr<QQmlEngine> engine =
             engineArg ? engineArg : (s_kcmutilsCreatedEngine.expired() ? std::make_shared<QQmlEngine>() : s_kcmutilsCreatedEngine.lock());
 
