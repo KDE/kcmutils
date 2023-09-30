@@ -180,8 +180,14 @@ int main(int argc, char *argv[])
 
     const QStringList argSplit = KShell::splitArgs(parser.value(QStringLiteral("args")));
     QVariantList pluginArgs(argSplit.begin(), argSplit.end());
-    for (const KPluginMetaData &m : std::as_const(metaDataList)) {
-        dlg->addModule(m, pluginArgs);
+    if (metaDataList.size() == 1) {
+        KPageWidgetItem *item = dlg->addModule(*metaDataList.cbegin(), pluginArgs);
+        // This makes sure the content area is focused by default
+        item->widget()->setFocus(Qt::MouseFocusReason);
+    } else {
+        for (const KPluginMetaData &m : std::as_const(metaDataList)) {
+            dlg->addModule(m, pluginArgs);
+        }
     }
 
     if (parser.isSet(QStringLiteral("icon"))) {
