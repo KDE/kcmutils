@@ -167,7 +167,7 @@ msgstr "Non se atopou ningún elemento"
 #: qml/kquickconfigmodule.cpp:120
 #, kde-format
 msgid "Could not find resource '%1'"
-msgstr "Non se puido atopar o recurso «%1»"
+msgstr "Non foi posíbel atopar o recurso «%1»"
 
 #, fuzzy
 #~| msgid "Confi&gure..."
