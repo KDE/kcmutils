@@ -16,7 +16,7 @@ msgstr ""
 "Project-Id-Version: kdelibs4\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2022-12-07 00:43+0000\n"
-"PO-Revision-Date: 2023-05-11 16:53+0200\n"
+"PO-Revision-Date: 2023-06-07 08:32+0200\n"
 "Last-Translator: Adrián Chaves (Gallaecio) <adrian@chaves.io>\n"
 "Language-Team: Galician <proxecto@trasno.gal>\n"
 "Language: gl\n"
@@ -69,7 +69,7 @@ msgstr ""
 #: kcmoduleloader.cpp:153
 #, kde-format
 msgid "The module %1 could not be found."
-msgstr "Non se puido atopar o módulo %1."
+msgstr "Non foi posíbel atopar o módulo %1."
 
 #: kcmoduleloader.cpp:154
 #, kde-format
