@@ -25,6 +25,7 @@
 #include <QStandardPaths>
 #include <QStringList>
 #include <QStyle>
+#include <QTimer>
 #include <QUrl>
 
 #include <KGuiItem>

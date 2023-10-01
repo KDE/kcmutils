@@ -9,7 +9,6 @@
 #include "kcmutilscore_export.h"
 
 #include <QObject>
-#include <QtQmlIntegration/QtQmlIntegration>
 
 #include <memory>
 
