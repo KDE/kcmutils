@@ -117,10 +117,6 @@ if(BUILD_QCH)
     )
 endif()
 
-include(ECMGeneratePriFile)
-ecm_generate_pri_file(BASE_NAME KCMUtils LIB_NAME KF6KCMUtils DEPS "widgets KConfigWidgets" FILENAME_VAR PRI_FILENAME INCLUDE_INSTALL_DIR ${KDE_INSTALL_INCLUDEDIR_KF}/KCMUtils)
-install(FILES ${PRI_FILENAME} DESTINATION ${ECM_MKSPECS_INSTALL_DIR})
-
 ecm_qt_install_logging_categories(
     EXPORT KCMUTILS
     FILE kcmutils.categories
