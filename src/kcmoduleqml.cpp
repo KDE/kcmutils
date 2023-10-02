@@ -44,6 +44,40 @@ public:
         configModule->setCurrentIndex(pageRow->property("currentIndex").toInt());
     }
 
+    void syncCurrentItem()
+    {
+        // QTBUG-44043 : Focus on currentItem instead of StackView itself
+        QQuickItem *item = pageRow->property("currentItem").value<QQuickItem *>();
+        if (!item) {
+            return;
+        }
+
+        std::function<QQuickItem *(QQuickItem *)> findFocusItem = [&findFocusItem](QQuickItem *parentItem) -> QQuickItem * {
+            if (!parentItem->isEnabled() || !parentItem->isVisible() || parentItem->x() < 0 || parentItem->y() < 0) {
+                return nullptr;
+            }
+            if (!parentItem->isFocusScope() && !parentItem->hasFocus()) {
+                return nullptr;
+            }
+
+            for (const auto childItems{parentItem->childItems()}; auto i : childItems) {
+                if (QQuickItem *itemHasFocus = findFocusItem(i)) {
+                    return itemHasFocus;
+                }
+            }
+            // Loaders are usually toolbars
+            if (QLatin1String(parentItem->metaObject()->className()).startsWith(QLatin1String("QQuickLoader"))) {
+                return parentItem->hasFocus() ? parentItem : nullptr;
+            }
+            return parentItem;
+        };
+
+        QQuickItem *itemHasFocus = findFocusItem(item);
+        if (itemHasFocus) {
+            itemHasFocus->forceActiveFocus(Qt::TabFocusReason);
+        }
+    }
+
     KCModuleQml *q;
     QQuickWindow *quickWindow = nullptr;
     QQuickWidget *quickWidget = nullptr;
@@ -264,6 +298,7 @@ Kirigami.ApplicationItem {
         });
         // New syntax cannot be used to connect to QML types
         connect(d->pageRow, SIGNAL(currentIndexChanged()), this, SLOT(syncCurrentIndex()));
+        connect(d->pageRow, SIGNAL(currentItemChanged()), this, SLOT(syncCurrentItem()));
     }
 
     layout->addWidget(d->quickWidget);

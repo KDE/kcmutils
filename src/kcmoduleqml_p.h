@@ -35,6 +35,7 @@ private:
     const std::unique_ptr<KCModuleQmlPrivate> d;
 
     Q_PRIVATE_SLOT(d, void syncCurrentIndex())
+    Q_PRIVATE_SLOT(d, void syncCurrentItem())
 };
 
 #endif
