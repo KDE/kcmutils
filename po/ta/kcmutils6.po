@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdelibs4\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-09-06 01:54+0000\n"
+"POT-Creation-Date: 2023-10-02 01:40+0000\n"
 "PO-Revision-Date: 2023-06-11 18:54+0530\n"
 "Last-Translator: Kishore G <kishore96@gmail.com>\n"
 "Language-Team: Tamil <kde-i18n-doc@kde.org>\n"
@@ -60,7 +60,7 @@ msgstr "இக்கூறு, கணினியின் நிர்வாக
 msgid "Error loading QML file."
 msgstr "QML கோப்பை ஏற்றுவதில் சிக்கல்."
 
-#: kcmultidialog.cpp:44
+#: kcmultidialog.cpp:45
 #, kde-format
 msgid ""
 "The settings of the current module have changed.\n"
@@ -69,12 +69,12 @@ msgstr ""
 "தற்போதைய பாகத்தின் அமைப்புகள் மாற்றப்பட்டுள்ளன.\n"
 "காக்க விரும்புகிறீர்களா அல்லது தவிர்க்க விரும்புகிறீர்களா?"
 
-#: kcmultidialog.cpp:46
+#: kcmultidialog.cpp:47
 #, kde-format
 msgid "Apply Settings"
 msgstr "அமைப்புகளை செயல்படுத்தவும்"
 
-#: kcmultidialog.cpp:204 kpluginwidget.cpp:329
+#: kcmultidialog.cpp:205 kpluginwidget.cpp:329
 #, kde-format
 msgid "Configure"
 msgstr "வடிவமை"

@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdelibs4\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-09-06 01:54+0000\n"
+"POT-Creation-Date: 2023-10-02 01:40+0000\n"
 "PO-Revision-Date: 2021-08-22 13:04+0530\n"
 "Last-Translator: Raghavendra Kamath <raghu@raghukamath.com>\n"
 "Language-Team: kde-hindi\n"
@@ -61,7 +61,7 @@ msgstr "मॉड्यूल को तंत्र व्यवस्थाप
 msgid "Error loading QML file."
 msgstr "क्यूएमएल फाइल लोड करने में त्रुटि।"
 
-#: kcmultidialog.cpp:44
+#: kcmultidialog.cpp:45
 #, kde-format
 msgid ""
 "The settings of the current module have changed.\n"
@@ -70,12 +70,12 @@ msgstr ""
 "वर्तमान मोड्यूल के सेटिंग परिवर्तित हो गए है।\n"
 "क्या आप इसे सहेजना चाहेंगे या परिवर्तनों को फेंक दें?"
 
-#: kcmultidialog.cpp:46
+#: kcmultidialog.cpp:47
 #, kde-format
 msgid "Apply Settings"
 msgstr "विन्यास लगाएँ"
 
-#: kcmultidialog.cpp:204 kpluginwidget.cpp:329
+#: kcmultidialog.cpp:205 kpluginwidget.cpp:329
 #, kde-format
 msgid "Configure"
 msgstr "कॉन्फ़िगर"

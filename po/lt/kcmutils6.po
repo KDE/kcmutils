@@ -12,7 +12,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdelibs4\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-09-06 01:54+0000\n"
+"POT-Creation-Date: 2023-10-02 01:40+0000\n"
 "PO-Revision-Date: 2021-08-25 14:22+0300\n"
 "Last-Translator: Moo\n"
 "Language-Team: lt <kde-i18n-lt@kde.org>\n"
@@ -69,7 +69,7 @@ msgstr "Sistemos administratorius išjungė šį modulį."
 msgid "Error loading QML file."
 msgstr "Klaida įkeliant QML failą."
 
-#: kcmultidialog.cpp:44
+#: kcmultidialog.cpp:45
 #, kde-format
 msgid ""
 "The settings of the current module have changed.\n"
@@ -78,12 +78,12 @@ msgstr ""
 "Esamo modulio nuostatos buvo pakeistos.\n"
 "Ar norite taikyti pakeitimus ar juos atmesti?"
 
-#: kcmultidialog.cpp:46
+#: kcmultidialog.cpp:47
 #, kde-format
 msgid "Apply Settings"
 msgstr "Taikyti nuostatas"
 
-#: kcmultidialog.cpp:204 kpluginwidget.cpp:329
+#: kcmultidialog.cpp:205 kpluginwidget.cpp:329
 #, kde-format
 msgid "Configure"
 msgstr "Konfigūruoti"

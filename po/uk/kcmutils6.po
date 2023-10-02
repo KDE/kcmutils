@@ -11,7 +11,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kcmutils5\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-09-06 01:54+0000\n"
+"POT-Creation-Date: 2023-10-02 01:40+0000\n"
 "PO-Revision-Date: 2023-06-06 09:22+0300\n"
 "Last-Translator: Yuri Chornoivan <yurchor@ukr.net>\n"
 "Language-Team: Ukrainian <kde-i18n-uk@kde.org>\n"
@@ -63,7 +63,7 @@ msgstr "Модуль було вимкнено адміністратором с
 msgid "Error loading QML file."
 msgstr "Помилка під час завантаження файла QML."
 
-#: kcmultidialog.cpp:44
+#: kcmultidialog.cpp:45
 #, kde-format
 msgid ""
 "The settings of the current module have changed.\n"
@@ -72,12 +72,12 @@ msgstr ""
 "Параметри активного модуля було змінено.\n"
 "Застосувати зміни чи відкинути їх?"
 
-#: kcmultidialog.cpp:46
+#: kcmultidialog.cpp:47
 #, kde-format
 msgid "Apply Settings"
 msgstr "Застосувати параметри"
 
-#: kcmultidialog.cpp:204 kpluginwidget.cpp:329
+#: kcmultidialog.cpp:205 kpluginwidget.cpp:329
 #, kde-format
 msgid "Configure"
 msgstr "Налаштування"

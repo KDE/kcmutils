@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdelibs4\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-09-06 01:54+0000\n"
+"POT-Creation-Date: 2023-10-02 01:40+0000\n"
 "PO-Revision-Date: 2011-07-16 00:57+0800\n"
 "Last-Translator: Sharuzzaman Ahmat Raslan <sharuzzaman@gmail.com>\n"
 "Language-Team: Malay <kedidiemas@yahoogroups.com>\n"
@@ -70,7 +70,7 @@ msgstr "Pilih hubungi pentadbir sistem anda."
 msgid "Error loading QML file."
 msgstr "Ralat memuatkan '%1'.\n"
 
-#: kcmultidialog.cpp:44
+#: kcmultidialog.cpp:45
 #, fuzzy, kde-format
 #| msgid ""
 #| "The document \"%1\" has been modified.\n"
@@ -80,12 +80,12 @@ msgid ""
 "Do you want to apply the changes or discard them?"
 msgstr "ke  atau?"
 
-#: kcmultidialog.cpp:46
+#: kcmultidialog.cpp:47
 #, kde-format
 msgid "Apply Settings"
 msgstr "Terap Tetapan"
 
-#: kcmultidialog.cpp:204 kpluginwidget.cpp:329
+#: kcmultidialog.cpp:205 kpluginwidget.cpp:329
 #, kde-format
 msgid "Configure"
 msgstr "Selaraskan"

@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: kcmutils\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-10-01 01:53+0000\n"
-"PO-Revision-Date: 2023-07-27 18:01+0300\n"
+"PO-Revision-Date: 2023-10-01 10:55+0200\n"
 "Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
 "Language: ca@valencia\n"
@@ -86,10 +86,9 @@ msgid "Configuration module to open"
 msgstr "Mòdul de configuració que s'ha d'obrir"
 
 #: main.cpp:100
-#, fuzzy, kde-format
-#| msgid "Arguments for the module"
+#, kde-format
 msgid "Space separated arguments for the module"
-msgstr "Arguments per al mòdul"
+msgstr "Arguments separats per espais per al mòdul"
 
 #: main.cpp:101
 #, kde-format

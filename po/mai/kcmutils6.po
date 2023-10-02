@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdelibs4\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-09-06 01:54+0000\n"
+"POT-Creation-Date: 2023-10-02 01:40+0000\n"
 "PO-Revision-Date: 2010-09-24 15:44+0530\n"
 "Last-Translator: Rajesh Ranjan <rranjan@redhat.com>\n"
 "Language-Team: Hindi <fedora-trans-hi@redhat.com>\n"
@@ -57,7 +57,7 @@ msgstr "कृप्या अपन तंत्र प्रशासक स�
 msgid "Error loading QML file."
 msgstr " %1 केँ लोड करब मे त्रुटि.\n"
 
-#: kcmultidialog.cpp:44
+#: kcmultidialog.cpp:45
 #, fuzzy, kde-format
 #| msgid ""
 #| "The document \"%1\" has been modified.\n"
@@ -69,12 +69,12 @@ msgstr ""
 "दस्ताबेज \"%1\" परिवर्तित कएल गेल अछि.\n"
 "की अहाँ एकरा सहेजना चाहब अथवा परिवर्तनसभ केँ फेंक दिअ'?"
 
-#: kcmultidialog.cpp:46
+#: kcmultidialog.cpp:47
 #, kde-format
 msgid "Apply Settings"
 msgstr "जमावट लागू करू"
 
-#: kcmultidialog.cpp:204 kpluginwidget.cpp:329
+#: kcmultidialog.cpp:205 kpluginwidget.cpp:329
 #, kde-format
 msgid "Configure"
 msgstr "बिन्यस्त करू"

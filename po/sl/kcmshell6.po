@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: kcmutils\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-10-01 01:53+0000\n"
-"PO-Revision-Date: 2023-07-27 08:10+0200\n"
+"PO-Revision-Date: 2023-10-01 06:37+0200\n"
 "Last-Translator: Matjaž Jeran <matjaz.jeran@amis.net>\n"
 "Language-Team: Slovenian <lugos-slo@lugos.si>\n"
 "Language: sl\n"
@@ -84,10 +84,9 @@ msgid "Configuration module to open"
 msgstr "Modul konfiguracije za odpiranje"
 
 #: main.cpp:100
-#, fuzzy, kde-format
-#| msgid "Arguments for the module"
+#, kde-format
 msgid "Space separated arguments for the module"
-msgstr "Argumenti za modul"
+msgstr "Argumenti ločeni s presledkom za modul"
 
 #: main.cpp:101
 #, kde-format

@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: kcmutils\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-10-01 01:53+0000\n"
-"PO-Revision-Date: 2023-09-24 08:02+0200\n"
+"PO-Revision-Date: 2023-10-01 09:45+0200\n"
 "Last-Translator: Łukasz Wojniłowicz <lukasz.wojnilowicz@gmail.com>\n"
 "Language-Team: Polish <kde-i18n-doc@kde.org>\n"
 "Language: pl\n"
@@ -84,10 +84,9 @@ msgid "Configuration module to open"
 msgstr "Człon ustawień do otworzenia"
 
 #: main.cpp:100
-#, fuzzy, kde-format
-#| msgid "Arguments for the module"
+#, kde-format
 msgid "Space separated arguments for the module"
-msgstr "Argumenty dla modułu"
+msgstr "Argumenty dla członu, oddzielone odstępami"
 
 #: main.cpp:101
 #, kde-format

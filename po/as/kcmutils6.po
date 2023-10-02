@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdelibs4_as\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-09-06 01:54+0000\n"
+"POT-Creation-Date: 2023-10-02 01:40+0000\n"
 "PO-Revision-Date: 2008-12-26 15:19+0530\n"
 "Last-Translator: Amitakhya Phukan <অমিতাক্ষ ফুকন>\n"
 "Language-Team: Assamese <fedora-trans-as@redhat.com>\n"
@@ -55,7 +55,7 @@ msgstr "অনুগ্ৰহ কৰি ব্যৱস্থাপ্ৰণা�
 msgid "Error loading QML file."
 msgstr "'%1' লোড কৰিবলৈ সমস্যা ।\n"
 
-#: kcmultidialog.cpp:44
+#: kcmultidialog.cpp:45
 #, fuzzy, kde-format
 #| msgid ""
 #| "The document \"%1\" has been modified.\n"
@@ -67,13 +67,13 @@ msgstr ""
 "\"%1\" আলেখ্যনত কিছু পৰিবৰ্তন কৰা হৈছে ।\n"
 "পৰিবৰ্তনসমূহ সংৰক্ষণ কৰা হ'ব নে বৰ্জন কৰা হ'ব?"
 
-#: kcmultidialog.cpp:46
+#: kcmultidialog.cpp:47
 #, fuzzy, kde-format
 #| msgid "Settings"
 msgid "Apply Settings"
 msgstr "বৈশিষ্ট্য"
 
-#: kcmultidialog.cpp:204 kpluginwidget.cpp:329
+#: kcmultidialog.cpp:205 kpluginwidget.cpp:329
 #, kde-format
 msgid "Configure"
 msgstr "বিন্যাস কৰক"

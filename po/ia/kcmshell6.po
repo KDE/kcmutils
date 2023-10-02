@@ -1,13 +1,13 @@
-# Copyright (C) YEAR This file is copyright:
+# Copyright (C) 2023 This file is copyright:
 # This file is distributed under the same license as the kcmutils package.
 #
-# giovanni <g.sora@tiscali.it>, 2023.
+# SPDX-FileCopyrightText: 2023 giovanni <g.sora@tiscali.it>
 msgid ""
 msgstr ""
 "Project-Id-Version: kcmutils\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-10-01 01:53+0000\n"
-"PO-Revision-Date: 2023-07-27 11:13+0200\n"
+"PO-Revision-Date: 2023-10-01 21:20+0200\n"
 "Last-Translator: giovanni <g.sora@tiscali.it>\n"
 "Language-Team: Interlingua <kde-i18n-doc@kde.org>\n"
 "Language: ia\n"
@@ -15,7 +15,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Lokalize 22.12.3\n"
+"X-Generator: Lokalize 23.08.1\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
@@ -83,10 +83,9 @@ msgid "Configuration module to open"
 msgstr "Modulo de configuration a aperir"
 
 #: main.cpp:100
-#, fuzzy, kde-format
-#| msgid "Arguments for the module"
+#, kde-format
 msgid "Space separated arguments for the module"
-msgstr "Argumentos pro le modulo"
+msgstr "Argumentos separate per spatio pro le modulo"
 
 #: main.cpp:101
 #, kde-format

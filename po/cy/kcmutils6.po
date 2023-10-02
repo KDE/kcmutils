@@ -18,7 +18,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdelibs4\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-09-06 01:54+0000\n"
+"POT-Creation-Date: 2023-10-02 01:40+0000\n"
 "PO-Revision-Date: 2005-01-28 17:54+0000\n"
 "Last-Translator: Kevin Donnelly <kevin@dotmon.com>\n"
 "Language-Team: Cymraeg\n"
@@ -80,7 +80,7 @@ msgstr "Cysylltwch a'ch gwasanaethwr cysodau."
 msgid "Error loading QML file."
 msgstr "Gwall tra'n agor y ffeil."
 
-#: kcmultidialog.cpp:44
+#: kcmultidialog.cpp:45
 #, fuzzy, kde-format
 #| msgid ""
 #| "The document \"%1\" has been modified.\n"
@@ -92,13 +92,13 @@ msgstr ""
 "Mae'r ddogfen \"%1\" wedi ei newid.\n"
 "Ydych eisiau cadw eich newidiadau, neu eu taflu?"
 
-#: kcmultidialog.cpp:46
+#: kcmultidialog.cpp:47
 #, fuzzy, kde-format
 #| msgid "Apply settings"
 msgid "Apply Settings"
 msgstr "Gweithredu gosodiadau"
 
-#: kcmultidialog.cpp:204 kpluginwidget.cpp:329
+#: kcmultidialog.cpp:205 kpluginwidget.cpp:329
 #, kde-format
 msgid "Configure"
 msgstr "Ffurfweddu"

@@ -20,7 +20,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdelibs4\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-09-06 01:54+0000\n"
+"POT-Creation-Date: 2023-10-02 01:40+0000\n"
 "PO-Revision-Date: 2023-08-15 00:56+0300\n"
 "Last-Translator: George Stefanakis <george.stefanakis@gmail.com>\n"
 "Language-Team: Greek <kde-i18n-doc@kde.org>\n"
@@ -74,7 +74,7 @@ msgstr "Το άρθρωμα έχει απενεργοποιηθεί από το�
 msgid "Error loading QML file."
 msgstr "Σφάλμα κατά τη φόρτωση του UML αρχείου."
 
-#: kcmultidialog.cpp:44
+#: kcmultidialog.cpp:45
 #, kde-format
 msgid ""
 "The settings of the current module have changed.\n"
@@ -83,12 +83,12 @@ msgstr ""
 "Οι ρυθμίσεις του τρέχοντος αρθρώματος έχουν αλλάξει.\n"
 "Θέλετε να εφαρμόσετε τις αλλαγές σας ή να τις ακυρώσετε;"
 
-#: kcmultidialog.cpp:46
+#: kcmultidialog.cpp:47
 #, kde-format
 msgid "Apply Settings"
 msgstr "Εφαρμογή ρυθμίσεων"
 
-#: kcmultidialog.cpp:204 kpluginwidget.cpp:329
+#: kcmultidialog.cpp:205 kpluginwidget.cpp:329
 #, kde-format
 msgid "Configure"
 msgstr "Διαμόρφωση"

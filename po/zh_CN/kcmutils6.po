@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdeorg\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-09-06 01:54+0000\n"
+"POT-Creation-Date: 2023-10-02 01:40+0000\n"
 "PO-Revision-Date: 2023-09-16 10:06\n"
 "Last-Translator: \n"
 "Language-Team: Chinese Simplified\n"
@@ -56,7 +56,7 @@ msgstr "该模块已被系统管理员禁用。"
 msgid "Error loading QML file."
 msgstr "加载 QML 文件时出错"
 
-#: kcmultidialog.cpp:44
+#: kcmultidialog.cpp:45
 #, kde-format
 msgid ""
 "The settings of the current module have changed.\n"
@@ -65,12 +65,12 @@ msgstr ""
 "当前模块的设置已被修改。\n"
 "您想要应用还是丢弃更改？"
 
-#: kcmultidialog.cpp:46
+#: kcmultidialog.cpp:47
 #, kde-format
 msgid "Apply Settings"
 msgstr "应用设置"
 
-#: kcmultidialog.cpp:204 kpluginwidget.cpp:329
+#: kcmultidialog.cpp:205 kpluginwidget.cpp:329
 #, kde-format
 msgid "Configure"
 msgstr "配置"

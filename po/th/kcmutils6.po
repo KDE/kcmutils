@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdelibs4\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-09-06 01:54+0000\n"
+"POT-Creation-Date: 2023-10-02 01:40+0000\n"
 "PO-Revision-Date: 2010-12-31 22:47+0700\n"
 "Last-Translator: Phuwanat Sakornsakolpat <narachai@gmail.com>\n"
 "Language-Team: Thai <thai-l10n@googlegroups.com>\n"
@@ -68,7 +68,7 @@ msgstr "โปรดติดต่อผู้บริหารระบบข
 msgid "Error loading QML file."
 msgstr "การโหลด '%1' ผิดพลาด\n"
 
-#: kcmultidialog.cpp:44
+#: kcmultidialog.cpp:45
 #, kde-format
 msgid ""
 "The settings of the current module have changed.\n"
@@ -77,12 +77,12 @@ msgstr ""
 "มีการเปลี่ยนแปลงการตั้งค่าให้กับมอดูลที่ใช้อยู่ในปัจจุบัน\n"
 "คุณต้องการจะทำการปรับใช้มันหรือจะละทิ้งการเปลี่ยนแปลง ?"
 
-#: kcmultidialog.cpp:46
+#: kcmultidialog.cpp:47
 #, kde-format
 msgid "Apply Settings"
 msgstr "ปรับใช้การตั้งค่า"
 
-#: kcmultidialog.cpp:204 kpluginwidget.cpp:329
+#: kcmultidialog.cpp:205 kpluginwidget.cpp:329
 #, kde-format
 msgid "Configure"
 msgstr "ปรับแต่งค่า"

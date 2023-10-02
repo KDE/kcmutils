@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdelibs4 stable\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-09-06 01:54+0000\n"
+"POT-Creation-Date: 2023-10-02 01:40+0000\n"
 "PO-Revision-Date: 2006-01-12 16:33+0200\n"
 "Last-Translator: JUANITA FRANZ <JUANITA.FRANZ@VR-WEB.DE>\n"
 "Language-Team: AFRIKAANS <translate-discuss-af@lists.sourceforge.net>\n"
@@ -63,7 +63,7 @@ msgstr "Kontak asseblief die stelsel administrateur."
 msgid "Error loading QML file."
 msgstr "Fout met oopmaak van lêer voorgekom"
 
-#: kcmultidialog.cpp:44
+#: kcmultidialog.cpp:45
 #, fuzzy, kde-format
 #| msgid ""
 #| "The document \"%1\" has been modified.\n"
@@ -75,13 +75,13 @@ msgstr ""
 "Die dokument \"%1\" het verander.\n"
 "Wil jy jou veranderinge stoor of weggooi?"
 
-#: kcmultidialog.cpp:46
+#: kcmultidialog.cpp:47
 #, fuzzy, kde-format
 #| msgid "Apply settings"
 msgid "Apply Settings"
 msgstr "Wend aan instellings"
 
-#: kcmultidialog.cpp:204 kpluginwidget.cpp:329
+#: kcmultidialog.cpp:205 kpluginwidget.cpp:329
 #, kde-format
 msgid "Configure"
 msgstr "Stel op"

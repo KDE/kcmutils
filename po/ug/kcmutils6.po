@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdelibs4\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-09-06 01:54+0000\n"
+"POT-Creation-Date: 2023-10-02 01:40+0000\n"
 "PO-Revision-Date: 2013-09-08 07:05+0900\n"
 "Last-Translator: Gheyret Kenji <gheyret@gmail.com>\n"
 "Language-Team: Uyghur Computer Science Association <UKIJ@yahoogroups.com>\n"
@@ -67,7 +67,7 @@ msgstr "سىستېما باشقۇرغۇچىسى بىلەن ئالاقىلىشى�
 msgid "Error loading QML file."
 msgstr "'%1' يۈكلىگەندە خاتالىق كۆرۈلدى.\n"
 
-#: kcmultidialog.cpp:44
+#: kcmultidialog.cpp:45
 #, kde-format
 msgid ""
 "The settings of the current module have changed.\n"
@@ -76,12 +76,12 @@ msgstr ""
 "نۆۋەتتىكى بۆلەكنىڭ تەڭشىكى ئۆزگەرتىلدى.\n"
 "ئۆزگەرتىشنى ساقلامسىز ياكى تاشلىۋېتەمسىز؟"
 
-#: kcmultidialog.cpp:46
+#: kcmultidialog.cpp:47
 #, kde-format
 msgid "Apply Settings"
 msgstr "تەڭشەك قوللان"
 
-#: kcmultidialog.cpp:204 kpluginwidget.cpp:329
+#: kcmultidialog.cpp:205 kpluginwidget.cpp:329
 #, kde-format
 msgid "Configure"
 msgstr "سەپلە"

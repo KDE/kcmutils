@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdelibs4\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-09-06 01:54+0000\n"
+"POT-Creation-Date: 2023-10-02 01:40+0000\n"
 "PO-Revision-Date: 2010-06-24 18:32+0530\n"
 "Last-Translator: Shankar Prasad <svenkate@redhat.com>\n"
 "Language-Team: kn_IN <kde-i18n-doc@kde.org>\n"
@@ -58,7 +58,7 @@ msgstr "ದಯವಿಟ್ಟು ನಿಮ್ಮ ಗಣಕ-ನಿರ್ವಾಹ
 msgid "Error loading QML file."
 msgstr "'%1' ಉತ್ಥಾಪಿಸುವಾಗ (ಲೋಡ್) ದೋಷ.\n"
 
-#: kcmultidialog.cpp:44
+#: kcmultidialog.cpp:45
 #, fuzzy, kde-format
 #| msgid ""
 #| "The document \"%1\" has been modified.\n"
@@ -70,13 +70,13 @@ msgstr ""
 "ದಸ್ತಾವೇಜು \"%1\" ಬದಲಾಗಿದೆ.\n"
 "ಬದಲಾವಣೆಗಳನ್ನು ಉಳಿಸಬೇಕೇ ಅಥವಾ ತಿರಸ್ಕರಿಸಬೇಕೇ?"
 
-#: kcmultidialog.cpp:46
+#: kcmultidialog.cpp:47
 #, fuzzy, kde-format
 #| msgid "Settings"
 msgid "Apply Settings"
 msgstr "ಸಂಯೋಜನೆಗಳು"
 
-#: kcmultidialog.cpp:204 kpluginwidget.cpp:329
+#: kcmultidialog.cpp:205 kpluginwidget.cpp:329
 #, kde-format
 msgid "Configure"
 msgstr "ಸಂರಚಿಸು"

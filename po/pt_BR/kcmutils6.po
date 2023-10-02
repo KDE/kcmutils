@@ -19,7 +19,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kcmutils5\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-09-06 01:54+0000\n"
+"POT-Creation-Date: 2023-10-02 01:40+0000\n"
 "PO-Revision-Date: 2023-08-13 22:36-0300\n"
 "Last-Translator: Geraldo Simiao <geraldosimiao@fedoraproject.org>\n"
 "Language-Team: Brazilian Portuguese <kde-i18n-pt_BR@kde.org>\n"
@@ -75,7 +75,7 @@ msgstr "O módulo foi desabilitado pelo administrador do sistema."
 msgid "Error loading QML file."
 msgstr "Ocorreu um erro ao carregar o arquivo QML."
 
-#: kcmultidialog.cpp:44
+#: kcmultidialog.cpp:45
 #, kde-format
 msgid ""
 "The settings of the current module have changed.\n"
@@ -84,12 +84,12 @@ msgstr ""
 "As configurações do módulo atual foram alteradas.\n"
 "Deseja aplicar as alterações ou descartá-las?"
 
-#: kcmultidialog.cpp:46
+#: kcmultidialog.cpp:47
 #, kde-format
 msgid "Apply Settings"
 msgstr "Aplicar configurações"
 
-#: kcmultidialog.cpp:204 kpluginwidget.cpp:329
+#: kcmultidialog.cpp:205 kpluginwidget.cpp:329
 #, kde-format
 msgid "Configure"
 msgstr "Configurar"

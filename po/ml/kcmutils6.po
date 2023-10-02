@@ -11,7 +11,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdelibs4\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-09-06 01:54+0000\n"
+"POT-Creation-Date: 2023-10-02 01:40+0000\n"
 "PO-Revision-Date: 2019-12-12 21:04+0000\n"
 "Last-Translator: Vivek KJ Pazhedath <vivekkj2004@gmail.com>\n"
 "Language-Team: SMC <smc.org.in>\n"
@@ -58,7 +58,7 @@ msgstr "ദയവായി നിങ്ങളുടെ സിസ്റ്റം 
 msgid "Error loading QML file."
 msgstr "'%1' ലഭ്യമാക്കുന്നതില്‍ പിശകു്.\n"
 
-#: kcmultidialog.cpp:44
+#: kcmultidialog.cpp:45
 #, kde-format
 msgid ""
 "The settings of the current module have changed.\n"
@@ -67,12 +67,12 @@ msgstr ""
 "ഇപ്പോഴുള്ള രേഖയുടെ സജ്ജീകരണങ്ങളില്‍ മാറ്റങ്ങള്‍ വരുത്തിയിരിക്കുന്നു.\n"
 "നിങ്ങള്‍ക്കവ സൂക്ഷിക്കണമോ വേണ്ടന്നു് വയ്ക്കണമോ?"
 
-#: kcmultidialog.cpp:46
+#: kcmultidialog.cpp:47
 #, kde-format
 msgid "Apply Settings"
 msgstr "സജ്ജീകരണങ്ങള്‍ പ്രാഭല്യത്തിലാക്കുക"
 
-#: kcmultidialog.cpp:204 kpluginwidget.cpp:329
+#: kcmultidialog.cpp:205 kpluginwidget.cpp:329
 #, kde-format
 msgid "Configure"
 msgstr "ക്രമീകരിയ്ക്കുക"

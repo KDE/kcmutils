@@ -12,7 +12,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdelibs4\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-09-06 01:54+0000\n"
+"POT-Creation-Date: 2023-10-02 01:40+0000\n"
 "PO-Revision-Date: 2011-07-06 12:57+0300\n"
 "Last-Translator: Maris Nartiss <maris.kde@gmail.com>\n"
 "Language-Team: Latvian\n"
@@ -74,7 +74,7 @@ msgstr "Lūdzu, sazinieties ar jūsu sistēmas administratoru."
 msgid "Error loading QML file."
 msgstr "Kļūda ielādējot '%1'.\n"
 
-#: kcmultidialog.cpp:44
+#: kcmultidialog.cpp:45
 #, kde-format
 msgid ""
 "The settings of the current module have changed.\n"
@@ -83,12 +83,12 @@ msgstr ""
 "Aktīvā moduļa iestatījumi ir mainīti.\n"
 "Vai vēlaties pielietot izmaiņas, vai arī tās izmest?"
 
-#: kcmultidialog.cpp:46
+#: kcmultidialog.cpp:47
 #, kde-format
 msgid "Apply Settings"
 msgstr "Pielietot iestatījumus"
 
-#: kcmultidialog.cpp:204 kpluginwidget.cpp:329
+#: kcmultidialog.cpp:205 kpluginwidget.cpp:329
 #, kde-format
 msgid "Configure"
 msgstr "Konfigurēt"
