@@ -37,6 +37,9 @@ QQC2.ScrollView {
     contentItem: view
     onViewChanged: {
         view.parent = scroll;
+        if (!view.KeyNavigation.up) {
+            view.KeyNavigation.up = Qt.binding(() => root.globalToolBarItem);
+        }
     }
 
     activeFocusOnTab: false
