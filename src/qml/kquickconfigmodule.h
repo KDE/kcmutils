@@ -226,6 +226,11 @@ Q_SIGNALS:
      */
     void depthChanged(int index);
 
+    /**
+     * Emitted when the main Ui has loaded successfully and `mainUi()` is available
+     */
+    void mainUiReady();
+
 protected:
     /**
      * Base class for all QtQuick config modules.

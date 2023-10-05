@@ -132,6 +132,8 @@ QQuickItem *KQuickConfigModule::mainUi()
         return nullptr;
     }
 
+    Q_EMIT mainUiReady();
+
     return qobject_cast<QQuickItem *>(d->engine->rootObject());
 }
 
