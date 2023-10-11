@@ -83,10 +83,9 @@ msgid "Configuration module to open"
 msgstr "Konfigurační modul k otevření"
 
 #: main.cpp:100
-#, fuzzy, kde-format
-#| msgid "Arguments for the module"
+#, kde-format
 msgid "Space separated arguments for the module"
-msgstr "Argumenty pro modul"
+msgstr ""
 
 #: main.cpp:101
 #, kde-format
