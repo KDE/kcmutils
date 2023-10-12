@@ -56,6 +56,15 @@ T2.ItemDelegate {
     height: GridView.view.cellHeight
     hoverEnabled: !Kirigami.Settings.isMobile
 
+    Accessible.description: {
+        if (delegate.toolTip.length === 0) {
+            return subtitle;
+        } else if (delegate.subtitle.length === 0) {
+            return toolTip;
+        }
+        return `${subtitle}; ${toolTip}`
+    }
+
     Keys.onEnterPressed: thumbnail.trigger()
     Keys.onMenuPressed: thumbnail.trigger()
     Keys.onSpacePressed: thumbnail.trigger()
