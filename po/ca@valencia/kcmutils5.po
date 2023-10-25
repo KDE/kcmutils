@@ -48,7 +48,7 @@ msgstr "El mòdul ha sigut desactivat per l'administrador del sistema."
 #: kcmoduleloader.cpp:93 kcmoduleloader.cpp:184
 #, kde-format
 msgid "Error loading QML file."
-msgstr "S'ha produït un error en carregar el fitxer QML."
+msgstr "S'ha produït un error en carregar el fitxer en QML."
 
 #: kcmoduleloader.cpp:119
 #, kde-format
