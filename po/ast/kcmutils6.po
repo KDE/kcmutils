@@ -1,13 +1,13 @@
-# Copyright (C) YEAR This file is copyright:
+# Copyright (C) 2023 This file is copyright:
 # This file is distributed under the same license as the kcmutils package.
 #
-# Enol P. <enolp@softastur.org>, 2023.
+# SPDX-FileCopyrightText: 2023 Enol P. <enolp@softastur.org>
 msgid ""
 msgstr ""
 "Project-Id-Version: kcmutils\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-10-02 01:40+0000\n"
-"PO-Revision-Date: 2023-05-09 23:41+0200\n"
+"PO-Revision-Date: 2023-10-24 23:40+0200\n"
 "Last-Translator: Enol P. <enolp@softastur.org>\n"
 "Language-Team: \n"
 "Language: ast\n"
@@ -15,7 +15,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Lokalize 23.04.0\n"
+"X-Generator: Lokalize 23.08.2\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
@@ -40,12 +40,12 @@ msgstr ""
 #: kcmoduleloader.cpp:79
 #, kde-format
 msgid "The module %1 is disabled."
-msgstr ""
+msgstr "Desactivóse'l módulu «%1»"
 
 #: kcmoduleloader.cpp:79
 #, kde-format
 msgid "The module has been disabled by the system administrator."
-msgstr ""
+msgstr "L'alministrador del sistema desactivó'l módulu."
 
 #: kcmoduleloader.cpp:85
 #, kde-format
@@ -146,10 +146,9 @@ msgid "Send an email to %1"
 msgstr ""
 
 #: qml/components/private/GridViewInternal.qml:78
-#, fuzzy, kde-format
-#| msgid "No plugins found"
+#, kde-format
 msgid "No items found"
-msgstr "Nun s'atopó nengún plugin"
+msgstr "Nun s'atopó nengún elementu"
 
 #: qml/kquickconfigmodule.cpp:120
 #, kde-format
