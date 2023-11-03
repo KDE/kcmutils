@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: kcmutils\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-10-02 01:40+0000\n"
-"PO-Revision-Date: 2023-10-24 23:40+0200\n"
+"PO-Revision-Date: 2023-11-02 15:03+0100\n"
 "Last-Translator: Enol P. <enolp@softastur.org>\n"
 "Language-Team: \n"
 "Language: ast\n"
@@ -50,7 +50,7 @@ msgstr "L'alministrador del sistema desactivó'l módulu."
 #: kcmoduleloader.cpp:85
 #, kde-format
 msgid "Error loading QML file."
-msgstr ""
+msgstr "Hebo un error al cargar el ficheru QML."
 
 #: kcmultidialog.cpp:45
 #, kde-format
@@ -113,7 +113,7 @@ msgstr "Nun s'atopó nengún plugin"
 #, kde-format
 msgctxt "Plugin name and plugin version"
 msgid "%1 %2"
-msgstr ""
+msgstr "%1 %2"
 
 #: qml/components/private/AboutPlugin.qml:64
 #, kde-format
