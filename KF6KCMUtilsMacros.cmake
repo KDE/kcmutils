@@ -187,5 +187,7 @@ function(kcmutils_add_qml_kcm target_name)
 
     target_link_libraries(${target_name} PRIVATE ${target_name}_qml)
 
-    install(TARGETS ${target_name}_qml DESTINATION ${KDE_INSTALL_LIBDIR})
+    set_target_properties(${target_name} PROPERTIES INSTALL_RPATH ${KDE_INSTALL_FULL_LIBDIR}/kcms)
+
+    install(TARGETS ${target_name}_qml DESTINATION ${KDE_INSTALL_LIBDIR}/kcms)
 endfunction()
