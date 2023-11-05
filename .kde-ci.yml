@@ -11,7 +11,6 @@ Dependencies:
     'frameworks/kxmlgui' : '@same'
     'frameworks/kirigami' : '@same'
     'frameworks/kio' : '@same' # CommandLauncherJob, this will get moved to KService
-    'plasma/kactivities' : '@latest-kf6'
 
 Options:
   test-before-installing: True

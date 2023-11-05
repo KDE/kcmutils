@@ -17,7 +17,6 @@
 #include <QStandardPaths>
 
 #include <KAboutData>
-#include <KActivities/ResourceInstance>
 #include <KAuthorized>
 #include <KCModule>
 #include <KCMultiDialog>
@@ -30,6 +29,11 @@
 #include <KStartupInfo>
 #include <private/qtx11extras_p.h>
 #define HAVE_X11 1
+#endif
+
+#if !defined(Q_OS_WINDOWS) && !defined(Q_OS_MAC)
+#include <QDBusConnection>
+#include <QDBusConnectionInterface>
 #endif
 
 #include <algorithm>
@@ -59,12 +63,28 @@ public:
         setFaceType(dialogFace);
         setModal(false);
 
+#if !defined(Q_OS_WINDOWS) && !defined(Q_OS_MAC)
         connect(this, &KCMShellMultiDialog::currentPageChanged, this, [](KPageWidgetItem *newPage) {
             if (KCModule *activeModule = newPage->widget()->findChild<KCModule *>()) {
-                KActivities::ResourceInstance::notifyAccessed(QUrl(QLatin1String("kcm:") + activeModule->metaData().pluginId()),
-                                                              QStringLiteral("org.kde.systemsettings"));
+                if (QDBusConnection::sessionBus().isConnected()
+                    && QDBusConnection::sessionBus().interface()->isServiceRegistered(QStringLiteral("org.kde.ActivityManager"))) {
+                    QDBusMessage msg = QDBusMessage::createMethodCall(QStringLiteral("org.kde.ActivityManager"),
+                                                                      QStringLiteral("/ActivityManager/Resources"),
+                                                                      QStringLiteral("org.kde.ActivityManager.Resources"),
+                                                                      QStringLiteral("RegisterResourceEvent"));
+
+                    const QString appId = QStringLiteral("org.kde.systemsettings");
+                    const uint winId = 0;
+                    const QString url = QLatin1String("kcm:") + activeModule->metaData().pluginId();
+                    const uint eventType = 0; // Accessed
+
+                    msg.setArguments({appId, winId, url, eventType});
+
+                    QDBusConnection::sessionBus().asyncCall(msg);
+                }
             }
         });
+#endif
     }
 };
 

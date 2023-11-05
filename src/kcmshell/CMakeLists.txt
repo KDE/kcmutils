@@ -7,7 +7,10 @@ ecm_mark_nongui_executable(kcmshell6)
 target_link_libraries(kcmshell6
    KF6KCMUtils
    KF6::I18n
-   KF6::Activities
 )
+
+if (NOT WIN32 AND NOT APPLE)
+   target_link_libraries(kcmshell6 Qt6::DBus)
+endif()
 
 install(TARGETS kcmshell6 ${KDE_INSTALL_TARGETS_DEFAULT_ARGS})

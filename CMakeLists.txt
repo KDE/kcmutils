@@ -38,6 +38,10 @@ endif()
 set(REQUIRED_QT_VERSION 6.5.0)
 find_package(Qt6 ${REQUIRED_QT_VERSION} NO_MODULE REQUIRED Widgets Qml Quick QuickWidgets Test)
 
+if (NOT WIN32 AND NOT APPLE)
+  find_package(Qt6DBus ${REQUIRED_QT_VERSION} REQUIRED)
+endif()
+
 option(BUILD_QCH "Build API documentation in QCH format (for e.g. Qt Assistant, Qt Creator & KDevelop)" OFF)
 add_feature_info(QCH ${BUILD_QCH} "API documentation in QCH format (for e.g. Qt Assistant, Qt Creator & KDevelop)")
 
@@ -47,7 +51,6 @@ ecm_setup_version(PROJECT VARIABLE_PREFIX KCMUTILS
                         PACKAGE_VERSION_FILE "${CMAKE_CURRENT_BINARY_DIR}/KF6KCMUtilsConfigVersion.cmake"
                         SOVERSION 6)
 
-find_package(KF6Activities ${KF_DEP_VERSION} REQUIRED)
 find_package(KF6KIO ${KF_DEP_VERSION} REQUIRED)
 find_package(KF6ItemViews ${KF_DEP_VERSION} REQUIRED)
 find_package(KF6ConfigWidgets ${KF_DEP_VERSION} REQUIRED)
