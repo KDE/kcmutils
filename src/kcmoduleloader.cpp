@@ -80,6 +80,8 @@ KCModule *KCModuleLoader::loadModule(const KPluginMetaData &metaData, QWidget *p
     const auto qmlKcm = KQuickConfigModuleLoader::loadModule(metaData, parent, args, eng).plugin;
     if (qmlKcm) {
         if (!qmlKcm->mainUi()) {
+            qWarning() << "fail" << qmlKcm->errorString();
+
             return new KCMError(i18n("Error loading QML file."), qmlKcm->errorString(), parent);
         }
         qCDebug(KCMUTILS_LOG) << "loaded KCM" << metaData.fileName();
