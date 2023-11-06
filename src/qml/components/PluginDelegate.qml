@@ -9,41 +9,64 @@ import QtQuick
 import QtQuick.Controls as QQC2
 import QtQuick.Layouts
 
-import org.kde.kirigami 2 as Kirigami
+import org.kde.kirigami as Kirigami
 import org.kde.kcmutils as KCM
 
 /// @since 6.0, this got renamed from KPluginDelegate to PluginDelegate
-// Not using Kirigami.CheckableListItem despite having a checkbox because we
-// need the checkbox to be highlighted by KCM.SettingHighlighter, and
-// CheckableListItem doesn't have that built in.
-Kirigami.BasicListItem {
+Kirigami.CheckSubtitleDelegate {
     id: listItem
 
+    required property var model
+
     property list<QQC2.Action> additionalActions
+    property bool enabledByDefault: model.enabledByDefault
+    property var metaData: model.metaData
+    property bool configureVisible: model.config.isValid
 
     signal configTriggered()
 
-    leading: QQC2.CheckBox {
-        id: checkbox
-        checked: model.enabled
-        onToggled: model.enabled = checked
-        visible: listItem.leading === checkbox
+    width: ListView?.view.width ?? implicitWidth
 
-        KCM.SettingHighlighter {
-            highlight: checkbox.checked !== model.enabledByDefault
+    icon.name: model.icon
+    text: model.name
+    subtitle: model.description
+    checked: model.enabled
+
+    // TODO: It should be possible to disable this
+    onToggled: model.enabled = checked
+
+    contentItem: RowLayout {
+        spacing: Kirigami.Units.smallSpacing
+
+        property alias truncated: titleSubtitle.truncated
+
+        Kirigami.IconTitleSubtitle {
+            id: titleSubtitle
+
+            Layout.fillWidth: true
+            Layout.maximumWidth: implicitWidth
+
+            icon: icon.fromControlsIcon(listItem.icon)
+            title: {
+                print(listItem.text)
+                listItem.text
+            }
+            subtitle: listItem.subtitle
+            reserveSpaceForSubtitle: true
+        }
+
+        Kirigami.ActionToolBar {
+            Layout.fillWidth: true
+            Layout.alignment: Qt.AlignRight
+            alignment: Qt.AlignRight
+            actions: [infoAction, configureAction, ...listItem.additionalActions]
         }
     }
 
-
-    icon.name: model.icon
-    label: model.name
-    subtitle: model.description
-
-    // Don't need highlight or hover effects; there is no concept of selection here
-    hoverEnabled: false
-
-    // Some items don't have subtitles and we want everything to have a consistent height
-    reserveSpaceForSubtitle: true
+    KCM.SettingHighlighter {
+        target: listItem.indicator
+        highlight: listItem.checked !== listItem.enabledByDefault
+    }
 
     // Take care of displaying the actions
     readonly property Kirigami.Action __infoAction: Kirigami.Action {
@@ -54,7 +77,7 @@ Kirigami.BasicListItem {
         displayHint: Kirigami.DisplayHint.IconOnly
         onTriggered: {
             const aboutDialog = (listItem.ListView.view ?? listItem.parent.ListView.view).__aboutDialog
-            aboutDialog.metaDataInfo = model.metaData
+            aboutDialog.metaDataInfo = listItem.metaData
             aboutDialog.open()
         }
     }
@@ -62,15 +85,11 @@ Kirigami.BasicListItem {
     readonly property Kirigami.Action __configureAction: Kirigami.Action {
         id: configureAction
 
-        visible: model.config.isValid
-        enabled: model.enabled
+        visible: listItem.configureVisible
+        enabled: listItem.checked
         icon.name: "configure"
         text: i18nc("@info:tooltip", "Configure…")
         displayHint: Kirigami.DisplayHint.IconOnly
         onTriggered: listItem.configTriggered()
-    }
-
-    trailing: Kirigami.ActionToolBar {
-        actions: [infoAction, configureAction, ...listItem.additionalActions]
     }
 }
