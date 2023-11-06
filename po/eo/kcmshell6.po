@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kcmutils\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-10-01 01:53+0000\n"
+"POT-Creation-Date: 2023-11-06 01:35+0000\n"
 "PO-Revision-Date: 2023-10-02 09:09+0100\n"
 "Last-Translator: Oliver Kellogg <okellogg@users.sourceforge.net>\n"
 "Language-Team: Esperanto <kde-i18n-eo@kde.org>\n"
@@ -30,87 +30,87 @@ msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
 msgstr "okellogg@users.sourceforge.net"
 
-#: main.cpp:83
+#: main.cpp:103
 #, kde-format
 msgid "A tool to start single system settings modules"
 msgstr "Ilo por komenci modulojn de unuopaj sistemaj agordoj"
 
-#: main.cpp:85
+#: main.cpp:105
 #, kde-format
 msgid "(c) 1999-2023, The KDE Developers"
 msgstr "(c) 1999-2023, La KDE-Programistoj"
 
-#: main.cpp:87
+#: main.cpp:107
 #, kde-format
 msgid "Frans Englich"
 msgstr "Frans Englich"
 
-#: main.cpp:87
+#: main.cpp:107
 #, kde-format
 msgid "Maintainer"
 msgstr "Prizorganto"
 
-#: main.cpp:88
+#: main.cpp:108
 #, kde-format
 msgid "Daniel Molkentin"
 msgstr "Daniel Molkentin"
 
-#: main.cpp:89
+#: main.cpp:109
 #, kde-format
 msgid "Matthias Hoelzer-Kluepfel"
 msgstr "Matthias Hoelzer-Kluepfel"
 
-#: main.cpp:90
+#: main.cpp:110
 #, kde-format
 msgid "Matthias Elter"
 msgstr "Matthias Elter"
 
-#: main.cpp:91
+#: main.cpp:111
 #, kde-format
 msgid "Matthias Ettrich"
 msgstr "Matiaso Ettrich"
 
-#: main.cpp:92
+#: main.cpp:112
 #, kde-format
 msgid "Waldo Bastian"
 msgstr "Valdo Bastian"
 
-#: main.cpp:98
+#: main.cpp:118
 #, kde-format
 msgid "List all possible modules"
 msgstr "Listigi ĉiujn eblajn modulojn"
 
-#: main.cpp:99
+#: main.cpp:119
 #, kde-format
 msgid "Configuration module to open"
 msgstr "Agorda modulo por malfermi"
 
-#: main.cpp:100
+#: main.cpp:120
 #, kde-format
 msgid "Space separated arguments for the module"
 msgstr "Argumentoj por la modulo"
 
-#: main.cpp:101
+#: main.cpp:121
 #, kde-format
 msgid "Use a specific icon for the window"
 msgstr "Uzi specifan piktogramon por la fenestro"
 
-#: main.cpp:102
+#: main.cpp:122
 #, kde-format
 msgid "Use a specific caption for the window"
 msgstr "Uzi specifan bildotekston por la fenestro"
 
-#: main.cpp:103
+#: main.cpp:123
 #, kde-format
 msgid "Show an indicator when settings have changed from their default value"
 msgstr "Montri indikilon kiam agordo ŝanĝiĝis de sia defaŭlta valoro"
 
-#: main.cpp:111
+#: main.cpp:131
 #, kde-format
 msgid "The following modules are available:"
 msgstr "La jenaj moduloj disponeblas:"
 
-#: main.cpp:124
+#: main.cpp:144
 #, kde-format
 msgid "No description available"
 msgstr "Neniu priskribo havebla"
