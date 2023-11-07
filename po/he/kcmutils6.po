@@ -22,7 +22,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kcmutils5\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-10-02 01:40+0000\n"
+"POT-Creation-Date: 2023-11-07 02:42+0000\n"
 "PO-Revision-Date: 2023-10-22 12:06+0300\n"
 "Last-Translator: Yaron Shahrabani <sh.yaron@gmail.com>\n"
 "Language-Team: צוות התרגום של KDE ישראל\n"
@@ -109,13 +109,13 @@ msgctxt "@action:button"
 msgid "Show Contextual Help"
 msgstr "הצגת עזרה בהקשר"
 
-#: qml/components/PluginDelegate.qml:53
+#: qml/components/PluginDelegate.qml:76
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "About"
 msgstr "על אודות"
 
-#: qml/components/PluginDelegate.qml:68
+#: qml/components/PluginDelegate.qml:91
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Configure…"

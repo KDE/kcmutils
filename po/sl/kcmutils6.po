@@ -17,7 +17,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdelibs4\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-10-02 01:40+0000\n"
+"POT-Creation-Date: 2023-11-07 02:42+0000\n"
 "PO-Revision-Date: 2023-06-06 07:55+0200\n"
 "Last-Translator: Matjaž Jeran <matjaz.jeran@amis.net>\n"
 "Language-Team: Slovenian <lugos-slo@lugos.si>\n"
@@ -107,13 +107,13 @@ msgctxt "@action:button"
 msgid "Show Contextual Help"
 msgstr "Prikaži kontekstno pomoč"
 
-#: qml/components/PluginDelegate.qml:53
+#: qml/components/PluginDelegate.qml:76
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "About"
 msgstr "O programu"
 
-#: qml/components/PluginDelegate.qml:68
+#: qml/components/PluginDelegate.qml:91
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Configure…"

@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kcmutils5\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-10-02 01:40+0000\n"
+"POT-Creation-Date: 2023-11-07 02:42+0000\n"
 "PO-Revision-Date: 2017-09-28 17:57+0200\n"
 "Last-Translator: Chusslove Illich <caslav.ilic@gmx.net>\n"
 "Language-Team: Serbian <kde-i18n-sr@kde.org>\n"
@@ -104,7 +104,7 @@ msgctxt "@action:button"
 msgid "Show Contextual Help"
 msgstr ""
 
-#: qml/components/PluginDelegate.qml:53
+#: qml/components/PluginDelegate.qml:76
 #, fuzzy, kde-format
 #| msgctxt "Used only for plugins"
 #| msgid "About %1"
@@ -112,7 +112,7 @@ msgctxt "@info:tooltip"
 msgid "About"
 msgstr "O %1|/|O $[dat %1]"
 
-#: qml/components/PluginDelegate.qml:68
+#: qml/components/PluginDelegate.qml:91
 #, fuzzy, kde-format
 #| msgid "Configure"
 msgctxt "@info:tooltip"
