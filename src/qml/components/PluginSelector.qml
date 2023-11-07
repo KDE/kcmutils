@@ -48,7 +48,7 @@ ListView {
 
     Kirigami.OverlaySheet {
         id: internalAboutDialog
-        parent: pluginSelector.Window.window.contentItem
+        parent: pluginSelector.Window.window?.contentItem ?? null
         property var metaDataInfo
 
         Loader {

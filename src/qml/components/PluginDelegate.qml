@@ -5,9 +5,12 @@
     SPDX-License-Identifier: LGPL-2.0-or-later
 */
 
+pragma ComponentBehavior: Bound
+
 import QtQuick
 import QtQuick.Controls as QQC2
 import QtQuick.Layouts
+import QtQuick.Templates as T
 
 import org.kde.kirigami as Kirigami
 import org.kde.kcmutils as KCM
@@ -18,14 +21,16 @@ Kirigami.CheckSubtitleDelegate {
 
     required property var model
 
-    property list<QQC2.Action> additionalActions
-    property bool enabledByDefault: model.enabledByDefault
-    property var metaData: model.metaData
-    property bool configureVisible: model.config.isValid
+    property list<T.Action> additionalActions
+
+    readonly property bool enabledByDefault: model.enabledByDefault
+    readonly property var metaData: model.metaData
+    readonly property bool configureVisible: model.config.isValid
 
     signal configTriggered()
 
-    width: ListView?.view.width ?? implicitWidth
+    // Let Optional chaining (?.) operator fall back to `undefined` which resets the width to an implicit value.
+    width: ListView.view?.width
 
     icon.name: model.icon
     text: model.name
@@ -38,7 +43,8 @@ Kirigami.CheckSubtitleDelegate {
     contentItem: RowLayout {
         spacing: Kirigami.Units.smallSpacing
 
-        property alias truncated: titleSubtitle.truncated
+        // Used by CheckSubtitleDelegate through duck-typing
+        readonly property alias truncated: titleSubtitle.truncated
 
         Kirigami.IconTitleSubtitle {
             id: titleSubtitle
@@ -47,10 +53,7 @@ Kirigami.CheckSubtitleDelegate {
             Layout.maximumWidth: implicitWidth
 
             icon: icon.fromControlsIcon(listItem.icon)
-            title: {
-                print(listItem.text)
-                listItem.text
-            }
+            title: listItem.text
             subtitle: listItem.subtitle
             reserveSpaceForSubtitle: true
         }
@@ -76,9 +79,9 @@ Kirigami.CheckSubtitleDelegate {
         text: i18nc("@info:tooltip", "About")
         displayHint: Kirigami.DisplayHint.IconOnly
         onTriggered: {
-            const aboutDialog = (listItem.ListView.view ?? listItem.parent.ListView.view).__aboutDialog
-            aboutDialog.metaDataInfo = listItem.metaData
-            aboutDialog.open()
+            const aboutDialog = (listItem.ListView.view ?? listItem.parent.ListView.view).__aboutDialog;
+            aboutDialog.metaDataInfo = listItem.metaData;
+            aboutDialog.open();
         }
     }
 
