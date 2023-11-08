@@ -23,6 +23,8 @@ Kirigami.CheckSubtitleDelegate {
 
     property list<T.Action> additionalActions
 
+    property alias leading: leadingProxy.target
+
     readonly property bool enabledByDefault: model.enabledByDefault
     readonly property var metaData: model.metaData
     readonly property bool configureVisible: model.config.isValid
@@ -45,6 +47,11 @@ Kirigami.CheckSubtitleDelegate {
 
         // Used by CheckSubtitleDelegate through duck-typing
         readonly property alias truncated: titleSubtitle.truncated
+
+        LayoutItemProxy {
+            id: leadingProxy
+            visible: target !== null
+        }
 
         Kirigami.IconTitleSubtitle {
             id: titleSubtitle
