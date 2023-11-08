@@ -19,25 +19,28 @@ import org.kde.kcmutils as KCM
 Kirigami.CheckSubtitleDelegate {
     id: listItem
 
+    // Note: when PluginDelegate is embedded in a more complex delegate, model
+    // object should be passed down explicitly, but it also means that it may
+    // become null right before delegate's destruction.
     required property var model
 
     property list<T.Action> additionalActions
 
     property alias leading: leadingProxy.target
 
-    readonly property bool enabledByDefault: model.enabledByDefault
-    readonly property var metaData: model.metaData
-    readonly property bool configureVisible: model.config.isValid
+    readonly property bool enabledByDefault: model?.enabledByDefault ?? false
+    readonly property var metaData: model?.metaData
+    readonly property bool configureVisible: model?.config.isValid ?? false
 
     signal configTriggered()
 
     // Let Optional chaining (?.) operator fall back to `undefined` which resets the width to an implicit value.
     width: ListView.view?.width
 
-    icon.name: model.icon
-    text: model.name
-    subtitle: model.description
-    checked: model.enabled
+    icon.name: model?.icon ?? ""
+    text: model?.name ?? ""
+    subtitle: model?.description ?? ""
+    checked: model?.enabled ?? false
 
     // TODO: It should be possible to disable this
     onToggled: model.enabled = checked
