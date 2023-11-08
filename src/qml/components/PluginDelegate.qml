@@ -57,7 +57,7 @@ Kirigami.CheckSubtitleDelegate {
             id: titleSubtitle
 
             Layout.fillWidth: true
-            Layout.maximumWidth: implicitWidth
+            Layout.maximumWidth: Math.ceil(implicitWidth)
 
             icon: icon.fromControlsIcon(listItem.icon)
             title: listItem.text
