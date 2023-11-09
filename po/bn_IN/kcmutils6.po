@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdelibs4\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-11-07 02:42+0000\n"
+"POT-Creation-Date: 2023-11-09 01:36+0000\n"
 "PO-Revision-Date: 2009-12-28 14:35+0530\n"
 "Last-Translator: Runa Bhattacharjee <runab@redhat.com>\n"
 "Language-Team: Bengali INDIA <anubad@lists.ankur.org.in>\n"
@@ -98,14 +98,14 @@ msgctxt "@action:button"
 msgid "Show Contextual Help"
 msgstr ""
 
-#: qml/components/PluginDelegate.qml:76
+#: qml/components/PluginDelegate.qml:89
 #, fuzzy, kde-format
 #| msgid "&About"
 msgctxt "@info:tooltip"
 msgid "About"
 msgstr "পরিচিতি (&A)"
 
-#: qml/components/PluginDelegate.qml:91
+#: qml/components/PluginDelegate.qml:104
 #, fuzzy, kde-format
 #| msgid "Configure"
 msgctxt "@info:tooltip"

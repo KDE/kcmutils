@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdeorg\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-11-07 02:42+0000\n"
+"POT-Creation-Date: 2023-11-09 01:36+0000\n"
 "PO-Revision-Date: 2023-10-21 13:51\n"
 "Last-Translator: \n"
 "Language-Team: Chinese Simplified\n"
@@ -91,13 +91,13 @@ msgctxt "@action:button"
 msgid "Show Contextual Help"
 msgstr "显示相关帮助"
 
-#: qml/components/PluginDelegate.qml:76
+#: qml/components/PluginDelegate.qml:89
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "About"
 msgstr "关于"
 
-#: qml/components/PluginDelegate.qml:91
+#: qml/components/PluginDelegate.qml:104
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Configure…"

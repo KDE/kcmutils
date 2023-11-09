@@ -19,7 +19,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kcmutils5\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-11-07 02:42+0000\n"
+"POT-Creation-Date: 2023-11-09 01:36+0000\n"
 "PO-Revision-Date: 2023-08-13 22:36-0300\n"
 "Last-Translator: Geraldo Simiao <geraldosimiao@fedoraproject.org>\n"
 "Language-Team: Brazilian Portuguese <kde-i18n-pt_BR@kde.org>\n"
@@ -110,13 +110,13 @@ msgctxt "@action:button"
 msgid "Show Contextual Help"
 msgstr "Exibir ajuda contextual"
 
-#: qml/components/PluginDelegate.qml:76
+#: qml/components/PluginDelegate.qml:89
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "About"
 msgstr "Sobre"
 
-#: qml/components/PluginDelegate.qml:91
+#: qml/components/PluginDelegate.qml:104
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Configure…"

@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdelibs4\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-11-07 02:42+0000\n"
+"POT-Creation-Date: 2023-11-09 01:36+0000\n"
 "PO-Revision-Date: 2021-09-05 20:25+0200\n"
 "Last-Translator: Martin Schlander <mschlander@opensuse.org>\n"
 "Language-Team: Danish <kde-i18n-doc@kde.org>\n"
@@ -94,14 +94,14 @@ msgctxt "@action:button"
 msgid "Show Contextual Help"
 msgstr ""
 
-#: qml/components/PluginDelegate.qml:76
+#: qml/components/PluginDelegate.qml:89
 #, fuzzy, kde-format
 #| msgid "About"
 msgctxt "@info:tooltip"
 msgid "About"
 msgstr "Om"
 
-#: qml/components/PluginDelegate.qml:91
+#: qml/components/PluginDelegate.qml:104
 #, fuzzy, kde-format
 #| msgid "Configure"
 msgctxt "@info:tooltip"
