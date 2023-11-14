@@ -93,8 +93,7 @@ void KCMultiDialogPrivate::slotCurrentPageChanged(KPageWidgetItem *current, KPag
         pageWidget->pageHeader()->setContentsMargins(layoutMargins);
     }
 
-    // Do not set buttonBox's top margin as that space will be covered by the content's bottom margin
-    q->buttonBox()->setContentsMargins(layoutMargins.left(), 0, layoutMargins.right(), layoutMargins.bottom());
+    q->buttonBox()->setContentsMargins(layoutMargins.left(), layoutMargins.top(), layoutMargins.right(), layoutMargins.bottom());
 
     q->blockSignals(true);
     q->setCurrentPage(previous);
