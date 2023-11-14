@@ -1,12 +1,13 @@
 /*
     SPDX-FileCopyrightText: 2020 Marco Martin <mart@kde.org>
+    SPDX-FileCopyrightText: 2023 ivan tkachenko <me@ratijas.tk>
 
     SPDX-License-Identifier: LGPL-2.0-or-later
 */
 
-import QtQuick 2.7
-import QtQuick.Controls 2.2 as QQC2
-import org.kde.kirigami 2.14 as Kirigami
+import QtQuick
+import QtQuick.Controls as QQC2
+import org.kde.kirigami as Kirigami
 
 /**
  * This component is intended to be used as root item for
@@ -15,18 +16,23 @@ import org.kde.kirigami 2.14 as Kirigami
  * their own scrollviews.
  * Most of the times SimpleKCM should be used instead
  * @code
+ * import QtQuick
+ * import QtQuick.Controls as QQC2
+ * import QtQuick.Layouts
  * import org.kde.kcmutils as KCM
- * import org.kde.kirigami 2.3 as Kirigami
+ *
  * KCM.AbstractKCM {
  *     RowLayout {
  *         QQC2.ScrollView {
- *             ...
+ *             // ...
  *         }
  *         QQC2.ScrollView {
- *             ...
+ *             // ...
  *         }
  *     }
- *     footer: Item {...}
+ *     footer: QQC2.ToolBar {
+ *         // ...
+ *     }
  * }
  * @endcode
  * @inherits org.kde.kirigami.Page
@@ -60,6 +66,28 @@ Kirigami.Page {
 
     property bool sidebarMode: false
 
+    function __itemVisible(item: Item): bool {
+        return item !== null && item.visible && item.implicitHeight > 0;
+    }
+
+    function __headerContentVisible(): bool {
+        return __itemVisible(headerParent.contentItem);
+    }
+    function __footerContentVisible(): bool {
+        return __itemVisible(footerParent.contentItem);
+    }
+
+    // Deliberately not checking for __footerContentVisible because
+    // we always want the footer line to be visible when the scrollview
+    // doesn't have a frame of its own, because System Settings always
+    // adds its own footer for the Apply, Help, and Defaults buttons
+    function __headerSeparatorVisible(): bool {
+        return !framedView && __headerContentVisible();
+    }
+    function __footerSeparatorVisible(): bool {
+        return !framedView;
+    }
+
     title: (typeof kcm !== "undefined") ? kcm.name : ""
 
     // Make pages fill the whole view by default
@@ -69,30 +97,38 @@ Kirigami.Page {
                                              || Kirigami.ColumnView.index >= Kirigami.ColumnView.view.count - 1)
                                    : true
 
-    topPadding: root.framedView && !headerParent.contentVisible ? root.margins : 0
-    leftPadding: root.framedView ? root.margins : 0
-    rightPadding: root.framedView ? root.margins : 0
-    bottomPadding: root.framedView && !footerParent.contentVisible ? root.margins : 0
+    padding: 0
+    topPadding: framedView && !__headerContentVisible() ? margins : 0
+    leftPadding: undefined
+    rightPadding: undefined
+    bottomPadding: framedView && !__footerContentVisible() ? margins : 0
+    verticalPadding: undefined
+    horizontalPadding: framedView ? margins : 0
 
-    header: QQC2.Control {
+    header: Kirigami.Padding {
         id: headerParent
-        readonly property bool contentVisible: contentItem && contentItem.visible && contentItem.implicitHeight
-        height: contentVisible ? implicitHeight : 0
-        leftPadding: root.margins
-        topPadding: root.margins
-        rightPadding: root.margins
-        bottomPadding: root.margins
+
+        height: root.__headerContentVisible()
+            ? undefined
+            : (root.__headerSeparatorVisible()
+                ? headerSeparator.implicitHeight
+                : 0)
+
+        padding: root.margins
+        bottomPadding: root.__headerSeparatorVisible()
+            ? verticalPadding + headerSeparator.implicitHeight
+            : undefined
 
         // When the scrollview isn't drawing its own frame, we need to add a
         // line below the header (when visible) to separate it from the view
         Kirigami.Separator {
-            z: 999
+            id: headerSeparator
             anchors {
                 left: parent.left
                 right: parent.right
-                top: parent.bottom
+                bottom: parent.bottom
             }
-            visible: !root.framedView && headerParent.contentVisible
+            visible: root.__headerSeparatorVisible()
         }
     }
 
@@ -105,64 +141,58 @@ Kirigami.Page {
         color: Kirigami.Theme.backgroundColor
     }
 
-    footer: QQC2.Control {
+    footer: Kirigami.Padding {
         id: footerParent
-        readonly property bool contentVisible: contentItem && contentItem.visible && contentItem.implicitHeight
 
-        height: contentVisible ? implicitHeight : 0
-        leftPadding: root.margins
-        topPadding: root.margins
-        rightPadding: root.margins
-        bottomPadding: root.margins
+        height: root.__footerContentVisible()
+            ? undefined
+            : (root.__footerSeparatorVisible()
+                ? footerSeparator.implicitHeight
+                : 0)
+
+        padding: root.margins
+        topPadding: root.__footerSeparatorVisible()
+            ? verticalPadding + footerSeparator.implicitHeight
+            : undefined
 
         // When the scrollview isn't drawing its own frame, we need to add a
         // line above the footer ourselves to separate it from the view
         Kirigami.Separator {
-            z: 999
+            id: footerSeparator
             anchors {
+                top: parent.top
                 left: parent.left
                 right: parent.right
-                bottom: parent.top
             }
-            // Deliberately not checking for footerParent.contentVisible because
-            // we always want the footer line to be visible when the scrollview
-            // doesn't have a frame of its own, because System Settings always
-            // adds its own footer for the Apply, Help, and Defaults buttons
-            visible: !root.framedView
+            visible: root.__footerSeparatorVisible()
+        }
+    }
+
+    function __swapContentIntoContainer(property: string, container: Item) {
+        const content = this[property];
+
+        if (content && content !== container) {
+            // Revert the effect of repeated onHeaderChanged invocations
+            // during initialization in Page super-type.
+            content.anchors.top = undefined;
+
+            this[property] = container;
+            container.contentItem = content;
+            container.visible = true;
         }
     }
 
     Component.onCompleted: {
-        if (footer && footer !== footerParent) {
-            const f = footer
-
-            footerParent.contentItem = f
-            footer = footerParent
-            footer.visible = true
-            f.parent = footerParent
-        }
-
-        if (header && header !== headerParent) {
-            const h = header
-
-            // Revert the effect of repeated onHeaderChanged invocations
-            // during initialization in Page super-type.
-            h.anchors.top = undefined
-
-            headerParent.contentItem = h
-            header = headerParent
-            header.visible = true
-            h.parent = headerParent
-        }
+        __swapContentIntoContainer("header", headerParent);
+        __swapContentIntoContainer("footer", footerParent);
 
         //Search overlaysheets in contentItem, parent to root if found
-        for (const i in contentItem.data) {
-            const child = contentItem.data[i];
-            if (child instanceof Kirigami.OverlaySheet) {
-                if (!child.parent) {
-                    child.parent = root;
+        for (const obj of contentItem.data) {
+            if (obj instanceof Kirigami.OverlaySheet) {
+                if (!obj.parent) {
+                    obj.parent = this;
                 }
-                root.data.push(child);
+                data.push(obj);
             }
         }
     }
