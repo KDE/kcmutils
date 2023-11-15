@@ -130,7 +130,7 @@ KCModuleQml::KCModuleQml(KQuickConfigModule *configModule, QWidget *parent)
     });
 
     setAuthActionName(d->configModule->authActionName());
-    connect(d->configModule, &KQuickConfigModule::authActionNameChanged, this, [=] {
+    connect(d->configModule, &KQuickConfigModule::authActionNameChanged, this, [this] {
         setAuthActionName(d->configModule->authActionName());
     });
 
