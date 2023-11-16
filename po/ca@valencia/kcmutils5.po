@@ -159,8 +159,8 @@ msgid ""
 "plugin"
 msgstr ""
 "\n"
-"    el connector %1 s'ha marcat automàticament degut a la dependència del "
-"connector %2"
+"    el connector %1 s'ha seleccionat automàticament degut a la dependència "
+"del connector %2"
 
 #: kpluginselector.cpp:212
 #, kde-format
