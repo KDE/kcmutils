@@ -52,11 +52,22 @@ KPluginWidget::KPluginWidget(QWidget *parent)
 {
     auto layout = new QVBoxLayout(this);
     layout->setContentsMargins(0, 0, 0, 0);
+    layout->setSpacing(0);
 
-    d->lineEdit = new QLineEdit(this);
+    // Adding content margins on a QLineEdit breaks inline actions
+    auto lineEditWrapper = new QWidget(this);
+    auto lineEditWrapperLayout = new QVBoxLayout(lineEditWrapper);
+    lineEditWrapperLayout->setContentsMargins(style()->pixelMetric(QStyle::PM_LayoutLeftMargin),
+                                              style()->pixelMetric(QStyle::PM_LayoutTopMargin),
+                                              style()->pixelMetric(QStyle::PM_LayoutRightMargin),
+                                              style()->pixelMetric(QStyle::PM_LayoutBottomMargin));
+
+    d->lineEdit = new QLineEdit(lineEditWrapper);
     d->lineEdit->setClearButtonEnabled(true);
     d->lineEdit->setPlaceholderText(i18n("Search..."));
+    lineEditWrapperLayout->addWidget(d->lineEdit);
     d->listView = new KCategorizedView(this);
+    d->listView->setProperty("_breeze_borders_sides", QVariant::fromValue(QFlags{Qt::TopEdge}));
     d->categoryDrawer = new KCategoryDrawer(d->listView);
     d->listView->setVerticalScrollMode(QListView::ScrollPerPixel);
     d->listView->setAlternatingRowColors(true);
@@ -93,7 +104,7 @@ KPluginWidget::KPluginWidget(QWidget *parent)
     connect(pluginDelegate, &PluginDelegate::configCommitted, this, &KPluginWidget::pluginConfigSaved);
     connect(pluginDelegate, &PluginDelegate::changed, this, &KPluginWidget::pluginEnabledChanged);
 
-    layout->addWidget(d->lineEdit);
+    layout->addWidget(lineEditWrapper);
     layout->addWidget(d->listView);
 
     // When a KPluginWidget instance gets focus,
