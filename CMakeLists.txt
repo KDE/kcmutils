@@ -61,7 +61,7 @@ find_package(KF6XmlGui ${KF_DEP_VERSION} REQUIRED)
 find_package(KF6WidgetsAddons ${KF_DEP_VERSION} REQUIRED)
 
 ecm_set_disabled_deprecation_versions(
-    QT 6.4.0
+    QT 6.5.0
     KF 5.102.0
 )
 
