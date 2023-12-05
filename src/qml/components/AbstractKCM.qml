@@ -85,7 +85,7 @@ Kirigami.Page {
         return !framedView && __headerContentVisible();
     }
     function __footerSeparatorVisible(): bool {
-        return !framedView;
+        return !framedView && extraFooterTopPadding;
     }
 
     title: (typeof kcm !== "undefined") ? kcm.name : ""
