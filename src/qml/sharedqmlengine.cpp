@@ -17,22 +17,6 @@
 #include <QResource>
 #include <QTimer>
 
-class QmlObjectIncubator : public QQmlIncubator
-{
-public:
-    QVariantHash m_initialProperties;
-
-protected:
-    void setInitialState(QObject *object) override
-    {
-        QHashIterator<QString, QVariant> i(m_initialProperties);
-        while (i.hasNext()) {
-            i.next();
-            object->setProperty(i.key().toLatin1().data(), i.value());
-        }
-    }
-};
-
 class SharedQmlEnginePrivate
 {
 public:
@@ -70,7 +54,7 @@ public:
 
     QUrl source;
 
-    QmlObjectIncubator incubator;
+    QQmlIncubator incubator;
     QQmlComponent *component;
     QTimer *executionEndTimer;
     KLocalizedContext *context{nullptr};
@@ -218,7 +202,7 @@ void SharedQmlEnginePrivate::checkInitializationCompleted()
     Q_EMIT q->finished();
 }
 
-void SharedQmlEngine::completeInitialization(const QVariantHash &initialProperties)
+void SharedQmlEngine::completeInitialization(const QVariantMap &initialProperties)
 {
     d->executionEndTimer->stop();
     if (d->incubator.object()) {
@@ -235,7 +219,7 @@ void SharedQmlEngine::completeInitialization(const QVariantHash &initialProperti
         return;
     }
 
-    d->incubator.m_initialProperties = initialProperties;
+    d->incubator.setInitialProperties(initialProperties);
     d->component->create(d->incubator, d->rootContext);
 
     if (d->delay) {
@@ -250,7 +234,7 @@ void SharedQmlEngine::completeInitialization(const QVariantHash &initialProperti
     }
 }
 
-QObject *SharedQmlEngine::createObjectFromSource(const QUrl &source, QQmlContext *context, const QVariantHash &initialProperties)
+QObject *SharedQmlEngine::createObjectFromSource(const QUrl &source, QQmlContext *context, const QVariantMap &initialProperties)
 {
     QQmlComponent *component = new QQmlComponent(d->m_engine.get(), this);
     component->loadUrl(source);
@@ -258,10 +242,10 @@ QObject *SharedQmlEngine::createObjectFromSource(const QUrl &source, QQmlContext
     return createObjectFromComponent(component, context, initialProperties);
 }
 
-QObject *SharedQmlEngine::createObjectFromComponent(QQmlComponent *component, QQmlContext *context, const QVariantHash &initialProperties)
+QObject *SharedQmlEngine::createObjectFromComponent(QQmlComponent *component, QQmlContext *context, const QVariantMap &initialProperties)
 {
-    QmlObjectIncubator incubator;
-    incubator.m_initialProperties = initialProperties;
+    QQmlIncubator incubator;
+    incubator.setInitialProperties(initialProperties);
     component->create(incubator, context ? context : d->rootContext);
     incubator.forceCompletion();
 

@@ -177,7 +177,7 @@ public Q_SLOTS:
     /**
      * Push a new sub page in the KCM hierarchy: pages will be seen as a Kirigami PageRow
      */
-    void push(const QString &fileName, const QVariantMap &propertyMap = QVariantMap());
+    void push(const QString &fileName, const QVariantMap &initialProperties = QVariantMap());
 
     /**
      *

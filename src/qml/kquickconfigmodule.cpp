@@ -137,23 +137,18 @@ QQuickItem *KQuickConfigModule::mainUi()
     return qobject_cast<QQuickItem *>(d->engine->rootObject());
 }
 
-void KQuickConfigModule::push(const QString &fileName, const QVariantMap &propertyMap)
+void KQuickConfigModule::push(const QString &fileName, const QVariantMap &initialProperties)
 {
     // ensure main ui is created
     if (!mainUi()) {
         return;
     }
 
-    QVariantHash propertyHash;
-    for (auto it = propertyMap.begin(), end = propertyMap.end(); it != end; ++it) {
-        propertyHash.insert(it.key(), it.value());
-    }
-
     const QString resourcePath = d->getResourcePath(fileName);
     if (QResource r(resourcePath); !r.isValid()) {
         qWarning() << "Requested resource" << resourcePath << "does not exist";
     }
-    QObject *object = d->engine->createObjectFromSource(d->getResourceUrl(resourcePath), d->engine->rootContext(), propertyHash);
+    QObject *object = d->engine->createObjectFromSource(d->getResourceUrl(resourcePath), d->engine->rootContext(), initialProperties);
 
     QQuickItem *item = qobject_cast<QQuickItem *>(object);
     if (!item) {
