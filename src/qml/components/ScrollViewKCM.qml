@@ -40,6 +40,13 @@ KCM.AbstractKCM {
      */
     framedView: false
 
+    onViewChanged: {
+        if (view) {
+            // Deliberately don't take separators into account, because those are opaque anyway
+            view.clip = Qt.binding(() => __headerContentVisible() || __footerContentVisible());
+        }
+    }
+
     KCM.ScrollView {
         id: scroll
         anchors.fill: parent
