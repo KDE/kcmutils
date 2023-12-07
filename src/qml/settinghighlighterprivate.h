@@ -18,7 +18,7 @@ class SettingHighlighterPrivate : public QObject, public QQmlParserStatus
     Q_PROPERTY(QQuickItem *target READ target WRITE setTarget NOTIFY targetChanged)
     Q_PROPERTY(bool highlight READ highlight WRITE setHighlight NOTIFY highlightChanged)
     Q_PROPERTY(bool defaultIndicatorVisible READ defaultIndicatorVisible WRITE setDefaultIndicatorVisible NOTIFY defaultIndicatorVisibleChanged)
-
+    Q_INTERFACES(QQmlParserStatus)
 public:
     using QObject::QObject;
 
