@@ -17,6 +17,10 @@
 #include <QResource>
 #include <QTimer>
 
+#include "kcmutils_debug.h"
+
+using namespace Qt::StringLiterals;
+
 class SharedQmlEnginePrivate
 {
 public:
@@ -65,15 +69,19 @@ public:
 
 void SharedQmlEnginePrivate::errorPrint(QQmlComponent *component)
 {
-    QString errorStr = QStringLiteral("Error loading QML file.\n");
     if (component->isError()) {
-        const QList<QQmlError> errors = component->errors();
-        for (const QQmlError &error : errors) {
-            errorStr +=
-                (error.line() > 0 ? QString(QString::number(error.line()) + QLatin1String(": ")) : QLatin1String("")) + error.description() + QLatin1Char('\n');
+        const auto errors = component->errors();
+        QStringList lines;
+        lines.reserve(1 + errors.size());
+        lines.append("Error loading QML file %1:"_L1.arg(component->url().toString()));
+
+        for (const auto &error : errors) {
+            constexpr const QLatin1String indent("    ");
+            lines.append(indent + error.toString());
         }
+
+        qCWarning(KCMUTILS_LOG).noquote().nospace() << lines.join('\n'_L1);
     }
-    qWarning() << component->url().toString() << '\n' << errorStr;
 }
 
 void SharedQmlEnginePrivate::execute(const QUrl &source)
