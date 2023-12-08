@@ -70,17 +70,12 @@ public:
 void SharedQmlEnginePrivate::errorPrint(QQmlComponent *component)
 {
     if (component->isError()) {
+        qCWarning(KCMUTILS_LOG).noquote() << "Error loading QML file" << component->url().toString();
         const auto errors = component->errors();
-        QStringList lines;
-        lines.reserve(1 + errors.size());
-        lines.append("Error loading QML file %1:"_L1.arg(component->url().toString()));
-
         for (const auto &error : errors) {
             constexpr const QLatin1String indent("    ");
-            lines.append(indent + error.toString());
+            qCWarning(KCMUTILS_LOG).nospace() << indent << error;
         }
-
-        qCWarning(KCMUTILS_LOG).noquote().nospace() << lines.join('\n'_L1);
     }
 }
 
