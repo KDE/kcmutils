@@ -244,12 +244,7 @@ QObject *SharedQmlEngine::createObjectFromSource(const QUrl &source, QQmlContext
 
 QObject *SharedQmlEngine::createObjectFromComponent(QQmlComponent *component, QQmlContext *context, const QVariantMap &initialProperties)
 {
-    QQmlIncubator incubator;
-    incubator.setInitialProperties(initialProperties);
-    component->create(incubator, context ? context : d->rootContext);
-    incubator.forceCompletion();
-
-    QObject *object = incubator.object();
+    QObject *object = component->createWithInitialProperties(initialProperties, context ? context : d->rootContext);
 
     if (!component->isError() && object) {
         // memory management
