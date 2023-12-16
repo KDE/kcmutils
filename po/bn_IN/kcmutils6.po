@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdelibs4\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-11-15 01:37+0000\n"
+"POT-Creation-Date: 2023-12-16 01:35+0000\n"
 "PO-Revision-Date: 2009-12-28 14:35+0530\n"
 "Last-Translator: Runa Bhattacharjee <runab@redhat.com>\n"
 "Language-Team: Bengali INDIA <anubad@lists.ankur.org.in>\n"
@@ -75,18 +75,18 @@ msgstr ""
 msgid "Apply Settings"
 msgstr "বৈশিষ্ট্য"
 
-#: kcmultidialog.cpp:204 kpluginwidget.cpp:329
+#: kcmultidialog.cpp:204 kpluginwidget.cpp:340
 #, kde-format
 msgid "Configure"
 msgstr "কনফিগার করুন"
 
-#: kpluginwidget.cpp:58
+#: kpluginwidget.cpp:67
 #, fuzzy, kde-format
 #| msgid "Search"
 msgid "Search..."
 msgstr "অনুসন্ধান"
 
-#: kpluginwidget.cpp:324
+#: kpluginwidget.cpp:335
 #, fuzzy, kde-format
 #| msgid "&About"
 msgid "About"

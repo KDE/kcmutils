@@ -13,7 +13,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdelibs4\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-11-15 01:37+0000\n"
+"POT-Creation-Date: 2023-12-16 01:35+0000\n"
 "PO-Revision-Date: 2023-03-11 18:07+0100\n"
 "Last-Translator: Roman Paholik <wizzardsk@gmail.com>\n"
 "Language-Team: Slovak <kde-sk@linux.sk>\n"
@@ -81,17 +81,17 @@ msgstr ""
 msgid "Apply Settings"
 msgstr "Použiť nastavenie"
 
-#: kcmultidialog.cpp:204 kpluginwidget.cpp:329
+#: kcmultidialog.cpp:204 kpluginwidget.cpp:340
 #, kde-format
 msgid "Configure"
 msgstr "Nastaviť"
 
-#: kpluginwidget.cpp:58
+#: kpluginwidget.cpp:67
 #, kde-format
 msgid "Search..."
 msgstr "Hľadať..."
 
-#: kpluginwidget.cpp:324
+#: kpluginwidget.cpp:335
 #, kde-format
 msgid "About"
 msgstr "O programe"

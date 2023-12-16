@@ -12,7 +12,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdelibs4\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-11-15 01:37+0000\n"
+"POT-Creation-Date: 2023-12-16 01:35+0000\n"
 "PO-Revision-Date: 2021-08-25 14:22+0300\n"
 "Last-Translator: Moo\n"
 "Language-Team: lt <kde-i18n-lt@kde.org>\n"
@@ -83,17 +83,17 @@ msgstr ""
 msgid "Apply Settings"
 msgstr "Taikyti nuostatas"
 
-#: kcmultidialog.cpp:204 kpluginwidget.cpp:329
+#: kcmultidialog.cpp:204 kpluginwidget.cpp:340
 #, kde-format
 msgid "Configure"
 msgstr "Konfigūruoti"
 
-#: kpluginwidget.cpp:58
+#: kpluginwidget.cpp:67
 #, kde-format
 msgid "Search..."
 msgstr "Ieškoti..."
 
-#: kpluginwidget.cpp:324
+#: kpluginwidget.cpp:335
 #, kde-format
 msgid "About"
 msgstr "Apie"

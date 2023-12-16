@@ -13,7 +13,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdelibs4\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-11-15 01:37+0000\n"
+"POT-Creation-Date: 2023-12-16 01:35+0000\n"
 "PO-Revision-Date: 2013-11-04 23:55+0630\n"
 "Last-Translator: Bhuvan Krishna <bhuvan@swecha.org>\n"
 "Language-Team: Telugu <kde-i18n-doc@kde.org>\n"
@@ -75,18 +75,18 @@ msgstr "మార్పులను  లేక విస్మరించనా
 msgid "Apply Settings"
 msgstr "అమరికలు "
 
-#: kcmultidialog.cpp:204 kpluginwidget.cpp:329
+#: kcmultidialog.cpp:204 kpluginwidget.cpp:340
 #, kde-format
 msgid "Configure"
 msgstr "అమర్చు"
 
-#: kpluginwidget.cpp:58
+#: kpluginwidget.cpp:67
 #, fuzzy, kde-format
 #| msgid "Search"
 msgid "Search..."
 msgstr "(&S) అన్వెషణ "
 
-#: kpluginwidget.cpp:324
+#: kpluginwidget.cpp:335
 #, fuzzy, kde-format
 #| msgid "&About"
 msgid "About"

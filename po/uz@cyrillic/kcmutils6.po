@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdelibs4\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-11-15 01:37+0000\n"
+"POT-Creation-Date: 2023-12-16 01:35+0000\n"
 "PO-Revision-Date: 2009-10-17 00:34+0200\n"
 "Last-Translator: Mashrab Kuvatov <kmashrab@uni-bremen.de>\n"
 "Language-Team: Uzbek <floss-uz-l10n@googlegroups.com>\n"
@@ -72,18 +72,18 @@ msgstr ""
 msgid "Apply Settings"
 msgstr "Мосламаларни қўллаш"
 
-#: kcmultidialog.cpp:204 kpluginwidget.cpp:329
+#: kcmultidialog.cpp:204 kpluginwidget.cpp:340
 #, kde-format
 msgid "Configure"
 msgstr "Мослаш"
 
-#: kpluginwidget.cpp:58
+#: kpluginwidget.cpp:67
 #, fuzzy, kde-format
 #| msgid "Search"
 msgid "Search..."
 msgstr "Қидириш"
 
-#: kpluginwidget.cpp:324
+#: kpluginwidget.cpp:335
 #, fuzzy, kde-format
 #| msgid "&About"
 msgid "About"

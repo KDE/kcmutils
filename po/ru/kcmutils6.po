@@ -19,7 +19,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdelibs4\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-11-15 01:37+0000\n"
+"POT-Creation-Date: 2023-12-16 01:35+0000\n"
 "PO-Revision-Date: 2022-05-05 22:36+0300\n"
 "Last-Translator: Alexander Yavorsky <kekcuha@gmail.com>\n"
 "Language-Team: Russian <kde-russian@lists.kde.ru>\n"
@@ -92,18 +92,18 @@ msgstr ""
 msgid "Apply Settings"
 msgstr "Сохранение параметров"
 
-#: kcmultidialog.cpp:204 kpluginwidget.cpp:329
+#: kcmultidialog.cpp:204 kpluginwidget.cpp:340
 #, kde-format
 msgid "Configure"
 msgstr "Настройка"
 
-#: kpluginwidget.cpp:58
+#: kpluginwidget.cpp:67
 #, kde-format
 msgid "Search..."
 msgstr "Поиск..."
 
 # BUGME: please check in the UI if it's about a module --aspotashev
-#: kpluginwidget.cpp:324
+#: kpluginwidget.cpp:335
 #, kde-format
 msgid "About"
 msgstr "О расширении"

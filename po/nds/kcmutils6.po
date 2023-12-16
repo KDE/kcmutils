@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdelibs4\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-11-15 01:37+0000\n"
+"POT-Creation-Date: 2023-12-16 01:35+0000\n"
 "PO-Revision-Date: 2014-05-11 00:55+0200\n"
 "Last-Translator: Sönke Dibbern <s_dibbern@web.de>\n"
 "Language-Team: Low Saxon <kde-i18n-nds@kde.org>\n"
@@ -82,18 +82,18 @@ msgstr ""
 msgid "Apply Settings"
 msgstr "Instellen bruken"
 
-#: kcmultidialog.cpp:204 kpluginwidget.cpp:329
+#: kcmultidialog.cpp:204 kpluginwidget.cpp:340
 #, kde-format
 msgid "Configure"
 msgstr "Instellen"
 
-#: kpluginwidget.cpp:58
+#: kpluginwidget.cpp:67
 #, fuzzy, kde-format
 #| msgid "Search"
 msgid "Search..."
 msgstr "Söken"
 
-#: kpluginwidget.cpp:324
+#: kpluginwidget.cpp:335
 #, fuzzy, kde-format
 #| msgid "&About"
 msgid "About"
