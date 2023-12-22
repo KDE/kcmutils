@@ -1,6 +1,6 @@
 # translation of kdelibs4.po to Français
 # translation of kdelibs4.po to
-# SPDX-FileCopyrightText: 2021, 2022, 2023 Xavier Besnard <xavier.besnard@neuf.fr>
+# SPDX-FileCopyrightText: 2021, 2022, 2023 Xavier Besnard <xavier.besnard@kde.org>
 # Matthieu Robin <kde@macolu.org>, 2002,2003, 2004.
 # Robert Jacolin <rjacolin@ifrance.com>, 2003,2004.
 # Gilles Caulier <caulier.gilles@free.fr>, 2003.
@@ -18,14 +18,14 @@
 # Joëlle Cornavin <jcorn@free.fr>, 2007, 2008, 2009, 2010, 2011, 2012, 2013.
 # Sebastien Renard <renard@kde.org>, 2013, 2014.
 # Simon Depiets <sdepiets@gmail.com>, 2019.
-# Xavier BESNARD <xavier.besnard@neuf.fr>, 2023.
+# Xavier Besnard <xavier.besnard@kde.org>, 2023.
 msgid ""
 msgstr ""
 "Project-Id-Version: kdelibs4\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-12-16 01:35+0000\n"
 "PO-Revision-Date: 2023-09-14 15:48+0200\n"
-"Last-Translator: Xavier BESNARD <xavier.besnard@neuf.fr>\n"
+"Last-Translator: Xavier Besnard <xavier.besnard@kde.org>\n"
 "Language-Team: fr\n"
 "Language: fr\n"
 "MIME-Version: 1.0\n"
@@ -49,7 +49,7 @@ msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
 msgstr ""
 "jcorn@free.fr,kde@macolu.org,renard@kde.org, sdepiets@gmail.com, xavier."
-"besnard@neuf.fr"
+"besnard@kde.org"
 
 #: kcmoduleloader.cpp:49
 #, kde-format

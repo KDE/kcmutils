@@ -4,20 +4,21 @@
 # Frederik Schwarzer <schwarzer@kde.org>, 2023.
 #
 # Automatically generated, 2023.
+# Johannes Obermayr <johannesobermayr@gmx.de>, 2023.
 msgid ""
 msgstr ""
 "Project-Id-Version: kcmutils\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-11-06 01:35+0000\n"
-"PO-Revision-Date: 2023-08-13 16:19+0200\n"
-"Last-Translator: Frederik Schwarzer <schwarzer@kde.org>\n"
+"PO-Revision-Date: 2023-12-16 15:10+0100\n"
+"Last-Translator: Johannes Obermayr <johannesobermayr@gmx.de>\n"
 "Language-Team: German <kde-i18n-de@kde.org>\n"
 "Language: de\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Lokalize 23.11.70\n"
+"X-Generator: Lokalize 23.08.4\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
@@ -85,10 +86,9 @@ msgid "Configuration module to open"
 msgstr "Zu öffnendes Einstellungsmodul"
 
 #: main.cpp:120
-#, fuzzy, kde-format
-#| msgid "Arguments for the module"
+#, kde-format
 msgid "Space separated arguments for the module"
-msgstr "Argumente für das Modul"
+msgstr "Leerzeichengetrennte Argumente für das Modul"
 
 #: main.cpp:121
 #, kde-format
