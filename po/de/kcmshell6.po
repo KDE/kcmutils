@@ -4,7 +4,6 @@
 # Frederik Schwarzer <schwarzer@kde.org>, 2023.
 #
 # Automatically generated, 2023.
-# Johannes Obermayr <johannesobermayr@gmx.de>, 2023.
 msgid ""
 msgstr ""
 "Project-Id-Version: kcmutils\n"
