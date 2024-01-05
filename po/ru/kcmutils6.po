@@ -14,13 +14,13 @@
 # Inga Barinova <ingabarinova@gmail.com>, 2012.
 # Julia Dronova <juliette.tux@gmail.com>, 2012.
 # Alexander Lakhin <exclusion@gmail.com>, 2013.
-# Alexander Yavorsky <kekcuha@gmail.com>, 2019, 2021, 2022.
+# Alexander Yavorsky <kekcuha@gmail.com>, 2019, 2021, 2022, 2024.
 msgid ""
 msgstr ""
 "Project-Id-Version: kdelibs4\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-12-16 01:35+0000\n"
-"PO-Revision-Date: 2022-05-05 22:36+0300\n"
+"PO-Revision-Date: 2024-01-04 21:34+0300\n"
 "Last-Translator: Alexander Yavorsky <kekcuha@gmail.com>\n"
 "Language-Team: Russian <kde-russian@lists.kde.ru>\n"
 "Language: ru\n"
@@ -112,7 +112,7 @@ msgstr "О расширении"
 #, kde-format
 msgctxt "@action:button"
 msgid "Show Contextual Help"
-msgstr ""
+msgstr "Показать контекстную справку"
 
 # BUGME: please check in the UI if it's about a module --aspotashev
 #: qml/components/PluginDelegate.qml:89
@@ -122,11 +122,10 @@ msgid "About"
 msgstr "О расширении"
 
 #: qml/components/PluginDelegate.qml:104
-#, fuzzy, kde-format
-#| msgid "Configure"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Configure…"
-msgstr "Настройка"
+msgstr "Настроить…"
 
 #: qml/components/PluginSelector.qml:81
 #, kde-format
@@ -175,16 +174,14 @@ msgid "Send an email to %1"
 msgstr "Отправить письмо %1"
 
 #: qml/components/private/GridViewInternal.qml:78
-#, fuzzy, kde-format
-#| msgid "No plugins found"
+#, kde-format
 msgid "No items found"
-msgstr "Модули не найдены"
+msgstr "Ничего не найдено"
 
 #: qml/kquickconfigmodule.cpp:120
-#, fuzzy, kde-format
-#| msgid "Could not find service '%1'."
+#, kde-format
 msgid "Could not find resource '%1'"
-msgstr "Не удалось найти службу «%1»."
+msgstr "Не удалось найти ресурс «%1»"
 
 #~ msgctxt "@info:tooltip"
 #~ msgid "Configure..."
