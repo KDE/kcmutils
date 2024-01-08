@@ -1,31 +1,31 @@
 # Kiszel Kristóf <ulysses@kubuntu.org>, 2010.
 # Kristóf Kiszel <ulysses@kubuntu.org>, 2010, 2011, 2012, 2019.
 # Balázs Úr <urbalazs@gmail.com>, 2012, 2013.
-# Kristof Kiszel <kiszel.kristof@gmail.com>, 2018, 2020, 2021.
+# SPDX-FileCopyrightText: 2018, 2020, 2021, 2024 Kristof Kiszel <kiszel.kristof@gmail.com>
 msgid ""
 msgstr ""
 "Project-Id-Version: KDE 4.4\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-12-16 01:35+0000\n"
-"PO-Revision-Date: 2021-09-03 14:01+0200\n"
-"Last-Translator: Kristóf Kiszel <kiszel.kristof@gmail.com>\n"
+"PO-Revision-Date: 2024-01-07 21:58+0100\n"
+"Last-Translator: Kristof Kiszel <ulysses@fsf.hu>\n"
 "Language-Team: Hungarian <kde-l10n-hu@kde.org>\n"
 "Language: hu\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Lokalize 21.07.70\n"
+"X-Generator: Lokalize 23.08.4\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
 msgid "Your names"
-msgstr "Kiszel Kristóf,Szántó Tamás"
+msgstr "Kiszel Kristóf"
 
 #, kde-format
 msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
-msgstr "kiszel.kristof@gmail.com,taszanto@gmail.com"
+msgstr "ulysses@fsf.hu"
 
 #: kcmoduleloader.cpp:49
 #, kde-format
@@ -91,46 +91,40 @@ msgstr "Névjegy"
 #, kde-format
 msgctxt "@action:button"
 msgid "Show Contextual Help"
-msgstr ""
+msgstr "Környezetfüggő súgó megjelenítése"
 
 #: qml/components/PluginDelegate.qml:89
-#, fuzzy, kde-format
-#| msgid "About"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "About"
 msgstr "Névjegy"
 
 #: qml/components/PluginDelegate.qml:104
-#, fuzzy, kde-format
-#| msgid "Configure"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Configure…"
-msgstr "Beállítás"
+msgstr "Beállítások…"
 
 #: qml/components/PluginSelector.qml:81
 #, kde-format
 msgid "No matches"
-msgstr ""
-
-#: qml/components/PluginSelector.qml:81
-#, fuzzy, kde-format
-#| msgid "Not found"
-msgid "No plugins found"
 msgstr "Nincs találat"
 
+#: qml/components/PluginSelector.qml:81
+#, kde-format
+msgid "No plugins found"
+msgstr "Nem találhatók bővítmények"
+
 #: qml/components/private/AboutPlugin.qml:42
-#, fuzzy, kde-format
-#| msgctxt "concatenation of dates and time"
-#| msgid "%1 %2"
+#, kde-format
 msgctxt "Plugin name and plugin version"
 msgid "%1 %2"
 msgstr "%1 %2"
 
 #: qml/components/private/AboutPlugin.qml:64
-#, fuzzy, kde-format
-#| msgid "Copy"
+#, kde-format
 msgid "Copyright"
-msgstr "Másolás"
+msgstr "Copyright"
 
 #: qml/components/private/AboutPlugin.qml:81
 #, kde-format
@@ -138,39 +132,34 @@ msgid "License:"
 msgstr "Licenc:"
 
 #: qml/components/private/AboutPlugin.qml:100
-#, fuzzy, kde-format
-#| msgid "A&uthors"
+#, kde-format
 msgid "Authors"
-msgstr "S&zerzők"
+msgstr "Szerzők"
 
 #: qml/components/private/AboutPlugin.qml:117
 #, kde-format
 msgid "Credits"
-msgstr ""
+msgstr "Köszönetnyilvánítás"
 
 #: qml/components/private/AboutPlugin.qml:134
-#, fuzzy, kde-format
-#| msgid "Translation"
+#, kde-format
 msgid "Translators"
-msgstr "fordítási hiba"
+msgstr "Fordítók"
 
 #: qml/components/private/AboutPlugin.qml:161
-#, fuzzy, kde-format
-#| msgid "&Send Email"
+#, kde-format
 msgid "Send an email to %1"
-msgstr "E-mail kül&dése"
+msgstr "E-mail küldése neki: %1"
 
 #: qml/components/private/GridViewInternal.qml:78
-#, fuzzy, kde-format
-#| msgid "Not found"
+#, kde-format
 msgid "No items found"
-msgstr "Nincs találat"
+msgstr "Nem találhatók elemek"
 
 #: qml/kquickconfigmodule.cpp:120
-#, fuzzy, kde-format
-#| msgid "Could not find service '%1'."
+#, kde-format
 msgid "Could not find resource '%1'"
-msgstr "A(z) „%1” szolgáltatás nem található."
+msgstr "A(z) „%1” erőforrás nem található."
 
 #, fuzzy
 #~| msgid "Confi&gure..."
