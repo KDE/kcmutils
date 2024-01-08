@@ -24,6 +24,7 @@
 #include <KPageDialog>
 #include <KPluginMetaData>
 #include <KShell>
+#include <kcmutils_debug.h>
 
 #if __has_include(<KStartupInfo>)
 #include <KStartupInfo>
@@ -179,7 +180,7 @@ int main(int argc, char *argv[])
             });
             if (!found) {
                 metaDataList << KPluginMetaData(arg); // So that we show an error message in the dialog
-                qWarning() << "Could not find KCM with given Id" << arg;
+                qCWarning(KCMUTILS_LOG) << "Could not find KCM with given Id" << arg;
             }
         }
     }

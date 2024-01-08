@@ -6,6 +6,7 @@
 */
 
 #include "settingstateproxy.h"
+#include "kcmutils_debug.h"
 
 #include <QDebug>
 #include <QMetaMethod>
@@ -93,7 +94,7 @@ void SettingStateProxy::connectSetting()
 
     const auto itemHasSignals = dynamic_cast<KConfigCompilerSignallingItem *>(item) || dynamic_cast<KPropertySkeletonItem *>(item);
     if (!itemHasSignals) {
-        qWarning() << "Attempting to use SettingStateProxy with a non signalling item:" << m_settingName;
+        qCWarning(KCMUTILS_LOG) << "Attempting to use SettingStateProxy with a non signalling item:" << m_settingName;
         return;
     }
 
@@ -111,7 +112,7 @@ void SettingStateProxy::connectSetting()
     const auto property = metaObject->property(propertyIndex);
     Q_ASSERT(property.isValid());
     if (!property.hasNotifySignal()) {
-        qWarning() << "Attempting to use SettingStateProxy with a non notifying property:" << propertyName;
+        qCWarning(KCMUTILS_LOG) << "Attempting to use SettingStateProxy with a non notifying property:" << propertyName;
         return;
     }
 

@@ -2,7 +2,12 @@
 # SPDX-License-Identifier: BSD-3-Clause
 
 # Library
-add_library(KF6KCMUtilsQuick kquickconfigmodule.cpp kquickmanagedconfigmodule.cpp sharedqmlengine.cpp kquickconfigmoduleloader.cpp)
+add_library(KF6KCMUtilsQuick
+    kquickconfigmodule.cpp
+    kquickmanagedconfigmodule.cpp
+    sharedqmlengine.cpp
+    kquickconfigmoduleloader.cpp
+)
 
 ecm_generate_export_header(KF6KCMUtilsQuick
     BASE_NAME KCMUtilsQuick
@@ -47,8 +52,22 @@ install(TARGETS KF6KCMUtilsQuick EXPORT KF6KCMUtilsTargets ${KF_INSTALL_TARGETS_
 
 # QML plugin
 ecm_add_qml_module(kcmutilsqmlplugin URI "org.kde.kcmutils" CLASS_NAME KCMUtilsQmlPlugin)
-target_sources(kcmutilsqmlplugin PRIVATE qmlplugin.cpp settingstateproxy.cpp settinghighlighterprivate.cpp kcmlauncher.cpp)
-target_link_libraries(kcmutilsqmlplugin PRIVATE KF6::KIOGui Qt6::Qml Qt6::Quick kcmutils_proxy_model KF6KCMUtilsQuick)
+target_sources(kcmutilsqmlplugin
+  PRIVATE
+    qmlplugin.cpp
+    settingstateproxy.cpp
+    settinghighlighterprivate.cpp
+    kcmlauncher.cpp
+)
+target_link_libraries(kcmutilsqmlplugin
+  PRIVATE
+    KF6::KIOGui
+    Qt6::Qml
+    Qt6::Quick
+    kcmutils_proxy_model
+    kcmutils_logging_STATIC
+    KF6KCMUtilsQuick
+)
 
 ecm_target_qml_sources(kcmutilsqmlplugin SOURCES
     components/PluginDelegate.qml

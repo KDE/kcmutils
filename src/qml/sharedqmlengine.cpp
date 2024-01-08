@@ -159,7 +159,7 @@ std::shared_ptr<QQmlEngine> SharedQmlEngine::engine()
 QObject *SharedQmlEngine::rootObject() const
 {
     if (d->incubator.status() == QQmlIncubator::Loading) {
-        qWarning() << "Trying to use rootObject before initialization is completed, whilst using setInitializationDelayed. Forcing completion";
+        qCWarning(KCMUTILS_LOG) << "Trying to use rootObject before initialization is completed, whilst using setInitializationDelayed. Forcing completion";
         d->incubator.forceCompletion();
     }
     return d->incubator.object();
@@ -212,7 +212,7 @@ void SharedQmlEngine::completeInitialization(const QVariantMap &initialPropertie
     }
 
     if (!d->component) {
-        qWarning() << "No component for" << source();
+        qCWarning(KCMUTILS_LOG) << "No component for" << source();
         return;
     }
 

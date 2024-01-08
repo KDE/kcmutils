@@ -7,6 +7,7 @@ ecm_mark_nongui_executable(kcmshell6)
 target_link_libraries(kcmshell6
    KF6KCMUtils
    KF6::I18n
+   kcmutils_logging_STATIC
 )
 
 if (NOT WIN32 AND NOT APPLE)

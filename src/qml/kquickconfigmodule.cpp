@@ -11,6 +11,7 @@
 
 #include "kquickconfigmodule.h"
 #include "kabstractconfigmodule.h"
+#include "kcmutils_debug.h"
 #include "sharedqmlengine_p.h"
 
 #include <QDebug>
@@ -118,7 +119,7 @@ QQuickItem *KQuickConfigModule::mainUi()
     const QString resourcePath = d->getResourcePath(QStringLiteral("main.qml"));
     if (QResource r(resourcePath); !r.isValid()) {
         d->errorString = i18n("Could not find resource '%1'", resourcePath);
-        qWarning() << "Could not find resource" << resourcePath;
+        qCWarning(KCMUTILS_LOG) << "Could not find resource" << resourcePath;
         return nullptr;
     }
 
@@ -146,7 +147,7 @@ void KQuickConfigModule::push(const QString &fileName, const QVariantMap &initia
 
     const QString resourcePath = d->getResourcePath(fileName);
     if (QResource r(resourcePath); !r.isValid()) {
-        qWarning() << "Requested resource" << resourcePath << "does not exist";
+        qCWarning(KCMUTILS_LOG) << "Requested resource" << resourcePath << "does not exist";
     }
     QObject *object = d->engine->createObjectFromSource(d->getResourceUrl(resourcePath), d->engine->rootContext(), initialProperties);
 
