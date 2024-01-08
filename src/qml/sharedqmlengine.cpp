@@ -186,7 +186,7 @@ QQmlComponent::Status SharedQmlEngine::status() const
         return QQmlComponent::Null;
     }
 
-    return QQmlComponent::Status(d->component->status());
+    return d->component->status();
 }
 
 void SharedQmlEnginePrivate::checkInitializationCompleted()
