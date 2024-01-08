@@ -42,7 +42,7 @@ public:
         delete incubator.object();
     }
 
-    void errorPrint(QQmlComponent *component);
+    void errorPrint(QQmlComponent *component, QQmlIncubator *incubator = nullptr);
     void execute(const QUrl &source);
     void scheduleExecutionEnd();
     void minimumWidthChanged();
@@ -66,15 +66,21 @@ public:
     std::shared_ptr<QQmlEngine> m_engine;
 };
 
-void SharedQmlEnginePrivate::errorPrint(QQmlComponent *component)
+void SharedQmlEnginePrivate::errorPrint(QQmlComponent *component, QQmlIncubator *incubator)
 {
-    if (component->isError()) {
-        qCWarning(KCMUTILS_LOG).noquote() << "Error loading QML file" << component->url().toString();
-        const auto errors = component->errors();
-        for (const auto &error : errors) {
-            constexpr const QLatin1String indent("    ");
-            qCWarning(KCMUTILS_LOG).noquote().nospace() << indent << error;
-        }
+    QList<QQmlError> errors;
+    if (component && component->isError()) {
+        errors = component->errors();
+    } else if (incubator && incubator->isError()) {
+        errors = incubator->errors();
+    } else {
+        return;
+    }
+
+    qCWarning(KCMUTILS_LOG).noquote() << "Error loading QML file" << component->url().toString();
+    for (const auto &error : errors) {
+        constexpr const QLatin1String indent("    ");
+        qCWarning(KCMUTILS_LOG).noquote().nospace() << indent << error;
     }
 }
 
@@ -83,7 +89,6 @@ void SharedQmlEnginePrivate::execute(const QUrl &source)
     Q_ASSERT(!source.isEmpty());
     delete component;
     component = new QQmlComponent(m_engine.get(), q);
-    QObject::connect(component, &QQmlComponent::statusChanged, q, &SharedQmlEngine::statusChanged, Qt::QueuedConnection);
     delete incubator.object();
 
     m_engine->addImportPath(QStringLiteral("qrc:/"));
@@ -158,7 +163,7 @@ std::shared_ptr<QQmlEngine> SharedQmlEngine::engine()
 
 QObject *SharedQmlEngine::rootObject() const
 {
-    if (d->incubator.status() == QQmlIncubator::Loading) {
+    if (d->incubator.isLoading()) {
         qCWarning(KCMUTILS_LOG) << "Trying to use rootObject before initialization is completed, whilst using setInitializationDelayed. Forcing completion";
         d->incubator.forceCompletion();
     }
@@ -175,22 +180,34 @@ QQmlContext *SharedQmlEngine::rootContext() const
     return d->rootContext;
 }
 
-QQmlComponent::Status SharedQmlEngine::status() const
+bool SharedQmlEngine::isError() const
 {
-    if (!d->m_engine) {
-        return QQmlComponent::Error;
-    }
+    return !d->m_engine || !d->component || d->component->isError() || d->incubator.isError();
+}
 
-    if (!d->component) {
-        return QQmlComponent::Null;
+static QString qmlErrorsToString(const QList<QQmlError> &errors)
+{
+    QString ret;
+    for (const auto &e : errors) {
+        ret += e.url().toString() + QLatin1Char(':') + QString::number(e.line()) + QLatin1Char(' ') + e.description() + QLatin1Char('\n');
     }
+    return ret;
+}
 
-    return d->component->status();
+QString SharedQmlEngine::errorString() const
+{
+    if (d->component && d->component->isError()) {
+        return d->component->errorString();
+    } else if (d->incubator.isError()) {
+        return qmlErrorsToString(d->incubator.errors());
+    } else {
+        return {};
+    }
 }
 
 void SharedQmlEnginePrivate::checkInitializationCompleted()
 {
-    if (!incubator.isReady() && incubator.status() != QQmlIncubator::Error) {
+    if (!incubator.isReady() && !incubator.isError()) {
         QTimer::singleShot(0, q, [this]() {
             checkInitializationCompleted();
         });
@@ -198,7 +215,7 @@ void SharedQmlEnginePrivate::checkInitializationCompleted()
     }
 
     if (!incubator.object()) {
-        errorPrint(component);
+        errorPrint(component, &incubator);
     }
 
     Q_EMIT q->finished();
@@ -216,7 +233,7 @@ void SharedQmlEngine::completeInitialization(const QVariantMap &initialPropertie
         return;
     }
 
-    if (d->component->status() != QQmlComponent::Ready || d->component->isError()) {
+    if (!d->component->isReady()) {
         d->errorPrint(d->component);
         return;
     }
@@ -230,7 +247,7 @@ void SharedQmlEngine::completeInitialization(const QVariantMap &initialPropertie
         d->incubator.forceCompletion();
 
         if (!d->incubator.object()) {
-            d->errorPrint(d->component);
+            d->errorPrint(d->component, &d->incubator);
         }
         Q_EMIT finished();
     }

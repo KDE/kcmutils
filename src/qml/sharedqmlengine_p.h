@@ -38,7 +38,6 @@ class SharedQmlEngine : public QObject
     Q_PROPERTY(QString translationDomain READ translationDomain WRITE setTranslationDomain)
     Q_PROPERTY(bool initializationDelayed READ isInitializationDelayed WRITE setInitializationDelayed)
     Q_PROPERTY(QObject *rootObject READ rootObject)
-    Q_PROPERTY(QQmlComponent::Status status READ status NOTIFY statusChanged)
 
 public:
     /**
@@ -119,14 +118,19 @@ public:
     QQmlComponent *mainComponent() const;
 
     /**
-     * The components's creation context.
+     * The component's creation context.
      */
     QQmlContext *rootContext() const;
 
-    /**
-     * The component's current status.
+    /*
+     * The component's or incubator's error status.
      */
-    QQmlComponent::Status status() const;
+    bool isError() const;
+
+    /*
+     * The component's or incubator's error string.
+     */
+    QString errorString() const;
 
     /**
      * Creates and returns an object based on the provided url to a Qml file
@@ -169,8 +173,6 @@ Q_SIGNALS:
      * Emitted when the parsing and execution of the QML file is terminated
      */
     void finished();
-
-    void statusChanged(QQmlComponent::Status);
 
 private:
     const std::unique_ptr<SharedQmlEnginePrivate> d;

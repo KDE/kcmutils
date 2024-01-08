@@ -128,8 +128,8 @@ QQuickItem *KQuickConfigModule::mainUi()
     d->engine->rootContext()->setContextProperty(QStringLiteral("kcm"), this);
     d->engine->completeInitialization();
 
-    if (d->engine->status() != QQmlComponent::Ready) {
-        d->errorString = d->engine->mainComponent()->errorString();
+    if (d->engine->isError()) {
+        d->errorString = d->engine->errorString();
         return nullptr;
     }
 
