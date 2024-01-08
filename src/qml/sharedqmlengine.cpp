@@ -30,10 +30,9 @@ public:
         , delay(false)
         , m_engine(engine)
     {
-        executionEndTimer = new QTimer(q);
-        executionEndTimer->setInterval(0);
-        executionEndTimer->setSingleShot(true);
-        QObject::connect(executionEndTimer, &QTimer::timeout, q, [this]() {
+        executionEndTimer.setInterval(0);
+        executionEndTimer.setSingleShot(true);
+        QObject::connect(&executionEndTimer, &QTimer::timeout, q, [this]() {
             scheduleExecutionEnd();
         });
     }
@@ -60,7 +59,7 @@ public:
 
     QQmlIncubator incubator;
     QQmlComponent *component;
-    QTimer *executionEndTimer;
+    QTimer executionEndTimer;
     KLocalizedContext *context{nullptr};
     QQmlContext *rootContext;
     bool delay;
@@ -91,7 +90,7 @@ void SharedQmlEnginePrivate::execute(const QUrl &source)
     component->loadUrl(source);
 
     if (delay) {
-        executionEndTimer->start(0);
+        executionEndTimer.start(0);
     } else {
         scheduleExecutionEnd();
     }
@@ -207,7 +206,7 @@ void SharedQmlEnginePrivate::checkInitializationCompleted()
 
 void SharedQmlEngine::completeInitialization(const QVariantMap &initialProperties)
 {
-    d->executionEndTimer->stop();
+    d->executionEndTimer.stop();
     if (d->incubator.object()) {
         return;
     }
