@@ -74,7 +74,7 @@ void SharedQmlEnginePrivate::errorPrint(QQmlComponent *component)
         const auto errors = component->errors();
         for (const auto &error : errors) {
             constexpr const QLatin1String indent("    ");
-            qCWarning(KCMUTILS_LOG).nospace() << indent << error;
+            qCWarning(KCMUTILS_LOG).noquote().nospace() << indent << error;
         }
     }
 }
