@@ -53,16 +53,10 @@ Kirigami.Page {
 
     /**
      * extraFooterTopPadding: bool
-     * Whether to add extra top padding to an empty footer when framedView is
-     * false. Use the default value of true for KCMs in System Settings, because
-     * otherwise the Apply, Help, and Defaults buttons provided by System
-     * Settings won't have enough top padding and the button bar will look ugly.
-     * When using this component outside of System Settings where there is no
-     * such restriction, or in System Settings KCMs that don't show Apply, Help,
-     * or Defaults buttons, set it to false.
-     * Default: true
+     * @deprecated unused
+     * Default: false
      */
-    property bool extraFooterTopPadding: true
+    property bool extraFooterTopPadding: false
 
     property bool sidebarMode: false
 

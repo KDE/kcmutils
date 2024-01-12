@@ -37,16 +37,10 @@ Kirigami.ScrollablePage {
 
     /**
      * extraFooterTopPadding: bool
-     * Whether to add extra top padding to an empty footer.  Use the default
-     * value of true for KCMs in System Settings, because otherwise the Apply,
-     * Help, and Defaults buttons provided by System Settings won't have enough
-     * top padding and the button bar will look ugly.
-     * When using this component outside of System Settings where there is no
-     * such restriction, or in System Settings KCMs that don't show Apply, Help,
-     * or Defaults buttons, set it to false.
-     * Default: true
+     * @deprecated unused
+     * Default: false
      */
-    property bool extraFooterTopPadding: true
+    property bool extraFooterTopPadding: false
 
     property bool __flickableOverflows: flickable.contentHeight + flickable.topMargin + flickable.bottomMargin > flickable.height
 
@@ -93,40 +87,6 @@ Kirigami.ScrollablePage {
                 top: parent.bottom
             }
             visible: headerParent.contentVisible
-        }
-    }
-
-    footer: QQC2.Control {
-        id: footerParent
-
-        readonly property bool contentVisible: contentItem && contentItem.visible && contentItem.implicitHeight
-
-        height: contentVisible ? implicitHeight : 0
-        leftPadding: 0
-        topPadding: 0
-        rightPadding: 0
-        bottomPadding: 0
-        // TODO KF6: uncomment these lines. We didn't do it in KF5 times because
-        // it would have regressed CommandOutputKCM in KInfoCenter, which was
-        // created before this padding was added, and added its own. If we add
-        // padding in the base KCM component, CommandOutputKCM will have double
-        // padding and look bad.
-        // created before this padding was added and added its own.
-        // leftPadding: root.margins
-        // topPadding: root.margins
-        // rightPadding: root.margins
-        // bottomPadding: root.margins
-
-        // When the page is scrollable, we need to add a line above the footer
-        // ourselves to separate it from the view
-        Kirigami.Separator {
-            z: 999
-            anchors {
-                left: parent.left
-                right: parent.right
-                bottom: parent.top
-            }
-            visible:  footerParent.contentVisible || (root.__flickableOverflows && !Kirigami.Settings.isMobile)
         }
     }
 

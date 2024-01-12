@@ -195,22 +195,7 @@ Kirigami.ApplicationItem {
 
     pageStack.defaultColumnWidth: kcm && kcm.columnWidth > 0 ? kcm.columnWidth : Kirigami.Units.gridUnit * 15
 
-    footer: Rectangle {
-        visible: kcm && kcm.buttons !== KCMUtils.ConfigModule.NoAdditionalButton
-        height: pageStack.items.filter(item => item.extraFooterTopPadding).length > 0
-                ? Kirigami.Units.smallSpacing * 2
-                : 0
-        width: parent.width
-        color: Kirigami.Theme.backgroundColor
-        Kirigami.Separator {
-            visible: pageStack.separatorVisible && pageStack.columnView.visibleItems.length > 1
-            anchors {
-                left: parent.left
-                right: parent.right
-                bottom: parent.top
-            }
-        }
-    }
+    footer: null
     Keys.onReturnPressed: event => {
         event.accepted = true
     }
