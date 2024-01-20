@@ -198,6 +198,7 @@ T2.ItemDelegate {
             color: enabled ? Kirigami.Theme.textColor : Kirigami.Theme.disabledTextColor
             elide: Text.ElideRight
             font.bold: delegate.GridView.isCurrentItem
+            textFormat: Text.PlainText
         }
         QQC2.Label {
             id: caption
@@ -210,6 +211,7 @@ T2.ItemDelegate {
             font.pointSize: Kirigami.Theme.smallFont.pointSize
             font.bold: delegate.GridView.isCurrentItem
             elide: Text.ElideRight
+            textFormat: Text.PlainText
         }
 
         Rectangle {
