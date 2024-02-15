@@ -61,7 +61,7 @@ ColumnLayout {
 
     // Copyright
     Kirigami.Heading {
-        text: i18nd("org.kde.kcmutils", "Copyright")
+        text: i18nd("kcmutils6", "Copyright")
     }
     QQC2.Label {
         Layout.leftMargin: Kirigami.Units.gridUnit
@@ -78,7 +78,7 @@ ColumnLayout {
     // License
     RowLayout {
         QQC2.Label {
-            text: i18nd("org.kde.kcmutils", "License:")
+            text: i18nd("kcmutils6", "License:")
         }
         Kirigami.LinkButton {
             text: root.metaData.license
@@ -97,7 +97,7 @@ ColumnLayout {
         visible: repAuthors.visible
     }
     Kirigami.Heading {
-        text: i18nd("org.kde.kcmutils", "Authors")
+        text: i18nd("kcmutils6", "Authors")
         visible: repAuthors.visible
     }
     Repeater {
@@ -114,7 +114,7 @@ ColumnLayout {
         visible: repCredits.visible
     }
     Kirigami.Heading {
-        text: i18nd("org.kde.kcmutils", "Credits")
+        text: i18nd("kcmutils6", "Credits")
         visible: repCredits.visible
     }
     Repeater {
@@ -131,7 +131,7 @@ ColumnLayout {
         visible: repTranslators.visible
     }
     Kirigami.Heading {
-        text: i18nd("org.kde.kcmutils", "Translators")
+        text: i18nd("kcmutils6", "Translators")
         visible: repTranslators.visible
     }
     Repeater {
@@ -158,7 +158,7 @@ ColumnLayout {
                 icon.name: "mail-sent"
                 QQC2.ToolTip.delay: Kirigami.Units.toolTipDelay
                 QQC2.ToolTip.visible: hovered
-                QQC2.ToolTip.text: i18nd("org.kde.kcmutils", "Send an email to %1", modelData.emailAddress)
+                QQC2.ToolTip.text: i18nd("kcmutils6", "Send an email to %1", modelData.emailAddress)
                 onClicked: Qt.openUrlExternally("mailto:%1".arg(modelData.emailAddress))
             }
             QQC2.ToolButton {
