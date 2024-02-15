@@ -86,7 +86,7 @@ Kirigami.CheckSubtitleDelegate {
         id: infoAction
 
         icon.name: "dialog-information"
-        text: i18nc("@info:tooltip", "About")
+        text: i18ndc("kcmutils6", "@info:tooltip", "About")
         displayHint: Kirigami.DisplayHint.IconOnly
         onTriggered: {
             const aboutDialog = (listItem.ListView.view ?? listItem.parent.ListView.view).__aboutDialog;
@@ -101,7 +101,7 @@ Kirigami.CheckSubtitleDelegate {
         visible: listItem.configureVisible
         enabled: listItem.checked
         icon.name: "configure"
-        text: i18nc("@info:tooltip", "Configure…")
+        text: i18ndc("kcmutils6", "@info:tooltip", "Configure…")
         displayHint: Kirigami.DisplayHint.IconOnly
         onTriggered: listItem.configTriggered()
     }
