@@ -250,19 +250,15 @@ QObject *SharedQmlEngine::createObjectFromComponent(QQmlComponent *component, QQ
 
     if (!component->isError() && object) {
         // memory management
+        const auto root = rootObject();
+        object->setParent(root);
         component->setParent(object);
-        // reparent to root object if wasn't specified otherwise by initialProperties
-        if (!initialProperties.contains(QLatin1String("parent"))) {
-            const auto root = rootObject();
-            if (root && root->isQuickItemType()) {
-                object->setProperty("parent", QVariant::fromValue(root));
-            } else {
-                object->setParent(root);
-            }
+
+        // visually reparent to root object if wasn't specified otherwise by initialProperties
+        if (!initialProperties.contains(QLatin1String("parent")) && root && root->isQuickItemType()) {
+            object->setProperty("parent", QVariant::fromValue(root));
         }
-
         return object;
-
     } else {
         d->errorPrint(component);
         delete object;
