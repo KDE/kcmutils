@@ -78,7 +78,7 @@ ListView {
         }
         sourceComponent: Kirigami.PlaceholderMessage {
             icon.name: "edit-none"
-            text: pluginSelector.query && pluginSelector.query.length > 0 ? i18n("No matches") : i18n("No plugins found")
+            text: pluginSelector.query && pluginSelector.query.length > 0 ? i18nd("kcmutils6", "No matches") : i18nd("kcmutils6", "No plugins found")
         }
     }
 

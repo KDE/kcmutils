@@ -75,7 +75,7 @@ GridView {
         sourceComponent: Kirigami.PlaceholderMessage {
             anchors.centerIn: parent
             icon.name: "edit-none"
-            text: i18n("No items found")
+            text: i18nd("kcmutils6", "No items found")
         }
     }
 

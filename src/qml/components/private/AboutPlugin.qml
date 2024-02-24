@@ -39,7 +39,7 @@ ColumnLayout {
 
             Kirigami.Heading {
                 Layout.fillWidth: true
-                text: root.metaData.version ? i18nc("Plugin name and plugin version", "%1 %2", root.metaData.name, root.metaData.version) : root.metaData.name
+                text: root.metaData.version ? i18ndc("kcmutils6", "Plugin name and plugin version", "%1 %2", root.metaData.name, root.metaData.version) : root.metaData.name
                 wrapMode: Text.WordWrap
             }
             Kirigami.Heading {

@@ -45,6 +45,6 @@ QQC2.Button {
         cursorShape: Qt.WhatsThisCursor
         acceptedButtons: Qt.NoButton
     }
-    Accessible.name: i18nc("@action:button", "Show Contextual Help")
+    Accessible.name: i18ndc("kcmutils6", "@action:button", "Show Contextual Help")
 }
 
