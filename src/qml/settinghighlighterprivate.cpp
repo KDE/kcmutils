@@ -65,8 +65,16 @@ void SettingHighlighterPrivate::setTarget(QQuickItem *target)
         return;
     }
 
+    if (m_target) {
+        disconnect(m_target, nullptr, this, nullptr);
+    }
+
     m_target = target;
-    updateTarget();
+
+    if (m_target) {
+        connect(m_target, &QQuickItem::childrenChanged, this, &SettingHighlighterPrivate::updateTarget);
+    }
+
     Q_EMIT targetChanged();
 }
 
@@ -82,7 +90,6 @@ void SettingHighlighterPrivate::setHighlight(bool highlight)
     }
 
     m_highlight = highlight;
-    updateTarget();
     Q_EMIT highlightChanged();
 }
 
@@ -98,8 +105,6 @@ void SettingHighlighterPrivate::setDefaultIndicatorVisible(bool enabled)
     }
 
     m_enabled = enabled;
-    updateTarget();
-
     Q_EMIT defaultIndicatorVisibleChanged(m_enabled);
 }
 
@@ -126,6 +131,11 @@ void SettingHighlighterPrivate::updateTarget()
 void SettingHighlighterPrivate::componentComplete()
 {
     m_isComponentComplete = true;
+
+    connect(this, &SettingHighlighterPrivate::targetChanged, this, &SettingHighlighterPrivate::updateTarget);
+    connect(this, &SettingHighlighterPrivate::highlightChanged, this, &SettingHighlighterPrivate::updateTarget);
+    connect(this, &SettingHighlighterPrivate::defaultIndicatorVisibleChanged, this, &SettingHighlighterPrivate::updateTarget);
+
     updateTarget();
 }
 
