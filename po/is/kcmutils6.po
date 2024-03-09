@@ -7,19 +7,20 @@
 # Pjetur G. Hjaltason <pjetur@pjetur.net>, 2003.
 # Arnar Leósson <leosson@frisurf.no>, 2003, 2005.
 # Sveinn í Felli <sveinki@nett.is>, 2007, 2008, 2009, 2010, 2011, 2012, 2013, 2016, 2022.
+# SPDX-FileCopyrightText: 2024 Guðmundur Erlingsson <gudmundure@gmail.com>
 msgid ""
 msgstr ""
 "Project-Id-Version: kdelibs4\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-01-26 00:35+0000\n"
-"PO-Revision-Date: 2022-06-22 10:05+0000\n"
-"Last-Translator: Sveinn í Felli <sv1@fellsnet.is>\n"
-"Language-Team: Icelandic\n"
+"PO-Revision-Date: 2024-02-19 20:20+0000\n"
+"Last-Translator: Guðmundur Erlingsson <gudmundure@gmail.com>\n"
+"Language-Team: Icelandic <kde-i18n-doc@kde.org>\n"
 "Language: is\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Lokalize 19.12.3\n"
+"X-Generator: Lokalize 23.08.3\n"
 "Plural-Forms: Plural-Forms: nplurals=2; plural=n != 1;\n"
 "\n"
 "\n"
@@ -33,14 +34,14 @@ msgctxt "NAME OF TRANSLATORS"
 msgid "Your names"
 msgstr ""
 "Richard Allen, Logi Ragnarsson, Pjetur G. Hjaltason, Arnar Leósson, Svanur "
-"Pálsson, Sveinn í Felli"
+"Pálsson, Sveinn í Felli, Guðmundur Erlingsson"
 
 #, kde-format
 msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
 msgstr ""
 "ra@ra.is, logi@logi.org, pjetur@pjetur.net, leosson@frisurf.no, svanur@tern."
-"is, sv1@fellsnet.is"
+"is, sv1@fellsnet.is, gudmundure@gmail.com"
 
 #: kcmoduleloader.cpp:49
 #, kde-format
@@ -53,10 +54,10 @@ msgid ""
 msgstr ""
 "<qt><p>Mögulegar ástæður:<ul><li>Villa kom upp við síðustu uppfærslu "
 "kerfisins sem skildi eftir ótengda stjórneiningu</li><li>Þú ert með gamlar "
-"einingar frá öðrum aðilum</li></ul></p><p>Athugaðu þetta hvorutveggja "
-"vandlega og reyndu að fjarlægja stjórneininguna sem vísað er í. Ef það tekst "
-"ekki skaltu reyna að hafa samband við dreifingaraðila þinn eða þá sem sáu um "
-"pökkunina</p></qt>"
+"einingar frá þriðju aðilum</li></ul></p><p>Athugaðu þetta hvorutveggja "
+"vandlega og reyndu að fjarlægja stjórneininguna sem villuboðið vísar í. Ef "
+"það tekst ekki skaltu reyna að hafa samband við dreifingaraðila þinn eða þau "
+"sem útbjuggu uppsetningarpakkann.</p></qt>"
 
 #: kcmoduleloader.cpp:79
 #, kde-format
@@ -90,7 +91,7 @@ msgstr "Virkja stillingar"
 #: kcmultidialog.cpp:204 kpluginwidget.cpp:340
 #, kde-format
 msgid "Configure"
-msgstr "Stilla"
+msgstr "Grunnstilla"
 
 #: kpluginwidget.cpp:67
 #, kde-format
@@ -106,7 +107,7 @@ msgstr "Um hugbúnaðinn"
 #, kde-format
 msgctxt "@action:button"
 msgid "Show Contextual Help"
-msgstr ""
+msgstr "Sýna efnistengda hjálp"
 
 #: qml/components/PluginDelegate.qml:89
 #, kde-format
@@ -115,11 +116,10 @@ msgid "About"
 msgstr "Um hugbúnaðinn"
 
 #: qml/components/PluginDelegate.qml:104
-#, fuzzy, kde-format
-#| msgid "Configure"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Configure…"
-msgstr "Stilla"
+msgstr "Grunnstilla…"
 
 #: qml/components/PluginSelector.qml:81
 #, kde-format
@@ -129,7 +129,7 @@ msgstr "Engar samsvaranir"
 #: qml/components/PluginSelector.qml:81
 #, kde-format
 msgid "No plugins found"
-msgstr "Engin íforrit fundust"
+msgstr "Engar viðbætur fundust"
 
 #: qml/components/private/AboutPlugin.qml:42
 #, kde-format
@@ -155,7 +155,7 @@ msgstr "Höfundar"
 #: qml/components/private/AboutPlugin.qml:117
 #, kde-format
 msgid "Credits"
-msgstr "Framlög"
+msgstr "Þátttakendur"
 
 #: qml/components/private/AboutPlugin.qml:134
 #, kde-format
@@ -168,16 +168,14 @@ msgid "Send an email to %1"
 msgstr "Senda tölvupóst á %1"
 
 #: qml/components/private/GridViewInternal.qml:78
-#, fuzzy, kde-format
-#| msgid "No plugins found"
+#, kde-format
 msgid "No items found"
-msgstr "Engin íforrit fundust"
+msgstr "Engin atriði fundust"
 
 #: qml/kquickconfigmodule.cpp:121
-#, fuzzy, kde-format
-#| msgid "Could not find service '%1'."
+#, kde-format
 msgid "Could not find resource '%1'"
-msgstr "Fann ekki þjónustuna '%1'."
+msgstr "Fann ekki tilfangið '%1'."
 
 #~ msgctxt "@info:tooltip"
 #~ msgid "Configure..."
