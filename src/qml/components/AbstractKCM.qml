@@ -58,6 +58,22 @@ Kirigami.Page {
      */
     property bool extraFooterTopPadding: false
 
+    /**
+     * This property holds whether the page will automatically add some padding
+     * around the header.
+     *
+     * Per default this is enabled.
+     */
+    property bool extraHeaderPadding: true
+
+    /**
+     * This property holds whether the page will automatically add some padding
+     * around the footer.
+     *
+     * Per default this is enabled.
+     */
+    property bool extraFooterPadding: true
+
     property bool sidebarMode: false
 
     function __itemVisible(item: Item): bool {
@@ -177,8 +193,12 @@ Kirigami.Page {
     }
 
     Component.onCompleted: {
-        __swapContentIntoContainer("header", headerParent);
-        __swapContentIntoContainer("footer", footerParent);
+        if (extraHeaderPadding) {
+            __swapContentIntoContainer("header", headerParent);
+        }
+        if (extraFooterPadding) {
+            __swapContentIntoContainer("footer", footerParent);
+        }
 
         //Search overlaysheets in contentItem, parent to root if found
         for (const obj of contentItem.data) {
