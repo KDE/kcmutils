@@ -19,6 +19,19 @@
 class KConfigGroup;
 class KPluginModelPrivate;
 
+/**
+ * @class KPluginModel kpluginmodel.h KPluginModel
+ * A model that provides a list of available plugins and allows to disable/enable them.
+ *
+ * Plugins need to define the @c X-KDE-ConfigModule property for their config modules to be found.
+ * The value for this property is the namespace and file name of the KCM for the plugin.
+ * An example value is "kf6/krunner/kcms/kcm_krunner_charrunner", "kf6/krunner/kcms" is the namespace
+ * and "kcm_krunner_charrunner" the file name. The loaded KCMs don't need any embedded JSON metadata.
+ *
+ * @see KPluginWidget
+ *
+ * @since 5.94
+ */
 class KCMUTILSCORE_EXPORT KPluginModel : public QAbstractListModel
 {
     Q_OBJECT
@@ -47,6 +60,13 @@ public:
 
     bool moveRows(const QModelIndex &sourceParent, int sourceRow, int count, const QModelIndex &destinationParent, int destinationChild) override;
 
+    /**
+     * Append plugins to the model. This will not replace existing entries.
+     *
+     * @param plugins the plugins to be added.
+     * @param categoryLabel a user-visible label for the section the plugins are added to.
+     *
+     */
     void addPlugins(const QList<KPluginMetaData> &plugins, const QString &categoryLabel);
 
     /**
@@ -56,13 +76,38 @@ public:
      * @since 6.0
      */
     void addUnsortablePlugins(const QList<KPluginMetaData> &plugins, const QString &categoryLabel);
+
     /// @since 6.0
     void removePlugin(const KPluginMetaData &data);
+
+    /**
+     * Removes all plugins.
+     */
     void clear();
+
+    /**
+     * Set the KConfigGroup that is used to load/save the enabled state.
+     */
     void setConfig(const KConfigGroup &config);
+
+    /**
+     * Save the enabled state of the plugins to the config group set by @ref setConfig.
+     */
     void save();
+
+    /**
+     * Load the enabled state of the plugins from the config group set by @ref setConfig.
+     */
     void load();
+
+    /**
+     * Reset the enabled state of the plugins to its defaults.
+     */
     void defaults();
+
+    /**
+     * Whether or not there are unsaved changes to the enabled state of the plugins.
+     */
     bool isSaveNeeded();
 
     /**
@@ -72,7 +117,16 @@ public:
      */
     KPluginMetaData findConfigForPluginId(const QString &pluginId) const;
 
+    /**
+     * Emitted when the enabled state matches the default changes.
+     *
+     * @see defaults
+     */
     Q_SIGNAL void defaulted(bool isDefaulted);
+
+    /**
+     * Emitted when @ref isSaveNeeded is changed.
+     */
     Q_SIGNAL void isSaveNeededChanged();
 
 private:
