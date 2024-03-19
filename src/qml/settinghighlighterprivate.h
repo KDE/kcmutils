@@ -37,10 +37,9 @@ Q_SIGNALS:
     void highlightChanged();
     void defaultIndicatorVisibleChanged(bool enabled);
 
-private Q_SLOTS:
+private:
     void updateTarget();
 
-private:
     void classBegin() override
     {
     }
