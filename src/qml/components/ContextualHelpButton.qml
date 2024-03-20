@@ -4,12 +4,13 @@
    SPDX-License-Identifier: LGPL-2.0-or-later
 */
 
-import QtQuick 2.1
+import QtQuick
 import QtQuick.Layouts 1.1
 import QtQuick.Controls 2.7 as QQC2
 import QtQuick.Window 2.15
 import org.kde.kirigami 2.3 as Kirigami
 
+@Deprecated { reason: "Use the version in Kirigami instead!" }
 QQC2.Button {
     id: root
 
