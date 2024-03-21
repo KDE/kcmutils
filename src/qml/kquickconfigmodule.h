@@ -80,7 +80,8 @@ class KQuickConfigModulePrivate;
  *
  * \code
  * import QtQuick
- * import org.kde.kcmutils
+ * import QtQuick.Controls as QQC2
+ * import org.kde.kcmutils as KCMUtils
  * import org.kde.kirigami as Kirigami
  *
  * Item {
@@ -88,10 +89,12 @@ class KQuickConfigModulePrivate;
  *     implicitWidth: Kirigami.Units.gridUnit * 30
  *     implicitHeight: Kirigami.Units.gridUnit * 30
  *
- *     ConfigModule.buttons: ConfigModule.Help | ConfigModule.Apply
+ *     KCMUtils.ConfigModule.buttons: KCMUtils.ConfigModule.Help | KCMUtils.ConfigModule.Apply
  *
- *     Label {
+ *     QQC2.Label {
+ *         // The following two bindings are equivalent:
  *         text: kcm.needsSave
+ *         enabled: KCMUtils.ConfigModule.needsSave
  *     }
  * }
  * \endcode
