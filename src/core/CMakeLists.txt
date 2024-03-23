@@ -3,6 +3,8 @@
 
 add_library(KF6KCMUtilsCore)
 
+qt_extract_metatypes(KF6KCMUtilsCore)
+
 set_target_properties(KF6KCMUtilsCore PROPERTIES
     VERSION     ${KCMUTILS_VERSION}
     SOVERSION   ${KCMUTILS_SOVERSION}
@@ -63,6 +65,7 @@ install(FILES
 install(TARGETS KF6KCMUtilsCore EXPORT KF6KCMUtilsTargets ${KF_INSTALL_TARGETS_DEFAULT_ARGS})
 
 add_library(kcmutils_proxy_model STATIC kpluginproxymodel.cpp)
+qt_extract_metatypes(kcmutils_proxy_model)
 # Needed to link this static lib to shared libs
 set_property(TARGET kcmutils_proxy_model PROPERTY POSITION_INDEPENDENT_CODE ON)
 target_link_libraries(kcmutils_proxy_model PUBLIC KF6KCMUtilsCore KF6::ItemViews)

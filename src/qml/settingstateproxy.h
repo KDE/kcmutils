@@ -10,6 +10,7 @@
 
 #include <QObject>
 #include <QPointer>
+#include <QQmlEngine>
 
 #include <KCoreConfigSkeleton>
 
@@ -22,6 +23,7 @@
 class SettingStateProxy : public QObject
 {
     Q_OBJECT
+    QML_ELEMENT
 
     /**
      * The config object which will be monitored for setting state changes

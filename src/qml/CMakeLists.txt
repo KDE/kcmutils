@@ -9,6 +9,8 @@ add_library(KF6KCMUtilsQuick
     kquickconfigmoduleloader.cpp
 )
 
+qt_extract_metatypes(KF6KCMUtilsQuick)
+
 ecm_generate_export_header(KF6KCMUtilsQuick
     BASE_NAME KCMUtilsQuick
     GROUP_BASE_NAME KF
@@ -51,13 +53,12 @@ install(FILES
 install(TARGETS KF6KCMUtilsQuick EXPORT KF6KCMUtilsTargets ${KF_INSTALL_TARGETS_DEFAULT_ARGS})
 
 # QML plugin
-ecm_add_qml_module(kcmutilsqmlplugin URI "org.kde.kcmutils" CLASS_NAME KCMUtilsQmlPlugin)
+ecm_add_qml_module(kcmutilsqmlplugin URI "org.kde.kcmutils" VERSION 1.0 DEPENDENCIES QtQuick org.kde.kcmutils.private GENERATE_PLUGIN_SOURCE)
 target_sources(kcmutilsqmlplugin
   PRIVATE
-    qmlplugin.cpp
     settingstateproxy.cpp
-    settinghighlighterprivate.cpp
     kcmlauncher.cpp
+    types.h
 )
 target_link_libraries(kcmutilsqmlplugin
   PRIVATE
@@ -89,4 +90,9 @@ ecm_target_qml_sources(kcmutilsqmlplugin PATH private SOURCES
     components/private/GridViewInternal.qml
 )
 ecm_finalize_qml_module(kcmutilsqmlplugin DESTINATION ${KDE_INSTALL_QMLDIR})
+
+ecm_add_qml_module(kcmutilsprivateqmlplugin URI "org.kde.kcmutils.private" DEPENDENCIES QtCore QtQuick GENERATE_PLUGIN_SOURCE)
+target_sources(kcmutilsprivateqmlplugin PRIVATE private_types.h settinghighlighterprivate.cpp)
+target_link_libraries(kcmutilsprivateqmlplugin PRIVATE Qt6::Quick kcmutils_proxy_model)
+ecm_finalize_qml_module(kcmutilsprivateqmlplugin DESTINATION ${KDE_INSTALL_QMLDIR})
 

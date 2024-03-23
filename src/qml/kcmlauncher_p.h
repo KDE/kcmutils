@@ -8,10 +8,13 @@
 #define KCMSHELL_H
 
 #include <QObject>
+#include <QQmlEngine>
 
 class KCMLauncher : public QObject
 {
     Q_OBJECT
+    QML_ELEMENT
+    QML_SINGLETON
 
 public Q_SLOTS:
     void open(const QStringList &names) const;
