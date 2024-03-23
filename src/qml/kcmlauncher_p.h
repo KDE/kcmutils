@@ -24,11 +24,16 @@ public Q_SLOTS:
      * be provided.
      *
      * @code
-     * onClicked: KCMShell.openSystemSettings("kcm_kscreen")
+     * import QtQuick.Controls as QQC2
+     * import org.kde.kcmutils as KCMUtils
+     *
+     * QQC2.Button {
+     *     onClicked: KCMUtils.KCMLauncher.openSystemSettings("kcm_kscreen")
+     * }
      * @endcode
      *
      * @param name A single kcm name to open in System Settings. Opening multiple
-     * KCMs using this function is not supported; to do that, use kcmshell.open.
+     * KCMs using this function is not supported; to do that, use KCMLauncher.open().
      * @param args Additional arguments to pass to the module.
      *
      * @since 5.71
@@ -40,11 +45,15 @@ public Q_SLOTS:
      * be provided.
      *
      * @code
-     * onClicked: KCMShell.openInfoCenter("kcm_energy")
+     * import QtQuick.Controls as QQC2
+     * import org.kde.kcmutils as KCMUtils
+     * QQC2.Button {
+     *     onClicked: KCMUtils.KCMLauncher.openInfoCenter("kcm_energy")
+     * }
      * @endcode
      *
      * @param name A single kcm name to open in Info Center. Opening multiple
-     * KCMs using this function is not supported; to do that, use kcmshell.open.
+     * KCMs using this function is not supported; to do that, use KCMLauncher.open().
      *
      * @since 5.71
      */
