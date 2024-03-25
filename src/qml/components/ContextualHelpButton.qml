@@ -4,11 +4,10 @@
    SPDX-License-Identifier: LGPL-2.0-or-later
 */
 
-import QtQuick 2.1
-import QtQuick.Layouts 1.1
-import QtQuick.Controls 2.7 as QQC2
-import QtQuick.Window 2.15
-import org.kde.kirigami 2.3 as Kirigami
+import QtQuick
+import QtQuick.Controls as QQC2
+import QtQuick.Layouts
+import org.kde.kirigami as Kirigami
 
 QQC2.Button {
     id: root
@@ -16,24 +15,24 @@ QQC2.Button {
     icon.name: "help-contextual"
     flat: true
     property alias toolTipText: toolTip.text
-    property var toolTipVisible: false
+    property bool toolTipVisible: false
 
     onReleased: {
-        toolTipVisible ? toolTip.delay = Kirigami.Units.toolTipDelay : toolTip.delay = 0;
+        toolTip.delay = toolTipVisible ? Kirigami.Units.toolTipDelay : 0;
         toolTipVisible = !toolTipVisible;
     }
     onActiveFocusChanged: {
         toolTip.delay = Kirigami.Units.toolTipDelay;
         toolTipVisible = false;
     }
-    Layout.maximumHeight: parent.height
+    Layout.maximumHeight: parent?.height ?? -1
     QQC2.ToolTip {
         id: toolTip
         implicitWidth: Math.min(21 * Kirigami.Units.gridUnit, root.Window.width) // Wikipedia says anything between 45 and 75 characters per line is acceptable. 21 * Kirigami.Units.gridUnit feels right.
-        visible: parent.hovered || parent.toolTipVisible
+        visible: root.hovered || root.toolTipVisible
         onVisibleChanged: {
-            if (!visible && parent.toolTipVisible) {
-                parent.toolTipVisible = false;
+            if (!visible && root.toolTipVisible) {
+                root.toolTipVisible = false;
                 delay = Kirigami.Units.toolTipDelay;
             }
         }
