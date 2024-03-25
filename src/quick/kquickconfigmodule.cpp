@@ -46,11 +46,11 @@ public:
 
     QString getResourcePath(const QString &file)
     {
-        if (QFileInfo::exists(QStringLiteral(":/qt/qml/org/kde/") + q->metaData().pluginId())) {
-            return QLatin1String("/qt/qml/org/kde/") + q->metaData().pluginId() + QLatin1String("/") + file;
-        } else {
-            return QLatin1String("/kcm/") + q->metaData().pluginId() + QLatin1String("/") + file;
-        }
+        // if (QFileInfo::exists(QStringLiteral(":/qt/qml/org/kde/") + q->metaData().pluginId())) {
+        return QLatin1String("/qt/qml/org/kde/") + q->metaData().pluginId() + QLatin1String("/") + file;
+        // } else {
+        // return QLatin1String("/kcm/") + q->metaData().pluginId() + QLatin1String("/") + file;
+        // }
     }
     QUrl getResourceUrl(const QString &resourcePath)
     {
