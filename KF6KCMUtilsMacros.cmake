@@ -181,7 +181,7 @@ function(kcmutils_add_qml_kcm target_name)
 
     include(ECMQmlModule)
 
-    ecm_add_qml_module(${target_name}_qml URI org.kde.${target_name})
+    ecm_add_qml_module(${target_name}_qml URI org.kde.${target_name} GENERATE_PLUGIN_SOURCE)
 
     ecm_target_qml_sources(${target_name}_qml SOURCES ${files})
 
