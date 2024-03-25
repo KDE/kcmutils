@@ -93,6 +93,10 @@ ecm_finalize_qml_module(kcmutilsqmlplugin DESTINATION ${KDE_INSTALL_QMLDIR})
 
 ecm_add_qml_module(kcmutilsprivateqmlplugin URI "org.kde.kcmutils.private" DEPENDENCIES QtCore QtQuick GENERATE_PLUGIN_SOURCE)
 target_sources(kcmutilsprivateqmlplugin PRIVATE private_types.h settinghighlighterprivate.cpp)
-target_link_libraries(kcmutilsprivateqmlplugin PRIVATE Qt6::Quick kcmutils_proxy_model)
+target_link_libraries(kcmutilsprivateqmlplugin
+  PRIVATE
+    Qt6::Quick
+    QCoro::Coro
+    kcmutils_proxy_model
+)
 ecm_finalize_qml_module(kcmutilsprivateqmlplugin DESTINATION ${KDE_INSTALL_QMLDIR})
-

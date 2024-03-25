@@ -10,6 +10,8 @@
 #include <QGuiApplication>
 #include <QQmlContext>
 
+#include <QCoroGenerator>
+
 namespace
 {
 QByteArray itemClassName(QQuickItem *item)
@@ -19,22 +21,28 @@ QByteArray itemClassName(QQuickItem *item)
     return className;
 }
 
-QList<QQuickItem *> findDescendantItems(QQuickItem *item)
+// This generator assumes that children tree won't be altered for the duration
+// of iteration, so that children objects won't become dangling pointers.
+QCoro::Generator<QQuickItem *> findDescendantItems(QQuickItem *item)
 {
-    const auto children = item->childItems();
-    auto result = children;
-    for (auto child : children) {
-        result += findDescendantItems(child);
+    if (!item) {
+        co_return;
     }
-    return result;
+    // Depth-first search (DFS) algorithm with preordering
+    const auto children = item->childItems();
+    for (auto child : children) {
+        co_yield child;
+        for (auto descendant : findDescendantItems(child)) {
+            co_yield descendant;
+        }
+    }
 }
 
 QQuickItem *findStyleItem(QQuickItem *item)
 {
     const auto className = itemClassName(item);
 
-    auto descendant = findDescendantItems(item);
-    for (auto child : std::as_const(descendant)) {
+    for (auto child : findDescendantItems(item)) {
         if (className.contains("FontWidget") && itemClassName(child).contains("TextField")) {
             return child->property("background").value<QQuickItem *>();
         }
