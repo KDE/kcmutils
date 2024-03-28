@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kcmutils\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-01-26 00:35+0000\n"
+"POT-Creation-Date: 2024-03-28 00:36+0000\n"
 "PO-Revision-Date: 2022-05-01 22:36+0400\n"
 "Last-Translator: Kheyyam Gojayev <xxmn77@gmail.com>\n"
 "Language-Team: Azerbaijani <kde-i18n-doc@kde.org>\n"
@@ -86,7 +86,7 @@ msgstr "Axtarış..."
 msgid "About"
 msgstr "Haqqında"
 
-#: qml/components/ContextualHelpButton.qml:48
+#: qml/components/ContextualHelpButton.qml:49
 #, kde-format
 msgctxt "@action:button"
 msgid "Show Contextual Help"

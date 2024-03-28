@@ -23,7 +23,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdelibs4\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-01-26 00:35+0000\n"
+"POT-Creation-Date: 2024-03-28 00:36+0000\n"
 "PO-Revision-Date: 2023-09-14 15:48+0200\n"
 "Last-Translator: Xavier Besnard <xavier.besnard@kde.org>\n"
 "Language-Team: French <kde-francophone@kde.org>\n"
@@ -112,7 +112,7 @@ msgstr "Chercher…"
 msgid "About"
 msgstr "À propos"
 
-#: qml/components/ContextualHelpButton.qml:48
+#: qml/components/ContextualHelpButton.qml:49
 #, kde-format
 msgctxt "@action:button"
 msgid "Show Contextual Help"

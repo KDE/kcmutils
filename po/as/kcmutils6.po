@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdelibs4_as\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-01-26 00:35+0000\n"
+"POT-Creation-Date: 2024-03-28 00:36+0000\n"
 "PO-Revision-Date: 2008-12-26 15:19+0530\n"
 "Last-Translator: Amitakhya Phukan <অমিতাক্ষ ফুকন>\n"
 "Language-Team: Assamese <fedora-trans-as@redhat.com>\n"
@@ -90,7 +90,7 @@ msgstr "অনুসন্ধান (&S)"
 msgid "About"
 msgstr "বিষয়ে (&A)"
 
-#: qml/components/ContextualHelpButton.qml:48
+#: qml/components/ContextualHelpButton.qml:49
 #, kde-format
 msgctxt "@action:button"
 msgid "Show Contextual Help"
