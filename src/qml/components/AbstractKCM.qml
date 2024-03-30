@@ -58,6 +58,24 @@ Kirigami.Page {
      */
     property bool extraFooterTopPadding: false
 
+    /**
+     * headerPaddingEnabled: bool
+     * Whether the contents of the header will have automatic padding around it.
+     * Should be disabled when using an InlineMessage or custom content item in
+     * the header that's intended to touch the window edges.
+     * Default: true
+     */
+    property bool headerPaddingEnabled: true
+
+    /**
+     * footerPaddingEnabled: bool
+     * Whether the contents of the footer will have automatic padding around it.
+     * Should be disabled when using an InlineMessage or custom content item in
+     * the footer that's intended to touch the window edges.
+     * Default: true
+     */
+    property bool footerPaddingEnabled: true
+
     property bool sidebarMode: false
 
     function __itemVisible(item: Item): bool {
@@ -108,7 +126,7 @@ Kirigami.Page {
                 ? headerSeparator.implicitHeight
                 : 0)
 
-        padding: root.margins
+        padding: root.headerPaddingEnabled ? root.margins : 0
         bottomPadding: root.__headerSeparatorVisible()
             ? verticalPadding + headerSeparator.implicitHeight
             : undefined
@@ -144,7 +162,7 @@ Kirigami.Page {
                 ? footerSeparator.implicitHeight
                 : 0)
 
-        padding: root.margins
+        padding: root.footerPaddingEnabled ? root.margins : 0
         topPadding: root.__footerSeparatorVisible()
             ? verticalPadding + footerSeparator.implicitHeight
             : undefined

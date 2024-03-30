@@ -42,6 +42,15 @@ Kirigami.ScrollablePage {
      */
     property bool extraFooterTopPadding: false
 
+    /**
+     * headerPaddingEnabled: bool
+     * Whether the contents of the header will have automatic padding around it.
+     * Should be disabled when using an InlineMessage or custom content item in
+     * the header that's intended to touch the window edges.
+     * Default: false
+     */
+    property bool headerPaddingEnabled: false
+
     property bool __flickableOverflows: flickable.contentHeight + flickable.topMargin + flickable.bottomMargin > flickable.height
 
     // Context properties are not reliable
@@ -63,19 +72,7 @@ Kirigami.ScrollablePage {
         readonly property bool contentVisible: contentItem && contentItem.visible && contentItem.implicitHeight
 
         height: contentVisible ? implicitHeight : 0
-        leftPadding: 0
-        topPadding: 0
-        rightPadding: 0
-        bottomPadding: 0
-        // TODO KF6: uncomment these lines. We didn't do it in KF5 times because
-        // it would have regressed CommandOutputKCM in KInfoCenter, which was
-        // created before this padding was added, and added its own. If we add
-        // padding in the base KCM component, CommandOutputKCM will have double
-        // padding and look bad.
-        // leftPadding: root.margins
-        // topPadding: root.margins
-        // rightPadding: root.margins
-        // bottomPadding: root.margins
+        padding: root.headerPaddingEnabled ? root.margins : 0
 
         // When the header is visible, we need to add a line below to separate
         // it from the view
