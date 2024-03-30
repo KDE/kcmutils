@@ -166,12 +166,19 @@ function(kcmutils_add_qml_kcm target_name)
         set(ARG_INSTALL_NAMESPACE plasma/kcms/systemsettings)
     endif()
 
-    kcoreaddons_add_plugin(${target_name} INSTALL_NAMESPACE ${ARG_INSTALL_NAMESPACE} SOURCES ${ARG_SOURCES})
+    # kcoreaddons_add_plugin(${target_name} INSTALL_NAMESPACE ${ARG_INSTALL_NAMESPACE} SOURCES ${ARG_SOURCES})
+
+    add_library(${target_name} ${ARG_SOURCES})
+
+    set_target_properties(${target_name} PROPERTIES PREFIX "")
+
+    set_target_properties(${target_name} PROPERTIES LIBRARY_OUTPUT_DIRECTORY "${CMAKE_LIBRARY_OUTPUT_DIRECTORY}/${ARG_INSTALL_NAMESPACE}")
+
     if (NOT ARG_DISABLE_DESKTOP_FILE_GENERATION)
-        kcmutils_generate_desktop_file(${target_name})
+        # kcmutils_generate_desktop_file(${target_name})
     endif()
 
-    add_library(${target_name}_qml)
+    # add_library(${target_name}_qml)
 
     # Hardcode the "ui" filder for now
     file(GLOB_RECURSE files CONFIGURE_DEPENDS "${CMAKE_CURRENT_SOURCE_DIR}/ui/*")
@@ -181,13 +188,13 @@ function(kcmutils_add_qml_kcm target_name)
 
     include(ECMQmlModule)
 
-    ecm_add_qml_module(${target_name}_qml URI org.kde.${target_name} GENERATE_PLUGIN_SOURCE)
+    ecm_add_qml_module(${target_name} URI org.kde.${target_name} QT_NO_PLUGIN)
 
-    ecm_target_qml_sources(${target_name}_qml SOURCES ${files})
+    ecm_target_qml_sources(${target_name} SOURCES ${files})
 
-    target_link_libraries(${target_name} PRIVATE ${target_name}_qml)
+    # target_link_libraries(${target_name} PRIVATE ${target_name}_qml)
 
-    set_target_properties(${target_name} PROPERTIES INSTALL_RPATH ${KDE_INSTALL_FULL_LIBDIR}/kcms)
+    # set_target_properties(${target_name} PROPERTIES INSTALL_RPATH ${KDE_INSTALL_FULL_LIBDIR}/kcms)
 
-    install(TARGETS ${target_name}_qml DESTINATION ${KDE_INSTALL_LIBDIR}/kcms)
+    install(TARGETS ${target_name} DESTINATION ${KDE_INSTALL_PLUGINDIR}/${ARG_INSTALL_NAMESPACE})
 endfunction()
