@@ -25,6 +25,9 @@ ListView {
     required property QtObject sourceModel
     // Query that is typed into the search field. Ideally, this is part of the KCM header
     property var query
+    // PluginDelegate should be used with this, it contains an ActionToolBar that is incredibly expensive to construct,
+    // make sure to cache delegates a fair amount right out of the box.
+    cacheBuffer: parent.height * 2
 
     clip: true
 
