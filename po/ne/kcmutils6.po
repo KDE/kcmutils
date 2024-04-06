@@ -11,7 +11,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdelibs4\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-03-28 00:36+0000\n"
+"POT-Creation-Date: 2024-04-06 00:35+0000\n"
 "PO-Revision-Date: 2007-11-05 15:41+0545\n"
 "Last-Translator: Shyam Krishna Bal <shyamkrishna_bal@yahoo.com>\n"
 "Language-Team: Nepali <info@mpp.org.np>\n"
@@ -125,12 +125,12 @@ msgctxt "@info:tooltip"
 msgid "Configure…"
 msgstr "कन्फिगर गर्नुहोस्"
 
-#: qml/components/PluginSelector.qml:81
+#: qml/components/PluginSelector.qml:84
 #, kde-format
 msgid "No matches"
 msgstr ""
 
-#: qml/components/PluginSelector.qml:81
+#: qml/components/PluginSelector.qml:84
 #, fuzzy, kde-format
 #| msgid "1 match found."
 #| msgid_plural "%1 matches found."

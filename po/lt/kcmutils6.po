@@ -12,7 +12,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdelibs4\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-03-28 00:36+0000\n"
+"POT-Creation-Date: 2024-04-06 00:35+0000\n"
 "PO-Revision-Date: 2024-01-27 12:41+0200\n"
 "Last-Translator: Moo\n"
 "Language-Team: lt <kde-i18n-lt@kde.org>\n"
@@ -116,12 +116,12 @@ msgctxt "@info:tooltip"
 msgid "Configure…"
 msgstr "Konfigūruoti…"
 
-#: qml/components/PluginSelector.qml:81
+#: qml/components/PluginSelector.qml:84
 #, kde-format
 msgid "No matches"
 msgstr "Nėra atitikmenų"
 
-#: qml/components/PluginSelector.qml:81
+#: qml/components/PluginSelector.qml:84
 #, kde-format
 msgid "No plugins found"
 msgstr "Nerasta jokių įskiepių"

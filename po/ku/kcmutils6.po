@@ -11,7 +11,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdelibs4\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-03-28 00:36+0000\n"
+"POT-Creation-Date: 2024-04-06 00:35+0000\n"
 "PO-Revision-Date: 2010-08-13 15:45+0200\n"
 "Last-Translator: Erdal Ronahî <erdal.ronahi@nospam.gmail.com>\n"
 "Language-Team: Kurdish Team http://pckurd.net\n"
@@ -130,12 +130,12 @@ msgctxt "@info:tooltip"
 msgid "Configure…"
 msgstr "Veavakirin"
 
-#: qml/components/PluginSelector.qml:81
+#: qml/components/PluginSelector.qml:84
 #, kde-format
 msgid "No matches"
 msgstr ""
 
-#: qml/components/PluginSelector.qml:81
+#: qml/components/PluginSelector.qml:84
 #, fuzzy, kde-format
 #| msgid "Not found"
 msgid "No plugins found"

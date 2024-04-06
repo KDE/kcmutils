@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdelibs4_as\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-03-28 00:36+0000\n"
+"POT-Creation-Date: 2024-04-06 00:35+0000\n"
 "PO-Revision-Date: 2008-12-26 15:19+0530\n"
 "Last-Translator: Amitakhya Phukan <অমিতাক্ষ ফুকন>\n"
 "Language-Team: Assamese <fedora-trans-as@redhat.com>\n"
@@ -110,12 +110,12 @@ msgctxt "@info:tooltip"
 msgid "Configure…"
 msgstr "বিন্যাস কৰক"
 
-#: qml/components/PluginSelector.qml:81
+#: qml/components/PluginSelector.qml:84
 #, kde-format
 msgid "No matches"
 msgstr ""
 
-#: qml/components/PluginSelector.qml:81
+#: qml/components/PluginSelector.qml:84
 #, fuzzy, kde-format
 #| msgid "Not found"
 msgid "No plugins found"
