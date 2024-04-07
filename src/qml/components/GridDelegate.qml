@@ -8,7 +8,7 @@ import QtQuick
 import QtQuick.Layouts
 import QtQuick.Controls as QQC2
 import QtQuick.Templates as T2
-import org.kde.kirigami 2 as Kirigami
+import org.kde.kirigami as Kirigami
 
 /**
  * Base delegate for KControlmodules based on Grid views of thumbnails
@@ -79,7 +79,7 @@ T2.ItemDelegate {
         height: Kirigami.Settings.isMobile ? Math.round((delegate.width - Kirigami.Units.gridUnit) / 1.6)
                                            : Math.min(delegate.GridView.view.implicitCellHeight - Kirigami.Units.gridUnit * 3,
                                                       delegate.height - Kirigami.Units.gridUnit)
-        radius: Kirigami.Units.smallSpacing
+        radius: Kirigami.Units.cornerRadius
         Kirigami.Theme.inherit: false
         Kirigami.Theme.colorSet: Kirigami.Theme.View
 
@@ -120,7 +120,7 @@ T2.ItemDelegate {
         Rectangle {
             id: thumbnailArea
 
-            radius: Kirigami.Units.smallSpacing / 2
+            radius: Math.round(Kirigami.Units.cornerRadius / 2)
             anchors {
                 fill: parent
                 margins: Kirigami.Units.smallSpacing
