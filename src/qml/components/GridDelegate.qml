@@ -108,14 +108,13 @@ T.ItemDelegate {
         property Private.GridDelegateMenu menu
 
         function trigger() {
-            if (menu) {
-                menu.trigger();
-                return;
+            if (!menu) {
+                const component = Qt.createComponent("private/GridDelegateMenu.qml");
+                menu = component.createObject(delegate);
+                component.destroy();
             }
-            const component = Qt.createComponent("private/GridDelegateMenu.qml");
-            menu = component.createObject(delegate);
+
             menu.trigger();
-            component.destroy();
         }
 
         Rectangle {
