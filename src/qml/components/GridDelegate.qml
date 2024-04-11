@@ -167,9 +167,9 @@ T.ItemDelegate {
 
                         onClicked: modelData.trigger()
 
-                        QQC2.ToolTip.text: text
-                        QQC2.ToolTip.visible: (Kirigami.Settings.tabletMode ? pressed : hovered) && (text !== "")
+                        QQC2.ToolTip.visible: (Kirigami.Settings.tabletMode ? pressed : hovered) && (QQC2.ToolTip.text !== "")
                         QQC2.ToolTip.delay: Kirigami.Settings.tabletMode ? Qt.styleHints.mousePressAndHoldInterval : Kirigami.Units.toolTipDelay
+                        QQC2.ToolTip.text: text
                     }
                 }
             }
@@ -228,9 +228,8 @@ T.ItemDelegate {
         Item { Layout.fillWidth: true; Layout.fillHeight: true; }
     }
 
-    QQC2.ToolTip.delay: 1000
-    QQC2.ToolTip.timeout: 5000
-    QQC2.ToolTip.visible: hovered && (delegate.toolTip.length > 0 || title.truncated || caption.truncated)
+    QQC2.ToolTip.visible: (Kirigami.Settings.tabletMode ? pressed : hovered) && (QQC2.ToolTip.text !== "")
+    QQC2.ToolTip.delay: Kirigami.Settings.tabletMode ? Qt.styleHints.mousePressAndHoldInterval : Kirigami.Units.toolTipDelay
     QQC2.ToolTip.text: {
         if (delegate.toolTip.length > 0) {
             return delegate.toolTip;
