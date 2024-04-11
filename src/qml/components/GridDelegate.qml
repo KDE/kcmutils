@@ -9,6 +9,7 @@ import QtQuick.Layouts
 import QtQuick.Controls as QQC2
 import QtQuick.Templates as T
 import org.kde.kirigami as Kirigami
+import "private" as Private
 
 /**
  * Base delegate for KControlmodules based on Grid views of thumbnails
@@ -104,7 +105,7 @@ T.ItemDelegate {
 
         // The menu is only used for keyboard navigation, so no need to always load
         // it. This speeds up the compilation of GridDelegate.
-        property QQC2.Menu menu: null
+        property Private.GridDelegateMenu menu
 
         function trigger() {
             if (menu) {
