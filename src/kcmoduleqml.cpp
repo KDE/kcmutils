@@ -184,7 +184,7 @@ Kirigami.ApplicationItem {
         icon.name: "go-previous"
     }
 
-    pageStack.separatorVisible: pageStack.depth > 0 && pageStack.items[0].sidebarMode
+    pageStack.separatorVisible: pageStack.depth > 0 && (pageStack.items[0].sidebarMode ?? false)
     pageStack.globalToolBar.preferredHeight: toolButton.implicitHeight + Kirigami.Units.smallSpacing * 2
     pageStack.globalToolBar.style: Kirigami.ApplicationHeaderStyle.ToolBar
     pageStack.globalToolBar.showNavigationButtons: pageStack.currentIndex > 0 ? Kirigami.ApplicationHeaderStyle.ShowBackButton : Kirigami.ApplicationHeaderStyle.NoNavigationButtons
