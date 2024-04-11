@@ -4,24 +4,30 @@
     SPDX-License-Identifier: LGPL-2.0-or-later
 */
 
+pragma ComponentBehavior: Bound
+
 import QtQuick
 import QtQuick.Controls as QQC2
+import QtQuick.Templates as T
+import org.kde.kirigami as Kirigami
 
 QQC2.Menu {
     id: menu
 
     function trigger() {
-        menu.parent.clicked()
-        if (menu.parent.actions.length > 0) {
-            menu.popup(menu.parent, thumbnail.x, thumbnail.y + thumbnail.height)
+        parent.clicked();
+        if (parent.actions.length > 0) {
+            popup(parent, thumbnail.x, thumbnail.y + thumbnail.height);
         }
     }
 
-    onClosed: menu.parent.forceActiveFocus()
+    onClosed: parent.forceActiveFocus()
 
     Repeater {
         model: menu.parent.actions
         delegate: QQC2.MenuItem {
+            required property Kirigami.Action modelData
+
             text: modelData.text || modelData.tooltip
             icon.name: modelData.icon.name
             enabled: modelData.enabled
