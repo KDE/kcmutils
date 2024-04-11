@@ -58,9 +58,9 @@ T.ItemDelegate {
     hoverEnabled: !Kirigami.Settings.isMobile
 
     Accessible.description: {
-        if (delegate.toolTip.length === 0) {
+        if (toolTip.length === 0) {
             return subtitle;
-        } else if (delegate.subtitle.length === 0) {
+        } else if (subtitle.length === 0) {
             return toolTip;
         }
         return `${subtitle}; ${toolTip}`
