@@ -187,7 +187,11 @@ ColumnLayout {
 
         contentItem: QQC2.ScrollView {
             id: scroll
-            Component.onCompleted: background.visible = true
+            Component.onCompleted: {
+                if (background) {
+                    background.visible = true;
+                }
+            }
             Flickable {
                 id: flickable
                 contentWidth: width
