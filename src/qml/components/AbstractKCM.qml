@@ -19,20 +19,14 @@ import org.kde.kirigami as Kirigami
  * import QtQuick
  * import QtQuick.Controls as QQC2
  * import QtQuick.Layouts
- * import org.kde.kcmutils as KCM
+ * import org.kde.kcmutils as KCMUtils
  *
- * KCM.AbstractKCM {
+ * KCMUtils.AbstractKCM {
  *     RowLayout {
- *         QQC2.ScrollView {
- *             // ...
- *         }
- *         QQC2.ScrollView {
- *             // ...
- *         }
+ *         QQC2.ScrollView { }
+ *         QQC2.ScrollView { }
  *     }
- *     footer: QQC2.ToolBar {
- *         // ...
- *     }
+ *     footer: QQC2.ToolBar { }
  * }
  * @endcode
  * @inherits org.kde.kirigami.Page

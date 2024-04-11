@@ -13,7 +13,7 @@ import QtQuick.Layouts
 import QtQuick.Templates as T
 
 import org.kde.kirigami as Kirigami
-import org.kde.kcmutils as KCM
+import org.kde.kcmutils as KCMUtils
 
 /// @since 6.0, this got renamed from KPluginDelegate to PluginDelegate
 Kirigami.CheckSubtitleDelegate {
@@ -76,7 +76,7 @@ Kirigami.CheckSubtitleDelegate {
         }
     }
 
-    KCM.SettingHighlighter {
+    KCMUtils.SettingHighlighter {
         target: listItem.indicator
         highlight: listItem.checked !== listItem.enabledByDefault
     }

@@ -4,9 +4,9 @@
     SPDX-License-Identifier: LGPL-2.0-or-later
 */
 
-import QtQuick 2.7
-import QtQuick.Controls 2.2 as QQC2
-import org.kde.kirigami 2.14 as Kirigami
+import QtQuick
+import QtQuick.Controls as QQC2
+import org.kde.kirigami as Kirigami
 
 /**
  * This component is intended to be used as root item for
@@ -14,9 +14,10 @@ import org.kde.kirigami 2.14 as Kirigami
  * is used as main element.
  * It is possible to specify a header and footer component.
  * @code
- * import org.kde.kcmutils as KCM
- * import org.kde.kirigami 2.3 as Kirigami
- * KCM.SimpleKCM {
+ * import org.kde.kcmutils as KCMUtils
+ * import org.kde.kirigami as Kirigami
+ *
+ * KCMUtils.SimpleKCM {
  *     Kirigami.FormLayout {
  *        TextField {
  *           Kirigami.FormData.label: "Label:"

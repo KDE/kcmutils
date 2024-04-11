@@ -4,10 +4,10 @@
     SPDX-License-Identifier: LGPL-2.0-or-later
 */
 
-import QtQuick 2.7
-import QtQuick.Controls 2.2 as QQC2
-import org.kde.kirigami 2.2 as Kirigami
-import org.kde.kcmutils as KCM
+import QtQuick
+import QtQuick.Controls as QQC2
+import org.kde.kirigami as Kirigami
+import org.kde.kcmutils as KCMutils
 
 /**
  * This component is intended to be used as the root item for KCMs that are based upon
@@ -15,16 +15,17 @@ import org.kde.kcmutils as KCM
  * It contains a GridView as its main item.
  * It is possible to specify a header and footer component.
  * @code
- * import org.kde.kcmutils as KCM
- * KCM.GridViewKCM {
- *     header: Item {...}
+ * import org.kde.kcmutils as KCMutils
+ *
+ * KCMutils.GridViewKCM {
+ *     header: Item { }
  *     view.model: kcm.model
- *     view.delegate: KCM.GridDelegate {...}
- *     footer: Item {...}
+ *     view.delegate: KCMutils.GridDelegate { }
+ *     footer: Item { }
  * }
  * @endcode
  */
-KCM.AbstractKCM {
+KCMutils.AbstractKCM {
     id: root
 
     /**
@@ -32,12 +33,11 @@ KCM.AbstractKCM {
      * Exposes the internal GridView: in order to set a model or a delegate to it,
      * use the following code:
      * @code
-     * import org.kde.kcmutils as KCM
-     * KCM.GridViewKCM {
-     *     ...
+     * import org.kde.kcmutils as KCMutils
+     *
+     * KCMutils.GridViewKCM {
      *     view.model: kcm.model
-     *     view.delegate: KCM.GridDelegate {...}
-     *     ...
+     *     view.delegate: KCMutils.GridDelegate { }
      * }
      * @endcode
      */
@@ -68,10 +68,9 @@ KCM.AbstractKCM {
 
     flickable: scroll.view
 
-    KCM.GridView {
+    KCMutils.GridView {
         id: scroll
         anchors.fill: parent
         framedView: root.framedView
     }
-
 }

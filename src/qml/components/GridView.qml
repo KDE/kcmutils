@@ -4,10 +4,10 @@
     SPDX-License-Identifier: LGPL-2.0-or-later
 */
 
-import QtQuick 2.7
-import QtQuick.Controls 2.2 as QQC2
-import org.kde.kirigami 2.3 as Kirigami
-import "private" as P
+import QtQuick
+import QtQuick.Controls as QQC2
+import org.kde.kirigami as Kirigami
+import "private" as Private
 
 /**
  * A ScrollView containing a GridView, with the default behavior about
@@ -24,10 +24,11 @@ QQC2.ScrollView {
      * Exposes the internal GridView: in order to set a model or a delegate to it,
      * use the following code:
      * @code
-     * import org.kde.kcmutils as KCM
-     * KCM.GridView {
+     * import org.kde.kcmutils as KCMUtils
+     *
+     * KCMUtils.GridView {
      *     view.model: kcm.model
-     *     view.delegate: KCM.GridDelegate {...}
+     *     view.delegate: KCMUtils.GridDelegate { }
      * }
      * @endcode
      */
@@ -44,7 +45,7 @@ QQC2.ScrollView {
         }
     }
 
-    P.GridViewInternal {
+    Private.GridViewInternal {
         id: view
     }
     QQC2.ScrollBar.horizontal.visible: false

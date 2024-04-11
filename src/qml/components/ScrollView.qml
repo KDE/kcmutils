@@ -5,9 +5,9 @@
     SPDX-License-Identifier: LGPL-2.0-or-later
 */
 
-import QtQuick 2.7
-import QtQuick.Controls 2.2 as QQC2
-import org.kde.kirigami 2.3 as Kirigami
+import QtQuick
+import QtQuick.Controls as QQC2
+import org.kde.kirigami as Kirigami
 
 /**
  * A ScrollView containing a GridView, with the default behavior about
@@ -15,11 +15,10 @@ import org.kde.kirigami 2.3 as Kirigami
  * For most KControl modules, it's recommended to use instead the GridViewKCM
  * component as the root element of your module.
  * @code
- * import org.kde.kcmutils as KCM
- * KCM.ScrollView {
- *     view: ListView {
- *       ...
- *     }
+ * import org.kde.kcmutils as KCMUtils
+ *
+ * KCMUtils.ScrollView {
+ *     view: ListView { }
  * }
  * @endcode
  * @see GridViewKCM

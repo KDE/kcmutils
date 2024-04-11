@@ -6,7 +6,7 @@
 */
 
 import QtQuick
-import org.kde.kcmutils.private as P
+import org.kde.kcmutils.private as KCMUtilsPrivate
 
 /**
  * SettingHighlighter automatically impacts the representation of an item based on
@@ -33,7 +33,7 @@ Loader {
      */
     property bool highlight: false
 
-    sourceComponent: P.SettingHighlighterPrivate {
+    sourceComponent: KCMUtilsPrivate.SettingHighlighterPrivate {
         id: helper
         highlight: root.highlight
         target: root.target

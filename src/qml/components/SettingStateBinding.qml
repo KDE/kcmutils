@@ -5,8 +5,8 @@
 */
 
 import QtQuick
-import org.kde.kcmutils as KCM
-import org.kde.kcmutils.private as KCMP
+import org.kde.kcmutils as KCMUtils
+import org.kde.kcmutils.private as KCMUtilsPrivate
 
 /**
  * SettingStateBinding automatically impacts the representation
@@ -14,8 +14,8 @@ import org.kde.kcmutils.private as KCMP
  * the item if the setting is immutable and use a visual indicator
  * for the state of the setting.
  *
- * This is a higher level convenience wrapper for KCM.SettingStateProxy
- * and KCM.SettingStateIndicator.
+ * This is a higher level convenience wrapper for KCMUtils.SettingStateProxy
+ * and KCMUtils.SettingStateIndicator.
  *
  * @since 6.0
  */
@@ -68,11 +68,11 @@ Loader {
         value: extraEnabledConditions && !settingState.immutable
     }
 
-    KCM.SettingStateProxy {
+    KCMUtils.SettingStateProxy {
         id: settingState
     }
 
-    sourceComponent: KCMP.SettingHighlighterPrivate {
+    sourceComponent: KCMUtilsPrivate.SettingHighlighterPrivate {
         id: helper
         defaultIndicatorVisible: kcm.defaultsIndicatorsVisible
         highlight: !settingState.defaulted

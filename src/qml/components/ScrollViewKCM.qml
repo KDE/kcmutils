@@ -4,25 +4,24 @@
     SPDX-License-Identifier: LGPL-2.0-or-later
 */
 
-import QtQuick 2.7
-import org.kde.kcmutils as KCM
+import QtQuick
+import org.kde.kcmutils as KCMUtils
 
 /**
  * This component is intended to be used as the root item for KCMs that are based upon a list view or another vertical flickable.
  * It contains a ScrollView as its main item.
  * It is possible to specify a header and footer component.
  * @code
- * import org.kde.kcmutils as KCM
- * KCM.ScrollViewKCM {
- *     header: Item {...}
- *     view: ListView {
- *       ...
- *     }
- *     footer: Item {...}
+ * import org.kde.kcmutils as KCMUtils
+ *
+ * KCMUtils.ScrollViewKCM {
+ *     header: Item { }
+ *     view: ListView { }
+ *     footer: Item { }
  * }
  * @endcode
  */
-KCM.AbstractKCM {
+KCMUtils.AbstractKCM {
     id: root
 
     /**
@@ -47,7 +46,7 @@ KCM.AbstractKCM {
         }
     }
 
-    KCM.ScrollView {
+    KCMUtils.ScrollView {
         id: scroll
         anchors.fill: parent
         framedView: root.framedView
