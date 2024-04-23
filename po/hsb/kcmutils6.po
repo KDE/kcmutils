@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdelibs4\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-04-06 00:35+0000\n"
+"POT-Creation-Date: 2024-04-23 00:36+0000\n"
 "PO-Revision-Date: 2008-12-19 22:49+0100\n"
 "Last-Translator: Eduard Werner <edi.werner@gmx.de>\n"
 "Language-Team: en_US <kde-i18n-doc@lists.kde.org>\n"
@@ -135,7 +135,7 @@ msgstr ""
 msgid "No plugins found"
 msgstr "Njejsym ničo namakał"
 
-#: qml/components/private/AboutPlugin.qml:42
+#: qml/components/private/AboutPlugin.qml:40
 #, fuzzy, kde-format
 #| msgctxt "concatenation of dates and time"
 #| msgid "%1 %2"
@@ -143,41 +143,41 @@ msgctxt "Plugin name and plugin version"
 msgid "%1 %2"
 msgstr "%1%2"
 
-#: qml/components/private/AboutPlugin.qml:64
+#: qml/components/private/AboutPlugin.qml:62
 #, fuzzy, kde-format
 #| msgid "Copy"
 msgid "Copyright"
 msgstr "Kopěrować"
 
-#: qml/components/private/AboutPlugin.qml:81
+#: qml/components/private/AboutPlugin.qml:79
 #, kde-format
 msgid "License:"
 msgstr "Licensa:"
 
-#: qml/components/private/AboutPlugin.qml:100
+#: qml/components/private/AboutPlugin.qml:98
 #, fuzzy, kde-format
 #| msgid "A&uthors"
 msgid "Authors"
 msgstr "A&wtorojo"
 
-#: qml/components/private/AboutPlugin.qml:117
+#: qml/components/private/AboutPlugin.qml:115
 #, kde-format
 msgid "Credits"
 msgstr ""
 
-#: qml/components/private/AboutPlugin.qml:134
+#: qml/components/private/AboutPlugin.qml:132
 #, fuzzy, kde-format
 #| msgid "Translation"
 msgid "Translators"
 msgstr "Přełožk"
 
-#: qml/components/private/AboutPlugin.qml:161
+#: qml/components/private/AboutPlugin.qml:159
 #, fuzzy, kde-format
 #| msgid "&Send Email"
 msgid "Send an email to %1"
 msgstr "&Mailku pósłać"
 
-#: qml/components/private/GridViewInternal.qml:78
+#: qml/components/private/GridViewInternal.qml:77
 #, fuzzy, kde-format
 #| msgid "Not found"
 msgid "No items found"

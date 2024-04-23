@@ -11,7 +11,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdelibs4\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-04-06 00:35+0000\n"
+"POT-Creation-Date: 2024-04-23 00:36+0000\n"
 "PO-Revision-Date: 2014-11-05 13:40+0100\n"
 "Last-Translator: Bjørn Steensrud <bjornst@skogkatt.homelinux.org>\n"
 "Language-Team: Norwegian Bokmål <l10n-no@lister.huftis.org>\n"
@@ -118,43 +118,43 @@ msgstr ""
 msgid "No plugins found"
 msgstr ""
 
-#: qml/components/private/AboutPlugin.qml:42
+#: qml/components/private/AboutPlugin.qml:40
 #, kde-format
 msgctxt "Plugin name and plugin version"
 msgid "%1 %2"
 msgstr ""
 
-#: qml/components/private/AboutPlugin.qml:64
+#: qml/components/private/AboutPlugin.qml:62
 #, kde-format
 msgid "Copyright"
 msgstr ""
 
-#: qml/components/private/AboutPlugin.qml:81
+#: qml/components/private/AboutPlugin.qml:79
 #, kde-format
 msgid "License:"
 msgstr ""
 
-#: qml/components/private/AboutPlugin.qml:100
+#: qml/components/private/AboutPlugin.qml:98
 #, kde-format
 msgid "Authors"
 msgstr ""
 
-#: qml/components/private/AboutPlugin.qml:117
+#: qml/components/private/AboutPlugin.qml:115
 #, kde-format
 msgid "Credits"
 msgstr ""
 
-#: qml/components/private/AboutPlugin.qml:134
+#: qml/components/private/AboutPlugin.qml:132
 #, kde-format
 msgid "Translators"
 msgstr ""
 
-#: qml/components/private/AboutPlugin.qml:161
+#: qml/components/private/AboutPlugin.qml:159
 #, kde-format
 msgid "Send an email to %1"
 msgstr ""
 
-#: qml/components/private/GridViewInternal.qml:78
+#: qml/components/private/GridViewInternal.qml:77
 #, kde-format
 msgid "No items found"
 msgstr ""

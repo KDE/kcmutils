@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdelibs4\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-04-06 00:35+0000\n"
+"POT-Creation-Date: 2024-04-23 00:36+0000\n"
 "PO-Revision-Date: 2022-05-06 06:16+0200\n"
 "Last-Translator: Phu Hung Nguyen <phu.nguyen@kdemail.net>\n"
 "Language-Team: Vietnamese <kde-l10n-vi@kde.org>\n"
@@ -120,43 +120,43 @@ msgstr "Không mục nào khớp"
 msgid "No plugins found"
 msgstr "Không tìm thấy phần cài cắm nào"
 
-#: qml/components/private/AboutPlugin.qml:42
+#: qml/components/private/AboutPlugin.qml:40
 #, kde-format
 msgctxt "Plugin name and plugin version"
 msgid "%1 %2"
 msgstr "%1 %2"
 
-#: qml/components/private/AboutPlugin.qml:64
+#: qml/components/private/AboutPlugin.qml:62
 #, kde-format
 msgid "Copyright"
 msgstr "Bản quyền"
 
-#: qml/components/private/AboutPlugin.qml:81
+#: qml/components/private/AboutPlugin.qml:79
 #, kde-format
 msgid "License:"
 msgstr "Giấy phép:"
 
-#: qml/components/private/AboutPlugin.qml:100
+#: qml/components/private/AboutPlugin.qml:98
 #, kde-format
 msgid "Authors"
 msgstr "Tác giả"
 
-#: qml/components/private/AboutPlugin.qml:117
+#: qml/components/private/AboutPlugin.qml:115
 #, kde-format
 msgid "Credits"
 msgstr "Ghi nhận"
 
-#: qml/components/private/AboutPlugin.qml:134
+#: qml/components/private/AboutPlugin.qml:132
 #, kde-format
 msgid "Translators"
 msgstr "Người dịch"
 
-#: qml/components/private/AboutPlugin.qml:161
+#: qml/components/private/AboutPlugin.qml:159
 #, kde-format
 msgid "Send an email to %1"
 msgstr "Gửi thư đến %1"
 
-#: qml/components/private/GridViewInternal.qml:78
+#: qml/components/private/GridViewInternal.qml:77
 #, fuzzy, kde-format
 #| msgid "No plugins found"
 msgid "No items found"

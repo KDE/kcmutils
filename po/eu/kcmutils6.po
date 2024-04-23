@@ -13,7 +13,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kcmutils\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-04-06 00:35+0000\n"
+"POT-Creation-Date: 2024-04-23 00:36+0000\n"
 "PO-Revision-Date: 2023-07-15 08:41+0200\n"
 "Last-Translator: Iñigo Salvador Azurmendi <xalba@ni.eus>\n"
 "Language-Team: Basque <kde-i18n-eu@kde.org>\n"
@@ -122,43 +122,43 @@ msgstr "Ez dago bat datorrenik"
 msgid "No plugins found"
 msgstr "Ez da pluginik aurkitu"
 
-#: qml/components/private/AboutPlugin.qml:42
+#: qml/components/private/AboutPlugin.qml:40
 #, kde-format
 msgctxt "Plugin name and plugin version"
 msgid "%1 %2"
 msgstr "%1 %2"
 
-#: qml/components/private/AboutPlugin.qml:64
+#: qml/components/private/AboutPlugin.qml:62
 #, kde-format
 msgid "Copyright"
 msgstr "Copyright"
 
-#: qml/components/private/AboutPlugin.qml:81
+#: qml/components/private/AboutPlugin.qml:79
 #, kde-format
 msgid "License:"
 msgstr "Lizentzia:"
 
-#: qml/components/private/AboutPlugin.qml:100
+#: qml/components/private/AboutPlugin.qml:98
 #, kde-format
 msgid "Authors"
 msgstr "Egileak"
 
-#: qml/components/private/AboutPlugin.qml:117
+#: qml/components/private/AboutPlugin.qml:115
 #, kde-format
 msgid "Credits"
 msgstr "Merituak"
 
-#: qml/components/private/AboutPlugin.qml:134
+#: qml/components/private/AboutPlugin.qml:132
 #, kde-format
 msgid "Translators"
 msgstr "Itzultzaileak"
 
-#: qml/components/private/AboutPlugin.qml:161
+#: qml/components/private/AboutPlugin.qml:159
 #, kde-format
 msgid "Send an email to %1"
 msgstr "Bidali e-posta %1(e)ri"
 
-#: qml/components/private/GridViewInternal.qml:78
+#: qml/components/private/GridViewInternal.qml:77
 #, kde-format
 msgid "No items found"
 msgstr "Ez da elementurik aurkitu"

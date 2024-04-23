@@ -14,7 +14,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdelibs4\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-04-06 00:35+0000\n"
+"POT-Creation-Date: 2024-04-23 00:36+0000\n"
 "PO-Revision-Date: 2022-04-24 11:22+0200\n"
 "Last-Translator: Stefan Asserhäll <stefan.asserhall@bredband.net>\n"
 "Language-Team: Swedish <kde-i18n-doc@kde.org>\n"
@@ -127,43 +127,43 @@ msgstr "Inga träffar"
 msgid "No plugins found"
 msgstr "Inga insticksprogram hittades"
 
-#: qml/components/private/AboutPlugin.qml:42
+#: qml/components/private/AboutPlugin.qml:40
 #, kde-format
 msgctxt "Plugin name and plugin version"
 msgid "%1 %2"
 msgstr "%1 %2"
 
-#: qml/components/private/AboutPlugin.qml:64
+#: qml/components/private/AboutPlugin.qml:62
 #, kde-format
 msgid "Copyright"
 msgstr "Copyright"
 
-#: qml/components/private/AboutPlugin.qml:81
+#: qml/components/private/AboutPlugin.qml:79
 #, kde-format
 msgid "License:"
 msgstr "Licens:"
 
-#: qml/components/private/AboutPlugin.qml:100
+#: qml/components/private/AboutPlugin.qml:98
 #, kde-format
 msgid "Authors"
 msgstr "Upphovsmän"
 
-#: qml/components/private/AboutPlugin.qml:117
+#: qml/components/private/AboutPlugin.qml:115
 #, kde-format
 msgid "Credits"
 msgstr "Erkännanden"
 
-#: qml/components/private/AboutPlugin.qml:134
+#: qml/components/private/AboutPlugin.qml:132
 #, kde-format
 msgid "Translators"
 msgstr "Översättare"
 
-#: qml/components/private/AboutPlugin.qml:161
+#: qml/components/private/AboutPlugin.qml:159
 #, kde-format
 msgid "Send an email to %1"
 msgstr "Skicka e-post till %1"
 
-#: qml/components/private/GridViewInternal.qml:78
+#: qml/components/private/GridViewInternal.qml:77
 #, fuzzy, kde-format
 #| msgid "No plugins found"
 msgid "No items found"
