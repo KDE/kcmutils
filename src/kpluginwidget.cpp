@@ -64,7 +64,7 @@ KPluginWidget::KPluginWidget(QWidget *parent)
 
     d->lineEdit = new QLineEdit(lineEditWrapper);
     d->lineEdit->setClearButtonEnabled(true);
-    d->lineEdit->setPlaceholderText(i18n("Search..."));
+    d->lineEdit->setPlaceholderText(i18n("Search…"));
     lineEditWrapperLayout->addWidget(d->lineEdit);
     d->listView = new KCategorizedView(this);
     d->listView->setProperty("_breeze_borders_sides", QVariant::fromValue(QFlags{Qt::TopEdge}));
