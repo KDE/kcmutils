@@ -153,7 +153,9 @@ void KQuickConfigModule::push(const QString &fileName, const QVariantMap &initia
 
     QQuickItem *item = qobject_cast<QQuickItem *>(object);
     if (!item) {
-        object->deleteLater();
+        if (object) {
+            object->deleteLater();
+        }
         return;
     }
 
