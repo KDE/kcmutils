@@ -88,6 +88,19 @@ Kirigami.ScrollablePage {
         }
     }
 
+    function __swapContentIntoContainer(property: string, container: Item): void {
+        const content = this[property];
+
+        if (content && content !== container) {
+            // Revert the effect of repeated onHeaderChanged invocations
+            // during initialization in Page super-type.
+            content.anchors.top = undefined;
+
+            this[property] = container;
+            container.contentItem = content;
+        }
+    }
+
     function __adoptOverlaySheets(): void {
         // Search overlaysheets in contentItem, parent to root if found
         for (const object of contentItem.data) {
@@ -101,19 +114,7 @@ Kirigami.ScrollablePage {
     }
 
     Component.onCompleted: {
-        if (header && header !== headerParent) {
-            const h = header
-
-            // Revert the effect of repeated onHeaderChanged invocations
-            // during initialization in Page super-type.
-            h.anchors.top = undefined
-
-            headerParent.contentItem = h
-            header = headerParent
-            header.visible = true
-            h.parent = headerParent
-        }
-
+        __swapContentIntoContainer("header", headerParent);
         __adoptOverlaySheets();
     }
 }

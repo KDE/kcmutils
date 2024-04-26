@@ -174,7 +174,7 @@ Kirigami.Page {
         }
     }
 
-    function __swapContentIntoContainer(property: string, container: Item) {
+    function __swapContentIntoContainer(property: string, container: Item): void {
         const content = this[property];
 
         if (content && content !== container) {
@@ -184,7 +184,6 @@ Kirigami.Page {
 
             this[property] = container;
             container.contentItem = content;
-            container.visible = true;
         }
     }
 
