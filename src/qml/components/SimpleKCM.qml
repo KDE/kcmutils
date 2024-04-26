@@ -89,15 +89,6 @@ Kirigami.ScrollablePage {
     }
 
     Component.onCompleted: {
-        if (footer && footer !== footerParent) {
-            const f = footer
-
-            footerParent.contentItem = f
-            footer = footerParent
-            footer.visible = true
-            f.parent = footerParent
-        }
-
         if (header && header !== headerParent) {
             const h = header
 
