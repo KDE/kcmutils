@@ -52,6 +52,14 @@ Kirigami.ScrollablePage {
      */
     property bool headerPaddingEnabled: false
 
+    function __itemVisible(item: Item): bool {
+        return item !== null && item.visible && item.implicitHeight > 0;
+    }
+
+    function __headerContentVisible(): bool {
+        return __itemVisible(headerParent.contentItem);
+    }
+
     property bool __flickableOverflows: flickable.contentHeight + flickable.topMargin + flickable.bottomMargin > flickable.height
 
     // Context properties are not reliable
@@ -67,12 +75,10 @@ Kirigami.ScrollablePage {
     rightPadding: margins
     bottomPadding: margins
 
-    header: QQC2.Control {
+    header: Kirigami.Padding {
         id: headerParent
 
-        readonly property bool contentVisible: contentItem && contentItem.visible && contentItem.implicitHeight
-
-        height: contentVisible ? implicitHeight : 0
+        height: root.__headerContentVisible() ? undefined : 0
         padding: root.headerPaddingEnabled ? root.margins : 0
 
         // When the header is visible, we need to add a line below to separate
@@ -84,7 +90,7 @@ Kirigami.ScrollablePage {
                 right: parent.right
                 top: parent.bottom
             }
-            visible: headerParent.contentVisible
+            visible: root.__headerContentVisible()
         }
     }
 
