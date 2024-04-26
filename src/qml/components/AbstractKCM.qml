@@ -188,18 +188,21 @@ Kirigami.Page {
         }
     }
 
+    function __adoptOverlaySheets(): void {
+        // Search overlaysheets in contentItem, parent to root if found
+        for (const object of contentItem.data) {
+            if (object instanceof Kirigami.OverlaySheet) {
+                if (object.parent === null) {
+                    object.parent = this;
+                }
+                data.push(object);
+            }
+        }
+    }
+
     Component.onCompleted: {
         __swapContentIntoContainer("header", headerParent);
         __swapContentIntoContainer("footer", footerParent);
-
-        //Search overlaysheets in contentItem, parent to root if found
-        for (const obj of contentItem.data) {
-            if (obj instanceof Kirigami.OverlaySheet) {
-                if (!obj.parent) {
-                    obj.parent = this;
-                }
-                data.push(obj);
-            }
-        }
+        __adoptOverlaySheets();
     }
 }

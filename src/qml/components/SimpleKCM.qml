@@ -88,6 +88,18 @@ Kirigami.ScrollablePage {
         }
     }
 
+    function __adoptOverlaySheets(): void {
+        // Search overlaysheets in contentItem, parent to root if found
+        for (const object of contentItem.data) {
+            if (object instanceof Kirigami.OverlaySheet) {
+                if (object.parent === null) {
+                    object.parent = this;
+                }
+                data.push(object);
+            }
+        }
+    }
+
     Component.onCompleted: {
         if (header && header !== headerParent) {
             const h = header
@@ -102,15 +114,6 @@ Kirigami.ScrollablePage {
             h.parent = headerParent
         }
 
-        //Search overlaysheets in contentItem, parent to root if found
-        for (const i in contentItem.data) {
-            const child = contentItem.data[i];
-            if (child instanceof Kirigami.OverlaySheet) {
-                if (!child.parent) {
-                    child.parent = root;
-                }
-                root.data.push(child);
-            }
-        }
+        __adoptOverlaySheets();
     }
 }
