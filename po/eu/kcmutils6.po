@@ -13,7 +13,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kcmutils\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-04-23 00:36+0000\n"
+"POT-Creation-Date: 2024-04-26 00:36+0000\n"
 "PO-Revision-Date: 2023-07-15 08:41+0200\n"
 "Last-Translator: Iñigo Salvador Azurmendi <xalba@ni.eus>\n"
 "Language-Team: Basque <kde-i18n-eu@kde.org>\n"
@@ -85,9 +85,10 @@ msgid "Configure"
 msgstr "Konfiguratu"
 
 #: kpluginwidget.cpp:67
-#, kde-format
-msgid "Search..."
-msgstr "Bilatu..."
+#, fuzzy, kde-format
+#| msgid "Search:"
+msgid "Search…"
+msgstr "Bilatu:"
 
 #: kpluginwidget.cpp:335
 #, kde-format
@@ -167,6 +168,9 @@ msgstr "Ez da elementurik aurkitu"
 #, kde-format
 msgid "Could not find resource '%1'"
 msgstr "Ezin izan du baliabidea aurkitu, '%1'"
+
+#~ msgid "Search..."
+#~ msgstr "Bilatu..."
 
 #~ msgid "Invalid KPackage '%1'"
 #~ msgstr "KPackage baliogabea '%1'"
@@ -9034,9 +9038,6 @@ msgstr "Ezin izan du baliabidea aurkitu, '%1'"
 
 #~ msgid "Order by:"
 #~ msgstr "Ordenatu honela:"
-
-#~ msgid "Search:"
-#~ msgstr "Bilatu:"
 
 #~ msgid "<a href=\"http://opendesktop.org\">Homepage</a>"
 #~ msgstr "<a href=\"http://opendesktop.org\">Atariko orrialdea</a>"

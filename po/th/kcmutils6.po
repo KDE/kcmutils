@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdelibs4\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-04-23 00:36+0000\n"
+"POT-Creation-Date: 2024-04-26 00:36+0000\n"
 "PO-Revision-Date: 2010-12-31 22:47+0700\n"
 "Last-Translator: Phuwanat Sakornsakolpat <narachai@gmail.com>\n"
 "Language-Team: Thai <thai-l10n@googlegroups.com>\n"
@@ -89,9 +89,9 @@ msgstr "ปรับแต่งค่า"
 
 #: kpluginwidget.cpp:67
 #, fuzzy, kde-format
-#| msgid "Search"
-msgid "Search..."
-msgstr "ค้นหา"
+#| msgid "Search:"
+msgid "Search…"
+msgstr "ค้นหา:"
 
 #: kpluginwidget.cpp:335
 #, fuzzy, kde-format
@@ -183,6 +183,11 @@ msgstr "ค้นไม่พบ"
 #| msgid "Could not find service '%1'."
 msgid "Could not find resource '%1'"
 msgstr "ไม่พบบริการ '%1'"
+
+#, fuzzy
+#~| msgid "Search"
+#~ msgid "Search..."
+#~ msgstr "ค้นหา"
 
 #, fuzzy
 #~| msgid "Confi&gure..."
@@ -8864,9 +8869,6 @@ msgstr "ไม่พบบริการ '%1'"
 
 #~ msgid "Order by:"
 #~ msgstr "เรียงลำดับตาม:"
-
-#~ msgid "Search:"
-#~ msgstr "ค้นหา:"
 
 #~ msgid "<a href=\"http://opendesktop.org\">Homepage</a>"
 #~ msgstr "<a href=\"http://opendesktop.org\">หน้าเว็บหลัก</a>"

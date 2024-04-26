@@ -11,7 +11,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: 86ff119b1606fcaa910d6b44fc14b611\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-04-23 00:36+0000\n"
+"POT-Creation-Date: 2024-04-26 00:36+0000\n"
 "PO-Revision-Date: 2023-02-07 10:31\n"
 "Last-Translator: Darafei Praliaskouski <komzpa@gmail.com>\n"
 "Language-Team: Belarusian\n"
@@ -90,9 +90,10 @@ msgid "Configure"
 msgstr "Наладжванне"
 
 #: kpluginwidget.cpp:67
-#, kde-format
-msgid "Search..."
-msgstr "Пошук..."
+#, fuzzy, kde-format
+#| msgid "Search:"
+msgid "Search…"
+msgstr "Шукаць:"
 
 #: kpluginwidget.cpp:335
 #, kde-format
@@ -175,6 +176,9 @@ msgstr "Не знойдзена ўбудоў"
 #| msgid "Could not find service '%1'."
 msgid "Could not find resource '%1'"
 msgstr "Немагчыма знайсці сервіс '%1'."
+
+#~ msgid "Search..."
+#~ msgstr "Пошук..."
 
 #~ msgctxt "@info:tooltip"
 #~ msgid "Configure..."
@@ -8496,9 +8500,6 @@ msgstr "Немагчыма знайсці сервіс '%1'."
 #~| msgid "&Order by:"
 #~ msgid "Order by:"
 #~ msgstr "Упарадкаваць па:"
-
-#~ msgid "Search:"
-#~ msgstr "Шукаць:"
 
 #, fuzzy
 #~| msgid "Suggestion List"

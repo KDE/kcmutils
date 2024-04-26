@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdelibs4\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-04-23 00:36+0000\n"
+"POT-Creation-Date: 2024-04-26 00:36+0000\n"
 "PO-Revision-Date: 2008-08-06 00:07+0200\n"
 "Last-Translator: \n"
 "Language-Team: Occitan <oc@li.org>\n"
@@ -79,9 +79,9 @@ msgstr "Configurar"
 
 #: kpluginwidget.cpp:67
 #, fuzzy, kde-format
-#| msgid "Search"
-msgid "Search..."
-msgstr "Recercar"
+#| msgid "S&earch:"
+msgid "Search…"
+msgstr "R&ecercar :"
 
 #: kpluginwidget.cpp:335
 #, fuzzy, kde-format
@@ -173,6 +173,11 @@ msgstr "Modules Qt"
 #| msgid "Could not find service '%1'."
 msgid "Could not find resource '%1'"
 msgstr "Impossible de trobar lo servici '%1'."
+
+#, fuzzy
+#~| msgid "Search"
+#~ msgid "Search..."
+#~ msgstr "Recercar"
 
 #, fuzzy
 #~| msgid "Confi&gure..."
@@ -5958,11 +5963,6 @@ msgstr "Impossible de trobar lo servici '%1'."
 #~| msgid "Install"
 #~ msgid "Installed"
 #~ msgstr "Installar"
-
-#, fuzzy
-#~| msgid "S&earch:"
-#~ msgid "Search:"
-#~ msgstr "R&ecercar :"
 
 #, fuzzy
 #~| msgid "Suggestion List"

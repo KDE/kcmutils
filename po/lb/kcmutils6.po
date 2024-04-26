@@ -5,7 +5,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdelibs4\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-04-23 00:36+0000\n"
+"POT-Creation-Date: 2024-04-26 00:36+0000\n"
 "PO-Revision-Date: 2006-06-22 16:29+0200\n"
 "Last-Translator: Michel Ludwig <michel.ludwig@kdemail.net>\n"
 "Language-Team: Luxembourgish <kde-i18n-lb@kde.org>\n"
@@ -90,10 +90,9 @@ msgstr "Configuréieren"
 
 #: kpluginwidget.cpp:67
 #, fuzzy, kde-format
-#| msgctxt "QAccel"
-#| msgid "Search"
-msgid "Search..."
-msgstr "Sichen"
+#| msgid "S&earch:"
+msgid "Search…"
+msgstr "Siche&n:"
 
 #: kpluginwidget.cpp:335
 #, fuzzy, kde-format
@@ -183,6 +182,12 @@ msgstr "1 Iwwereneestëmmung fonnt."
 #| msgid "Could not find service '%1'."
 msgid "Could not find resource '%1'"
 msgstr "Konnt de Service '%1' net fannen."
+
+#, fuzzy
+#~| msgctxt "QAccel"
+#~| msgid "Search"
+#~ msgid "Search..."
+#~ msgstr "Sichen"
 
 #, fuzzy
 #~| msgid "Confi&gure..."
@@ -8991,11 +8996,6 @@ msgstr "Konnt de Service '%1' net fannen."
 #~| msgid "Install"
 #~ msgid "Installed"
 #~ msgstr "Installéieren"
-
-#, fuzzy
-#~| msgid "S&earch:"
-#~ msgid "Search:"
-#~ msgstr "Siche&n:"
 
 #, fuzzy
 #~| msgid "Home Fax"

@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-04-23 00:36+0000\n"
+"POT-Creation-Date: 2024-04-26 00:36+0000\n"
 "PO-Revision-Date: 2011-11-26 15:12+0400\n"
 "Last-Translator: Ainur Shakirov <ainur.shakirov.tt@gmail.com>\n"
 "Language-Team: Tatar <>\n"
@@ -86,9 +86,9 @@ msgstr "Көйләү"
 
 #: kpluginwidget.cpp:67
 #, fuzzy, kde-format
-#| msgid "Search"
-msgid "Search..."
-msgstr "Поиск"
+#| msgid "Search:"
+msgid "Search…"
+msgstr "Эзләү:"
 
 #: kpluginwidget.cpp:335
 #, fuzzy, kde-format
@@ -180,6 +180,11 @@ msgstr "Табылмады"
 #| msgid "Could not find service '%1'."
 msgid "Could not find resource '%1'"
 msgstr "'%1' хезмәтен табып булмый."
+
+#, fuzzy
+#~| msgid "Search"
+#~ msgid "Search..."
+#~ msgstr "Поиск"
 
 #, fuzzy
 #~| msgid "Confi&gure..."
@@ -9017,9 +9022,6 @@ msgstr "'%1' хезмәтен табып булмый."
 
 #~ msgid "Order by:"
 #~ msgstr "Өстәрәк урнаштыру:"
-
-#~ msgid "Search:"
-#~ msgstr "Эзләү:"
 
 #~ msgid "<a href=\"http://opendesktop.org\">Homepage</a>"
 #~ msgstr "<a href=\"http://opendesktop.org\">Албит</a>"

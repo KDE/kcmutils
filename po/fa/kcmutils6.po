@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdelibs4\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-04-23 00:36+0000\n"
+"POT-Creation-Date: 2024-04-26 00:36+0000\n"
 "PO-Revision-Date: 2012-06-28 16:40+0430\n"
 "Last-Translator: Mohammad Reza Mirdamadi <mohi@linuxshop.ir>\n"
 "Language-Team: Farsi (Persian) <kde-i18n-fa@kde.org>\n"
@@ -92,9 +92,9 @@ msgstr "پیکربندی"
 
 #: kpluginwidget.cpp:67
 #, fuzzy, kde-format
-#| msgid "Search"
-msgid "Search..."
-msgstr "جستجو"
+#| msgid "Search:"
+msgid "Search…"
+msgstr "جستجو:"
 
 #: kpluginwidget.cpp:335
 #, fuzzy, kde-format
@@ -189,6 +189,11 @@ msgstr "پیدا نشد"
 #| msgid "Could not find service '%1'."
 msgid "Could not find resource '%1'"
 msgstr "نتوانست خدمت »%1« را پیدا کند."
+
+#, fuzzy
+#~| msgid "Search"
+#~ msgid "Search..."
+#~ msgstr "جستجو"
 
 #, fuzzy
 #~| msgid "Confi&gure..."
@@ -9184,9 +9189,6 @@ msgstr "نتوانست خدمت »%1« را پیدا کند."
 #  msgid "Order by:"
 #~ msgid "Order by:"
 #~ msgstr "مرتب‌سازی بر اساس:"
-
-#~ msgid "Search:"
-#~ msgstr "جستجو:"
 
 #~ msgid "<a href=\"http://opendesktop.org\">Homepage</a>"
 #~ msgstr "<a href=\"http://opendesktop.org\">صفحه آغازه</a>"

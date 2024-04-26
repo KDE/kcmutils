@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdelibs4\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-04-23 00:36+0000\n"
+"POT-Creation-Date: 2024-04-26 00:36+0000\n"
 "PO-Revision-Date: 2023-06-11 18:54+0530\n"
 "Last-Translator: Kishore G <kishore96@gmail.com>\n"
 "Language-Team: Tamil <kde-i18n-doc@kde.org>\n"
@@ -80,9 +80,10 @@ msgid "Configure"
 msgstr "வடிவமை"
 
 #: kpluginwidget.cpp:67
-#, kde-format
-msgid "Search..."
-msgstr "தேடு..."
+#, fuzzy, kde-format
+#| msgid "Search:"
+msgid "Search…"
+msgstr "தேடுக:"
 
 #: kpluginwidget.cpp:335
 #, kde-format
@@ -162,6 +163,9 @@ msgstr "ஒன்றும் கண்டுபிடிக்கப்பட�
 #, kde-format
 msgid "Could not find resource '%1'"
 msgstr "'%1' என்பதை கண்டுபிடிக்க முடியவில்லை."
+
+#~ msgid "Search..."
+#~ msgstr "தேடு..."
 
 #~ msgid "Invalid KPackage '%1'"
 #~ msgstr "செல்லுபடியாகாத KPackage '%1'"
@@ -8958,9 +8962,6 @@ msgstr "'%1' என்பதை கண்டுபிடிக்க முட�
 
 #~ msgid "Order by:"
 #~ msgstr "வரிசை முறை:"
-
-#~ msgid "Search:"
-#~ msgstr "தேடுக:"
 
 #~ msgid "<a href=\"http://opendesktop.org\">Homepage</a>"
 #~ msgstr "<a href=\"http://opendesktop.org\">முகப்பக்கம்</a>"

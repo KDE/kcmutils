@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdelibs4\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-04-23 00:36+0000\n"
+"POT-Creation-Date: 2024-04-26 00:36+0000\n"
 "PO-Revision-Date: 2019-10-31 12:18+0200\n"
 "Last-Translator: Marek Laane <qiilaq69@gmail.com>\n"
 "Language-Team: Estonian <kde-et@lists.linux.ee>\n"
@@ -82,9 +82,10 @@ msgid "Configure"
 msgstr "Seadistamine"
 
 #: kpluginwidget.cpp:67
-#, kde-format
-msgid "Search..."
-msgstr "Otsi ..."
+#, fuzzy, kde-format
+#| msgid "Search:"
+msgid "Search…"
+msgstr "Otsing:"
 
 #: kpluginwidget.cpp:335
 #, kde-format
@@ -175,6 +176,9 @@ msgstr "Rohkem ei leitud"
 #| msgid "Could not find service '%1'."
 msgid "Could not find resource '%1'"
 msgstr "Teenust '%1' ei leitud."
+
+#~ msgid "Search..."
+#~ msgstr "Otsi ..."
 
 #, fuzzy
 #~| msgid "Confi&gure..."
@@ -8989,9 +8993,6 @@ msgstr "Teenust '%1' ei leitud."
 
 #~ msgid "Order by:"
 #~ msgstr "Järjekorra alus:"
-
-#~ msgid "Search:"
-#~ msgstr "Otsing:"
 
 #~ msgid "<a href=\"http://opendesktop.org\">Homepage</a>"
 #~ msgstr "<a href=\"http://opendesktop.org\">Kodulehekülg</a>"

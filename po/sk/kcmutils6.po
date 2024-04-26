@@ -13,7 +13,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdelibs4\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-04-23 00:36+0000\n"
+"POT-Creation-Date: 2024-04-26 00:36+0000\n"
 "PO-Revision-Date: 2023-03-11 18:07+0100\n"
 "Last-Translator: Roman Paholik <wizzardsk@gmail.com>\n"
 "Language-Team: Slovak <kde-sk@linux.sk>\n"
@@ -87,9 +87,10 @@ msgid "Configure"
 msgstr "Nastaviť"
 
 #: kpluginwidget.cpp:67
-#, kde-format
-msgid "Search..."
-msgstr "Hľadať..."
+#, fuzzy, kde-format
+#| msgid "Search:"
+msgid "Search…"
+msgstr "Hľadať:"
 
 #: kpluginwidget.cpp:335
 #, kde-format
@@ -172,6 +173,9 @@ msgstr "Nenájdené pluginy"
 #| msgid "Could not find service '%1'."
 msgid "Could not find resource '%1'"
 msgstr "Nepodarilo sa nájsť službu '%1'."
+
+#~ msgid "Search..."
+#~ msgstr "Hľadať..."
 
 #~ msgctxt "@info:tooltip"
 #~ msgid "Configure..."
@@ -9001,9 +9005,6 @@ msgstr "Nepodarilo sa nájsť službu '%1'."
 
 #~ msgid "Order by:"
 #~ msgstr "Zoradiť podľa:"
-
-#~ msgid "Search:"
-#~ msgstr "Hľadať:"
 
 #~ msgid "<a href=\"http://opendesktop.org\">Homepage</a>"
 #~ msgstr "<a href=\"http://opendesktop.org\">Domovská stránka</a>"

@@ -11,7 +11,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdelibs4\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-04-23 00:36+0000\n"
+"POT-Creation-Date: 2024-04-26 00:36+0000\n"
 "PO-Revision-Date: 2019-12-12 21:04+0000\n"
 "Last-Translator: Vivek KJ Pazhedath <vivekkj2004@gmail.com>\n"
 "Language-Team: SMC <smc.org.in>\n"
@@ -78,9 +78,10 @@ msgid "Configure"
 msgstr "ക്രമീകരിയ്ക്കുക"
 
 #: kpluginwidget.cpp:67
-#, kde-format
-msgid "Search..."
-msgstr "തിരയുക..."
+#, fuzzy, kde-format
+#| msgid "Search:"
+msgid "Search…"
+msgstr "തെരയുക:"
 
 #: kpluginwidget.cpp:335
 #, fuzzy, kde-format
@@ -170,6 +171,9 @@ msgstr "കണ്ടില്ല"
 #| msgid "Could not find service '%1'."
 msgid "Could not find resource '%1'"
 msgstr "'%1' സേവനം ലഭ്യമാക്കുവാന്‍ സാധ്യമായില്ല."
+
+#~ msgid "Search..."
+#~ msgstr "തിരയുക..."
 
 #, fuzzy
 #~| msgid "Confi&gure..."
@@ -7743,9 +7747,6 @@ msgstr "'%1' സേവനം ലഭ്യമാക്കുവാന്‍ സ�
 
 #~ msgid "Order by:"
 #~ msgstr "ക്രമത്തിലാക്കേണ്ടതു്:"
-
-#~ msgid "Search:"
-#~ msgstr "തെരയുക:"
 
 #~ msgid "<a href=\"http://opendesktop.org\">Homepage</a>"
 #~ msgstr "<a href=\"http://opendesktop.org\">പൂമുഖം</a>"

@@ -12,7 +12,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdelibs4\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-04-23 00:36+0000\n"
+"POT-Creation-Date: 2024-04-26 00:36+0000\n"
 "PO-Revision-Date: 2024-02-19 20:20+0000\n"
 "Last-Translator: Guðmundur Erlingsson <gudmundure@gmail.com>\n"
 "Language-Team: Icelandic <kde-i18n-doc@kde.org>\n"
@@ -94,9 +94,10 @@ msgid "Configure"
 msgstr "Grunnstilla"
 
 #: kpluginwidget.cpp:67
-#, kde-format
-msgid "Search..."
-msgstr "Leita..."
+#, fuzzy, kde-format
+#| msgid "Search:"
+msgid "Search…"
+msgstr "Leita:"
 
 #: kpluginwidget.cpp:335
 #, kde-format
@@ -176,6 +177,9 @@ msgstr "Engin atriði fundust"
 #, kde-format
 msgid "Could not find resource '%1'"
 msgstr "Fann ekki tilfangið '%1'."
+
+#~ msgid "Search..."
+#~ msgstr "Leita..."
 
 #~ msgctxt "@info:tooltip"
 #~ msgid "Configure..."
@@ -8961,9 +8965,6 @@ msgstr "Fann ekki tilfangið '%1'."
 
 #~ msgid "Order by:"
 #~ msgstr "Raða eftir:"
-
-#~ msgid "Search:"
-#~ msgstr "Leita:"
 
 #~ msgid "<a href=\"http://opendesktop.org\">Homepage</a>"
 #~ msgstr "<a href=\"http://opendesktop.org\">Heimasíða</a>"

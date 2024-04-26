@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdelibs4\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-04-23 00:36+0000\n"
+"POT-Creation-Date: 2024-04-26 00:36+0000\n"
 "PO-Revision-Date: 2021-09-05 20:25+0200\n"
 "Last-Translator: Martin Schlander <mschlander@opensuse.org>\n"
 "Language-Team: Danish <kde-i18n-doc@kde.org>\n"
@@ -79,9 +79,10 @@ msgid "Configure"
 msgstr "Indstil"
 
 #: kpluginwidget.cpp:67
-#, kde-format
-msgid "Search..."
-msgstr "Søg..."
+#, fuzzy, kde-format
+#| msgid "Search:"
+msgid "Search…"
+msgstr "Søg:"
 
 #: kpluginwidget.cpp:335
 #, kde-format
@@ -172,6 +173,9 @@ msgstr "Ikke fundet"
 #| msgid "Could not find service '%1'."
 msgid "Could not find resource '%1'"
 msgstr "Kunne ikke finde tjenesten \"%1\"."
+
+#~ msgid "Search..."
+#~ msgstr "Søg..."
 
 #, fuzzy
 #~| msgid "Confi&gure..."
@@ -9014,9 +9018,6 @@ msgstr "Kunne ikke finde tjenesten \"%1\"."
 
 #~ msgid "Order by:"
 #~ msgstr "Sortér efter:"
-
-#~ msgid "Search:"
-#~ msgstr "Søg:"
 
 #~ msgid "<a href=\"http://opendesktop.org\">Homepage</a>"
 #~ msgstr "<a href=\"http://opendesktop.org\">Websiden</a>"

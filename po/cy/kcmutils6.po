@@ -18,7 +18,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdelibs4\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-04-23 00:36+0000\n"
+"POT-Creation-Date: 2024-04-26 00:36+0000\n"
 "PO-Revision-Date: 2005-01-28 17:54+0000\n"
 "Last-Translator: Kevin Donnelly <kevin@dotmon.com>\n"
 "Language-Team: Cymraeg\n"
@@ -105,10 +105,9 @@ msgstr "Ffurfweddu"
 
 #: kpluginwidget.cpp:67
 #, fuzzy, kde-format
-#| msgctxt "QAccel"
-#| msgid "Search"
-msgid "Search..."
-msgstr "Chwilio"
+#| msgid "S&earch:"
+msgid "Search…"
+msgstr "C&hwilio"
 
 #: kpluginwidget.cpp:335
 #, fuzzy, kde-format
@@ -202,6 +201,12 @@ msgstr "Canfuwyd %1 o gydweddiadau. "
 #| msgid "Could not find service '%1'."
 msgid "Could not find resource '%1'"
 msgstr "Methu canfod gwasanaeth '%1'."
+
+#, fuzzy
+#~| msgctxt "QAccel"
+#~| msgid "Search"
+#~ msgid "Search..."
+#~ msgstr "Chwilio"
 
 #, fuzzy
 #~| msgid "Confi&gure..."
@@ -8654,11 +8659,6 @@ msgstr "Methu canfod gwasanaeth '%1'."
 #~| msgid "Install"
 #~ msgid "Installed"
 #~ msgstr "Arsefydlu"
-
-#, fuzzy
-#~| msgid "S&earch:"
-#~ msgid "Search:"
-#~ msgstr "C&hwilio"
 
 #, fuzzy
 #~| msgid "Home Fax"

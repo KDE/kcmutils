@@ -4,7 +4,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdelibs4\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-04-23 00:36+0000\n"
+"POT-Creation-Date: 2024-04-26 00:36+0000\n"
 "PO-Revision-Date: 2012-06-27 10:04+0700\n"
 "Last-Translator: Khoem Sokhem <khoemsokhem@khmeros.info>\n"
 "Language-Team: Khmer\n"
@@ -86,9 +86,9 @@ msgstr "កំណត់​រចនាសម្ព័ន្ធ"
 
 #: kpluginwidget.cpp:67
 #, fuzzy, kde-format
-#| msgid "Search"
-msgid "Search..."
-msgstr "ស្វែង​រក"
+#| msgid "Search:"
+msgid "Search…"
+msgstr "ស្វែងរក ៖"
 
 #: kpluginwidget.cpp:335
 #, fuzzy, kde-format
@@ -180,6 +180,11 @@ msgstr "រក​មិនឃើញ"
 #| msgid "Could not find service '%1'."
 msgid "Could not find resource '%1'"
 msgstr "មិនអាច​រក​ឃើញ​សេវា '%1' ទេ ។"
+
+#, fuzzy
+#~| msgid "Search"
+#~ msgid "Search..."
+#~ msgstr "ស្វែង​រក"
 
 #, fuzzy
 #~| msgid "Confi&gure..."
@@ -8832,9 +8837,6 @@ msgstr "មិនអាច​រក​ឃើញ​សេវា '%1' ទេ ។"
 
 #~ msgid "Order by:"
 #~ msgstr "តម្រៀប​តាម ៖"
-
-#~ msgid "Search:"
-#~ msgstr "ស្វែងរក ៖"
 
 #~ msgid "<a href=\"http://opendesktop.org\">Homepage</a>"
 #~ msgstr "<a href=\"http://opendesktop.org\">គេហទំព័រ</a>"

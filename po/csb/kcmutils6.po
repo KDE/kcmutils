@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdelibs4\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-04-23 00:36+0000\n"
+"POT-Creation-Date: 2024-04-26 00:36+0000\n"
 "PO-Revision-Date: 2009-12-04 22:09+0100\n"
 "Last-Translator: Mark Kwidzińśczi <mark@linuxcsb.org>\n"
 "Language-Team: Kaszëbsczi <i18n-csb@linuxcsb.org>\n"
@@ -93,9 +93,9 @@ msgstr "Kònfigùracëjô"
 
 #: kpluginwidget.cpp:67
 #, fuzzy, kde-format
-#| msgid "&Search"
-msgid "Search..."
-msgstr "&Szëkba"
+#| msgid "Search:"
+msgid "Search…"
+msgstr "Szëkba:"
 
 #: kpluginwidget.cpp:335
 #, fuzzy, kde-format
@@ -187,6 +187,11 @@ msgstr "Nie nalazłé"
 #| msgid "Could not find service '%1'."
 msgid "Could not find resource '%1'"
 msgstr "Ni mòże nalezc ùsłëżnotë '%1'."
+
+#, fuzzy
+#~| msgid "&Search"
+#~ msgid "Search..."
+#~ msgstr "&Szëkba"
 
 #, fuzzy
 #~| msgid "Confi&gure..."
@@ -8963,9 +8968,6 @@ msgstr "Ni mòże nalezc ùsłëżnotë '%1'."
 
 #~ msgid "Order by:"
 #~ msgstr "Zortëjë wedle:"
-
-#~ msgid "Search:"
-#~ msgstr "Szëkba:"
 
 #, fuzzy
 #~| msgid "<a href=\"http://opendesktop.org\">Visit Homepage</a>"

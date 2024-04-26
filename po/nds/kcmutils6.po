@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdelibs4\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-04-23 00:36+0000\n"
+"POT-Creation-Date: 2024-04-26 00:36+0000\n"
 "PO-Revision-Date: 2014-05-11 00:55+0200\n"
 "Last-Translator: Sönke Dibbern <s_dibbern@web.de>\n"
 "Language-Team: Low Saxon <kde-i18n-nds@kde.org>\n"
@@ -89,9 +89,9 @@ msgstr "Instellen"
 
 #: kpluginwidget.cpp:67
 #, fuzzy, kde-format
-#| msgid "Search"
-msgid "Search..."
-msgstr "Söken"
+#| msgid "Search:"
+msgid "Search…"
+msgstr "Söken:"
 
 #: kpluginwidget.cpp:335
 #, fuzzy, kde-format
@@ -183,6 +183,11 @@ msgstr "Nich funnen"
 #| msgid "Could not find service '%1'."
 msgid "Could not find resource '%1'"
 msgstr "De Deenst \"%1\" lett sik nich finnen."
+
+#, fuzzy
+#~| msgid "Search"
+#~ msgid "Search..."
+#~ msgstr "Söken"
 
 #, fuzzy
 #~| msgid "Confi&gure..."
@@ -9045,9 +9050,6 @@ msgstr "De Deenst \"%1\" lett sik nich finnen."
 
 #~ msgid "Order by:"
 #~ msgstr "Sorteren na:"
-
-#~ msgid "Search:"
-#~ msgstr "Söken:"
 
 #~ msgid "<a href=\"http://opendesktop.org\">Homepage</a>"
 #~ msgstr "<a href=\"http://opendesktop.org\">Tohuussiet</a>"

@@ -17,7 +17,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdelibs4\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-04-23 00:36+0000\n"
+"POT-Creation-Date: 2024-04-26 00:36+0000\n"
 "PO-Revision-Date: 2023-06-06 07:55+0200\n"
 "Last-Translator: Matjaž Jeran <matjaz.jeran@amis.net>\n"
 "Language-Team: Slovenian <lugos-slo@lugos.si>\n"
@@ -92,9 +92,10 @@ msgid "Configure"
 msgstr "Nastavi"
 
 #: kpluginwidget.cpp:67
-#, kde-format
-msgid "Search..."
-msgstr "Poišči..."
+#, fuzzy, kde-format
+#| msgid "Search:"
+msgid "Search…"
+msgstr "Išči:"
 
 #: kpluginwidget.cpp:335
 #, kde-format
@@ -174,6 +175,9 @@ msgstr "Ni najdenih postavk"
 #, kde-format
 msgid "Could not find resource '%1'"
 msgstr "Ni bilo mogoče najti vira '%1'"
+
+#~ msgid "Search..."
+#~ msgstr "Poišči..."
 
 #~ msgid "Invalid KPackage '%1'"
 #~ msgstr "Neveljaven paket '%1'"
@@ -9080,9 +9084,6 @@ msgstr "Ni bilo mogoče najti vira '%1'"
 
 #~ msgid "Order by:"
 #~ msgstr "Razvrsti po:"
-
-#~ msgid "Search:"
-#~ msgstr "Išči:"
 
 #~ msgid "<a href=\"http://opendesktop.org\">Homepage</a>"
 #~ msgstr "<a href=\"http://opendesktop.org\">Domača stran</a>"

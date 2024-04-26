@@ -24,7 +24,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdelibs4\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-04-23 00:36+0000\n"
+"POT-Creation-Date: 2024-04-26 00:36+0000\n"
 "PO-Revision-Date: 2006-01-04 13:32+0800\n"
 "Last-Translator: Abel Cheung <abel@oaka.org>\n"
 "Language-Team: Chinese (Hong Kong) <community@linuxhall.org>\n"
@@ -115,10 +115,9 @@ msgstr "設定"
 
 #: kpluginwidget.cpp:67
 #, fuzzy, kde-format
-#| msgctxt "QAccel"
-#| msgid "Search"
-msgid "Search..."
-msgstr "搜尋"
+#| msgid "S&earch:"
+msgid "Search…"
+msgstr "搜尋(&S)："
 
 #: kpluginwidget.cpp:335
 #, fuzzy, kde-format
@@ -212,6 +211,12 @@ msgstr "找到了 %1 個相符項目。"
 #| msgid "Could not find service '%1'."
 msgid "Could not find resource '%1'"
 msgstr "找不到服務程式‘%1’。"
+
+#, fuzzy
+#~| msgctxt "QAccel"
+#~| msgid "Search"
+#~ msgid "Search..."
+#~ msgstr "搜尋"
 
 #, fuzzy
 #~| msgid "Confi&gure..."
@@ -8828,11 +8833,6 @@ msgstr "找不到服務程式‘%1’。"
 #~| msgid "Install"
 #~ msgid "Installed"
 #~ msgstr "安裝"
-
-#, fuzzy
-#~| msgid "S&earch:"
-#~ msgid "Search:"
-#~ msgstr "搜尋(&S)："
 
 #, fuzzy
 #~| msgid "Home Fax"

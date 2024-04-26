@@ -12,7 +12,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdelibs4\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-04-23 00:36+0000\n"
+"POT-Creation-Date: 2024-04-26 00:36+0000\n"
 "PO-Revision-Date: 2002-12-13 17:20SAST\n"
 "Last-Translator: Lwandle Mgidlana <lwandle@translate.org.za>\n"
 "Language-Team: Xhosa <xhosa@translate.org.za>\n"
@@ -80,10 +80,8 @@ msgstr "Qwalasela"
 
 #: kpluginwidget.cpp:67
 #, fuzzy, kde-format
-#| msgctxt "QAccel"
-#| msgid "Search"
-msgid "Search..."
-msgstr "Phendla"
+msgid "Search…"
+msgstr "(phendla)"
 
 #: kpluginwidget.cpp:335
 #, fuzzy, kde-format
@@ -172,6 +170,12 @@ msgstr "utelekiso olunye olufumanekileyo"
 #| msgid "Could not find service '%1'."
 msgid "Could not find resource '%1'"
 msgstr "Ayinakuyifumana inkonzo '%1'"
+
+#, fuzzy
+#~| msgctxt "QAccel"
+#~| msgid "Search"
+#~ msgid "Search..."
+#~ msgstr "Phendla"
 
 #, fuzzy
 #~ msgctxt "@info:tooltip"
@@ -7811,10 +7815,6 @@ msgstr "Ayinakuyifumana inkonzo '%1'"
 #, fuzzy
 #~ msgid "Installed"
 #~ msgstr "Imizekelo"
-
-#, fuzzy
-#~ msgid "Search:"
-#~ msgstr "(phendla)"
 
 #, fuzzy
 #~| msgid "Home Fax"

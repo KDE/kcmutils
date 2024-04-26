@@ -11,7 +11,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdelibs4\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-04-23 00:36+0000\n"
+"POT-Creation-Date: 2024-04-26 00:36+0000\n"
 "PO-Revision-Date: 2010-08-13 15:45+0200\n"
 "Last-Translator: Erdal Ronahî <erdal.ronahi@nospam.gmail.com>\n"
 "Language-Team: Kurdish Team http://pckurd.net\n"
@@ -100,9 +100,9 @@ msgstr "Veavakirin"
 
 #: kpluginwidget.cpp:67
 #, fuzzy, kde-format
-#| msgid "Search"
-msgid "Search..."
-msgstr "Lêgerîn"
+#| msgid "Search:"
+msgid "Search…"
+msgstr "Lê Bigere:"
 
 #: kpluginwidget.cpp:335
 #, fuzzy, kde-format
@@ -194,6 +194,11 @@ msgstr "Nehate dîtin"
 #| msgid "Could not find service '%1'."
 msgid "Could not find resource '%1'"
 msgstr "Xizmeta '%1' nehate dîtin."
+
+#, fuzzy
+#~| msgid "Search"
+#~ msgid "Search..."
+#~ msgstr "Lêgerîn"
 
 #, fuzzy
 #~| msgid "Confi&gure..."
@@ -8415,9 +8420,6 @@ msgstr "Xizmeta '%1' nehate dîtin."
 
 #~ msgid "Order by:"
 #~ msgstr "Rêz bike li gorî:"
-
-#~ msgid "Search:"
-#~ msgstr "Lê Bigere:"
 
 #~ msgid "<a href=\"http://opendesktop.org\">Homepage</a>"
 #~ msgstr "<a href=\"http://opendesktop.org\">Malper</a>"

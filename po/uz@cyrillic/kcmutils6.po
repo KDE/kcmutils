@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdelibs4\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-04-23 00:36+0000\n"
+"POT-Creation-Date: 2024-04-26 00:36+0000\n"
 "PO-Revision-Date: 2009-10-17 00:34+0200\n"
 "Last-Translator: Mashrab Kuvatov <kmashrab@uni-bremen.de>\n"
 "Language-Team: Uzbek <floss-uz-l10n@googlegroups.com>\n"
@@ -79,9 +79,9 @@ msgstr "Мослаш"
 
 #: kpluginwidget.cpp:67
 #, fuzzy, kde-format
-#| msgid "Search"
-msgid "Search..."
-msgstr "Қидириш"
+#| msgid "S&earch:"
+msgid "Search…"
+msgstr "Қ&идириш:"
 
 #: kpluginwidget.cpp:335
 #, fuzzy, kde-format
@@ -173,6 +173,11 @@ msgstr "Топилмади"
 #| msgid "Could not find service '%1'."
 msgid "Could not find resource '%1'"
 msgstr "Хизмат (%1) топилмади."
+
+#, fuzzy
+#~| msgid "Search"
+#~ msgid "Search..."
+#~ msgstr "Қидириш"
 
 #, fuzzy
 #~| msgid "Confi&gure..."
@@ -7431,11 +7436,6 @@ msgstr "Хизмат (%1) топилмади."
 #~| msgid "&Order by:"
 #~ msgid "Order by:"
 #~ msgstr "&Тартиблаш:"
-
-#, fuzzy
-#~| msgid "S&earch:"
-#~ msgid "Search:"
-#~ msgstr "Қ&идириш:"
 
 #, fuzzy
 #~| msgid "Home Fax"

@@ -11,7 +11,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdelibs4\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-04-23 00:36+0000\n"
+"POT-Creation-Date: 2024-04-26 00:36+0000\n"
 "PO-Revision-Date: 2011-07-22 16:08+0200\n"
 "Last-Translator: Marko Dimjašević <marko@dimjasevic.net>\n"
 "Language-Team: Croatian <kde-croatia-list@lists.sourceforge.net>\n"
@@ -100,9 +100,9 @@ msgstr "Konfiguriranje"
 
 #: kpluginwidget.cpp:67
 #, fuzzy, kde-format
-#| msgid "Search"
-msgid "Search..."
-msgstr "Traži"
+#| msgid "Search:"
+msgid "Search…"
+msgstr "Pretraga:"
 
 #: kpluginwidget.cpp:335
 #, fuzzy, kde-format
@@ -194,6 +194,11 @@ msgstr "Nije nađeno"
 #| msgid "Could not find service '%1'."
 msgid "Could not find resource '%1'"
 msgstr "Nije moguće pronaći uslugu '%1'."
+
+#, fuzzy
+#~| msgid "Search"
+#~ msgid "Search..."
+#~ msgstr "Traži"
 
 #, fuzzy
 #~| msgid "Confi&gure..."
@@ -1204,9 +1209,6 @@ msgstr "Nije moguće pronaći uslugu '%1'."
 
 #~ msgid "Order by:"
 #~ msgstr "Poredaj po:"
-
-#~ msgid "Search:"
-#~ msgstr "Pretraga:"
 
 #~ msgid "<a href=\"http://opendesktop.org\">Homepage</a>"
 #~ msgstr "<a href=\"http://opendesktop.org\">Osobna stranica</a>"

@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdelibs4\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-04-23 00:36+0000\n"
+"POT-Creation-Date: 2024-04-26 00:36+0000\n"
 "PO-Revision-Date: 2009-01-02 17:37+0530\n"
 "Last-Translator: Manoj Kumar Giri <mgiri@redhat.com>\n"
 "Language-Team: Oriya <oriya-it@googlegroups.com>\n"
@@ -85,9 +85,9 @@ msgstr "ବିନ୍ଯାସ କରନ୍ତୁ"
 
 #: kpluginwidget.cpp:67
 #, fuzzy, kde-format
-#| msgid "&Search"
-msgid "Search..."
-msgstr "ଖୋଜନ୍ତୁ (&S)"
+#| msgid "S&earch:"
+msgid "Search…"
+msgstr "ଖୋଜନ୍ତୁ (&e):"
 
 #: kpluginwidget.cpp:335
 #, fuzzy, kde-format
@@ -179,6 +179,11 @@ msgstr "ମିଳୁନାହିଁ"
 #| msgid "Could not find service '%1'."
 msgid "Could not find resource '%1'"
 msgstr "ସେବା '%1'କୁ ଖୋଜିପାଉନାହିଁ।"
+
+#, fuzzy
+#~| msgid "&Search"
+#~ msgid "Search..."
+#~ msgstr "ଖୋଜନ୍ତୁ (&S)"
 
 #, fuzzy
 #~| msgid "Confi&gure..."
@@ -7983,11 +7988,6 @@ msgstr "ସେବା '%1'କୁ ଖୋଜିପାଉନାହିଁ।"
 #~| msgid "&Order by:"
 #~ msgid "Order by:"
 #~ msgstr "ଆଦେଶ ଦ୍ୱାରା (&O):"
-
-#, fuzzy
-#~| msgid "S&earch:"
-#~ msgid "Search:"
-#~ msgstr "ଖୋଜନ୍ତୁ (&e):"
 
 #, fuzzy
 #~| msgid "Suggestions"

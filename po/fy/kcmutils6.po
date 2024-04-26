@@ -15,7 +15,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdelibs4\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-04-23 00:36+0000\n"
+"POT-Creation-Date: 2024-04-26 00:36+0000\n"
 "PO-Revision-Date: 2010-07-22 09:48+0100\n"
 "Last-Translator: Berend Ytsma <berendy@gmail.com>\n"
 "Language-Team: nl <kde-i18n-doc@lists.kde.org>\n"
@@ -100,9 +100,9 @@ msgstr "Konfigurearje"
 
 #: kpluginwidget.cpp:67
 #, fuzzy, kde-format
-#| msgid "Search"
-msgid "Search..."
-msgstr "Sykje"
+#| msgid "Search:"
+msgid "Search…"
+msgstr "Sykje:"
 
 #: kpluginwidget.cpp:335
 #, fuzzy, kde-format
@@ -194,6 +194,11 @@ msgstr "Net fûn"
 #| msgid "Could not find service '%1'."
 msgid "Could not find resource '%1'"
 msgstr "Koe de tsjinst '%1' net fine."
+
+#, fuzzy
+#~| msgid "Search"
+#~ msgid "Search..."
+#~ msgstr "Sykje"
 
 #, fuzzy
 #~| msgid "Confi&gure..."
@@ -8803,9 +8808,6 @@ msgstr "Koe de tsjinst '%1' net fine."
 
 #~ msgid "Order by:"
 #~ msgstr "Sortearje neffens:"
-
-#~ msgid "Search:"
-#~ msgstr "Sykje:"
 
 #~ msgid "Become a Fan"
 #~ msgstr "Wurd in Fan"

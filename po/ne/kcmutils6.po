@@ -11,7 +11,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdelibs4\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-04-23 00:36+0000\n"
+"POT-Creation-Date: 2024-04-26 00:36+0000\n"
 "PO-Revision-Date: 2007-11-05 15:41+0545\n"
 "Last-Translator: Shyam Krishna Bal <shyamkrishna_bal@yahoo.com>\n"
 "Language-Team: Nepali <info@mpp.org.np>\n"
@@ -95,9 +95,9 @@ msgstr "कन्फिगर गर्नुहोस्"
 
 #: kpluginwidget.cpp:67
 #, fuzzy, kde-format
-#| msgid "Search"
-msgid "Search..."
-msgstr "खोजी गर्नुहोस्"
+#| msgid "Search:"
+msgid "Search…"
+msgstr "खोजी:"
 
 #: kpluginwidget.cpp:335
 #, fuzzy, kde-format
@@ -191,6 +191,11 @@ msgstr "१ जोडा फेला पर्यो ।"
 #| msgid "Could not find service '%1'."
 msgid "Could not find resource '%1'"
 msgstr "'%1' सेवा फेला पार्न सकेन ।"
+
+#, fuzzy
+#~| msgid "Search"
+#~ msgid "Search..."
+#~ msgstr "खोजी गर्नुहोस्"
 
 #, fuzzy
 #~| msgid "Confi&gure..."
@@ -9560,9 +9565,6 @@ msgstr "'%1' सेवा फेला पार्न सकेन ।"
 #~| msgid "Order by:"
 #~ msgid "Order by:"
 #~ msgstr "मागकर्ता:"
-
-#~ msgid "Search:"
-#~ msgstr "खोजी:"
 
 #, fuzzy
 #~| msgid "Suggestion List"

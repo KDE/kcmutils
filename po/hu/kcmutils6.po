@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: KDE 4.4\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-04-23 00:36+0000\n"
+"POT-Creation-Date: 2024-04-26 00:36+0000\n"
 "PO-Revision-Date: 2024-01-07 21:58+0100\n"
 "Last-Translator: Kristof Kiszel <ulysses@fsf.hu>\n"
 "Language-Team: Hungarian <kde-l10n-hu@kde.org>\n"
@@ -78,9 +78,10 @@ msgid "Configure"
 msgstr "Beállítás"
 
 #: kpluginwidget.cpp:67
-#, kde-format
-msgid "Search..."
-msgstr "Keresés…"
+#, fuzzy, kde-format
+#| msgid "Search:"
+msgid "Search…"
+msgstr "Keresés:"
 
 #: kpluginwidget.cpp:335
 #, kde-format
@@ -160,6 +161,9 @@ msgstr "Nem találhatók elemek"
 #, kde-format
 msgid "Could not find resource '%1'"
 msgstr "A(z) „%1” erőforrás nem található."
+
+#~ msgid "Search..."
+#~ msgstr "Keresés…"
 
 #, fuzzy
 #~| msgid "Confi&gure..."
@@ -9023,9 +9027,6 @@ msgstr "A(z) „%1” erőforrás nem található."
 
 #~ msgid "Order by:"
 #~ msgstr "Rendezés:"
-
-#~ msgid "Search:"
-#~ msgstr "Keresés:"
 
 #~ msgid "<a href=\"http://opendesktop.org\">Homepage</a>"
 #~ msgstr "<a href=\"http://opendesktop.org\">Honlap</a>"

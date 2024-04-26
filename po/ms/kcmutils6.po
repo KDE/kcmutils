@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdelibs4\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-04-23 00:36+0000\n"
+"POT-Creation-Date: 2024-04-26 00:36+0000\n"
 "PO-Revision-Date: 2011-07-16 00:57+0800\n"
 "Last-Translator: Sharuzzaman Ahmat Raslan <sharuzzaman@gmail.com>\n"
 "Language-Team: Malay <kedidiemas@yahoogroups.com>\n"
@@ -92,9 +92,9 @@ msgstr "Selaraskan"
 
 #: kpluginwidget.cpp:67
 #, fuzzy, kde-format
-#| msgid "Search"
-msgid "Search..."
-msgstr "Cari"
+#| msgid "Search:"
+msgid "Search…"
+msgstr "Cari:"
 
 #: kpluginwidget.cpp:335
 #, fuzzy, kde-format
@@ -186,6 +186,11 @@ msgstr "Tidak ditemui"
 #| msgid "Could not find service '%1'."
 msgid "Could not find resource '%1'"
 msgstr "Tidak dapat mencari servis '%1'."
+
+#, fuzzy
+#~| msgid "Search"
+#~ msgid "Search..."
+#~ msgstr "Cari"
 
 #, fuzzy
 #~| msgid "Confi&gure..."
@@ -9146,9 +9151,6 @@ msgstr "Tidak dapat mencari servis '%1'."
 
 #~ msgid "Order by:"
 #~ msgstr "Susunan dengan:"
-
-#~ msgid "Search:"
-#~ msgstr "Cari:"
 
 #~ msgid "<a href=\"http://opendesktop.org\">Homepage</a>"
 #~ msgstr "<a href=\"http://opendesktop.org\">Laman web</a>"

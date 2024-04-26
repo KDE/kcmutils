@@ -13,7 +13,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdelibs4\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-04-23 00:36+0000\n"
+"POT-Creation-Date: 2024-04-26 00:36+0000\n"
 "PO-Revision-Date: 2013-11-04 23:55+0630\n"
 "Last-Translator: Bhuvan Krishna <bhuvan@swecha.org>\n"
 "Language-Team: Telugu <kde-i18n-doc@kde.org>\n"
@@ -82,9 +82,9 @@ msgstr "అమర్చు"
 
 #: kpluginwidget.cpp:67
 #, fuzzy, kde-format
-#| msgid "Search"
-msgid "Search..."
-msgstr "(&S) అన్వెషణ "
+#| msgid "Search:"
+msgid "Search…"
+msgstr "అన్వేషణ:"
 
 #: kpluginwidget.cpp:335
 #, fuzzy, kde-format
@@ -176,6 +176,11 @@ msgstr "కనబడలేదు"
 #| msgid "Could not find service '%1'."
 msgid "Could not find resource '%1'"
 msgstr "'%1' సేవ కనపడలేదు."
+
+#, fuzzy
+#~| msgid "Search"
+#~ msgid "Search..."
+#~ msgstr "(&S) అన్వెషణ "
 
 #, fuzzy
 #~| msgid "Confi&gure..."
@@ -8532,9 +8537,6 @@ msgstr "'%1' సేవ కనపడలేదు."
 
 #~ msgid "Order by:"
 #~ msgstr "ఈ క్రమములో :"
-
-#~ msgid "Search:"
-#~ msgstr "అన్వేషణ:"
 
 #~ msgid "<a href=\"http://opendesktop.org\">Homepage</a>"
 #~ msgstr "<a href=\"http://opendesktop.org\">నివాస పుట</a>"

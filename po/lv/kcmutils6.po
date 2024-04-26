@@ -13,7 +13,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdelibs4\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-04-23 00:36+0000\n"
+"POT-Creation-Date: 2024-04-26 00:36+0000\n"
 "PO-Revision-Date: 2024-04-03 14:08+0300\n"
 "Last-Translator: Toms Trasuns <toms.trasuns@posteo.net>\n"
 "Language-Team: Latvian <kde-i18n-doc@kde.org>\n"
@@ -87,9 +87,10 @@ msgid "Configure"
 msgstr "Konfigurēt"
 
 #: kpluginwidget.cpp:67
-#, kde-format
-msgid "Search..."
-msgstr "Meklēt..."
+#, fuzzy, kde-format
+#| msgid "Search:"
+msgid "Search…"
+msgstr "Meklēt:"
 
 #: kpluginwidget.cpp:335
 #, kde-format
@@ -169,6 +170,9 @@ msgstr "Nekas nav atrasts"
 #, kde-format
 msgid "Could not find resource '%1'"
 msgstr "Nevarēja atrast resursu „%1“"
+
+#~ msgid "Search..."
+#~ msgstr "Meklēt..."
 
 #, fuzzy
 #~| msgid "Confi&gure..."
@@ -8998,9 +9002,6 @@ msgstr "Nevarēja atrast resursu „%1“"
 
 #~ msgid "Order by:"
 #~ msgstr "Kārtot pēc:"
-
-#~ msgid "Search:"
-#~ msgstr "Meklēt:"
 
 #~ msgid "<a href=\"http://opendesktop.org\">Homepage</a>"
 #~ msgstr "<a href=\"http://opendesktop.org\">Aplūkot mājas lapu</a>"

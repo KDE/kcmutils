@@ -20,7 +20,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdelibs4\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-04-23 00:36+0000\n"
+"POT-Creation-Date: 2024-04-26 00:36+0000\n"
 "PO-Revision-Date: 2023-08-15 00:56+0300\n"
 "Last-Translator: George Stefanakis <george.stefanakis@gmail.com>\n"
 "Language-Team: Greek <kde-i18n-doc@kde.org>\n"
@@ -94,9 +94,10 @@ msgid "Configure"
 msgstr "Διαμόρφωση"
 
 #: kpluginwidget.cpp:67
-#, kde-format
-msgid "Search..."
-msgstr "Αναζήτηση..."
+#, fuzzy, kde-format
+#| msgid "Search:"
+msgid "Search…"
+msgstr "Αναζήτηση:"
 
 #: kpluginwidget.cpp:335
 #, kde-format
@@ -176,6 +177,9 @@ msgstr "Δε βρέθηκαν αντικείμενα"
 #, kde-format
 msgid "Could not find resource '%1'"
 msgstr "Δεν μπόρεσα να βρω τον πόρο '%1'"
+
+#~ msgid "Search..."
+#~ msgstr "Αναζήτηση..."
 
 #~ msgctxt "@info:tooltip"
 #~ msgid "Configure..."
@@ -9135,9 +9139,6 @@ msgstr "Δεν μπόρεσα να βρω τον πόρο '%1'"
 
 #~ msgid "Order by:"
 #~ msgstr "Ταξινόμηση κατά:"
-
-#~ msgid "Search:"
-#~ msgstr "Αναζήτηση:"
 
 #~ msgid "<a href=\"http://opendesktop.org\">Homepage</a>"
 #~ msgstr "<a href=\"http://opendesktop.org\">Αρχική Σελίδα</a>"

@@ -12,7 +12,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdelibs4\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-04-23 00:36+0000\n"
+"POT-Creation-Date: 2024-04-26 00:36+0000\n"
 "PO-Revision-Date: 2013-12-21 17:26+0000\n"
 "Last-Translator: Ademovic Saudin <sademovic1@etf.unsa.ba>\n"
 "Language-Team: bosanski <bs@li.org>\n"
@@ -97,9 +97,9 @@ msgstr "Podesi"
 
 #: kpluginwidget.cpp:67
 #, fuzzy, kde-format
-#| msgid "Search"
-msgid "Search..."
-msgstr "Traži"
+#| msgid "Search:"
+msgid "Search…"
+msgstr "Pretraži:"
 
 #: kpluginwidget.cpp:335
 #, fuzzy, kde-format
@@ -191,6 +191,11 @@ msgstr "Nije nađeno"
 #| msgid "Could not find service '%1'."
 msgid "Could not find resource '%1'"
 msgstr "Ne mogu da pronađem servis „%1“."
+
+#, fuzzy
+#~| msgid "Search"
+#~ msgid "Search..."
+#~ msgstr "Traži"
 
 #, fuzzy
 #~| msgid "Confi&gure..."
@@ -9134,9 +9139,6 @@ msgstr "Ne mogu da pronađem servis „%1“."
 
 #~ msgid "Order by:"
 #~ msgstr "Poredaj prema:"
-
-#~ msgid "Search:"
-#~ msgstr "Pretraži:"
 
 #~ msgid "<a href=\"http://opendesktop.org\">Homepage</a>"
 #~ msgstr "<a href=\"http://opendesktop.org\">Vlastita stranica</a>"

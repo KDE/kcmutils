@@ -14,7 +14,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdelibs4\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-04-23 00:36+0000\n"
+"POT-Creation-Date: 2024-04-26 00:36+0000\n"
 "PO-Revision-Date: 2023-06-06 12:24+0200\n"
 "Last-Translator: Eloy Cuadra <ecuadra@eloihr.net>\n"
 "Language-Team: Spanish <kde-l10n-es@kde.org>\n"
@@ -87,9 +87,10 @@ msgid "Configure"
 msgstr "Configurar"
 
 #: kpluginwidget.cpp:67
-#, kde-format
-msgid "Search..."
-msgstr "Buscar..."
+#, fuzzy, kde-format
+#| msgid "Search:"
+msgid "Search…"
+msgstr "Buscar:"
 
 #: kpluginwidget.cpp:335
 #, kde-format
@@ -169,6 +170,9 @@ msgstr "No se han encontrado elementos"
 #, kde-format
 msgid "Could not find resource '%1'"
 msgstr "No se ha podido encontrar el recurso «%1»"
+
+#~ msgid "Search..."
+#~ msgstr "Buscar..."
 
 #~ msgid "Invalid KPackage '%1'"
 #~ msgstr "KPackage «%1» no válido"
@@ -9102,9 +9106,6 @@ msgstr "No se ha podido encontrar el recurso «%1»"
 
 #~ msgid "Order by:"
 #~ msgstr "Ordenar por:"
-
-#~ msgid "Search:"
-#~ msgstr "Buscar:"
 
 #~ msgid "<a href=\"http://opendesktop.org\">Homepage</a>"
 #~ msgstr "<a href=\"http://opendesktop.org\">Página de inicio</a>"

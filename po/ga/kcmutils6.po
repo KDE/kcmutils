@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdelibs4\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-04-23 00:36+0000\n"
+"POT-Creation-Date: 2024-04-26 00:36+0000\n"
 "PO-Revision-Date: 2004-12-14 09:11-0600\n"
 "Last-Translator: Kevin Scannell <kscanne@gmail.com>\n"
 "Language-Team: Irish <gaeilge-gnulinux@lists.sourceforge.net>\n"
@@ -90,9 +90,9 @@ msgstr "Cumraigh"
 
 #: kpluginwidget.cpp:67
 #, fuzzy, kde-format
-#| msgid "Search"
-msgid "Search..."
-msgstr "Cuardaigh"
+#| msgid "Search:"
+msgid "Search…"
+msgstr "Cuardaigh:"
 
 #: kpluginwidget.cpp:335
 #, fuzzy, kde-format
@@ -184,6 +184,11 @@ msgstr "Gan aimsiú"
 #| msgid "Could not find service '%1'."
 msgid "Could not find resource '%1'"
 msgstr "Ní bhfuarthas seirbhís '%1'."
+
+#, fuzzy
+#~| msgid "Search"
+#~ msgid "Search..."
+#~ msgstr "Cuardaigh"
 
 #, fuzzy
 #~| msgid "Confi&gure..."
@@ -9236,9 +9241,6 @@ msgstr "Ní bhfuarthas seirbhís '%1'."
 
 #~ msgid "Order by:"
 #~ msgstr "Ord de réir:"
-
-#~ msgid "Search:"
-#~ msgstr "Cuardaigh:"
 
 #~ msgid "<a href=\"http://opendesktop.org\">Homepage</a>"
 #~ msgstr "<a href=\"http://opendesktop.org\">Leathanach Baile</a>"

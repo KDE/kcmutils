@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdelibs4\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-04-23 00:36+0000\n"
+"POT-Creation-Date: 2024-04-26 00:36+0000\n"
 "PO-Revision-Date: 2008-08-30 01:10+0300\n"
 "Last-Translator: Ihar Hrachyshka <ihar.hrachyshka@gmail.com>\n"
 "Language-Team: Belarusian Latin <i18n@mova.org>\n"
@@ -94,9 +94,9 @@ msgstr "Naładź"
 
 #: kpluginwidget.cpp:67
 #, fuzzy, kde-format
-#| msgid "&Search"
-msgid "Search..."
-msgstr "&Šukaj"
+#| msgid "S&earch:"
+msgid "Search…"
+msgstr "&Šukaj:"
 
 #: kpluginwidget.cpp:335
 #, fuzzy, kde-format
@@ -188,6 +188,11 @@ msgstr "Ničoha nia znojdziena"
 #| msgid "Could not find service '%1'."
 msgid "Could not find resource '%1'"
 msgstr "Nie ŭdałosia znajści słužbu „%1”."
+
+#, fuzzy
+#~| msgid "&Search"
+#~ msgid "Search..."
+#~ msgstr "&Šukaj"
 
 #, fuzzy
 #~| msgid "Confi&gure..."
@@ -8501,11 +8506,6 @@ msgstr "Nie ŭdałosia znajści słužbu „%1”."
 #~| msgid "&Order by:"
 #~ msgid "Order by:"
 #~ msgstr "&Paradkuj pavodle:"
-
-#, fuzzy
-#~| msgid "S&earch:"
-#~ msgid "Search:"
-#~ msgstr "&Šukaj:"
 
 #, fuzzy
 #~| msgid "Suggestions for %1"

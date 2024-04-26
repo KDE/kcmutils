@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdelibs4\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-04-23 00:36+0000\n"
+"POT-Creation-Date: 2024-04-26 00:36+0000\n"
 "PO-Revision-Date: 2013-01-31 01:08+0400\n"
 "Last-Translator: Davit <nikdavnik@mail.ru>\n"
 "Language-Team: Armenian Language: hy\n"
@@ -90,9 +90,9 @@ msgstr "Կարգավորում"
 
 #: kpluginwidget.cpp:67
 #, fuzzy, kde-format
-#| msgid "Search"
-msgid "Search..."
-msgstr "Որոնում"
+#| msgid "Search:"
+msgid "Search…"
+msgstr "Փնտրել:"
 
 #: kpluginwidget.cpp:335
 #, fuzzy, kde-format
@@ -184,6 +184,11 @@ msgstr "Գտնված չէ"
 #| msgid "Could not find service '%1'."
 msgid "Could not find resource '%1'"
 msgstr "Հնարավոր չէ հայտնաբերել ծառայությունը «%1»."
+
+#, fuzzy
+#~| msgid "Search"
+#~ msgid "Search..."
+#~ msgstr "Որոնում"
 
 #, fuzzy
 #~| msgid "Confi&gure..."
@@ -9048,9 +9053,6 @@ msgstr "Հնարավոր չէ հայտնաբերել ծառայությունը 
 
 #~ msgid "Order by:"
 #~ msgstr "Վերոնշյալ:"
-
-#~ msgid "Search:"
-#~ msgstr "Փնտրել:"
 
 #~ msgid "<a href=\"http://opendesktop.org\">Homepage</a>"
 #~ msgstr "<a href=\"http://opendesktop.org\">Նախնական էջ</a>"

@@ -14,7 +14,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdelibs4\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-04-23 00:36+0000\n"
+"POT-Creation-Date: 2024-04-26 00:36+0000\n"
 "PO-Revision-Date: 2022-04-24 11:22+0200\n"
 "Last-Translator: Stefan Asserhäll <stefan.asserhall@bredband.net>\n"
 "Language-Team: Swedish <kde-i18n-doc@kde.org>\n"
@@ -89,9 +89,10 @@ msgid "Configure"
 msgstr "Anpassa"
 
 #: kpluginwidget.cpp:67
-#, kde-format
-msgid "Search..."
-msgstr "Sök..."
+#, fuzzy, kde-format
+#| msgid "Search:"
+msgid "Search…"
+msgstr "Sök:"
 
 #: kpluginwidget.cpp:335
 #, kde-format
@@ -174,6 +175,9 @@ msgstr "Inga insticksprogram hittades"
 #| msgid "Could not find service '%1'."
 msgid "Could not find resource '%1'"
 msgstr "Kunde inte hitta tjänst \"%1\"."
+
+#~ msgid "Search..."
+#~ msgstr "Sök..."
 
 #~ msgctxt "@info:tooltip"
 #~ msgid "Configure..."
@@ -9024,9 +9028,6 @@ msgstr "Kunde inte hitta tjänst \"%1\"."
 
 #~ msgid "Order by:"
 #~ msgstr "Ordna enligt:"
-
-#~ msgid "Search:"
-#~ msgstr "Sök:"
 
 #~ msgid "<a href=\"http://opendesktop.org\">Homepage</a>"
 #~ msgstr "<a href=\"http://opendesktop.org\">Hemsida</a>"

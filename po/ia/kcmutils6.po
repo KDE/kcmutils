@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-04-23 00:36+0000\n"
+"POT-Creation-Date: 2024-04-26 00:36+0000\n"
 "PO-Revision-Date: 2023-06-06 12:20+0200\n"
 "Last-Translator: giovanni <g.sora@tiscali.it>\n"
 "Language-Team: Interlingua <kde-i18n-doc@kde.org>\n"
@@ -78,9 +78,10 @@ msgid "Configure"
 msgstr "Configura"
 
 #: kpluginwidget.cpp:67
-#, kde-format
-msgid "Search..."
-msgstr "Il cerca ..."
+#, fuzzy, kde-format
+#| msgid "Search:"
+msgid "Search…"
+msgstr "Cerca:"
 
 #: kpluginwidget.cpp:335
 #, kde-format
@@ -160,6 +161,9 @@ msgstr "Necun elemento  trovate"
 #, kde-format
 msgid "Could not find resource '%1'"
 msgstr "Il non pote trovar ressource '%1'."
+
+#~ msgid "Search..."
+#~ msgstr "Il cerca ..."
 
 #~ msgid "Invalid KPackage '%1'"
 #~ msgstr "Invalide KPackage '%1'"
@@ -9080,9 +9084,6 @@ msgstr "Il non pote trovar ressource '%1'."
 
 #~ msgid "Order by:"
 #~ msgstr "Ordina per:"
-
-#~ msgid "Search:"
-#~ msgstr "Cerca:"
 
 #~ msgid "<a href=\"http://opendesktop.org\">Homepage</a>"
 #~ msgstr "<a href=\"http://opendesktop.org\">Pagina Domo o principal</a>"

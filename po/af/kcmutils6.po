@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdelibs4 stable\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-04-23 00:36+0000\n"
+"POT-Creation-Date: 2024-04-26 00:36+0000\n"
 "PO-Revision-Date: 2006-01-12 16:33+0200\n"
 "Last-Translator: JUANITA FRANZ <JUANITA.FRANZ@VR-WEB.DE>\n"
 "Language-Team: AFRIKAANS <translate-discuss-af@lists.sourceforge.net>\n"
@@ -88,10 +88,9 @@ msgstr "Stel op"
 
 #: kpluginwidget.cpp:67
 #, fuzzy, kde-format
-#| msgctxt "QAccel"
-#| msgid "Search"
-msgid "Search..."
-msgstr "Soek"
+#| msgid "S&earch:"
+msgid "Search…"
+msgstr "Soek:"
 
 #: kpluginwidget.cpp:335
 #, fuzzy, kde-format
@@ -181,6 +180,12 @@ msgstr "1 ooreenstem gevind."
 #| msgid "Could not find service '%1'."
 msgid "Could not find resource '%1'"
 msgstr "Kon nie soek diens '%1'."
+
+#, fuzzy
+#~| msgctxt "QAccel"
+#~| msgid "Search"
+#~ msgid "Search..."
+#~ msgstr "Soek"
 
 #, fuzzy
 #~| msgid "Confi&gure..."
@@ -8971,11 +8976,6 @@ msgstr "Kon nie soek diens '%1'."
 #~| msgid "Install"
 #~ msgid "Installed"
 #~ msgstr "Installeer"
-
-#, fuzzy
-#~| msgid "S&earch:"
-#~ msgid "Search:"
-#~ msgstr "Soek:"
 
 #, fuzzy
 #~| msgid "Home Fax"

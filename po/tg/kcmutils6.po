@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdelibs4\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-04-23 00:36+0000\n"
+"POT-Creation-Date: 2024-04-26 00:36+0000\n"
 "PO-Revision-Date: 2019-10-01 11:08+0500\n"
 "Last-Translator: Victor Ibragimov <victor.ibragimov@gmail.com>\n"
 "Language-Team: English <kde-i18n-doc@kde.org>\n"
@@ -84,9 +84,10 @@ msgid "Configure"
 msgstr "Танзимот"
 
 #: kpluginwidget.cpp:67
-#, kde-format
-msgid "Search..."
-msgstr "Ҷустуҷӯ..."
+#, fuzzy, kde-format
+#| msgid "Search:"
+msgid "Search…"
+msgstr "Ҷустуҷӯ:"
 
 #: kpluginwidget.cpp:335
 #, kde-format
@@ -177,6 +178,9 @@ msgstr "Ёфт нашуд"
 #| msgid "Could not find service '%1'."
 msgid "Could not find resource '%1'"
 msgstr "Не удалось найти службу «%1»."
+
+#~ msgid "Search..."
+#~ msgstr "Ҷустуҷӯ..."
 
 #, fuzzy
 #~| msgid "Confi&gure..."
@@ -8941,9 +8945,6 @@ msgstr "Не удалось найти службу «%1»."
 
 #~ msgid "Order by:"
 #~ msgstr "Тартибдиҳӣ бо:"
-
-#~ msgid "Search:"
-#~ msgstr "Ҷустуҷӯ:"
 
 #, fuzzy
 #~| msgid "<a href=\"http://opendesktop.org\">Visit Homepage</a>"

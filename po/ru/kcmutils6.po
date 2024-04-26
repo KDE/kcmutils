@@ -19,7 +19,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdelibs4\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-04-23 00:36+0000\n"
+"POT-Creation-Date: 2024-04-26 00:36+0000\n"
 "PO-Revision-Date: 2024-01-04 21:34+0300\n"
 "Last-Translator: Alexander Yavorsky <kekcuha@gmail.com>\n"
 "Language-Team: Russian <kde-russian@lists.kde.ru>\n"
@@ -98,9 +98,10 @@ msgid "Configure"
 msgstr "Настройка"
 
 #: kpluginwidget.cpp:67
-#, kde-format
-msgid "Search..."
-msgstr "Поиск..."
+#, fuzzy, kde-format
+#| msgid "Search:"
+msgid "Search…"
+msgstr "Поиск:"
 
 # BUGME: please check in the UI if it's about a module --aspotashev
 #: kpluginwidget.cpp:335
@@ -182,6 +183,9 @@ msgstr "Ничего не найдено"
 #, kde-format
 msgid "Could not find resource '%1'"
 msgstr "Не удалось найти ресурс «%1»"
+
+#~ msgid "Search..."
+#~ msgstr "Поиск..."
 
 #~ msgctxt "@info:tooltip"
 #~ msgid "Configure..."
@@ -9053,9 +9057,6 @@ msgstr "Не удалось найти ресурс «%1»"
 
 #~ msgid "Order by:"
 #~ msgstr "Выше ставить:"
-
-#~ msgid "Search:"
-#~ msgstr "Поиск:"
 
 #~ msgid "<a href=\"http://opendesktop.org\">Homepage</a>"
 #~ msgstr "<a href=\"http://opendesktop.org\">Домашняя страница</a>"

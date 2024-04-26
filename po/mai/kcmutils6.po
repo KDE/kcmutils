@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdelibs4\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-04-23 00:36+0000\n"
+"POT-Creation-Date: 2024-04-26 00:36+0000\n"
 "PO-Revision-Date: 2010-09-24 15:44+0530\n"
 "Last-Translator: Rajesh Ranjan <rranjan@redhat.com>\n"
 "Language-Team: Hindi <fedora-trans-hi@redhat.com>\n"
@@ -81,9 +81,9 @@ msgstr "बिन्यस्त करू"
 
 #: kpluginwidget.cpp:67
 #, fuzzy, kde-format
-#| msgid "Search"
-msgid "Search..."
-msgstr "खोजू"
+#| msgid "Search:"
+msgid "Search…"
+msgstr "खोजू:"
 
 #: kpluginwidget.cpp:335
 #, fuzzy, kde-format
@@ -175,6 +175,11 @@ msgstr "नहि भेटल"
 #| msgid "Could not find service '%1'."
 msgid "Could not find resource '%1'"
 msgstr "सर्विस '%1' नहि भेटल."
+
+#, fuzzy
+#~| msgid "Search"
+#~ msgid "Search..."
+#~ msgstr "खोजू"
 
 #, fuzzy
 #~| msgid "Confi&gure..."
@@ -8229,9 +8234,6 @@ msgstr "सर्विस '%1' नहि भेटल."
 
 #~ msgid "Order by:"
 #~ msgstr "एकर द्वारा आर्डर:"
-
-#~ msgid "Search:"
-#~ msgstr "खोजू:"
 
 #~ msgid "<a href=\"http://opendesktop.org\">Homepage</a>"
 #~ msgstr "<a href=\"http://opendesktop.org\">होमपेज</a>"

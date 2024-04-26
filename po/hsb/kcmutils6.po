@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdelibs4\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-04-23 00:36+0000\n"
+"POT-Creation-Date: 2024-04-26 00:36+0000\n"
 "PO-Revision-Date: 2008-12-19 22:49+0100\n"
 "Last-Translator: Eduard Werner <edi.werner@gmx.de>\n"
 "Language-Team: en_US <kde-i18n-doc@lists.kde.org>\n"
@@ -94,9 +94,9 @@ msgstr "Konfiguracija"
 
 #: kpluginwidget.cpp:67
 #, fuzzy, kde-format
-#| msgid "&Search"
-msgid "Search..."
-msgstr "&Pytać"
+#| msgid "S&earch:"
+msgid "Search…"
+msgstr "P&ytać:"
 
 #: kpluginwidget.cpp:335
 #, fuzzy, kde-format
@@ -188,6 +188,11 @@ msgstr "Njejsym ničo namakał"
 #| msgid "Could not find service '%1'."
 msgid "Could not find resource '%1'"
 msgstr "Njemóžach service '%1' namakać"
+
+#, fuzzy
+#~| msgid "&Search"
+#~ msgid "Search..."
+#~ msgstr "&Pytać"
 
 #, fuzzy
 #~| msgid "Confi&gure..."
@@ -9288,11 +9293,6 @@ msgstr "Njemóžach service '%1' namakać"
 #~| msgid "&Order by:"
 #~ msgid "Order by:"
 #~ msgstr "&Rjadować po:"
-
-#, fuzzy
-#~| msgid "S&earch:"
-#~ msgid "Search:"
-#~ msgstr "P&ytać:"
 
 #, fuzzy
 #~| msgid "Suggestions"

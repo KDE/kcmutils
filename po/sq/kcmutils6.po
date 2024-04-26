@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kde4libs\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-04-23 00:36+0000\n"
+"POT-Creation-Date: 2024-04-26 00:36+0000\n"
 "PO-Revision-Date: 2012-01-19 00:20-0500\n"
 "Last-Translator: Agron Selimaj <as9902613@gmail.com>\n"
 "Language-Team: Albanian <sq@li.org>\n"
@@ -79,9 +79,9 @@ msgstr "Konfiguro"
 
 #: kpluginwidget.cpp:67
 #, fuzzy, kde-format
-#| msgid "&Search"
-msgid "Search..."
-msgstr "&Kërko"
+#| msgid "Search:"
+msgid "Search…"
+msgstr "Kërko:"
 
 #: kpluginwidget.cpp:335
 #, fuzzy, kde-format
@@ -173,6 +173,11 @@ msgstr "Nuk u gjet"
 #| msgid "Could not find service '%1'."
 msgid "Could not find resource '%1'"
 msgstr "Nuk mund të gjejmë shërbimin '%1'."
+
+#, fuzzy
+#~| msgid "&Search"
+#~ msgid "Search..."
+#~ msgstr "&Kërko"
 
 #, fuzzy
 #~| msgid "Confi&gure..."
@@ -7785,9 +7790,6 @@ msgstr "Nuk mund të gjejmë shërbimin '%1'."
 
 #~ msgid "Order by:"
 #~ msgstr "Rradhit sipas:"
-
-#~ msgid "Search:"
-#~ msgstr "Kërko:"
 
 #~ msgid "<a href=\"http://opendesktop.org\">Homepage</a>"
 #~ msgstr "<a href=\"http://opendesktop.org\">Homepage</a>"

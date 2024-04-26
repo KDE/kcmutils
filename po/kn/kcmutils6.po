@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdelibs4\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-04-23 00:36+0000\n"
+"POT-Creation-Date: 2024-04-26 00:36+0000\n"
 "PO-Revision-Date: 2010-06-24 18:32+0530\n"
 "Last-Translator: Shankar Prasad <svenkate@redhat.com>\n"
 "Language-Team: kn_IN <kde-i18n-doc@kde.org>\n"
@@ -83,9 +83,9 @@ msgstr "ಸಂರಚಿಸು"
 
 #: kpluginwidget.cpp:67
 #, fuzzy, kde-format
-#| msgid "Search"
-msgid "Search..."
-msgstr "ಹುಡುಕು"
+#| msgid "Search:"
+msgid "Search…"
+msgstr "ಹುಡುಕು:"
 
 #: kpluginwidget.cpp:335
 #, fuzzy, kde-format
@@ -177,6 +177,11 @@ msgstr "ಕಂಡುಬಂದಿಲ್ಲ"
 #| msgid "Could not find service '%1'."
 msgid "Could not find resource '%1'"
 msgstr "'%1' ಸೇವೆಯು ಕಾಣಬರಲಿಲ್ಲ."
+
+#, fuzzy
+#~| msgid "Search"
+#~ msgid "Search..."
+#~ msgstr "ಹುಡುಕು"
 
 #, fuzzy
 #~| msgid "Confi&gure..."
@@ -8860,9 +8865,6 @@ msgstr "'%1' ಸೇವೆಯು ಕಾಣಬರಲಿಲ್ಲ."
 
 #~ msgid "Order by:"
 #~ msgstr "ಇದರಿಂದ ಕ್ರಮಗೊಳಿಸು(&O):"
-
-#~ msgid "Search:"
-#~ msgstr "ಹುಡುಕು:"
 
 #~ msgid "<a href=\"http://opendesktop.org\">Homepage</a>"
 #~ msgstr "<a href=\"http://opendesktop.org\">ನೆಲೆಪುಟ (ಹೋಮ್ ಪೇಜ್)</a>"

@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdelibs4\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-04-23 00:36+0000\n"
+"POT-Creation-Date: 2024-04-26 00:36+0000\n"
 "PO-Revision-Date: 2009-02-10 20:44+0530\n"
 "Last-Translator: Ravishankar Shrivastava <raviratlami@aol.in>\n"
 "Language-Team: Hindi <kde-i18n-doc@lists.kde.org>\n"
@@ -81,9 +81,9 @@ msgstr "कान्फिगर"
 
 #: kpluginwidget.cpp:67
 #, fuzzy, kde-format
-#| msgid "Search"
-msgid "Search..."
-msgstr "खोजव"
+#| msgid "S&earch:"
+msgid "Search…"
+msgstr "खोजव: (&e)"
 
 #: kpluginwidget.cpp:335
 #, fuzzy, kde-format
@@ -175,6 +175,11 @@ msgstr "नइ मिलिस"
 #| msgid "Could not find service '%1'."
 msgid "Could not find resource '%1'"
 msgstr "सर्विस '%1' नइ मिलिस."
+
+#, fuzzy
+#~| msgid "Search"
+#~ msgid "Search..."
+#~ msgstr "खोजव"
 
 #, fuzzy
 #~| msgid "Confi&gure..."
@@ -8613,11 +8618,6 @@ msgstr "सर्विस '%1' नइ मिलिस."
 #~| msgid "&Order by:"
 #~ msgid "Order by:"
 #~ msgstr "अइसन जमाव: (&O)"
-
-#, fuzzy
-#~| msgid "S&earch:"
-#~ msgid "Search:"
-#~ msgstr "खोजव: (&e)"
 
 #, fuzzy
 #~ msgid "Details for %1"
