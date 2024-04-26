@@ -62,10 +62,10 @@ Kirigami.ScrollablePage {
 
     property bool sidebarMode: false
 
-    leftPadding: root.margins
-    topPadding:  root.margins
-    rightPadding: root.margins
-    bottomPadding: root.margins
+    topPadding: margins
+    leftPadding: margins
+    rightPadding: margins
+    bottomPadding: margins
 
     header: QQC2.Control {
         id: headerParent
