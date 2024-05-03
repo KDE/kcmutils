@@ -75,34 +75,41 @@ Kirigami.ScrollablePage {
     rightPadding: margins
     bottomPadding: margins
 
-    header: Kirigami.Padding {
-        id: headerParent
+    header: Column {
+        Kirigami.Padding {
+            id: headerParent
 
-        height: root.__headerContentVisible() ? undefined : 0
-        padding: root.headerPaddingEnabled ? root.margins : 0
+            anchors {
+                left: parent.left
+                right: parent.right
+            }
+
+            height: root.__headerContentVisible() ? undefined : 0
+            padding: root.headerPaddingEnabled ? root.margins : 0
+        }
 
         // When the header is visible, we need to add a line below to separate
         // it from the view
         Kirigami.Separator {
-            z: 999
             anchors {
                 left: parent.left
                 right: parent.right
-                top: parent.bottom
             }
+
             visible: root.__headerContentVisible()
         }
     }
 
     function __swapContentIntoContainer(property: string, container: Item): void {
         const content = this[property];
+        const rootContainer = container.parent;
 
-        if (content && content !== container) {
+        if (content && content !== rootContainer) {
             // Revert the effect of repeated onHeaderChanged invocations
             // during initialization in Page super-type.
             content.anchors.top = undefined;
 
-            this[property] = container;
+            this[property] = rootContainer;
             container.contentItem = content;
         }
     }

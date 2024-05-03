@@ -111,29 +111,27 @@ Kirigami.Page {
     verticalPadding: undefined
     horizontalPadding: framedView ? margins : 0
 
-    header: Kirigami.Padding {
-        id: headerParent
+    header: Column {
+        Kirigami.Padding {
+            id: headerParent
 
-        height: root.__headerContentVisible()
-            ? undefined
-            : (root.__headerSeparatorVisible()
-                ? headerSeparator.implicitHeight
-                : 0)
+            anchors {
+                left: parent.left
+                right: parent.right
+            }
 
-        padding: root.headerPaddingEnabled ? root.margins : 0
-        bottomPadding: root.__headerSeparatorVisible()
-            ? verticalPadding + headerSeparator.implicitHeight
-            : undefined
+            height: root.__headerContentVisible() ? undefined : 0
+            padding: root.headerPaddingEnabled ? root.margins : 0
+        }
 
         // When the scrollview isn't drawing its own frame, we need to add a
         // line below the header (when visible) to separate it from the view
         Kirigami.Separator {
-            id: headerSeparator
             anchors {
                 left: parent.left
                 right: parent.right
-                bottom: parent.bottom
             }
+
             visible: root.__headerSeparatorVisible()
         }
     }
@@ -147,42 +145,41 @@ Kirigami.Page {
         color: Kirigami.Theme.backgroundColor
     }
 
-    footer: Kirigami.Padding {
-        id: footerParent
-
-        height: root.__footerContentVisible()
-            ? undefined
-            : (root.__footerSeparatorVisible()
-                ? footerSeparator.implicitHeight
-                : 0)
-
-        padding: root.footerPaddingEnabled ? root.margins : 0
-        topPadding: root.__footerSeparatorVisible()
-            ? verticalPadding + footerSeparator.implicitHeight
-            : undefined
-
+    footer: Column {
         // When the scrollview isn't drawing its own frame, we need to add a
         // line above the footer ourselves to separate it from the view
         Kirigami.Separator {
-            id: footerSeparator
             anchors {
-                top: parent.top
                 left: parent.left
                 right: parent.right
             }
+
             visible: root.__footerSeparatorVisible()
+        }
+
+        Kirigami.Padding {
+            id: footerParent
+
+            anchors {
+                left: parent.left
+                right: parent.right
+            }
+
+            height: root.__footerContentVisible() ? undefined : 0
+            padding: root.footerPaddingEnabled ? root.margins : 0
         }
     }
 
     function __swapContentIntoContainer(property: string, container: Item): void {
         const content = this[property];
+        const rootContainer = container.parent;
 
-        if (content && content !== container) {
+        if (content && content !== rootContainer) {
             // Revert the effect of repeated onHeaderChanged invocations
             // during initialization in Page super-type.
             content.anchors.top = undefined;
 
-            this[property] = container;
+            this[property] = rootContainer;
             container.contentItem = content;
         }
     }
