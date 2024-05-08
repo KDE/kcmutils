@@ -76,10 +76,9 @@ msgid "Configure"
 msgstr "配置"
 
 #: kpluginwidget.cpp:67
-#, fuzzy, kde-format
-#| msgid "Search..."
+#, kde-format
 msgid "Search…"
-msgstr "搜索..."
+msgstr "搜索…"
 
 #: kpluginwidget.cpp:335
 #, kde-format
