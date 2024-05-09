@@ -19,7 +19,7 @@ msgstr ""
 "Project-Id-Version: kdelibs4\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-04-26 00:36+0000\n"
-"PO-Revision-Date: 2024-05-03 03:15+0900\n"
+"PO-Revision-Date: 2024-05-09 06:29+0900\n"
 "Last-Translator: Kisaragi Hiu <mail@kisaragi-hiu.com>\n"
 "Language-Team: Traditional Chinese <zh-l10n@lists.slat.org>\n"
 "Language: zh_TW\n"
@@ -74,7 +74,7 @@ msgid ""
 "Do you want to apply the changes or discard them?"
 msgstr ""
 "目前模組已被變更。\n"
-"您要套用還是要丟棄這些變更？"
+"您要套用還是要捨棄這些變更？"
 
 #: kcmultidialog.cpp:47
 #, kde-format
