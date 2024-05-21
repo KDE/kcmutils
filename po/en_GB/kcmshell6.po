@@ -1,13 +1,13 @@
-# Copyright (C) YEAR This file is copyright:
+# Copyright (C) 2024 This file is copyright:
 # This file is distributed under the same license as the kcmutils package.
 #
-# Steve Allewell <steve.allewell@gmail.com>, 2023.
+# SPDX-FileCopyrightText: 2023, 2024 Steve Allewell <steve.allewell@gmail.com>
 msgid ""
 msgstr ""
 "Project-Id-Version: kcmutils\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-01-26 00:35+0000\n"
-"PO-Revision-Date: 2023-03-26 14:26+0100\n"
+"PO-Revision-Date: 2024-05-20 19:23+0100\n"
 "Last-Translator: Steve Allewell <steve.allewell@gmail.com>\n"
 "Language-Team: British English\n"
 "Language: en_GB\n"
@@ -15,7 +15,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Lokalize 23.03.70\n"
+"X-Generator: Lokalize 24.02.2\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
@@ -33,10 +33,9 @@ msgid "A tool to start single system settings modules"
 msgstr "A tool to start single system settings modules"
 
 #: main.cpp:106
-#, fuzzy, kde-format
-#| msgid "(c) 1999-2016, The KDE Developers"
+#, kde-format
 msgid "(c) 1999-2023, The KDE Developers"
-msgstr "(c) 1999-2016, The KDE Developers"
+msgstr "(c) 1999-2023, The KDE Developers"
 
 #: main.cpp:108
 #, kde-format
@@ -84,10 +83,9 @@ msgid "Configuration module to open"
 msgstr "Configuration module to open"
 
 #: main.cpp:121
-#, fuzzy, kde-format
-#| msgid "Arguments for the module"
+#, kde-format
 msgid "Space separated arguments for the module"
-msgstr "Arguments for the module"
+msgstr "Space separated arguments for the module"
 
 #: main.cpp:122
 #, kde-format
