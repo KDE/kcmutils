@@ -9,10 +9,10 @@
 # kom <me@komzpa.net>, 2008.
 msgid ""
 msgstr ""
-"Project-Id-Version: 86ff119b1606fcaa910d6b44fc14b611\n"
+"Project-Id-Version: fc57ad16a28d02dea100ceb1c60de14e\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-04-26 00:36+0000\n"
-"PO-Revision-Date: 2023-02-07 10:31\n"
+"PO-Revision-Date: 2024-05-20 09:10\n"
 "Last-Translator: Darafei Praliaskouski <komzpa@gmail.com>\n"
 "Language-Team: Belarusian\n"
 "Language: be\n"
@@ -23,11 +23,11 @@ msgstr ""
 "Plural-Forms: nplurals=4; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
 "%10<=4 && (n%100<12 || n%100>14) ? 1 : n%10==0 || n%10>=5 && n%10<=9 || n"
 "%100>=11 && n%100<=14 ? 2 : 3);\n"
-"X-Crowdin-Project: 86ff119b1606fcaa910d6b44fc14b611\n"
-"X-Crowdin-Project-ID: 127\n"
+"X-Crowdin-Project: fc57ad16a28d02dea100ceb1c60de14e\n"
+"X-Crowdin-Project-ID: 136\n"
 "X-Crowdin-Language: be\n"
-"X-Crowdin-File: /main/be/kcmutils/kcmutils5.po\n"
-"X-Crowdin-File-ID: 7783\n"
+"X-Crowdin-File: /[antikruk.KDE] main/KDE6/be/messages/kcmutils/kcmutils6.po\n"
+"X-Crowdin-File-ID: 9930\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
@@ -90,10 +90,9 @@ msgid "Configure"
 msgstr "Наладжванне"
 
 #: kpluginwidget.cpp:67
-#, fuzzy, kde-format
-#| msgid "Search:"
+#, kde-format
 msgid "Search…"
-msgstr "Шукаць:"
+msgstr "Пошук…"
 
 #: kpluginwidget.cpp:335
 #, kde-format
@@ -104,7 +103,7 @@ msgstr "Пра праграму"
 #, kde-format
 msgctxt "@action:button"
 msgid "Show Contextual Help"
-msgstr ""
+msgstr "Паказаць кантэкстную даведку"
 
 #: qml/components/PluginDelegate.qml:89
 #, kde-format
@@ -113,11 +112,10 @@ msgid "About"
 msgstr "Пра праграму"
 
 #: qml/components/PluginDelegate.qml:104
-#, fuzzy, kde-format
-#| msgid "Configure"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Configure…"
-msgstr "Наладжванне"
+msgstr "Наладжванне…"
 
 #: qml/components/PluginSelector.qml:84
 #, kde-format
@@ -166,16 +164,14 @@ msgid "Send an email to %1"
 msgstr "Адправіць электронны ліст да %1"
 
 #: qml/components/private/GridViewInternal.qml:77
-#, fuzzy, kde-format
-#| msgid "No plugins found"
+#, kde-format
 msgid "No items found"
-msgstr "Не знойдзена ўбудоў"
+msgstr "Няма элементаў"
 
 #: qml/kquickconfigmodule.cpp:121
-#, fuzzy, kde-format
-#| msgid "Could not find service '%1'."
+#, kde-format
 msgid "Could not find resource '%1'"
-msgstr "Немагчыма знайсці сервіс '%1'."
+msgstr "Не ўдалося знайсці рэсурс \"%1\""
 
 #~ msgid "Search..."
 #~ msgstr "Пошук..."
