@@ -127,8 +127,8 @@ void KCMultiDialogPrivate::clientChanged()
         QTimer::singleShot(0, q, [this]() {
             for (int i = 0; i < modules.count(); ++i) {
                 if (modules[i].firstShow && modules[i].kcm && modules[i].item == q->currentPage()) {
-                    modules[i].kcm->load();
                     modules[i].firstShow = false;
+                    modules[i].kcm->load();
                 }
             }
         });
