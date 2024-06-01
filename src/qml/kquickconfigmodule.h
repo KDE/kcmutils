@@ -112,6 +112,7 @@ class KCMUTILSQUICK_EXPORT KQuickConfigModule : public KAbstractConfigModule
     Q_PROPERTY(int currentIndex READ currentIndex WRITE setCurrentIndex NOTIFY currentIndexChanged)
 
     QML_NAMED_ELEMENT(ConfigModule)
+    QML_ATTACHED(KQuickConfigModule)
 
 public:
     /**
@@ -249,7 +250,5 @@ private:
     KQuickConfigModuleLoader::loadModule(const KPluginMetaData &metaData, QObject *parent, const QVariantList &args, const std::shared_ptr<QQmlEngine> &engine);
     const std::unique_ptr<KQuickConfigModulePrivate> d;
 };
-
-QML_DECLARE_TYPEINFO(KQuickConfigModule, QML_HAS_ATTACHED_PROPERTIES)
 
 #endif // KQUICKCONFIGMODULE_H
