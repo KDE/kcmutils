@@ -53,7 +53,7 @@ install(FILES
 install(TARGETS KF6KCMUtilsQuick EXPORT KF6KCMUtilsTargets ${KF_INSTALL_TARGETS_DEFAULT_ARGS})
 
 # QML plugin
-ecm_add_qml_module(kcmutilsqmlplugin URI "org.kde.kcmutils" VERSION 1.0 DEPENDENCIES QtQuick org.kde.kcmutils.private GENERATE_PLUGIN_SOURCE)
+ecm_add_qml_module(kcmutilsqmlplugin URI "org.kde.kcmutils" VERSION 1.0 DEPENDENCIES QtQuick org.kde.kcmutils.private org.kde.config GENERATE_PLUGIN_SOURCE)
 target_sources(kcmutilsqmlplugin
   PRIVATE
     settingstateproxy.cpp
