@@ -38,8 +38,16 @@ endif()
 set(REQUIRED_QT_VERSION 6.5.0)
 find_package(Qt6 ${REQUIRED_QT_VERSION} NO_MODULE REQUIRED Widgets Qml Quick QuickWidgets Test)
 
-if (NOT WIN32 AND NOT APPLE)
-  find_package(Qt6DBus ${REQUIRED_QT_VERSION} REQUIRED)
+# shall we use DBus?
+# enabled per default on Linux & BSD systems
+set(USE_DBUS_DEFAULT OFF)
+if(UNIX AND NOT APPLE AND NOT ANDROID AND NOT HAIKU)
+    set(USE_DBUS_DEFAULT ON)
+endif()
+option(USE_DBUS "Build components using DBus" ${USE_DBUS_DEFAULT})
+if(USE_DBUS)
+    find_package(Qt6DBus ${REQUIRED_QT_VERSION} CONFIG REQUIRED)
+    set(HAVE_QTDBUS ${Qt6DBus_FOUND})
 endif()
 
 option(BUILD_QCH "Build API documentation in QCH format (for e.g. Qt Assistant, Qt Creator & KDevelop)" OFF)

@@ -32,7 +32,7 @@
 #define HAVE_X11 1
 #endif
 
-#if !defined(Q_OS_WINDOWS) && !defined(Q_OS_MAC)
+#if HAVE_QTDBUS
 #include <QDBusConnection>
 #include <QDBusConnectionInterface>
 #endif
@@ -64,7 +64,7 @@ public:
         setFaceType(dialogFace);
         setModal(false);
 
-#if !defined(Q_OS_WINDOWS) && !defined(Q_OS_MAC)
+#if HAVE_QTDBUS
         connect(this, &KCMShellMultiDialog::currentPageChanged, this, [](KPageWidgetItem *newPage) {
             if (KCModule *activeModule = newPage->widget()->findChild<KCModule *>()) {
                 if (QDBusConnection::sessionBus().isConnected()

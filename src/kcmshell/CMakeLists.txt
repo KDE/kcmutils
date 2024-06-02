@@ -10,8 +10,11 @@ target_link_libraries(kcmshell6
    kcmutils_logging_STATIC
 )
 
-if (NOT WIN32 AND NOT APPLE)
+if (HAVE_QTDBUS)
    target_link_libraries(kcmshell6 Qt6::DBus)
+   target_compile_definitions(kcmshell6 PRIVATE -DHAVE_QTDBUS=1)
+else()
+   target_compile_definitions(kcmshell6 PRIVATE -DHAVE_QTDBUS=0)
 endif()
 
 install(TARGETS kcmshell6 ${KDE_INSTALL_TARGETS_DEFAULT_ARGS})
