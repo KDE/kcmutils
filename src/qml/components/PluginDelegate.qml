@@ -85,7 +85,7 @@ Kirigami.CheckSubtitleDelegate {
     readonly property Kirigami.Action __infoAction: Kirigami.Action {
         id: infoAction
 
-        icon.name: "dialog-information"
+        icon.name: "dialog-information-symbolic"
         text: i18ndc("kcmutils6", "@info:tooltip", "About")
         displayHint: Kirigami.DisplayHint.IconOnly
         onTriggered: {
@@ -100,7 +100,7 @@ Kirigami.CheckSubtitleDelegate {
 
         visible: listItem.configureVisible
         enabled: listItem.checked
-        icon.name: "configure"
+        icon.name: "configure-symbolic"
         text: i18ndc("kcmutils6", "@info:tooltip", "Configure…")
         displayHint: Kirigami.DisplayHint.IconOnly
         onTriggered: listItem.configTriggered()

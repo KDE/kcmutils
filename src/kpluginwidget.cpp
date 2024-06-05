@@ -217,7 +217,7 @@ PluginDelegate::PluginDelegate(KPluginWidgetPrivate *pluginSelector_d_ptr, QObje
     , pluginSelector_d(pluginSelector_d_ptr)
 {
     // set the icon to make sure the size can be properly calculated
-    pushButton->setIcon(QIcon::fromTheme(QStringLiteral("configure")));
+    pushButton->setIcon(QIcon::fromTheme(QStringLiteral("configure-symbolic")));
 }
 
 PluginDelegate::~PluginDelegate()
@@ -331,12 +331,12 @@ QList<QWidget *> PluginDelegate::createItemWidgets(const QModelIndex &index) con
     connect(enabledCheckBox, &QAbstractButton::clicked, this, &PluginDelegate::slotStateChanged);
 
     auto aboutPushButton = new QPushButton;
-    aboutPushButton->setIcon(QIcon::fromTheme(QStringLiteral("dialog-information")));
+    aboutPushButton->setIcon(QIcon::fromTheme(QStringLiteral("dialog-information-symbolic")));
     aboutPushButton->setToolTip(i18n("About"));
     connect(aboutPushButton, &QAbstractButton::clicked, this, &PluginDelegate::slotAboutClicked);
 
     auto configurePushButton = new QPushButton;
-    configurePushButton->setIcon(QIcon::fromTheme(QStringLiteral("configure")));
+    configurePushButton->setIcon(QIcon::fromTheme(QStringLiteral("configure-symbolic")));
     configurePushButton->setToolTip(i18n("Configure"));
     connect(configurePushButton, &QAbstractButton::clicked, this, &PluginDelegate::slotConfigureClicked);
 
