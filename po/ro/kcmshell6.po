@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: kcmshell\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-01-26 00:35+0000\n"
-"PO-Revision-Date: 2022-02-05 12:19+0000\n"
+"PO-Revision-Date: 2024-02-25 12:38+0000\n"
 "Last-Translator: Sergiu Bivol <sergiu@cip.md>\n"
 "Language-Team: Romanian <kde-i18n-ro@kde.org>\n"
 "Language: ro\n"
@@ -39,7 +39,7 @@ msgstr ""
 #: main.cpp:106
 #, kde-format
 msgid "(c) 1999-2023, The KDE Developers"
-msgstr ""
+msgstr "(c) 1999-2023, Dezvoltatorii KDE"
 
 #: main.cpp:108
 #, kde-format
@@ -89,7 +89,7 @@ msgstr "Modulul de configurare de deschis"
 #: main.cpp:121
 #, kde-format
 msgid "Space separated arguments for the module"
-msgstr ""
+msgstr "Argumente separate prin spațiu pentru modul"
 
 #: main.cpp:122
 #, kde-format
@@ -105,6 +105,7 @@ msgstr "Folosește un anumit titlu pentru fereastră"
 #, kde-format
 msgid "Show an indicator when settings have changed from their default value"
 msgstr ""
+"Arată un indicator când configurările sunt diferite de valorile inițiale"
 
 #: main.cpp:132
 #, kde-format

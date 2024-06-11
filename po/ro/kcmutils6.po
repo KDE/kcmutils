@@ -1,12 +1,12 @@
 # Copyright (C) 2023 This file is copyright:
 # This file is distributed under the same license as the kcmutils package.
-# Sergiu Bivol <sergiu@cip.md>, 2008, 2009, 2010, 2012, 2013, 2014, 2020, 2021, 2022, 2023.
+# Sergiu Bivol <sergiu@cip.md>, 2008, 2009, 2010, 2012, 2013, 2014, 2020, 2021, 2022, 2023, 2024.
 msgid ""
 msgstr ""
 "Project-Id-Version: kcmutils\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-04-26 00:36+0000\n"
-"PO-Revision-Date: 2023-06-18 18:20+0100\n"
+"PO-Revision-Date: 2024-06-09 11:19+0100\n"
 "Last-Translator: Sergiu Bivol <sergiu@cip.md>\n"
 "Language-Team: Romanian <kde-i18n-ro@kde.org>\n"
 "Language: ro\n"
@@ -78,10 +78,9 @@ msgid "Configure"
 msgstr "Configurează"
 
 #: kpluginwidget.cpp:67
-#, fuzzy, kde-format
-#| msgid "Search:"
+#, kde-format
 msgid "Search…"
-msgstr "Caută:"
+msgstr "Caută…"
 
 #: kpluginwidget.cpp:335
 #, kde-format
