@@ -331,7 +331,7 @@ QList<QWidget *> PluginDelegate::createItemWidgets(const QModelIndex &index) con
     connect(enabledCheckBox, &QAbstractButton::clicked, this, &PluginDelegate::slotStateChanged);
 
     auto aboutPushButton = new QPushButton;
-    aboutPushButton->setIcon(QIcon::fromTheme(QStringLiteral("dialog-information-symbolic")));
+    aboutPushButton->setIcon(QIcon::fromTheme(QStringLiteral("help-about-symbolic")));
     aboutPushButton->setToolTip(i18n("About"));
     connect(aboutPushButton, &QAbstractButton::clicked, this, &PluginDelegate::slotAboutClicked);
 

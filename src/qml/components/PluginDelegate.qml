@@ -85,7 +85,7 @@ Kirigami.CheckSubtitleDelegate {
     readonly property Kirigami.Action __infoAction: Kirigami.Action {
         id: infoAction
 
-        icon.name: "dialog-information-symbolic"
+        icon.name: "help-about-symbolic"
         text: i18ndc("kcmutils6", "@info:tooltip", "About")
         displayHint: Kirigami.DisplayHint.IconOnly
         onTriggered: {
