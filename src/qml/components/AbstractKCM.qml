@@ -47,6 +47,9 @@ Kirigami.Page {
 
     /**
      * extraFooterTopPadding: bool
+     * Whether the footer should have extra space and a separator line drawn
+     * above it. Set this to true in a KCM with a custom footer and a ListView
+     * immediately above it.
      * Default: false
      */
     property bool extraFooterTopPadding: false
