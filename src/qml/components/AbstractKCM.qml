@@ -47,7 +47,6 @@ Kirigami.Page {
 
     /**
      * extraFooterTopPadding: bool
-     * @deprecated unused
      * Default: false
      */
     property bool extraFooterTopPadding: false
