@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kcmutils\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-01-26 00:35+0000\n"
+"POT-Creation-Date: 2024-08-15 00:37+0000\n"
 "PO-Revision-Date: 2023-10-01 14:22+0200\n"
 "Last-Translator: Freek de Kruijf <freekdekruijf@kde.nl>\n"
 "Language-Team: \n"
@@ -27,89 +27,89 @@ msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
 msgstr "freekdekruijf@kde.nl"
 
-#: main.cpp:104
+#: main.cpp:105
 #, kde-format
 msgid "A tool to start single system settings modules"
 msgstr "Een hulpmiddel om losse modules voor systeeminstellingen te starten"
 
-#: main.cpp:106
+#: main.cpp:107
 #, kde-format
 msgid "(c) 1999-2023, The KDE Developers"
 msgstr "(c) 1999-2023, de KDE-ontwikkelaars"
 
-#: main.cpp:108
+#: main.cpp:109
 #, kde-format
 msgid "Frans Englich"
 msgstr "Frans Englich"
 
-#: main.cpp:108
+#: main.cpp:109
 #, kde-format
 msgid "Maintainer"
 msgstr "Onderhouder"
 
-#: main.cpp:109
+#: main.cpp:110
 #, kde-format
 msgid "Daniel Molkentin"
 msgstr "Daniel Molkentin"
 
-#: main.cpp:110
+#: main.cpp:111
 #, kde-format
 msgid "Matthias Hoelzer-Kluepfel"
 msgstr "Matthias Hoelzer-Kluepfel"
 
-#: main.cpp:111
+#: main.cpp:112
 #, kde-format
 msgid "Matthias Elter"
 msgstr "Matthias Elter"
 
-#: main.cpp:112
+#: main.cpp:113
 #, kde-format
 msgid "Matthias Ettrich"
 msgstr "Matthias Ettrich"
 
-#: main.cpp:113
+#: main.cpp:114
 #, kde-format
 msgid "Waldo Bastian"
 msgstr "Waldo Bastian"
 
-#: main.cpp:119
+#: main.cpp:120
 #, kde-format
 msgid "List all possible modules"
 msgstr "Lijst met alle mogelijke modules"
 
-#: main.cpp:120
+#: main.cpp:121
 #, kde-format
 msgid "Configuration module to open"
 msgstr "Configuratiemodule om te openen"
 
-#: main.cpp:121
+#: main.cpp:122
 #, kde-format
 msgid "Space separated arguments for the module"
 msgstr "Spatie-gescheiden argumenten voor de module"
 
-#: main.cpp:122
+#: main.cpp:123
 #, kde-format
 msgid "Use a specific icon for the window"
 msgstr "Een specifiek pictogram voor het venster gebruiken"
 
-#: main.cpp:123
+#: main.cpp:124
 #, kde-format
 msgid "Use a specific caption for the window"
 msgstr "Een specifiek opschrift voor het venster gebruiken"
 
-#: main.cpp:124
+#: main.cpp:125
 #, kde-format
 msgid "Show an indicator when settings have changed from their default value"
 msgstr ""
 "Een indicatie tonen wanneer instellingen gewijzigd zijn van hun standaard "
 "waarde"
 
-#: main.cpp:132
+#: main.cpp:133
 #, kde-format
 msgid "The following modules are available:"
 msgstr "De volgende modules zijn beschikbaar:"
 
-#: main.cpp:145
+#: main.cpp:146
 #, kde-format
 msgid "No description available"
 msgstr "Geen beschrijving beschikbaar"
