@@ -8,6 +8,7 @@
 #include "kcmutils_debug.h"
 
 #include <KPluginFactory>
+#include <QCoreApplication>
 #include <QJsonArray>
 #include <QQmlEngine>
 
@@ -32,12 +33,27 @@ KQuickConfigModuleLoader::loadModule(const KPluginMetaData &metaData, QObject *p
 
     const QVariantList pluginArgs = QVariantList(args) << metaData.rawData().value(QLatin1String("X-KDE-KCM-Args")).toArray().toVariantList();
     if (const auto kcm = factory->create<KQuickConfigModule>(parent, pluginArgs)) {
-        const std::shared_ptr<QQmlEngine> engine =
-            engineArg ? engineArg : (s_kcmutilsCreatedEngine.expired() ? std::make_shared<QQmlEngine>() : s_kcmutilsCreatedEngine.lock());
-
-        if (!engineArg && s_kcmutilsCreatedEngine.expired()) {
-            s_kcmutilsCreatedEngine = engine;
+        auto engine = engineArg;
+        if (!engine) {
+            auto applicationEngine = QCoreApplication::instance()->property("__qmlEngine").value<std::weak_ptr<QQmlEngine>>();
+            if (!applicationEngine.expired()) {
+                engine = applicationEngine.lock();
+            }
         }
+
+        if (!engine && !s_kcmutilsCreatedEngine.expired()) {
+            engine = s_kcmutilsCreatedEngine.lock();
+        }
+
+        if (!engine) {
+            qWarning() << "Could not find a shared engine to use to load KQuickConfigModule" << metaData.pluginId();
+            engine = std::make_shared<QQmlEngine>();
+
+            if (s_kcmutilsCreatedEngine.expired()) {
+                s_kcmutilsCreatedEngine = engine;
+            }
+        }
+
         kcm->setInternalEngine(engine);
 
         result.plugin = kcm;
