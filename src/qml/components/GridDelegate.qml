@@ -233,10 +233,10 @@ T.ItemDelegate {
     QQC2.ToolTip.visible: (Kirigami.Settings.tabletMode ? pressed : hovered) && (QQC2.ToolTip.text !== "")
     QQC2.ToolTip.delay: Kirigami.Settings.tabletMode ? Qt.styleHints.mousePressAndHoldInterval : Kirigami.Units.toolTipDelay
     QQC2.ToolTip.text: {
-        if (delegate.toolTip.length > 0) {
-            return delegate.toolTip;
-        }
         const parts = [];
+        if (delegate.toolTip.length > 0) {
+            parts.push(delegate.toolTip);
+        }
         if (title.truncated) {
             parts.push(title.text);
         }
