@@ -51,6 +51,13 @@ GridView {
         }
     }
 
+    add: Transition {
+        ParallelAnimation {
+            NumberAnimation { property: "scale"; from: 0.5; to: 1.0; duration: Kirigami.Units.longDuration }
+            NumberAnimation { property: "opacity"; from: 0.0; to: 1.0; duration: Kirigami.Units.longDuration }
+        }
+    }
+
     removeDisplaced: Transition {
         SequentialAnimation {
             // wait for the "remove" animation to finish
@@ -58,6 +65,15 @@ GridView {
             NumberAnimation { properties: "x,y"; duration: Kirigami.Units.longDuration }
         }
     }
+
+    addDisplaced: Transition {
+        SequentialAnimation {
+            // wait for the "remove" animation to finish
+            PauseAnimation { duration: Kirigami.Units.longDuration }
+            NumberAnimation { properties: "x,y"; duration: Kirigami.Units.longDuration }
+        }
+    }
+
 
     Loader {
         anchors.centerIn: parent
