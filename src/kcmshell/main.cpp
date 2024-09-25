@@ -27,12 +27,6 @@
 #include <KShell>
 #include <kcmutils_debug.h>
 
-#if __has_include(<KStartupInfo>)
-#include <KStartupInfo>
-#include <private/qtx11extras_p.h>
-#define HAVE_X11 1
-#endif
-
 #if HAVE_QTDBUS
 #include <QDBusConnection>
 #include <QDBusConnectionInterface>
