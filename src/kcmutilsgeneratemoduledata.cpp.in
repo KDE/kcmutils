@@ -15,5 +15,6 @@ autoRegisterSkeletons();
 
 @SETTINGS_METHOD_DEFINITION@
 
-#include "moc_@CPP_FILENAME@"
 @CLOSE_NAMESPACE@
+
+#include "moc_@CPP_FILENAME@"
