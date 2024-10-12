@@ -14,6 +14,7 @@
 #include <QDebug>
 #include <QIcon>
 #include <QQmlEngine>
+#include <QQuickStyle>
 #include <QRegularExpression>
 #include <QStandardPaths>
 
@@ -98,6 +99,12 @@ int main(int argc, char *argv[])
         // don't leak the env variable to processes we start
         qunsetenv("QT_QPA_PLATFORM");
     }
+
+#if defined(Q_OS_MACOS) || defined(Q_OS_WIN)
+    QApplication::setStyle(QStringLiteral("breeze"));
+    QQuickStyle::setStyle(QStringLiteral("org.kde.desktop"));
+#endif
+
     KLocalizedString::setApplicationDomain("kcmshell6");
     KAboutData aboutData(QStringLiteral("kcmshell6"),
                          QString(),

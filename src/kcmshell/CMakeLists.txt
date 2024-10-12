@@ -8,6 +8,7 @@ target_link_libraries(kcmshell6
    KF6KCMUtils
    KF6::I18n
    Qt6::Qml
+   Qt6::QuickControls2
    kcmutils_logging_STATIC
 )
 
