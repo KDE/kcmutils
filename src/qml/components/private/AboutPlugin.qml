@@ -12,7 +12,8 @@ import QtQuick.Layouts
 
 import org.kde.kirigami as Kirigami
 
-/**
+/*!
+ * \internal
  * A copy of Kirigami.AboutPage adapted to KPluginMetadata instead of KAboutData
  */
 ColumnLayout {
