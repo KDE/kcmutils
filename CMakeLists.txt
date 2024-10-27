@@ -25,6 +25,7 @@ include(ECMDeprecationSettings)
 include(ECMMarkNonGuiExecutable)
 include(KDEGitCommitHooks)
 include(ECMQmlModule)
+include(ECMGenerateQDoc)
 
 
 include(CMakeDependentOption)
