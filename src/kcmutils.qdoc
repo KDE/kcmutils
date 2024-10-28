@@ -10,7 +10,23 @@
 */
 
 /*!
- * \qmlmodule org.kde.kcmutils
- * \title KCMUtils QML Types
- * \brief Stuff
+   \module KCMUtilsCore
+   \title KCMUtils Core C++ Classes
+   \ingroup modules
+   \cmakepackage KF6
+   \cmakecomponent KCMUtilsCore
+ */
+
+/*!
+   \module KCMUtilsQuick
+   \title KCMUtils Quick C++ Classes
+   \ingroup modules
+   \cmakepackage KF6
+   \cmakecomponent KCMUtilsQuick
+ */
+
+/*!
+   \qmlmodule org.kde.kcmutils
+   \title KCMUtils QML Types
+   \brief Stuff
  */

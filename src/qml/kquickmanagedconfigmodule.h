@@ -15,7 +15,7 @@ class KQuickManagedConfigModulePrivate;
 
 /*!
  * \class KQuickManagedConfigModule
- *
+ * \inmodule KCMUtilsQuick
  * \brief The base class for configuration modules using KConfigXT settings.
  *
  * We are assuming here that SettingsObject is a class generated from a kcfg file

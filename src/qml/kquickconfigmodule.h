@@ -34,7 +34,7 @@ class KQuickConfigModulePrivate;
 
 /*!
  * \class KQuickConfigModule
- *
+ * \inmodule KCMUtilsQuick
  * \brief The base class for QtQuick configuration modules.
  *
  * Configuration modules are realized as plugins that are dynamically loaded.

@@ -17,7 +17,7 @@ class KAbstractConfigModulePrivate;
 
 /*!
  * \class KAbstractConfigModule
- * \inmodule KCMUtils
+ * \inmodule KCMUtilsCore
  * \brief Base class for QML and QWidgets config modules.
  *
  * \since 6.0

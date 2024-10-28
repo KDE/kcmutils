@@ -17,6 +17,7 @@ class KQuickConfigModule;
 namespace KQuickConfigModuleLoader
 {
 /*!
+ * \inmodule KCMUtilsQuick
  * \brief Loads a QML KCM from the given plugin \a metaData as a child of \a parent with the given \a args.
  *
  * \a engine The QQmlEngine to use. If not set, an internal engine will be created. If your application has an existing engine, this must be passed in.

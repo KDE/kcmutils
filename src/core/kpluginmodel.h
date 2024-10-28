@@ -21,7 +21,7 @@ class KPluginModelPrivate;
 
 /*!
  * \class KPluginModel
- * \inmodule KCMUtils
+ * \inmodule KCMUtilsCore
  * \brief A model that provides a list of available plugins and allows to disable/enable them.
  *
  * Plugins need to define the \c X-KDE-ConfigModule property for their config modules to be found.

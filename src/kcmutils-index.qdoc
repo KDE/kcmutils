@@ -16,6 +16,8 @@
 
     \list
         \li \l{KCMUtils C++ Classes}
+        \li \l{KCMUtils Core C++ Classes}
+        \li \l{KCMUtils Quick C++ Classes}
         \li \l{KCMUtils QML Types}
     \endlist
 

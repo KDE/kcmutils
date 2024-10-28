@@ -17,7 +17,7 @@ class KCoreConfigSkeleton;
 
 /*!
  * \class KCModuleData
- * \inmodule KCMUtils
+ * \inmodule KCMUtilsCore
  * \brief A base class that offers information about a KCModule state.
  * \since 5.74
  */

@@ -16,6 +16,7 @@
 
 /*!
  * \class SettingStateProxy
+ * \inmodule KCMUtilsQuick
  * \brief Allows to represent the state of a particular setting
  * in a config object in a declarative way.
  *
