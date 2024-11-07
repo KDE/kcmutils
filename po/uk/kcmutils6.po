@@ -11,7 +11,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kcmutils5\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-04-26 00:36+0000\n"
+"POT-Creation-Date: 2024-11-07 00:37+0000\n"
 "PO-Revision-Date: 2024-04-26 16:20+0300\n"
 "Last-Translator: Yuri Chornoivan <yurchor@ukr.net>\n"
 "Language-Team: Ukrainian\n"
@@ -156,7 +156,7 @@ msgstr "Перекладачі"
 msgid "Send an email to %1"
 msgstr "Надіслати повідомлення ел. пошти до %1"
 
-#: qml/components/private/GridViewInternal.qml:77
+#: qml/components/private/GridViewInternal.qml:96
 #, kde-format
 msgid "No items found"
 msgstr "Пункти не знайдено"

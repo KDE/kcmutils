@@ -12,7 +12,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdelibs4\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-04-26 00:36+0000\n"
+"POT-Creation-Date: 2024-11-07 00:37+0000\n"
 "PO-Revision-Date: 2024-06-28 12:04+0000\n"
 "Last-Translator: Gummi <gudmundure@gmail.com>\n"
 "Language-Team: Icelandic <kde-i18n-doc@kde.org>\n"
@@ -167,7 +167,7 @@ msgstr "Þýðendur"
 msgid "Send an email to %1"
 msgstr "Senda tölvupóst á %1"
 
-#: qml/components/private/GridViewInternal.qml:77
+#: qml/components/private/GridViewInternal.qml:96
 #, kde-format
 msgid "No items found"
 msgstr "Engin atriði fundust"

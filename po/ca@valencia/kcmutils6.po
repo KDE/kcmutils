@@ -13,7 +13,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kcmutils\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-04-26 00:36+0000\n"
+"POT-Creation-Date: 2024-11-07 00:37+0000\n"
 "PO-Revision-Date: 2024-04-26 16:23+0200\n"
 "Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
@@ -159,7 +159,7 @@ msgstr "Equip de traducció"
 msgid "Send an email to %1"
 msgstr "Envia un correu a %1"
 
-#: qml/components/private/GridViewInternal.qml:77
+#: qml/components/private/GridViewInternal.qml:96
 #, kde-format
 msgid "No items found"
 msgstr "No s'ha trobat cap element"

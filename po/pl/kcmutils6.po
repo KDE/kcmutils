@@ -16,7 +16,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdelibs4\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-04-26 00:36+0000\n"
+"POT-Creation-Date: 2024-11-07 00:37+0000\n"
 "PO-Revision-Date: 2024-04-28 11:36+0200\n"
 "Last-Translator: Łukasz Wojniłowicz <lukasz.wojnilowicz@gmail.com>\n"
 "Language-Team: Polish <kde-i18n-doc@kde.org>\n"
@@ -161,7 +161,7 @@ msgstr "Tłumacze"
 msgid "Send an email to %1"
 msgstr "Wyślij wiadomość do %1"
 
-#: qml/components/private/GridViewInternal.qml:77
+#: qml/components/private/GridViewInternal.qml:96
 #, kde-format
 msgid "No items found"
 msgstr "Nie znaleziono niczego"

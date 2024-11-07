@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdelibs4\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-04-26 00:36+0000\n"
+"POT-Creation-Date: 2024-11-07 00:37+0000\n"
 "PO-Revision-Date: 2023-05-28 21:23+0700\n"
 "Last-Translator: Wantoyèk <wantoyek@gmail.com>\n"
 "Language-Team: Indonesian <kde-i18n-doc@kde.org>\n"
@@ -156,7 +156,7 @@ msgstr "Penerjemah"
 msgid "Send an email to %1"
 msgstr "Kirim sebuah email ke %1"
 
-#: qml/components/private/GridViewInternal.qml:77
+#: qml/components/private/GridViewInternal.qml:96
 #, fuzzy, kde-format
 #| msgid "No plugins found"
 msgid "No items found"

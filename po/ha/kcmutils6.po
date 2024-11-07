@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdelibs4\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-04-26 00:36+0000\n"
+"POT-Creation-Date: 2024-11-07 00:37+0000\n"
 "PO-Revision-Date: 2009-03-17 11:22+0100\n"
 "Last-Translator: Adriaan de Groot <groot@kde.org>\n"
 "Language-Team: Hausa <kde-i18n-doc@lists.kde.org>\n"
@@ -150,7 +150,7 @@ msgstr "Fassara"
 msgid "Send an email to %1"
 msgstr ""
 
-#: qml/components/private/GridViewInternal.qml:77
+#: qml/components/private/GridViewInternal.qml:96
 #, kde-format
 msgid "No items found"
 msgstr ""
