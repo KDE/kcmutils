@@ -9,6 +9,7 @@ import org.kde.kcmutils as KCMUtils
 import org.kde.kcmutils.private as KCMUtilsPrivate
 
 /*!
+   \qmltype SettingStateBinding
    \inqmlmodule org.kde.kcmutils
    \brief SettingStateBinding automatically impacts the representation
    of an item based on the state of a setting.
@@ -16,8 +17,8 @@ import org.kde.kcmutils.private as KCMUtilsPrivate
    It will disable the item if the setting is immutable
    and use a visual indicator for the state of the setting.
 
-   This is a higher level convenience wrapper for KCMUtils.SettingStateProxy
-   and KCMUtils.SettingStateIndicator.
+   This is a higher level convenience wrapper for SettingStateProxy
+   and SettingStateIndicator.
 
    \since 6.0
  */
