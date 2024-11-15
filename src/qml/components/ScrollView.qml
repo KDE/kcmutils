@@ -10,6 +10,7 @@ import QtQuick.Controls as QQC2
 import org.kde.kirigami as Kirigami
 
 /*!
+   \qmltype ScrollView
    \inqmlmodule org.kde.kcmutils
    \brief A ScrollView containing a GridView, with the default behavior about
    sizing and background as recommended by the user interface guidelines.
