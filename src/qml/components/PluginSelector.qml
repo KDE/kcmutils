@@ -13,13 +13,14 @@ import org.kde.kcmutils.private as KCMUtilsPrivate
 import "private" as Private
 
 /*!
+   \qmltype PluginSelector
    \inqmlmodule org.kde.kcmutils
    \brief ListView for showing plugins with their info and configuration.
 
    If extra butons should be added, a custom KPluginDelegate
    with the additionalActions property should be defined.
 
-   \since 6.0, this got renamed from KPluginSelector to PluginSelector
+   Renamed from KPluginSelector to PluginSelector in 6.0.
  */
 ListView {
     id: pluginSelector
