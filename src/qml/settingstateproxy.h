@@ -15,8 +15,8 @@
 #include <KCoreConfigSkeleton>
 
 /*!
- * \class SettingStateProxy
- * \inmodule KCMUtilsQuick
+ * \qmltype SettingStateProxy
+ * \inqmlmodule org.kde.kcmutils
  * \brief Allows to represent the state of a particular setting
  * in a config object in a declarative way.
  *
