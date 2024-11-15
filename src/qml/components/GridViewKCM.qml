@@ -10,6 +10,7 @@ import org.kde.kirigami as Kirigami
 import org.kde.kcmutils as KCMutils
 
 /*!
+   \qmltype GridViewKCM
    \inqmlmodule org.kde.kcmutils
    \brief This component is intended to be used as the root item
    for KCMs that are based upon a grid view of thumbnails,
