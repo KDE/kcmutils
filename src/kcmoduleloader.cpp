@@ -27,7 +27,7 @@
 #include <memory>
 #include <qqmlengine.h>
 
-#include "qml/kquickconfigmodule.h"
+#include "quick/kquickconfigmodule.h"
 
 using namespace KCModuleLoader;
 

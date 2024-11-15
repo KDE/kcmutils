@@ -15,6 +15,7 @@ ecm_qt_declare_logging_category(kcmutils_logging_STATIC
 
 add_subdirectory(core)
 add_subdirectory(qml)
+add_subdirectory(quick)
 
 ########### kcmutils ###############
 set(kcmutils_LIB_SRCS

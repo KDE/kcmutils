@@ -17,7 +17,7 @@
 #include <KPageWidget>
 #include <QQmlEngine>
 
-#include "qml/kquickconfigmodule.h"
+#include "quick/kquickconfigmodule.h"
 
 #include <kcmutils_debug.h>
 
