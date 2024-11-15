@@ -8,6 +8,7 @@
 #ifndef PLASMA_SHAREDQMLENGINE_H
 #define PLASMA_SHAREDQMLENGINE_H
 
+#include "ki18n_version.h"
 #include <QObject>
 #include <QQmlComponent>
 #include <QQmlContext>
@@ -16,7 +17,11 @@
 
 class QQmlComponent;
 class QQmlEngine;
+#if KI18N_VERSION >= QT_VERSION_CHECK(6, 8, 0)
+class KLocalizedQmlContext;
+#else
 class KLocalizedContext;
+#endif
 class SharedQmlEnginePrivate;
 
 

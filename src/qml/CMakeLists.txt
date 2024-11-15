@@ -32,6 +32,12 @@ target_link_libraries(KF6KCMUtilsQuick
     kcmutils_logging_STATIC
 )
 
+if(TARGET KF6::I18nQml)
+target_link_libraries(KF6KCMUtilsQuick PRIVATE
+        KF6::I18nQml
+)
+endif()
+
 set_target_properties(KF6KCMUtilsQuick PROPERTIES
                       VERSION ${KCMUTILS_VERSION}
                       SOVERSION ${KCMUTILS_SOVERSION}
