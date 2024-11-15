@@ -11,7 +11,8 @@ import QtQuick.Window 2.15
 import org.kde.kirigami 2.3 as Kirigami
 
 /*!
- * \inqmlmodule org.kde.kcmutils
+   \qmltype ContextualHelpButton
+   \inqmlmodule org.kde.kcmutils
    \deprecated Use org.kde.kirigami.ContextualHelpButton instead.
  */
 QQC2.Button {
