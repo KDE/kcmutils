@@ -9,6 +9,7 @@ import QtQuick.Controls as QQC2
 import org.kde.kirigami as Kirigami
 
 /*!
+ * \qmltype SimpleKCM
    \inqmlmodule org.kde.kcmutils
    \inherits org.kde.kirigami.ScrollablePage
    \brief This component is intended to be used as root item for
