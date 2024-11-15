@@ -23,6 +23,7 @@ class KCMultiDialogPrivate;
 /*!
  * \brief A class that offers a KPageDialog containing config modules.
  * \inmodule KCMUtils
+ * \internal
  */
 class KCMUTILS_EXPORT KCMultiDialog : public KPageDialog
 {
@@ -128,15 +129,16 @@ private:
 };
 
 /*!
- * \brief Custom QScrollArea class that doesn't limit its size hint.
+ * \class UnboundScrollArea
  * \inmodule KCMUtils
+ * \brief Custom QScrollArea class that doesn't limit its size hint.
+ * \internal
  *
  * See original QScrollArea::sizeHint() function,
  * where the size hint is bound by 36*24 font heights.
  *
  * Workaround for https://bugreports.qt.io/browse/QTBUG-10459.
  */
-
 class UnboundScrollArea : public QScrollArea
 {
     Q_OBJECT
