@@ -9,13 +9,14 @@ import QtQuick
 import org.kde.kcmutils.private as KCMUtilsPrivate
 
 /*!
+ * \qmltype SettingHighlighter
    \inqmlmodule org.kde.kcmutils
    \brief SettingHighlighter automatically impacts the
    representation of an item based on the value of a setting.
 
    When you are using this item you need to manually manage
    whether the highlighting is enabled or not. For a higher level component
-   see KCM.SettingStateBinding which will manage the state of the Item.
+   see SettingStateBinding which will manage the state of the Item.
    \since 6.0
  */
 Loader {
