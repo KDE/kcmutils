@@ -14,6 +14,7 @@ import org.kde.kirigami as Kirigami
 import "private" as Private
 
 /*!
+ * \qmltype GridDelegate
    \inqmlmodule org.kde.kcmutils
    \inherits QtQuick.Templates.ItemDelegate
    \brief Base delegate for KControlmodules based on Grid views of thumbnails.
@@ -35,7 +36,7 @@ T.ItemDelegate {
     property string subtitle
 
     /*!
-       \qmlproperty QtQuick.Item GridDelegate::thumbnail
+       \qmlproperty Item GridDelegate::thumbnail
        \brief The item actually implementing the thumbnail:
        the visualization is up to the implementation.
      */
