@@ -19,7 +19,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kcmutils5\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-11-15 00:37+0000\n"
+"POT-Creation-Date: 2024-11-18 00:37+0000\n"
 "PO-Revision-Date: 2024-07-19 18:18-0300\n"
 "Last-Translator: Geraldo Simiao <geraldosimiao@fedoraproject.org>\n"
 "Language-Team: Brazilian Portuguese <kde-i18n-pt_BR@kde.org>\n"
@@ -173,7 +173,7 @@ msgstr "Enviar e-mail para %1"
 msgid "No items found"
 msgstr "Nenhum item encontrado"
 
-#: qml/kquickconfigmodule.cpp:121
+#: quick/kquickconfigmodule.cpp:121
 #, kde-format
 msgid "Could not find resource '%1'"
 msgstr "Não foi possível encontrar o recurso '%1'"
