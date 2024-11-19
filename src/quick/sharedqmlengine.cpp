@@ -7,11 +7,7 @@
 
 #include "sharedqmlengine_p.h"
 
-#if KI18N_VERSION >= QT_VERSION_CHECK(6, 8, 0)
 #include <KLocalizedQmlContext>
-#else
-#include <KLocalizedContext>
-#endif
 #include <QDebug>
 #include <QQmlContext>
 #include <QQmlEngine>
@@ -64,11 +60,7 @@ public:
     QQmlIncubator incubator;
     QQmlComponent *component;
     QTimer executionEndTimer;
-#if KI18N_VERSION >= QT_VERSION_CHECK(6, 8, 0)
     KLocalizedQmlContext *context{nullptr};
-#else
-    KLocalizedContext *context{nullptr};
-#endif
     QQmlContext *rootContext;
     bool delay;
     std::shared_ptr<QQmlEngine> m_engine;
@@ -127,11 +119,7 @@ SharedQmlEngine::SharedQmlEngine(const std::shared_ptr<QQmlEngine> &engine, QObj
     d->rootContext = new QQmlContext(engine.get());
     d->rootContext->setParent(this); // Delete the context when deleting the shared engine
 
-#if KI18N_VERSION < QT_VERSION_CHECK(6, 8, 0)
-    d->context = new KLocalizedContext(d->rootContext);
-#else
     d->context = new KLocalizedQmlContext(d->rootContext);
-#endif
     d->rootContext->setContextObject(d->context);
 }
 

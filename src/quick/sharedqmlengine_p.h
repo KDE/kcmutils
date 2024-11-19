@@ -17,11 +17,7 @@
 
 class QQmlComponent;
 class QQmlEngine;
-#if KI18N_VERSION >= QT_VERSION_CHECK(6, 8, 0)
 class KLocalizedQmlContext;
-#else
-class KLocalizedContext;
-#endif
 class SharedQmlEnginePrivate;
 
 
