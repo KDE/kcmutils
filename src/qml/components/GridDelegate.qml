@@ -198,6 +198,7 @@ T.ItemDelegate {
             verticalAlignment: Text.AlignTop
             text: delegate.text
             color: enabled ? Kirigami.Theme.textColor : Kirigami.Theme.disabledTextColor
+            maximumLineCount: 1
             elide: Text.ElideRight
             font.bold: delegate.GridView.isCurrentItem
             textFormat: Text.PlainText
@@ -212,6 +213,7 @@ T.ItemDelegate {
             text: delegate.subtitle
             font.pointSize: Kirigami.Theme.smallFont.pointSize
             font.bold: delegate.GridView.isCurrentItem
+            maximumLineCount: 1
             elide: Text.ElideRight
             textFormat: Text.PlainText
         }
