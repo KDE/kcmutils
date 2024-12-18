@@ -23,7 +23,7 @@ QQC2.ScrollView {
     id: scroll
 
     /*!
-       \qmlproperty QtQuick.GridView GridView::view
+       \qmlproperty GridView GridView::view
        \brief Exposes the internal QtQuick.GridView.
 
        In order to set a model or a delegate to it,
