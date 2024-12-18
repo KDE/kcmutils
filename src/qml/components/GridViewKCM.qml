@@ -34,7 +34,7 @@ KCMutils.AbstractKCM {
     id: root
 
     /*!
-       \qmlproperty org.kde.kcmutils.GridView GridViewKCM::view
+       \qmlproperty GridView GridViewKCM::view
        \brief Exposes the internal KCMUtils.GridView.
 
        In order to set a model or a delegate to it,
