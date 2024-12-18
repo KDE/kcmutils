@@ -14,6 +14,10 @@
 class QQmlEngine;
 class KQuickConfigModule;
 
+/*!
+    \namespace KQuickConfigModuleLoader
+    \inmodule KCMUtilsQuick
+ */
 namespace KQuickConfigModuleLoader
 {
 /*!
