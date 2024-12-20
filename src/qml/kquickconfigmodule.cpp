@@ -22,6 +22,7 @@
 #include <QResource>
 #include <QUrl>
 
+#include <KRuntimePlatform>
 #include <KLocalizedContext>
 #include <KLocalizedString>
 
@@ -116,7 +117,20 @@ QQuickItem *KQuickConfigModule::mainUi()
     d->engine->setTranslationDomain(componentName);
     d->engine->setInitializationDelayed(true);
 
-    const QString resourcePath = d->getResourcePath(QStringLiteral("main.qml"));
+    QString resourcePath = d->getResourcePath(QStringLiteral("main.qml"));
+
+    qCDebug(KCMUTILS_LOG) << "Current platform is " << KRuntimePlatform::runtimePlatform();
+
+    const auto platforms = KRuntimePlatform::runtimePlatform();
+    for (const QString &platform : platforms) {
+        const QString platformResourcePath = d->getResourcePath(QString(QStringLiteral("main_%1.qml")).arg(platform));
+        if (QResource r(platformResourcePath); r.isValid()) {
+            qCDebug(KCMUTILS_LOG) << "Found platform-specific QML main file at" << platformResourcePath;
+            resourcePath = std::move(platformResourcePath);
+            break;
+        }
+    }
+
     if (QResource r(resourcePath); !r.isValid()) {
         d->errorString = i18n("Could not find resource '%1'", resourcePath);
         qCWarning(KCMUTILS_LOG) << "Could not find resource" << resourcePath;
