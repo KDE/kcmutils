@@ -43,7 +43,7 @@ class KQuickConfigModulePrivate;
  * the module author.
  *
  * To write a config module, you have to create a C++ plugin
- * and an accompaning QML user interface.
+ * and an accompanying QML user interface.
  *
  * To allow KCMUtils to load your ConfigModule subclass, you must create a KPluginFactory implementation.
  *
@@ -133,9 +133,24 @@ public:
     // QML property accessors
 
     /**
-     * @return The main UI for this configuration module. It's a QQuickItem coming from
+     * Load the main UI for this configuration module. It's a QQuickItem coming from
      * the QML package named the same as the KAboutData's component name for
-     * this config module
+     * this config module.
+     *
+     * Normmally, ui/main.qml will be loaded from the qrc baked into the plugin. However,
+     * if the PLASMA_PLATFORM environmental variable is set, the module will try to load
+     * a platform-specific QML file as its mainUi starting point.
+     *
+     * For example:
+     *
+     * environment has set
+     * `export PLASMA_PLATFORM=phone:handset`
+     *
+     * The module will try to find main_phone.qml, then main_handset.qml, then main.qml.
+     * The first file that is found will be used as mainUi. If none is found and main.qml
+     * doesn't exist, the module is broken and an error will be displayed.
+     *
+     * @return The main UI for this configuration module. It's a QQuickItem coming from
      */
     QQuickItem *mainUi();
 
