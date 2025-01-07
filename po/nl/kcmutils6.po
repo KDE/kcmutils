@@ -18,7 +18,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdelibs4\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-11-18 00:37+0000\n"
+"POT-Creation-Date: 2025-01-07 00:38+0000\n"
 "PO-Revision-Date: 2024-04-26 10:58+0200\n"
 "Last-Translator: Freek de Kruijf <freekdekruijf@kde.nl>\n"
 "Language-Team: \n"
@@ -176,7 +176,7 @@ msgstr "Een e-mail verzenden naar %1"
 msgid "No items found"
 msgstr "Geen items gevonden"
 
-#: quick/kquickconfigmodule.cpp:121
+#: quick/kquickconfigmodule.cpp:135
 #, kde-format
 msgid "Could not find resource '%1'"
 msgstr "Kon de hulpbron '%1' niet vinden"

@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdelibs4\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-11-18 00:37+0000\n"
+"POT-Creation-Date: 2025-01-07 00:38+0000\n"
 "PO-Revision-Date: 2023-05-28 21:23+0700\n"
 "Last-Translator: Wantoyèk <wantoyek@gmail.com>\n"
 "Language-Team: Indonesian <kde-i18n-doc@kde.org>\n"
@@ -162,7 +162,7 @@ msgstr "Kirim sebuah email ke %1"
 msgid "No items found"
 msgstr "Tidak ada plugin yang dtemukan"
 
-#: quick/kquickconfigmodule.cpp:121
+#: quick/kquickconfigmodule.cpp:135
 #, kde-format
 msgid "Could not find resource '%1'"
 msgstr "Tidak bisa menemukan sumberdaya '%1'."
