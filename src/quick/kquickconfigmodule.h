@@ -99,7 +99,7 @@ class KQuickConfigModulePrivate;
  * }
  * \endcode
  *
- * See https://develop.kde.org/docs/extend/kcm/ for more detailed documentation.
+ * See https://develop.kde.org/docs/features/configuration/kcm/ for more detailed documentation.
  * @since 6.0
  */
 class KCMUTILSQUICK_EXPORT KQuickConfigModule : public KAbstractConfigModule
