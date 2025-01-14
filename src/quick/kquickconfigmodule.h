@@ -137,7 +137,7 @@ public:
      * the QML package named the same as the KAboutData's component name for
      * this config module.
      *
-     * Normmally, ui/main.qml will be loaded from the qrc baked into the plugin. However,
+     * Normally, ui/main.qml will be loaded from the qrc baked into the plugin. However,
      * if the PLASMA_PLATFORM environmental variable is set, the module will try to load
      * a platform-specific QML file as its mainUi starting point.
      *
