@@ -13,7 +13,7 @@ portingAid: false
 deprecated: false
 release: true
 libraries:
- - cmake: "KF6::KCMUtils"
+    - cmake: "KF6::KCMUtils"
 cmakename: KF6KCMUtils
 
 public_lib: true
