@@ -37,7 +37,7 @@ QQC2.ScrollView {
     onViewChanged: {
         view.parent = scroll;
         if (!view.KeyNavigation.up) {
-            view.KeyNavigation.up = Qt.binding(() => root.globalToolBarItem);
+            view.KeyNavigation.up = Qt.binding(() => root.actions.length > 0 ? root.globalToolBarItem : null);
         }
     }
 
