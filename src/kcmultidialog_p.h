@@ -40,6 +40,7 @@ public:
     void clientChanged();
     void dialogClosed();
     void updateHeader(bool use, const QString &message);
+    void updateScrollAreaFocusPolicy();
 
     KCMultiDialog *q;
 

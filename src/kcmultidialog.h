@@ -122,6 +122,7 @@ protected Q_SLOTS:
 private:
     friend KCMultiDialogPrivate;
     const std::unique_ptr<KCMultiDialogPrivate> d;
+    bool eventFilter(QObject *watched, QEvent *event) override;
 };
 
 /**

@@ -22,6 +22,7 @@
 #include <QProcess>
 #include <QPushButton>
 #include <QScreen>
+#include <QScrollBar>
 #include <QStandardPaths>
 #include <QStringList>
 #include <QStyle>
@@ -195,6 +196,19 @@ void KCMultiDialogPrivate::updateHeader(bool use, const QString &message)
     } else {
         item->setHeader(moduleName);
         item->setIcon(QIcon::fromTheme(icon));
+    }
+}
+
+void KCMultiDialogPrivate::updateScrollAreaFocusPolicy()
+{
+    KPageWidgetItem *item = q->currentPage();
+    if (!item) {
+        return;
+    }
+    UnboundScrollArea *moduleScroll = qobject_cast<UnboundScrollArea *>(item->widget());
+    if (moduleScroll) {
+        bool scrollbarVisible = moduleScroll->horizontalScrollBar()->isVisible() || moduleScroll->verticalScrollBar()->isVisible();
+        moduleScroll->setFocusPolicy(scrollbarVisible ? Qt::FocusPolicy::StrongFocus : Qt::FocusPolicy::NoFocus);
     }
 }
 
@@ -428,6 +442,9 @@ KPageWidgetItem *KCMultiDialog::addModule(const KPluginMetaData &metaData, const
         setCurrentPage(item);
         d->clientChanged();
     }
+    moduleScroll->horizontalScrollBar()->installEventFilter(this);
+    moduleScroll->verticalScrollBar()->installEventFilter(this);
+    d->updateScrollAreaFocusPolicy();
     return item;
 }
 
@@ -447,6 +464,17 @@ void KCMultiDialog::setDefaultsIndicatorsVisible(bool show)
     for (const auto &module : std::as_const(d->modules)) {
         module.kcm->setDefaultsIndicatorsVisible(show);
     }
+}
+
+bool KCMultiDialog::eventFilter(QObject *watched, QEvent *event)
+{
+    if ((event->type() == QEvent::Show || event->type() == QEvent::Hide) && currentPage()) {
+        UnboundScrollArea *moduleScroll = qobject_cast<UnboundScrollArea *>(currentPage()->widget());
+        if (moduleScroll && (watched == moduleScroll->horizontalScrollBar() || watched == moduleScroll->verticalScrollBar())) {
+            d->updateScrollAreaFocusPolicy();
+        }
+    }
+    return KPageDialog::eventFilter(watched, event);
 }
 
 #include "moc_kcmultidialog.cpp"
