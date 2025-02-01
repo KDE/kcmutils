@@ -3,6 +3,7 @@
     SPDX-License-Identifier: LGPL-2.0-or-later
 */
 
+#include <QCoreApplication>
 #include <QFile>
 #include <QFileInfo>
 #include <QJsonDocument>
@@ -12,7 +13,9 @@
 int main(int argc, char **argv)
 {
     Q_ASSERT(argc == 3);
-    QString fileName = QString::fromLatin1(argv[1]);
+    // Use QCoreApplication to parse arguments to handle encoding correctly
+    QCoreApplication app(argc, argv);
+    QString fileName = app.arguments().at(1);
 
     QFile file(fileName);
     bool isOpen = file.open(QIODevice::ReadOnly);
@@ -26,7 +29,7 @@ int main(int argc, char **argv)
     const QJsonObject kplugin = doc.object().value(QLatin1String("KPlugin")).toObject();
     const QLatin1String namePrefix("Name");
 
-    QFile out(QString::fromLatin1(argv[2]));
+    QFile out(app.arguments().at(2));
     out.open(QIODevice::WriteOnly);
     out.write("[Desktop Entry]\n");
     out.write("Type=Application\n");
