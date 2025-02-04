@@ -42,15 +42,15 @@ int main(int argc, char **argv)
     }
 
     const QString exec = QLatin1String("Exec=") + executableProgram + QFileInfo(fileName).baseName() + QLatin1Char('\n');
-    out.write(exec.toLatin1());
+    out.write(exec.toUtf8());
     const QString icon = QLatin1String("Icon=") + kplugin.value(QLatin1String("Icon")).toString() + QLatin1Char('\n');
-    out.write(icon.toLatin1());
+    out.write(icon.toUtf8());
 
     for (auto it = kplugin.begin(), end = kplugin.end(); it != end; ++it) {
         const QString key = it.key();
         if (key.startsWith(namePrefix)) {
             const QString name = key + QLatin1Char('=') + it.value().toString() + QLatin1Char('\n');
-            out.write(name.toLocal8Bit());
+            out.write(name.toUtf8());
         }
     }
 }
