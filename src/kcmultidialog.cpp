@@ -390,6 +390,7 @@ KPageWidgetItem *KCMultiDialog::addModule(const KPluginMetaData &metaData, const
     moduleScroll->setWidgetResizable(true);
     moduleScroll->setFrameStyle(QFrame::NoFrame);
     moduleScroll->viewport()->setAutoFillBackground(false);
+    moduleScroll->setAccessibleName(i18ndc("kcmutils", "@other accessible name for view that can be scrolled", "Scrollable area"));
 
     KCModule *kcm = KCModuleLoader::loadModule(metaData, moduleScroll, args);
     moduleScroll->setWidget(kcm->widget());
