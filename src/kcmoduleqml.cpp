@@ -10,6 +10,7 @@
 #include <QQuickItem>
 #include <QQuickWidget>
 #include <QQuickWindow>
+#include <QTimer>
 #include <QVBoxLayout>
 
 #include <KAboutData>
@@ -20,6 +21,7 @@
 #include "quick/kquickconfigmodule.h"
 
 #include <kcmutils_debug.h>
+#include <qquickitem.h>
 
 class QmlConfigModuleWidget;
 class KCModuleQmlPrivate
@@ -64,15 +66,6 @@ public:
         setFocusPolicy(Qt::StrongFocus);
     }
 
-    void focusInEvent(QFocusEvent *event) override
-    {
-        if (event->reason() == Qt::TabFocusReason) {
-            m_module->d->rootPlaceHolder->nextItemInFocusChain(true)->forceActiveFocus(Qt::TabFocusReason);
-        } else if (event->reason() == Qt::BacktabFocusReason) {
-            m_module->d->rootPlaceHolder->nextItemInFocusChain(false)->forceActiveFocus(Qt::BacktabFocusReason);
-        }
-    }
-
     QSize sizeHint() const override
     {
         if (!m_module->d->rootPlaceHolder) {
@@ -84,21 +77,45 @@ public:
 
     bool eventFilter(QObject *watched, QEvent *event) override
     {
-        if (watched == m_module->d->rootPlaceHolder && event->type() == QEvent::FocusIn) {
+        // Everything would work mosty without manual intervention, but as of Qt 6.8
+        // things require special attention so that they work correctly with orca.
+        // The timing between the focusproxied QQuickWidget receiving focus and the
+        // focused qml Item being registered as focused is off and screen readers get
+        // confused. Instead, put initial focus on the root element and switch with a timer
+        // so the qml focuschange happens while the qquickwidget has focus. This
+        // requires activeFocusOnTab on the rootPlaceHolder to work, and that makes other things
+        // a bit messier than they would otherwise need to be.
+        if (event->type() == QEvent::FocusIn && watched == m_module->d->rootPlaceHolder) {
             auto focusEvent = static_cast<QFocusEvent *>(event);
             if (focusEvent->reason() == Qt::TabFocusReason) {
-                QWidget *w = m_module->d->quickWidget->nextInFocusChain();
-                while (!w->isEnabled() || !(w->focusPolicy() & Qt::TabFocus)) {
-                    w = w->nextInFocusChain();
-                }
-                w->setFocus(Qt::TabFocusReason); // allow tab navigation inside the qquickwidget
+                m_module->d->rootPlaceHolder->forceActiveFocus(Qt::OtherFocusReason);
+                QTimer::singleShot(0, this, [this] {
+                    QQuickItem *nextItem = m_module->d->rootPlaceHolder->nextItemInFocusChain(true);
+                    if (nextItem) {
+                        nextItem->forceActiveFocus(Qt::TabFocusReason);
+                    }
+                });
                 return true;
             } else if (focusEvent->reason() == Qt::BacktabFocusReason) {
-                QWidget *w = m_module->d->quickWidget->previousInFocusChain();
-                while (!w->isEnabled() || !(w->focusPolicy() & Qt::TabFocus)) {
-                    w = w->previousInFocusChain();
+                // this can either happen from backtabbing in qml or from backtabbing
+                // from qwidgets past the focusproxy (e.g. from the kcm buttons).
+                if (!m_module->d->rootPlaceHolder->hasActiveFocus()) {
+                    // we're in widgets, enter qml from reverse in the focus chain in the same way as above
+                    QTimer::singleShot(0, this, [this] {
+                        QQuickItem *nextItem = m_module->d->rootPlaceHolder->nextItemInFocusChain(false);
+                        if (nextItem) {
+                            nextItem->forceActiveFocus(Qt::TabFocusReason);
+                        }
+                    });
+                    return true;
                 }
-                w->setFocus(Qt::BacktabFocusReason);
+                // we're coming from qml, so we focus the widget outside. This also needs singleShot;
+                // if we do it immediately, focus cycles backward along the qml focus chain instead.
+                // Without activeFocusOnTab on the rootPlaceHolder we could just return false and
+                // Qt would handle everything by itself
+                QTimer::singleShot(0, this, [this] {
+                    focusNextPrevChild(false);
+                });
                 return true;
             }
         }
@@ -146,15 +163,14 @@ KCModuleQml::KCModuleQml(KQuickConfigModule *configModule, QWidget *parent)
 
     d->quickWidget = new QQuickWidget(d->configModule->engine().get(), d->widget);
     d->quickWidget->setResizeMode(QQuickWidget::SizeRootObjectToView);
-    d->quickWidget->setFocusPolicy(Qt::StrongFocus);
     d->quickWidget->setAttribute(Qt::WA_AlwaysStackOnTop, true);
     d->quickWidget->setAttribute(Qt::WA_NoMousePropagation, true); // Workaround for QTBUG-109861 to fix drag everywhere
     d->quickWindow = d->quickWidget->quickWindow();
     d->quickWindow->setColor(Qt::transparent);
+    d->widget->setFocusProxy(d->quickWidget);
 
     QQmlComponent *component = new QQmlComponent(d->configModule->engine().get(), this);
-    // this has activeFocusOnTab to notice when the navigation wraps
-    // around, so when we need to go outside and inside
+    // activeFocusOnTab is required to have screen readers not get confused
     // pushPage/popPage are needed as push of StackView can't be directly invoked from c++
     // because its parameters are QQmlV4Function which is not public.
     // The managers of onEnter/ReturnPressed are a workaround of
