@@ -61,11 +61,17 @@ KCModule::KCModule(QWidget *parent, const KPluginMetaData &data)
     : KAbstractConfigModule(parent, data)
     , d(new KCModulePrivate(parent))
 {
+    connect(this, &KAbstractConfigModule::defaultsIndicatorsVisibleChanged, this, [this] {
+        for (auto manager : std::as_const(d->managers)) {
+            manager->setDefaultsIndicatorsVisible(defaultsIndicatorsVisible());
+        }
+    });
 }
 
 KConfigDialogManager *KCModule::addConfig(KCoreConfigSkeleton *config, QWidget *widget)
 {
     KConfigDialogManager *manager = new KConfigDialogManager(widget, config);
+    manager->setDefaultsIndicatorsVisible(defaultsIndicatorsVisible());
     manager->setObjectName(objectName());
     connect(manager, &KConfigDialogManager::widgetModified, this, &KCModule::widgetChanged);
     connect(manager, &QObject::destroyed, this, [this, manager]() {
