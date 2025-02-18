@@ -1,4 +1,5 @@
 # Translation of kdelibs4 into Japanese.
+# SPDX-FileCopyrightText: 2023, 2025 Ryuichi Yamada <ryuichi_ya220@outlook.jp>
 # This file is distributed under the same license as the kdelibs package.
 # Taiki Komoda <kom@kde.gr.jp>, 2002, 2004, 2006, 2010.
 # Noboru Sinohara <shinobo@leo.bekkoame.ne.jp>, 2004.
@@ -8,14 +9,13 @@
 # Shinichi Tsunoda <tsuno@ngy.1st.ne.jp>, 2005.
 # Yukiko Bando <ybando@k6.dion.ne.jp>, 2006, 2007, 2008, 2009, 2010.
 # Fumiaki Okushi <fumiaki.okushi@gmail.com>, 2019.
-# Ryuichi Yamada <ryuichi_ya220@outlook.jp>, 2023.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: kdelibs4\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-01-07 00:38+0000\n"
-"PO-Revision-Date: 2023-02-04 01:22+0900\n"
+"PO-Revision-Date: 2025-01-23 07:22+0900\n"
 "Last-Translator: Ryuichi Yamada <ryuichi_ya220@outlook.jp>\n"
 "Language-Team: Japanese <kde-jp@kde.org>\n"
 "Language: ja\n"
@@ -25,7 +25,7 @@ msgstr ""
 "Plural-Forms: nplurals=1; plural=0;\n"
 "X-Accelerator-Marker: &\n"
 "X-Text-Markup: kde4\n"
-"X-Generator: Lokalize 22.12.1\n"
+"X-Generator: Lokalize 24.12.1\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
@@ -91,8 +91,7 @@ msgid "Configure"
 msgstr "設定"
 
 #: kpluginwidget.cpp:67
-#, fuzzy, kde-format
-#| msgid "Search..."
+#, kde-format
 msgid "Search…"
 msgstr "検索..."
 
@@ -105,7 +104,7 @@ msgstr "情報"
 #, kde-format
 msgctxt "@action:button"
 msgid "Show Contextual Help"
-msgstr ""
+msgstr "コンテキストのヘルプを表示"
 
 #: qml/components/PluginDelegate.qml:89
 #, kde-format
@@ -114,11 +113,10 @@ msgid "About"
 msgstr "情報"
 
 #: qml/components/PluginDelegate.qml:104
-#, fuzzy, kde-format
-#| msgid "Configure"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Configure…"
-msgstr "設定"
+msgstr "設定..."
 
 #: qml/components/PluginSelector.qml:84
 #, kde-format
@@ -167,12 +165,11 @@ msgid "Send an email to %1"
 msgstr "%1 にメールを送る"
 
 #: qml/components/private/GridViewInternal.qml:77
-#, fuzzy, kde-format
-#| msgid "No plugins found"
+#, kde-format
 msgid "No items found"
-msgstr "プラグインは見つかりませんでした"
+msgstr "アイテムが見つかりません"
 
 #: quick/kquickconfigmodule.cpp:135
 #, kde-format
 msgid "Could not find resource '%1'"
-msgstr ""
+msgstr "リソース '%1' は見つかりませんでした"
