@@ -302,7 +302,7 @@ void KCMultiDialogPrivate::apply()
     for (const CreatedModule &module : std::as_const(modules)) {
         KCModule *kcm = module.kcm;
 
-        if (kcm->needsSave()) {
+        if (kcm && kcm->needsSave()) {
             kcm->save();
         }
     }
