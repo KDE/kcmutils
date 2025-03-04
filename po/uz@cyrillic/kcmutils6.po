@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdelibs4\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-01-07 00:38+0000\n"
+"POT-Creation-Date: 2025-03-04 00:38+0000\n"
 "PO-Revision-Date: 2009-10-17 00:34+0200\n"
 "Last-Translator: Mashrab Kuvatov <kmashrab@uni-bremen.de>\n"
 "Language-Team: Uzbek <floss-uz-l10n@googlegroups.com>\n"
@@ -54,7 +54,7 @@ msgstr "Илтимос тизим бошқарувчисига мурожаат 
 msgid "Error loading QML file."
 msgstr "Файлни очишда хато рўй берди."
 
-#: kcmultidialog.cpp:45
+#: kcmultidialog.cpp:46
 #, fuzzy, kde-format
 #| msgid ""
 #| "The document \"%1\" has been modified.\n"
@@ -66,13 +66,13 @@ msgstr ""
 "'%1' ҳужжатига ўзгариш киритилди.\n"
 "Уни сақлашни истайсизми?"
 
-#: kcmultidialog.cpp:47
+#: kcmultidialog.cpp:48
 #, fuzzy, kde-format
 #| msgid "Apply settings"
 msgid "Apply Settings"
 msgstr "Мосламаларни қўллаш"
 
-#: kcmultidialog.cpp:204 kpluginwidget.cpp:340
+#: kcmultidialog.cpp:218 kpluginwidget.cpp:340
 #, kde-format
 msgid "Configure"
 msgstr "Мослаш"

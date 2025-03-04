@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdelibs4\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-01-07 00:38+0000\n"
+"POT-Creation-Date: 2025-03-04 00:38+0000\n"
 "PO-Revision-Date: 2010-12-31 22:47+0700\n"
 "Last-Translator: Phuwanat Sakornsakolpat <narachai@gmail.com>\n"
 "Language-Team: Thai <thai-l10n@googlegroups.com>\n"
@@ -68,7 +68,7 @@ msgstr "โปรดติดต่อผู้บริหารระบบข
 msgid "Error loading QML file."
 msgstr "การโหลด '%1' ผิดพลาด\n"
 
-#: kcmultidialog.cpp:45
+#: kcmultidialog.cpp:46
 #, kde-format
 msgid ""
 "The settings of the current module have changed.\n"
@@ -77,12 +77,12 @@ msgstr ""
 "มีการเปลี่ยนแปลงการตั้งค่าให้กับมอดูลที่ใช้อยู่ในปัจจุบัน\n"
 "คุณต้องการจะทำการปรับใช้มันหรือจะละทิ้งการเปลี่ยนแปลง ?"
 
-#: kcmultidialog.cpp:47
+#: kcmultidialog.cpp:48
 #, kde-format
 msgid "Apply Settings"
 msgstr "ปรับใช้การตั้งค่า"
 
-#: kcmultidialog.cpp:204 kpluginwidget.cpp:340
+#: kcmultidialog.cpp:218 kpluginwidget.cpp:340
 #, kde-format
 msgid "Configure"
 msgstr "ปรับแต่งค่า"
@@ -11854,7 +11854,7 @@ msgstr "ไม่พบบริการ '%1'"
 #~ "point: %4<br />(In decimal: %5)</qt>"
 #~ msgstr ""
 #~ "<qt><font size=\"+4\" face=\"%1\">%2</font><br />%3<br />รหัสยูนิโค้ด: %4<br /"
-#~ ">(ในแบบเลขฐานสิบ: %5)</"
+#~ ">(ในแบบเลขฐานสิบ: %5)</qt>"
 
 #~ msgid ""
 #~ "Konqueror has the ability to store the password in an encrypted wallet. "

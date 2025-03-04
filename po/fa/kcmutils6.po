@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdelibs4\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-01-07 00:38+0000\n"
+"POT-Creation-Date: 2025-03-04 00:38+0000\n"
 "PO-Revision-Date: 2012-06-28 16:40+0430\n"
 "Last-Translator: Mohammad Reza Mirdamadi <mohi@linuxshop.ir>\n"
 "Language-Team: Farsi (Persian) <kde-i18n-fa@kde.org>\n"
@@ -71,7 +71,7 @@ msgstr "لطفاً، با سرپرست سیستم خود تماس بگیرید."
 msgid "Error loading QML file."
 msgstr "خطای باز کردن پرونده."
 
-#: kcmultidialog.cpp:45
+#: kcmultidialog.cpp:46
 #, kde-format
 msgid ""
 "The settings of the current module have changed.\n"
@@ -80,12 +80,12 @@ msgstr ""
 "تنظیمات ماژول فعلی تغییر پیدا کرده.\n"
 "آیا می‌خواهید تغییرات را اعمال کنید یا دور بریزید؟"
 
-#: kcmultidialog.cpp:47
+#: kcmultidialog.cpp:48
 #, kde-format
 msgid "Apply Settings"
 msgstr "اعمال تنظیمات"
 
-#: kcmultidialog.cpp:204 kpluginwidget.cpp:340
+#: kcmultidialog.cpp:218 kpluginwidget.cpp:340
 #, kde-format
 msgid "Configure"
 msgstr "پیکربندی"

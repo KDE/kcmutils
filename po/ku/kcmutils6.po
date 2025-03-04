@@ -11,7 +11,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdelibs4\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-01-07 00:38+0000\n"
+"POT-Creation-Date: 2025-03-04 00:38+0000\n"
 "PO-Revision-Date: 2010-08-13 15:45+0200\n"
 "Last-Translator: Erdal Ronahî <erdal.ronahi@nospam.gmail.com>\n"
 "Language-Team: Kurdish Team http://pckurd.net\n"
@@ -75,7 +75,7 @@ msgstr "Ji kerema xwe re bi gerînendeyê pergalê têkeve têkiliyê."
 msgid "Error loading QML file."
 msgstr "Dema '%1' dihate barkirin çewtî çêbû.\n"
 
-#: kcmultidialog.cpp:45
+#: kcmultidialog.cpp:46
 #, fuzzy, kde-format
 #| msgid ""
 #| "The document \"%1\" has been modified.\n"
@@ -87,13 +87,13 @@ msgstr ""
 "Pelê \"%1\" hate guhertin.\n"
 "Tu dixwazî tomar bike yan jî guhertinan jê bibî?"
 
-#: kcmultidialog.cpp:47
+#: kcmultidialog.cpp:48
 #, fuzzy, kde-format
 #| msgid "Settings"
 msgid "Apply Settings"
 msgstr "Mîheng"
 
-#: kcmultidialog.cpp:204 kpluginwidget.cpp:340
+#: kcmultidialog.cpp:218 kpluginwidget.cpp:340
 #, kde-format
 msgid "Configure"
 msgstr "Veavakirin"

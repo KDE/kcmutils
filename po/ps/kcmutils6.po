@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdelibs4\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-01-07 00:38+0000\n"
+"POT-Creation-Date: 2025-03-04 00:38+0000\n"
 "PO-Revision-Date: 2008-08-16 16:01-0800\n"
 "Last-Translator: Zabeeh Khan <zabeehkhan@gmail.com>\n"
 "Language-Team: Pashto <pathanisation@googlegroups.com>\n"
@@ -56,7 +56,7 @@ msgstr ".لورينه وکړﺉ خپل د غونډال پازوال سره اړ�
 msgid "Error loading QML file."
 msgstr "دوتنې پرانيستلو کې ستونز"
 
-#: kcmultidialog.cpp:45
+#: kcmultidialog.cpp:46
 #, fuzzy, kde-format
 #| msgid ""
 #| "The document \"%1\" has been modified.\n"
@@ -68,13 +68,13 @@ msgstr ""
 "لاسوند بدل شوی دی. \"%1\"\n"
 "تاسو خپل بدلونونه ساتل غواړﺉ يا پرېښودل يې غواړﺉ؟"
 
-#: kcmultidialog.cpp:47
+#: kcmultidialog.cpp:48
 #, fuzzy, kde-format
 #| msgid "Settings"
 msgid "Apply Settings"
 msgstr "امستنې"
 
-#: kcmultidialog.cpp:204 kpluginwidget.cpp:340
+#: kcmultidialog.cpp:218 kpluginwidget.cpp:340
 #, kde-format
 msgid "Configure"
 msgstr "سازول"

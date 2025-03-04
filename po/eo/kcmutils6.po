@@ -14,7 +14,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kcmutils\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-01-07 00:38+0000\n"
+"POT-Creation-Date: 2025-03-04 00:38+0000\n"
 "PO-Revision-Date: 2024-04-27 17:28+0100\n"
 "Last-Translator: Oliver Kellogg <olivermkellogg@gmail.com>\n"
 "Language-Team: Esperanto <kde-i18n-eo@kde.org>\n"
@@ -68,7 +68,7 @@ msgstr "La modulo estis malebligata far le sistemadministranto."
 msgid "Error loading QML file."
 msgstr "Eraro dum lego de QML-dosiero."
 
-#: kcmultidialog.cpp:45
+#: kcmultidialog.cpp:46
 #, kde-format
 msgid ""
 "The settings of the current module have changed.\n"
@@ -77,12 +77,12 @@ msgstr ""
 "La dokumento de la aktuala modulo ŝanĝis.\n"
 "Ĉu vi volas apliki la ŝanĝojn aŭ ignori ilin?"
 
-#: kcmultidialog.cpp:47
+#: kcmultidialog.cpp:48
 #, kde-format
 msgid "Apply Settings"
 msgstr "Apliki agordojn"
 
-#: kcmultidialog.cpp:204 kpluginwidget.cpp:340
+#: kcmultidialog.cpp:218 kpluginwidget.cpp:340
 #, kde-format
 msgid "Configure"
 msgstr "Agordi"

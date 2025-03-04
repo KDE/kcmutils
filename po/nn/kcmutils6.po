@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdelibs4\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-01-07 00:38+0000\n"
+"POT-Creation-Date: 2025-03-04 00:38+0000\n"
 "PO-Revision-Date: 2024-05-08 19:32+0200\n"
 "Last-Translator: Karl Ove Hufthammer <karl@huftis.org>\n"
 "Language-Team: Norwegian Nynorsk <l10n-no@lister.huftis.org>\n"
@@ -63,7 +63,7 @@ msgstr "Denne modulen er slått av av systemadministratoren."
 msgid "Error loading QML file."
 msgstr "Feil ved lasting av QML-fil."
 
-#: kcmultidialog.cpp:45
+#: kcmultidialog.cpp:46
 #, kde-format
 msgid ""
 "The settings of the current module have changed.\n"
@@ -72,12 +72,12 @@ msgstr ""
 "Innstillingane i denne modulen er endra.\n"
 "Ønskjer du å bruka eller forkasta endringane?"
 
-#: kcmultidialog.cpp:47
+#: kcmultidialog.cpp:48
 #, kde-format
 msgid "Apply Settings"
 msgstr "Bruk innstillingane"
 
-#: kcmultidialog.cpp:204 kpluginwidget.cpp:340
+#: kcmultidialog.cpp:218 kpluginwidget.cpp:340
 #, kde-format
 msgid "Configure"
 msgstr "Oppsett"

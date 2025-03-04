@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdelibs4\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-01-07 00:38+0000\n"
+"POT-Creation-Date: 2025-03-04 00:38+0000\n"
 "PO-Revision-Date: 2009-12-04 22:09+0100\n"
 "Last-Translator: Mark Kwidzińśczi <mark@linuxcsb.org>\n"
 "Language-Team: Kaszëbsczi <i18n-csb@linuxcsb.org>\n"
@@ -68,7 +68,7 @@ msgstr "Proszã sparłãczëc sã ze sprôwnikã systemë."
 msgid "Error loading QML file."
 msgstr "Fela ladowaniô '%1'.\n"
 
-#: kcmultidialog.cpp:45
+#: kcmultidialog.cpp:46
 #, fuzzy, kde-format
 #| msgid ""
 #| "The document \"%1\" has been modified.\n"
@@ -80,13 +80,13 @@ msgstr ""
 "Dokùment \"%1\" òstôł zmieniony.\n"
 "Zapisac gò czë pòrzucëc zmianë?"
 
-#: kcmultidialog.cpp:47
+#: kcmultidialog.cpp:48
 #, fuzzy, kde-format
 #| msgid "Settings"
 msgid "Apply Settings"
 msgstr "Nastôwë"
 
-#: kcmultidialog.cpp:204 kpluginwidget.cpp:340
+#: kcmultidialog.cpp:218 kpluginwidget.cpp:340
 #, kde-format
 msgid "Configure"
 msgstr "Kònfigùracëjô"

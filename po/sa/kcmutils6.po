@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kcmutils\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-01-07 00:38+0000\n"
+"POT-Creation-Date: 2025-03-04 00:38+0000\n"
 "PO-Revision-Date: 2024-12-24 20:39+0530\n"
 "Last-Translator: kali <shreekantkalwar@gmail.com>\n"
 "Language-Team: Sanskrit <kde-i18n-doc@kde.org>\n"
@@ -59,7 +59,7 @@ msgstr "मॉड्यूल् प्रणालीप्रशासके�
 msgid "Error loading QML file."
 msgstr "QML सञ्चिकां लोड् करणं त्रुटिः।"
 
-#: kcmultidialog.cpp:45
+#: kcmultidialog.cpp:46
 #, kde-format
 msgid ""
 "The settings of the current module have changed.\n"
@@ -68,12 +68,12 @@ msgstr ""
 "वर्तमानमॉड्यूलस्य सेटिङ्ग्स् परिवर्तिताः सन्ति ।\n"
 "परिवर्तनं प्रयोक्तुं इच्छति वा परित्यक्तुं वा?"
 
-#: kcmultidialog.cpp:47
+#: kcmultidialog.cpp:48
 #, kde-format
 msgid "Apply Settings"
 msgstr "सेटिंग्स् प्रयोजयन्तु"
 
-#: kcmultidialog.cpp:204 kpluginwidget.cpp:340
+#: kcmultidialog.cpp:218 kpluginwidget.cpp:340
 #, kde-format
 msgid "Configure"
 msgstr "विन्यस्तं कुर्वन्तु"

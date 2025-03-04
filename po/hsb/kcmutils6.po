@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdelibs4\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-01-07 00:38+0000\n"
+"POT-Creation-Date: 2025-03-04 00:38+0000\n"
 "PO-Revision-Date: 2008-12-19 22:49+0100\n"
 "Last-Translator: Eduard Werner <edi.werner@gmx.de>\n"
 "Language-Team: en_US <kde-i18n-doc@lists.kde.org>\n"
@@ -69,7 +69,7 @@ msgstr "Prošu skontaktujće so z administratorom systema."
 msgid "Error loading QML file."
 msgstr "Zmylk při začitanju '%1'.\n"
 
-#: kcmultidialog.cpp:45
+#: kcmultidialog.cpp:46
 #, fuzzy, kde-format
 #| msgid ""
 #| "The document \"%1\" has been modified.\n"
@@ -81,13 +81,13 @@ msgstr ""
 "Dokument \"%1\" je so změnił.\n"
 "Chceće jón zawěsćić abo změny zaćisnyć?"
 
-#: kcmultidialog.cpp:47
+#: kcmultidialog.cpp:48
 #, fuzzy, kde-format
 #| msgid "Settings"
 msgid "Apply Settings"
 msgstr "Nastajenja"
 
-#: kcmultidialog.cpp:204 kpluginwidget.cpp:340
+#: kcmultidialog.cpp:218 kpluginwidget.cpp:340
 #, kde-format
 msgid "Configure"
 msgstr "Konfiguracija"
