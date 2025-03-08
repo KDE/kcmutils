@@ -15,7 +15,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdelibs4\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-03-04 00:38+0000\n"
+"POT-Creation-Date: 2025-03-08 00:40+0000\n"
 "PO-Revision-Date: 2024-04-27 10:21+0200\n"
 "Last-Translator: Adrián Chaves (Gallaecio) <adrian@chaves.io>\n"
 "Language-Team: Proxecto Trasno (proxecto@trasno.gal)\n"
@@ -84,6 +84,12 @@ msgstr "Aplicar as opcións"
 #, kde-format
 msgid "Configure"
 msgstr "Configurar"
+
+#: kcmultidialog.cpp:393
+#, kde-format
+msgctxt "@other accessible name for view that can be scrolled"
+msgid "Scrollable area"
+msgstr ""
 
 #: kpluginwidget.cpp:67
 #, kde-format

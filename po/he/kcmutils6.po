@@ -22,7 +22,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kcmutils5\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-03-04 00:38+0000\n"
+"POT-Creation-Date: 2025-03-08 00:40+0000\n"
 "PO-Revision-Date: 2024-04-26 08:00+0300\n"
 "Last-Translator: Yaron Shahrabani <sh.yaron@gmail.com>\n"
 "Language-Team: צוות התרגום של KDE ישראל\n"
@@ -92,6 +92,12 @@ msgstr "החלת הגדרות"
 #, kde-format
 msgid "Configure"
 msgstr "הגדרה"
+
+#: kcmultidialog.cpp:393
+#, kde-format
+msgctxt "@other accessible name for view that can be scrolled"
+msgid "Scrollable area"
+msgstr ""
 
 #: kpluginwidget.cpp:67
 #, kde-format

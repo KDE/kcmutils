@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdelibs4\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-03-04 00:38+0000\n"
+"POT-Creation-Date: 2025-03-08 00:40+0000\n"
 "PO-Revision-Date: 2010-09-24 15:44+0530\n"
 "Last-Translator: Rajesh Ranjan <rranjan@redhat.com>\n"
 "Language-Team: Hindi <fedora-trans-hi@redhat.com>\n"
@@ -78,6 +78,12 @@ msgstr "जमावट लागू करू"
 #, kde-format
 msgid "Configure"
 msgstr "बिन्यस्त करू"
+
+#: kcmultidialog.cpp:393
+#, kde-format
+msgctxt "@other accessible name for view that can be scrolled"
+msgid "Scrollable area"
+msgstr ""
 
 #: kpluginwidget.cpp:67
 #, fuzzy, kde-format

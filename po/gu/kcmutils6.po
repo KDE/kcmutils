@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdelibs4\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-03-04 00:38+0000\n"
+"POT-Creation-Date: 2025-03-08 00:40+0000\n"
 "PO-Revision-Date: 2009-11-22 00:01+0530\n"
 "Last-Translator: Kartik Mistry <kartik.mistry@gmail.com>\n"
 "Language-Team: Gujarati <team@utkarsh.org>\n"
@@ -86,6 +86,12 @@ msgstr "ગોઠવણીઓ લાગુ પાડો"
 #, kde-format
 msgid "Configure"
 msgstr "રૂપરેખાંકિત કરો"
+
+#: kcmultidialog.cpp:393
+#, kde-format
+msgctxt "@other accessible name for view that can be scrolled"
+msgid "Scrollable area"
+msgstr ""
 
 #: kpluginwidget.cpp:67
 #, fuzzy, kde-format
