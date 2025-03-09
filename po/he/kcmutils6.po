@@ -17,20 +17,20 @@
 # Meni Livne <livne@kde.org>, 2007.
 # tahmar1900 <tahmar1900@gmail.com>, 2008, 2009.
 # Elkana Bardugo <ttv200@gmail.com>, 2017. #zanata
-# SPDX-FileCopyrightText: 2023, 2024 Yaron Shahrabani <sh.yaron@gmail.com>
+# SPDX-FileCopyrightText: 2023, 2024, 2025 Yaron Shahrabani <sh.yaron@gmail.com>
 msgid ""
 msgstr ""
 "Project-Id-Version: kcmutils5\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-03-08 00:40+0000\n"
-"PO-Revision-Date: 2024-04-26 08:00+0300\n"
+"PO-Revision-Date: 2025-03-08 14:01+0200\n"
 "Last-Translator: Yaron Shahrabani <sh.yaron@gmail.com>\n"
 "Language-Team: צוות התרגום של KDE ישראל\n"
 "Language: he\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Lokalize 23.08.5\n"
+"X-Generator: Lokalize 24.12.2\n"
 "Plural-Forms: nplurals=4; plural=(n == 1) ? 0 : ((n == 2) ? 1 : ((n > 10 && "
 "n % 10 == 0) ? 2 : 3));\n"
 
@@ -97,7 +97,7 @@ msgstr "הגדרה"
 #, kde-format
 msgctxt "@other accessible name for view that can be scrolled"
 msgid "Scrollable area"
-msgstr ""
+msgstr "אזור גלילה"
 
 #: kpluginwidget.cpp:67
 #, kde-format

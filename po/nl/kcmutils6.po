@@ -9,7 +9,7 @@
 # Tom Albers <tomalbers@kde.nl>, 2004.
 # Sander Koning <sanderkoning@kde.nl>, 2005.
 # Tijmen Baarda <tijmenbaarda@kde.nl>, 2005.
-# SPDX-FileCopyrightText: 2008, 2009, 2024 Freek de Kruijf <freekdekruijf@kde.nl>
+# SPDX-FileCopyrightText: 2008, 2009, 2024, 2025 Freek de Kruijf <freekdekruijf@kde.nl>
 # Kristof Bal <kristof.bal@gmail.com>, 2008, 2009.
 # Freek de Kruijf <freekdekruijf@kde.nl>, 2009, 2010.
 # Freek de Kruijf <freekdekruijf@kde.nl>, 2010, 2011, 2012.
@@ -19,7 +19,7 @@ msgstr ""
 "Project-Id-Version: kdelibs4\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-03-08 00:40+0000\n"
-"PO-Revision-Date: 2024-04-26 10:58+0200\n"
+"PO-Revision-Date: 2025-03-08 10:49+0100\n"
 "Last-Translator: Freek de Kruijf <freekdekruijf@kde.nl>\n"
 "Language-Team: \n"
 "Language: nl\n"
@@ -28,7 +28,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Files: kfarch.cpp kfdird.cpp kfind.cpp kfindtop.cpp kfoptions.cpp kfsave.cpp "
 "kftabdlg.cpp kftypes.cpp kfwin.cpp main.cpp mkfdird.cpp mkfind.cpp\n"
-"X-Generator: Lokalize 24.02.2\n"
+"X-Generator: Lokalize 24.12.2\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 
 #, kde-format
@@ -37,7 +37,7 @@ msgid "Your names"
 msgstr ""
 "Rinse de Vries - 2000 t/m 2008,Wilbert Berendsen - 2003; 2004,Bram "
 "Schoenmakers - 2004 t/m 2007,Tom Albers - 2004,Tijmen Baarda - 2005,Sander "
-"Koning - 2005, Freek de Kruijf - 2009 t/m 2019;2021 t/m 2024"
+"Koning - 2005, Freek de Kruijf - 2009 t/m 2019;2021 t/m 2025"
 
 #, kde-format
 msgctxt "EMAIL OF TRANSLATORS"
@@ -101,7 +101,7 @@ msgstr "Configureren"
 #, kde-format
 msgctxt "@other accessible name for view that can be scrolled"
 msgid "Scrollable area"
-msgstr ""
+msgstr "Te verschuiven gebied"
 
 #: kpluginwidget.cpp:67
 #, kde-format
