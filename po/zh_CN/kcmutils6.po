@@ -79,7 +79,7 @@ msgstr "配置"
 #, kde-format
 msgctxt "@other accessible name for view that can be scrolled"
 msgid "Scrollable area"
-msgstr ""
+msgstr "可滚动区域"
 
 #: kpluginwidget.cpp:67
 #, kde-format
