@@ -12,19 +12,29 @@ import org.kde.kirigami as Kirigami
 import org.kde.kcmutils.private as KCMUtilsPrivate
 import "private" as Private
 
-/**
- * ListView for showing plugins with their info and configuration.
- * If extra butons should be added, a custom KPluginDelegate with the additionalActions
- * property should be defined.
- *
- * @since 6.0, this got renamed from KPluginSelector to PluginSelector
+/*!
+   \qmltype PluginSelector
+   \inqmlmodule org.kde.kcmutils
+   \brief ListView for showing plugins with their info and configuration.
+
+   If extra butons should be added, a custom KPluginDelegate
+   with the additionalActions property should be defined.
+
+   Renamed from KPluginSelector to PluginSelector in 6.0.
  */
 ListView {
     id: pluginSelector
+
     // KPluginModel which contains the plugins that should be displayed
+    /*!
+     */
     required property QtObject sourceModel
+
     // Query that is typed into the search field. Ideally, this is part of the KCM header
+    /*!
+     */
     property var query
+
     // PluginDelegate should be used with this, it contains an ActionToolBar that is incredibly expensive to construct,
     // make sure to cache delegates a fair amount right out of the box.
     cacheBuffer: parent.height * 2

@@ -14,7 +14,7 @@ GridView {
     property int implicitCellWidth: Kirigami.Units.gridUnit * 10
     property int implicitCellHeight: Math.round(implicitCellWidth / 1.6) + Kirigami.Units.gridUnit*3
 
-    /**
+    /*
      * Allow to highlight the selected item with Kirigami.Theme.neutralTextColor
      */
     property bool neutralHighlight: false

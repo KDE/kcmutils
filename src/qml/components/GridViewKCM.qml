@@ -9,44 +9,50 @@ import QtQuick.Controls as QQC2
 import org.kde.kirigami as Kirigami
 import org.kde.kcmutils as KCMutils
 
-/**
- * This component is intended to be used as the root item for KCMs that are based upon
- * a grid view of thumbnails, such as the theme or wallpaper selectors.
- * It contains a GridView as its main item.
- * It is possible to specify a header and footer component.
- * @code
- * import org.kde.kcmutils as KCMutils
- *
- * KCMutils.GridViewKCM {
- *     header: Item { }
- *     view.model: kcm.model
- *     view.delegate: KCMutils.GridDelegate { }
- *     footer: Item { }
- * }
- * @endcode
+/*!
+   \qmltype GridViewKCM
+   \inqmlmodule org.kde.kcmutils
+   \brief This component is intended to be used as the root item
+   for KCMs that are based upon a grid view of thumbnails,
+   such as the theme or wallpaper selectors.
+
+   It contains a GridView as its main item.
+
+   It is possible to specify a header and footer component.
+   \qml
+   import org.kde.kcmutils as KCMutils
+
+   KCMutils.GridViewKCM {
+       header: Item { }
+       view.model: kcm.model
+       view.delegate: KCMutils.GridDelegate { }
+       footer: Item { }
+   }
+   \endqml
  */
 KCMutils.AbstractKCM {
     id: root
 
-    /**
-     * view: GridView
-     * Exposes the internal GridView: in order to set a model or a delegate to it,
-     * use the following code:
-     * @code
-     * import org.kde.kcmutils as KCMutils
-     *
-     * KCMutils.GridViewKCM {
-     *     view.model: kcm.model
-     *     view.delegate: KCMutils.GridDelegate { }
-     * }
-     * @endcode
+    /*!
+       \qmlproperty GridView GridViewKCM::view
+       \brief Exposes the internal KCMUtils.GridView.
+
+       In order to set a model or a delegate to it,
+       use the following code:
+       \code
+       import org.kde.kcmutils as KCMutils
+
+       KCMutils.GridViewKCM {
+           view.model: kcm.model
+           view.delegate: KCMutils.GridDelegate { }
+       }
+       \endcode
      */
     property alias view: scroll.view
 
-    /**
-     * framedView: bool
-     * Whether to draw a frame around the KCM's inner scrollable grid view.
-     * Default: false
+    /*!
+       \brief Whether to draw a frame around the KCM's inner scrollable grid view.
+       \default false
      */
     framedView: false
 

@@ -1,0 +1,13 @@
+include($KDE_DOCS/global/qt-module-defaults.qdocconf)
+
+project = KCMUtilsQuick
+description = Utilities for KDE System Settings modules
+
+documentationinheaders = true
+
+headerdirs += .
+sourcedirs += .
+
+outputformats = HTML
+
+depends += kde qtcore qtquick qtquickcontrols qtgui qtwidgets qtxml kcoreaddons kconfigcore

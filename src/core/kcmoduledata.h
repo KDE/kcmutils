@@ -15,62 +15,69 @@
 class KCModuleDataPrivate;
 class KCoreConfigSkeleton;
 
-/**
- * @short A base class that offers information about a KCModule state
- *
- * @author Benjamin Port <benjamin.port@enioka.com>
- *
- * @since 5.74
+/*!
+ * \class KCModuleData
+ * \inmodule KCMUtilsCore
+ * \brief A base class that offers information about a KCModule state.
+ * \since 5.74
  */
 class KCMUTILSCORE_EXPORT KCModuleData : public QObject
 {
     Q_OBJECT
 public:
+    /*!
+     *
+     */
     explicit KCModuleData(QObject *parent = nullptr);
     ~KCModuleData() override;
 
-    /**
-     * Checks if the configuration is identical to the default one.
+    /*!
+     * \brief Checks if the configuration is identical to the default one.
      *
-     * @return @c true if the module configuration is in the default state, @c false otherwise
+     * Returns \c true if the module configuration is in the default state, \c false otherwise.
      */
     virtual bool isDefaults() const;
 
-    /**
-     * Revert module to default values and save them.
+    /*!
+     * \brief Reverts the module to default values and saves them.
      */
     virtual void revertToDefaults();
 
-    /**
-     * Checks if this module matches a given query.
-     * @param query the text user search for, it is not expected to be a regex pattern but a full text search.
-     * @return @c true if this module matches a given query, @c false otherwise
+    /*!
+     * \brief Returns whether this module matches a given \a query.
+     *
+     * The \a query is not expected to be a regex pattern but a full text search.
      */
     virtual bool matchesQuery(const QString &query) const;
 
 Q_SIGNALS:
-    /**
-     * This signal is emitted when KCModuleData is loaded.
+    /*!
+     * \brief Emitted when KCModuleData is loaded.
      */
     void loaded();
 
-    /**
-     * Internal use
+    /*!
+     * \internal
+     * \brief Triggers the emit of \sa loaded() signal.
      *
-     * Triggers the emit of @see loaded() signal. This is the default behavior.
-     * To handle when loaded() is emitted in subclass, disconnect this signal in derived constructor.
+     * This is the default behavior.
+     *
+     * To handle when loaded() is emitted in subclass,
+     * disconnect this signal in the derived constructor.
      */
     void aboutToLoad(QPrivateSignal);
 
 protected Q_SLOTS:
-    /**
-     * Allow to register manually skeleton class.
-     * Used by derived class when automatic discovery is not possible.
+    /*!
+     * \brief Allow to manually register a \a skeleton class.
+     *
+     * Used by a derived class when automatic discovery is not possible.
      */
     void registerSkeleton(KCoreConfigSkeleton *skeleton);
 
-    /**
-     * Automatically register child skeletons
+    /*!
+     * \brief Automatically register child skeletons.
+     *
      * Call it in your subclass constructor after skeleton creation
      */
     void autoRegisterSkeletons();

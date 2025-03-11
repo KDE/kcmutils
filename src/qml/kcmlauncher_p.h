@@ -10,6 +10,12 @@
 #include <QObject>
 #include <QQmlEngine>
 
+/*!
+ * \qmltype KCMLauncher
+ * \inqmlmodule org.kde.kcmutils
+ *
+ * This is a QML singleton.
+ */
 class KCMLauncher : public QObject
 {
     Q_OBJECT
@@ -17,45 +23,52 @@ class KCMLauncher : public QObject
     QML_SINGLETON
 
 public Q_SLOTS:
+    /*!
+     * \qmlmethod void KCMLauncher::open(list<string> names) const
+     */
     void open(const QStringList &names) const;
 
-    /**
+    /*!
+     * \qmlmethod void KCMLauncher::openSystemSettings(string name, list<string> args = []) const
+     *
      * Opens the specified module in System Settings. Only a single KCM name may
      * be provided.
      *
-     * @code
+     * \code
      * import QtQuick.Controls as QQC2
      * import org.kde.kcmutils as KCMUtils
      *
      * QQC2.Button {
      *     onClicked: KCMUtils.KCMLauncher.openSystemSettings("kcm_kscreen")
      * }
-     * @endcode
+     * \endcode
      *
-     * @param name A single kcm name to open in System Settings. Opening multiple
+     * \a name A single kcm name to open in System Settings. Opening multiple
      * KCMs using this function is not supported; to do that, use KCMLauncher.open().
-     * @param args Additional arguments to pass to the module.
+     * \a args Additional arguments to pass to the module.
      *
-     * @since 5.71
+     * \since 5.71
      */
     void openSystemSettings(const QString &name, const QStringList &args = QStringList()) const;
 
-    /**
+    /*!
+     * \qmlmethod void KCMLauncher::openInfoCenter(string name) const
+     *
      * Opens the specified module in InfCenter. Only a single KCM name may
      * be provided.
      *
-     * @code
+     * \code
      * import QtQuick.Controls as QQC2
      * import org.kde.kcmutils as KCMUtils
      * QQC2.Button {
      *     onClicked: KCMUtils.KCMLauncher.openInfoCenter("kcm_energy")
      * }
-     * @endcode
+     * \endcode
      *
-     * @param name A single kcm name to open in Info Center. Opening multiple
+     * \a name A single kcm name to open in Info Center. Opening multiple
      * KCMs using this function is not supported; to do that, use KCMLauncher.open().
      *
-     * @since 5.71
+     * \since 5.71
      */
     void openInfoCenter(const QString &name) const;
 };
