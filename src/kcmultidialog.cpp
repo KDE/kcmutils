@@ -257,7 +257,7 @@ void KCMultiDialog::showEvent(QShowEvent *ev)
 {
     KPageDialog::showEvent(ev);
     adjustSize();
-    /**
+    /*
      * adjustSize() relies on sizeHint but is limited to 2/3 of the desktop size
      * Workaround for https://bugreports.qt.io/browse/QTBUG-3459
      *

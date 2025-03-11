@@ -19,24 +19,40 @@
 class KConfigGroup;
 class KPluginModelPrivate;
 
-/**
- * @class KPluginModel kpluginmodel.h KPluginModel
- * A model that provides a list of available plugins and allows to disable/enable them.
+/*!
+ * \class KPluginModel
+ * \inmodule KCMUtilsCore
+ * \brief A model that provides a list of available plugins and allows to disable/enable them.
  *
- * Plugins need to define the @c X-KDE-ConfigModule property for their config modules to be found.
+ * Plugins need to define the \c X-KDE-ConfigModule property for their config modules to be found.
  * The value for this property is the namespace and file name of the KCM for the plugin.
+ *
  * An example value is "kf6/krunner/kcms/kcm_krunner_charrunner", "kf6/krunner/kcms" is the namespace
  * and "kcm_krunner_charrunner" the file name. The loaded KCMs don't need any embedded JSON metadata.
  *
- * @see KPluginWidget
+ * \sa KPluginWidget
  *
- * @since 5.94
+ * \since 5.94
  */
 class KCMUTILSCORE_EXPORT KPluginModel : public QAbstractListModel
 {
     Q_OBJECT
 
 public:
+    /*!
+     * \enum KPluginModel::Roles
+     *
+     * \value NameRole
+     * \value IconRole
+     * \value EnabledRole
+     * \value DescriptionRole
+     * \value IsChangeableRole
+     * \value MetaDataRole
+     * \value ConfigRole
+     * \value IdRole
+     * \value EnabledByDefaultRole
+     * \value SortableRole
+     */
     enum Roles {
         NameRole = Qt::DisplayRole,
         IconRole = Qt::DecorationRole,
@@ -47,9 +63,12 @@ public:
         ConfigRole,
         IdRole,
         EnabledByDefaultRole,
-        SortableRole, /// @internal
+        SortableRole,
     };
 
+    /*!
+     *
+     */
     explicit KPluginModel(QObject *parent = nullptr);
     ~KPluginModel() override;
 
@@ -60,72 +79,84 @@ public:
 
     bool moveRows(const QModelIndex &sourceParent, int sourceRow, int count, const QModelIndex &destinationParent, int destinationChild) override;
 
-    /**
-     * Append plugins to the model. This will not replace existing entries.
+    /*!
+     * \brief Appends \a plugins to the model.
      *
-     * @param plugins the plugins to be added.
-     * @param categoryLabel a user-visible label for the section the plugins are added to.
+     * This will not replace existing entries.
      *
+     * \a plugins The plugins to be added.
+     *
+     * \a categoryLabel A user-visible label for the section the plugins are added to.
      */
     void addPlugins(const QList<KPluginMetaData> &plugins, const QString &categoryLabel);
 
-    /**
-     * Add plugins that should not be sorted automatically based on their name
-     * This is useful in case your app has a custom sorting mechanism or implements reordering of plugins
+    /*!
+     * \brief Adds \a plugins that should not be sorted automatically based on their name.
      *
-     * @since 6.0
+     * This is useful in case your app has a custom sorting mechanism or implements reordering of plugins.
+     *
+     * \a plugins The plugins to be added.
+     *
+     * \a categoryLabel A user-visible label for the section the plugins are added to.
+     *
+     * \since 6.0
      */
     void addUnsortablePlugins(const QList<KPluginMetaData> &plugins, const QString &categoryLabel);
 
-    /// @since 6.0
+    /*!
+     * \brief Removes a plugin with the specified \a data.
+     * \since 6.0
+     */
     void removePlugin(const KPluginMetaData &data);
 
-    /**
-     * Removes all plugins.
+    /*!
+     * \brief Removes all plugins.
      */
     void clear();
 
-    /**
-     * Set the KConfigGroup that is used to load/save the enabled state.
+    /*!
+     * \brief Sets the KConfigGroup \a config that is used
+     * to load/save the enabled state.
      */
     void setConfig(const KConfigGroup &config);
 
-    /**
-     * Save the enabled state of the plugins to the config group set by @ref setConfig.
+    /*!
+     * \brief Saves the enabled state of the plugins to the config group set by \l setConfig.
      */
     void save();
 
-    /**
-     * Load the enabled state of the plugins from the config group set by @ref setConfig.
+    /*!
+     * \brief Loads the enabled state of the plugins from the config group set by \l setConfig.
      */
     void load();
 
-    /**
-     * Reset the enabled state of the plugins to its defaults.
+    /*!
+     * \brief Resets the enabled state of the plugins to its defaults.
      */
     void defaults();
 
-    /**
-     * Whether or not there are unsaved changes to the enabled state of the plugins.
+    /*!
+     * \brief Returns whether there are unsaved changes to the enabled state of the plugins.
      */
     bool isSaveNeeded();
 
-    /**
-     * Returns the KPluginMetaData object of the plugin's config module. If no plugin is found or the plugin does not have a config, the resulting
+    /*!
+     * \brief Returns the KPluginMetaData object of the plugin's config module with the specified \a pluginId.
+     *
+     * If no plugin is found or the plugin does not have a config, the resulting
      * KPluginMetaData object will be invalid.
-     * @since 5.94
+     * \since 5.94
      */
     KPluginMetaData findConfigForPluginId(const QString &pluginId) const;
 
-    /**
-     * Emitted when the enabled state matches the default changes.
-     *
-     * @see defaults
+    /*!
+     * \brief Emitted when the enabled state \a isDefaulted, that is, it matches the default changes.
+     * \sa defaults
      */
     Q_SIGNAL void defaulted(bool isDefaulted);
 
-    /**
-     * Emitted when @ref isSaveNeeded is changed.
+    /*!
+     * \brief Emitted when isSaveNeeded is changed.
      */
     Q_SIGNAL void isSaveNeededChanged();
 

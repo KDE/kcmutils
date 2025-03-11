@@ -9,69 +9,76 @@ import QtQuick
 import QtQuick.Controls as QQC2
 import org.kde.kirigami as Kirigami
 
-/**
- * This component is intended to be used as root item for
- * KCMs with arbitrary content. Unlike SimpleKCM this does NOT
- * provide a scrollable view, The developer will have to manage
- * their own scrollviews.
- * Most of the times SimpleKCM should be used instead
- * @code
- * import QtQuick
- * import QtQuick.Controls as QQC2
- * import QtQuick.Layouts
- * import org.kde.kcmutils as KCMUtils
- *
- * KCMUtils.AbstractKCM {
- *     RowLayout {
- *         QQC2.ScrollView { }
- *         QQC2.ScrollView { }
- *     }
- *     footer: QQC2.ToolBar { }
- * }
- * @endcode
- * @inherits org.kde.kirigami.Page
- * @since 6.0
+/*!
+   \qmltype AbstractKCM
+   \inqmlmodule org.kde.kcmutils
+   \brief This component is intended to be used as root item for KCMs with arbitrary content.
+
+   Unlike SimpleKCM this does NOT provide a scrollable view,
+   the developer will have to manage their own scrollviews.
+
+   Most of the times SimpleKCM should be used instead.
+
+   \qml
+   import QtQuick
+   import QtQuick.Controls as QQC2
+   import QtQuick.Layouts
+   import org.kde.kcmutils as KCMUtils
+
+   KCMUtils.AbstractKCM {
+       RowLayout {
+           QQC2.ScrollView { }
+           QQC2.ScrollView { }
+       }
+       footer: QQC2.ToolBar { }
+   }
+   \endqml
+   \since 6.0
  */
 Kirigami.Page {
     id: root
 
+    /*!
+     */
     readonly property int margins: 6 // Layout_ChildMarginWidth from Breeze
 
-    /**
-     * framedView: bool
-     * Whether to use this component as the base of a "framed" KCM with an
-     * inner scrollview that draws its own frame.
-     * Default: true
+    /*!
+       \brief Whether to use this component as the base of a "framed" KCM with an
+       inner scrollview that draws its own frame.
+       \default true
      */
     property bool framedView: true
 
-    /**
-     * extraFooterTopPadding: bool
-     * Whether the footer should have extra space and a separator line drawn
-     * above it. Set this to true in a KCM with a custom footer and a ListView
-     * immediately above it.
-     * Default: false
+    /*!
+       \brief Whether the footer should have extra space and a separator line drawn
+       above it.
+
+       Set this to true in a KCM with a custom footer and a ListView
+       immediately above it.
+       \default false
      */
     property bool extraFooterTopPadding: false
 
-    /**
-     * headerPaddingEnabled: bool
-     * Whether the contents of the header will have automatic padding around it.
-     * Should be disabled when using an InlineMessage or custom content item in
-     * the header that's intended to touch the window edges.
-     * Default: true
+    /*!
+       \brief Whether the contents of the header will have automatic padding around it.
+
+       Should be disabled when using an InlineMessage or custom content item in
+       the header that's intended to touch the window edges.
+       \default true
      */
     property bool headerPaddingEnabled: true
 
-    /**
-     * footerPaddingEnabled: bool
-     * Whether the contents of the footer will have automatic padding around it.
-     * Should be disabled when using an InlineMessage or custom content item in
-     * the footer that's intended to touch the window edges.
-     * Default: true
+    /*!
+       \brief Whether the contents of the footer will have automatic padding around it.
+
+       Should be disabled when using an InlineMessage or custom content item in
+       the footer that's intended to touch the window edges.
+       \default true
      */
     property bool footerPaddingEnabled: true
 
+    /*!
+     */
     property bool sidebarMode: false
 
     function __itemVisible(item: Item): bool {

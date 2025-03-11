@@ -31,8 +31,7 @@
 
 using namespace KCModuleLoader;
 
-/***************************************************************/
-/**
+/*
  * When something goes wrong in loading the module, this one
  * jumps in as a "dummy" module.
  */

@@ -56,6 +56,9 @@ ecm_generate_export_header(KF6KCMUtils
     EXCLUDE_DEPRECATED_BEFORE_AND_AT ${EXCLUDE_DEPRECATED_BEFORE_AND_AT}
     CUSTOM_CONTENT_FROM_VARIABLE define_with_kauth_code
 )
+
+ecm_generate_qdoc(KF6KCMUtils kcmutils.qdocconf)
+
 target_include_directories(KF6KCMUtils INTERFACE "$<INSTALL_INTERFACE:${KDE_INSTALL_INCLUDEDIR_KF}/KCMUtils>")
 
 target_link_libraries(KF6KCMUtils

@@ -8,47 +8,51 @@ import QtQuick
 import QtQuick.Controls as QQC2
 import org.kde.kirigami as Kirigami
 
-/**
- * This component is intended to be used as root item for
- * KCMs with arbitrary content. Often a Kirigami.FormLayout
- * is used as main element.
- * It is possible to specify a header and footer component.
- * @code
- * import org.kde.kcmutils as KCMUtils
- * import org.kde.kirigami as Kirigami
- *
- * KCMUtils.SimpleKCM {
- *     Kirigami.FormLayout {
- *        TextField {
- *           Kirigami.FormData.label: "Label:"
- *        }
- *        TextField {
- *           Kirigami.FormData.label: "Label:"
- *        }
- *     }
- *     footer: Item {...}
- * }
- * @endcode
- * @inherits org.kde.kirigami.ScrollablePage
+/*!
+   \qmltype SimpleKCM
+   \inqmlmodule org.kde.kcmutils
+   \brief This component is intended to be used as root item for
+   KCMs with arbitrary content.
+
+   Often a Kirigami.FormLayout is used as main element.
+
+   It is possible to specify a header and footer component.
+   \qml
+   import org.kde.kcmutils as KCMUtils
+   import org.kde.kirigami as Kirigami
+
+   KCMUtils.SimpleKCM {
+       Kirigami.FormLayout {
+          TextField {
+             Kirigami.FormData.label: "Label:"
+          }
+          TextField {
+             Kirigami.FormData.label: "Label:"
+          }
+       }
+       footer: Item {...}
+   }
+   \endqml
  */
 Kirigami.ScrollablePage {
     id: root
 
+    /*!
+     */
     readonly property int margins: 6 // Layout_ChildMarginWidth from Breeze
 
-    /**
-     * extraFooterTopPadding: bool
-     * @deprecated unused
-     * Default: false
+    /*!
+       \deprecated Unused.
+       \default false
      */
     property bool extraFooterTopPadding: false
 
-    /**
-     * headerPaddingEnabled: bool
-     * Whether the contents of the header will have automatic padding around it.
-     * Should be disabled when using an InlineMessage or custom content item in
-     * the header that's intended to touch the window edges.
-     * Default: false
+    /*!
+       \brief Whether the contents of the header will have automatic padding around it.
+
+       Should be disabled when using an InlineMessage or custom content item in
+       the header that's intended to touch the window edges.
+       \default false
      */
     property bool headerPaddingEnabled: false
 

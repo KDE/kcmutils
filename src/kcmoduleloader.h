@@ -18,21 +18,25 @@
 class QWidget;
 class QQmlEngine;
 
-/**
- * @short Loads a KCModule
- * In case the provided metadata points to a KQuickConfigModule, it is wrapped in a KCModule
+/*!
+ * \namespace KCModuleLoader
+ * \inmodule KCMUtils
+ * \brief Loads a KCModule.
+ *
+ * In case the provided metadata points to a KQuickConfigModule, it is wrapped in a KCModule.
  */
 namespace KCModuleLoader
 {
-/**
- * Loads a @ref KCModule. If loading fails a KCM which displays an error message is returned.
+/*!
+ * Loads a KCModule. If loading fails a KCM which displays an error message is returned.
  *
- * @param metaData KPluginMetaData for loading the plugin
- * @param engine QQmlEngine that will be used for KQuickConfigModule classes.
+ * \a metaData KPluginMetaData for loading the plugin
+ *
+ * \a engine QQmlEngine that will be used for KQuickConfigModule classes.
  * If none is set, a internal engine will be created and reused for further modules.
  * In case your app already has an engine, you should pass it in explicitly
  *
- * @return a pointer to the loaded @ref KCModule
+ * Returns a pointer to the loaded KCModule
  */
 KCMUTILS_EXPORT KCModule *
 loadModule(const KPluginMetaData &metaData, QWidget *parent = nullptr, const QVariantList &args = {}, const std::shared_ptr<QQmlEngine> &engine = {});

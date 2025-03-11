@@ -2,6 +2,9 @@
 # SPDX-License-Identifier: BSD-3-Clause
 
 ecm_add_qml_module(kcmutilsqmlplugin URI "org.kde.kcmutils" VERSION 1.0 DEPENDENCIES QtQuick org.kde.kcmutils.private org.kde.config GENERATE_PLUGIN_SOURCE)
+
+ecm_generate_qdoc(kcmutilsqmlplugin kcmutilsqml.qdocconf)
+
 target_sources(kcmutilsqmlplugin
   PRIVATE
     settingstateproxy.cpp

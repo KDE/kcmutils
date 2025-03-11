@@ -9,28 +9,33 @@ import QtQuick
 import QtQuick.Controls as QQC2
 import org.kde.kirigami as Kirigami
 
-/**
- * A ScrollView containing a GridView, with the default behavior about
- * sizing and background as recommended by the user interface guidelines
- * For most KControl modules, it's recommended to use instead the GridViewKCM
- * component as the root element of your module.
- * @code
- * import org.kde.kcmutils as KCMUtils
- *
- * KCMUtils.ScrollView {
- *     view: ListView { }
- * }
- * @endcode
- * @see GridViewKCM
+/*!
+   \qmltype ScrollView
+   \inqmlmodule org.kde.kcmutils
+   \brief A ScrollView containing a GridView, with the default behavior about
+   sizing and background as recommended by the user interface guidelines.
+
+   For most KControl modules, it's recommended to use instead the GridViewKCM
+   component as the root element of your module.
+   \code
+   import org.kde.kcmutils as KCMUtils
+
+   KCMUtils.ScrollView {
+       view: ListView { }
+   }
+   \endcode
+   \sa GridViewKCM
  */
 QQC2.ScrollView {
     id: scroll
 
-    /**
-     * view: GridView
-     * Exposes the internal flickable
+    /*!
+       \brief Exposes the internal flickable.
      */
     property Flickable view
+
+    /*!
+     */
     property bool framedView: true
 
     contentItem: view

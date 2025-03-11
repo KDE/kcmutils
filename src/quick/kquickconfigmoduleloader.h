@@ -14,11 +14,17 @@
 class QQmlEngine;
 class KQuickConfigModule;
 
+/*!
+    \namespace KQuickConfigModuleLoader
+    \inmodule KCMUtilsQuick
+ */
 namespace KQuickConfigModuleLoader
 {
-/**
- * Loads a QML KCM from the given plugin metadata.
- * @param engine The QQmlEngine to use, if not set, an internal engine will be created. If your application has an exisiting engine, this must be passed in.
+/*!
+ * \inmodule KCMUtilsQuick
+ * \brief Loads a QML KCM from the given plugin \a metaData as a child of \a parent with the given \a args.
+ *
+ * \a engine The QQmlEngine to use. If not set, an internal engine will be created. If your application has an existing engine, this must be passed in.
  */
 KCMUTILSQUICK_EXPORT KPluginFactory::Result<KQuickConfigModule>
 loadModule(const KPluginMetaData &metaData, QObject *parent = nullptr, const QVariantList &args = {}, const std::shared_ptr<QQmlEngine> &engine = {});

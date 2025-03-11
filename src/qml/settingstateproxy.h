@@ -14,34 +14,40 @@
 
 #include <KCoreConfigSkeleton>
 
-/**
- * This element allows to represent in a declarative way the
- * state of a particular setting in a config object.
+/*!
+ * \qmltype SettingStateProxy
+ * \inqmlmodule org.kde.kcmutils
+ * \brief Allows to represent the state of a particular setting
+ * in a config object in a declarative way.
  *
- * @since 5.73
+ * \since 5.73
  */
 class SettingStateProxy : public QObject
 {
     Q_OBJECT
     QML_ELEMENT
 
-    /**
-     * The config object which will be monitored for setting state changes
+    /*!
+     * \qmlproperty bool SettingStateProxy::configObject
+     * \brief The config object which will be monitored for setting state changes.
      */
     Q_PROPERTY(KCoreConfigSkeleton *configObject READ configObject WRITE setConfigObject NOTIFY configObjectChanged)
 
-    /**
-     * The name of the setting in the config object
+    /*!
+     * \qmlproperty bool SettingStateProxy::settingName
+     * \brief The name of the setting in the config object.
      */
     Q_PROPERTY(QString settingName READ settingName WRITE setSettingName NOTIFY settingNameChanged)
 
-    /**
-     * Indicates if the setting is marked as immutable
+    /*!
+     * \qmlproperty bool SettingStateProxy::immutable
+     * \brief Indicates if the setting is marked as immutable.
      */
     Q_PROPERTY(bool immutable READ isImmutable NOTIFY immutableChanged)
 
-    /**
-     * Indicates if the setting differs from its default value
+    /*!
+     * \qmlproperty bool SettingStateProxy::defaulted
+     * \brief Indicates if the setting differs from its default value.
      */
     Q_PROPERTY(bool defaulted READ isDefaulted NOTIFY defaultedChanged)
 
@@ -65,6 +71,9 @@ Q_SIGNALS:
     void defaultedChanged();
 
 private Q_SLOTS:
+    /*!
+     * \qmlmethod void SettingStateProxy::updateState()
+     */
     void updateState();
 
 private:

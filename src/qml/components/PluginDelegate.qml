@@ -15,23 +15,45 @@ import QtQuick.Templates as T
 import org.kde.kirigami as Kirigami
 import org.kde.kcmutils as KCMUtils
 
-/// @since 6.0, this got renamed from KPluginDelegate to PluginDelegate
+/*!
+  \qmltype PluginDelegate
+  \inqmlmodule org.kde.kcmutils
+  \since 6.0
+  This got renamed from KPluginDelegate to PluginDelegate
+*/
 Kirigami.CheckSubtitleDelegate {
     id: listItem
 
     // Note: when PluginDelegate is embedded in a more complex delegate, model
     // object should be passed down explicitly, but it also means that it may
     // become null right before delegate's destruction.
+    /*!
+     */
     required property var model
 
+    /*!
+     */
     property list<T.Action> additionalActions
 
+    /*!
+      \qmlproperty Item PluginDelegate::leading
+     */
     property alias leading: leadingProxy.target
 
+    /*!
+     */
     readonly property bool enabledByDefault: model?.enabledByDefault ?? false
+
+    /*!
+     */
     readonly property var metaData: model?.metaData
+
+    /*!
+     */
     readonly property bool configureVisible: model?.config.isValid ?? false
 
+    /*!
+     */
     signal configTriggered()
 
     // Let Optional chaining (?.) operator fall back to `undefined` which resets the width to an implicit value.

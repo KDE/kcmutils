@@ -20,14 +20,12 @@ class QQmlEngine;
 class KLocalizedQmlContext;
 class SharedQmlEnginePrivate;
 
-
-/**
- * @class Plasma::SharedQmlEngine Plasma/sharedqmlengine.h Plasma/SharedQmlEngine
+/*
+ * An object that instantiates an entire QML context, with its own declarative engine
  *
- * @short An object that instantiates an entire QML context, with its own declarative engine
- *
- * Plasma::SharedQmlEngine provides a class to conveniently use QML based
+ * SharedQmlEngine provides a class to conveniently use QML based
  * declarative user interfaces.
+ *
  * A SharedQmlEngine corresponds to one QML file (which can include others).
  * It will a shared QQmlEngine with a single root object, described in the QML file.
  */
@@ -41,16 +39,16 @@ class SharedQmlEngine : public QObject
     Q_PROPERTY(QObject *rootObject READ rootObject)
 
 public:
-    /**
+    /*
      * Construct a new Plasma::SharedQmlEngine
      *
-     * @param parent The QObject parent for this object.
+     * parent The QObject parent for this object.
      */
     explicit SharedQmlEngine(const std::shared_ptr<QQmlEngine> &engine, QObject *parent = nullptr);
 
     ~SharedQmlEngine() override;
 
-    /**
+    /*
      * Call this method before calling setupBindings to install a translation domain for all
      * i18n global functions. If a translation domain is set all i18n calls delegate to the
      * matching i18nd calls with the provided translation domain.
@@ -63,28 +61,28 @@ public:
      * in an application there is no need to set the translation domain as the application's
      * domain can be used.
      *
-     * @param translationDomain The translation domain to be used for i18n calls.
+     * translationDomain The translation domain to be used for i18n calls.
      */
     void setTranslationDomain(const QString &translationDomain);
 
-    /**
-     * @return the translation domain for the i18n calls done in this QML engine
+    /*
+     * Returns the translation domain for the i18n calls done in this QML engine
      */
     QString translationDomain() const;
 
-    /**
+    /*
      * Sets the path of the QML file to parse and execute
      *
-     * @param path the absolute path of a QML file
+     * path the absolute path of a QML file
      */
     void setSource(const QUrl &source);
 
-    /**
-     * @return the absolute path of the current QML file
+    /*
+     * Returns the absolute path of the current QML file
      */
     QUrl source() const;
 
-    /**
+    /*
      * Sets whether the execution of the QML file has to be delayed later in the event loop. It has to be called before setQmlPath().
      * In this case it will be possible to assign new objects in the main engine context
      * before the main component gets initialized.
@@ -92,33 +90,33 @@ public:
      * The initialization will either be completed automatically asynchronously
      * or explicitly by calling completeInitialization()
      *
-     * @param delay if true the initialization of the QML file will be delayed
+     * delay if true the initialization of the QML file will be delayed
      *              at the end of the event loop
      */
     void setInitializationDelayed(const bool delay);
 
-    /**
-     * @return true if the initialization of the QML file will be delayed
+    /*
+     * Returns true if the initialization of the QML file will be delayed
      *              at the end of the event loop
      */
     bool isInitializationDelayed() const;
 
-    /**
-     * @return the declarative engine that runs the qml file assigned to this widget.
+    /*
+     * Returns the declarative engine that runs the qml file assigned to this widget.
      */
     std::shared_ptr<QQmlEngine> engine();
 
-    /**
-     * @return the root object of the declarative object tree
+    /*
+     * Returns the root object of the declarative object tree
      */
     QObject *rootObject() const;
 
-    /**
-     * @return the main QQmlComponent of the engine
+    /*
+     * Returns the main QQmlComponent of the engine
      */
     QQmlComponent *mainComponent() const;
 
-    /**
+    /*
      * The component's creation context.
      */
     QQmlContext *rootContext() const;
@@ -133,44 +131,44 @@ public:
      */
     QString errorString() const;
 
-    /**
+    /*
      * Creates and returns an object based on the provided url to a Qml file
      * with the same QQmlEngine and the same root context as the main object,
      * that will be the parent of the newly created object
-     * @param source url where the QML file is located
-     * @param context The QQmlContext in which we will create the object,
+     * source url where the QML file is located
+     * context The QQmlContext in which we will create the object,
      *             if 0 it will use the engine's root context
-     * @param initialProperties optional properties that will be set on
+     * initialProperties optional properties that will be set on
      *             the object when created (and before Component.onCompleted
      *             gets emitted
      */
     QObject *createObjectFromSource(const QUrl &source, QQmlContext *context = nullptr, const QVariantMap &initialProperties = QVariantMap());
 
-    /**
+    /*
      * Creates and returns an object based on the provided QQmlComponent
      * with the same QQmlEngine and the same root context as the admin object,
      * that will be the parent of the newly created object
-     * @param component the component we want to instantiate
-     * @param context The QQmlContext in which we will create the object,
+     * component the component we want to instantiate
+     * context The QQmlContext in which we will create the object,
      *             if 0 it will use the engine's root context
-     * @param initialProperties optional properties that will be set on
+     * initialProperties optional properties that will be set on
      *             the object when created (and before Component.onCompleted
      *             gets emitted
      */
     QObject *createObjectFromComponent(QQmlComponent *component, QQmlContext *context = nullptr, const QVariantMap &initialProperties = QVariantMap());
 
 public Q_SLOTS:
-    /**
+    /*
      * Finishes the process of initialization.
      * If isInitializationDelayed() is false, calling this will have no effect.
-     * @param initialProperties optional properties that will be set on
+     * initialProperties optional properties that will be set on
      *             the object when created (and before Component.onCompleted
      *             gets emitted
      */
     void completeInitialization(const QVariantMap &initialProperties = QVariantMap());
 
 Q_SIGNALS:
-    /**
+    /*
      * Emitted when the parsing and execution of the QML file is terminated
      */
     void finished();

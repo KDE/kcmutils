@@ -15,30 +15,51 @@
 class KPluginMetaData;
 class KAbstractConfigModulePrivate;
 
-/**
- * Base class for QML and QWidgets config modules.
+/*!
+ * \class KAbstractConfigModule
+ * \inmodule KCMUtilsCore
+ * \brief Base class for QML and QWidgets config modules.
  *
- * @author Alexander Lohnau
- * @since 6.0
+ * \since 6.0
  */
 class KCMUTILSCORE_EXPORT KAbstractConfigModule : public QObject
 {
     Q_OBJECT
 
+    /*! \property KAbstractConfigModule::buttons */
     Q_PROPERTY(KAbstractConfigModule::Buttons buttons READ buttons WRITE setButtons NOTIFY buttonsChanged)
+    /*! \property KAbstractConfigModule::defaultsIndicatorsVisible */
     Q_PROPERTY(bool defaultsIndicatorsVisible READ defaultsIndicatorsVisible WRITE setDefaultsIndicatorsVisible NOTIFY defaultsIndicatorsVisibleChanged)
+    /*! \property KAbstractConfigModule::needsAuthorization */
     Q_PROPERTY(bool needsAuthorization READ needsAuthorization NOTIFY authActionNameChanged)
+    /*! \property KAbstractConfigModule::representsDefaults */
     Q_PROPERTY(bool representsDefaults READ representsDefaults WRITE setRepresentsDefaults NOTIFY representsDefaultsChanged)
+    /*! \property KAbstractConfigModule::needsSave */
     Q_PROPERTY(bool needsSave READ needsSave WRITE setNeedsSave NOTIFY needsSaveChanged)
+    /*! \property KAbstractConfigModule::name */
     Q_PROPERTY(QString name READ name CONSTANT)
+    /*! \property KAbstractConfigModule::description */
     Q_PROPERTY(QString description READ description CONSTANT)
 public:
-    /**
+    /*!
+     * \enum KAbstractConfigModule::Button
      * An enumeration type for the buttons used by this module.
-     * You should only use Help, Default and Apply. The rest is obsolete.
-     * NoAdditionalButton can be used when we do not want have other button that Ok Cancel
      *
-     * @see ConfigModule::buttons @see ConfigModule::setButtons
+     * If Apply is not specified, kcmshell will show a "Close" button.
+     *
+     * \value NoAdditionalButton
+     *        Shows the "Ok" and "Cancel" buttons.
+     * \value Help
+     *        Shows a "Help" button.
+     * \value Default
+     *        Shows a "Use Defaults" button.
+     * \value Apply
+     *        Shows the "Ok", "Apply", and "Cancel" buttons.
+     * \value Export
+     *        Obsolete.
+     *
+     * \sa buttons
+     * \sa setButtons
      */
     enum Button {
         NoAdditionalButton = 0,
@@ -51,47 +72,50 @@ public:
     Q_DECLARE_FLAGS(Buttons, Button)
     Q_FLAG(Buttons)
 
+    /*!
+     *
+     */
     explicit KAbstractConfigModule(QObject *parent, const KPluginMetaData &metaData);
 
     ~KAbstractConfigModule() override;
 
-    /**
-     * @brief Set if the module's save() method requires authorization to be executed
+    /*!
+     * \brief Set if the module's save() method requires authorization to be executed.
      *
      * It will still have to execute the action itself using the KAuth library, so
      * this method is not technically needed to perform the action, but
      * using this method will ensure that hosting
      * applications like System Settings or kcmshell behave correctly.
      *
-     * @param action the action that will be used by this ConfigModule
+     * \a action The action that will be used by this ConfigModule.
      */
     void setAuthActionName(const QString &action);
 
-    /**
-     * Returns the action previously set with setAuthActionName(). By default this will be a empty string.
+    /*!
+     * \brief Returns the action previously set with setAuthActionName() and that is authorized to execute the save() method.
      *
-     * @return The action that has to be authorized to execute the save() method.
+     * By default this will be a empty string.
      */
     QString authActionName() const;
 
-    /**
-     * The auth action name has changed
+    /*!
+     * \brief Emitted when the auth action name has changed.
      */
     Q_SIGNAL void authActionNameChanged();
 
-    /**
-     * Set this property to true when the user changes something in the module,
-     * signaling that a save (such as user pressing Ok or Apply) is needed.
+    /*!
+     * \brief Set this property to \c true when the user changes something in the module,
+     * signaling that it \a needs a save (such as user pressing Ok or Apply).
      */
     void setNeedsSave(bool needs);
 
-    /**
-     * True when the module has something changed and needs save.
+    /*!
+     * \brief Returns \c true when the module has something changed and needs save.
      */
     bool needsSave() const;
 
-    /**
-     * Indicate that the state of the modules contents has changed.
+    /*!
+     * \brief Emitted when the state of the modules contents has changed.
      *
      * This signal is emitted whenever the state of the configuration
      * shown in the module changes. It allows the module container to
@@ -99,105 +123,97 @@ public:
      */
     Q_SIGNAL void needsSaveChanged();
 
-    /**
-     * Set this property to true when the user sets the state of the module
-     * to the default settings (e.g. clicking Defaults would do nothing).
+    /*!
+     * \brief Set this property to \c true when the user sets the state of the module
+     * to the \a defaults settings (e.g. clicking Defaults would do nothing).
      */
     void setRepresentsDefaults(bool defaults);
 
-    /**
-     * True when the module state represents the default settings.
+    /*!
+     * \brief Returns \c true when the module state represents the default settings.
      */
     bool representsDefaults() const;
 
-    /**
-     * Indicate that the state of the modules contents has changed
+    /*!
+     * \brief Emitted when the state of the modules contents has changed
      * in a way that it might represents the defaults settings, or
      * stopped representing them.
      */
     Q_SIGNAL void representsDefaultsChanged();
 
-    /**
-     * Sets the buttons to display.
-     *
-     * Help: shows a "Help" button.
-     *
-     * Default: shows a "Use Defaults" button.
-     *
-     * Apply: shows an "Ok", "Apply" and "Cancel" button.
-     *
-     * If Apply is not specified, kcmshell will show a "Close" button.
-     *
-     * @see ConfigModule::buttons
+    /*!
+     * \brief Sets the \a btn to display.
+     * \sa buttons
      */
     void setButtons(const Buttons btn);
 
-    /**
-     * Indicate which buttons will be used.
+    /*!
+     * \brief Indicate which buttons will be used.
      *
      * The return value is a value or'ed together from
      * the Button enumeration type.
      *
-     * @see ConfigModule::setButtons
+     * \sa setButtons
      */
     Buttons buttons() const;
 
-    /**
-     * Buttons to display changed.
+    /*!
+     * \brief Emitted when the buttons to display have changed.
      */
     Q_SIGNAL void buttonsChanged();
 
-    /**
-     * @return true, if the authActionName is not empty
-     * @sa setAuthActionName
+    /*!
+     * \brief Returns \c true if the authActionName is not empty.
+     * \sa setAuthActionName
      */
     bool needsAuthorization() const;
 
-    /**
-     * @returns the name of the config module
+    /*!
+     * \brief Returns the name of the config module.
      */
     QString name() const;
 
-    /**
-     * @returns the description of the config module
+    /*!
+     * \brief Returns the description of the config module.
      */
     QString description() const;
 
-    /**
-     * Change defaultness indicator visibility
-     * @param visible
+    /*!
+     * \brief Changes the defaultness indicator visibility.
+     *
+     * \a visible Whether the indicator should be visible.
      */
     void setDefaultsIndicatorsVisible(bool visible);
 
-    /**
-     * @returns defaultness indicator visibility
+    /*!
+     * \brief Returns the defaultness indicator visibility.
      */
     bool defaultsIndicatorsVisible() const;
 
-    /**
-     * Emitted when kcm need to display indicators for field with non default value
+    /*!
+     * \brief Emitted when the KCM needs to display indicators for field with non default value.
      */
     Q_SIGNAL void defaultsIndicatorsVisibleChanged();
 
-    /**
-     * Returns the metaData that was used when instantiating the plugin
+    /*!
+     * \brief Returns the metaData that was used when instantiating the plugin.
      */
     KPluginMetaData metaData() const;
 
-    /**
-     * This signal will be emited by a single-instance application (such as
-     * System Settings) to request activation and update arguments to a module
-     * that is already running
+    /*!
+     * \brief Emitted by a single-instance application (such as
+     * System Settings) to request activation and update \a args to a module
+     * that is already running.
      *
      * The module should connect to this signal when it needs to handle
-     * the activation request and specially the new arguments
+     * the activation request and specially the new arguments.
      *
-     * @param args A list of arguments that get passed to the module
+     * \a args A list of arguments that get passed to the module.
      */
     Q_SIGNAL void activationRequested(const QVariantList &args);
 
-    /**
-     * Load the configuration data into the module.
+    /*!
+     * \brief Loads the configuration data into the module.
      *
      * The load method sets the user interface elements of the
      * module to reflect the current settings stored in the
@@ -211,17 +227,16 @@ public:
      */
     virtual void load();
 
-    /**
-     * The save method stores the config information as shown
+    /*!
+     * \brief The save method stores the config information as shown
      * in the user interface in the config files.
      *
      * This method is called when the user clicks "Apply" or "Ok".
-     *
      */
     virtual void save();
 
-    /**
-     * Sets the configuration to default values.
+    /*!
+     * \brief Sets the configuration to default values.
      *
      * This method is called when the user clicks the "Default"
      * button.

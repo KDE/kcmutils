@@ -1,4 +1,4 @@
-/**
+/*
  * SPDX-FileCopyrightText: Year Author <author@domain.com>
  * SPDX-License-Identifier: GPL-2.0-or-later
  */

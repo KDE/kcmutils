@@ -8,6 +8,8 @@ add_library(KF6KCMUtilsQuick
     kquickconfigmoduleloader.cpp
 )
 
+ecm_generate_qdoc(KF6KCMUtilsQuick kcmutilsquick.qdocconf)
+
 qt_extract_metatypes(KF6KCMUtilsQuick)
 
 ecm_generate_export_header(KF6KCMUtilsQuick

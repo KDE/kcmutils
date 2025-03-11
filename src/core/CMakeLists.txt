@@ -3,6 +3,8 @@
 
 add_library(KF6KCMUtilsCore)
 
+ecm_generate_qdoc(KF6KCMUtilsCore kcmutilscore.qdocconf)
+
 qt_extract_metatypes(KF6KCMUtilsCore)
 
 set_target_properties(KF6KCMUtilsCore PROPERTIES

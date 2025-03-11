@@ -13,10 +13,10 @@ class KCoreConfigSkeleton;
 
 class KQuickManagedConfigModulePrivate;
 
-/**
- * @class KQuickManagedConfigModule managedconfigmodule.h KQuickAddons/ManagedConfigModule
- *
- * The base class for configuration modules using KConfigXT settings.
+/*!
+ * \class KQuickManagedConfigModule
+ * \inmodule KCMUtilsQuick
+ * \brief The base class for configuration modules using KConfigXT settings.
  *
  * We are assuming here that SettingsObject is a class generated from a kcfg file
  * and that it will be somehow exposed as a constant property to be used from the QML side.
@@ -35,21 +35,18 @@ class KQuickManagedConfigModulePrivate;
  * }
  * \endcode
  *
- * @since 6.0
+ * \since 6.0
  */
 class KCMUTILSQUICK_EXPORT KQuickManagedConfigModule : public KQuickConfigModule
 {
     Q_OBJECT
 
 public:
-    /**
-     * Destroys the module.
-     */
     ~KQuickManagedConfigModule() override;
 
 public Q_SLOTS:
-    /**
-     * Load the configuration data into the module.
+    /*!
+     * \brief Loads the configuration data into the module.
      *
      * This method is invoked whenever the module should read its configuration
      * (most of the times from a config file) and update the user interface.
@@ -62,8 +59,8 @@ public Q_SLOTS:
      */
     void load() override;
 
-    /**
-     * Save the configuration data.
+    /*!
+     * \brief Saves the configuration data.
      *
      * The save method stores the config information as shown
      * in the user interface in the config files.
@@ -74,8 +71,8 @@ public Q_SLOTS:
      */
     void save() override;
 
-    /**
-     * Sets the configuration to sensible default values.
+    /*!
+     * \brief Sets the configuration to sensible default values.
      *
      * This method is called when the user clicks the "Default"
      * button. It should set the display to useful values.
@@ -86,8 +83,8 @@ public Q_SLOTS:
     void defaults() override;
 
 protected Q_SLOTS:
-    /**
-     * Forces the module to reevaluate the saveNeeded and
+    /*!
+     * \brief Forces the module to reevaluate the saveNeeded and
      * representsDefault state.
      *
      * This is required for some modules which might have
@@ -95,25 +92,27 @@ protected Q_SLOTS:
      */
     void settingsChanged();
 
-    /**
-     * Allow to register manually settings class generated from a kcfg file.
+    /*!
+     * \brief Allows to register manually settings class generated from a kcfg file.
      * Used by derived class when automatic discovery is not possible.
-     * After skeleton is registered it will automatically call settingsChanged().
+     * After \a skeleton is registered it will automatically call settingsChanged().
      */
     void registerSettings(KCoreConfigSkeleton *skeleton);
 
 protected:
-    /**
-     * Base class for all KControlModules.
-     * Use KQuickConfigModuleLoader to instantiate this class
+    /*!
+     * \brief Base class for all KControlModules.
      *
-     * @note do not emit changed signals here, since they are not yet connected to any slot.
+     * Creates a new KQuickManagedConfigModule with the given \a metaData as a child of \a parent.
+     * Use KQuickConfigModuleLoader to instantiate this class.
+     *
+     * \note Do not emit changed signals here, since they are not yet connected to any slot.
      */
     explicit KQuickManagedConfigModule(QObject *parent, const KPluginMetaData &metaData);
 
 private:
-    /**
-     * Allows to indicate if the module requires saving.
+    /*!
+     * \brief Allows to indicate if the module requires saving.
      *
      * By default this returns false, it needs to be overridden only
      * if the module has state outside of the settings declared in
@@ -121,8 +120,8 @@ private:
      */
     virtual bool isSaveNeeded() const;
 
-    /**
-     * Allows to indicate if the module state is representing its defaults.
+    /*!
+     * \brief Allows to indicate if the module state is representing its defaults.
      *
      * By default this returns true, it needs to be overridden only
      * if the module has state outside of the settings declared in

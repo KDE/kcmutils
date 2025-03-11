@@ -20,50 +20,48 @@
 
 class KCMultiDialogPrivate;
 
-/**
- * @short A class that offers a KPageDialog containing config modules
- *
- * @author Matthias Elter <elter@kde.org>, Daniel Molkentin <molkentin@kde.org>
+/*!
+ * \brief A class that offers a KPageDialog containing config modules.
+ * \inmodule KCMUtils
  */
 class KCMUTILS_EXPORT KCMultiDialog : public KPageDialog
 {
     Q_OBJECT
 
 public:
-    /**
-     * Constructs a new KCMultiDialog
+    /*!
+     * \brief Constructs a new KCMultiDialog.
      *
-     * @param parent The parent widget
+     * \a parent The parent widget.
      **/
     explicit KCMultiDialog(QWidget *parent = nullptr);
 
-    /**
-     * Destructor
-     **/
     ~KCMultiDialog() override;
 
-    /**
-     * Add a module to the dialog. Its position will be determined based on the @c X-KDE-Weight value.
-     * @param metaData KPluginMetaData that will be used to load the plugin
-     * @param args The arguments that should be given to the KCModule when it is created
+    /*!
+     * \brief Adds a module to the dialog. Its position will be determined based on the \c X-KDE-Weight value.
+     *
+     * \a metaData KPluginMetaData that will be used to load the plugin.
+     *
+     * \a args The arguments that should be given to the KCModule when it is created.
      */
     KPageWidgetItem *addModule(const KPluginMetaData &metaData, const QVariantList &args = {});
 
-    /**
-     * Removes all modules from the dialog.
+    /*!
+     * \brief Removes all modules from the dialog.
      */
     void clear();
 
-    /**
-     * Show or hide an indicator when settings have changed from their default value
+    /*!
+     * \brief Whether to \a show or hide an indicator when settings have changed from their default value.
      *
-     * @since 6.0
+     * \since 6.0
      */
     void setDefaultsIndicatorsVisible(bool show);
 
 Q_SIGNALS:
-    /**
-     * Emitted after all KCModules have been told to save their configuration.
+    /*!
+     * \brief Emitted after all KCModules have been told to save their configuration.
      *
      * The applyClicked and okClicked signals are emitted before the
      * configuration is saved.
@@ -75,47 +73,49 @@ protected:
     void showEvent(QShowEvent *event) override;
 
 protected Q_SLOTS:
-    /**
-     * This slot is called when the user presses the "Default" Button.
+    /*!
+     * \brief This slot is called when the user presses the "Default" Button.
+     *
      * You can reimplement it if needed.
      *
-     * @note Make sure you call the original implementation.
+     * \note Make sure you call the original implementation.
      **/
     void slotDefaultClicked();
 
-    /**
-     * This slot is called when the user presses the "Reset" Button.
+    /*!
+     * \brief This slot is called when the user presses the "Reset" Button.
      * You can reimplement it if needed.
      *
-     * @note Make sure you call the original implementation.
+     * \note Make sure you call the original implementation.
      */
     void slotUser1Clicked();
 
-    /**
-     * This slot is called when the user presses the "Apply" Button.
+    /*!
+     * \brief This slot is called when the user presses the "Apply" Button.
      * You can reimplement it if needed.
      *
-     * @note Make sure you call the original implementation.
+     * \note Make sure you call the original implementation.
      **/
     void slotApplyClicked();
 
-    /**
-     * This slot is called when the user presses the "OK" Button.
+    /*!
+     * \brief This slot is called when the user presses the "OK" Button.
      * You can reimplement it if needed.
      *
-     * @note Make sure you call the original implementation.
+     * \note Make sure you call the original implementation.
      **/
     void slotOkClicked();
 
-    /**
-     * This slot is called when the user presses the "Help" Button.
+    /*!
+     * \brief This slot is called when the user presses the "Help" Button.
+     *
      * It reads the X-DocPath field of the currently selected KControl
      * module's .desktop file to find the path to the documentation,
      * which it then attempts to load.
      *
      * You can reimplement this slot if needed.
      *
-     * @note Make sure you call the original implementation.
+     * \note Make sure you call the original implementation.
      **/
     void slotHelpClicked();
 
@@ -124,15 +124,6 @@ private:
     const std::unique_ptr<KCMultiDialogPrivate> d;
     bool eventFilter(QObject *watched, QEvent *event) override;
 };
-
-/**
- * @brief Custom QScrollArea class that doesn't limit its size hint
- *
- * See original QScrollArea::sizeHint() function,
- * where the size hint is bound by 36*24 font heights
- *
- * Workaround for https://bugreports.qt.io/browse/QTBUG-10459
- */
 
 class UnboundScrollArea : public QScrollArea
 {

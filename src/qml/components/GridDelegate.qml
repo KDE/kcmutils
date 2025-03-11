@@ -13,45 +13,48 @@ import QtQuick.Templates as T
 import org.kde.kirigami as Kirigami
 import "private" as Private
 
-/**
- * Base delegate for KControlmodules based on Grid views of thumbnails
- * Use the onClicked signal handler for managing the main action when
- * the user clicks on the thumbnail
- * @inherits QtQuick.Templates.ItemDelegate
+/*!
+   \qmltype GridDelegate
+   \inqmlmodule org.kde.kcmutils
+   \brief Base delegate for KControlmodules based on Grid views of thumbnails.
+
+   Use the onClicked signal handler for managing the main action when
+   the user clicks on the thumbnail.
  */
 T.ItemDelegate {
     id: delegate
 
-    /**
-     * toolTip: string
-     * string for a tooltip for the whole delegate
+    /*!
+       \brief String for a tooltip for the whole delegate.
      */
     property string toolTip
 
-    /**
-     * subtitle: string
-     * optional string for the text to show below the main label
+    /*!
+       \brief Optional string for the text to show below the main label.
      */
     property string subtitle
 
-    /**
-     * thumbnail: Item
-     * the item actually implementing the thumbnail: the visualization is up to the implementation
+    /*!
+       \qmlproperty Item GridDelegate::thumbnail
+       \brief The item actually implementing the thumbnail:
+       the visualization is up to the implementation.
      */
     property alias thumbnail: thumbnailArea.data
 
-    /**
-     * thumbnailAvailable: bool
-     * Set it to true when a thumbnail is actually available: when false,
-     * only an icon will be shown instead of the actual thumbnail
-     * ("edit-none" if pluginName is "None", otherwise it uses "view-preview").
+    /*!
+       \brief Set it to true when a thumbnail is actually available.
+
+       When false, only an icon will be shown instead of the actual thumbnail
+       ("edit-none" if pluginName is "None", otherwise it uses "view-preview").
      */
     property bool thumbnailAvailable: false
 
-    /**
-     * actions: list<Kirigami.Action>
-     * A list of extra actions for the thumbnails. They will be shown as
-     * icons on the bottom-right corner of the thumbnail on mouse over
+    /*!
+       \qmlproperty list<Kirigami.Action> GridDelegate::actions
+       \brief A list of extra actions for the thumbnails.
+
+       They will be shown as icons on the bottom-right corner
+       of the thumbnail on mouse hover.
      */
     property list<Kirigami.Action> actions
 

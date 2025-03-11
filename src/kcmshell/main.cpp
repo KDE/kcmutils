@@ -49,8 +49,8 @@ class KCMShellMultiDialog : public KCMultiDialog
     Q_OBJECT
 
 public:
-    /**
-     * Constructor. Parameter @p dialogFace is passed to KCMultiDialog
+    /*
+     * Constructor. Parameter dialogFace is passed to KCMultiDialog
      * unchanged.
      */
     explicit KCMShellMultiDialog(KPageDialog::FaceType dialogFace)
