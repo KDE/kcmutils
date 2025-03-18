@@ -22,7 +22,7 @@ static QStringList jsonArrayToStringList(const QJsonArray &array)
 
 static void writeKeyValue(QFile *file, const QString &key, const QString &value)
 {
-    file->write((key + QLatin1Char('=') + value + QLatin1Char('\n')).toUtf8());
+    file->write((key + u'=' + value + u'\n').toUtf8());
 }
 
 static void writeKeyValue(QFile *file, const QString &key, const QStringList &list)
