@@ -27,7 +27,7 @@ static void writeKeyValue(QFile *file, const QString &key, const QString &value)
 
 static void writeKeyValue(QFile *file, const QString &key, const QStringList &list)
 {
-    writeKeyValue(file, key, list.join(QLatin1Char(';')));
+    writeKeyValue(file, key, list.join(u';'));
 }
 
 int main(int argc, char **argv)
