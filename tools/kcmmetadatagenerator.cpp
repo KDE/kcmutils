@@ -6,9 +6,29 @@
 #include <QCoreApplication>
 #include <QFile>
 #include <QFileInfo>
+#include <QJsonArray>
 #include <QJsonDocument>
 #include <QJsonObject>
 #include <QString>
+
+static QStringList jsonArrayToStringList(const QJsonArray &array)
+{
+    QStringList list;
+    for (const QJsonValue &value : array) {
+        list.append(value.toString());
+    }
+    return list;
+}
+
+static void writeKeyValue(QFile *file, const QString &key, const QString &value)
+{
+    file->write((key + u'=' + value + u'\n').toUtf8());
+}
+
+static void writeKeyValue(QFile *file, const QString &key, const QStringList &list)
+{
+    writeKeyValue(file, key, list.join(u';'));
+}
 
 int main(int argc, char **argv)
 {
@@ -36,6 +56,11 @@ int main(int argc, char **argv)
     out.write("NoDisplay=true\n");
     out.write("X-KDE-AliasFor=systemsettings\n");
 
+    const QString showOnlyOnQtPlatformsKey = QStringLiteral("X-KDE-OnlyShowOnQtPlatforms");
+    if (const auto showOnlyOnQtPlatforms = doc.object().value(showOnlyOnQtPlatformsKey); !showOnlyOnQtPlatforms.isNull()) {
+        writeKeyValue(&out, showOnlyOnQtPlatformsKey, jsonArrayToStringList(showOnlyOnQtPlatforms.toArray()));
+    }
+
     QString executableProgram = QStringLiteral("systemsettings ");
     if (!doc.object().contains(QLatin1String("X-KDE-System-Settings-Parent-Category"))) {
         executableProgram = QStringLiteral("kcmshell6 ");
@@ -49,8 +74,7 @@ int main(int argc, char **argv)
     for (auto it = kplugin.begin(), end = kplugin.end(); it != end; ++it) {
         const QString key = it.key();
         if (key.startsWith(namePrefix)) {
-            const QString name = key + QLatin1Char('=') + it.value().toString() + QLatin1Char('\n');
-            out.write(name.toUtf8());
+            writeKeyValue(&out, key, it.value().toString());
         }
     }
 }
