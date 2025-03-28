@@ -46,7 +46,8 @@ int main(int argc, char **argv)
     QJsonDocument doc = QJsonDocument::fromJson(file.readAll());
     Q_ASSERT(doc.isObject());
 
-    const QJsonObject kplugin = doc.object().value(QLatin1String("KPlugin")).toObject();
+    const QJsonObject metadata = doc.object();
+    const QJsonObject kplugin = metadata.value(QLatin1String("KPlugin")).toObject();
     const QLatin1String namePrefix("Name");
 
     QFile out(app.arguments().at(2));
@@ -57,12 +58,12 @@ int main(int argc, char **argv)
     out.write("X-KDE-AliasFor=systemsettings\n");
 
     const QString showOnlyOnQtPlatformsKey = QStringLiteral("X-KDE-OnlyShowOnQtPlatforms");
-    if (const auto showOnlyOnQtPlatforms = doc.object().value(showOnlyOnQtPlatformsKey); !showOnlyOnQtPlatforms.isNull()) {
-        writeKeyValue(&out, showOnlyOnQtPlatformsKey, jsonArrayToStringList(showOnlyOnQtPlatforms.toArray()));
+    if (auto it = metadata.find(showOnlyOnQtPlatformsKey); it != metadata.end()) {
+        writeKeyValue(&out, showOnlyOnQtPlatformsKey, jsonArrayToStringList(it->toArray()));
     }
 
     QString executableProgram = QStringLiteral("systemsettings ");
-    if (!doc.object().contains(QLatin1String("X-KDE-System-Settings-Parent-Category"))) {
+    if (!metadata.contains(QLatin1String("X-KDE-System-Settings-Parent-Category"))) {
         executableProgram = QStringLiteral("kcmshell6 ");
     }
 
