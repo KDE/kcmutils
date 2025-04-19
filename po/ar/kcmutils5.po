@@ -22,7 +22,7 @@ msgstr ""
 "Project-Id-Version: kdelibs4\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-11-05 12:24+0000\n"
-"PO-Revision-Date: 2022-04-28 12:58+0400\n"
+"PO-Revision-Date: 2025-04-18 21:35+0400\n"
 "Last-Translator: Zayed Al-Saidi <zayed.alsaidi@gmail.com>\n"
 "Language-Team: ar\n"
 "Language: ar\n"
@@ -205,7 +205,7 @@ msgstr[5] "أُزيلت %1 ملحقة آليًا حسب اعتماديّات ا�
 #: kpluginselector.cpp:264 kpluginwidget.cpp:59
 #, kde-format
 msgid "Search..."
-msgstr "ابحث..."
+msgstr "ابحث…"
 
 #: kpluginselector.cpp:804 kpluginwidget.cpp:325
 #, kde-format
@@ -227,7 +227,7 @@ msgstr "عن"
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Configure..."
-msgstr "اضبط..."
+msgstr "اضبط…"
 
 #: qml/components/KPluginSelector.qml:81
 #, kde-format
