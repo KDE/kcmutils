@@ -10,4 +10,4 @@ sourcedirs += .
 
 outputformats = HTML
 
-depends += kde qtcore qtquick qtquickcontrols qtgui qtwidgets qtxml kcoreaddons kconfigcore
+depends += kde qtcore qtquick qtquickcontrols qtgui qtwidgets qtxml kcoreaddons kconfigcore kirigami
