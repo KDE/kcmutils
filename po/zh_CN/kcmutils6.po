@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdeorg\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-03-08 00:40+0000\n"
+"POT-Creation-Date: 2025-05-04 00:39+0000\n"
 "PO-Revision-Date: 2024-04-23 19:24\n"
 "Last-Translator: \n"
 "Language-Team: Chinese Simplified\n"
@@ -27,7 +27,7 @@ msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
 msgstr "kde-china@kde.org, chaofeng111@gmail.com, tds00@qq.com"
 
-#: kcmoduleloader.cpp:49
+#: kcmoduleloader.cpp:48
 #, kde-format
 msgid ""
 "<qt><p>Possible reasons:<ul><li>An error occurred during your last system "
@@ -41,17 +41,17 @@ msgstr ""
 "检查这些情况，并尝试删除错误信息中提到的模块。如果这样也无法解决问题，请考虑"
 "联系您的软件发行商或者打包人员。</p></qt>"
 
-#: kcmoduleloader.cpp:79
+#: kcmoduleloader.cpp:78
 #, kde-format
 msgid "The module %1 is disabled."
 msgstr "模块 %1 已禁用。"
 
-#: kcmoduleloader.cpp:79
+#: kcmoduleloader.cpp:78
 #, kde-format
 msgid "The module has been disabled by the system administrator."
 msgstr "该模块已被系统管理员禁用。"
 
-#: kcmoduleloader.cpp:85
+#: kcmoduleloader.cpp:84
 #, kde-format
 msgid "Error loading QML file."
 msgstr "加载 QML 文件时出错"
@@ -91,66 +91,66 @@ msgstr "搜索…"
 msgid "About"
 msgstr "关于"
 
-#: qml/components/ContextualHelpButton.qml:49
+#: qml/components/ContextualHelpButton.qml:54
 #, kde-format
 msgctxt "@action:button"
 msgid "Show Contextual Help"
 msgstr "显示相关帮助"
 
-#: qml/components/PluginDelegate.qml:89
+#: qml/components/PluginDelegate.qml:111
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "About"
 msgstr "关于"
 
-#: qml/components/PluginDelegate.qml:104
+#: qml/components/PluginDelegate.qml:126
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Configure…"
 msgstr "配置…"
 
-#: qml/components/PluginSelector.qml:84
+#: qml/components/PluginSelector.qml:94
 #, kde-format
 msgid "No matches"
 msgstr "无匹配项"
 
-#: qml/components/PluginSelector.qml:84
+#: qml/components/PluginSelector.qml:94
 #, kde-format
 msgid "No plugins found"
 msgstr "未发现插件"
 
-#: qml/components/private/AboutPlugin.qml:40
+#: qml/components/private/AboutPlugin.qml:41
 #, kde-format
 msgctxt "Plugin name and plugin version"
 msgid "%1 %2"
 msgstr "%1 %2"
 
-#: qml/components/private/AboutPlugin.qml:62
+#: qml/components/private/AboutPlugin.qml:63
 #, kde-format
 msgid "Copyright"
 msgstr "版权信息"
 
-#: qml/components/private/AboutPlugin.qml:79
+#: qml/components/private/AboutPlugin.qml:80
 #, kde-format
 msgid "License:"
 msgstr "许可证："
 
-#: qml/components/private/AboutPlugin.qml:98
+#: qml/components/private/AboutPlugin.qml:99
 #, kde-format
 msgid "Authors"
 msgstr "作者"
 
-#: qml/components/private/AboutPlugin.qml:115
+#: qml/components/private/AboutPlugin.qml:116
 #, kde-format
 msgid "Credits"
 msgstr "致谢"
 
-#: qml/components/private/AboutPlugin.qml:132
+#: qml/components/private/AboutPlugin.qml:133
 #, kde-format
 msgid "Translators"
 msgstr "翻译人员"
 
-#: qml/components/private/AboutPlugin.qml:159
+#: qml/components/private/AboutPlugin.qml:160
 #, kde-format
 msgid "Send an email to %1"
 msgstr "发送电子邮件给 %1"

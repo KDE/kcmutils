@@ -22,7 +22,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kcmutils5\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-03-08 00:40+0000\n"
+"POT-Creation-Date: 2025-05-04 00:39+0000\n"
 "PO-Revision-Date: 2025-03-08 14:01+0200\n"
 "Last-Translator: Yaron Shahrabani <sh.yaron@gmail.com>\n"
 "Language-Team: צוות התרגום של KDE ישראל\n"
@@ -44,7 +44,7 @@ msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
 msgstr "kde-l10n-he@kde.org"
 
-#: kcmoduleloader.cpp:49
+#: kcmoduleloader.cpp:48
 #, kde-format
 msgid ""
 "<qt><p>Possible reasons:<ul><li>An error occurred during your last system "
@@ -59,17 +59,17 @@ msgstr ""
 "להסיר את המודול שהוזכר בהודעת השגיאה. אם לא הצלחת, כדאי לנסות ליצור קשר עם "
 "מפיקי המערכת או האורזים של החבילות.</p></qt>"
 
-#: kcmoduleloader.cpp:79
+#: kcmoduleloader.cpp:78
 #, kde-format
 msgid "The module %1 is disabled."
 msgstr "המודול %1 מושבת."
 
-#: kcmoduleloader.cpp:79
+#: kcmoduleloader.cpp:78
 #, kde-format
 msgid "The module has been disabled by the system administrator."
 msgstr "המודול הושבת על ידי הנהלת המערכת."
 
-#: kcmoduleloader.cpp:85
+#: kcmoduleloader.cpp:84
 #, kde-format
 msgid "Error loading QML file."
 msgstr "שגיאה בטעינת קובץ QML."
@@ -109,66 +109,66 @@ msgstr "חיפוש…"
 msgid "About"
 msgstr "על אודות"
 
-#: qml/components/ContextualHelpButton.qml:49
+#: qml/components/ContextualHelpButton.qml:54
 #, kde-format
 msgctxt "@action:button"
 msgid "Show Contextual Help"
 msgstr "הצגת עזרה בהקשר"
 
-#: qml/components/PluginDelegate.qml:89
+#: qml/components/PluginDelegate.qml:111
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "About"
 msgstr "על אודות"
 
-#: qml/components/PluginDelegate.qml:104
+#: qml/components/PluginDelegate.qml:126
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Configure…"
 msgstr "הגדרה…"
 
-#: qml/components/PluginSelector.qml:84
+#: qml/components/PluginSelector.qml:94
 #, kde-format
 msgid "No matches"
 msgstr "אין התאמות"
 
-#: qml/components/PluginSelector.qml:84
+#: qml/components/PluginSelector.qml:94
 #, kde-format
 msgid "No plugins found"
 msgstr "לא נמצאו תוספים"
 
-#: qml/components/private/AboutPlugin.qml:40
+#: qml/components/private/AboutPlugin.qml:41
 #, kde-format
 msgctxt "Plugin name and plugin version"
 msgid "%1 %2"
 msgstr "%1 %2"
 
-#: qml/components/private/AboutPlugin.qml:62
+#: qml/components/private/AboutPlugin.qml:63
 #, kde-format
 msgid "Copyright"
 msgstr "זכויות יוצרים"
 
-#: qml/components/private/AboutPlugin.qml:79
+#: qml/components/private/AboutPlugin.qml:80
 #, kde-format
 msgid "License:"
 msgstr "רישיון:"
 
-#: qml/components/private/AboutPlugin.qml:98
+#: qml/components/private/AboutPlugin.qml:99
 #, kde-format
 msgid "Authors"
 msgstr "יוצרים"
 
-#: qml/components/private/AboutPlugin.qml:115
+#: qml/components/private/AboutPlugin.qml:116
 #, kde-format
 msgid "Credits"
 msgstr "תודות"
 
-#: qml/components/private/AboutPlugin.qml:132
+#: qml/components/private/AboutPlugin.qml:133
 #, kde-format
 msgid "Translators"
 msgstr "מתרגמים"
 
-#: qml/components/private/AboutPlugin.qml:159
+#: qml/components/private/AboutPlugin.qml:160
 #, kde-format
 msgid "Send an email to %1"
 msgstr "שליחת דוא״ל אל %1"

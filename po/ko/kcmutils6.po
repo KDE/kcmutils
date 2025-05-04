@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdelibs4\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-03-08 00:40+0000\n"
+"POT-Creation-Date: 2025-05-04 00:39+0000\n"
 "PO-Revision-Date: 2025-04-06 22:30+0200\n"
 "Last-Translator: Shinjo Park <kde@peremen.name>\n"
 "Language-Team: Korean <kde-kr@kde.org>\n"
@@ -28,7 +28,7 @@ msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
 msgstr "cho.sungjae@gmail.com,kde@peremen.name"
 
-#: kcmoduleloader.cpp:49
+#: kcmoduleloader.cpp:48
 #, kde-format
 msgid ""
 "<qt><p>Possible reasons:<ul><li>An error occurred during your last system "
@@ -43,17 +43,17 @@ msgstr ""
 "제해 보십시오. 만약 이것이 실패하면 배포하거나 패키징한 사람에게 연락해 보십"
 "시오.</p></qt>"
 
-#: kcmoduleloader.cpp:79
+#: kcmoduleloader.cpp:78
 #, kde-format
 msgid "The module %1 is disabled."
 msgstr "모듈 %1(이)가 비활성화되었습니다."
 
-#: kcmoduleloader.cpp:79
+#: kcmoduleloader.cpp:78
 #, kde-format
 msgid "The module has been disabled by the system administrator."
 msgstr "시스템 관리자가 이 모듈을 비활성화했습니다."
 
-#: kcmoduleloader.cpp:85
+#: kcmoduleloader.cpp:84
 #, kde-format
 msgid "Error loading QML file."
 msgstr "QML 파일을 불러올 수 없습니다."
@@ -93,66 +93,66 @@ msgstr "찾기…"
 msgid "About"
 msgstr "정보"
 
-#: qml/components/ContextualHelpButton.qml:49
+#: qml/components/ContextualHelpButton.qml:54
 #, kde-format
 msgctxt "@action:button"
 msgid "Show Contextual Help"
 msgstr "문맥 도움말 표시"
 
-#: qml/components/PluginDelegate.qml:89
+#: qml/components/PluginDelegate.qml:111
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "About"
 msgstr "정보"
 
-#: qml/components/PluginDelegate.qml:104
+#: qml/components/PluginDelegate.qml:126
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Configure…"
 msgstr "설정…"
 
-#: qml/components/PluginSelector.qml:84
+#: qml/components/PluginSelector.qml:94
 #, kde-format
 msgid "No matches"
 msgstr "검색 결과 없음"
 
-#: qml/components/PluginSelector.qml:84
+#: qml/components/PluginSelector.qml:94
 #, kde-format
 msgid "No plugins found"
 msgstr "플러그인을 찾을 수 없음"
 
-#: qml/components/private/AboutPlugin.qml:40
+#: qml/components/private/AboutPlugin.qml:41
 #, kde-format
 msgctxt "Plugin name and plugin version"
 msgid "%1 %2"
 msgstr "%1 %2"
 
-#: qml/components/private/AboutPlugin.qml:62
+#: qml/components/private/AboutPlugin.qml:63
 #, kde-format
 msgid "Copyright"
 msgstr "저작권"
 
-#: qml/components/private/AboutPlugin.qml:79
+#: qml/components/private/AboutPlugin.qml:80
 #, kde-format
 msgid "License:"
 msgstr "라이선스:"
 
-#: qml/components/private/AboutPlugin.qml:98
+#: qml/components/private/AboutPlugin.qml:99
 #, kde-format
 msgid "Authors"
 msgstr "작성자"
 
-#: qml/components/private/AboutPlugin.qml:115
+#: qml/components/private/AboutPlugin.qml:116
 #, kde-format
 msgid "Credits"
 msgstr "제작진"
 
-#: qml/components/private/AboutPlugin.qml:132
+#: qml/components/private/AboutPlugin.qml:133
 #, kde-format
 msgid "Translators"
 msgstr "번역자"
 
-#: qml/components/private/AboutPlugin.qml:159
+#: qml/components/private/AboutPlugin.qml:160
 #, kde-format
 msgid "Send an email to %1"
 msgstr "%1(으)로 이메일 보내기"

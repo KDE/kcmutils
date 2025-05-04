@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdelibs4 stable\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-03-08 00:40+0000\n"
+"POT-Creation-Date: 2025-05-04 00:39+0000\n"
 "PO-Revision-Date: 2006-01-12 16:33+0200\n"
 "Last-Translator: JUANITA FRANZ <JUANITA.FRANZ@VR-WEB.DE>\n"
 "Language-Team: AFRIKAANS <translate-discuss-af@lists.sourceforge.net>\n"
@@ -23,7 +23,7 @@ msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
 msgstr "frix@expertron.co.za,juanita.franz@vr-web.de "
 
-#: kcmoduleloader.cpp:49
+#: kcmoduleloader.cpp:48
 #, fuzzy, kde-format
 #| msgid ""
 #| "<qt><p>The diagnostics is:<br>%1<p>Possible reasons:</p><ul><li>An error "
@@ -46,18 +46,18 @@ msgstr ""
 "boodskap genoem is. As dit nie help nie, oorweeg om jou verspreider of "
 "verpakker te kontak.</p></qt>"
 
-#: kcmoduleloader.cpp:79
+#: kcmoduleloader.cpp:78
 #, fuzzy, kde-format
 msgid "The module %1 is disabled."
 msgstr "Kon nie module %1 laai nie."
 
-#: kcmoduleloader.cpp:79
+#: kcmoduleloader.cpp:78
 #, fuzzy, kde-format
 #| msgid "Please contact your system administrator."
 msgid "The module has been disabled by the system administrator."
 msgstr "Kontak asseblief die stelsel administrateur."
 
-#: kcmoduleloader.cpp:85
+#: kcmoduleloader.cpp:84
 #, fuzzy, kde-format
 #| msgid "Error opening file."
 msgid "Error loading QML file."
@@ -104,37 +104,37 @@ msgstr "Soek:"
 msgid "About"
 msgstr "Aangaande"
 
-#: qml/components/ContextualHelpButton.qml:49
+#: qml/components/ContextualHelpButton.qml:54
 #, kde-format
 msgctxt "@action:button"
 msgid "Show Contextual Help"
 msgstr ""
 
-#: qml/components/PluginDelegate.qml:89
+#: qml/components/PluginDelegate.qml:111
 #, fuzzy, kde-format
 #| msgid "&About"
 msgctxt "@info:tooltip"
 msgid "About"
 msgstr "Aangaande"
 
-#: qml/components/PluginDelegate.qml:104
+#: qml/components/PluginDelegate.qml:126
 #, fuzzy, kde-format
 #| msgid "Configure"
 msgctxt "@info:tooltip"
 msgid "Configure…"
 msgstr "Stel op"
 
-#: qml/components/PluginSelector.qml:84
+#: qml/components/PluginSelector.qml:94
 #, kde-format
 msgid "No matches"
 msgstr ""
 
-#: qml/components/PluginSelector.qml:84
+#: qml/components/PluginSelector.qml:94
 #, fuzzy, kde-format
 msgid "No plugins found"
 msgstr "1 ooreenstem gevind."
 
-#: qml/components/private/AboutPlugin.qml:40
+#: qml/components/private/AboutPlugin.qml:41
 #, fuzzy, kde-format
 #| msgctxt "concatenation of dates and time"
 #| msgid "%1 %2"
@@ -142,35 +142,35 @@ msgctxt "Plugin name and plugin version"
 msgid "%1 %2"
 msgstr "%1 %2"
 
-#: qml/components/private/AboutPlugin.qml:62
+#: qml/components/private/AboutPlugin.qml:63
 #, fuzzy, kde-format
 #| msgid "Copy"
 msgid "Copyright"
 msgstr "Kopie"
 
-#: qml/components/private/AboutPlugin.qml:79
+#: qml/components/private/AboutPlugin.qml:80
 #, kde-format
 msgid "License:"
 msgstr "Lisensie:"
 
-#: qml/components/private/AboutPlugin.qml:98
+#: qml/components/private/AboutPlugin.qml:99
 #, fuzzy, kde-format
 #| msgid "A&uthors"
 msgid "Authors"
 msgstr "Outeure"
 
-#: qml/components/private/AboutPlugin.qml:115
+#: qml/components/private/AboutPlugin.qml:116
 #, kde-format
 msgid "Credits"
 msgstr ""
 
-#: qml/components/private/AboutPlugin.qml:132
+#: qml/components/private/AboutPlugin.qml:133
 #, fuzzy, kde-format
 #| msgid "Translation"
 msgid "Translators"
 msgstr "Vertaling"
 
-#: qml/components/private/AboutPlugin.qml:159
+#: qml/components/private/AboutPlugin.qml:160
 #, fuzzy, kde-format
 #| msgid "&Send Email"
 msgid "Send an email to %1"
