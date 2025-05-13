@@ -1,15 +1,15 @@
 # Spanish translations for kcmshell6.po package.
-# Copyright (C) 2023 This file is copyright:
+# Copyright (C) 2023-2025 This file is copyright:
 # This file is distributed under the same license as the kcmutils package.
-#
 # Automatically generated, 2023.
-# SPDX-FileCopyrightText: 2023 Eloy Cuadra <ecuadra@eloihr.net>
+#
+# SPDX-FileCopyrightText: 2023, 2025 Eloy Cuadra <ecuadra@eloihr.net>
 msgid ""
 msgstr ""
 "Project-Id-Version: kcmshell6\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-09-28 00:37+0000\n"
-"PO-Revision-Date: 2023-10-01 18:02+0200\n"
+"PO-Revision-Date: 2025-05-12 13:20+0100\n"
 "Last-Translator: Eloy Cuadra <ecuadra@eloihr.net>\n"
 "Language-Team: Spanish <kde-l10n-es@kde.org>\n"
 "Language: es\n"
@@ -115,18 +115,3 @@ msgstr "Están disponibles los siguientes módulos:"
 #, kde-format
 msgid "No description available"
 msgstr "Descripción no disponible"
-
-#~ msgid "Specify a particular language"
-#~ msgstr "Indicar un idioma determinado"
-
-#~ msgid "Do not display main window"
-#~ msgstr "No mostrar la ventana principal"
-
-#~ msgid ""
-#~ "--lang is deprecated. Please set the LANGUAGE environment variable instead"
-#~ msgstr ""
-#~ "«--lang» es obsoleto. En lugar de usarlo, defina la variable de entorno "
-#~ "LANGUAGE."
-
-#~ msgid "System Settings Module"
-#~ msgstr "Módulo de preferencias del sistema"
