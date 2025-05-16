@@ -8,6 +8,8 @@ documentationinheaders = true
 headerdirs += .
 sourcedirs += .
 
+navigation.landingpage = "KCMUtils"
+
 outputformats = HTML
 
 depends += kde qtcore qtquick qtquickcontrols qtgui qtwidgets qtxml kcoreaddons kconfig

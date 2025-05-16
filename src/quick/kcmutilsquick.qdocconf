@@ -10,4 +10,6 @@ sourcedirs += .
 
 outputformats = HTML
 
+navigation.landingpage = "KCMUtils"
+
 depends += kde qtcore qtquick qtquickcontrols qtgui qtwidgets qtxml kcoreaddons kconfigcore kirigami
