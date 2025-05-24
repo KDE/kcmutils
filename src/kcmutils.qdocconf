@@ -27,3 +27,5 @@ qhp.KCMUtils.subprojects.classes.title = C++ Classes
 qhp.KCMUtils.subprojects.classes.indexTitle = KCMUtils C++ Classes
 qhp.KCMUtils.subprojects.classes.selectors = class fake:headerfile
 qhp.KCMUtils.subprojects.classes.sortPages = true
+
+tagfile = kcmutils.tags

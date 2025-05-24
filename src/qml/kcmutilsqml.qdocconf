@@ -27,3 +27,5 @@ qhp.KCMUtilsQml.subprojects.qmltypes.title = KCMUtils QML Types
 qhp.KCMUtilsQml.subprojects.qmltypes.indexTitle = KCMUtils QML Types
 qhp.KCMUtilsQml.subprojects.qmltypes.selectors = qmlmodule:org.kde.kcmutils
 qhp.KCMUtilsQml.subprojects.qmltypes.sortPages = true
+
+tagfile = kcmutilsqml.tags
