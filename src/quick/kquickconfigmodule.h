@@ -147,7 +147,7 @@ public:
      * For example:
      *
      * environment has set
-     * `export PLASMA_PLATFORM=phone:handset`
+     * \c {export PLASMA_PLATFORM=phone:handset}
      *
      * The module will try to find main_phone.qml, then main_handset.qml, then main.qml.
      * The first file that is found will be used as mainUi. If none is found and main.qml
@@ -255,7 +255,7 @@ Q_SIGNALS:
     void depthChanged(int index);
 
     /*!
-     * \brief Emitted when the main Ui has loaded successfully and `mainUi()` is available.
+     * \brief Emitted when the main Ui has loaded successfully and mainUi() is available.
      */
     void mainUiReady();
 
