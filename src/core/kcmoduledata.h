@@ -15,6 +15,8 @@
 class KCModuleDataPrivate;
 class KCoreConfigSkeleton;
 
+class QAction;
+
 /*!
  * \class KCModuleData
  * \inmodule KCMUtilsCore
@@ -50,6 +52,14 @@ public:
      */
     virtual bool matchesQuery(const QString &query) const;
 
+    QAction *helpfulAction() const;
+
+    void setHelpfulAction(QAction *action);
+
+    bool isRelevant() const;
+
+    void setRelevant(bool relevant);
+
 Q_SIGNALS:
     /*!
      * \brief Emitted when KCModuleData is loaded.
@@ -66,6 +76,10 @@ Q_SIGNALS:
      * disconnect this signal in the derived constructor.
      */
     void aboutToLoad(QPrivateSignal);
+
+    void helpfulActionChanged(QAction *action);
+
+    void relevantChanged(bool relevant);
 
 protected Q_SLOTS:
     /*!

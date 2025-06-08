@@ -21,6 +21,8 @@ public:
 
     KCModuleData *_q;
     QList<QPointer<KCoreConfigSkeleton>> _skeletons;
+    bool relevant = true;
+    QAction *helpfulAction = nullptr;
 };
 
 KCModuleData::KCModuleData(QObject *parent)
@@ -77,6 +79,32 @@ bool KCModuleData::matchesQuery(const QString &query) const
     // Currently not implemented, here for future use case
     Q_UNUSED(query)
     return false;
+}
+
+QAction *KCModuleData::helpfulAction() const
+{
+    return d->helpfulAction;
+}
+
+void KCModuleData::setHelpfulAction(QAction *action)
+{
+    if (d->helpfulAction != action) {
+        d->helpfulAction = action;
+        Q_EMIT helpfulActionChanged(action);
+    }
+}
+
+bool KCModuleData::isRelevant() const
+{
+    return d->relevant;
+}
+
+void KCModuleData::setRelevant(bool relevant)
+{
+    if (d->relevant != relevant) {
+        d->relevant = relevant;
+        Q_EMIT relevantChanged(relevant);
+    }
 }
 
 #include "moc_kcmoduledata.cpp"
