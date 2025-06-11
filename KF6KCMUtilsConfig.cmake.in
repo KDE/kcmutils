@@ -33,6 +33,3 @@ if(CMAKE_CROSSCOMPILING AND KF6_HOST_TOOLING)
 else()
     include("${CMAKE_CURRENT_LIST_DIR}/KF6KCMUtilsToolingTargets.cmake")
 endif()
-
-
-@PACKAGE_INCLUDE_QCHTARGETS@

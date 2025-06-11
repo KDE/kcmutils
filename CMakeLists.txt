@@ -19,7 +19,6 @@ include(ECMGenerateExportHeader)
 include(ECMSetupVersion)
 include(ECMGenerateHeaders)
 include(CMakePackageConfigHelpers)
-include(ECMAddQch)
 include(ECMQtDeclareLoggingCategory)
 include(ECMDeprecationSettings)
 include(ECMMarkNonGuiExecutable)
@@ -50,9 +49,6 @@ if(USE_DBUS)
     find_package(Qt6DBus ${REQUIRED_QT_VERSION} CONFIG REQUIRED)
     set(HAVE_QTDBUS ${Qt6DBus_FOUND})
 endif()
-
-option(BUILD_QCH "Build API documentation in QCH format (for e.g. Qt Assistant, Qt Creator & KDevelop)" OFF)
-add_feature_info(QCH ${BUILD_QCH} "API documentation in QCH format (for e.g. Qt Assistant, Qt Creator & KDevelop)")
 
 set(kcmutils_version_header "${CMAKE_CURRENT_BINARY_DIR}/src/kcmutils_version.h")
 ecm_setup_version(PROJECT VARIABLE_PREFIX KCMUTILS
@@ -85,16 +81,6 @@ endif()
 
 # create a Config.cmake and a ConfigVersion.cmake file and install them
 set(CMAKECONFIG_INSTALL_DIR "${KDE_INSTALL_CMAKEPACKAGEDIR}/KF6KCMUtils")
-
-if (BUILD_QCH)
-    ecm_install_qch_export(
-        TARGETS KF6KCMUtils_QCH
-        FILE KF6KCMUtilsQchTargets.cmake
-        DESTINATION "${CMAKECONFIG_INSTALL_DIR}"
-        COMPONENT Devel
-    )
-    set(PACKAGE_INCLUDE_QCHTARGETS "include(\"\${CMAKE_CURRENT_LIST_DIR}/KF6KCMUtilsQchTargets.cmake\")")
-endif()
 
 configure_package_config_file(
   "${CMAKE_CURRENT_SOURCE_DIR}/KF6KCMUtilsConfig.cmake.in"

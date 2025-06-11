@@ -96,31 +96,6 @@ install(FILES
 
 install(TARGETS KF6KCMUtils EXPORT KF6KCMUtilsTargets ${KF_INSTALL_TARGETS_DEFAULT_ARGS})
 
-if(BUILD_QCH)
-    ecm_add_qch(
-        KF6KCMUtils_QCH
-        NAME KCMUtils
-        BASE_NAME KF6KCMUtils
-        VERSION ${KF_VERSION}
-        ORG_DOMAIN org.kde
-        SOURCES # using only public headers, to cover only public API
-            ${KCMUtils_HEADERS}
-        MD_MAINPAGE "${CMAKE_SOURCE_DIR}/README.md"
-        LINK_QCHS
-            Qt6Widgets_QCH
-            KF6ConfigWidgets_QCH
-        INCLUDE_DIRS
-            ${CMAKE_CURRENT_BINARY_DIR}
-        BLANK_MACROS
-            KCMUTILS_EXPORT
-            KCMUTILS_DEPRECATED
-            KCMUTILS_DEPRECATED_EXPORT
-        TAGFILE_INSTALL_DESTINATION ${KDE_INSTALL_QTQCHDIR}
-        QCH_INSTALL_DESTINATION ${KDE_INSTALL_QTQCHDIR}
-        COMPONENT Devel
-    )
-endif()
-
 ecm_qt_install_logging_categories(
     EXPORT KCMUTILS
     FILE kcmutils.categories
