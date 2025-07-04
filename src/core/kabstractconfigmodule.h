@@ -40,7 +40,11 @@ class KCMUTILSCORE_EXPORT KAbstractConfigModule : public QObject
     Q_PROPERTY(QString name READ name CONSTANT)
     /*! \property KAbstractConfigModule::description */
     Q_PROPERTY(QString description READ description CONSTANT)
-    /*! \property KAbstractConfigModule::supportsInstantApply */
+    /*!
+     * \property KAbstractConfigModule::supportsInstantApply
+     *
+     * \since 6.16
+     */
     Q_PROPERTY(bool supportsInstantApply READ supportsInstantApply WRITE setSupportsInstantApply NOTIFY supportsInstantApplyChanged)
 public:
     /*!
@@ -197,16 +201,15 @@ public:
      */
     Q_SIGNAL void defaultsIndicatorsVisibleChanged();
 
-
     /*!
      * \brief Indicate whether a config module supports instant apply.
      *
      * \a supportes The config module supports instant apply. If false,
      * the settings application is exptected show Apply/OK buttons.
      *
-     * The default is true.
+     * The default is \c true.
      *
-     * @since 6.16
+     * \since 6.16
      */
     void setSupportsInstantApply(bool supported);
 
@@ -217,16 +220,16 @@ public:
      * settings once Apply/OK are clicked by the user. The settings
      * application is expected to show these buttons.
      *
-     * The default is true.
+     * The default is \c true.
      *
-     * @since 6.16
+     * \since 6.16
      */
     bool supportsInstantApply() const;
 
     /*!
      * \brief Emitted when the KCM's supportsInstantApply property changes.
      *
-     * @since 6.16
+     * \since 6.16
      */
     Q_SIGNAL void supportsInstantApplyChanged();
 
