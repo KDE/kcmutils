@@ -45,7 +45,7 @@ msgstr "فرانس إنجليتش"
 #: main.cpp:103
 #, kde-format
 msgid "Maintainer"
-msgstr "المصين"
+msgstr "الصائن"
 
 #: main.cpp:104
 #, kde-format
