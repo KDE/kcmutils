@@ -22,7 +22,7 @@ msgstr ""
 "Project-Id-Version: kdelibs4\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-11-05 12:24+0000\n"
-"PO-Revision-Date: 2025-04-18 21:35+0400\n"
+"PO-Revision-Date: 2025-08-03 23:13+0400\n"
 "Last-Translator: Zayed Al-Saidi <zayed.alsaidi@gmail.com>\n"
 "Language-Team: ar\n"
 "Language: ar\n"
@@ -141,14 +141,14 @@ msgstr "اضبط"
 msgid ""
 "Automatic changes have been performed due to plugin dependencies. Click here "
 "for further information"
-msgstr "أُجريت بعض التغييرات آليًا حسب اعتماديّات الملحقة. انقر هنا لمعلومات أكثر"
+msgstr "أُجريت بعض التغييرات آليًّا حسب اعتماديّات الملحقة. انقر هنا لمعلومات أكثر"
 
 #: kpluginselector.cpp:204
 #, kde-format
 msgid ""
 "Automatic changes have been performed in order to satisfy plugin "
 "dependencies:\n"
-msgstr "أُجريت بعض التغييرات آليًا لتُستوفى اعتماديّات الملحقة:\n"
+msgstr "أُجريت بعض التغييرات آليًّا لتُستوفى اعتماديّات الملحقة:\n"
 
 #: kpluginselector.cpp:210
 #, kde-format
@@ -158,7 +158,7 @@ msgid ""
 "plugin"
 msgstr ""
 "\n"
-"    أُشّر على الملحقة %1 آليًا لأنها واحدة من اعتماديّات الملحقة %2"
+"    أُشّر على الملحقة %1 آليًّا لأنها واحدة من اعتماديّات الملحقة %2"
 
 #: kpluginselector.cpp:212
 #, kde-format
@@ -168,7 +168,7 @@ msgid ""
 "%2 plugin"
 msgstr ""
 "\n"
-"    أُزيل تأشير الملحقة %1 آليًا لأنها تعتمد على الملحقة %2"
+"    أُزيل تأشير الملحقة %1 آليًّا لأنها تعتمد على الملحقة %2"
 
 #: kpluginselector.cpp:216
 #, kde-format
@@ -179,12 +179,12 @@ msgstr "فحص الاعتماديّات"
 #, kde-format
 msgid "%1 plugin automatically added due to plugin dependencies"
 msgid_plural "%1 plugins automatically added due to plugin dependencies"
-msgstr[0] "لم تُضف أي ملحقة آليًا إلى اعتماديّات الملحقة"
-msgstr[1] "أُضيفت ملحقة واحدة آليًا إلى اعتماديّات الملحقة"
-msgstr[2] "أُضيفت ملحقتين اثنتين آليًا إلى اعتماديّات الملحقة"
-msgstr[3] "أُضيفت %1 ملحقات آليًا إلى اعتماديّات الملحقة"
-msgstr[4] "أُضيفت %1 ملحقات آليًا إلى اعتماديّات الملحقة"
-msgstr[5] "أُضيفت %1 ملحقات آليًا إلى اعتماديّات الملحقة"
+msgstr[0] "لم تُضف أي ملحقة آليًّا إلى اعتماديّات الملحقة"
+msgstr[1] "أُضيفت ملحقة واحدة آليًّا إلى اعتماديّات الملحقة"
+msgstr[2] "أُضيفت ملحقتين اثنتين آليًّا إلى اعتماديّات الملحقة"
+msgstr[3] "أُضيفت %1 ملحقات آليًّا إلى اعتماديّات الملحقة"
+msgstr[4] "أُضيفت %1 ملحقات آليًّا إلى اعتماديّات الملحقة"
+msgstr[5] "أُضيفت %1 ملحقات آليًّا إلى اعتماديّات الملحقة"
 
 #: kpluginselector.cpp:238
 #, kde-format
@@ -195,12 +195,12 @@ msgstr " و"
 #, kde-format
 msgid "%1 plugin automatically removed due to plugin dependencies"
 msgid_plural "%1 plugins automatically removed due to plugin dependencies"
-msgstr[0] "لم تُزل أي ملحقة آليًا ذلك حسب اعتماديّات الملحقة"
-msgstr[1] "أُزيلت ملحقة واحدة آليًا حسب اعتماديّات الملحقة"
-msgstr[2] "أُزيلت ملحقتين اثنتين آليًا حسب اعتماديّات الملحقة"
-msgstr[3] "أُزيلت %1 ملحقات آليًا حسب اعتماديّات الملحقة"
-msgstr[4] "أُزيلت %1 ملحقة آليًا حسب اعتماديّات الملحقة"
-msgstr[5] "أُزيلت %1 ملحقة آليًا حسب اعتماديّات الملحقة"
+msgstr[0] "لم تُزل أي ملحقة آليًّا ذلك حسب اعتماديّات الملحقة"
+msgstr[1] "أُزيلت ملحقة واحدة آليًّا حسب اعتماديّات الملحقة"
+msgstr[2] "أُزيلت ملحقتين اثنتين آليًّا حسب اعتماديّات الملحقة"
+msgstr[3] "أُزيلت %1 ملحقات آليًّا حسب اعتماديّات الملحقة"
+msgstr[4] "أُزيلت %1 ملحقة آليًّا حسب اعتماديّات الملحقة"
+msgstr[5] "أُزيلت %1 ملحقة آليًّا حسب اعتماديّات الملحقة"
 
 #: kpluginselector.cpp:264 kpluginwidget.cpp:59
 #, kde-format
@@ -215,7 +215,7 @@ msgstr "عن"
 #: ksettings/dialog.cpp:222
 #, kde-format
 msgid "Enable component"
-msgstr "فعّل المكوّن"
+msgstr "مكّن المكوّن"
 
 #: qml/components/KPluginDelegate.qml:48
 #, kde-format
