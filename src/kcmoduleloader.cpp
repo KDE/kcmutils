@@ -24,8 +24,8 @@
 #include <KLocalizedString>
 #include <KMessageBox>
 #include <KPluginFactory>
+#include <QQmlEngine>
 #include <memory>
-#include <qqmlengine.h>
 
 #include "quick/kquickconfigmodule.h"
 
