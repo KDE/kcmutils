@@ -7,7 +7,6 @@
 
 #include "kcmutils_debug.h"
 
-#include <KPluginFactory>
 #include <QJsonArray>
 #include <QQmlEngine>
 

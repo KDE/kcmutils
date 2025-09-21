@@ -15,7 +15,6 @@
 #include <KConfigDialogManager>
 #include <KConfigSkeleton>
 #include <KLocalizedString>
-#include <KPluginMetaData>
 
 class KCModuleProxyInternal : public QWidget
 {

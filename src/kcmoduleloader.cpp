@@ -25,7 +25,6 @@
 #include <KMessageBox>
 #include <KPluginFactory>
 #include <QQmlEngine>
-#include <memory>
 
 #include "quick/kquickconfigmodule.h"
 

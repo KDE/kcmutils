@@ -4,7 +4,6 @@
 */
 
 #include "kpluginproxymodel.h"
-#include "kpluginmodel.h"
 
 KPluginProxyModel::KPluginProxyModel(QObject *parent)
     : KCategorizedSortFilterProxyModel(parent)

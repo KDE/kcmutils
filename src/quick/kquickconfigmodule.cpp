@@ -10,7 +10,6 @@
 */
 
 #include "kquickconfigmodule.h"
-#include "kabstractconfigmodule.h"
 #include "kcmutils_debug.h"
 #include "sharedqmlengine_p.h"
 
@@ -25,8 +24,6 @@
 #include <KRuntimePlatform>
 #include <KLocalizedContext>
 #include <KLocalizedString>
-
-#include <memory>
 
 class KQuickConfigModulePrivate
 {

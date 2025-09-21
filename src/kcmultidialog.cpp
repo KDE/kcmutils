@@ -22,7 +22,6 @@
 #include <QProcess>
 #include <QPushButton>
 #include <QScreen>
-#include <QScrollBar>
 #include <QStandardPaths>
 #include <QStringList>
 #include <QStyle>
