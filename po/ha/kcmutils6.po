@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdelibs4\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-05-04 00:39+0000\n"
+"POT-Creation-Date: 2025-09-23 00:38+0000\n"
 "PO-Revision-Date: 2009-03-17 11:22+0100\n"
 "Last-Translator: Adriaan de Groot <groot@kde.org>\n"
 "Language-Team: Hausa <kde-i18n-doc@lists.kde.org>\n"
@@ -28,7 +28,7 @@ msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
 msgstr ",groot@kde.org,"
 
-#: kcmoduleloader.cpp:48
+#: kcmoduleloader.cpp:47
 #, kde-format
 msgid ""
 "<qt><p>Possible reasons:<ul><li>An error occurred during your last system "
@@ -38,40 +38,40 @@ msgid ""
 "this fails, consider contacting your distributor or packager.</p></qt>"
 msgstr ""
 
-#: kcmoduleloader.cpp:78
+#: kcmoduleloader.cpp:77
 #, kde-format
 msgid "The module %1 is disabled."
 msgstr ""
 
-#: kcmoduleloader.cpp:78
+#: kcmoduleloader.cpp:77
 #, kde-format
 msgid "The module has been disabled by the system administrator."
 msgstr ""
 
-#: kcmoduleloader.cpp:84
+#: kcmoduleloader.cpp:83
 #, kde-format
 msgid "Error loading QML file."
 msgstr ""
 
-#: kcmultidialog.cpp:46
+#: kcmultidialog.cpp:45
 #, kde-format
 msgid ""
 "The settings of the current module have changed.\n"
 "Do you want to apply the changes or discard them?"
 msgstr ""
 
-#: kcmultidialog.cpp:48
+#: kcmultidialog.cpp:47
 #, fuzzy, kde-format
 #| msgid "Settings"
 msgid "Apply Settings"
 msgstr "Tsarawa"
 
-#: kcmultidialog.cpp:218 kpluginwidget.cpp:340
+#: kcmultidialog.cpp:217 kpluginwidget.cpp:340
 #, kde-format
 msgid "Configure"
 msgstr "Haɗawa"
 
-#: kcmultidialog.cpp:393
+#: kcmultidialog.cpp:392
 #, kde-format
 msgctxt "@other accessible name for view that can be scrolled"
 msgid "Scrollable area"
@@ -161,7 +161,7 @@ msgstr ""
 msgid "No items found"
 msgstr ""
 
-#: quick/kquickconfigmodule.cpp:135
+#: quick/kquickconfigmodule.cpp:132
 #, kde-format
 msgid "Could not find resource '%1'"
 msgstr ""

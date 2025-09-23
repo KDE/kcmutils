@@ -24,7 +24,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdelibs4\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-05-04 00:39+0000\n"
+"POT-Creation-Date: 2025-09-23 00:38+0000\n"
 "PO-Revision-Date: 2006-01-04 13:32+0800\n"
 "Last-Translator: Abel Cheung <abel@oaka.org>\n"
 "Language-Team: Chinese (Hong Kong) <community@linuxhall.org>\n"
@@ -52,7 +52,7 @@ msgstr ""
 "ycheng@slat.org,lark@linux.ustc.edu.cn,fundawang@en2china.com,sarahs@redhat."
 "com,jxiong@offtopic.org,acelan@linux.org.tw,stanley18fan0k@yahoo.com.hk"
 
-#: kcmoduleloader.cpp:48
+#: kcmoduleloader.cpp:47
 #, fuzzy, kde-format
 #| msgid ""
 #| "<qt><p>The diagnostics is:<br>%1<p>Possible reasons:</p><ul><li>An error "
@@ -73,24 +73,24 @@ msgstr ""
 "問題，並嘗試移除錯誤訊息中的模組。若是不行，請聯絡你的發行商或套件供應者。</"
 "p></qt>"
 
-#: kcmoduleloader.cpp:78
+#: kcmoduleloader.cpp:77
 #, fuzzy, kde-format
 msgid "The module %1 is disabled."
 msgstr "無法載入模組 %1。"
 
-#: kcmoduleloader.cpp:78
+#: kcmoduleloader.cpp:77
 #, fuzzy, kde-format
 #| msgid "Please contact your system administrator."
 msgid "The module has been disabled by the system administrator."
 msgstr "請聯絡你的系統管理者。"
 
-#: kcmoduleloader.cpp:84
+#: kcmoduleloader.cpp:83
 #, fuzzy, kde-format
 #| msgid "Error opening file."
 msgid "Error loading QML file."
 msgstr "開啟檔案時發生錯誤。"
 
-#: kcmultidialog.cpp:46
+#: kcmultidialog.cpp:45
 #, fuzzy, kde-format
 #| msgid ""
 #| "The document \"%1\" has been modified.\n"
@@ -102,18 +102,18 @@ msgstr ""
 "此文件 \"%1\" 已被修改過了。\n"
 "你要儲存嗎？"
 
-#: kcmultidialog.cpp:48
+#: kcmultidialog.cpp:47
 #, fuzzy, kde-format
 #| msgid "Apply settings"
 msgid "Apply Settings"
 msgstr "套用設定"
 
-#: kcmultidialog.cpp:218 kpluginwidget.cpp:340
+#: kcmultidialog.cpp:217 kpluginwidget.cpp:340
 #, kde-format
 msgid "Configure"
 msgstr "設定"
 
-#: kcmultidialog.cpp:393
+#: kcmultidialog.cpp:392
 #, kde-format
 msgctxt "@other accessible name for view that can be scrolled"
 msgid "Scrollable area"
@@ -212,7 +212,7 @@ msgstr "傳送 &Email"
 msgid "No items found"
 msgstr "找到了 %1 個相符項目。"
 
-#: quick/kquickconfigmodule.cpp:135
+#: quick/kquickconfigmodule.cpp:132
 #, fuzzy, kde-format
 #| msgid "Could not find service '%1'."
 msgid "Could not find resource '%1'"

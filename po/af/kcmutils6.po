@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdelibs4 stable\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-05-04 00:39+0000\n"
+"POT-Creation-Date: 2025-09-23 00:38+0000\n"
 "PO-Revision-Date: 2006-01-12 16:33+0200\n"
 "Last-Translator: JUANITA FRANZ <JUANITA.FRANZ@VR-WEB.DE>\n"
 "Language-Team: AFRIKAANS <translate-discuss-af@lists.sourceforge.net>\n"
@@ -23,7 +23,7 @@ msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
 msgstr "frix@expertron.co.za,juanita.franz@vr-web.de "
 
-#: kcmoduleloader.cpp:48
+#: kcmoduleloader.cpp:47
 #, fuzzy, kde-format
 #| msgid ""
 #| "<qt><p>The diagnostics is:<br>%1<p>Possible reasons:</p><ul><li>An error "
@@ -46,24 +46,24 @@ msgstr ""
 "boodskap genoem is. As dit nie help nie, oorweeg om jou verspreider of "
 "verpakker te kontak.</p></qt>"
 
-#: kcmoduleloader.cpp:78
+#: kcmoduleloader.cpp:77
 #, fuzzy, kde-format
 msgid "The module %1 is disabled."
 msgstr "Kon nie module %1 laai nie."
 
-#: kcmoduleloader.cpp:78
+#: kcmoduleloader.cpp:77
 #, fuzzy, kde-format
 #| msgid "Please contact your system administrator."
 msgid "The module has been disabled by the system administrator."
 msgstr "Kontak asseblief die stelsel administrateur."
 
-#: kcmoduleloader.cpp:84
+#: kcmoduleloader.cpp:83
 #, fuzzy, kde-format
 #| msgid "Error opening file."
 msgid "Error loading QML file."
 msgstr "Fout met oopmaak van lêer voorgekom"
 
-#: kcmultidialog.cpp:46
+#: kcmultidialog.cpp:45
 #, fuzzy, kde-format
 #| msgid ""
 #| "The document \"%1\" has been modified.\n"
@@ -75,18 +75,18 @@ msgstr ""
 "Die dokument \"%1\" het verander.\n"
 "Wil jy jou veranderinge stoor of weggooi?"
 
-#: kcmultidialog.cpp:48
+#: kcmultidialog.cpp:47
 #, fuzzy, kde-format
 #| msgid "Apply settings"
 msgid "Apply Settings"
 msgstr "Wend aan instellings"
 
-#: kcmultidialog.cpp:218 kpluginwidget.cpp:340
+#: kcmultidialog.cpp:217 kpluginwidget.cpp:340
 #, kde-format
 msgid "Configure"
 msgstr "Stel op"
 
-#: kcmultidialog.cpp:393
+#: kcmultidialog.cpp:392
 #, kde-format
 msgctxt "@other accessible name for view that can be scrolled"
 msgid "Scrollable area"
@@ -181,7 +181,7 @@ msgstr "Stuur E-pos"
 msgid "No items found"
 msgstr "1 ooreenstem gevind."
 
-#: quick/kquickconfigmodule.cpp:135
+#: quick/kquickconfigmodule.cpp:132
 #, fuzzy, kde-format
 #| msgid "Could not find service '%1'."
 msgid "Could not find resource '%1'"

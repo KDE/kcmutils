@@ -18,7 +18,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdelibs4\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-05-04 00:39+0000\n"
+"POT-Creation-Date: 2025-09-23 00:38+0000\n"
 "PO-Revision-Date: 2005-01-28 17:54+0000\n"
 "Last-Translator: Kevin Donnelly <kevin@dotmon.com>\n"
 "Language-Team: Cymraeg\n"
@@ -40,7 +40,7 @@ msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
 msgstr "kyfieithu@dotmon.com"
 
-#: kcmoduleloader.cpp:48
+#: kcmoduleloader.cpp:47
 #, fuzzy, kde-format
 #| msgid ""
 #| "<qt><p>The diagnostics is:<br>%1<p>Possible reasons:</p><ul><li>An error "
@@ -63,24 +63,24 @@ msgstr ""
 "modiwl sy'n cael ei enwi yn y neges gwall.  Os nid yw hyn yn gweithio, "
 "ystyriwch cysylltu â'ch dosbarthwr neu pecynnwr.</p></qt>"
 
-#: kcmoduleloader.cpp:78
+#: kcmoduleloader.cpp:77
 #, fuzzy, kde-format
 msgid "The module %1 is disabled."
 msgstr "Methu llwytho'r modiwl %1."
 
-#: kcmoduleloader.cpp:78
+#: kcmoduleloader.cpp:77
 #, fuzzy, kde-format
 #| msgid "Please contact your system administrator."
 msgid "The module has been disabled by the system administrator."
 msgstr "Cysylltwch a'ch gwasanaethwr cysodau."
 
-#: kcmoduleloader.cpp:84
+#: kcmoduleloader.cpp:83
 #, fuzzy, kde-format
 #| msgid "Error opening file."
 msgid "Error loading QML file."
 msgstr "Gwall tra'n agor y ffeil."
 
-#: kcmultidialog.cpp:46
+#: kcmultidialog.cpp:45
 #, fuzzy, kde-format
 #| msgid ""
 #| "The document \"%1\" has been modified.\n"
@@ -92,18 +92,18 @@ msgstr ""
 "Mae'r ddogfen \"%1\" wedi ei newid.\n"
 "Ydych eisiau cadw eich newidiadau, neu eu taflu?"
 
-#: kcmultidialog.cpp:48
+#: kcmultidialog.cpp:47
 #, fuzzy, kde-format
 #| msgid "Apply settings"
 msgid "Apply Settings"
 msgstr "Gweithredu gosodiadau"
 
-#: kcmultidialog.cpp:218 kpluginwidget.cpp:340
+#: kcmultidialog.cpp:217 kpluginwidget.cpp:340
 #, kde-format
 msgid "Configure"
 msgstr "Ffurfweddu"
 
-#: kcmultidialog.cpp:393
+#: kcmultidialog.cpp:392
 #, kde-format
 msgctxt "@other accessible name for view that can be scrolled"
 msgid "Scrollable area"
@@ -202,7 +202,7 @@ msgstr "Anfon E&bost"
 msgid "No items found"
 msgstr "Canfuwyd %1 o gydweddiadau. "
 
-#: quick/kquickconfigmodule.cpp:135
+#: quick/kquickconfigmodule.cpp:132
 #, fuzzy, kde-format
 #| msgid "Could not find service '%1'."
 msgid "Could not find resource '%1'"

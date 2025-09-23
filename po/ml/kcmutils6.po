@@ -11,7 +11,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdelibs4\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-05-04 00:39+0000\n"
+"POT-Creation-Date: 2025-09-23 00:38+0000\n"
 "PO-Revision-Date: 2019-12-12 21:04+0000\n"
 "Last-Translator: Vivek KJ Pazhedath <vivekkj2004@gmail.com>\n"
 "Language-Team: SMC <smc.org.in>\n"
@@ -31,7 +31,7 @@ msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
 msgstr "shijualexonline@gmail.com,snalledam@dataone.in,vivekkj2004@gmail.com"
 
-#: kcmoduleloader.cpp:48
+#: kcmoduleloader.cpp:47
 #, kde-format
 msgid ""
 "<qt><p>Possible reasons:<ul><li>An error occurred during your last system "
@@ -41,24 +41,24 @@ msgid ""
 "this fails, consider contacting your distributor or packager.</p></qt>"
 msgstr ""
 
-#: kcmoduleloader.cpp:78
+#: kcmoduleloader.cpp:77
 #, kde-format
 msgid "The module %1 is disabled."
 msgstr "ഘടകം %1 പ്രവര്‍ത്തന രഹിതമാണു്."
 
-#: kcmoduleloader.cpp:78
+#: kcmoduleloader.cpp:77
 #, fuzzy, kde-format
 #| msgid "Please contact your system administrator."
 msgid "The module has been disabled by the system administrator."
 msgstr "ദയവായി നിങ്ങളുടെ സിസ്റ്റം ഭരണാധികാരിയുമായി ബന്ധപ്പെടുക."
 
-#: kcmoduleloader.cpp:84
+#: kcmoduleloader.cpp:83
 #, fuzzy, kde-format
 #| msgid "Error loading '%1'.\n"
 msgid "Error loading QML file."
 msgstr "'%1' ലഭ്യമാക്കുന്നതില്‍ പിശകു്.\n"
 
-#: kcmultidialog.cpp:46
+#: kcmultidialog.cpp:45
 #, kde-format
 msgid ""
 "The settings of the current module have changed.\n"
@@ -67,17 +67,17 @@ msgstr ""
 "ഇപ്പോഴുള്ള രേഖയുടെ സജ്ജീകരണങ്ങളില്‍ മാറ്റങ്ങള്‍ വരുത്തിയിരിക്കുന്നു.\n"
 "നിങ്ങള്‍ക്കവ സൂക്ഷിക്കണമോ വേണ്ടന്നു് വയ്ക്കണമോ?"
 
-#: kcmultidialog.cpp:48
+#: kcmultidialog.cpp:47
 #, kde-format
 msgid "Apply Settings"
 msgstr "സജ്ജീകരണങ്ങള്‍ പ്രാഭല്യത്തിലാക്കുക"
 
-#: kcmultidialog.cpp:218 kpluginwidget.cpp:340
+#: kcmultidialog.cpp:217 kpluginwidget.cpp:340
 #, kde-format
 msgid "Configure"
 msgstr "ക്രമീകരിയ്ക്കുക"
 
-#: kcmultidialog.cpp:393
+#: kcmultidialog.cpp:392
 #, kde-format
 msgctxt "@other accessible name for view that can be scrolled"
 msgid "Scrollable area"
@@ -172,7 +172,7 @@ msgstr "ഈമെയില്‍ &അയയ്ക്കുക"
 msgid "No items found"
 msgstr "കണ്ടില്ല"
 
-#: quick/kquickconfigmodule.cpp:135
+#: quick/kquickconfigmodule.cpp:132
 #, fuzzy, kde-format
 #| msgid "Could not find service '%1'."
 msgid "Could not find resource '%1'"

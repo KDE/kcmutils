@@ -17,7 +17,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdelibs4\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-05-04 00:39+0000\n"
+"POT-Creation-Date: 2025-09-23 00:38+0000\n"
 "PO-Revision-Date: 2025-03-08 07:15+0100\n"
 "Last-Translator: Matjaž Jeran <matjaz.jeran@amis.net>\n"
 "Language-Team: Slovenian <lugos-slo@lugos.si>\n"
@@ -41,7 +41,7 @@ msgstr ""
 "roman.maurer@amis.net,gregor.rakar@kiss.si,andrej.vernekar@gmail.com,"
 "jlp@holodeck1.com,andrejm@ubuntu.si"
 
-#: kcmoduleloader.cpp:48
+#: kcmoduleloader.cpp:47
 #, kde-format
 msgid ""
 "<qt><p>Possible reasons:<ul><li>An error occurred during your last system "
@@ -57,22 +57,22 @@ msgstr ""
 "uspe, poskusite obvestiti vašega distributerja ali izdelovalca paketov.</p></"
 "qt>"
 
-#: kcmoduleloader.cpp:78
+#: kcmoduleloader.cpp:77
 #, kde-format
 msgid "The module %1 is disabled."
 msgstr "Modul %1 je onemogočen."
 
-#: kcmoduleloader.cpp:78
+#: kcmoduleloader.cpp:77
 #, kde-format
 msgid "The module has been disabled by the system administrator."
 msgstr "Sistemski skrbnik je onemogočil ta modul."
 
-#: kcmoduleloader.cpp:84
+#: kcmoduleloader.cpp:83
 #, kde-format
 msgid "Error loading QML file."
 msgstr "Napaka med nalaganjem datoteke QML."
 
-#: kcmultidialog.cpp:46
+#: kcmultidialog.cpp:45
 #, kde-format
 msgid ""
 "The settings of the current module have changed.\n"
@@ -81,17 +81,17 @@ msgstr ""
 "Nastavitve trenutnega modula so se spremenile.\n"
 "Ali želite spremembe uveljaviti ali zavreči?"
 
-#: kcmultidialog.cpp:48
+#: kcmultidialog.cpp:47
 #, kde-format
 msgid "Apply Settings"
 msgstr "Uveljavi nastavitve"
 
-#: kcmultidialog.cpp:218 kpluginwidget.cpp:340
+#: kcmultidialog.cpp:217 kpluginwidget.cpp:340
 #, kde-format
 msgid "Configure"
 msgstr "Nastavi"
 
-#: kcmultidialog.cpp:393
+#: kcmultidialog.cpp:392
 #, kde-format
 msgctxt "@other accessible name for view that can be scrolled"
 msgid "Scrollable area"
@@ -176,7 +176,7 @@ msgstr "Pošlji e-pošto za %1"
 msgid "No items found"
 msgstr "Ni najdenih postavk"
 
-#: quick/kquickconfigmodule.cpp:135
+#: quick/kquickconfigmodule.cpp:132
 #, kde-format
 msgid "Could not find resource '%1'"
 msgstr "Ni bilo mogoče najti vira '%1'"

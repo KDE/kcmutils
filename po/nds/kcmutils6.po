@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdelibs4\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-05-04 00:39+0000\n"
+"POT-Creation-Date: 2025-09-23 00:38+0000\n"
 "PO-Revision-Date: 2014-05-11 00:55+0200\n"
 "Last-Translator: Sönke Dibbern <s_dibbern@web.de>\n"
 "Language-Team: Low Saxon <kde-i18n-nds@kde.org>\n"
@@ -29,7 +29,7 @@ msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
 msgstr "s_dibbern@web.de, m.j.wiese@web.de"
 
-#: kcmoduleloader.cpp:48
+#: kcmoduleloader.cpp:47
 #, fuzzy, kde-format
 #| msgid ""
 #| "<qt><p>Possible reasons:<ul><li>An error occurred during your last KDE "
@@ -51,24 +51,24 @@ msgstr ""
 "kriegen. Wenn dat nix scheelt, muttst Du villicht na den Maker vun't Paket "
 "oder vun Dien Distributschoon schrieven.</p></qt>"
 
-#: kcmoduleloader.cpp:78
+#: kcmoduleloader.cpp:77
 #, kde-format
 msgid "The module %1 is disabled."
 msgstr "Dat Moduul „%1“ is utmaakt."
 
-#: kcmoduleloader.cpp:78
+#: kcmoduleloader.cpp:77
 #, fuzzy, kde-format
 #| msgid "Please contact your system administrator."
 msgid "The module has been disabled by the system administrator."
 msgstr "Bitte giff Dien Systeempleger Bescheed."
 
-#: kcmoduleloader.cpp:84
+#: kcmoduleloader.cpp:83
 #, fuzzy, kde-format
 #| msgid "Error opening file."
 msgid "Error loading QML file."
 msgstr "Fehler bi't Opmaken vun de Datei."
 
-#: kcmultidialog.cpp:46
+#: kcmultidialog.cpp:45
 #, kde-format
 msgid ""
 "The settings of the current module have changed.\n"
@@ -77,17 +77,17 @@ msgstr ""
 "De Instellen binnen dat aktive Moduul wöörn ännert.\n"
 "Wullt Du de Ännern bruken oder wegsmieten?"
 
-#: kcmultidialog.cpp:48
+#: kcmultidialog.cpp:47
 #, kde-format
 msgid "Apply Settings"
 msgstr "Instellen bruken"
 
-#: kcmultidialog.cpp:218 kpluginwidget.cpp:340
+#: kcmultidialog.cpp:217 kpluginwidget.cpp:340
 #, kde-format
 msgid "Configure"
 msgstr "Instellen"
 
-#: kcmultidialog.cpp:393
+#: kcmultidialog.cpp:392
 #, kde-format
 msgctxt "@other accessible name for view that can be scrolled"
 msgid "Scrollable area"
@@ -184,7 +184,7 @@ msgstr "Nettbreef &schicken"
 msgid "No items found"
 msgstr "Nich funnen"
 
-#: quick/kquickconfigmodule.cpp:135
+#: quick/kquickconfigmodule.cpp:132
 #, fuzzy, kde-format
 #| msgid "Could not find service '%1'."
 msgid "Could not find resource '%1'"

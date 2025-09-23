@@ -22,7 +22,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kcmutils5\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-05-04 00:39+0000\n"
+"POT-Creation-Date: 2025-09-23 00:38+0000\n"
 "PO-Revision-Date: 2025-03-08 14:01+0200\n"
 "Last-Translator: Yaron Shahrabani <sh.yaron@gmail.com>\n"
 "Language-Team: צוות התרגום של KDE ישראל\n"
@@ -44,7 +44,7 @@ msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
 msgstr "kde-l10n-he@kde.org"
 
-#: kcmoduleloader.cpp:48
+#: kcmoduleloader.cpp:47
 #, kde-format
 msgid ""
 "<qt><p>Possible reasons:<ul><li>An error occurred during your last system "
@@ -59,22 +59,22 @@ msgstr ""
 "להסיר את המודול שהוזכר בהודעת השגיאה. אם לא הצלחת, כדאי לנסות ליצור קשר עם "
 "מפיקי המערכת או האורזים של החבילות.</p></qt>"
 
-#: kcmoduleloader.cpp:78
+#: kcmoduleloader.cpp:77
 #, kde-format
 msgid "The module %1 is disabled."
 msgstr "המודול %1 מושבת."
 
-#: kcmoduleloader.cpp:78
+#: kcmoduleloader.cpp:77
 #, kde-format
 msgid "The module has been disabled by the system administrator."
 msgstr "המודול הושבת על ידי הנהלת המערכת."
 
-#: kcmoduleloader.cpp:84
+#: kcmoduleloader.cpp:83
 #, kde-format
 msgid "Error loading QML file."
 msgstr "שגיאה בטעינת קובץ QML."
 
-#: kcmultidialog.cpp:46
+#: kcmultidialog.cpp:45
 #, kde-format
 msgid ""
 "The settings of the current module have changed.\n"
@@ -83,17 +83,17 @@ msgstr ""
 "ההגדרות של המודול הנוכחי שונו.\n"
 "להחיל את השינויים או לשכוח מהם?"
 
-#: kcmultidialog.cpp:48
+#: kcmultidialog.cpp:47
 #, kde-format
 msgid "Apply Settings"
 msgstr "החלת הגדרות"
 
-#: kcmultidialog.cpp:218 kpluginwidget.cpp:340
+#: kcmultidialog.cpp:217 kpluginwidget.cpp:340
 #, kde-format
 msgid "Configure"
 msgstr "הגדרה"
 
-#: kcmultidialog.cpp:393
+#: kcmultidialog.cpp:392
 #, kde-format
 msgctxt "@other accessible name for view that can be scrolled"
 msgid "Scrollable area"
@@ -178,7 +178,7 @@ msgstr "שליחת דוא״ל אל %1"
 msgid "No items found"
 msgstr "לא נמצאו פריטים"
 
-#: quick/kquickconfigmodule.cpp:135
+#: quick/kquickconfigmodule.cpp:132
 #, kde-format
 msgid "Could not find resource '%1'"
 msgstr "לא ניתן למצוא את המשאב ‚%1’"

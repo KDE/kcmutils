@@ -14,7 +14,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kcmutils\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-05-04 00:39+0000\n"
+"POT-Creation-Date: 2025-09-23 00:38+0000\n"
 "PO-Revision-Date: 2024-04-27 17:28+0100\n"
 "Last-Translator: Oliver Kellogg <olivermkellogg@gmail.com>\n"
 "Language-Team: Esperanto <kde-i18n-eo@kde.org>\n"
@@ -38,7 +38,7 @@ msgstr ""
 "matthias@peick.de, olivermkellogg@gmail.com, cfmckee@gmail.com, "
 "axel@esperanto-jeunes.org, michael.moroni@mailoo.org"
 
-#: kcmoduleloader.cpp:48
+#: kcmoduleloader.cpp:47
 #, kde-format
 msgid ""
 "<qt><p>Possible reasons:<ul><li>An error occurred during your last system "
@@ -53,22 +53,22 @@ msgstr ""
 "kaj provu forigi la modulon nomitan en la erarmesaĝo. Se tio malsukcesas, "
 "konsideru kontakti vian distribuanton aŭ pakaĵanton.</p></qt>"
 
-#: kcmoduleloader.cpp:78
+#: kcmoduleloader.cpp:77
 #, kde-format
 msgid "The module %1 is disabled."
 msgstr "La modulo %1 estas malŝaltita."
 
-#: kcmoduleloader.cpp:78
+#: kcmoduleloader.cpp:77
 #, kde-format
 msgid "The module has been disabled by the system administrator."
 msgstr "La modulo estis malebligata far le sistemadministranto."
 
-#: kcmoduleloader.cpp:84
+#: kcmoduleloader.cpp:83
 #, kde-format
 msgid "Error loading QML file."
 msgstr "Eraro dum lego de QML-dosiero."
 
-#: kcmultidialog.cpp:46
+#: kcmultidialog.cpp:45
 #, kde-format
 msgid ""
 "The settings of the current module have changed.\n"
@@ -77,17 +77,17 @@ msgstr ""
 "La dokumento de la aktuala modulo ŝanĝis.\n"
 "Ĉu vi volas apliki la ŝanĝojn aŭ ignori ilin?"
 
-#: kcmultidialog.cpp:48
+#: kcmultidialog.cpp:47
 #, kde-format
 msgid "Apply Settings"
 msgstr "Apliki agordojn"
 
-#: kcmultidialog.cpp:218 kpluginwidget.cpp:340
+#: kcmultidialog.cpp:217 kpluginwidget.cpp:340
 #, kde-format
 msgid "Configure"
 msgstr "Agordi"
 
-#: kcmultidialog.cpp:393
+#: kcmultidialog.cpp:392
 #, kde-format
 msgctxt "@other accessible name for view that can be scrolled"
 msgid "Scrollable area"
@@ -172,7 +172,7 @@ msgstr "Sendi retleteron al %1"
 msgid "No items found"
 msgstr "Trovis neniujn erojn"
 
-#: quick/kquickconfigmodule.cpp:135
+#: quick/kquickconfigmodule.cpp:132
 #, kde-format
 msgid "Could not find resource '%1'"
 msgstr "Ne povis trovi rimedon '%1'"

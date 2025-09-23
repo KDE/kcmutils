@@ -23,7 +23,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdelibs4\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-05-04 00:39+0000\n"
+"POT-Creation-Date: 2025-09-23 00:38+0000\n"
 "PO-Revision-Date: 2025-03-09 09:28+0100\n"
 "Last-Translator: Xavier Besnard <xavier.besnard@kde.org>\n"
 "Language-Team: French <French <kde-francophone@kde.org>>\n"
@@ -51,7 +51,7 @@ msgstr ""
 "jcorn@free.fr,kde@macolu.org,renard@kde.org, sdepiets@gmail.com, xavier."
 "besnard@kde.org"
 
-#: kcmoduleloader.cpp:48
+#: kcmoduleloader.cpp:47
 #, kde-format
 msgid ""
 "<qt><p>Possible reasons:<ul><li>An error occurred during your last system "
@@ -68,22 +68,22 @@ msgstr ""
 "opération échoue, pensez à contacter votre distributeur ou votre "
 "conditionneur.</p></qt>"
 
-#: kcmoduleloader.cpp:78
+#: kcmoduleloader.cpp:77
 #, kde-format
 msgid "The module %1 is disabled."
 msgstr "Le module « %1 » est désactivé."
 
-#: kcmoduleloader.cpp:78
+#: kcmoduleloader.cpp:77
 #, kde-format
 msgid "The module has been disabled by the system administrator."
 msgstr "Ce module a été désactivé par l'administrateur du système."
 
-#: kcmoduleloader.cpp:84
+#: kcmoduleloader.cpp:83
 #, kde-format
 msgid "Error loading QML file."
 msgstr "Erreur lors du chargement du fichier QML."
 
-#: kcmultidialog.cpp:46
+#: kcmultidialog.cpp:45
 #, kde-format
 msgid ""
 "The settings of the current module have changed.\n"
@@ -92,17 +92,17 @@ msgstr ""
 "Les paramètres du module actuel ont changé.\n"
 "Voulez-vous appliquer les changements ou les abandonner ?"
 
-#: kcmultidialog.cpp:48
+#: kcmultidialog.cpp:47
 #, kde-format
 msgid "Apply Settings"
 msgstr "Appliquer les réglages"
 
-#: kcmultidialog.cpp:218 kpluginwidget.cpp:340
+#: kcmultidialog.cpp:217 kpluginwidget.cpp:340
 #, kde-format
 msgid "Configure"
 msgstr "Configuration"
 
-#: kcmultidialog.cpp:393
+#: kcmultidialog.cpp:392
 #, kde-format
 msgctxt "@other accessible name for view that can be scrolled"
 msgid "Scrollable area"
@@ -187,7 +187,7 @@ msgstr "Envoyer un courriel vers %1"
 msgid "No items found"
 msgstr "Aucun élément n'a été trouvé."
 
-#: quick/kquickconfigmodule.cpp:135
+#: quick/kquickconfigmodule.cpp:132
 #, kde-format
 msgid "Could not find resource '%1'"
 msgstr "Impossible de trouver la ressource « %1 »"
