@@ -186,6 +186,7 @@ import org.kde.kcmutils as KCMUtils
 Kirigami.ApplicationItem {
     // force it to *never* try to resize itself
     width: Window.width
+    height: Window.height
 
     implicitWidth: Math.max(pageStack.implicitWidth, Kirigami.Units.gridUnit * 36)
     implicitHeight: Math.max(pageStack.implicitHeight, Kirigami.Units.gridUnit * 20)
