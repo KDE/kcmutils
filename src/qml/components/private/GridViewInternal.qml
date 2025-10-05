@@ -37,8 +37,12 @@ GridView {
     Keys.onTabPressed: event => nextItemInFocusChain().forceActiveFocus(Qt.TabFocusReason)
     Keys.onBacktabPressed: event => nextItemInFocusChain(false).forceActiveFocus(Qt.TabFocusReason)
 
-    cellWidth: Math.floor(internal.availableWidth / Math.max(Math.floor(internal.availableWidth / (implicitCellWidth + Kirigami.Units.gridUnit)), (Kirigami.Settings.isMobile ? 1 : 2)))
-    cellHeight: Kirigami.Settings.isMobile ? cellWidth/1.6 + Kirigami.Units.gridUnit : implicitCellHeight
+    cellWidth: {
+        const intendedWidth = implicitCellWidth + Kirigami.Units.gridUnit;
+        const columnsWithIntendedWidth = Math.floor(internal.availableWidth / intendedWidth);
+        return Math.floor(internal.availableWidth / Math.max(columnsWithIntendedWidth, 1));
+    }
+    cellHeight: implicitCellHeight
 
     keyNavigationEnabled: true
     keyNavigationWraps: true

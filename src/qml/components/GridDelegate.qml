@@ -81,10 +81,9 @@ T.ItemDelegate {
            centerIn: parent
            verticalCenterOffset: Math.ceil(-labelLayout.height / 2)
         }
-        width: Kirigami.Settings.isMobile ? delegate.width - Kirigami.Units.gridUnit : Math.min(delegate.GridView.view.implicitCellWidth, delegate.width - Kirigami.Units.gridUnit)
-        height: Kirigami.Settings.isMobile ? Math.round((delegate.width - Kirigami.Units.gridUnit) / 1.6)
-                                           : Math.min(delegate.GridView.view.implicitCellHeight - Kirigami.Units.gridUnit * 3,
-                                                      delegate.height - Kirigami.Units.gridUnit)
+        width: Math.min(delegate.GridView.view.implicitCellWidth, delegate.width - Kirigami.Units.gridUnit)
+        height: Math.min(delegate.GridView.view.implicitCellHeight - Kirigami.Units.gridUnit * 3,
+                         delegate.height - Kirigami.Units.gridUnit)
         radius: Kirigami.Units.cornerRadius
         Kirigami.Theme.inherit: false
         Kirigami.Theme.colorSet: Kirigami.Theme.View
