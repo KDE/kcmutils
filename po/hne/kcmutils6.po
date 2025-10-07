@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdelibs4\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-09-23 00:38+0000\n"
+"POT-Creation-Date: 2025-10-07 00:38+0000\n"
 "PO-Revision-Date: 2009-02-10 20:44+0530\n"
 "Last-Translator: Ravishankar Shrivastava <raviratlami@aol.in>\n"
 "Language-Team: Hindi <kde-i18n-doc@lists.kde.org>\n"
@@ -170,7 +170,7 @@ msgstr "अनुवाद "
 msgid "Send an email to %1"
 msgstr "ईमेल भेजव (&S)"
 
-#: qml/components/private/GridViewInternal.qml:77
+#: qml/components/private/GridViewInternal.qml:81
 #, fuzzy, kde-format
 #| msgid "Not found"
 msgid "No items found"
