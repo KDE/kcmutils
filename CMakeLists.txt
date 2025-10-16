@@ -35,7 +35,7 @@ if (TOOLS_ONLY)
     return()
 endif()
 
-set(REQUIRED_QT_VERSION 6.7.0)
+set(REQUIRED_QT_VERSION 6.8.0)
 find_package(Qt6 ${REQUIRED_QT_VERSION} NO_MODULE REQUIRED Widgets Qml Quick QuickWidgets Test)
 
 # shall we use DBus?
