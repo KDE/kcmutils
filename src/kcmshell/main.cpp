@@ -134,6 +134,10 @@ int main(int argc, char *argv[])
             maxLen = std::max(maxLen, len);
         }
 
+        std::ranges::sort(plugins, [](const KPluginMetaData &a, const KPluginMetaData &b) {
+            return a.pluginId().compare(b.pluginId(), Qt::CaseInsensitive) < 0;
+        });
+
         for (const auto &plugin : plugins) {
             QString comment = plugin.description();
             if (comment.isEmpty()) {
