@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: fc57ad16a28d02dea100ceb1c60de14e\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-09-28 00:37+0000\n"
+"POT-Creation-Date: 2025-10-18 00:39+0000\n"
 "PO-Revision-Date: 2024-05-20 09:10\n"
 "Last-Translator: Antikruk <nashtlumach@gmail.com>\n"
 "Language-Team: Belarusian\n"
@@ -111,7 +111,7 @@ msgstr "Паказваць індыкатар, калі налады змяні�
 msgid "The following modules are available:"
 msgstr "Даступны наступныя модулі:"
 
-#: main.cpp:140
+#: main.cpp:144
 #, kde-format
 msgid "No description available"
 msgstr "Няма даступнага апісання"

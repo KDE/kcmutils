@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kcmutils\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-09-28 00:37+0000\n"
+"POT-Creation-Date: 2025-10-18 00:39+0000\n"
 "PO-Revision-Date: 2023-10-01 09:45+0200\n"
 "Last-Translator: Łukasz Wojniłowicz <lukasz.wojnilowicz@gmail.com>\n"
 "Language-Team: Polish <kde-i18n-doc@kde.org>\n"
@@ -108,7 +108,7 @@ msgstr ""
 msgid "The following modules are available:"
 msgstr "Dostępne są następujące moduły:"
 
-#: main.cpp:140
+#: main.cpp:144
 #, kde-format
 msgid "No description available"
 msgstr "Nie jest dostępny żaden opis"

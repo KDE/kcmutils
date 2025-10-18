@@ -4,7 +4,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kcmutils\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-09-28 00:37+0000\n"
+"POT-Creation-Date: 2025-10-18 00:39+0000\n"
 "PO-Revision-Date: 2025-03-24 07:43+0100\n"
 "Last-Translator: Martin Hansen <mh306602@gmail.com>\n"
 "Language-Team: Norwegian Bokmål <l10n-no@lister.huftis.org>\n"
@@ -108,7 +108,7 @@ msgstr "Vis en indikator for innstillinger som er endret fra standardverdiene"
 msgid "The following modules are available:"
 msgstr "Disse modulene er tilgjengelige:"
 
-#: main.cpp:140
+#: main.cpp:144
 #, kde-format
 msgid "No description available"
 msgstr "Ingen beskrivelse tilgjengelig"

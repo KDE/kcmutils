@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kcmutils\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-09-28 00:37+0000\n"
+"POT-Creation-Date: 2025-10-18 00:39+0000\n"
 "PO-Revision-Date: 2024-05-20 19:23+0100\n"
 "Last-Translator: Steve Allewell <steve.allewell@gmail.com>\n"
 "Language-Team: British English\n"
@@ -107,7 +107,7 @@ msgstr "Show an indicator when settings have changed from their default value"
 msgid "The following modules are available:"
 msgstr "The following modules are available:"
 
-#: main.cpp:140
+#: main.cpp:144
 #, kde-format
 msgid "No description available"
 msgstr "No description available"

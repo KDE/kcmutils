@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kcmutils\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-09-28 00:37+0000\n"
+"POT-Creation-Date: 2025-10-18 00:39+0000\n"
 "PO-Revision-Date: 2023-10-02 09:09+0100\n"
 "Last-Translator: Oliver Kellogg <olivermkellogg@gmail.com>\n"
 "Language-Team: Esperanto <kde-i18n-eo@kde.org>\n"
@@ -110,7 +110,7 @@ msgstr "Montri indikilon kiam agordo ŝanĝiĝis de sia defaŭlta valoro"
 msgid "The following modules are available:"
 msgstr "La jenaj moduloj disponeblas:"
 
-#: main.cpp:140
+#: main.cpp:144
 #, kde-format
 msgid "No description available"
 msgstr "Neniu priskribo havebla"
