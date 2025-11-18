@@ -68,6 +68,10 @@ void KQuickConfigModule::setInternalEngine(const std::shared_ptr<QQmlEngine> &en
 
 KQuickConfigModule::~KQuickConfigModule()
 {
+    for (QQuickItem *subPage : std::as_const(d->subPages)) {
+        subPage->deleteLater();
+    }
+
     // in case mainUi was never called
     if (d->engine) {
         // delete the mainUi before removing the root object.
