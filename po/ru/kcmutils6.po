@@ -19,7 +19,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdelibs4\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-11-17 11:49+0000\n"
+"POT-Creation-Date: 2025-11-22 00:39+0000\n"
 "PO-Revision-Date: 2025-05-20 14:08+0300\n"
 "Last-Translator: Alexander Yavorsky <kekcuha@gmail.com>\n"
 "Language-Team: Russian <kde-russian@lists.kde.ru>\n"
@@ -184,7 +184,7 @@ msgstr "Отправить письмо %1"
 msgid "No items found"
 msgstr "Ничего не найдено"
 
-#: quick/kquickconfigmodule.cpp:132
+#: quick/kquickconfigmodule.cpp:136
 #, kde-format
 msgid "Could not find resource '%1'"
 msgstr "Не удалось найти ресурс «%1»"

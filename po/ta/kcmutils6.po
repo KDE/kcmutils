@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdelibs4\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-11-17 11:49+0000\n"
+"POT-Creation-Date: 2025-11-22 00:39+0000\n"
 "PO-Revision-Date: 2025-03-09 17:15+0530\n"
 "Last-Translator: Kishore G <kishore96@gmail.com>\n"
 "Language-Team: Tamil <kde-i18n-doc@kde.org>\n"
@@ -164,7 +164,7 @@ msgstr "%1 என்பவருக்கு மின்னஞ்சல் அ�
 msgid "No items found"
 msgstr "ஒன்றும் கண்டுபிடிக்கப்படவில்லை"
 
-#: quick/kquickconfigmodule.cpp:132
+#: quick/kquickconfigmodule.cpp:136
 #, kde-format
 msgid "Could not find resource '%1'"
 msgstr "'%1' என்பதை கண்டுபிடிக்க முடியவில்லை."
