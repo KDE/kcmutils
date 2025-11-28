@@ -197,3 +197,46 @@ function(__kcmutils_target_qml_sources target_name kcm_qrc_prefix qml_sources_di
 
     target_sources(${target_name} PRIVATE ${_qrc_output})
 endfunction()
+
+# kcmutils_add_qml_kcm2(target_name URI com.example.kcm.foo [SOURCES <src> [...]] [INSTALL_NAMESPACE "plasma/kcms/somesubdir"] [DISABLE_DESKTOP_FILE_GENERATION])
+# Behaves exactly the same as kcmutils_add_qml_kcm but uses ecm_add_qml_module internally.
+# Consequently you must use the keyword signature for target_link_libraries and friends.
+#
+# Since 6.21
+function(kcmutils_add_qml_kcm2 target_name)
+    set(options DISABLE_DESKTOP_FILE_GENERATION)
+    set(oneValueArgs INSTALL_NAMESPACE URI)
+    set(multiValueArgs SOURCES)
+    cmake_parse_arguments(ARG "${options}" "${oneValueArgs}" "${multiValueArgs}" ${ARGN})
+    if(NOT ARG_INSTALL_NAMESPACE)
+        set(ARG_INSTALL_NAMESPACE plasma/kcms/systemsettings)
+    endif()
+    if(NOT ARG_URI)
+        message(FATAL_ERROR "Missing URI argument for kcmutils_add_qml_kcm2")
+    endif()
+
+    kcoreaddons_add_plugin(${target_name} INSTALL_NAMESPACE ${ARG_INSTALL_NAMESPACE} SOURCES ${ARG_SOURCES})
+    if(NOT ARG_DISABLE_DESKTOP_FILE_GENERATION)
+        kcmutils_generate_desktop_file(${target_name})
+    endif()
+    # Hardcode the "ui" folder for now
+    __kcmutils_target_qml_sources2(${target_name} ${ARG_URI} "ui")
+endfunction()
+
+function(__kcmutils_target_qml_sources2 target_name kcm_uri qml_sources_dir)
+    file(GLOB_RECURSE files CONFIGURE_DEPENDS "${CMAKE_CURRENT_SOURCE_DIR}/${qml_sources_dir}/*")
+    if(NOT files)
+        message(FATAL_ERROR "Could not find any files in ${CMAKE_CURRENT_SOURCE_DIR}/${qml_sources_dir}/*")
+    endif()
+
+    include(ECMQmlModule)
+
+    ecm_add_qml_module(${target_name}
+        URI ${kcm_uri}
+        DEPENDENCIES org.kde.kcmutils
+        QT_NO_PLUGIN
+        NO_PLUGIN_OPTIONAL
+    )
+    ecm_target_qml_sources(${target_name} SOURCES ${files})
+    ecm_finalize_qml_module(${target_name})
+endfunction()

@@ -25,6 +25,8 @@
 #include <KLocalizedContext>
 #include <KLocalizedString>
 
+using namespace Qt::StringLiterals;
+
 class KQuickConfigModulePrivate
 {
 public:
@@ -45,7 +47,10 @@ public:
 
     QString getResourcePath(const QString &file)
     {
-        return QLatin1String("/kcm/") + q->metaData().pluginId() + QLatin1String("/") + file;
+        if (auto uri = q->metaData().value(u"X-KDE-ConfigModule-URI"_s); !uri.isEmpty()) {
+            return QLatin1String("/qt/qml/") + uri.replace('.'_L1, '/'_L1) + QLatin1String("/") + file;
+        }
+        return QLatin1String("/kcm/") + q->metaData().pluginId()+ QLatin1String("/") + file;
     }
     QUrl getResourceUrl(const QString &resourcePath)
     {

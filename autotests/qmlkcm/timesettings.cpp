@@ -3,25 +3,19 @@
  * SPDX-License-Identifier: GPL-2.0-or-later
  */
 
-#include <KPluginFactory>
+#include "timesettings.h"
 
-#include <KQuickManagedConfigModule>
+#include <QtCore/qtsymbolmacros.h>
 
-class TimeSettings : public KQuickManagedConfigModule
-{
-    Q_OBJECT
-public:
-    TimeSettings(QObject *parent, const KPluginMetaData &data)
+QT_DECLARE_EXTERN_SYMBOL_VOID(qml_register_types_org_kde_kcm_testqml2)
+
+TimeSettings::TimeSettings(QObject *parent, const KPluginMetaData &data)
         : KQuickManagedConfigModule(parent, data)
-    {
-        qWarning() << Q_FUNC_INFO;
-    }
-    void load() override
-    {
-        qWarning() << Q_FUNC_INFO;
-    }
-};
-
-K_PLUGIN_CLASS_WITH_JSON(TimeSettings, "kcm_testqml.json")
-
-#include "timesettings.moc"
+{
+    // QT_KEEP_SYMBOL(qml_register_types_org_kde_kcm_testqml2)
+    qWarning() << Q_FUNC_INFO;
+}
+void TimeSettings::load()
+{
+    qWarning() << Q_FUNC_INFO;
+}
