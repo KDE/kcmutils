@@ -25,6 +25,8 @@
 #include <KLocalizedString>
 #include <KRuntimePlatform>
 
+using namespace Qt::StringLiterals;
+
 class KQuickConfigModulePrivate
 {
 public:
@@ -45,7 +47,11 @@ public:
 
     QString getResourcePath(const QString &file)
     {
-        return QLatin1String("/kcm/") + q->metaData().pluginId() + QLatin1String("/") + file;
+        if (auto uri = q->metaData().value(u"X-KDE-ConfigModule-URI"_s); !uri.isEmpty()) {
+            return "/qt/qml/"_L1 + uri.replace(u'.', u'/') + u'/' + file;
+        }
+        qCDebug(KCMUTILS_LOG) << "No X-KDE-ConfigModule-URI found, falling back to legacy /kcm/ path. If things don't load correctly this is probably why.";
+        return QLatin1String("/kcm/") + q->metaData().pluginId()+ QLatin1String("/") + file;
     }
     QUrl getResourceUrl(const QString &resourcePath)
     {

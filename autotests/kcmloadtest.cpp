@@ -20,6 +20,14 @@ private Q_SLOTS:
         QCOMPARE(mod->metaObject()->className(), "KCModuleQml");
     }
 
+    void testLoadQmlPlugin2()
+    {
+        auto parent = std::make_unique<QWidget>();
+        auto mod = KCModuleLoader::loadModule(KPluginMetaData(QStringLiteral("plasma/kcms/systemsettings/kcm_testqml2")), parent.get());
+        QVERIFY(mod);
+        QCOMPARE(mod->metaObject()->className(), "KCModuleQml");
+    }
+
     void testFallbackKCM()
     {
         auto parent = std::make_unique<QWidget>();
