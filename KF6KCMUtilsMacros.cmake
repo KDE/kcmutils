@@ -170,7 +170,7 @@ function(kcmutils_add_qml_kcm target_name)
     if (NOT ARG_DISABLE_DESKTOP_FILE_GENERATION)
         kcmutils_generate_desktop_file(${target_name})
     endif()
-    # Hardcode the "ui" filder for now
+    # Hardcode the "ui" folder for now
     __kcmutils_target_qml_sources(${target_name} "kcm/${target_name}" "ui")
 endfunction()
 
