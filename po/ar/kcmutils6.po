@@ -21,7 +21,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdelibs4\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-11-22 00:39+0000\n"
+"POT-Creation-Date: 2025-12-01 00:39+0000\n"
 "PO-Revision-Date: 2025-04-18 21:35+0400\n"
 "Last-Translator: Zayed Al-Saidi <zayed.alsaidi@gmail.com>\n"
 "Language-Team: ar\n"
@@ -172,7 +172,7 @@ msgstr "المترجمون"
 msgid "Send an email to %1"
 msgstr "أرسِل بريد الإلكتروني إلى %1"
 
-#: qml/components/private/GridViewInternal.qml:81
+#: qml/components/private/GridViewInternal.qml:66
 #, kde-format
 msgid "No items found"
 msgstr "لم يُعثر على عناصر"

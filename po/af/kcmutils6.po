@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdelibs4 stable\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-11-22 00:39+0000\n"
+"POT-Creation-Date: 2025-12-01 00:39+0000\n"
 "PO-Revision-Date: 2006-01-12 16:33+0200\n"
 "Last-Translator: JUANITA FRANZ <JUANITA.FRANZ@VR-WEB.DE>\n"
 "Language-Team: AFRIKAANS <translate-discuss-af@lists.sourceforge.net>\n"
@@ -176,7 +176,7 @@ msgstr "Vertaling"
 msgid "Send an email to %1"
 msgstr "Stuur E-pos"
 
-#: qml/components/private/GridViewInternal.qml:81
+#: qml/components/private/GridViewInternal.qml:66
 #, fuzzy, kde-format
 msgid "No items found"
 msgstr "1 ooreenstem gevind."
