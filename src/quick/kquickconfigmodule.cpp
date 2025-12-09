@@ -145,8 +145,15 @@ QQuickItem *KQuickConfigModule::mainUi()
 
     new QQmlFileSelector(d->engine->engine().get(), this);
     d->engine->setSource(d->getResourceUrl(resourcePath));
-    d->engine->rootContext()->setContextProperty(QStringLiteral("kcm"), this);
-    d->engine->completeInitialization();
+    d->engine->completeInitialization({{u"kcm"_s, QVariant::fromValue(this)}});
+
+    if (d->engine->isError()) {
+        // Backwards compat: try again with kcm as context property instead.
+        // Has the disadvantage that the type is undeclared in QML, so not ideal.
+        // TODO KF7: remove this fallback and port everything to use a root level property instead
+        d->engine->rootContext()->setContextProperty(u"kcm"_s, this);
+        d->engine->completeInitialization();
+    }
 
     if (d->engine->isError()) {
         d->errorString = d->engine->errorString();
