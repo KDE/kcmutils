@@ -434,6 +434,9 @@ KPageWidgetItem *KCMultiDialog::addModule(const KPluginMetaData &metaData, const
         addPage(item);
     }
 
+    connect(kcm, &KCModule::buttonsChanged, this, [this]() {
+        d->clientChanged();
+    });
     connect(kcm, &KCModule::needsSaveChanged, this, [this]() {
         d->clientChanged();
     });
