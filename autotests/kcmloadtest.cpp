@@ -15,14 +15,16 @@ class KCMTest : public QObject
 private Q_SLOTS:
     void testLoadQmlPlugin()
     {
-        auto mod = KCModuleLoader::loadModule(KPluginMetaData(QStringLiteral("plasma/kcms/systemsettings/kcm_testqml")));
+        auto parent = std::make_unique<QWidget>();
+        auto mod = KCModuleLoader::loadModule(KPluginMetaData(QStringLiteral("plasma/kcms/systemsettings/kcm_testqml")), parent.get());
         QVERIFY(mod);
         QCOMPARE(mod->metaObject()->className(), "KCModuleQml");
     }
 
     void testFallbackKCM()
     {
-        auto modFail = KCModuleLoader::loadModule(KPluginMetaData(QStringLiteral("nonexistent_kcm")));
+        auto parent = std::make_unique<QWidget>();
+        auto modFail = KCModuleLoader::loadModule(KPluginMetaData(QStringLiteral("nonexistent_kcm")), parent.get());
         QVERIFY(modFail);
         QCOMPARE(modFail->metaObject()->className(), "KCMError");
     }
