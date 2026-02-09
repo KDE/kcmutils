@@ -24,6 +24,7 @@ include(ECMDeprecationSettings)
 include(ECMMarkNonGuiExecutable)
 include(KDEGitCommitHooks)
 include(ECMQmlModule)
+include(ECMFindQmlModule)
 include(ECMGenerateQDoc)
 
 
@@ -69,6 +70,8 @@ ecm_set_disabled_deprecation_versions(
     QT 6.11.0
     KF 6.21.0
 )
+
+ecm_find_qmlmodule(org.kde.kirigami REQUIRED)
 
 add_definitions(-DTRANSLATION_DOMAIN=\"kcmutils6\")
 ki18n_install(po)
