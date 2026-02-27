@@ -35,7 +35,7 @@ msgstr "أداة لبدء وحدات إعدادات النظام بشكل منف
 #: main.cpp:101
 #, kde-format
 msgid "(c) 1999-2023, The KDE Developers"
-msgstr "© 1999-2023 لمطوري كدي"
+msgstr "© 1999-2023 لمطوري كِيدِي"
 
 #: main.cpp:103
 #, kde-format
