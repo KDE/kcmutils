@@ -52,6 +52,12 @@ public:
         }
 
         QVBoxLayout *topLayout = new QVBoxLayout(widget());
+        topLayout->addStretch();
+
+        auto icon = new QLabel;
+        icon->setPixmap(QIcon::fromTheme(QStringLiteral("tools-report-bug")).pixmap(128, 128));
+        topLayout->addWidget(icon, {}, Qt::AlignHCenter);
+
         QLabel *lab = new QLabel(msg, widget());
         {
             // Similar to Kirigami.Heading: Primary, level 3
@@ -62,12 +68,16 @@ public:
         }
         lab->setWordWrap(true);
         lab->setTextInteractionFlags(lab->textInteractionFlags() | Qt::TextSelectableByMouse | Qt::TextSelectableByKeyboard);
+        lab->setAlignment(Qt::AlignHCenter);
         topLayout->addWidget(lab);
 
         lab = new QLabel(realDetails, widget());
         lab->setWordWrap(true);
         lab->setTextInteractionFlags(lab->textInteractionFlags() | Qt::TextSelectableByMouse | Qt::TextSelectableByKeyboard);
+        lab->setSizePolicy(QSizePolicy::Expanding, QSizePolicy::Preferred);
+        lab->setAlignment(Qt::AlignHCenter);
         topLayout->addWidget(lab);
+        topLayout->addStretch();
     }
 };
 
