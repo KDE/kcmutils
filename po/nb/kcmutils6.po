@@ -11,7 +11,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdelibs4\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-12-01 00:39+0000\n"
+"POT-Creation-Date: 2026-04-08 00:41+0000\n"
 "PO-Revision-Date: 2025-03-24 07:44+0100\n"
 "Last-Translator: Martin Hansen <mh306602@gmail.com>\n"
 "Language-Team: Norwegian Bokmål <l10n-no@lister.huftis.org>\n"
@@ -52,17 +52,17 @@ msgstr ""
 "forsøk å fjerne modulen som er nevnt i feilmeldinga. Hvis dette ikke lykkes, "
 "bør du kanskje kontakte din distributør eller pakkebygger.</p></qt>"
 
-#: kcmoduleloader.cpp:77
+#: kcmoduleloader.cpp:87
 #, kde-format
 msgid "The module %1 is disabled."
 msgstr "Modulen %1 er slått av."
 
-#: kcmoduleloader.cpp:77
+#: kcmoduleloader.cpp:87
 #, kde-format
 msgid "The module has been disabled by the system administrator."
 msgstr "Denne modulen er slått av av systemadministratoren."
 
-#: kcmoduleloader.cpp:83
+#: kcmoduleloader.cpp:93
 #, kde-format
 msgid "Error loading QML file."
 msgstr "Feil ved lasting av QML-fil."

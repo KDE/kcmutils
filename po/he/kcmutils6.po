@@ -22,7 +22,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kcmutils5\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-12-01 00:39+0000\n"
+"POT-Creation-Date: 2026-04-08 00:41+0000\n"
 "PO-Revision-Date: 2025-03-08 14:01+0200\n"
 "Last-Translator: Yaron Shahrabani <sh.yaron@gmail.com>\n"
 "Language-Team: צוות התרגום של KDE ישראל\n"
@@ -59,17 +59,17 @@ msgstr ""
 "להסיר את המודול שהוזכר בהודעת השגיאה. אם לא הצלחת, כדאי לנסות ליצור קשר עם "
 "מפיקי המערכת או האורזים של החבילות.</p></qt>"
 
-#: kcmoduleloader.cpp:77
+#: kcmoduleloader.cpp:87
 #, kde-format
 msgid "The module %1 is disabled."
 msgstr "המודול %1 מושבת."
 
-#: kcmoduleloader.cpp:77
+#: kcmoduleloader.cpp:87
 #, kde-format
 msgid "The module has been disabled by the system administrator."
 msgstr "המודול הושבת על ידי הנהלת המערכת."
 
-#: kcmoduleloader.cpp:83
+#: kcmoduleloader.cpp:93
 #, kde-format
 msgid "Error loading QML file."
 msgstr "שגיאה בטעינת קובץ QML."

@@ -13,7 +13,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdelibs4\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-12-01 00:39+0000\n"
+"POT-Creation-Date: 2026-04-08 00:41+0000\n"
 "PO-Revision-Date: 2025-04-15 19:06+0300\n"
 "Last-Translator: Toms Trasuns <toms.trasuns@posteo.net>\n"
 "Language-Team: Latvian <kde-i18n-doc@kde.org>\n"
@@ -52,17 +52,17 @@ msgstr ""
 "pieminēto moduli. Ja tas nepalīdz, sazinieties ar programmas izplatītāju vai "
 "pakotņu veidotāju.</p></qt>"
 
-#: kcmoduleloader.cpp:77
+#: kcmoduleloader.cpp:87
 #, kde-format
 msgid "The module %1 is disabled."
 msgstr "Modulis %1 ir izslēgts."
 
-#: kcmoduleloader.cpp:77
+#: kcmoduleloader.cpp:87
 #, kde-format
 msgid "The module has been disabled by the system administrator."
 msgstr "Sistēmas administrators ir izslēdzis šo moduli."
 
-#: kcmoduleloader.cpp:83
+#: kcmoduleloader.cpp:93
 #, kde-format
 msgid "Error loading QML file."
 msgstr "Kļūda, ielādējot QML datni."

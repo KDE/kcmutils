@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdelibs4\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-12-01 00:39+0000\n"
+"POT-Creation-Date: 2026-04-08 00:41+0000\n"
 "PO-Revision-Date: 2025-03-09 17:15+0530\n"
 "Last-Translator: Kishore G <kishore96@gmail.com>\n"
 "Language-Team: Tamil <kde-i18n-doc@kde.org>\n"
@@ -45,17 +45,17 @@ msgstr ""
 "p><p>இவற்றை சரிபார்த்து, சிக்கலறிக்கையில் குறுப்பிடப்பட்டுள்ள கூறை நீக்க முயற்சியுங்கள். "
 "அதுவும் தோல்வியடைந்தால், உங்கள் நிரல் விநியோகிப்பாளரை அணுகுங்கள்.</p></qt>"
 
-#: kcmoduleloader.cpp:77
+#: kcmoduleloader.cpp:87
 #, kde-format
 msgid "The module %1 is disabled."
 msgstr "%1 என்ற கூறு முடக்கப்பட்டுள்ளது."
 
-#: kcmoduleloader.cpp:77
+#: kcmoduleloader.cpp:87
 #, kde-format
 msgid "The module has been disabled by the system administrator."
 msgstr "இக்கூறு, கணினியின் நிர்வாகியால் முடக்கப்பட்டுள்ளது."
 
-#: kcmoduleloader.cpp:83
+#: kcmoduleloader.cpp:93
 #, kde-format
 msgid "Error loading QML file."
 msgstr "QML கோப்பை ஏற்றுவதில் சிக்கல்."
