@@ -99,6 +99,7 @@ msgstr "Použiť špecifický popis pre okno"
 #, kde-format
 msgid "Show an indicator when settings have changed from their default value"
 msgstr ""
+"Zobraziť indikátor, keď sa nastavenia zmenili oproti predvolenej hodnote"
 
 #: main.cpp:127
 #, kde-format
