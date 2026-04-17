@@ -92,6 +92,14 @@ int main(int argc, char *argv[])
         // don't leak the env variable to processes we start
         qunsetenv("QT_QPA_PLATFORM");
     }
+
+    // TODO: This should be removed when all kcms are ported to the new forms, so will switch
+    // them all to the cards look
+    const QString formsChoice = qEnvironmentVariable("KDE_KIRIGAMI_FORMS_STYLE", QString());
+    if (formsChoice.isEmpty() || formsChoice != QStringLiteral("cards")) {
+        qputenv("KDE_KIRIGAMI_FORMS_STYLE", "flat");
+    }
+
     KLocalizedString::setApplicationDomain("kcmshell6");
     KAboutData aboutData(QStringLiteral("kcmshell6"),
                          QString(),
