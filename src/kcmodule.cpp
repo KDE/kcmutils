@@ -127,7 +127,7 @@ void KCModule::widgetChanged()
     if (d->_unmanagedWidgetDefaultStateCalled) {
         setRepresentsDefaults(d->_unmanagedWidgetDefaultState && managedWidgetDefaultState());
     } else {
-        setRepresentsDefaults(!d->managers.isEmpty() && managedWidgetDefaultState());
+        setRepresentsDefaults(managedWidgetDefaultState());
     }
 }
 

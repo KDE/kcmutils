@@ -20,7 +20,7 @@ public:
 
     bool m_useRootOnlyMessage = false;
     bool m_needsSave = false;
-    bool m_representsDefaults = false;
+    bool m_representsDefaults = true;
     bool m_defaultsIndicatorVisible = false;
     bool m_supportsInstantApply = true;
     QString m_authActionName;
