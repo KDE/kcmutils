@@ -71,9 +71,7 @@ T.ItemDelegate {
         return `${subtitle}; ${toolTip}`
     }
 
-    Keys.onEnterPressed: event => thumbnail.trigger()
     Keys.onMenuPressed: event => thumbnail.trigger()
-    Keys.onSpacePressed: event => thumbnail.trigger()
 
     Kirigami.ShadowedRectangle {
         id: thumbnail
