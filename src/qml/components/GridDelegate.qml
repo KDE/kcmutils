@@ -100,6 +100,9 @@ T.ItemDelegate {
                 }
                 return Kirigami.Theme.highlightColor;
             }
+            if (delegate.checked) {
+                return Kirigami.Theme.highlightColor;
+            }
             if (delegate.enabled && delegate.hovered) {
                 // Match appearance of hovered list items
                 return Qt.alpha(Kirigami.Theme.highlightColor, 0.5);
