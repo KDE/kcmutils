@@ -199,8 +199,10 @@ int main(int argc, char *argv[])
         return -1;
     }
 
+    QQmlEngine engine;
+
     // This ensures if there are multiple QML-based kcms loaded, they use a shared engine instance
-    app.setProperty("__qmlEngine", QVariant::fromValue(new QQmlEngine));
+    app.setProperty("__qmlEngine", QVariant::fromValue(&engine));
     const bool multipleKCMs = metaDataList.size() > 1;
     KPageDialog::FaceType ftype = multipleKCMs ? KPageDialog::List : KPageDialog::Plain;
     auto dlg = new KCMShellMultiDialog(ftype);
