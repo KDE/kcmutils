@@ -59,6 +59,13 @@ public:
      */
     void setDefaultsIndicatorsVisible(bool show);
 
+    /*!
+     * Returns whether any of the modules failed to load
+     *
+     * \since 6.27
+     */
+    bool hasError() const;
+
 Q_SIGNALS:
     /*!
      * \brief Emitted after all KCModules have been told to save their configuration.

@@ -469,6 +469,13 @@ void KCMultiDialog::setDefaultsIndicatorsVisible(bool show)
     }
 }
 
+bool KCMultiDialog::hasError() const
+{
+    return std::any_of(d->modules.cbegin(), d->modules.cend(), [](const auto &module) {
+        return QByteArrayView(module.kcm->metaObject()->className()) == "KCMError";
+    });
+}
+
 bool KCMultiDialog::eventFilter(QObject *watched, QEvent *event)
 {
     if ((event->type() == QEvent::Show || event->type() == QEvent::Hide) && currentPage()) {

@@ -16,6 +16,7 @@
 #include <QQmlEngine>
 #include <QRegularExpression>
 #include <QStandardPaths>
+#include <QTimer>
 
 #include <KAboutData>
 #include <KAuthorized>
@@ -34,6 +35,8 @@
 
 #include <algorithm>
 #include <iostream>
+
+using namespace Qt::Literals;
 
 inline QList<KPluginMetaData> findKCMsMetaData()
 {
@@ -125,6 +128,7 @@ int main(int argc, char *argv[])
     parser.addOption(QCommandLineOption(QStringLiteral("icon"), i18n("Use a specific icon for the window"), QLatin1String("icon")));
     parser.addOption(QCommandLineOption(QStringLiteral("caption"), i18n("Use a specific caption for the window"), QLatin1String("caption")));
     parser.addOption(QCommandLineOption(QStringLiteral("highlight"), i18n("Show an indicator when settings have changed from their default value")));
+    parser.addOption(QCommandLineOption(QStringLiteral("smoke-test"), i18n("Internal, for testing")));
 
     parser.parse(app.arguments());
     aboutData.processCommandLine(&parser);
@@ -242,9 +246,17 @@ int main(int argc, char *argv[])
 
     dlg->show();
 
-    app.exec();
+    if (parser.isSet(u"smoke-test"_s)) {
+        QTimer::singleShot(std::chrono::milliseconds(250), &app, [dlg] {
+            if (dlg->hasError()) {
+                qApp->exit(1);
+            } else {
+                qApp->quit();
+            }
+        });
+    }
 
-    return 0;
+    return app.exec();
 }
 
 #include "main.moc"

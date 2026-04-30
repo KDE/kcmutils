@@ -17,3 +17,7 @@ ecm_add_tests(
     kcmloadtest.cpp
     LINK_LIBRARIES KF6KCMUtils Qt6::Test
 )
+
+add_test(NAME kcm_smoketest_test COMMAND kcmshell6 --smoke-test fakekcm)
+
+add_test(NAME kcm_smoketestqml_test COMMAND kcmshell6 --smoke-test kcm_testqml)
