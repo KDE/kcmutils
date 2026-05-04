@@ -104,7 +104,7 @@ msgstr ""
 #: main.cpp:131
 #, kde-format
 msgid "Internal, for testing"
-msgstr ""
+msgstr "Interné, na testovanie"
 
 #: main.cpp:139
 #, kde-format
