@@ -34,6 +34,7 @@ ecm_target_qml_sources(kcmutilsqmlplugin SOURCES
     components/SettingHighlighter.qml
     components/SettingStateBinding.qml
     components/SimpleKCM.qml
+    components/DefaultIndicator.qml
 )
 ecm_target_qml_sources(kcmutilsqmlplugin PATH private SOURCES
     components/private/AboutPlugin.qml
