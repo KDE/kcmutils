@@ -7,6 +7,7 @@
 
 import QtQuick
 import org.kde.kcmutils.private as KCMUtilsPrivate
+import org.kde.kirigami as Kirigami
 
 /*!
    \qmltype SettingHighlighter
@@ -22,7 +23,7 @@ import org.kde.kcmutils.private as KCMUtilsPrivate
 Loader {
     id: root
 
-    active: typeof kcm !== "undefined" && root.target !== null
+    active: typeof kcm !== "undefined" && root.target !== null && kcm.defaultsIndicatorsVisible
 
     /*!
        \brief The graphical element whose appearance will be altered.
@@ -36,10 +37,25 @@ Loader {
      */
     property bool highlight: false
 
-    sourceComponent: KCMUtilsPrivate.SettingHighlighterPrivate {
+    sourceComponent: Item {
         id: helper
-        highlight: root.highlight
-        target: root.target
-        defaultIndicatorVisible: kcm.defaultsIndicatorsVisible
+        property Item target: root.target.indicator ?? root.target
+        property Kirigami.Theme theme: target.Kirigami.Theme
+        Binding {
+            when: root.highlight
+            helper.theme.inherit: false
+        }
+        Binding {
+            when: root.highlight
+            helper.theme.focusColor: theme.neutralTextColor
+        }
+        Binding {
+            when: root.highlight
+            helper.theme.hoverColor: theme.neutralTextColor
+        }
+        Binding {
+            when: root.highlight
+            helper.theme.highlightColor: theme.neutralTextColor
+        }
     }
 }

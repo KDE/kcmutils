@@ -62,7 +62,7 @@ Loader {
 
        Allow one to implement highlight with custom items.
      */
-    readonly property bool nonDefaultHighlightVisible: root.active && root.item.highlight && kcm.defaultsIndicatorsVisible
+    readonly property bool nonDefaultHighlightVisible: root.active && !settingState.defaulted && kcm.defaultsIndicatorsVisible
 
     Binding {
         when: root.active
@@ -75,10 +75,9 @@ Loader {
         id: settingState
     }
 
-    sourceComponent: KCMUtilsPrivate.SettingHighlighterPrivate {
+    sourceComponent: KCMUtils.SettingHighlighter {
         id: helper
-        defaultIndicatorVisible: kcm.defaultsIndicatorsVisible
-        highlight: !settingState.defaulted
+        highlight: root.nonDefaultHighlightVisible
         target: root.target
     }
 }
