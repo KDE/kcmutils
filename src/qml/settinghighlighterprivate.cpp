@@ -48,6 +48,14 @@ QQuickItem *findStyleItem(QQuickItem *item)
             || itemClassName(child).contains("KQuickStyleItem")) {
             return child;
         }
+        if (itemClassName(child).contains("Button")) {
+            // We only want this returned for Union,
+            // since with KQuickStyleItem this breaks button backgrounds
+            auto buttonBgName = itemClassName(child->property("background").value<QQuickItem *>());
+            if (buttonBgName.contains("Union")) {
+                return child;
+            }
+        }
     }
     return nullptr;
 }
