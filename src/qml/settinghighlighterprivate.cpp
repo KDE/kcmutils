@@ -19,6 +19,19 @@ QByteArray itemClassName(QQuickItem *item)
     return className;
 }
 
+QList<QObject *> findAttachedObjects(QObject *object, const char *attachedObjectType)
+{
+    QList<QObject *> result;
+    const auto children = object->children();
+    for (const auto &child : children) {
+        if (child->inherits(attachedObjectType)) {
+            result.append(child);
+        }
+        result.append(findAttachedObjects(child, attachedObjectType));
+    }
+    return result;
+}
+
 QList<QQuickItem *> findDescendantItems(QQuickItem *item)
 {
     const auto children = item->childItems();
@@ -115,6 +128,18 @@ void SettingHighlighterPrivate::updateTarget()
 {
     if (!m_isComponentComplete) {
         return;
+    }
+
+    // For Union, there is a hint "changed" on elements that want to support
+    // recoloring for changed state. This code finds that hint on the current
+    // target object and sets it to the correct state.
+    const auto elements = findAttachedObjects(m_target, "Union::Quick::QuickElement");
+    for (const auto &element : elements) {
+        QObject *hint = nullptr;
+        QMetaObject::invokeMethod(element, "hint", qReturnArg(hint), QStringLiteral("changed"));
+        if (hint) {
+            hint->setProperty("when", m_highlight && m_enabled);
+        }
     }
 
     if (!m_styleTarget && m_target) {
