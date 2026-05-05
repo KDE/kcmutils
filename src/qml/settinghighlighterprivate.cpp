@@ -121,6 +121,9 @@ void SettingHighlighterPrivate::updateTarget()
         m_styleTarget = findStyleItem(m_target);
     }
 
+    if (m_target) {
+        m_target->setProperty("_kde_highlight_neutral", m_highlight && m_enabled);
+    }
     if (m_styleTarget) {
         if (itemClassName(m_styleTarget).contains("GridViewInternal")) {
             m_styleTarget->setProperty("neutralHighlight", m_highlight && m_enabled);
