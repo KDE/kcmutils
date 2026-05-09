@@ -105,7 +105,7 @@ msgstr "显示标识以标记非默认值的设置项"
 #: main.cpp:131
 #, kde-format
 msgid "Internal, for testing"
-msgstr ""
+msgstr "内部，用于测试"
 
 #: main.cpp:139
 #, kde-format
