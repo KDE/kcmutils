@@ -26,9 +26,10 @@ target_link_libraries(KF6KCMUtilsQuick
   PUBLIC
     KF6::CoreAddons
     KF6::ConfigCore
-    Qt6::Qml
+    Qt6::QmlIntegration
     KF6KCMUtilsCore
   PRIVATE
+    Qt6::Qml
     KF6::I18n
     KF6::ConfigGui
     Qt6::Quick
