@@ -15,7 +15,6 @@
 #include "kcmutilsquick_export.h"
 
 #include <QObject>
-#include <QQmlComponent>
 #include <QStringList>
 #include <QVariant>
 

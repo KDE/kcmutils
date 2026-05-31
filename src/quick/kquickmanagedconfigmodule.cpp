@@ -6,6 +6,7 @@
 #include "kquickmanagedconfigmodule.h"
 
 #include <KCoreConfigSkeleton>
+#include <QMetaMethod>
 #include <QPointer>
 #include <QTimer>
 
