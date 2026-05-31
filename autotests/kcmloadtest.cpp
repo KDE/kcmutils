@@ -6,7 +6,6 @@
 #include <KCModuleLoader>
 
 #include <QObject>
-#include <QQmlEngine>
 #include <QTest>
 
 class KCMTest : public QObject
