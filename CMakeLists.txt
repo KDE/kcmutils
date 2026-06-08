@@ -68,7 +68,7 @@ find_package(KF6WidgetsAddons ${KF_DEP_VERSION} REQUIRED)
 
 ecm_set_disabled_deprecation_versions(
     QT 6.11.0
-    KF 6.26.0
+    KF 6.27.0
 )
 
 ecm_find_qmlmodule(org.kde.kirigami REQUIRED)
