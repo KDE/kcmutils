@@ -16,6 +16,8 @@ ecm_generate_export_header(KF6KCMUtilsQuick
     BASE_NAME KCMUtilsQuick
     GROUP_BASE_NAME KF
     VERSION ${KF_VERSION}
+    USE_VERSION_HEADER
+    VERSION_BASE_NAME KCMUtils
     DEPRECATED_BASE_VERSION 0
 )
 target_include_directories(KF6KCMUtilsQuick INTERFACE "$<INSTALL_INTERFACE:${KDE_INSTALL_INCLUDEDIR_KF}/KCMUtilsQuick>")
