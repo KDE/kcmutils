@@ -1,16 +1,16 @@
 # Translation for kcmshell6.po to Euskara/Basque (eu).
-# Copyright (C) 2023-2024 This file is copyright:
+# Copyright (C) 2023-2026 This file is copyright:
 # This file is distributed under the same license as the kcmutils package.
-# SPDX-FileCopyrightText: 2023 KDE euskaratzeko proiektuko arduraduna <xalba@ni.eus>
+# SPDX-FileCopyrightText: 2023-2026 KDE euskaratzeko proiektuaren arduradua <xalba@ni.eus>
 #
 # Translators:
-# Iñigo Salvador Azurmendi <xalba@ni.eus>, 2023, 2024.
+# Iñigo Salvador Azurmendi <xalba@ni.eus>, 2023, 2024, 2026.
 msgid ""
 msgstr ""
 "Project-Id-Version: kcmutils\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-05-02 00:40+0000\n"
-"PO-Revision-Date: 2023-10-01 23:43+0200\n"
+"PO-Revision-Date: 2026-07-01 18:56+0200\n"
 "Last-Translator: Iñigo Salvador Azurmendi <xalba@ni.eus>\n"
 "Language-Team: Basque <kde-i18n-eu@kde.org>\n"
 "Language: eu\n"
@@ -18,7 +18,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Lokalize 23.08.1\n"
+"X-Generator: Lokalize 26.04.2\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
@@ -78,7 +78,7 @@ msgstr "Waldo Bastian"
 #: main.cpp:125
 #, kde-format
 msgid "List all possible modules"
-msgstr "Zerrendatu modulu posible guztiak"
+msgstr "Zerrendatu modulu erabilgarri guztiak"
 
 #: main.cpp:126
 #, kde-format
@@ -103,13 +103,12 @@ msgstr "Leihorako legenda zehatz bat erabili"
 #: main.cpp:130
 #, kde-format
 msgid "Show an indicator when settings have changed from their default value"
-msgstr ""
-"Erakutsi adierazle bat ezarpenak haien balio lehenetsietatik aldatu direnean"
+msgstr "Adierazle bat erakutsi ezarpenak balio lehenetsietatik aldatu direnean"
 
 #: main.cpp:131
 #, kde-format
 msgid "Internal, for testing"
-msgstr ""
+msgstr "Barnekoa, probetarako"
 
 #: main.cpp:139
 #, kde-format
