@@ -440,6 +440,9 @@ KPageWidgetItem *KCMultiDialog::addModule(const KPluginMetaData &metaData, const
     connect(kcm, &KCModule::needsSaveChanged, this, [this]() {
         d->clientChanged();
     });
+    connect(kcm, &KCModule::representsDefaultsChanged, this, [this]() {
+        d->clientChanged();
+    });
 
     if (d->modules.count() == 1 || updateCurrentPage) {
         setCurrentPage(item);
