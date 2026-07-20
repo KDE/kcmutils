@@ -233,7 +233,6 @@ public:
      */
     Q_SIGNAL void supportsInstantApplyChanged();
 
-
     /*!
      * \brief Returns the metaData that was used when instantiating the plugin.
      */

@@ -21,9 +21,9 @@
 #include <QResource>
 #include <QUrl>
 
-#include <KRuntimePlatform>
 #include <KLocalizedContext>
 #include <KLocalizedString>
+#include <KRuntimePlatform>
 
 class KQuickConfigModulePrivate
 {
