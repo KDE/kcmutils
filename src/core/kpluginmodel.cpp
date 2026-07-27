@@ -11,6 +11,7 @@
 #include <QPluginLoader>
 
 #include <KCategorizedSortFilterProxyModel>
+#include <KConfig>
 #include <KConfigGroup>
 
 #include <utility>
@@ -239,7 +240,28 @@ void KPluginModel::save()
 {
     if (d->m_config.isValid()) {
         for (auto it = d->m_pendingStates.cbegin(); it != d->m_pendingStates.cend(); ++it) {
-            d->m_config.writeEntry(it.key() + QLatin1String("Enabled"), it.value());
+            const QString key = it.key() + QStringLiteral("Enabled");
+            bool isDefault;
+
+            if (d->m_config.hasDefault(key)) {
+                d->m_config.config()->setReadDefaults(true);
+                isDefault = (it.value() == d->m_config.readEntry(key, false));
+                d->m_config.config()->setReadDefaults(false);
+            } else {
+                // Find the plugin to get its default state
+                const QString pluginId = it.key();
+                const auto pluginIt = std::find_if(d->m_plugins.cbegin(), d->m_plugins.cend(), [&pluginId](const KPluginMetaData &p) {
+                    return p.pluginId() == pluginId;
+                });
+
+                isDefault = (pluginIt != d->m_plugins.cend()) && (it.value() == pluginIt->isEnabledByDefault());
+            }
+
+            if (isDefault) {
+                d->m_config.revertToDefault(key);
+            } else {
+                d->m_config.writeEntry(key, it.value());
+            }
         }
 
         d->m_config.sync();
