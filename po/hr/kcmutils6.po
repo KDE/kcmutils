@@ -162,7 +162,8 @@ msgid "Copyright"
 msgstr "Kopiraj"
 
 #: qml/components/private/AboutPlugin.qml:80
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "License:"
 msgid "License:"
 msgstr "Licenca:"
 
