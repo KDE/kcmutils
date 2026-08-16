@@ -28,13 +28,13 @@ class SettingStateProxy : public QObject
     QML_ELEMENT
 
     /*!
-     * \qmlproperty bool SettingStateProxy::configObject
+     * \qmlproperty KCoreConfigSkeleton SettingStateProxy::configObject
      * \brief The config object which will be monitored for setting state changes.
      */
     Q_PROPERTY(KCoreConfigSkeleton *configObject READ configObject WRITE setConfigObject NOTIFY configObjectChanged)
 
     /*!
-     * \qmlproperty bool SettingStateProxy::settingName
+     * \qmlproperty string SettingStateProxy::settingName
      * \brief The name of the setting in the config object.
      */
     Q_PROPERTY(QString settingName READ settingName WRITE setSettingName NOTIFY settingNameChanged)
