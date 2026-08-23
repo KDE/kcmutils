@@ -29,6 +29,9 @@ include(ECMGenerateQDoc)
 
 
 include(CMakeDependentOption)
+
+set(EXCLUDE_DEPRECATED_BEFORE_AND_AT 0 CACHE STRING "Control the range of deprecated API excluded from the build [default=0].")
+
 option(TOOLS_ONLY "Only build the tools and not the rest of KCMUtils" OFF)
 if (TOOLS_ONLY)
     find_package(Qt6 ${REQUIRED_QT_VERSION} NO_MODULE REQUIRED Core)
