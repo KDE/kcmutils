@@ -29,7 +29,7 @@ class KQuickManagedConfigModulePrivate;
  * The constructor of the ConfigModule then looks like this:
  * \code
  * YourConfigModule::YourConfigModule(QObject *parent, const KPluginMetaData &metaData)
- *   : ManagedConfigModule(parent, metaData)
+ *   : KQuickManagedConfigModule(parent, metaData)
  *   , m_settingsObject(new SettingsObject(this))
  * {
  * }
