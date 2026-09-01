@@ -18,7 +18,7 @@ import org.kde.kcmutils.private as KCMUtilsPrivate
    and use a visual indicator for the state of the setting.
 
    This is a higher level convenience wrapper for SettingStateProxy
-   and SettingStateIndicator.
+   and SettingHighlighter.
 
    \since 6.0
  */
