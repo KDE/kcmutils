@@ -25,15 +25,17 @@ import "private" as Private
 ListView {
     id: pluginSelector
 
-    // KPluginModel which contains the plugins that should be displayed
     /*!
+     * \qmproperty model PluginSelector::sourceModel
+     *
+     * KPluginModel which contains the plugins that should be displayed
      */
     required property QtObject sourceModel
 
-    // Query that is typed into the search field. Ideally, this is part of the KCM header
     /*!
+     * Query that is typed into the search field. Ideally, this is part of the KCM header
      */
-    property var query
+    property string query
 
     // PluginDelegate should be used with this, it contains an ActionToolBar that is incredibly expensive to construct,
     // make sure to cache delegates a fair amount right out of the box.

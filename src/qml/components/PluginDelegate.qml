@@ -18,6 +18,7 @@ import org.kde.kcmutils as KCMUtils
 /*!
   \qmltype PluginDelegate
   \inqmlmodule org.kde.kcmutils
+  \inherits CheckSubtitleDelegate
   \since 6.0
   This got renamed from KPluginDelegate to PluginDelegate
 */
@@ -28,10 +29,12 @@ Kirigami.CheckSubtitleDelegate {
     // object should be passed down explicitly, but it also means that it may
     // become null right before delegate's destruction.
     /*!
+     * \qmlproperty model PluginDelegate::model
      */
     required property var model
 
     /*!
+       \qmlproperty list<Action> PluginDelegate::additionalActions
      */
     property list<T.Action> additionalActions
 

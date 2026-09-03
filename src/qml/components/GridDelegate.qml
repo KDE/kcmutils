@@ -16,6 +16,7 @@ import "private" as Private
 /*!
    \qmltype GridDelegate
    \inqmlmodule org.kde.kcmutils
+   \inherits ItemDelegate
    \brief Base delegate for KControlmodules based on Grid views of thumbnails.
 
    Use the onClicked signal handler for managing the main action when
