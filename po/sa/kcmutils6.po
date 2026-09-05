@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kcmutils\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-04-08 00:41+0000\n"
+"POT-Creation-Date: 2026-09-05 00:41+0000\n"
 "PO-Revision-Date: 2024-12-24 20:39+0530\n"
 "Last-Translator: kali <shreekantkalwar@gmail.com>\n"
 "Language-Team: Sanskrit <kde-i18n-doc@kde.org>\n"
@@ -100,24 +100,24 @@ msgctxt "@action:button"
 msgid "Show Contextual Help"
 msgstr "सन्दर्भसहायतां दर्शयतु"
 
-#: qml/components/PluginDelegate.qml:111
+#: qml/components/PluginDelegate.qml:114
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "About"
 msgstr "विषये"
 
-#: qml/components/PluginDelegate.qml:126
+#: qml/components/PluginDelegate.qml:129
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Configure…"
 msgstr "विन्यस्तं कुर्वन्तु…"
 
-#: qml/components/PluginSelector.qml:94
+#: qml/components/PluginSelector.qml:96
 #, kde-format
 msgid "No matches"
 msgstr "न मेलनं"
 
-#: qml/components/PluginSelector.qml:94
+#: qml/components/PluginSelector.qml:96
 #, kde-format
 msgid "No plugins found"
 msgstr "प्लगिन्स् न प्राप्ताः"

@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdelibs4\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-04-08 00:41+0000\n"
+"POT-Creation-Date: 2026-09-05 00:41+0000\n"
 "PO-Revision-Date: 2010-06-24 18:32+0530\n"
 "Last-Translator: Shankar Prasad <svenkate@redhat.com>\n"
 "Language-Team: kn_IN <kde-i18n-doc@kde.org>\n"
@@ -105,26 +105,26 @@ msgctxt "@action:button"
 msgid "Show Contextual Help"
 msgstr ""
 
-#: qml/components/PluginDelegate.qml:111
+#: qml/components/PluginDelegate.qml:114
 #, fuzzy, kde-format
 #| msgid "&About"
 msgctxt "@info:tooltip"
 msgid "About"
 msgstr "ಬಗ್ಗೆ(&A)"
 
-#: qml/components/PluginDelegate.qml:126
+#: qml/components/PluginDelegate.qml:129
 #, fuzzy, kde-format
 #| msgid "Configure"
 msgctxt "@info:tooltip"
 msgid "Configure…"
 msgstr "ಸಂರಚಿಸು"
 
-#: qml/components/PluginSelector.qml:94
+#: qml/components/PluginSelector.qml:96
 #, kde-format
 msgid "No matches"
 msgstr ""
 
-#: qml/components/PluginSelector.qml:94
+#: qml/components/PluginSelector.qml:96
 #, fuzzy, kde-format
 #| msgid "Not found"
 msgid "No plugins found"

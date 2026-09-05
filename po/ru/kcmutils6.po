@@ -19,7 +19,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdelibs4\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-04-08 00:41+0000\n"
+"POT-Creation-Date: 2026-09-05 00:41+0000\n"
 "PO-Revision-Date: 2025-05-20 14:08+0300\n"
 "Last-Translator: Alexander Yavorsky <kekcuha@gmail.com>\n"
 "Language-Team: Russian <kde-russian@lists.kde.ru>\n"
@@ -121,24 +121,24 @@ msgid "Show Contextual Help"
 msgstr "Показать контекстную справку"
 
 # BUGME: please check in the UI if it's about a module --aspotashev
-#: qml/components/PluginDelegate.qml:111
+#: qml/components/PluginDelegate.qml:114
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "About"
 msgstr "О расширении"
 
-#: qml/components/PluginDelegate.qml:126
+#: qml/components/PluginDelegate.qml:129
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Configure…"
 msgstr "Настроить…"
 
-#: qml/components/PluginSelector.qml:94
+#: qml/components/PluginSelector.qml:96
 #, kde-format
 msgid "No matches"
 msgstr "Совпадений не найдено"
 
-#: qml/components/PluginSelector.qml:94
+#: qml/components/PluginSelector.qml:96
 #, kde-format
 msgid "No plugins found"
 msgstr "Модули не найдены"
