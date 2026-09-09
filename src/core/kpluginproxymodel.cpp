@@ -56,7 +56,7 @@ bool KPluginProxyModel::subSortLessThan(const QModelIndex &left, const QModelInd
     if (left.data(KPluginModel::SortableRole).toBool() && right.data(KPluginModel::SortableRole).toBool()) {
         return left.data(KPluginModel::NameRole).toString().compare(right.data(KPluginModel::NameRole).toString(), Qt::CaseInsensitive) < 0;
     }
-    return 0;
+    return false;
 }
 
 int KPluginProxyModel::compareCategories(const QModelIndex &left, const QModelIndex &right) const
