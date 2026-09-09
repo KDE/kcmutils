@@ -38,8 +38,6 @@ public:
     {
     }
 
-    void authStatusChanged(int status);
-
     QList<KConfigDialogManager *> managers;
 
     bool _needsAuthorization : 1;

@@ -45,12 +45,6 @@ public:
     void errorPrint(QQmlComponent *component, QQmlIncubator *incubator = nullptr);
     void execute(const QUrl &source);
     void scheduleExecutionEnd();
-    void minimumWidthChanged();
-    void minimumHeightChanged();
-    void maximumWidthChanged();
-    void maximumHeightChanged();
-    void preferredWidthChanged();
-    void preferredHeightChanged();
     void checkInitializationCompleted();
 
     SharedQmlEngine *q;

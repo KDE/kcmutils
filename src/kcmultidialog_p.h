@@ -38,7 +38,6 @@ public:
 
     void slotCurrentPageChanged(KPageWidgetItem *current, KPageWidgetItem *previous);
     void clientChanged();
-    void dialogClosed();
     void updateHeader(bool use, const QString &message);
     void updateScrollAreaFocusPolicy();
 
