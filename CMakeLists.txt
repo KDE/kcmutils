@@ -26,7 +26,7 @@ include(KDEGitCommitHooks)
 include(ECMQmlModule)
 include(ECMFindQmlModule)
 include(ECMGenerateQDoc)
-
+include(ECMInstalledLibraryCheck)
 
 include(CMakeDependentOption)
 

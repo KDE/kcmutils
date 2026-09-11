@@ -46,7 +46,7 @@ set_target_properties(KF6KCMUtilsQuick PROPERTIES
                       VERSION ${KCMUTILS_VERSION}
                       SOVERSION ${KCMUTILS_SOVERSION}
                       EXPORT_NAME KCMUtilsQuick)
-ecm_generate_headers(KCMUtilsQuick_HEADERS
+ecm_generate_headers(KCMUtilsQuick_CamelCase_HEADERS
   HEADER_NAMES
   KQuickConfigModule
   KQuickManagedConfigModule
@@ -57,7 +57,21 @@ ecm_generate_headers(KCMUtilsQuick_HEADERS
 install(FILES
   ${CMAKE_CURRENT_BINARY_DIR}/kcmutilsquick_export.h
   ${KCMUtilsQuick_HEADERS}
+  ${KCMUtilsQuick_CamelCase_HEADERS}
   DESTINATION ${KDE_INSTALL_INCLUDEDIR_KF}/KCMUtilsQuick COMPONENT Devel
 )
 
 install(TARGETS KF6KCMUtilsQuick EXPORT KF6KCMUtilsTargets ${KF_INSTALL_TARGETS_DEFAULT_ARGS})
+
+ecm_add_installed_library_check(KF6KCMUtilsQuick
+    PACKAGE_NAME "KF6KCMUtils"
+    PACKAGE_TARGET_NAMESPACE "KF6::"
+)
+
+ecm_installed_library_check_include_strings(KF6KCMUtilsQuick
+    HEADERS ${KCMUtilsQuick_CamelCase_HEADERS}
+)
+
+ecm_installed_library_check_version_preprocessor_macros(KF6KCMUtilsQuick
+    PREFIX KCMUTILS
+)

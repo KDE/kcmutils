@@ -50,7 +50,7 @@ target_link_libraries(KF6KCMUtilsCore
     KF6::ItemViews
 )
 
-ecm_generate_headers(KCMUtilsCore_HEADERS
+ecm_generate_headers(KCMUtilsCore_CamelCase_HEADERS
   HEADER_NAMES
   KPluginModel
   KAbstractConfigModule
@@ -61,6 +61,7 @@ ecm_generate_headers(KCMUtilsCore_HEADERS
 install(FILES
   ${CMAKE_CURRENT_BINARY_DIR}/kcmutilscore_export.h
   ${KCMUtilsCore_HEADERS}
+  ${KCMUtilsCore_CamelCase_HEADERS}
   DESTINATION ${KDE_INSTALL_INCLUDEDIR_KF}/KCMUtilsCore COMPONENT Devel
 )
 
@@ -75,3 +76,16 @@ target_link_libraries(kcmutils_proxy_model PUBLIC KF6KCMUtilsCore KF6::ItemViews
 if(NOT BUILD_SHARED_LIBS)
   install(TARGETS kcmutils_proxy_model EXPORT KF6KCMUtilsTargets ${KF_INSTALL_TARGETS_DEFAULT_ARGS})
 endif()
+
+ecm_add_installed_library_check(KF6KCMUtilsCore
+    PACKAGE_NAME "KF6KCMUtils"
+    PACKAGE_TARGET_NAMESPACE "KF6::"
+)
+
+ecm_installed_library_check_include_strings(KF6KCMUtilsCore
+    HEADERS ${KCMUtilsCore_CamelCase_HEADERS}
+)
+
+ecm_installed_library_check_version_preprocessor_macros(KF6KCMUtilsCore
+    PREFIX KCMUTILS
+)

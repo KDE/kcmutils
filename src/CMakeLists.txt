@@ -79,7 +79,7 @@ target_link_libraries(KF6KCMUtils
     kcmutils_logging_STATIC
 )
 
-ecm_generate_headers(KCMUtils_HEADERS
+ecm_generate_headers(KCMUtils_CamelCase_HEADERS
   HEADER_NAMES
   KCModuleLoader
   KCMultiDialog
@@ -91,6 +91,7 @@ ecm_generate_headers(KCMUtils_HEADERS
 install(FILES
   ${CMAKE_CURRENT_BINARY_DIR}/kcmutils_export.h
   ${KCMUtils_HEADERS}
+  ${KCMUtils_CamelCase_HEADERS}
   DESTINATION ${KDE_INSTALL_INCLUDEDIR_KF}/KCMUtils COMPONENT Devel
 )
 
@@ -100,6 +101,24 @@ ecm_qt_install_logging_categories(
     EXPORT KCMUTILS
     FILE kcmutils.categories
     DESTINATION "${KDE_INSTALL_LOGGINGCATEGORIESDIR}"
+)
+
+ecm_add_installed_library_check(KF6KCMUtils
+    PACKAGE_NAME "KF6KCMUtils"
+    PACKAGE_TARGET_NAMESPACE "KF6::"
+)
+
+ecm_installed_library_check_include_strings(KF6KCMUtils
+    HEADERS ${KCMUtils_CamelCase_HEADERS}
+)
+
+ecm_installed_library_check_version_preprocessor_macros(KF6KCMUtils
+    PREFIX KCMUTILS
+)
+
+ecm_installed_library_check_preprocessor_macro(KF6KCMUtils
+    NAME KCMUTILS_WITH_KAUTH
+    VALUE ${WITH_KAUTH_DEFINE_VALUE}
 )
 
 add_subdirectory(kcmshell)
