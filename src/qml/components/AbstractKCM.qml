@@ -50,6 +50,7 @@ Kirigami.Page {
     property bool framedView: true
 
     /*!
+     * \deprecated Use forceFooterSeparator and/or footerPaddingEnabled instead
        \brief Whether the footer should have extra space and a separator line drawn
        above it.
 
@@ -78,6 +79,25 @@ Kirigami.Page {
     property bool footerPaddingEnabled: true
 
     /*!
+     * \brief Whether to always draw a separator line between header and main content.
+     *
+     * Usually, a separator  will only be inserted if extra content is added to
+     * the header, as it would be redundant with the header that Kirigami.PageRow
+     * draws, and if framedView is false as otherwise the view provides the
+     * separator. Enable this to have AbstractKCM always draw a separator line.
+     */
+    property bool forceHeaderSeparator: false
+
+    /*!
+     * \brief Whether to always draw a separator line between main content and footer.
+     *
+     * AbstractKCM usually does not draw a separator line above the footer. Enable
+     * this to draw a separator line; this is generally recommended if you have
+     * a custom footer, in plaricular in a ScrollViewKCM or GridViewKCM.
+     */
+    property bool forceFooterSeparator: false
+
+    /*!
      */
     property bool sidebarMode: false
 
@@ -97,10 +117,10 @@ Kirigami.Page {
     // doesn't have a frame of its own, because System Settings always
     // adds its own footer for the Apply, Help, and Defaults buttons
     function __headerSeparatorVisible(): bool {
-        return !framedView && __headerContentVisible();
+        return (!framedView && __headerContentVisible()) || forceHeaderSeparator;
     }
     function __footerSeparatorVisible(): bool {
-        return !framedView && extraFooterTopPadding;
+        return (!framedView && extraFooterTopPadding) || forceFooterSeparator;
     }
 
     title: (typeof kcm !== "undefined") ? kcm.name : ""
