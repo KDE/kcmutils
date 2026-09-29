@@ -80,6 +80,7 @@ void KCMultiDialogPrivate::slotCurrentPageChanged(KPageWidgetItem *current, KPag
     q->layout()->setContentsMargins(0, 0, 0, 0);
 
     const KPageWidget *pageWidget = q->pageWidget();
+    pageWidget->layout()->setContentsMargins(0, 0, 0, 0);
     pageWidget->layout()->setSpacing(0);
 
     // Then, we set the margins for the title header and the buttonBox footer
