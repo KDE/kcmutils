@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kcmutils\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-09-05 00:41+0000\n"
+"POT-Creation-Date: 2026-09-30 00:41+0000\n"
 "PO-Revision-Date: 2022-05-01 22:36+0400\n"
 "Last-Translator: Kheyyam Gojayev <xxmn77@gmail.com>\n"
 "Language-Team: Azerbaijani <kde-i18n-doc@kde.org>\n"
@@ -71,12 +71,12 @@ msgstr ""
 msgid "Apply Settings"
 msgstr "Ayarların tətbiq edilməsi"
 
-#: kcmultidialog.cpp:217 kpluginwidget.cpp:340
+#: kcmultidialog.cpp:218 kpluginwidget.cpp:340
 #, kde-format
 msgid "Configure"
 msgstr "Tənzimləmək"
 
-#: kcmultidialog.cpp:392
+#: kcmultidialog.cpp:393
 #, kde-format
 msgctxt "@other accessible name for view that can be scrolled"
 msgid "Scrollable area"

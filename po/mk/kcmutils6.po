@@ -17,7 +17,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdelibs4\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-09-05 00:41+0000\n"
+"POT-Creation-Date: 2026-09-30 00:41+0000\n"
 "PO-Revision-Date: 2010-01-27 10:39+0100\n"
 "Last-Translator: Bozidar Proevski <bobibobi@freemail.com.mk>\n"
 "Language-Team: Macedonian <mkde-l10n@lists.sourceforge.net>\n"
@@ -95,12 +95,12 @@ msgstr ""
 msgid "Apply Settings"
 msgstr "Поставувања"
 
-#: kcmultidialog.cpp:217 kpluginwidget.cpp:340
+#: kcmultidialog.cpp:218 kpluginwidget.cpp:340
 #, kde-format
 msgid "Configure"
 msgstr "Конфигурација"
 
-#: kcmultidialog.cpp:392
+#: kcmultidialog.cpp:393
 #, kde-format
 msgctxt "@other accessible name for view that can be scrolled"
 msgid "Scrollable area"
