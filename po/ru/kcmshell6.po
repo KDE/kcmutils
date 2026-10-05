@@ -38,7 +38,7 @@ msgstr "Инструмент для запуска модулей настрой
 #: main.cpp:112
 #, kde-format
 msgid "(c) 1999-2023, The KDE Developers"
-msgstr "© Разработчики KDE, 1999-2023"
+msgstr "© Разработчики KDE, 1999–2023"
 
 #: main.cpp:114
 #, kde-format
