@@ -13,6 +13,7 @@ import QtQuick.Layouts
 import QtQuick.Templates as T
 
 import org.kde.kirigami as Kirigami
+import org.kde.kirigami.delegates as KD
 import org.kde.kcmutils as KCMUtils
 
 /*!
@@ -81,22 +82,16 @@ Kirigami.CheckSubtitleDelegate {
             visible: target !== null
         }
 
-        Kirigami.IconTitleSubtitle {
+        KD.IconTitleSubtitleWithActions {
             id: titleSubtitle
 
             Layout.fillWidth: true
-            Layout.maximumWidth: Math.ceil(implicitWidth)
 
             icon: icon.fromControlsIcon(listItem.icon)
             title: listItem.text
             subtitle: listItem.subtitle
             reserveSpaceForSubtitle: true
-        }
 
-        Kirigami.ActionToolBar {
-            Layout.fillWidth: true
-            Layout.alignment: Qt.AlignRight
-            alignment: Qt.AlignRight
             actions: [infoAction, configureAction, ...listItem.additionalActions]
         }
     }
