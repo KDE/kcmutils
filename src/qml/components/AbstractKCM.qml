@@ -123,7 +123,7 @@ Kirigami.Page {
         return (!framedView && extraFooterTopPadding) || forceFooterSeparator;
     }
 
-    title: (typeof kcm !== "undefined") ? kcm.name : ""
+    title: (typeof kcm !== "undefined" && kcm !== null) ? kcm.name : ""
 
     // Make pages fill the whole view by default
     Kirigami.ColumnView.fillWidth: sidebarMode

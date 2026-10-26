@@ -67,7 +67,7 @@ Kirigami.ScrollablePage {
     property bool __flickableOverflows: flickable.contentHeight + flickable.topMargin + flickable.bottomMargin > flickable.height
 
     // Context properties are not reliable
-    title: (typeof kcm !== "undefined") ? kcm.name : ""
+    title: (typeof kcm !== "undefined" && kcm !== null) ? kcm.name : ""
 
     // Make pages fill the whole view by default
     Kirigami.ColumnView.fillWidth: true
