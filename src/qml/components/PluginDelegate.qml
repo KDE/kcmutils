@@ -114,9 +114,8 @@ Kirigami.CheckSubtitleDelegate {
         text: i18ndc("kcmutils6", "@info:tooltip", "About")
         displayHint: Kirigami.DisplayHint.IconOnly
         onTriggered: {
-            const aboutDialog = (listItem.ListView.view ?? listItem.parent.ListView.view).__aboutDialog;
-            aboutDialog.metaDataInfo = listItem.metaData;
-            aboutDialog.open();
+            const view = listItem.ListView.view ?? listItem.parent.ListView.view;
+            view.__showAboutPage(listItem.metaData);
         }
     }
 

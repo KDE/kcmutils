@@ -36,7 +36,7 @@ ecm_target_qml_sources(kcmutilsqmlplugin SOURCES
     components/SimpleKCM.qml
 )
 ecm_target_qml_sources(kcmutilsqmlplugin PATH private SOURCES
-    components/private/AboutPlugin.qml
+    components/private/AboutPage.qml
     components/private/GridDelegateMenu.qml
     components/private/GridViewInternal.qml
 )

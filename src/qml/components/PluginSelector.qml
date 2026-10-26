@@ -4,9 +4,6 @@
 */
 
 import QtQuick
-import QtQuick.Controls as QQC2
-import QtQuick.Layouts
-
 import org.kde.kirigami as Kirigami
 
 import org.kde.kcmutils.private as KCMUtilsPrivate
@@ -61,23 +58,16 @@ ListView {
         text: section
     }
 
-    Kirigami.OverlaySheet {
-        id: internalAboutDialog
-        parent: pluginSelector.Window.window?.contentItem ?? null
-        property var metaDataInfo
-
-        Loader {
-            active: internalAboutDialog.metaDataInfo !== undefined
-            sourceComponent: ColumnLayout {
-                Private.AboutPlugin {
-                    metaData: internalAboutDialog.metaDataInfo
-                    Layout.maximumWidth: Math.min(Kirigami.Units.gridUnit * 30, Math.round(pluginSelector.width * 0.8))
-                }
-            }
-        }
-    }
     // Only for internal usage in KPluginDelegate!
-    property var __aboutDialog: internalAboutDialog
+    function __showAboutPage(metaData) {
+        const aboutPage = aboutPageComponent.createObject(pluginSelector, { metaData: metaData });
+        kcm.push(aboutPage);
+    }
+
+    Component {
+        id: aboutPageComponent
+        Private.AboutPage {}
+    }
 
     Loader {
         anchors.centerIn: parent
