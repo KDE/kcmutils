@@ -14,6 +14,7 @@ import org.kde.kirigami as Kirigami
 Kirigami.AboutPage {
     required property var metaData
 
+    showLibraries: false
     aboutData: {
         "displayName" : metaData.name ?? "",
         "productName" : "",
@@ -21,19 +22,19 @@ Kirigami.AboutPage {
         "programLogo": metaData.iconName,
         "shortDescription" : metaData.description ?? "",
         "homepage" : metaData.website ?? "",
-        "bugAddress" : "",
+        "bugAddress" : metaData.bugReportUrl ?? "",
         "version" : metaData.version ?? "",
         "otherText" : "",
         "authors" : metaData.authors,
         "credits" : metaData.otherContributors,
         "translators" : metaData.translators,
-        "licenses" : [
+        "licenses" : metaData.license ? [
             {
                 "name" : metaData.license,
                 "text" : metaData.licenseText,
             }
-        ],
-        "copyrightStatement" : "",
+        ] : [],
+        "copyrightStatement" : metaData.copyrightText ?? "",
         "desktopFileName" : ""
     }
 }
