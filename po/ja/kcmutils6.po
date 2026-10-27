@@ -14,7 +14,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdelibs4\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-09-30 00:41+0000\n"
+"POT-Creation-Date: 2026-10-27 00:56+0000\n"
 "PO-Revision-Date: 2025-01-23 07:22+0900\n"
 "Last-Translator: Ryuichi Yamada <ryuichi_ya220@outlook.jp>\n"
 "Language-Team: Japanese <kde-jp@kde.org>\n"
@@ -118,57 +118,21 @@ msgctxt "@info:tooltip"
 msgid "About"
 msgstr "情報"
 
-#: qml/components/PluginDelegate.qml:129
+#: qml/components/PluginDelegate.qml:128
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Configure…"
 msgstr "設定..."
 
-#: qml/components/PluginSelector.qml:96
+#: qml/components/PluginSelector.qml:86
 #, kde-format
 msgid "No matches"
 msgstr "一致なし"
 
-#: qml/components/PluginSelector.qml:96
+#: qml/components/PluginSelector.qml:86
 #, kde-format
 msgid "No plugins found"
 msgstr "プラグインは見つかりませんでした"
-
-#: qml/components/private/AboutPlugin.qml:41
-#, kde-format
-msgctxt "Plugin name and plugin version"
-msgid "%1 %2"
-msgstr "%1 %2"
-
-#: qml/components/private/AboutPlugin.qml:63
-#, kde-format
-msgid "Copyright"
-msgstr "著作権について"
-
-#: qml/components/private/AboutPlugin.qml:80
-#, kde-format
-msgid "License:"
-msgstr "ライセンス:"
-
-#: qml/components/private/AboutPlugin.qml:99
-#, kde-format
-msgid "Authors"
-msgstr "作者"
-
-#: qml/components/private/AboutPlugin.qml:116
-#, kde-format
-msgid "Credits"
-msgstr "クレジット"
-
-#: qml/components/private/AboutPlugin.qml:133
-#, kde-format
-msgid "Translators"
-msgstr "翻訳者"
-
-#: qml/components/private/AboutPlugin.qml:160
-#, kde-format
-msgid "Send an email to %1"
-msgstr "%1 にメールを送る"
 
 #: qml/components/private/GridViewInternal.qml:66
 #, kde-format
@@ -179,3 +143,25 @@ msgstr "アイテムが見つかりません"
 #, kde-format
 msgid "Could not find resource '%1'"
 msgstr "リソース '%1' は見つかりませんでした"
+
+#~ msgctxt "Plugin name and plugin version"
+#~ msgid "%1 %2"
+#~ msgstr "%1 %2"
+
+#~ msgid "Copyright"
+#~ msgstr "著作権について"
+
+#~ msgid "License:"
+#~ msgstr "ライセンス:"
+
+#~ msgid "Authors"
+#~ msgstr "作者"
+
+#~ msgid "Credits"
+#~ msgstr "クレジット"
+
+#~ msgid "Translators"
+#~ msgstr "翻訳者"
+
+#~ msgid "Send an email to %1"
+#~ msgstr "%1 にメールを送る"

@@ -12,7 +12,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdelibs4\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-09-30 00:41+0000\n"
+"POT-Creation-Date: 2026-10-27 00:56+0000\n"
 "PO-Revision-Date: 2025-09-09 23:40+0300\n"
 "Last-Translator: Moo\n"
 "Language-Team: lt <kde-i18n-lt@kde.org>\n"
@@ -116,57 +116,21 @@ msgctxt "@info:tooltip"
 msgid "About"
 msgstr "Apie"
 
-#: qml/components/PluginDelegate.qml:129
+#: qml/components/PluginDelegate.qml:128
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Configure…"
 msgstr "Konfigūruoti…"
 
-#: qml/components/PluginSelector.qml:96
+#: qml/components/PluginSelector.qml:86
 #, kde-format
 msgid "No matches"
 msgstr "Nėra atitikmenų"
 
-#: qml/components/PluginSelector.qml:96
+#: qml/components/PluginSelector.qml:86
 #, kde-format
 msgid "No plugins found"
 msgstr "Nerasta jokių įskiepių"
-
-#: qml/components/private/AboutPlugin.qml:41
-#, kde-format
-msgctxt "Plugin name and plugin version"
-msgid "%1 %2"
-msgstr "%1 %2"
-
-#: qml/components/private/AboutPlugin.qml:63
-#, kde-format
-msgid "Copyright"
-msgstr "Autorių teisės"
-
-#: qml/components/private/AboutPlugin.qml:80
-#, kde-format
-msgid "License:"
-msgstr "Licencija:"
-
-#: qml/components/private/AboutPlugin.qml:99
-#, kde-format
-msgid "Authors"
-msgstr "Autoriai"
-
-#: qml/components/private/AboutPlugin.qml:116
-#, kde-format
-msgid "Credits"
-msgstr "Padėkos"
-
-#: qml/components/private/AboutPlugin.qml:133
-#, kde-format
-msgid "Translators"
-msgstr "Vertėjai"
-
-#: qml/components/private/AboutPlugin.qml:160
-#, kde-format
-msgid "Send an email to %1"
-msgstr "Siųsti el. laišką, adresu %1"
 
 #: qml/components/private/GridViewInternal.qml:66
 #, kde-format
@@ -177,6 +141,28 @@ msgstr "Nerasta jokių elementų"
 #, kde-format
 msgid "Could not find resource '%1'"
 msgstr "Nepavyko rasti ištekliaus „%1“"
+
+#~ msgctxt "Plugin name and plugin version"
+#~ msgid "%1 %2"
+#~ msgstr "%1 %2"
+
+#~ msgid "Copyright"
+#~ msgstr "Autorių teisės"
+
+#~ msgid "License:"
+#~ msgstr "Licencija:"
+
+#~ msgid "Authors"
+#~ msgstr "Autoriai"
+
+#~ msgid "Credits"
+#~ msgstr "Padėkos"
+
+#~ msgid "Translators"
+#~ msgstr "Vertėjai"
+
+#~ msgid "Send an email to %1"
+#~ msgstr "Siųsti el. laišką, adresu %1"
 
 #, fuzzy
 #~| msgid "Configure"

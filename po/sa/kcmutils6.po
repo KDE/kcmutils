@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kcmutils\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-09-30 00:41+0000\n"
+"POT-Creation-Date: 2026-10-27 00:56+0000\n"
 "PO-Revision-Date: 2024-12-24 20:39+0530\n"
 "Last-Translator: kali <shreekantkalwar@gmail.com>\n"
 "Language-Team: Sanskrit <kde-i18n-doc@kde.org>\n"
@@ -106,57 +106,21 @@ msgctxt "@info:tooltip"
 msgid "About"
 msgstr "विषये"
 
-#: qml/components/PluginDelegate.qml:129
+#: qml/components/PluginDelegate.qml:128
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Configure…"
 msgstr "विन्यस्तं कुर्वन्तु…"
 
-#: qml/components/PluginSelector.qml:96
+#: qml/components/PluginSelector.qml:86
 #, kde-format
 msgid "No matches"
 msgstr "न मेलनं"
 
-#: qml/components/PluginSelector.qml:96
+#: qml/components/PluginSelector.qml:86
 #, kde-format
 msgid "No plugins found"
 msgstr "प्लगिन्स् न प्राप्ताः"
-
-#: qml/components/private/AboutPlugin.qml:41
-#, kde-format
-msgctxt "Plugin name and plugin version"
-msgid "%1 %2"
-msgstr "%1 %2"
-
-#: qml/components/private/AboutPlugin.qml:63
-#, kde-format
-msgid "Copyright"
-msgstr "प्रतिलिपि अधिकार"
-
-#: qml/components/private/AboutPlugin.qml:80
-#, kde-format
-msgid "License:"
-msgstr "अनुज्ञापत्रम् :"
-
-#: qml/components/private/AboutPlugin.qml:99
-#, kde-format
-msgid "Authors"
-msgstr "लेखकाः"
-
-#: qml/components/private/AboutPlugin.qml:116
-#, kde-format
-msgid "Credits"
-msgstr "श्रेयः"
-
-#: qml/components/private/AboutPlugin.qml:133
-#, kde-format
-msgid "Translators"
-msgstr "अनुवादकाः"
-
-#: qml/components/private/AboutPlugin.qml:160
-#, kde-format
-msgid "Send an email to %1"
-msgstr "%1 इत्यस्मै ईमेल प्रेषयन्तु"
 
 #: qml/components/private/GridViewInternal.qml:66
 #, kde-format
@@ -167,3 +131,25 @@ msgstr "न कोऽपि वस्तूनि लब्धानि"
 #, kde-format
 msgid "Could not find resource '%1'"
 msgstr "'%1' इति संसाधनं न लब्धम् ।"
+
+#~ msgctxt "Plugin name and plugin version"
+#~ msgid "%1 %2"
+#~ msgstr "%1 %2"
+
+#~ msgid "Copyright"
+#~ msgstr "प्रतिलिपि अधिकार"
+
+#~ msgid "License:"
+#~ msgstr "अनुज्ञापत्रम् :"
+
+#~ msgid "Authors"
+#~ msgstr "लेखकाः"
+
+#~ msgid "Credits"
+#~ msgstr "श्रेयः"
+
+#~ msgid "Translators"
+#~ msgstr "अनुवादकाः"
+
+#~ msgid "Send an email to %1"
+#~ msgstr "%1 इत्यस्मै ईमेल प्रेषयन्तु"

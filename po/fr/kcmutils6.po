@@ -23,7 +23,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdelibs4\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-09-30 00:41+0000\n"
+"POT-Creation-Date: 2026-10-27 00:56+0000\n"
 "PO-Revision-Date: 2025-03-09 09:28+0100\n"
 "Last-Translator: Xavier Besnard <xavier.besnard@kde.org>\n"
 "Language-Team: French <French <kde-francophone@kde.org>>\n"
@@ -130,57 +130,21 @@ msgctxt "@info:tooltip"
 msgid "About"
 msgstr "À propos"
 
-#: qml/components/PluginDelegate.qml:129
+#: qml/components/PluginDelegate.qml:128
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Configure…"
 msgstr "Configurer..."
 
-#: qml/components/PluginSelector.qml:96
+#: qml/components/PluginSelector.qml:86
 #, kde-format
 msgid "No matches"
 msgstr "Aucune correspondance"
 
-#: qml/components/PluginSelector.qml:96
+#: qml/components/PluginSelector.qml:86
 #, kde-format
 msgid "No plugins found"
 msgstr "Impossible de trouver des modules externes"
-
-#: qml/components/private/AboutPlugin.qml:41
-#, kde-format
-msgctxt "Plugin name and plugin version"
-msgid "%1 %2"
-msgstr "%1 %2"
-
-#: qml/components/private/AboutPlugin.qml:63
-#, kde-format
-msgid "Copyright"
-msgstr "Licence"
-
-#: qml/components/private/AboutPlugin.qml:80
-#, kde-format
-msgid "License:"
-msgstr "Licence :"
-
-#: qml/components/private/AboutPlugin.qml:99
-#, kde-format
-msgid "Authors"
-msgstr "Auteurs"
-
-#: qml/components/private/AboutPlugin.qml:116
-#, kde-format
-msgid "Credits"
-msgstr "Remerciements"
-
-#: qml/components/private/AboutPlugin.qml:133
-#, kde-format
-msgid "Translators"
-msgstr "Traducteurs"
-
-#: qml/components/private/AboutPlugin.qml:160
-#, kde-format
-msgid "Send an email to %1"
-msgstr "Envoyer un courriel vers %1"
 
 #: qml/components/private/GridViewInternal.qml:66
 #, kde-format
@@ -191,6 +155,28 @@ msgstr "Aucun élément n'a été trouvé."
 #, kde-format
 msgid "Could not find resource '%1'"
 msgstr "Impossible de trouver la ressource « %1 »"
+
+#~ msgctxt "Plugin name and plugin version"
+#~ msgid "%1 %2"
+#~ msgstr "%1 %2"
+
+#~ msgid "Copyright"
+#~ msgstr "Licence"
+
+#~ msgid "License:"
+#~ msgstr "Licence :"
+
+#~ msgid "Authors"
+#~ msgstr "Auteurs"
+
+#~ msgid "Credits"
+#~ msgstr "Remerciements"
+
+#~ msgid "Translators"
+#~ msgstr "Traducteurs"
+
+#~ msgid "Send an email to %1"
+#~ msgstr "Envoyer un courriel vers %1"
 
 #~ msgid "Search..."
 #~ msgstr "Chercher…"

@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-09-30 00:41+0000\n"
+"POT-Creation-Date: 2026-10-27 00:56+0000\n"
 "PO-Revision-Date: 2025-03-11 10:02+0100\n"
 "Last-Translator: giovanni <g.sora@tiscali.it>\n"
 "Language-Team: Interlingua <kde-i18n-doc@kde.org>\n"
@@ -105,57 +105,21 @@ msgctxt "@info:tooltip"
 msgid "About"
 msgstr "A proposito"
 
-#: qml/components/PluginDelegate.qml:129
+#: qml/components/PluginDelegate.qml:128
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Configure…"
 msgstr "Configura…"
 
-#: qml/components/PluginSelector.qml:96
+#: qml/components/PluginSelector.qml:86
 #, kde-format
 msgid "No matches"
 msgstr "Nulle correspondentias"
 
-#: qml/components/PluginSelector.qml:96
+#: qml/components/PluginSelector.qml:86
 #, kde-format
 msgid "No plugins found"
 msgstr "Necun plugin  trovate"
-
-#: qml/components/private/AboutPlugin.qml:41
-#, kde-format
-msgctxt "Plugin name and plugin version"
-msgid "%1 %2"
-msgstr "%1 %2"
-
-#: qml/components/private/AboutPlugin.qml:63
-#, kde-format
-msgid "Copyright"
-msgstr "Copyright"
-
-#: qml/components/private/AboutPlugin.qml:80
-#, kde-format
-msgid "License:"
-msgstr "Licentia:"
-
-#: qml/components/private/AboutPlugin.qml:99
-#, kde-format
-msgid "Authors"
-msgstr "Autores"
-
-#: qml/components/private/AboutPlugin.qml:116
-#, kde-format
-msgid "Credits"
-msgstr "Gratias"
-
-#: qml/components/private/AboutPlugin.qml:133
-#, kde-format
-msgid "Translators"
-msgstr "Traductores"
-
-#: qml/components/private/AboutPlugin.qml:160
-#, kde-format
-msgid "Send an email to %1"
-msgstr "Invia un message de e-posta a  %1"
 
 #: qml/components/private/GridViewInternal.qml:66
 #, kde-format
@@ -166,6 +130,28 @@ msgstr "Necun elemento  trovate"
 #, kde-format
 msgid "Could not find resource '%1'"
 msgstr "Il non pote trovar ressource '%1'."
+
+#~ msgctxt "Plugin name and plugin version"
+#~ msgid "%1 %2"
+#~ msgstr "%1 %2"
+
+#~ msgid "Copyright"
+#~ msgstr "Copyright"
+
+#~ msgid "License:"
+#~ msgstr "Licentia:"
+
+#~ msgid "Authors"
+#~ msgstr "Autores"
+
+#~ msgid "Credits"
+#~ msgstr "Gratias"
+
+#~ msgid "Translators"
+#~ msgstr "Traductores"
+
+#~ msgid "Send an email to %1"
+#~ msgstr "Invia un message de e-posta a  %1"
 
 #~ msgid "Search..."
 #~ msgstr "Il cerca ..."
@@ -4580,10 +4566,10 @@ msgstr "Il non pote trovar ressource '%1'."
 #~ msgstr "Insimul de Characteres"
 
 #~ msgid "Repeats, Zero or More Times"
-#~ msgstr "Repite, Zero o Multe Vices"
+#~ msgstr "Repete, Zero o Multe Vices"
 
 #~ msgid "Repeats, One or More Times"
-#~ msgstr "Il Repite, uno o multe Vices"
+#~ msgstr "Il Repete, uno o multe Vices"
 
 #~ msgid "Optional"
 #~ msgstr "Optional"

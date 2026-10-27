@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdelibs4\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-09-30 00:41+0000\n"
+"POT-Creation-Date: 2026-10-27 00:56+0000\n"
 "PO-Revision-Date: 2025-03-09 17:15+0530\n"
 "Last-Translator: Kishore G <kishore96@gmail.com>\n"
 "Language-Team: Tamil <kde-i18n-doc@kde.org>\n"
@@ -107,57 +107,21 @@ msgctxt "@info:tooltip"
 msgid "About"
 msgstr "பற்றி"
 
-#: qml/components/PluginDelegate.qml:129
+#: qml/components/PluginDelegate.qml:128
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Configure…"
 msgstr "அமை..."
 
-#: qml/components/PluginSelector.qml:96
+#: qml/components/PluginSelector.qml:86
 #, kde-format
 msgid "No matches"
 msgstr "பொருத்தங்கள் இல்லை"
 
-#: qml/components/PluginSelector.qml:96
+#: qml/components/PluginSelector.qml:86
 #, kde-format
 msgid "No plugins found"
 msgstr "செருகுநிரல்கள் கண்டுபிடிக்கப்படவில்லை"
-
-#: qml/components/private/AboutPlugin.qml:41
-#, kde-format
-msgctxt "Plugin name and plugin version"
-msgid "%1 %2"
-msgstr "%1 %2"
-
-#: qml/components/private/AboutPlugin.qml:63
-#, kde-format
-msgid "Copyright"
-msgstr "பதிப்புரிமை"
-
-#: qml/components/private/AboutPlugin.qml:80
-#, kde-format
-msgid "License:"
-msgstr "உரிமம்:"
-
-#: qml/components/private/AboutPlugin.qml:99
-#, kde-format
-msgid "Authors"
-msgstr "இயற்றியவர்கள்"
-
-#: qml/components/private/AboutPlugin.qml:116
-#, kde-format
-msgid "Credits"
-msgstr "நன்றி"
-
-#: qml/components/private/AboutPlugin.qml:133
-#, kde-format
-msgid "Translators"
-msgstr "மொழிபெயர்ப்பாளர்கள்"
-
-#: qml/components/private/AboutPlugin.qml:160
-#, kde-format
-msgid "Send an email to %1"
-msgstr "%1 என்பவருக்கு மின்னஞ்சல் அனுப்பு"
 
 #: qml/components/private/GridViewInternal.qml:66
 #, kde-format
@@ -168,6 +132,28 @@ msgstr "ஒன்றும் கண்டுபிடிக்கப்பட�
 #, kde-format
 msgid "Could not find resource '%1'"
 msgstr "'%1' என்பதை கண்டுபிடிக்க முடியவில்லை."
+
+#~ msgctxt "Plugin name and plugin version"
+#~ msgid "%1 %2"
+#~ msgstr "%1 %2"
+
+#~ msgid "Copyright"
+#~ msgstr "பதிப்புரிமை"
+
+#~ msgid "License:"
+#~ msgstr "உரிமம்:"
+
+#~ msgid "Authors"
+#~ msgstr "இயற்றியவர்கள்"
+
+#~ msgid "Credits"
+#~ msgstr "நன்றி"
+
+#~ msgid "Translators"
+#~ msgstr "மொழிபெயர்ப்பாளர்கள்"
+
+#~ msgid "Send an email to %1"
+#~ msgstr "%1 என்பவருக்கு மின்னஞ்சல் அனுப்பு"
 
 #~ msgid "Search..."
 #~ msgstr "தேடு..."

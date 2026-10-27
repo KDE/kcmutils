@@ -22,7 +22,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kcmutils5\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-09-30 00:41+0000\n"
+"POT-Creation-Date: 2026-10-27 00:56+0000\n"
 "PO-Revision-Date: 2025-03-08 14:01+0200\n"
 "Last-Translator: Yaron Shahrabani <sh.yaron@gmail.com>\n"
 "Language-Team: צוות התרגום של KDE ישראל\n"
@@ -121,57 +121,21 @@ msgctxt "@info:tooltip"
 msgid "About"
 msgstr "על אודות"
 
-#: qml/components/PluginDelegate.qml:129
+#: qml/components/PluginDelegate.qml:128
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Configure…"
 msgstr "הגדרה…"
 
-#: qml/components/PluginSelector.qml:96
+#: qml/components/PluginSelector.qml:86
 #, kde-format
 msgid "No matches"
 msgstr "אין התאמות"
 
-#: qml/components/PluginSelector.qml:96
+#: qml/components/PluginSelector.qml:86
 #, kde-format
 msgid "No plugins found"
 msgstr "לא נמצאו תוספים"
-
-#: qml/components/private/AboutPlugin.qml:41
-#, kde-format
-msgctxt "Plugin name and plugin version"
-msgid "%1 %2"
-msgstr "%1 %2"
-
-#: qml/components/private/AboutPlugin.qml:63
-#, kde-format
-msgid "Copyright"
-msgstr "זכויות יוצרים"
-
-#: qml/components/private/AboutPlugin.qml:80
-#, kde-format
-msgid "License:"
-msgstr "רישיון:"
-
-#: qml/components/private/AboutPlugin.qml:99
-#, kde-format
-msgid "Authors"
-msgstr "יוצרים"
-
-#: qml/components/private/AboutPlugin.qml:116
-#, kde-format
-msgid "Credits"
-msgstr "תודות"
-
-#: qml/components/private/AboutPlugin.qml:133
-#, kde-format
-msgid "Translators"
-msgstr "מתרגמים"
-
-#: qml/components/private/AboutPlugin.qml:160
-#, kde-format
-msgid "Send an email to %1"
-msgstr "שליחת דוא״ל אל %1"
 
 #: qml/components/private/GridViewInternal.qml:66
 #, kde-format
@@ -182,6 +146,28 @@ msgstr "לא נמצאו פריטים"
 #, kde-format
 msgid "Could not find resource '%1'"
 msgstr "לא ניתן למצוא את המשאב ‚%1’"
+
+#~ msgctxt "Plugin name and plugin version"
+#~ msgid "%1 %2"
+#~ msgstr "%1 %2"
+
+#~ msgid "Copyright"
+#~ msgstr "זכויות יוצרים"
+
+#~ msgid "License:"
+#~ msgstr "רישיון:"
+
+#~ msgid "Authors"
+#~ msgstr "יוצרים"
+
+#~ msgid "Credits"
+#~ msgstr "תודות"
+
+#~ msgid "Translators"
+#~ msgstr "מתרגמים"
+
+#~ msgid "Send an email to %1"
+#~ msgstr "שליחת דוא״ל אל %1"
 
 #, fuzzy
 #~| msgid "Configure"

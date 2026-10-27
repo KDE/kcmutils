@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdelibs4\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-09-30 00:41+0000\n"
+"POT-Creation-Date: 2026-10-27 00:56+0000\n"
 "PO-Revision-Date: 2025-04-06 22:30+0200\n"
 "Last-Translator: Shinjo Park <kde@peremen.name>\n"
 "Language-Team: Korean <kde-kr@kde.org>\n"
@@ -105,57 +105,21 @@ msgctxt "@info:tooltip"
 msgid "About"
 msgstr "정보"
 
-#: qml/components/PluginDelegate.qml:129
+#: qml/components/PluginDelegate.qml:128
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Configure…"
 msgstr "설정…"
 
-#: qml/components/PluginSelector.qml:96
+#: qml/components/PluginSelector.qml:86
 #, kde-format
 msgid "No matches"
 msgstr "검색 결과 없음"
 
-#: qml/components/PluginSelector.qml:96
+#: qml/components/PluginSelector.qml:86
 #, kde-format
 msgid "No plugins found"
 msgstr "플러그인을 찾을 수 없음"
-
-#: qml/components/private/AboutPlugin.qml:41
-#, kde-format
-msgctxt "Plugin name and plugin version"
-msgid "%1 %2"
-msgstr "%1 %2"
-
-#: qml/components/private/AboutPlugin.qml:63
-#, kde-format
-msgid "Copyright"
-msgstr "저작권"
-
-#: qml/components/private/AboutPlugin.qml:80
-#, kde-format
-msgid "License:"
-msgstr "라이선스:"
-
-#: qml/components/private/AboutPlugin.qml:99
-#, kde-format
-msgid "Authors"
-msgstr "작성자"
-
-#: qml/components/private/AboutPlugin.qml:116
-#, kde-format
-msgid "Credits"
-msgstr "제작진"
-
-#: qml/components/private/AboutPlugin.qml:133
-#, kde-format
-msgid "Translators"
-msgstr "번역자"
-
-#: qml/components/private/AboutPlugin.qml:160
-#, kde-format
-msgid "Send an email to %1"
-msgstr "%1(으)로 이메일 보내기"
 
 #: qml/components/private/GridViewInternal.qml:66
 #, kde-format
@@ -166,6 +130,28 @@ msgstr "항목 없음"
 #, kde-format
 msgid "Could not find resource '%1'"
 msgstr "'%1' 리소스를 찾을 수 없음"
+
+#~ msgctxt "Plugin name and plugin version"
+#~ msgid "%1 %2"
+#~ msgstr "%1 %2"
+
+#~ msgid "Copyright"
+#~ msgstr "저작권"
+
+#~ msgid "License:"
+#~ msgstr "라이선스:"
+
+#~ msgid "Authors"
+#~ msgstr "작성자"
+
+#~ msgid "Credits"
+#~ msgstr "제작진"
+
+#~ msgid "Translators"
+#~ msgstr "번역자"
+
+#~ msgid "Send an email to %1"
+#~ msgstr "%1(으)로 이메일 보내기"
 
 #~ msgctxt "@info:tooltip"
 #~ msgid "Configure..."

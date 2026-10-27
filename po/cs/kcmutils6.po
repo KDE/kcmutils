@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdelibs4\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-09-30 00:41+0000\n"
+"POT-Creation-Date: 2026-10-27 00:56+0000\n"
 "PO-Revision-Date: 2026-04-06 21:34+0200\n"
 "Last-Translator: Libor Filípek <filipek.libor@protonmail.com>\n"
 "Language-Team: \n"
@@ -110,57 +110,21 @@ msgctxt "@info:tooltip"
 msgid "About"
 msgstr "O aplikaci"
 
-#: qml/components/PluginDelegate.qml:129
+#: qml/components/PluginDelegate.qml:128
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Configure…"
 msgstr "Nastavit…"
 
-#: qml/components/PluginSelector.qml:96
+#: qml/components/PluginSelector.qml:86
 #, kde-format
 msgid "No matches"
 msgstr "Žádné shody"
 
-#: qml/components/PluginSelector.qml:96
+#: qml/components/PluginSelector.qml:86
 #, kde-format
 msgid "No plugins found"
 msgstr "Nenalezeny žádné moduly"
-
-#: qml/components/private/AboutPlugin.qml:41
-#, kde-format
-msgctxt "Plugin name and plugin version"
-msgid "%1 %2"
-msgstr "%1 %2"
-
-#: qml/components/private/AboutPlugin.qml:63
-#, kde-format
-msgid "Copyright"
-msgstr "Autorská práva"
-
-#: qml/components/private/AboutPlugin.qml:80
-#, kde-format
-msgid "License:"
-msgstr "Licence:"
-
-#: qml/components/private/AboutPlugin.qml:99
-#, kde-format
-msgid "Authors"
-msgstr "Autoři"
-
-#: qml/components/private/AboutPlugin.qml:116
-#, kde-format
-msgid "Credits"
-msgstr "Poděkování"
-
-#: qml/components/private/AboutPlugin.qml:133
-#, kde-format
-msgid "Translators"
-msgstr "Překladatelé"
-
-#: qml/components/private/AboutPlugin.qml:160
-#, kde-format
-msgid "Send an email to %1"
-msgstr "Odeslat e-mail %1"
 
 #: qml/components/private/GridViewInternal.qml:66
 #, kde-format
@@ -171,3 +135,25 @@ msgstr "Nenalezeny žádné položky"
 #, kde-format
 msgid "Could not find resource '%1'"
 msgstr "Nelze najít zdroj '%1'"
+
+#~ msgctxt "Plugin name and plugin version"
+#~ msgid "%1 %2"
+#~ msgstr "%1 %2"
+
+#~ msgid "Copyright"
+#~ msgstr "Autorská práva"
+
+#~ msgid "License:"
+#~ msgstr "Licence:"
+
+#~ msgid "Authors"
+#~ msgstr "Autoři"
+
+#~ msgid "Credits"
+#~ msgstr "Poděkování"
+
+#~ msgid "Translators"
+#~ msgstr "Překladatelé"
+
+#~ msgid "Send an email to %1"
+#~ msgstr "Odeslat e-mail %1"

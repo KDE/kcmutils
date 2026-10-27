@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kcmutils\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-09-30 00:41+0000\n"
+"POT-Creation-Date: 2026-10-27 00:56+0000\n"
 "PO-Revision-Date: 2022-05-01 22:36+0400\n"
 "Last-Translator: Kheyyam Gojayev <xxmn77@gmail.com>\n"
 "Language-Team: Azerbaijani <kde-i18n-doc@kde.org>\n"
@@ -105,58 +105,22 @@ msgctxt "@info:tooltip"
 msgid "About"
 msgstr "Haqqında"
 
-#: qml/components/PluginDelegate.qml:129
+#: qml/components/PluginDelegate.qml:128
 #, fuzzy, kde-format
 #| msgid "Configure"
 msgctxt "@info:tooltip"
 msgid "Configure…"
 msgstr "Tənzimləmək"
 
-#: qml/components/PluginSelector.qml:96
+#: qml/components/PluginSelector.qml:86
 #, kde-format
 msgid "No matches"
 msgstr "Uyğun gələn yoxdur"
 
-#: qml/components/PluginSelector.qml:96
+#: qml/components/PluginSelector.qml:86
 #, kde-format
 msgid "No plugins found"
 msgstr "Qoşmalar tapılmadı"
-
-#: qml/components/private/AboutPlugin.qml:41
-#, kde-format
-msgctxt "Plugin name and plugin version"
-msgid "%1 %2"
-msgstr "%1 %2"
-
-#: qml/components/private/AboutPlugin.qml:63
-#, kde-format
-msgid "Copyright"
-msgstr "Müəllif Hüquqları"
-
-#: qml/components/private/AboutPlugin.qml:80
-#, kde-format
-msgid "License:"
-msgstr "Lisenziya:"
-
-#: qml/components/private/AboutPlugin.qml:99
-#, kde-format
-msgid "Authors"
-msgstr "Müəlliflər"
-
-#: qml/components/private/AboutPlugin.qml:116
-#, kde-format
-msgid "Credits"
-msgstr "Minnətdarlıq"
-
-#: qml/components/private/AboutPlugin.qml:133
-#, kde-format
-msgid "Translators"
-msgstr "Tərcüməçilər"
-
-#: qml/components/private/AboutPlugin.qml:160
-#, kde-format
-msgid "Send an email to %1"
-msgstr "%1 e-poçtuna məktub göndərin"
 
 #: qml/components/private/GridViewInternal.qml:66
 #, fuzzy, kde-format
@@ -168,6 +132,28 @@ msgstr "Qoşmalar tapılmadı"
 #, kde-format
 msgid "Could not find resource '%1'"
 msgstr ""
+
+#~ msgctxt "Plugin name and plugin version"
+#~ msgid "%1 %2"
+#~ msgstr "%1 %2"
+
+#~ msgid "Copyright"
+#~ msgstr "Müəllif Hüquqları"
+
+#~ msgid "License:"
+#~ msgstr "Lisenziya:"
+
+#~ msgid "Authors"
+#~ msgstr "Müəlliflər"
+
+#~ msgid "Credits"
+#~ msgstr "Minnətdarlıq"
+
+#~ msgid "Translators"
+#~ msgstr "Tərcüməçilər"
+
+#~ msgid "Send an email to %1"
+#~ msgstr "%1 e-poçtuna məktub göndərin"
 
 #~ msgctxt "@info:tooltip"
 #~ msgid "Configure..."

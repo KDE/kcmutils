@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kcmutils\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-09-30 00:41+0000\n"
+"POT-Creation-Date: 2026-10-27 00:56+0000\n"
 "PO-Revision-Date: 2025-03-08 06:07+0100\n"
 "Last-Translator: Temuri Doghonadze <temuri.doghonadze@gmail.com>\n"
 "Language-Team: Georgian <kde-i18n-doc@kde.org>\n"
@@ -106,57 +106,21 @@ msgctxt "@info:tooltip"
 msgid "About"
 msgstr "შესახებ"
 
-#: qml/components/PluginDelegate.qml:129
+#: qml/components/PluginDelegate.qml:128
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Configure…"
 msgstr "მორგება…"
 
-#: qml/components/PluginSelector.qml:96
+#: qml/components/PluginSelector.qml:86
 #, kde-format
 msgid "No matches"
 msgstr "დათხვევა არ არსებობს"
 
-#: qml/components/PluginSelector.qml:96
+#: qml/components/PluginSelector.qml:86
 #, kde-format
 msgid "No plugins found"
 msgstr "დამატებები ნაპოვნი არაა"
-
-#: qml/components/private/AboutPlugin.qml:41
-#, kde-format
-msgctxt "Plugin name and plugin version"
-msgid "%1 %2"
-msgstr "%1 %2"
-
-#: qml/components/private/AboutPlugin.qml:63
-#, kde-format
-msgid "Copyright"
-msgstr "საავტორო უფლებები"
-
-#: qml/components/private/AboutPlugin.qml:80
-#, kde-format
-msgid "License:"
-msgstr "ლიცენზია:"
-
-#: qml/components/private/AboutPlugin.qml:99
-#, kde-format
-msgid "Authors"
-msgstr "ავტორები"
-
-#: qml/components/private/AboutPlugin.qml:116
-#, kde-format
-msgid "Credits"
-msgstr "კრედიტები"
-
-#: qml/components/private/AboutPlugin.qml:133
-#, kde-format
-msgid "Translators"
-msgstr "მთარგმნელები"
-
-#: qml/components/private/AboutPlugin.qml:160
-#, kde-format
-msgid "Send an email to %1"
-msgstr "%1-სთვის ელფოსტის გაგზავნა"
 
 #: qml/components/private/GridViewInternal.qml:66
 #, kde-format
@@ -167,6 +131,28 @@ msgstr "ჩანაწერები ნაპოვნი არაა"
 #, kde-format
 msgid "Could not find resource '%1'"
 msgstr "რესურსი '%1' ვერ ვიპოვე"
+
+#~ msgctxt "Plugin name and plugin version"
+#~ msgid "%1 %2"
+#~ msgstr "%1 %2"
+
+#~ msgid "Copyright"
+#~ msgstr "საავტორო უფლებები"
+
+#~ msgid "License:"
+#~ msgstr "ლიცენზია:"
+
+#~ msgid "Authors"
+#~ msgstr "ავტორები"
+
+#~ msgid "Credits"
+#~ msgstr "კრედიტები"
+
+#~ msgid "Translators"
+#~ msgstr "მთარგმნელები"
+
+#~ msgid "Send an email to %1"
+#~ msgstr "%1-სთვის ელფოსტის გაგზავნა"
 
 #~ msgid "Invalid KPackage '%1'"
 #~ msgstr "არასწორი KPackage '%1'"

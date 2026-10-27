@@ -11,7 +11,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdelibs4\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-09-30 00:41+0000\n"
+"POT-Creation-Date: 2026-10-27 00:56+0000\n"
 "PO-Revision-Date: 2011-07-22 16:08+0200\n"
 "Last-Translator: Marko Dimjašević <marko@dimjasevic.net>\n"
 "Language-Team: Croatian <kde-croatia-list@lists.sourceforge.net>\n"
@@ -129,66 +129,23 @@ msgctxt "@info:tooltip"
 msgid "About"
 msgstr "O &programu"
 
-#: qml/components/PluginDelegate.qml:129
+#: qml/components/PluginDelegate.qml:128
 #, fuzzy, kde-format
 #| msgid "Configure"
 msgctxt "@info:tooltip"
 msgid "Configure…"
 msgstr "Konfiguriranje"
 
-#: qml/components/PluginSelector.qml:96
+#: qml/components/PluginSelector.qml:86
 #, kde-format
 msgid "No matches"
 msgstr ""
 
-#: qml/components/PluginSelector.qml:96
+#: qml/components/PluginSelector.qml:86
 #, fuzzy, kde-format
 #| msgid "Not found"
 msgid "No plugins found"
 msgstr "Nije nađeno"
-
-#: qml/components/private/AboutPlugin.qml:41
-#, fuzzy, kde-format
-#| msgctxt "concatenation of dates and time"
-#| msgid "%1 %2"
-msgctxt "Plugin name and plugin version"
-msgid "%1 %2"
-msgstr "%1 %2"
-
-#: qml/components/private/AboutPlugin.qml:63
-#, fuzzy, kde-format
-#| msgid "Copy"
-msgid "Copyright"
-msgstr "Kopiraj"
-
-#: qml/components/private/AboutPlugin.qml:80
-#, fuzzy, kde-format
-#| msgid "License:"
-msgid "License:"
-msgstr "Licenca:"
-
-#: qml/components/private/AboutPlugin.qml:99
-#, fuzzy, kde-format
-#| msgid "A&uthors"
-msgid "Authors"
-msgstr "&Autori"
-
-#: qml/components/private/AboutPlugin.qml:116
-#, kde-format
-msgid "Credits"
-msgstr ""
-
-#: qml/components/private/AboutPlugin.qml:133
-#, fuzzy, kde-format
-#| msgid "Translation"
-msgid "Translators"
-msgstr "Prijevod"
-
-#: qml/components/private/AboutPlugin.qml:160
-#, fuzzy, kde-format
-#| msgid "&Send Email"
-msgid "Send an email to %1"
-msgstr "%Pošalji e-poštu"
 
 #: qml/components/private/GridViewInternal.qml:66
 #, fuzzy, kde-format
@@ -201,6 +158,38 @@ msgstr "Nije nađeno"
 #| msgid "Could not find service '%1'."
 msgid "Could not find resource '%1'"
 msgstr "Nije moguće pronaći uslugu '%1'."
+
+#, fuzzy
+#~| msgctxt "concatenation of dates and time"
+#~| msgid "%1 %2"
+#~ msgctxt "Plugin name and plugin version"
+#~ msgid "%1 %2"
+#~ msgstr "%1 %2"
+
+#, fuzzy
+#~| msgid "Copy"
+#~ msgid "Copyright"
+#~ msgstr "Kopiraj"
+
+#, fuzzy
+#~| msgid "License:"
+#~ msgid "License:"
+#~ msgstr "Licenca:"
+
+#, fuzzy
+#~| msgid "A&uthors"
+#~ msgid "Authors"
+#~ msgstr "&Autori"
+
+#, fuzzy
+#~| msgid "Translation"
+#~ msgid "Translators"
+#~ msgstr "Prijevod"
+
+#, fuzzy
+#~| msgid "&Send Email"
+#~ msgid "Send an email to %1"
+#~ msgstr "%Pošalji e-poštu"
 
 #, fuzzy
 #~| msgid "Search"

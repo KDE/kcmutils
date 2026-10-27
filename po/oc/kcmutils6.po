@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdelibs4\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-09-30 00:41+0000\n"
+"POT-Creation-Date: 2026-10-27 00:56+0000\n"
 "PO-Revision-Date: 2008-08-06 00:07+0200\n"
 "Last-Translator: \n"
 "Language-Team: Occitan <oc@li.org>\n"
@@ -108,65 +108,23 @@ msgctxt "@info:tooltip"
 msgid "About"
 msgstr "&A prepaus de"
 
-#: qml/components/PluginDelegate.qml:129
+#: qml/components/PluginDelegate.qml:128
 #, fuzzy, kde-format
 #| msgid "Configure"
 msgctxt "@info:tooltip"
 msgid "Configure…"
 msgstr "Configurar"
 
-#: qml/components/PluginSelector.qml:96
+#: qml/components/PluginSelector.qml:86
 #, kde-format
 msgid "No matches"
 msgstr ""
 
-#: qml/components/PluginSelector.qml:96
+#: qml/components/PluginSelector.qml:86
 #, fuzzy, kde-format
 #| msgid "Qt plugins"
 msgid "No plugins found"
 msgstr "Modules Qt"
-
-#: qml/components/private/AboutPlugin.qml:41
-#, fuzzy, kde-format
-#| msgctxt "concatenation of dates and time"
-#| msgid "%1 %2"
-msgctxt "Plugin name and plugin version"
-msgid "%1 %2"
-msgstr "%1 %2"
-
-#: qml/components/private/AboutPlugin.qml:63
-#, fuzzy, kde-format
-#| msgid "Copy"
-msgid "Copyright"
-msgstr "Copiar"
-
-#: qml/components/private/AboutPlugin.qml:80
-#, kde-format
-msgid "License:"
-msgstr "Licéncia :"
-
-#: qml/components/private/AboutPlugin.qml:99
-#, fuzzy, kde-format
-#| msgid "A&uthors"
-msgid "Authors"
-msgstr "A&utors"
-
-#: qml/components/private/AboutPlugin.qml:116
-#, kde-format
-msgid "Credits"
-msgstr ""
-
-#: qml/components/private/AboutPlugin.qml:133
-#, fuzzy, kde-format
-#| msgid "Translation"
-msgid "Translators"
-msgstr "Revirada"
-
-#: qml/components/private/AboutPlugin.qml:160
-#, fuzzy, kde-format
-#| msgid "&Send Email"
-msgid "Send an email to %1"
-msgstr "&Mandar lo corrièr electronic"
 
 #: qml/components/private/GridViewInternal.qml:66
 #, fuzzy, kde-format
@@ -179,6 +137,36 @@ msgstr "Modules Qt"
 #| msgid "Could not find service '%1'."
 msgid "Could not find resource '%1'"
 msgstr "Impossible de trobar lo servici '%1'."
+
+#, fuzzy
+#~| msgctxt "concatenation of dates and time"
+#~| msgid "%1 %2"
+#~ msgctxt "Plugin name and plugin version"
+#~ msgid "%1 %2"
+#~ msgstr "%1 %2"
+
+#, fuzzy
+#~| msgid "Copy"
+#~ msgid "Copyright"
+#~ msgstr "Copiar"
+
+#~ msgid "License:"
+#~ msgstr "Licéncia :"
+
+#, fuzzy
+#~| msgid "A&uthors"
+#~ msgid "Authors"
+#~ msgstr "A&utors"
+
+#, fuzzy
+#~| msgid "Translation"
+#~ msgid "Translators"
+#~ msgstr "Revirada"
+
+#, fuzzy
+#~| msgid "&Send Email"
+#~ msgid "Send an email to %1"
+#~ msgstr "&Mandar lo corrièr electronic"
 
 #, fuzzy
 #~| msgid "Search"

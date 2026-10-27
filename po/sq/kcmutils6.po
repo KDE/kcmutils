@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kde4libs\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-09-30 00:41+0000\n"
+"POT-Creation-Date: 2026-10-27 00:56+0000\n"
 "PO-Revision-Date: 2012-01-19 00:20-0500\n"
 "Last-Translator: Agron Selimaj <as9902613@gmail.com>\n"
 "Language-Team: Albanian <sq@li.org>\n"
@@ -108,65 +108,23 @@ msgctxt "@info:tooltip"
 msgid "About"
 msgstr "&Rreth"
 
-#: qml/components/PluginDelegate.qml:129
+#: qml/components/PluginDelegate.qml:128
 #, fuzzy, kde-format
 #| msgid "Configure"
 msgctxt "@info:tooltip"
 msgid "Configure…"
 msgstr "Konfiguro"
 
-#: qml/components/PluginSelector.qml:96
+#: qml/components/PluginSelector.qml:86
 #, kde-format
 msgid "No matches"
 msgstr ""
 
-#: qml/components/PluginSelector.qml:96
+#: qml/components/PluginSelector.qml:86
 #, fuzzy, kde-format
 #| msgid "Not found"
 msgid "No plugins found"
 msgstr "Nuk u gjet"
-
-#: qml/components/private/AboutPlugin.qml:41
-#, fuzzy, kde-format
-#| msgctxt "concatenation of dates and time"
-#| msgid "%1 %2"
-msgctxt "Plugin name and plugin version"
-msgid "%1 %2"
-msgstr "%1 %2"
-
-#: qml/components/private/AboutPlugin.qml:63
-#, fuzzy, kde-format
-#| msgid "Copy"
-msgid "Copyright"
-msgstr "Kopjo"
-
-#: qml/components/private/AboutPlugin.qml:80
-#, kde-format
-msgid "License:"
-msgstr "Liçensa:"
-
-#: qml/components/private/AboutPlugin.qml:99
-#, fuzzy, kde-format
-#| msgid "A&uthors"
-msgid "Authors"
-msgstr "A&utorët"
-
-#: qml/components/private/AboutPlugin.qml:116
-#, kde-format
-msgid "Credits"
-msgstr ""
-
-#: qml/components/private/AboutPlugin.qml:133
-#, fuzzy, kde-format
-#| msgid "Translation"
-msgid "Translators"
-msgstr "Përkthim"
-
-#: qml/components/private/AboutPlugin.qml:160
-#, fuzzy, kde-format
-#| msgid "&Send Email"
-msgid "Send an email to %1"
-msgstr "&Dërgo Email-in"
 
 #: qml/components/private/GridViewInternal.qml:66
 #, fuzzy, kde-format
@@ -179,6 +137,36 @@ msgstr "Nuk u gjet"
 #| msgid "Could not find service '%1'."
 msgid "Could not find resource '%1'"
 msgstr "Nuk mund të gjejmë shërbimin '%1'."
+
+#, fuzzy
+#~| msgctxt "concatenation of dates and time"
+#~| msgid "%1 %2"
+#~ msgctxt "Plugin name and plugin version"
+#~ msgid "%1 %2"
+#~ msgstr "%1 %2"
+
+#, fuzzy
+#~| msgid "Copy"
+#~ msgid "Copyright"
+#~ msgstr "Kopjo"
+
+#~ msgid "License:"
+#~ msgstr "Liçensa:"
+
+#, fuzzy
+#~| msgid "A&uthors"
+#~ msgid "Authors"
+#~ msgstr "A&utorët"
+
+#, fuzzy
+#~| msgid "Translation"
+#~ msgid "Translators"
+#~ msgstr "Përkthim"
+
+#, fuzzy
+#~| msgid "&Send Email"
+#~ msgid "Send an email to %1"
+#~ msgstr "&Dërgo Email-in"
 
 #, fuzzy
 #~| msgid "&Search"

@@ -12,7 +12,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdelibs4\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-09-30 00:41+0000\n"
+"POT-Creation-Date: 2026-10-27 00:56+0000\n"
 "PO-Revision-Date: 2002-12-13 17:20SAST\n"
 "Last-Translator: Lwandle Mgidlana <lwandle@translate.org.za>\n"
 "Language-Team: Xhosa <xhosa@translate.org.za>\n"
@@ -108,63 +108,22 @@ msgctxt "@info:tooltip"
 msgid "About"
 msgstr "&Malunga"
 
-#: qml/components/PluginDelegate.qml:129
+#: qml/components/PluginDelegate.qml:128
 #, fuzzy, kde-format
 #| msgid "Configure"
 msgctxt "@info:tooltip"
 msgid "Configure…"
 msgstr "Qwalasela"
 
-#: qml/components/PluginSelector.qml:96
+#: qml/components/PluginSelector.qml:86
 #, kde-format
 msgid "No matches"
 msgstr ""
 
-#: qml/components/PluginSelector.qml:96
+#: qml/components/PluginSelector.qml:86
 #, fuzzy, kde-format
 msgid "No plugins found"
 msgstr "utelekiso olunye olufumanekileyo"
-
-#: qml/components/private/AboutPlugin.qml:41
-#, fuzzy, kde-format
-#| msgctxt "concatenation of dates and time"
-#| msgid "%1 %2"
-msgctxt "Plugin name and plugin version"
-msgid "%1 %2"
-msgstr "%1 %2"
-
-#: qml/components/private/AboutPlugin.qml:63
-#, fuzzy, kde-format
-#| msgid "Copy"
-msgid "Copyright"
-msgstr "Khuphela"
-
-#: qml/components/private/AboutPlugin.qml:80
-#, fuzzy, kde-format
-msgid "License:"
-msgstr "Umsinga wesandi Phezulu"
-
-#: qml/components/private/AboutPlugin.qml:99
-#, fuzzy, kde-format
-#| msgid "A&uthors"
-msgid "Authors"
-msgstr "&Ababhali"
-
-#: qml/components/private/AboutPlugin.qml:116
-#, kde-format
-msgid "Credits"
-msgstr ""
-
-#: qml/components/private/AboutPlugin.qml:133
-#, fuzzy, kde-format
-#| msgid "Translation"
-msgid "Translators"
-msgstr "Uguqulelo lomsebenzi kolunye ulwimi"
-
-#: qml/components/private/AboutPlugin.qml:160
-#, fuzzy, kde-format
-msgid "Send an email to %1"
-msgstr "Gcina Umfanekiso Njenge"
 
 #: qml/components/private/GridViewInternal.qml:66
 #, fuzzy, kde-format
@@ -176,6 +135,36 @@ msgstr "utelekiso olunye olufumanekileyo"
 #| msgid "Could not find service '%1'."
 msgid "Could not find resource '%1'"
 msgstr "Ayinakuyifumana inkonzo '%1'"
+
+#, fuzzy
+#~| msgctxt "concatenation of dates and time"
+#~| msgid "%1 %2"
+#~ msgctxt "Plugin name and plugin version"
+#~ msgid "%1 %2"
+#~ msgstr "%1 %2"
+
+#, fuzzy
+#~| msgid "Copy"
+#~ msgid "Copyright"
+#~ msgstr "Khuphela"
+
+#, fuzzy
+#~ msgid "License:"
+#~ msgstr "Umsinga wesandi Phezulu"
+
+#, fuzzy
+#~| msgid "A&uthors"
+#~ msgid "Authors"
+#~ msgstr "&Ababhali"
+
+#, fuzzy
+#~| msgid "Translation"
+#~ msgid "Translators"
+#~ msgstr "Uguqulelo lomsebenzi kolunye ulwimi"
+
+#, fuzzy
+#~ msgid "Send an email to %1"
+#~ msgstr "Gcina Umfanekiso Njenge"
 
 #, fuzzy
 #~| msgctxt "QAccel"

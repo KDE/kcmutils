@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdelibs4\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-09-30 00:41+0000\n"
+"POT-Creation-Date: 2026-10-27 00:56+0000\n"
 "PO-Revision-Date: 2021-08-22 13:04+0530\n"
 "Last-Translator: Raghavendra Kamath <raghu@raghukamath.com>\n"
 "Language-Team: kde-hindi\n"
@@ -110,65 +110,23 @@ msgctxt "@info:tooltip"
 msgid "About"
 msgstr "परिचय"
 
-#: qml/components/PluginDelegate.qml:129
+#: qml/components/PluginDelegate.qml:128
 #, fuzzy, kde-format
 #| msgid "Configure"
 msgctxt "@info:tooltip"
 msgid "Configure…"
 msgstr "कॉन्फ़िगर"
 
-#: qml/components/PluginSelector.qml:96
+#: qml/components/PluginSelector.qml:86
 #, kde-format
 msgid "No matches"
 msgstr ""
 
-#: qml/components/PluginSelector.qml:96
+#: qml/components/PluginSelector.qml:86
 #, fuzzy, kde-format
 #| msgid "Not found"
 msgid "No plugins found"
 msgstr "नहीं मिला"
-
-#: qml/components/private/AboutPlugin.qml:41
-#, fuzzy, kde-format
-#| msgctxt "concatenation of dates and time"
-#| msgid "%1 %2"
-msgctxt "Plugin name and plugin version"
-msgid "%1 %2"
-msgstr "%1 %2"
-
-#: qml/components/private/AboutPlugin.qml:63
-#, fuzzy, kde-format
-#| msgid "Copy"
-msgid "Copyright"
-msgstr "नक़ल"
-
-#: qml/components/private/AboutPlugin.qml:80
-#, kde-format
-msgid "License:"
-msgstr "लाइसेंस:"
-
-#: qml/components/private/AboutPlugin.qml:99
-#, fuzzy, kde-format
-#| msgid "A&uthors"
-msgid "Authors"
-msgstr "लेखक गण (&u)"
-
-#: qml/components/private/AboutPlugin.qml:116
-#, kde-format
-msgid "Credits"
-msgstr ""
-
-#: qml/components/private/AboutPlugin.qml:133
-#, fuzzy, kde-format
-#| msgid "Translation"
-msgid "Translators"
-msgstr "अनुवाद "
-
-#: qml/components/private/AboutPlugin.qml:160
-#, fuzzy, kde-format
-#| msgid "&Send Email"
-msgid "Send an email to %1"
-msgstr "ईमेल भेजें (&S)"
 
 #: qml/components/private/GridViewInternal.qml:66
 #, fuzzy, kde-format
@@ -181,6 +139,36 @@ msgstr "नहीं मिला"
 #| msgid "Could not find service '%1'."
 msgid "Could not find resource '%1'"
 msgstr "सर्विस '%1' नहीं मिला."
+
+#, fuzzy
+#~| msgctxt "concatenation of dates and time"
+#~| msgid "%1 %2"
+#~ msgctxt "Plugin name and plugin version"
+#~ msgid "%1 %2"
+#~ msgstr "%1 %2"
+
+#, fuzzy
+#~| msgid "Copy"
+#~ msgid "Copyright"
+#~ msgstr "नक़ल"
+
+#~ msgid "License:"
+#~ msgstr "लाइसेंस:"
+
+#, fuzzy
+#~| msgid "A&uthors"
+#~ msgid "Authors"
+#~ msgstr "लेखक गण (&u)"
+
+#, fuzzy
+#~| msgid "Translation"
+#~ msgid "Translators"
+#~ msgstr "अनुवाद "
+
+#, fuzzy
+#~| msgid "&Send Email"
+#~ msgid "Send an email to %1"
+#~ msgstr "ईमेल भेजें (&S)"
 
 #~ msgid "Search..."
 #~ msgstr "खोजें..."

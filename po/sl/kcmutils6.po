@@ -17,7 +17,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdelibs4\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-09-30 00:41+0000\n"
+"POT-Creation-Date: 2026-10-27 00:56+0000\n"
 "PO-Revision-Date: 2025-03-08 07:15+0100\n"
 "Last-Translator: Matjaž Jeran <matjaz.jeran@amis.net>\n"
 "Language-Team: Slovenian <lugos-slo@lugos.si>\n"
@@ -119,57 +119,21 @@ msgctxt "@info:tooltip"
 msgid "About"
 msgstr "O programu"
 
-#: qml/components/PluginDelegate.qml:129
+#: qml/components/PluginDelegate.qml:128
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Configure…"
 msgstr "Konfiguriraj…"
 
-#: qml/components/PluginSelector.qml:96
+#: qml/components/PluginSelector.qml:86
 #, kde-format
 msgid "No matches"
 msgstr "Ni zadetkov"
 
-#: qml/components/PluginSelector.qml:96
+#: qml/components/PluginSelector.qml:86
 #, kde-format
 msgid "No plugins found"
 msgstr "Ni najdenih vtičnikov"
-
-#: qml/components/private/AboutPlugin.qml:41
-#, kde-format
-msgctxt "Plugin name and plugin version"
-msgid "%1 %2"
-msgstr "%1 %2"
-
-#: qml/components/private/AboutPlugin.qml:63
-#, kde-format
-msgid "Copyright"
-msgstr "Copyright"
-
-#: qml/components/private/AboutPlugin.qml:80
-#, kde-format
-msgid "License:"
-msgstr "Licenca:"
-
-#: qml/components/private/AboutPlugin.qml:99
-#, kde-format
-msgid "Authors"
-msgstr "Avtorji"
-
-#: qml/components/private/AboutPlugin.qml:116
-#, kde-format
-msgid "Credits"
-msgstr "Zasluge"
-
-#: qml/components/private/AboutPlugin.qml:133
-#, kde-format
-msgid "Translators"
-msgstr "Prevajalci"
-
-#: qml/components/private/AboutPlugin.qml:160
-#, kde-format
-msgid "Send an email to %1"
-msgstr "Pošlji e-pošto za %1"
 
 #: qml/components/private/GridViewInternal.qml:66
 #, kde-format
@@ -180,6 +144,28 @@ msgstr "Ni najdenih postavk"
 #, kde-format
 msgid "Could not find resource '%1'"
 msgstr "Ni bilo mogoče najti vira '%1'"
+
+#~ msgctxt "Plugin name and plugin version"
+#~ msgid "%1 %2"
+#~ msgstr "%1 %2"
+
+#~ msgid "Copyright"
+#~ msgstr "Copyright"
+
+#~ msgid "License:"
+#~ msgstr "Licenca:"
+
+#~ msgid "Authors"
+#~ msgstr "Avtorji"
+
+#~ msgid "Credits"
+#~ msgstr "Zasluge"
+
+#~ msgid "Translators"
+#~ msgstr "Prevajalci"
+
+#~ msgid "Send an email to %1"
+#~ msgstr "Pošlji e-pošto za %1"
 
 #~ msgid "Search..."
 #~ msgstr "Poišči..."

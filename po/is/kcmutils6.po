@@ -12,7 +12,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdelibs4\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-09-30 00:41+0000\n"
+"POT-Creation-Date: 2026-10-27 00:56+0000\n"
 "PO-Revision-Date: 2025-07-11 19:09+0000\n"
 "Last-Translator: Gummi <gudmundure@gmail.com>\n"
 "Language-Team: Icelandic <kde-i18n-doc@kde.org>\n"
@@ -121,57 +121,21 @@ msgctxt "@info:tooltip"
 msgid "About"
 msgstr "Um hugbúnaðinn"
 
-#: qml/components/PluginDelegate.qml:129
+#: qml/components/PluginDelegate.qml:128
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Configure…"
 msgstr "Grunnstilla…"
 
-#: qml/components/PluginSelector.qml:96
+#: qml/components/PluginSelector.qml:86
 #, kde-format
 msgid "No matches"
 msgstr "Engar samsvaranir"
 
-#: qml/components/PluginSelector.qml:96
+#: qml/components/PluginSelector.qml:86
 #, kde-format
 msgid "No plugins found"
 msgstr "Engar viðbætur fundust"
-
-#: qml/components/private/AboutPlugin.qml:41
-#, kde-format
-msgctxt "Plugin name and plugin version"
-msgid "%1 %2"
-msgstr "%1 %2"
-
-#: qml/components/private/AboutPlugin.qml:63
-#, kde-format
-msgid "Copyright"
-msgstr "Höfundarréttur"
-
-#: qml/components/private/AboutPlugin.qml:80
-#, kde-format
-msgid "License:"
-msgstr "Leyfi:"
-
-#: qml/components/private/AboutPlugin.qml:99
-#, kde-format
-msgid "Authors"
-msgstr "Höfundar"
-
-#: qml/components/private/AboutPlugin.qml:116
-#, kde-format
-msgid "Credits"
-msgstr "Þátttakendur"
-
-#: qml/components/private/AboutPlugin.qml:133
-#, kde-format
-msgid "Translators"
-msgstr "Þýðendur"
-
-#: qml/components/private/AboutPlugin.qml:160
-#, kde-format
-msgid "Send an email to %1"
-msgstr "Senda tölvupóst á %1"
 
 #: qml/components/private/GridViewInternal.qml:66
 #, kde-format
@@ -182,6 +146,28 @@ msgstr "Engin atriði fundust"
 #, kde-format
 msgid "Could not find resource '%1'"
 msgstr "Fann ekki tilfangið '%1'."
+
+#~ msgctxt "Plugin name and plugin version"
+#~ msgid "%1 %2"
+#~ msgstr "%1 %2"
+
+#~ msgid "Copyright"
+#~ msgstr "Höfundarréttur"
+
+#~ msgid "License:"
+#~ msgstr "Leyfi:"
+
+#~ msgid "Authors"
+#~ msgstr "Höfundar"
+
+#~ msgid "Credits"
+#~ msgstr "Þátttakendur"
+
+#~ msgid "Translators"
+#~ msgstr "Þýðendur"
+
+#~ msgid "Send an email to %1"
+#~ msgstr "Senda tölvupóst á %1"
 
 #~ msgid "Search..."
 #~ msgstr "Leita..."
