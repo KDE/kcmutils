@@ -136,25 +136,3 @@ msgstr "Fann ingen element"
 #, kde-format
 msgid "Could not find resource '%1'"
 msgstr "Fann ikkje ressursen «%1»"
-
-#~ msgctxt "Plugin name and plugin version"
-#~ msgid "%1 %2"
-#~ msgstr "%1 %2"
-
-#~ msgid "Copyright"
-#~ msgstr "Opphavsrett"
-
-#~ msgid "License:"
-#~ msgstr "Lisens:"
-
-#~ msgid "Authors"
-#~ msgstr "Opphavspersonar"
-
-#~ msgid "Credits"
-#~ msgstr "Bidragsytarar"
-
-#~ msgid "Translators"
-#~ msgstr "Omsetjarar"
-
-#~ msgid "Send an email to %1"
-#~ msgstr "Send e-post til %1"

@@ -140,25 +140,3 @@ msgstr "Fant ingen elementer"
 #, kde-format
 msgid "Could not find resource '%1'"
 msgstr "Fant ikke ressursen «%1»"
-
-#~ msgctxt "Plugin name and plugin version"
-#~ msgid "%1 %2"
-#~ msgstr "%1 %2"
-
-#~ msgid "Copyright"
-#~ msgstr "Opphavsrett"
-
-#~ msgid "License:"
-#~ msgstr "Lisens:"
-
-#~ msgid "Authors"
-#~ msgstr "Opphavspersoner"
-
-#~ msgid "Credits"
-#~ msgstr "Bidragsytere"
-
-#~ msgid "Translators"
-#~ msgstr "Oversettere"
-
-#~ msgid "Send an email to %1"
-#~ msgstr "Send e-post til %1"
