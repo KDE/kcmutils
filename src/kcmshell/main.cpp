@@ -250,11 +250,10 @@ int main(int argc, char *argv[])
 
     if (parser.isSet(u"smoke-test"_s)) {
         QTimer::singleShot(std::chrono::milliseconds(250), &app, [dlg] {
-            if (dlg->hasError()) {
-                qApp->exit(1);
-            } else {
-                qApp->quit();
-            }
+            const int exitCode = dlg->hasError() ? 1 : 0;
+            // Quitting the event loop never runs the dialog's deleteLater(), so delete it here
+            delete dlg;
+            qApp->exit(exitCode);
         });
     }
 
