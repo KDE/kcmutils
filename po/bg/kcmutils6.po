@@ -132,25 +132,3 @@ msgstr "Няма отрити елементи"
 #, kde-format
 msgid "Could not find resource '%1'"
 msgstr "Ресурсът не може да бъде намерен „%1“"
-
-#~ msgctxt "Plugin name and plugin version"
-#~ msgid "%1 %2"
-#~ msgstr "%1 %2"
-
-#~ msgid "Copyright"
-#~ msgstr "Авторски права"
-
-#~ msgid "License:"
-#~ msgstr "Лиценз:"
-
-#~ msgid "Authors"
-#~ msgstr "Автори"
-
-#~ msgid "Credits"
-#~ msgstr "Заслуги"
-
-#~ msgid "Translators"
-#~ msgstr "Преводачи"
-
-#~ msgid "Send an email to %1"
-#~ msgstr "Изпращане на имейл до %1"
