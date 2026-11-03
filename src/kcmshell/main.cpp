@@ -251,8 +251,10 @@ int main(int argc, char *argv[])
     if (parser.isSet(u"smoke-test"_s)) {
         QTimer::singleShot(std::chrono::milliseconds(250), &app, [dlg] {
             if (dlg->hasError()) {
+                delete dlg;
                 qApp->exit(1);
             } else {
+                delete dlg;
                 qApp->quit();
             }
         });
