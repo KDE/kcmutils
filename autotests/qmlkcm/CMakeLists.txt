@@ -10,7 +10,7 @@ target_link_libraries(kcm_testqml
 )
 
 kcmutils_add_qml_kcm2(kcm_testqml2 URI org.kde.kcm.testqml2 SOURCES timesettings.cpp kcm2.cpp)
-target_compile_definitions(kcm_testqml2 PRIVATE "TESTQML2=2")
+# target_compile_definitions(kcm_testqml2 PRIVATE "TESTQML2=2")
 target_link_libraries(kcm_testqml2
     PRIVATE
         Qt6::Core
