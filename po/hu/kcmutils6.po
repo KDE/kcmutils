@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: KDE 4.4\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-10-27 00:56+0000\n"
+"POT-Creation-Date: 2026-11-11 00:56+0000\n"
 "PO-Revision-Date: 2025-04-26 22:21+0200\n"
 "Last-Translator: Kristof Kiszel <ulysses@fsf.hu>\n"
 "Language-Team: Hungarian <kde-l10n-hu@kde.org>\n"
@@ -99,24 +99,24 @@ msgctxt "@action:button"
 msgid "Show Contextual Help"
 msgstr "Környezetfüggő súgó megjelenítése"
 
-#: qml/components/PluginDelegate.qml:114
+#: qml/components/PluginDelegate.qml:109
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "About"
 msgstr "Névjegy"
 
-#: qml/components/PluginDelegate.qml:128
+#: qml/components/PluginDelegate.qml:123
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Configure…"
 msgstr "Beállítások…"
 
-#: qml/components/PluginSelector.qml:86
+#: qml/components/PluginSelector.qml:87
 #, kde-format
 msgid "No matches"
 msgstr "Nincs találat"
 
-#: qml/components/PluginSelector.qml:86
+#: qml/components/PluginSelector.qml:87
 #, kde-format
 msgid "No plugins found"
 msgstr "Nem találhatók bővítmények"

@@ -11,7 +11,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kcmutils5\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-10-27 00:56+0000\n"
+"POT-Creation-Date: 2026-11-11 00:56+0000\n"
 "PO-Revision-Date: 2025-03-08 08:58+0200\n"
 "Last-Translator: Yuri Chornoivan <yurchor@ukr.net>\n"
 "Language-Team: Ukrainian <trans-uk@lists.fedoraproject.org>\n"
@@ -104,24 +104,24 @@ msgctxt "@action:button"
 msgid "Show Contextual Help"
 msgstr "Показати контекстну довідку"
 
-#: qml/components/PluginDelegate.qml:114
+#: qml/components/PluginDelegate.qml:109
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "About"
 msgstr "Відомості"
 
-#: qml/components/PluginDelegate.qml:128
+#: qml/components/PluginDelegate.qml:123
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Configure…"
 msgstr "Налаштувати…"
 
-#: qml/components/PluginSelector.qml:86
+#: qml/components/PluginSelector.qml:87
 #, kde-format
 msgid "No matches"
 msgstr "Немає відповідників"
 
-#: qml/components/PluginSelector.qml:86
+#: qml/components/PluginSelector.qml:87
 #, kde-format
 msgid "No plugins found"
 msgstr "Додатків не знайдено"
