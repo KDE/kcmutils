@@ -4,7 +4,6 @@
 add_library(KF6KCMUtilsQuick
     kquickconfigmodule.cpp
     kquickmanagedconfigmodule.cpp
-    sharedqmlengine.cpp
     kquickconfigmoduleloader.cpp
 )
 

@@ -11,7 +11,6 @@
 
 #include "kquickconfigmodule.h"
 #include "kcmutils_debug.h"
-#include "sharedqmlengine_p.h"
 
 #include <QDebug>
 #include <QQmlContext>
@@ -21,7 +20,7 @@
 #include <QResource>
 #include <QUrl>
 
-#include <KLocalizedContext>
+#include <KLocalizedQmlContext>
 #include <KLocalizedString>
 #include <KRuntimePlatform>
 
@@ -34,7 +33,8 @@ public:
     }
 
     KQuickConfigModule *q;
-    SharedQmlEngine *engine = nullptr;
+    QQuickItem *rootItem = nullptr;
+    QQmlContext *qmlContext = nullptr;
     std::shared_ptr<QQmlEngine> passedInEngine;
     QList<QQuickItem *> subPages;
     int columnWidth = -1;
@@ -73,11 +73,10 @@ KQuickConfigModule::~KQuickConfigModule()
     }
 
     // in case mainUi was never called
-    if (d->engine) {
-        // delete the mainUi before removing the root object.
-        // Otherwise, we get lots of console errors about trying to read properties of null objects
-        delete d->engine->rootObject();
-        KQuickConfigModulePrivate::rootObjects.remove(d->engine->rootContext());
+    if (d->rootItem) {
+        KQuickConfigModulePrivate::rootObjects.remove(d->qmlContext);
+        delete d->rootItem;
+        delete d->qmlContext;
     }
 }
 
@@ -106,17 +105,21 @@ KQuickConfigModule *KQuickConfigModule::qmlAttachedProperties(QObject *object)
 QQuickItem *KQuickConfigModule::mainUi()
 {
     Q_ASSERT(d->passedInEngine);
-    if (d->engine) {
-        return qobject_cast<QQuickItem *>(d->engine->rootObject());
+    if (d->rootItem) {
+        return d->rootItem;
     }
 
+    d->qmlContext = new QQmlContext(d->passedInEngine.get());
+    auto i18nContext = new KLocalizedQmlContext(d->qmlContext);
+    d->qmlContext->setContextObject(i18nContext);
+    QQmlEngine::setContextForObject(i18nContext, d->qmlContext);
+
     d->errorString.clear();
-    d->engine = new SharedQmlEngine(d->passedInEngine, this);
+
+    KQuickConfigModulePrivate::rootObjects[d->qmlContext] = this;
 
     const QString componentName = metaData().pluginId();
-    KQuickConfigModulePrivate::rootObjects[d->engine->rootContext()] = this;
-    d->engine->setTranslationDomain(componentName);
-    d->engine->setInitializationDelayed(true);
+    i18nContext->setTranslationDomain(componentName);
 
     QString resourcePath = d->getResourcePath(QStringLiteral("main.qml"));
 
@@ -138,19 +141,21 @@ QQuickItem *KQuickConfigModule::mainUi()
         return nullptr;
     }
 
-    new QQmlFileSelector(d->engine->engine().get(), this);
-    d->engine->setSource(d->getResourceUrl(resourcePath));
-    d->engine->rootContext()->setContextProperty(QStringLiteral("kcm"), this);
-    d->engine->completeInitialization();
+    new QQmlFileSelector(d->passedInEngine.get(), this);
 
-    if (d->engine->isError()) {
-        d->errorString = d->engine->errorString();
+    QQmlComponent component(d->passedInEngine.get(), d->getResourceUrl(resourcePath));
+    d->rootItem = qobject_cast<QQuickItem *>(component.beginCreate(d->qmlContext));
+    d->qmlContext->setContextProperty(QStringLiteral("kcm"), this);
+    component.completeCreate();
+
+    if (component.isError()) {
+        d->errorString = component.errorString();
         return nullptr;
     }
 
     Q_EMIT mainUiReady();
 
-    return qobject_cast<QQuickItem *>(d->engine->rootObject());
+    return d->rootItem;
 }
 
 void KQuickConfigModule::push(const QString &fileName, const QVariantMap &initialProperties)
@@ -164,7 +169,9 @@ void KQuickConfigModule::push(const QString &fileName, const QVariantMap &initia
     if (QResource r(resourcePath); !r.isValid()) {
         qCWarning(KCMUTILS_LOG) << "Requested resource" << resourcePath << "does not exist";
     }
-    QObject *object = d->engine->createObjectFromSource(d->getResourceUrl(resourcePath), d->engine->rootContext(), initialProperties);
+
+    QQmlComponent component(d->passedInEngine.get(), d->getResourceUrl(resourcePath));
+    auto object = component.createWithInitialProperties(initialProperties, d->qmlContext);
 
     QQuickItem *item = qobject_cast<QQuickItem *>(object);
     if (!item) {
@@ -173,6 +180,8 @@ void KQuickConfigModule::push(const QString &fileName, const QVariantMap &initia
         }
         return;
     }
+
+    item->setParentItem(d->rootItem);
 
     d->subPages << item;
     Q_EMIT pagePushed(item);
@@ -250,7 +259,7 @@ int KQuickConfigModule::currentIndex() const
 
 std::shared_ptr<QQmlEngine> KQuickConfigModule::engine() const
 {
-    return d->engine->engine();
+    return d->passedInEngine;
 }
 
 QString KQuickConfigModule::errorString() const
