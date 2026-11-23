@@ -13,8 +13,7 @@
 /*!
  * \qmltype KCMLauncher
  * \inqmlmodule org.kde.kcmutils
- *
- * This is a QML singleton.
+ * \brief Interface for opening Systems Settings.
  */
 class KCMLauncher : public QObject
 {
