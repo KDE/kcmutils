@@ -17,6 +17,7 @@
 #include <QObject>
 #include <QStringList>
 #include <QVariant>
+#include <QVariantMap>
 
 #include <KPluginFactory>
 #include <KPluginMetaData>
