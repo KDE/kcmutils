@@ -128,25 +128,3 @@ msgstr "没有找到项目"
 #, kde-format
 msgid "Could not find resource '%1'"
 msgstr "无法找到资源“%1”"
-
-#~ msgctxt "Plugin name and plugin version"
-#~ msgid "%1 %2"
-#~ msgstr "%1 %2"
-
-#~ msgid "Copyright"
-#~ msgstr "版权信息"
-
-#~ msgid "License:"
-#~ msgstr "许可证："
-
-#~ msgid "Authors"
-#~ msgstr "作者"
-
-#~ msgid "Credits"
-#~ msgstr "致谢"
-
-#~ msgid "Translators"
-#~ msgstr "翻译人员"
-
-#~ msgid "Send an email to %1"
-#~ msgstr "发送电子邮件给 %1"
